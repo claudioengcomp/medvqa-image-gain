@@ -1,10 +1,10 @@
-"""20/10/2026 (m3ae_frozen_vit): M3AE com o encoder visual congelado -- decomposicao com paridade das familias VLM, nas fechadas.
-A_text = M3AE so-texto publicado (cinza no treino/val/teste); A_frozen = M3AE_FROZEN C0; A_ft = M3AE publicado (fine-tune completo) C0.
-G_enc = A_frozen - A_text; G_ft = A_ft - A_frozen; G = A_ft - A_text. Cinza = M3AE_FROZEN com imagem cinza so no teste (C1). Troca = M3AE_FROZEN no arrow
-de troca das linhas publicadas (C2; HEAL/MIMIC C2v2 do image_swap_v2). Baselines: PubMedBERT, TF-IDF, majoritaria, majoritaria por texto exato de pergunta (HEAL: so-treino).
-IC: bootstrap por imagem 2 000, seed 20260913 (as mesmas replicas); IC condicional (media das 3 sementes por replica) e IC conjunto (replica + 3 sementes com
-reposicao, RandomState(20260913)), como em joint_ci.py; IC por execucao (percentis da replica da semente). Base com menos de 3 sementes prontas: so numeros
-por semente (parcial). Colunas VLM ao lado: joint_ci.json (G_enc / G_ft / G / troca, IC conjunto) e acuracias recalculadas nas mesmas fechadas. Saida: analysis/m3ae_frozen_vit.json."""
+"""20/10/2026 (m3ae_frozen_vit): M3AE with the visual encoder frozen -- decomposition with parity to the VLM families, on the closed-form ones.
+A_text = published M3AE text-only (grey in training/val/test); A_frozen = M3AE_FROZEN C0; A_ft = published M3AE (full fine-tune) C0.
+G_enc = A_frozen - A_text; G_ft = A_ft - A_frozen; G = A_ft - A_text. Grey = M3AE_FROZEN with grey image only in the test (C1). Swap = M3AE_FROZEN on the swap
+arrow of the published rows (C2; HEAL/MIMIC C2v2 from image_swap_v2). Baselines: PubMedBERT, TF-IDF, majority, majority by exact question text (HEAL: train-only).
+CI: bootstrap by image 2 000, seed 20260913 (the same replicas); conditional CI (mean of the 3 seeds per replica) and joint CI (replica + 3 seeds with
+replacement, RandomState(20260913)), as in joint_ci.py; per-run CI (percentiles of the seed's replica). Benchmark with fewer than 3 ready seeds: only numbers
+per seed (partial). VLM columns alongside: joint_ci.json (G_enc / G_ft / G / swap, joint CI) and accuracies recalculated on the same closed-form ones. Output: analysis/m3ae_frozen_vit.json."""
 import os as _os
 _MEDVQA_ROOT = _os.environ.get("MEDVQA_ROOT", "/path/to/original/run/tree")   # original run tree root (this package: see README, "Paths")
 import collections, hashlib, json, os, sys, time
@@ -17,7 +17,7 @@ from harness.interventions.arrow_io import read_arrow
 from med_vlm.metrics.process_text import answer_matches, normalize_text as NT
 PJ = f"{_MEDVQA_ROOT}/v7_txt/article_runs"; PJR = f"{PJ}/results"; FR = os.environ.get("M3AE_FROZEN_VIT_FR", f"{PJ}/m3ae_frozen/results")
 FL = f"{PJ}/m3ae_frozen/logs"
-OUTJ = os.environ.get("M3AE_FROZEN_VIT_OUT", f"{PJ}/analysis/m3ae_frozen_vit.json")   # 20/10: FR/OUT sobrescreviveis so para o teste de caminho
+OUTJ = os.environ.get("M3AE_FROZEN_VIT_OUT", f"{PJ}/analysis/m3ae_frozen_vit.json")   # 20/10: FR/OUT overwritable only for the path test
 BASES = os.environ.get("M3AE_FROZEN_VIT_BASES", "SLAKE,VQARAD_REDIV,HEAL,MIMIC,KVASIR,VQARAD_QLEVEL").split(",")
 sha = lambda p: hashlib.sha256(open(p, "rb").read()).hexdigest(); SEEDS = np.random.RandomState(20260913).randint(0, 3, size=(2000, 3))
 PAT = ["is there", "are there", "have all polyps", "how many", "what type of", "what is the size", "where in the image", "does this image contain any finding", "what color is the anatomical landmark", "what color is the abnormality"]

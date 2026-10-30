@@ -43,14 +43,14 @@
    "VQA-RAD|Qwen2-VL-2B": 0.46,
    "VQA-RAD|SmolVLM2-2.2B": -0.55
   },
-  "hachura_G_ft_negativo": "SmolVLM2-2.2B no VQA-RAD (G_ft < 0): hachura branca mantida como na v8; segmento de -0,55 pt; no PNG em 300 dpi aparece como uma linha de 1 px laranja com tracos brancos no topo do azul; o padrao //// nao e reconhecivel nessa escala (conferido 20/10)",
+  "hachura_G_ft_negativo": "SmolVLM2-2.2B on VQA-RAD (G_ft < 0): white hatching kept as in v8; segment of -0,55 pt; in the PNG at 300 dpi it appears as a 1 px orange line with white dashes on top of the blue; the //// pattern is not recognizable at this scale (checked 20/10)",
   "m3ae": {
-   "segmentos": "A_text sem imagem (m3ae_no_image; cinza) / G_enc = A_frozen - A_text sem imagem (azul) / G_ft (laranja, inalterado) do M3AE com encoder congelado",
+   "segmentos": "A_text no image (m3ae_no_image; grey) / G_enc = A_frozen - A_text no image (blue) / G_ft (orange, unchanged) of M3AE with frozen encoder",
    "fonte": "m3ae_frozen_vit.json",
    "fonte_sha256": "9c8607c6ef123bd65397620177575129f9fbee3f2457c1646bc48fd3ae6ffde5",
-   "barra_de_erro": "DP entre sementes de A_ft (decomposicao_fechadas, inalterada)",
-   "topo": "A_ft publicado, conferido por base (assert < 0,002)",
-   "G_enc_negativo": "hachura azul sem preenchimento entre A_frozen e A_text, por cima do laranja (VQA-RAD: -3.0 pp)"
+   "barra_de_erro": "SD between seeds of A_ft (decomposicao_fechadas, unchanged)",
+   "topo": "A_ft published, checked per benchmark (assert < 0,002)",
+   "G_enc_negativo": "blue hatching without fill between A_frozen and A_text, on top of the orange (VQA-RAD: -3.0 pp)"
   },
   "altura_area_plotagem_pol": 1.61,
   "yticks": [

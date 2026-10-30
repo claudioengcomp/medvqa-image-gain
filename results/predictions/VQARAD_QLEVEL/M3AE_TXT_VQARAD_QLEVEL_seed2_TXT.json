@@ -4253,9 +4253,9 @@
    "libcuda": "/usr/lib/x86_64-linux-gnu/libcuda.so.580.178.04"
   },
   "dtype": "M3AE fp32 (Lightning, test_only)",
-  "inference": "copia de harness.extract_predictions_m3ae.extract_predictions com data_root proprio (sem swap no repositorio M3AE)",
+  "inference": "copy of harness.extract_predictions_m3ae.extract_predictions with its own data_root (no swap in the M3AE repository)",
   "t_start": "2026-10-19 18:41:03",
   "wall_seconds": 67.7,
-  "extra": "VQA-RAD dividido por pergunta, so-texto (vqarad_question_split); cost=M3AE_TXT_VQARAD_QLEVEL_seed2_cost.json"
+  "extra": "VQA-RAD split by question, text-only (vqarad_question_split); cost=M3AE_TXT_VQARAD_QLEVEL_seed2_cost.json"
  }
 }

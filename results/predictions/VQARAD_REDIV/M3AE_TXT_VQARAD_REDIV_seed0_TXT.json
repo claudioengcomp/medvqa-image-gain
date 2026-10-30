@@ -4265,9 +4265,9 @@
    "libcuda": "/usr/lib/x86_64-linux-gnu/libcuda.so.580.178.04"
   },
   "dtype": "M3AE fp32 (Lightning, test_only)",
-  "inference": "copia de harness.extract_predictions_m3ae.extract_predictions com data_root proprio (sem swap no repositorio M3AE)",
+  "inference": "copy of harness.extract_predictions_m3ae.extract_predictions with its own data_root (no swap in the M3AE repository)",
   "t_start": "2026-10-17 10:50:05",
   "wall_seconds": 64.2,
-  "extra": "VQA-RAD redividido por imagem (article_runs, vqarad_image_split), so-texto (imagem cinza); checkpoints best de outras versoes (relancamentos apos OOM) nao usados: epoch=25-step=1013.ckpt; cost=M3AE_TXT_VQARAD_REDIV_seed0_cost.json"
+  "extra": "VQA-RAD re-split by image (article_runs, vqarad_image_split), text-only (grey image); best checkpoints from other versions (re-launches after OOM) not used: epoch=25-step=1013.ckpt; cost=M3AE_TXT_VQARAD_REDIV_seed0_cost.json"
  }
 }

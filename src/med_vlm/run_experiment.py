@@ -65,9 +65,9 @@ def run_experiment(cfg: Dict[str, Any]) -> Dict[str, Any]:
     train_cfg_dict = cfg.get("train", {})
     eval_cfg_dict = cfg.get("eval", {})
     logging_cfg = cfg.get("logging", {})
-    # data.no_image (v7_txt, 2026-10-09): braco so-texto. Mesma pergunta, mesmo
+    # data.no_image (v7_txt, 2026-10-09): text-only arm. Same question, same
     # template de chat, sem {"type": "image"} e processor(images=None); o
-    # pre-processamento e a augmentacao (so de imagem) ficam sem efeito.
+    # pre-processing and the augmentation (image-only) have no effect.
     no_image = bool(cfg.get("data", {}).get("no_image", False))
 
     outputs_dir = Path(cfg.get("outputs_dir", "./outputs"))
@@ -385,10 +385,10 @@ def run_experiment(cfg: Dict[str, Any]) -> Dict[str, Any]:
 
 
 def _apply_seed_override(cfg: Dict[str, Any], seed: Optional[int]) -> Dict[str, Any]:
-    """Sobrescreve train.seed no config e sufixa `_seedN` em run_name/
-    wandb_run_name, para rodar múltiplos seeds do mesmo YAML sem colidir
-    outputs/checkpoints/results. `seed=None` é no-op (retorna `cfg`
-    inalterado), pra permitir uso normal do CLI sem `--seed`."""
+    """Overrides train.seed in the config and suffixes `_seedN` to run_name/
+    wandb_run_name, to run multiple seeds of the same YAML without colliding
+    outputs/checkpoints/results. `seed=None` is a no-op (returns `cfg`
+    unchanged), to allow normal CLI usage without `--seed`."""
     if seed is None:
         return cfg
     cfg = dict(cfg)
@@ -414,7 +414,7 @@ def main() -> None:
         type=int,
         default=None,
         help="Sobrescreve train.seed do config e sufixa _seedN em run_name/"
-        "wandb_run_name, para rodar múltiplos seeds do mesmo YAML sem "
+        "wandb_run_name, to run multiple seeds of the same YAML without "
         "colidir outputs/checkpoints/results.",
     )
     args = parser.parse_args()

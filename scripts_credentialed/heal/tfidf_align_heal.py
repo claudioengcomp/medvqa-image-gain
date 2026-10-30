@@ -1,10 +1,10 @@
-"""TFIDF so-pergunta do HEAL ALINHADO (2026-10-10, pedido do candidato): mesmo classificador de harness/isbi_occlusion/heal/tfidf_heal.py
-(TF-IDF 1-2-gramas, min_df 1, lowercase; LogisticRegression C=1, max_iter 2000, random_state 0) e o mesmo conjunto de treino
-(as 7 641 perguntas fechadas sim/nao do treino VinDr do HEAL). O parquet heal_annotations_train.parquet nao esta mais em disco
-nem no Drive; as mesmas 7 641 linhas (pergunta, resposta normalizada) sao lidas dos arrows de treino + validacao
-(vqa_heal_train.arrow + vqa_heal_val.arrow = split D2 das mesmas anotacoes; contagem e prior conferidos contra o
-tfidf_by_type_heal.json publicado: 7 641 linhas, prior no 0,5112 / yes 0,4888). Prediz exatamente os 1 446 qids avaliaveis do
-inventario atual; saida no formato das _C0.json + agregados + proveniencia."""
+"""TFIDF question-only of the ALIGNED HEAL (2026-10-10, requested by the candidate): same classifier as harness/isbi_occlusion/heal/tfidf_heal.py
+(TF-IDF 1-2-grams, min_df 1, lowercase; LogisticRegression C=1, max_iter 2000, random_state 0) and the same training set
+(the 7 641 closed-form yes/no questions from the VinDr training of HEAL). The parquet heal_annotations_train.parquet is no longer on disk
+nor in the Drive; the same 7 641 rows (question, normalized answer) are read from the training + validation arrows
+(vqa_heal_train.arrow + vqa_heal_val.arrow = split D2 of the same annotations; count and prior checked against the
+published tfidf_by_type_heal.json: 7 641 rows, prior no 0,5112 / yes 0,4888). Predicts exactly the 1 446 evaluable qids from the
+current inventory; output in the format of the _C0.json files + aggregates + provenance."""
 import os as _os
 _MEDVQA_ROOT = _os.environ.get("MEDVQA_ROOT", "/path/to/original/run/tree")   # original run tree root (this package: see README, "Paths")
 import collections, hashlib, json, platform, time

@@ -1,5 +1,5 @@
-"""22/10/2026 (m3ae_no_image; env lapa): predicao do M3AE sem imagem no teste (arrow cinza da base, D1; a imagem e ignorada), com m3ae_infer_semimg.py
-(worktree_m3ae_semimg, no_image=True). Uso: m3ae_semimg_predict.py <base> <seed> <output>. Carimbo: checkpoint final (caminho e sha), partida, sha da arrow."""
+"""22/10/2026 (m3ae_no_image; env lapa): prediction of the M3AE without image on the test set (grey arrow of the benchmark, D1; the image is ignored), with m3ae_infer_semimg.py
+(worktree_m3ae_semimg, no_image=True). Usage: m3ae_semimg_predict.py <base> <seed> <output>. Stamp: final checkpoint (path and sha), start, arrow sha."""
 import glob, hashlib, os, subprocess, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); import m3ae_semimg_cfg as C
 b, s, out = sys.argv[1], int(sys.argv[2]), sys.argv[3]; task, ls, key, ds, _, DR = C.B[b]

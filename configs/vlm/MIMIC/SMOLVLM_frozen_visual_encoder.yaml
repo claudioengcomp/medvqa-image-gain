@@ -1,4 +1,4 @@
-# v7_mimic (2026-10-11): copia de ${MEDVQA_ROOT}/v6_tower_heal/worktree/med_vlm/configs/smolvlm2_lora_ft_heal.yaml (sha256 9c5a3ce34f1a4358; torre: SmolVLM2 LoRA FT (regex text_model.layers, torre congelada)), mudando so dataset: MIMIC, run_name/wandb_run_name, outputs_dir/results_json_dir e train.checkpoint_every 15000 + checkpoint_dir (convencao dos YAMLs do MIMIC de 10/10; publicado: 5000).
+# v7_mimic (2026-10-11): copy of ${MEDVQA_ROOT}/v6_tower_heal/worktree/med_vlm/configs/smolvlm2_lora_ft_heal.yaml (sha256 9c5a3ce34f1a4358; tower: SmolVLM2 LoRA FT (regex text_model.layers, frozen tower)), changing only dataset: MIMIC, run_name/wandb_run_name, outputs_dir/results_json_dir and train.checkpoint_every 15000 + checkpoint_dir (convention of the MIMIC YAMLs from 10/10; published: 5000).
 run_name: smolvlm2_lora_ft_mimic
 model: SMOLVLM
 dataset: MIMIC

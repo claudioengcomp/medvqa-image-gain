@@ -106,7 +106,7 @@ def load_model_bundle(model_name: med_vlm.enums.ModelName) -> ModelBundle:
 
     if model_name == med_vlm.enums.ModelName.MEDVLM:
         # v7 (2026-10-13): o config.json do MedVLM-R1 traz use_cache = null; o transformers 5 valida os campos e recusa. So aqui: le o config,
-        # troca use_cache nulo por True e carrega com esse config (pesos inalterados).
+        # swaps a null use_cache for True and loads with that config (weights unchanged).
         from transformers import PretrainedConfig, Qwen2VLConfig
         cfg_dict, _ = PretrainedConfig.get_config_dict(model_name.value)
         if cfg_dict.get("use_cache") is None: cfg_dict["use_cache"] = True
@@ -127,7 +127,7 @@ def load_model_bundle(model_name: med_vlm.enums.ModelName) -> ModelBundle:
 
     if model_name == med_vlm.enums.ModelName.MEDVLM:
         # v7 (2026-10-13): AutoProcessor/AutoTokenizer releem o config.json (use_cache = null) e falham; o processor e montado das pecas,
-        # cada uma lida do proprio arquivo do repositorio (preprocessor_config.json, tokenizer, chat_template.json).
+        # each one read from the repository's own file (preprocessor_config.json, tokenizer, chat_template.json).
         import json as _json
         from huggingface_hub import hf_hub_download
         from transformers import Qwen2TokenizerFast, Qwen2VLImageProcessor, Qwen2VLProcessor, Qwen2VLVideoProcessor

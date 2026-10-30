@@ -49,8 +49,8 @@ def generate_chat_template(
     SmolVLM, LLaVA-Med, MedVLThinker. Processes one example at a time to avoid
     padding complications during inference.
 
-    `no_image` (v7_txt, 2026-10-09): mensagem so com o texto da pergunta e
-    processor(text=..., images=None); mesma regra do coletor de treino.
+    `no_image` (v7_txt, 2026-10-09): message with only the question text and
+    processor(text=..., images=None); same rule as the training collator.
 
     `system_prompt`, when given, is prepended as a `role="system"` message --
     used by reasoning models (e.g. MedVLThinker) that require an explicit

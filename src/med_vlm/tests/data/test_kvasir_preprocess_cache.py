@@ -2,8 +2,8 @@ from med_vlm.data.loader import _kvasir_preprocess_cache_path
 
 
 class _FakePreprocessor:
-    """Repr estável simulando ImagePreprocessor (dataclass) sem precisar
-    dos pesos de cv2/numpy nesse teste puro."""
+    """Stable repr simulating ImagePreprocessor (dataclass) without needing
+    the cv2/numpy weights in this pure test."""
 
     def __init__(self, denoise=True, clahe=True):
         self.denoise = denoise

@@ -1,27 +1,27 @@
-"""Divide o arrow de treino do Kvasir (harness/prepro/prepare_kvasir_arrow.py
---split train) em train/val — o `SimulaMet/Kvasir-VQA-x1` só publica splits
-`train`/`test` (achado confirmado em `docs/superpowers/plans/
-2026-08-21-kvasir-vqa-integration.md`), e o M3AE precisa dos três.
+"""Splits the Kvasir training arrow (harness/prepro/prepare_kvasir_arrow.py
+--split train) into train/val — `SimulaMet/Kvasir-VQA-x1` only publishes
+`train`/`test` splits (finding confirmed in `docs/superpowers/plans/
+2026-08-21-kvasir-vqa-integration.md`), and M3AE needs all three.
 
-Achado real (não suposição), confirmado lendo o código-fonte do repositório
-`zhjohnchan/M3AE`, commit `14da377255280eed547e451f368cf71a43f3ca1c` (pinado
-por `environment/colab_setup_m3ae.sh`), arquivo
+Real finding (not an assumption), confirmed by reading the source code of the
+`zhjohnchan/M3AE` repository, commit `14da377255280eed547e451f368cf71a43f3ca1c` (pinned
+by `environment/colab_setup_m3ae.sh`), file
 `m3ae/datamodules/vqa_vqa_rad_datamodule.py`: `VQAVQARADDataModule.setup()`
-constrói `self.answer2id`/`self.id2answer` (usados por
-`harness/extract_predictions_m3ae.py` pra decodificar a predição) lendo as
-colunas `answers`/`answer_labels` de `self.train_dataset` + `self.val_dataset`
-— NÃO de `test_dataset`. Sem um `vqa_kvasir_val.arrow`, o `setup()` do
-`VQAKVASIRDataModule` equivalente quebraria por falta do split.
+builds `self.answer2id`/`self.id2answer` (used by
+`harness/extract_predictions_m3ae.py` to decode the prediction) by reading the
+`answers`/`answer_labels` columns from `self.train_dataset` + `self.val_dataset`
+— NOT from `test_dataset`. Without a `vqa_kvasir_val.arrow`, the equivalent
+`VQAKVASIRDataModule` setup() would break due to the missing split.
 
-Diferente de `harness/prepro/prepare_vqa_rad_splits.py` (que divide o JSON
-bruto do VQA-RAD *por pergunta*, antes do arrow existir): aqui o arrow do
-Kvasir já agrupa todas as perguntas de uma imagem numa única linha (schema
-`harness/interventions/arrow_io.py`) — dividir por pergunta exigiria duplicar
-a imagem entre train e val. Dividimos por LINHA (imagem) em vez disso: mesmo
-espírito (determinístico, seed fixa, documentado — não é "a divisão certa"
-clinicamente, só uma escolha estável).
+Unlike `harness/prepro/prepare_vqa_rad_splits.py` (which splits the raw
+VQA-RAD JSON *by question*, before the arrow exists): here the Kvasir arrow
+already groups all the questions of an image into a single row (schema
+`harness/interventions/arrow_io.py`) — splitting by question would require
+duplicating the image between train and val. We split by ROW (image) instead:
+same spirit (deterministic, fixed seed, documented — it is not "the correct
+split" clinically, just a stable choice).
 
-Uso:
+Usage:
     python -m harness.prepro.split_kvasir_train_val \
         --input data/finetune_arrows/vqa_kvasir_train_full.arrow \
         --train-output data/finetune_arrows/vqa_kvasir_train.arrow \
@@ -40,14 +40,14 @@ from harness.interventions.arrow_io import read_arrow, write_arrow
 
 def split_train_val_df(df: pd.DataFrame, val_fraction: float = 0.1,
                         seed: int = 42) -> tuple[pd.DataFrame, pd.DataFrame]:
-    """Divide `df` (uma linha por imagem) em (train_df, val_df), embaralhado
-    deterministicamente por `seed`. `val_fraction` do total (arredondado) vai
-    para val; o resto para train. União dos dois é exatamente `df`, sem
-    sobreposição. Reescreve a coluna `split` ('train'/'val') em cada parte."""
+    """Splits `df` (one row per image) into (train_df, val_df), shuffled
+    deterministically by `seed`. `val_fraction` of the total (rounded) goes
+    to val; the rest to train. The union of the two is exactly `df`, with no
+    overlap. Rewrites the `split` column ('train'/'val') in each part."""
     if not (0.0 < val_fraction < 1.0):
         raise ValueError(f"val_fraction={val_fraction} deve estar em (0, 1)")
 
-    order = sorted(range(len(df)), key=lambda i: df.iloc[i]["image_id"])  # ordem determinística antes de embaralhar
+    order = sorted(range(len(df)), key=lambda i: df.iloc[i]["image_id"])  # deterministic order before shuffling
     rng = random.Random(seed)
     shuffled = order.copy()
     rng.shuffle(shuffled)
@@ -65,7 +65,7 @@ def split_train_val_df(df: pd.DataFrame, val_fraction: float = 0.1,
 
 def _parse_args():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--input", required=True, help="Arrow de treino completo (prepare_kvasir_arrow.py --split train)")
+    parser.add_argument("--input", required=True, help="Full training arrow (prepare_kvasir_arrow.py --split train)")
     parser.add_argument("--train-output", required=True)
     parser.add_argument("--val-output", required=True)
     parser.add_argument("--val-fraction", type=float, default=0.1)

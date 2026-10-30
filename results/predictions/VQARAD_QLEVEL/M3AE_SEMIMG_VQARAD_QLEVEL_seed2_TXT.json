@@ -4241,7 +4241,7 @@
    "val": "vqa_vqa_rad_val.arrow"
   },
   "worktree_m3ae": "worktree_m3ae_semimg",
-  "commit": "14da377 + patch nao commitado + m3ae_no_image (branch m3ae_semimg_21b; tmp/v7/m3ae_no_image/diff_implementacao_21b.diff)",
+  "commit": "14da377 + uncommitted patch + m3ae_no_image (branch m3ae_semimg_21b; tmp/v7/m3ae_no_image/diff_implementacao_21b.diff)",
   "no_image": true,
   "host": "lasid-gpu1",
   "cuda_visible_devices": "0",
@@ -4254,9 +4254,9 @@
    "libcuda": "/usr/lib/x86_64-linux-gnu/libcuda.so.580.178.04"
   },
   "dtype": "M3AE fp32 (Lightning, test_only)",
-  "inference": "copia de harness.extract_predictions_m3ae.extract_predictions com data_root proprio (sem swap no repositorio M3AE)",
+  "inference": "copy of harness.extract_predictions_m3ae.extract_predictions with its own data_root (no swap in the M3AE repository)",
   "t_start": "2026-10-23 00:23:02",
   "wall_seconds": 11.6,
-  "extra": "m3ae_no_image: M3AE sem imagem (no_image=True, A3/B1/C1/D1); teste com a arrow cinza (imagem ignorada); ckpt_partida m3ae.ckpt sha256 469cf69b18cd75fbc3a010f202fb42c0cc074b34db75a0bfab442db982885442"
+  "extra": "m3ae_no_image: M3AE without image (no_image=True, A3/B1/C1/D1); test with the grey arrow (image ignored); ckpt_partida m3ae.ckpt sha256 469cf69b18cd75fbc3a010f202fb42c0cc074b34db75a0bfab442db982885442"
  }
 }

@@ -1,4 +1,4 @@
-# v7_mimic (2026-10-10): copia de v6_tower_heal/worktree/med_vlm/configs/qwen2vl_lora_vt_heal.yaml (torre adaptada, VT), mudando so dataset: MIMIC, run_name/wandb_run_name e os caminhos de saida.
+# v7_mimic (2026-10-10): copy of v6_tower_heal/worktree/med_vlm/configs/qwen2vl_lora_vt_heal.yaml (fine-tuned tower, VT), changing only dataset: MIMIC, run_name/wandb_run_name and the output paths.
 run_name: qwen2vl_lora_vt_mimic
 model: QWEN2VL
 dataset: MIMIC

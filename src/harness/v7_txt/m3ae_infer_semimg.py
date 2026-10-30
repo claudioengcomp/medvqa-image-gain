@@ -1,13 +1,13 @@
-"""v7 (2026-10-09): uma bateria do M3AE num arrow de condicao, no env lapa (python 3.8), SEM tocar o repositorio M3AE:
-cwd = v7_txt/worktree_m3ae (14da377 + patch), data_root = um diretorio proprio onde <dataset_key>_test.arrow e o arrow da
-condicao (link simbolico) e train/val apontam para os arrows originais (so leitura, para o vocabulario de respostas).
-Mesma inferencia de harness/extract_predictions_m3ae.py (forward, argmax, score >= 0.5), copiada aqui so para aceitar
-data_root; carimbo de proveniencia no JSON.
-Uso: --name N --checkpoint CKPT --data-root DIR --dataset-key vqa_kvasir --vqa-label-size 500 --dataset KVASIR --condition OCCLUSION_ART_black --output OUT.json [--arrow-sha256 X]"""
+"""v7 (2026-10-09): a M3AE battery on a condition arrow, in the lapa env (python 3.8), WITHOUT touching the M3AE repository:
+cwd = v7_txt/worktree_m3ae (14da377 + patch), data_root = a dedicated directory where <dataset_key>_test.arrow is the arrow of the
+condition (symbolic link) and train/val point to the original arrows (read-only, for the answer vocabulary).
+Same inference as harness/extract_predictions_m3ae.py (forward, argmax, score >= 0.5), copied here only to accept
+data_root; provenance timestamp in the JSON.
+Usage: --name N --checkpoint CKPT --data-root DIR --dataset-key vqa_kvasir --vqa-label-size 500 --dataset KVASIR --condition OCCLUSION_ART_black --output OUT.json [--arrow-sha256 X]"""
 import os as _os
 _MEDVQA_ROOT = _os.environ.get("MEDVQA_ROOT", "/path/to/original/run/tree")   # original run tree root (this package: see README, "Paths")
 import argparse, copy, hashlib, json, os, socket, sys, time
-WM = f"{_MEDVQA_ROOT}/v7_txt/worktree_m3ae_semimg"; HARNESS = f"{_MEDVQA_ROOT}/v7_txt/worktree"   # m3ae_no_image: copia de m3ae_infer_v7.py com o codigo da branch m3ae_semimg_21b e no_image=True
+WM = f"{_MEDVQA_ROOT}/v7_txt/worktree_m3ae_semimg"; HARNESS = f"{_MEDVQA_ROOT}/v7_txt/worktree"   # m3ae_no_image: copy of m3ae_infer_v7.py with the code from the m3ae_semimg_21b branch and no_image=True
 def sha256_file(p):
     h = hashlib.sha256()
     with open(p, "rb") as f:

@@ -1,4 +1,4 @@
-"""19/10/2026 (image_swap_v2): inferencia com a troca refeita (C2v2) nas 9 linhas A_ft de HEAL e MIMIC. Mesmo comando dos C2 anteriores; muda so o arrow e a saida."""
+"""19/10/2026 (image_swap_v2): inference with the redone swap (C2v2) on the 9 A_ft rows of HEAL and MIMIC. Same command as the previous C2; only the arrow and the output change."""
 import os as _os
 _MEDVQA_ROOT = _os.environ.get("MEDVQA_ROOT", "/path/to/original/run/tree")   # original run tree root (this package: see README, "Paths")
 import json

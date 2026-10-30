@@ -1,9 +1,9 @@
-"""22/10/2026 (vqarad_cauldron, etapa 2; so CPU): acuracias nas fechadas de teste do VQA-RAD (divisao por imagem e por pergunta) separadas por presenca da
-pergunta na The Cauldron (niveis a, b, c de cauldron_vqarad/pareamento.json), com as predicoes ja publicadas (nada regerado). Familias: Qwen2-VL-2B e
-SmolVLM2-2.2B (A_text, A_frozen, A_ft das celulas da decomposicao), M3AE (A_text = so-texto, A_frozen = encoder congelado do m3ae_frozen_vit, A_ft = fine-tune
-completo); G = A_ft - A_text; PubMedBERT (extra_baselines, o mesmo da Tabela 2) e TF-IDF (tfidf_fechadas). Media (DP) das 3 sementes; IC conjunto (imagens e
-sementes; bootstrap por imagem 2 000, seed 20260913, sementes RandomState(20260913)), como joint_ci/m3ae_frozen_vit; dentro - fora por replica. Por categoria
-(question_type do teste: PRES, ABN, ATTRIB, qualquer posicao): so contagens e medias. Saida: analysis/cauldron_overlap.json"""
+"""22/10/2026 (vqarad_cauldron, stage 2; CPU only): accuracies on the VQA-RAD test closed-form questions (split by image and by question) separated by presence of the
+question in The Cauldron (levels a, b, c of cauldron_vqarad/pareamento.json), with the predictions already published (nothing regenerated). Families: Qwen2-VL-2B and
+SmolVLM2-2.2B (A_text, A_frozen, A_ft of the decomposition cells), M3AE (A_text = text-only, A_frozen = frozen encoder of m3ae_frozen_vit, A_ft = full
+fine-tune); G = A_ft - A_text; PubMedBERT (extra_baselines, the same as Table 2) and TF-IDF (tfidf_fechadas). Mean (SD) of the 3 seeds; joint CI (images and
+seeds; bootstrap by image 2 000, seed 20260913, seeds RandomState(20260913)), like joint_ci/m3ae_frozen_vit; inside - outside per replicate. By category
+(question_type of the test: PRES, ABN, ATTRIB, any position): only counts and means. Output: analysis/cauldron_overlap.json"""
 import os as _os
 _MEDVQA_ROOT = _os.environ.get("MEDVQA_ROOT", "/path/to/original/run/tree")   # original run tree root (this package: see README, "Paths")
 import collections, hashlib, json, os, sys

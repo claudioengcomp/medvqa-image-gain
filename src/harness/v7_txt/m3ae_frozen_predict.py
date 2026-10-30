@@ -1,14 +1,14 @@
-"""20/10/2026 (m3ae_frozen_vit; env lapa): predicao do M3AE com ViT congelado numa condicao. Uso: m3ae_frozen_predict.py <bench> <seed> <cond> <output>.
-Antes de predizer: localiza o checkpoint best (save_top_k=1, val/the_metric) e confere que o sha256 do state_dict do ViT no best e no last
-e identico ao registrado no inicio do treino (freeze.json); se diferir, aborta sem predizer. Carimbo: checkpoint de partida (caminho, sha),
-checkpoint final (o m3ae_infer_v7 grava caminho e sha), shas do ViT antes/depois."""
+"""20/10/2026 (m3ae_frozen_vit; lapa env): M3AE prediction with frozen ViT under one condition. Usage: m3ae_frozen_predict.py <bench> <seed> <cond> <output>.
+Before predicting: locates the best checkpoint (save_top_k=1, val/the_metric) and checks that the sha256 of the ViT's state_dict in the best and in the last
+is identical to the one recorded at the start of training (freeze.json); if it differs, aborts without predicting. Timestamp: starting checkpoint (path, sha),
+final checkpoint (m3ae_infer_v7 writes path and sha), ViT shas before/after."""
 import glob, hashlib, json, os, subprocess, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); import m3ae_frozen_cfg as C
 import torch
 b, s, cond, out = sys.argv[1], int(sys.argv[2]), sys.argv[3], sys.argv[4]; B = C.BENCH[b]; NAME = C.name(b, s); LOG = C.OUT + "/logs"
 cands = sorted(glob.glob("%s/%s-seed%d-from_*/*/checkpoints/epoch=*.ckpt" % (C.ck_root(b), B["task"], s)), key=lambda p: os.path.getmtime(os.path.dirname(os.path.dirname(p))))
 nota = "" if len(cands) == 1 else "; checkpoints best de outras versoes (relancamentos) nao usados: " + ", ".join(cands[:-1])
-assert cands, "nenhum checkpoint best"; ck = cands[-1]; last = os.path.join(os.path.dirname(ck), "last.ckpt")
+assert cands, "no best checkpoint"; ck = cands[-1]; last = os.path.join(os.path.dirname(ck), "last.ckpt")
 def vit_sha(path):
     sd = torch.load(path, map_location="cpu")["state_dict"]; sub = {k[len("vision_encoder."):]: v for k, v in sd.items() if k.startswith("vision_encoder.")}; h = hashlib.sha256()
     for k in sorted(sub): h.update(k.encode()); h.update(sub[k].detach().cpu().contiguous().numpy().tobytes())
@@ -17,9 +17,9 @@ rep = json.load(open("%s/%s_freeze.json" % (LOG, NAME))); antes = rep["vision_en
 depois, nk = vit_sha(ck); depois_last = vit_sha(last)[0] if os.path.exists(last) else None
 ver = {"vit_sha_antes": antes, "vit_sha_best": depois, "vit_sha_last": depois_last, "vit_tensores": nk, "identicos": antes == depois and depois_last in (None, depois)}
 json.dump(dict(ver, best=ck, last=last), open("%s/%s_vit_check.json" % (LOG, NAME), "w"), indent=1)
-if not ver["identicos"]: print("ViT MUDOU durante o treino:", ver); sys.exit(4)
+if not ver["identicos"]: print("ViT CHANGED during training:", ver); sys.exit(4)
 dr = "%s/data_roots/%s_%s/" % (C.OUT, b, cond); os.makedirs(dr, exist_ok=True)
-for sp in ("train", "val", "test"):   # teste -> arrow da condicao; treino/validacao -> os mesmos do treino (vocabulario)
+for sp in ("train", "val", "test"):   # test -> arrow of the condition; training/validation -> the same as training (vocabulary)
     l = dr + "%s_%s.arrow" % (B["key"], sp); t = B["test"][cond] if sp == "test" else "%s/%s_%s.arrow" % (B["train_root"], B["key"], sp)
     if not os.path.islink(l): os.symlink(t, l)
     assert os.path.realpath(l) == os.path.realpath(t), (l, t)

@@ -1,11 +1,11 @@
-"""Article runs, vqarad_image_split (17/10/2026, candidato): VQA-RAD redividido por imagem (v7_txt/article_runs/data/vqarad_rediv; seed 20260913; 220/31/63 imagens,
-2 467/343/705 perguntas), 18 treinos LoRA (seeds 0-2) com as receitas do A1 (YAMLs _rediv em v7_txt/article_runs/configs, copiados dos do A1),
-sufixo _REDIV, e as predicoes: TXT nas so-texto, C0 nas com imagem, C1 (imagem cinza) nas 6 de encoder congelado.
-Copia do escalonador do A1 (mesmas regras de lancamento, pico, morte, reserva e carimbo). Diferencas:
-- placas (candidato, 17/10): LoRA so no espaco livre das placas 0-2 (a 3 fica para o M3AE, com exclusividade); placa saturada por terceiros
-  (util >= 95 % nas duas leituras) recusada para TODO job;
-- tudo em v7_txt/article_runs/{models,results,logs}; estado logs/train_state_vqarad_rediv.json; nada em outputs/ ou results/ do p0.
-Uso (so via launch_schedulers.sh, alvo rediv): python train_scheduler_vqarad_rediv.py [--only NAME,...] [--slots N] [--dry-run]"""
+"""Article runs, vqarad_image_split (17/10/2026, the candidate): VQA-RAD re-split by image (v7_txt/article_runs/data/vqarad_rediv; seed 20260913; 220/31/63 images,
+2 467/343/705 questions), 18 LoRA trainings (seeds 0-2) with the A1 recipes (YAMLs _rediv in v7_txt/article_runs/configs, copied from those of A1),
+suffix _REDIV, and the predictions: TXT on the text-only, C0 on the with-image, C1 (grey image) on the 6 with frozen encoder.
+Copy of the A1 scheduler (same launch, peak, death, reserve and timestamp rules). Differences:
+- GPUs (the candidate, 17/10): LoRA only in the free space of GPUs 0-2 (GPU 3 is reserved for M3AE, exclusively); GPU saturated by third parties
+  (util >= 95 % in both readings) refused for ANY job;
+- everything in v7_txt/article_runs/{models,results,logs}; state logs/train_state_vqarad_rediv.json; nothing in outputs/ or results/ of p0.
+Usage (only via launch_schedulers.sh, rediv target): python train_scheduler_vqarad_rediv.py [--only NAME,...] [--slots N] [--dry-run]"""
 import os as _os
 _MEDVQA_ROOT = _os.environ.get("MEDVQA_ROOT", "/path/to/original/run/tree")   # original run tree root (this package: see README, "Paths")
 import argparse, hashlib, json, os, re, shutil, socket, subprocess, sys, time
@@ -13,7 +13,7 @@ from pathlib import Path
 ROOT = Path(f"{_MEDVQA_ROOT}/v7_txt"); W = Path(f"{_MEDVQA_ROOT}/v7_txt/worktree")
 PJ = ROOT / "article_runs"; LOGS, MODELS, RESULTS, CONFIGS = PJ / "logs", PJ / "models", PJ / "results", PJ / "configs"; PROG = RESULTS / ".progress"   # 17/10: article_runs
 PY = f"{_MEDVQA_ROOT}/miniconda3/envs/circle/bin/python"
-# 17/10 02:0x (candidato): todas as placas, compartilhando com outros usuarios; limite so de VRAM (teto 31,5 GB contando terceiros), sem recusa por utilizacao
+# 17/10 02:0x (the candidate): all GPUs, sharing with other users; VRAM-only limit (ceiling 31,5 GB counting third parties), no refusal by utilization
 GPUS = [0, 1, 2, 3]; IMG_GPUS = [0, 1, 2, 3]; CAP_MIB = int(31.5 * 1024); LOAD_CAP = 180.0; LOAD_DELTA = 1.3; DISK_MIN_GB = 40.0; UTIL_SAT = 95
 RESERVE_DEFAULT = {"qwen_txt": 5632, "smol_txt": 5632, "qwen_img": 10752, "smol_img": 8192, "predict": 5632}; ENTERED_STEP = 10
 RESERVE_SRC = {"qwen_txt": "max peak_mib qwen2vl_lora_txt_* (v7_txt/logs/train_state.json) = 5 534 (VQA-RAD 5 410)", "smol_txt": "max smolvlm2_lora_txt_* = 5 264 (VQA-RAD 5 242)",
@@ -29,9 +29,9 @@ TEST_ARROW = {"C0": f"{_MEDVQA_ROOT}/v7_txt/article_runs/data/vqarad_rediv/vqa_v
 TEST_ARROW_SHA = {"C0": "e5664cd040bf9800", "TXT": "e5664cd040bf9800", "C1": "9aeb366e8bdd979a"}   # manifest_vqarad_rediv.json (17/10)
 FAMUP = {"qwen2vl": "QWEN2VL", "smolvlm2": "SMOLVLM"}
 EXPECTED_TRAINABLE = {"txt": 4358144, "frozen": 4358144, "vt": 8290304, "smol_txt": 6291456, "smol_lora": 9277440, "smol_lora_ft": 6291456}   # setup_artigo2.json (15/10)
-# (arm, cfg, fam, family, rotulo PEFT da predicao, molde da linha, condicoes): so-texto primeiro, depois os com imagem
-# 15/10 ~04:20 (candidato): os 3 Qwen2-VL so-texto foram refeitos com eval.split validation e entram depois dos 3 SmolVLM2 so-texto;
-# os anteriores (eval.split test) estao em tmp/v7 com sufixo _evaltest (revision A1 do artigo 2)
+# (arm, cfg, fam, family, PEFT label of the prediction, row template, conditions): text-only first, then those with image
+# 15/10 ~04:20 (the candidate): the 3 Qwen2-VL text-only were redone with eval.split validation and come after the 3 SmolVLM2 text-only;
+# the previous ones (eval.split test) are in tmp/v7 with suffix _evaltest (revision A1 of paper 2)
 LINES = [("smol_txt", "smolvlm2_lora_txt_vqarad_rediv", "smol_txt", "smolvlm2", "LORA_TXT", "SMOLVLM_LORA_TXT_VQARAD_REDIV_seed%d", ["TXT"]),
          ("txt", "qwen2vl_lora_txt_vqarad_rediv", "qwen_txt", "qwen2vl", "LORA_TXT", "QWEN2VL_LORA_TXT_VQARAD_REDIV_seed%d", ["TXT"]),
          ("frozen", "qwen2vl_lora_vqarad_rediv", "qwen_img", "qwen2vl", "LORA", "QWEN2VL_LORA_VQARAD_REDIV_seed%d", ["C0", "C1"]),
@@ -42,7 +42,7 @@ ADAPTED_TOWER = {"vt", "smol_lora"}
 ARM_DESC = {"txt": "TXT (so-texto: sem imagem; LoRA so no LM)", "frozen": "torre congelada (LoRA q/k/v/o do LM, como a publicada qwen2vl_lora_vqarad)", "vt": "torre adaptada (LoRA no LM + visual.blocks, regex VT)",
             "smol_txt": "TXT do SmolVLM2 (so-texto; LoRA so no LM, regex text_model.layers)", "smol_lora": "publicada: SmolVLM2 LoRA, lista padrao q/k/v/o (pega LM e torre)", "smol_lora_ft": "torre: SmolVLM2 LoRA so no LM (regex text_model.layers, FT), torre congelada"}
 TXT_ARMS = {"txt", "smol_txt"}
-SFX = "vqarad_rediv"   # sufixo dos arquivos de estado/log deste escalonador
+SFX = "vqarad_rediv"   # suffix of this scheduler's state/log files
 for d in (LOGS, MODELS, RESULTS, PROG): d.mkdir(parents=True, exist_ok=True)
 def now(): return time.strftime("%Y-%m-%d %H:%M:%S")
 DRY = False   # salvaguarda 11/10: --dry-run => log/alert so imprimem, nada gravado
@@ -67,7 +67,7 @@ def proc_mem():
     return d
 def load1(): return os.getloadavg()[0]
 def libcuda_info(env):
-    """12/10: libcuda que o job carrega (1o diretorio do LD_LIBRARY_PATH, senao a do sistema) e versao do modulo do kernel."""
+    """12/10: libcuda that the job loads (1st directory of LD_LIBRARY_PATH, otherwise the system's) and kernel module version."""
     import re as _re
     d = (env.get("LD_LIBRARY_PATH") or "").split(":")[0]
     p = os.path.join(d, "libcuda.so.1") if d and os.path.exists(os.path.join(d, "libcuda.so.1")) else "/usr/lib/x86_64-linux-gnu/libcuda.so.1"
@@ -76,7 +76,7 @@ def libcuda_info(env):
     except Exception: k = None
     return {"libcuda": r, "libcuda_versao": m.group(1) if m else None, "modulo_kernel": k, "ld_library_path": env.get("LD_LIBRARY_PATH")}
 def tree_pids(pid):
-    """12/10: pid e todos os descendentes (o M3AE roda como filho do wrapper; o pico por processo era medido so no wrapper)."""
+    """12/10: pid and all descendants (M3AE runs as a child of the wrapper; the per-process peak was measured only on the wrapper)."""
     kids = {}
     for d in os.listdir("/proc"):
         if d.isdigit():
@@ -172,11 +172,11 @@ class Sched:
         self.save()
     def save(self): self.sp.write_text(json.dumps(self.st, indent=1, default=str))
     def merge_new_jobs(self):
-        """11/10: jobs de jobs_def() ainda ausentes do estado entram como queued (reinicio com fila ampliada); nada existente e tocado."""
+        """11/10: jobs from jobs_def() still absent from the state enter as queued (restart with expanded queue); nothing existing is touched."""
         known = {j["name"] for j in self.st["jobs"]}; new = [j for j in jobs_def() if j["name"] not in known]
         if new: self.st["jobs"].extend(new); log("jobs_added", n=len(new), names=[j["name"] for j in new])
     def m3ae_waiting(self):
-        """11/10: ha treino exclusivo do M3AE (infer_state do M3AE/MIMIC) ainda na fila?"""
+        """11/10: is there an exclusive M3AE training (infer_state of M3AE/MIMIC) still in the queue?"""
         try:
             if not self.m3ae_state or not Path(self.m3ae_state).exists(): return False
             return any(j.get("status") == "queued" and j.get("exclusive") for j in json.loads(Path(self.m3ae_state).read_text())["jobs"])
@@ -203,8 +203,8 @@ class Sched:
         ours = self.ours_on(gpu)
         if len(ours) >= self.slots: return False, "slots"
         if any(not self.entered(o) for o in ours): return False, "stagger: %s still initialising" % ",".join(o["name"] for o in ours if not self.entered(o))
-        # 12/10 ~01:00 (candidato): treino pode dividir placa com terceiros sempre que couber na VRAM; bloqueio por saturacao de terceiros removido (limites de VRAM e regras de picos mantidos). Regra antiga (09/10 20:40) no backup.
-        img_train = any(o.get("kind") == "train" and not o.get("peer") and not is_txt(o) for o in ours); cap = 30720 if (j["kind"] == "predict" and img_train) else CAP_MIB   # revision 10/10 22:10: margem de 1,5 GB para inferencia em placa com treino com imagem
+        # 12/10 ~01:00 (the candidate): training can share a GPU with third parties whenever it fits in VRAM; blocking by third-party saturation removed (VRAM limits and peak rules kept). Old rule (09/10 20:40) in the backup.
+        img_train = any(o.get("kind") == "train" and not o.get("peer") and not is_txt(o) for o in ours); cap = 30720 if (j["kind"] == "predict" and img_train) else CAP_MIB   # revision 10/10 22:10: margin of 1,5 GB for inference on a GPU with image training
         if q[gpu]["used"] + self.reserve[j["fam"]] > cap: return False, "vram %d+%d>%d" % (q[gpu]["used"], self.reserve[j["fam"]], cap)
         if j["kind"] == "predict" and img_train:   # revision 10/10 20:45 (a)
             pm = proc_mem(); mine = [o.get("pid") for o in ours if o.get("pid")]
@@ -213,7 +213,7 @@ class Sched:
         if load1() + LOAD_DELTA > LOAD_CAP: return False, "load %.1f" % load1()
         free = disk_free_gb()
         if free < DISK_MIN_GB:
-            if not self.disk_alerted: alert("disk", "menos de %d G livres em DATA_ROOT (%.1f G): nenhuma linha nova sera lancada; nada foi apagado. %s" % (DISK_MIN_GB, free, df_h())); self.disk_alerted = True
+            if not self.disk_alerted: alert("disk", "less than %d G free in DATA_ROOT (%.1f G): no new row will be launched; nothing was deleted. %s" % (DISK_MIN_GB, free, df_h())); self.disk_alerted = True
             return False, "disk %.1f G" % free
         return True, "ok"
     def launch(self, j, gpu):
@@ -231,17 +231,17 @@ class Sched:
             reserve_mib=self.reserve[j["fam"]], ours_on_card=[o["name"] for o in self.ours_on(gpu) if o is not j], load1=round(load1(), 1), cmd=" ".join(cmd_of(j))); self.save(); return True
     def pick_gpu(self, j, q):
         cands = [g for g in (GPUS if is_txt(j) else IMG_GPUS) if len(self.ours_on(g)) < self.slots]
-        # preferencia: placa nao saturada (util < 95 %), menos processos nossos, menos memoria usada
+        # preference: non-saturated GPU (util < 95 %), fewer of our processes, less memory used
         return sorted(cands, key=lambda g: (g not in IMG_GPUS, q[g]["util"] >= UTIL_SAT, len(self.ours_on(g)), q[g]["used"]))   # a 3 primeiro
     def try_launches(self):
         q = gpu_query()
-        for j in sorted(self.jobs(status="queued"), key=lambda x: (not (x["kind"] == "train" and (x.get("retries", 0) > 0 or x.get("oom_step0", 0) > 0)), x["kind"] != "predict", x["order"])):   # revision 10/10 20:45 (c): treino morto relanca antes de qualquer predicao
+        for j in sorted(self.jobs(status="queued"), key=lambda x: (not (x["kind"] == "train" and (x.get("retries", 0) > 0 or x.get("oom_step0", 0) > 0)), x["kind"] != "predict", x["order"])):   # revision 10/10 20:45 (c): dead training relaunches before any prediction
             if not self.active(j): continue
             for g in self.pick_gpu(j, q):
                 ok, why = self.can_launch(j, g, q)
-                if ok and self.launch(j, g): return 1   # um lancamento por ciclo: o nvidia-smi precisa ve-lo antes do proximo
+                if ok and self.launch(j, g): return 1   # one launch per cycle: nvidia-smi needs to see it before the next one
             if int(time.time()) % 600 < POLL: log("waiting", job=j["name"], why=why if self.pick_gpu(j, q) else "no card with a free slot")
-            break   # ordem estrita: o proximo da fila so depois deste
+            break   # strict order: the next in the queue only after this one
         return 0
     def finish(self, j):
         j["end"] = now(); j["duration_s"] = round(time.time() - j.get("start_ts", time.time()), 1)
@@ -253,7 +253,7 @@ class Sched:
         else:
             step, loss = last_step_loss(j["log"]); txt = open(j["log"], "rb").read()[-200000:].decode("utf-8", "ignore")
             oom0 = step == 0 and any(k in txt.lower() for k in ("out of memory", "busy or unavailable", "cudaerrordevicesunavailable", "cudaerrormemoryallocation", "acceleratorerror"))
-            if "out of memory" in txt.lower():   # 12/10: atribuicao da causa (regra do treino morto revised)
+            if "out of memory" in txt.lower():   # 12/10: cause attribution (dead training rule revised)
                 mine_peaks = sum((o.get("peak_mib", 0) or 0) for o in self.ours_on(j.get("gpu")) if o.get("name") not in (j["name"], "peer:" + j["name"])) + max(j.get("peak_mib", 0) or 0, self.reserve[j["fam"]])
                 j.update(death_cause="mine" if mine_peaks > 30720 else "terceiros", death_gpu=j.get("gpu"), death_mine_peaks_mib=mine_peaks, death_t=now())
             else: j.update(death_cause="erro", death_gpu=j.get("gpu"), death_t=now())
@@ -263,7 +263,7 @@ class Sched:
                 died = j["log"] + ".died%d" % (j["retries"] + j["oom_step0"]); shutil.copy2(j["log"], died); open(j["log"], "w").close()
                 j.update(status="queued", pid=None, note="caiu no passo %s (log em %s); reinicio do zero" % (step, died)); log("died_relaunch", job=j["name"], step=step, last_loss=loss, log_kept=died, oom_step0=oom0, oom_step0_count=j["oom_step0"], retries=j["retries"])
             else:
-                j["status"] = "failed"; alert("died_%s" % j["name"], "linha caiu pela 2a vez no passo %s (log %s); nao sera relancada." % (step, j["log"]))
+                j["status"] = "failed"; alert("died_%s" % j["name"], "row failed for the 2nd time at step %s (log %s); it will not be relaunched." % (step, j["log"]))
         self.save()
     def finish_predict(self, j):
         out = Path(j["output"])
@@ -302,7 +302,7 @@ class Sched:
         ad = MODELS / j["train"] / "adapter_model.safetensors"; out = Path(j["output"]); d = json.loads(out.read_text())
         d["provenance"] = {**self.provenance(j, ad), "condition": j["cond"], "input_arrow": TEST_ARROW[j["cond"]], "input_arrow_sha256": sha_file(TEST_ARROW[j["cond"]]), "input_arrow_sha256_expected_prefix": TEST_ARROW_SHA[j["cond"]],
                            "inference": "harness.extract_predictions_circle" + (" --no-image" if is_txt(j) else "") + " (mesma funcao e rescoring das _C0.json publicadas); E7 nas fechadas aplicada depois por rescore_e7.py", "train_log_json": str(LOGS / (j["train"] + ".json"))}
-        if not d["provenance"]["input_arrow_sha256"].startswith(TEST_ARROW_SHA[j["cond"]]): alert("arrow_%s" % j["name"], "sha do arrow de teste inesperado: %s" % d["provenance"]["input_arrow_sha256"])
+        if not d["provenance"]["input_arrow_sha256"].startswith(TEST_ARROW_SHA[j["cond"]]): alert("arrow_%s" % j["name"], "unexpected test arrow sha: %s" % d["provenance"]["input_arrow_sha256"])
         out.write_text(json.dumps(d, indent=1, default=str))
     def sample(self):
         pm = proc_mem()
@@ -327,7 +327,7 @@ class Sched:
             lines.append("- %-8s %-42s gpu %s pid %s step %s loss %s peak %s MiB %s" % (j["status"], j["name"], j.get("gpu"), j.get("pid"), step, loss, j["peak_mib"], ("%.2f h" % el) if el else (("%.2f h" % (j["duration_s"] / 3600)) if j.get("duration_s") else "")))
         (LOGS / ("status_%s.md" % SFX)).write_text("\n".join(lines) + "\n")
     def dry_run(self):
-        """Salvaguarda (11/10): constantes, jobs por placa e decisao can_launch por placa de cada job ativo da fila (ordem real da fila); nada gravado, nada lancado."""
+        """Safeguard (11/10): constants, jobs per GPU and can_launch decision per GPU for each active job in the queue (actual queue order); nothing written, nothing launched."""
         try: gpu_query(); nv_ok = True
         except Exception as e: nv_ok = False; print("dry_run: nvidia-smi indisponivel (%r): fila listada sem decisao de placa" % (e,), flush=True)
         if not nv_ok:
@@ -339,10 +339,10 @@ class Sched:
             print("fim do ciclo a seco (sem nvidia-smi): nada lancado, nada gravado", flush=True); return
         print(json.dumps({"dry_run": now(), "pid": os.getpid(), "only": self.only, "slots": self.slots, "peer_state": self.peer_state, "consts": {"CAP_MIB": CAP_MIB, "CAP_PREDICT_IMG_TRAIN_MIB": 30720, "LOAD_CAP": LOAD_CAP, "LOAD_DELTA": LOAD_DELTA, "DISK_MIN_GB": DISK_MIN_GB, "UTIL_SAT": UTIL_SAT, "ENTERED_STEP": ENTERED_STEP, "POLL": POLL}, "reserve": self.reserve, "m3ae_state": self.m3ae_state, "m3ae_waiting": self.m3ae_waiting(), "expected_trainable": EXPECTED_TRAINABLE, "reserve_src": RESERVE_SRC, "img_gpus": IMG_GPUS, "use_driver_workaround": USE_WA, "nvsmi": NVSMI, "load1": round(load1(), 1), "df": df_h(), "gpu": gpu_query(), "versions": self.vers}, default=str), flush=True)
         q = gpu_query()
-        for g in GPUS: print("placa", g, "usado", q[g]["used"], "util", q[g]["util"], "na placa:", [(o["name"], o.get("pid"), "pico", o.get("peak_mib"), "entrou" if self.entered(o) else "iniciando") for o in self.ours_on(g)], flush=True)
+        for g in GPUS: print("placa", g, "used", q[g]["used"], "util", q[g]["util"], "na placa:", [(o["name"], o.get("pid"), "pico", o.get("peak_mib"), "entrou" if self.entered(o) else "iniciando") for o in self.ours_on(g)], flush=True)
         print("estados:", {s: len(self.jobs(status=s)) for s in ("done", "failed", "running", "queued")}, flush=True)
         for j in sorted(self.jobs(status="queued"), key=lambda x: (not (x["kind"] == "train" and (x.get("retries", 0) > 0 or x.get("oom_step0", 0) > 0)), x["kind"] != "predict", x["order"])):
-            print("fila:", j["name"], j["kind"], "reserva", self.reserve[j["fam"]], "" if self.active(j) else "| inativo (--only)", ("| treino %s ainda nao done" % j["train"]) if (j["kind"] == "predict" and not any(x["name"] == j["train"] and x["status"] == "done" for x in self.st["jobs"])) else "", {g: self.can_launch(j, g, q) for g in GPUS}, flush=True)
+            print("fila:", j["name"], j["kind"], "reserva", self.reserve[j["fam"]], "" if self.active(j) else "| inativo (--only)", ("| training %s not done yet" % j["train"]) if (j["kind"] == "predict" and not any(x["name"] == j["train"] and x["status"] == "done" for x in self.st["jobs"])) else "", {g: self.can_launch(j, g, q) for g in GPUS}, flush=True)
         print("fim do ciclo a seco: nada lancado, nada gravado", flush=True)
     def run(self):
         while True:
@@ -357,5 +357,5 @@ class Sched:
             if self.halt and not self.jobs(status="running"): self.status_md(); log("halted_idle", halt=self.halt); return
             time.sleep(POLL)
 if __name__ == "__main__":
-    ap = argparse.ArgumentParser(); ap.add_argument("--only", default=None); ap.add_argument("--slots", type=int, default=3); ap.add_argument("--peer-state", nargs="*", default=None); ap.add_argument("--dry-run", action="store_true", help="salvaguarda: imprime constantes e a decisao por placa; nao grava, nao lanca"); ap.add_argument("--m3ae-state", default=None, help="infer_state do M3AE/MIMIC: enquanto houver treino exclusivo na fila, a ultima placa vazia fica reservada a ele"); a = ap.parse_args()
+    ap = argparse.ArgumentParser(); ap.add_argument("--only", default=None); ap.add_argument("--slots", type=int, default=3); ap.add_argument("--peer-state", nargs="*", default=None); ap.add_argument("--dry-run", action="store_true", help="safeguard: prints constants and the decision per GPU; does not write, does not launch"); ap.add_argument("--m3ae-state", default=None, help="infer_state of M3AE/MIMIC: while there is exclusive training in the queue, the last empty GPU stays reserved for it"); a = ap.parse_args()
     S = Sched(a.only.split(",") if a.only else None, a.slots, a.peer_state, dry_run=a.dry_run, m3ae_state=a.m3ae_state); S.dry_run() if a.dry_run else S.run()

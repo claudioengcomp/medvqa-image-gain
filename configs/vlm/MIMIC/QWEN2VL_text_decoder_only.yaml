@@ -1,4 +1,4 @@
-# v7_mimic (2026-10-10): copia de v7_txt/configs/qwen2vl_lora_txt_heal.yaml (braco so-texto; LoRA so no LM; max_length 1024), mudando so dataset: MIMIC, run_name/wandb_run_name e os caminhos de saida.
+# v7_mimic (2026-10-10): copy of v7_txt/configs/qwen2vl_lora_txt_heal.yaml (text-only arm; LoRA only on the LM; max_length 1024), changing only dataset: MIMIC, run_name/wandb_run_name and the output paths.
 run_name: qwen2vl_lora_txt_mimic
 model: QWEN2VL
 dataset: MIMIC

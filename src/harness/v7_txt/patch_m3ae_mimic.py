@@ -1,7 +1,7 @@
-"""v7_mimic A (2026-10-11): suporte ao MIMIC no worktree do M3AE (v7_txt/worktree_m3ae @14da377 + patch), pelo mesmo mecanismo de
-harness/patch_m3ae_heal.py: vqa_mimic_dataset.py e vqa_mimic_datamodule.py = copias dos do HEAL com heal->mimic / HEAL->MIMIC;
-imports nos __init__; entrada "vqa_mimic" em _datamodules; named config task_finetune_vqa_mimic = copia de task_finetune_vqa_heal com
-vqa_label_size 82 (answer_vocab.json do v7_mimic, no=0/yes=1). Idempotente; nao toca em nada do HEAL/Kvasir/SLAKE."""
+"""v7_mimic A (2026-10-11): MIMIC support in the M3AE worktree (v7_txt/worktree_m3ae @14da377 + patch), via the same mechanism as
+harness/patch_m3ae_heal.py: vqa_mimic_dataset.py and vqa_mimic_datamodule.py = copies of the HEAL ones with heal->mimic / HEAL->MIMIC;
+imports in __init__; entry "vqa_mimic" in _datamodules; named config task_finetune_vqa_mimic = copy of task_finetune_vqa_heal with
+vqa_label_size 82 (answer_vocab.json of v7_mimic, no=0/yes=1). Idempotent; does not touch anything in HEAL/Kvasir/SLAKE."""
 import os as _os
 _MEDVQA_ROOT = _os.environ.get("MEDVQA_ROOT", "/path/to/original/run/tree")   # original run tree root (this package: see README, "Paths")
 import json, pathlib, re
@@ -19,11 +19,11 @@ if '"vqa_mimic": VQAMIMICDataModule,' not in t: t = t.replace('    "vqa_heal": V
 p.write_text(t); print("datamodules __init__ ok")
 p = WM / "m3ae/config.py"; t = p.read_text()
 if "def task_finetune_vqa_mimic" not in t:
-    m = re.search(r"@ex\.named_config\ndef task_finetune_vqa_heal\(\):\n(?:    .*\n|\n)*?    vqa_label_size = 288\n", t); assert m, "bloco heal nao achado"
+    m = re.search(r"@ex\.named_config\ndef task_finetune_vqa_heal\(\):\n(?:    .*\n|\n)*?    vqa_label_size = 288\n", t); assert m, "heal block not found"
     blk = m.group(0).replace("heal", "mimic").replace("vqa_label_size = 288", "vqa_label_size = 82"); assert blk.count("mimic") >= 2
     t = t[:m.end()] + "\n\n# v7_mimic (2026-10-11): copia de task_finetune_vqa_heal com vqa_label_size 82 (answer_vocab.json do v7_mimic)\n" + blk + t[m.end():]; p.write_text(t); print("named config ok")
 else: print("named config ja existia")
-# data_root com links para os arrows (v7_mimic/data e so leitura; nada e copiado)
+# data_root with links to the arrows (v7_mimic/data is read-only; nothing is copied)
 DR = pathlib.Path(f"{_MEDVQA_ROOT}/v7_mimic/m3ae_arrows/data_root"); DR.mkdir(parents=True, exist_ok=True)
 for s in ("train", "val", "test"):
     l = DR / ("vqa_mimic_%s.arrow" % s); tgt = pathlib.Path(f"{_MEDVQA_ROOT}/v7_mimic/data/vqa_mimic_%s.arrow" % s); assert tgt.exists()

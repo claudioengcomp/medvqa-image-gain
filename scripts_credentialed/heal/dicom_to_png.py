@@ -1,8 +1,8 @@
-"""DICOM do VinDr-CXR -> PNG 8 bits, escala de cinza, lado maior = --long-side (padrao 1024),
-sem perda, com manifesto (id, tamanho nativo, tamanho do PNG, escala, sha256 do PNG, janela usada).
-Janela: VOI LUT / WindowCenter+Width do DICOM quando existem (pydicom.pixels.apply_voi_lut), senao
-min-max; MONOCHROME1 e invertido para MONOCHROME2. Processa em paralelo (CPU), pula PNGs ja
-existentes com sha256 no manifesto. Nenhum DICOM e copiado; so o PNG derivado sai do Mac.
+"""DICOM of VinDr-CXR -> 8-bit PNG, grey scale, longer side = --long-side (default 1024),
+lossless, with manifest (id, native size, PNG size, scale, PNG sha256, window used).
+Window: VOI LUT / WindowCenter+Width of the DICOM when they exist (pydicom.pixels.apply_voi_lut), otherwise
+min-max; MONOCHROME1 is inverted to MONOCHROME2. Processes in parallel (CPU), skips PNGs already
+existing with sha256 in the manifest. No DICOM is copied; only the derived PNG leaves the Mac.
 
     python -m scripts_credentialed.heal.dicom_to_png --dicom-dir <base>/train --ids data/isbi_occlusion/heal/ids_heal_train.txt \
         --out-dir <png_dir> --manifest data/isbi_occlusion/heal/png_manifest_train.json --long-side 1024 --workers 8
@@ -63,7 +63,7 @@ def convert_one(args: tuple[str, str, int]) -> dict:
 def run(dicom_dir: str, ids: list[str], out_dir: str, manifest: str, long_side: int, workers: int) -> dict:
     man = json.loads(Path(manifest).read_text()) if Path(manifest).is_file() else {"long_side": long_side, "items": {}}
     if man.get("long_side") != long_side:
-        raise SystemExit(f"manifesto com long_side={man.get('long_side')} != {long_side}")
+        raise SystemExit(f"manifest with long_side={man.get('long_side')} != {long_side}")
     todo = []
     for i in ids:
         dst = os.path.join(out_dir, f"{i}.png")
@@ -88,7 +88,7 @@ def run(dicom_dir: str, ids: list[str], out_dir: str, manifest: str, long_side: 
 
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--dicom-dir", required=True); ap.add_argument("--ids", required=True, help="lista com train/<id>.dicom ou <id>")
+    ap.add_argument("--dicom-dir", required=True); ap.add_argument("--ids", required=True, help="list with train/<id>.dicom or <id>")
     ap.add_argument("--out-dir", required=True); ap.add_argument("--manifest", required=True)
     ap.add_argument("--long-side", type=int, default=1024); ap.add_argument("--workers", type=int, default=8)
     a = ap.parse_args(argv)

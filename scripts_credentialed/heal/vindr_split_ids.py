@@ -1,8 +1,8 @@
-"""Passo 2 do download seletivo: split do VinDr-CXR (train/ ou test/) de cada id do
-HEAL, cruzando heal_image_ids.txt com image_labels_train.csv e
-image_labels_test.csv do PhysioNet. Gera ids_train.txt e ids_test.txt com
-caminhos relativos train/<id>.dicom e test/<id>.dicom, e lista os ids ausentes
-dos dois CSVs (esperado: zero; se houver, parar).
+"""Step 2 of the selective download: split of VinDr-CXR (train/ or test/) for each id of
+HEAL, cross-referencing heal_image_ids.txt with image_labels_train.csv and
+image_labels_test.csv from PhysioNet. Generates ids_train.txt and ids_test.txt with
+relative paths train/<id>.dicom and test/<id>.dicom, and lists the ids missing
+from both CSVs (expected: zero; if any, stop).
 
     python -m scripts_credentialed.heal.vindr_split_ids --ids data/isbi_occlusion/heal/heal_image_ids.txt \
         --labels-train <base>/annotations/image_labels_train.csv --labels-test <base>/annotations/image_labels_test.csv --out <base>

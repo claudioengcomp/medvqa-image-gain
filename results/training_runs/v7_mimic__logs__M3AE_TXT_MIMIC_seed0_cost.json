@@ -9,7 +9,7 @@
  "data_root": "data_root",
  "train_wall_time_s": 8575,
  "train_peak_memory_gb": 26.261,
- "note": "pico = nvidia-smi da placa do treino (-i 3; inclui terceiros nessa placa); 12/10: corrigido o poll das 4 placas",
+ "note": "peak = nvidia-smi of the training GPU (-i 3; includes third parties on that GPU); 12/10: fixed the poll of the 4 GPUs",
  "placa": "3",
  "ld_library_path": "nvidia-580.173.02-compute"
 }

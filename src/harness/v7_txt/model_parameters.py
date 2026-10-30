@@ -1,8 +1,8 @@
-"""20/10/2026 (model_parameters; so CPU): numero de parametros por modelo e abordagem, contado no codigo. VLM: med_vlm.models.loader.load_model_bundle (mesma classe e
-precisao do treino: bfloat16) + med_vlm.models.peft_adapters.apply_peft_adapter com o peft_config do YAML de cada abordagem + measure_model_params (a mesma
-funcao que run_experiment.py chama logo apos o adaptador). Modelo recarregado do zero para cada abordagem. PubMedBERT: AutoModelForSequenceClassification
-(revisao fixa de bert_question_only.py) com num_labels = n_rotulos do treino de cada base (resultado BERT2, semente 0); todos os parametros treinaveis.
-Peft_config conferido identico entre as bases (todas as YAML de treino das linhas do artigo). Saida: analysis/model_parameters.json."""
+"""20/10/2026 (model_parameters; CPU only): number of parameters per model and approach, counted in the code. VLM: med_vlm.models.loader.load_model_bundle (same class and
+training precision: bfloat16) + med_vlm.models.peft_adapters.apply_peft_adapter with the peft_config from each approach's YAML + measure_model_params (the same
+function that run_experiment.py calls right after the adapter). Model reloaded from scratch for each approach. PubMedBERT: AutoModelForSequenceClassification
+(fixed revision of bert_question_only.py) with num_labels = n_rotulos from each benchmark's training (BERT2 result, seed 0); all parameters trainable.
+Peft_config checked identical across the benchmarks (all training YAMLs of the paper's rows). Output: analysis/model_parameters.json."""
 import os as _os
 _MEDVQA_ROOT = _os.environ.get("MEDVQA_ROOT", "/path/to/original/run/tree")   # original run tree root (this package: see README, "Paths")
 import collections, glob, hashlib, json, os, re, sys, time
@@ -18,7 +18,7 @@ sha = lambda p: hashlib.sha256(open(p, "rb").read()).hexdigest()
 ABORD = {"QWEN2VL": [("text-decoder-only", f"{V7C}/qwen2vl_lora_txt_slake.yaml"), ("frozen visual encoder", f"{P0C}/qwen2vl_lora_slake.yaml"), ("fine-tuned visual encoder", f"{P0C}/qwen2vl_lora_vt_slake.yaml")],
          "SMOLVLM": [("text-decoder-only", f"{V7C}/smolvlm2_lora_txt_slake.yaml"), ("frozen visual encoder", f"{P0C}/smolvlm2_lora_ft_slake.yaml"), ("fine-tuned visual encoder", f"{P0C}/smolvlm2_lora_slake.yaml")]}
 out = {"t": time.strftime("%Y-%m-%d %H:%M:%S"), "versoes": {"torch": torch.__version__, "transformers": transformers.__version__, "peft": peft.__version__}, "vlm": {}, "pubmedbert": {}, "peft_config_entre_bases": {}}
-# conferencia: peft_config de cada abordagem identico em todas as YAML de treino com o mesmo prefixo (todas as bases)
+# check: peft_config of each approach identical across all training YAMLs with the same prefix (all benchmarks)
 for fam, L in ABORD.items():
     for ab, ref in L:
         stem = os.path.basename(ref).rsplit("_slake.yaml", 1)[0]; pref = yaml.safe_load(open(ref))["peft_config"]; difs = []; vistos = []

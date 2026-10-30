@@ -1,9 +1,9 @@
-"""19/10/2026 (candidato, image_swap_v2): troca de imagem refeita sem as excecoes do C2 anterior. Semente 42.
-HEAL: derangement no nivel da RADIOGRAFIA (image_id = <radiografia>#<regiao>): radiografias unicas em ordem alfabetica, perm = make_c2_shuffled_pairs.derangement(n_radiografias, 42);
-  toda linha (radiografia, regiao) da radiografia i recebe a imagem (e o image_id da 1a linha) da radiografia perm[i]. Nenhuma pergunta recebe a propria radiografia.
-MIMIC: derangement sobre as linhas (imagens) com exclusao de mesmo paciente: perm = derangement(n, 42); para cada i com subject(perm[i]) == subject(i), troca perm[i] com perm[j],
-  j percorrido na ordem de numpy RandomState(42).permutation(n), aceitando a primeira troca que deixa i e j sem ponto fixo e sem mesmo paciente.
-Saida: v7_txt/article_runs/data/troca2/{heal,mimic}/ (arrow, mapa de troca, manifesto). Imagens credenciadas ficam na gpu1."""
+"""19/10/2026 (the candidate, image_swap_v2): image swap redone without the exceptions of the previous C2. Seed 42.
+HEAL: derangement at the RADIOGRAPH level (image_id = <radiograph>#<region>): unique radiographs in alphabetical order, perm = make_c2_shuffled_pairs.derangement(n_radiografias, 42);
+  every row (radiograph, region) of radiograph i receives the image (and the image_id of the 1st row) of radiograph perm[i]. No question receives its own radiograph.
+MIMIC: derangement over the rows (images) with exclusion of the same patient: perm = derangement(n, 42); for each i with subject(perm[i]) == subject(i), swap perm[i] with perm[j],
+  j traversed in the order of numpy RandomState(42).permutation(n), accepting the first swap that leaves i and j without a fixed point and without the same patient.
+Output: v7_txt/article_runs/data/troca2/{heal,mimic}/ (arrow, swap map, manifest). Credentialed images stay on gpu1."""
 import os as _os
 _MEDVQA_ROOT = _os.environ.get("MEDVQA_ROOT", "/path/to/original/run/tree")   # original run tree root (this package: see README, "Paths")
 import hashlib, json, os, sys, time
@@ -45,7 +45,7 @@ for i in range(n):
     if ok(i, perm[i]): continue
     for j in order:
         if j != i and ok(i, perm[j]) and ok(j, perm[i]): perm[i], perm[j] = perm[j], perm[i]; trocas += 1; break
-    else: raise SystemExit(f"sem troca valida para a linha {i}")
+    else: raise SystemExit(f"no valid swap for the row {i}")
 assert all(ok(i, perm[i]) for i in range(n)) and sorted(perm) == list(range(n))
 img, iid = df["image"].tolist(), df["image_id"].tolist(); new = df.copy(); new["image"] = [img[p] for p in perm]; new["image_id"] = [iid[p] for p in perm]
 finish("mimic", src, new, [{"linha": i, "image_id_receptora": iid[i], "image_id_doadora": iid[perm[i]], "question_ids": [int(q) for q in df["question_id"][i]]} for i in range(n)],

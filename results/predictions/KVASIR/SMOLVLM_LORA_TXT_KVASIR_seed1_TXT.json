@@ -64683,7 +64683,7 @@
  ],
  "provenance": {
   "line": "SMOLVLM_LORA_TXT_KVASIR_seed1",
-  "arm": "TXT (braco so-texto: mesma receita de fine-tune, sem imagem; LoRA so no modelo de linguagem; torre e conector congelados)",
+  "arm": "TXT (text-only arm: same fine-tuning recipe, no image; LoRA only on the language model; tower and connector frozen)",
   "adapter_dir": "smolvlm2_lora_txt_kvasir_seed1",
   "adapter_sha256": "8d220b3c9e23b4bbc2696d1f850f445188fb037bb01f9da6623265c39ab792f2",
   "adapter_bytes": 25193648,
@@ -64761,7 +64761,7 @@
   "input_arrow": "vqa_kvasir_test_clean.arrow",
   "input_arrow_sha256": "ff5c25692c1b46326c221cd197622037e5afa6099b799a85bd7db26e83715891",
   "input_arrow_sha256_expected_prefix": "ff5c25692c1b4632",
-  "inference": "harness.extract_predictions_circle --no-image (mesma funcao e mesmo rescoring das _C0.json publicadas; so perguntas/qids/respostas lidos do arrow)",
+  "inference": "harness.extract_predictions_circle --no-image (same function and same rescoring as the published _C0.json files; only questions/qids/answers read from the arrow)",
   "train_log_json": "smolvlm2_lora_txt_kvasir_seed1.json"
  }
 }

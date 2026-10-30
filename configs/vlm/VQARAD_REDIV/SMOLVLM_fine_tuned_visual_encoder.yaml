@@ -1,4 +1,4 @@
-# article_runs vqarad_image_split (2026-10-17): copia de ${MEDVQA_ROOT}/v7_txt/configs/smolvlm2_lora_vqarad_radorig.yaml (sha256 2c8f444fe0cc4365); mudam so nome, data.arrows (divisao por imagem, seed 20260913) e caminhos de saida.
+# article_runs vqarad_image_split (2026-10-17): copy of ${MEDVQA_ROOT}/v7_txt/configs/smolvlm2_lora_vqarad_radorig.yaml (sha256 2c8f444fe0cc4365); only the name, data.arrows (split by image, seed 20260913) and output paths change.
 run_name: smolvlm2_lora_vqarad_rediv
 model: SMOLVLM
 dataset: VQA_RAD

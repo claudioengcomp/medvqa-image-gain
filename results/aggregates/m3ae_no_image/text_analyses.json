@@ -344,8 +344,8 @@
    "fonte_da_predicao": {
     "texto_exato": 10779
    },
-   "treino": "train_so_treino de dados_texto (HEAL: so treino)",
-   "normalizacao_da_chave": "normalize_text da pergunta"
+   "treino": "train_so_treino of dados_texto (HEAL: train only)",
+   "normalizacao_da_chave": "normalize_text of the question"
   },
   "SLAKE": {
    "n": 416,
@@ -354,8 +354,8 @@
     "texto_exato": 388,
     "global": 28
    },
-   "treino": "train_so_treino de dados_texto (HEAL: so treino)",
-   "normalizacao_da_chave": "normalize_text da pergunta"
+   "treino": "train_so_treino of dados_texto (HEAL: train only)",
+   "normalizacao_da_chave": "normalize_text of the question"
   },
   "HEAL": {
    "n": 1446,
@@ -363,8 +363,8 @@
    "fonte_da_predicao": {
     "texto_exato": 1446
    },
-   "treino": "train_so_treino de dados_texto (HEAL: so treino)",
-   "normalizacao_da_chave": "normalize_text da pergunta"
+   "treino": "train_so_treino of dados_texto (HEAL: train only)",
+   "normalizacao_da_chave": "normalize_text of the question"
   },
   "MIMIC": {
    "n": 1499,
@@ -373,8 +373,8 @@
     "texto_exato": 1449,
     "global": 50
    },
-   "treino": "train_so_treino de dados_texto (HEAL: so treino)",
-   "normalizacao_da_chave": "normalize_text da pergunta"
+   "treino": "train_so_treino of dados_texto (HEAL: train only)",
+   "normalizacao_da_chave": "normalize_text of the question"
   },
   "VQARAD_REDIV": {
    "n": 418,
@@ -383,8 +383,8 @@
     "global": 324,
     "texto_exato": 94
    },
-   "treino": "train_so_treino de dados_texto (HEAL: so treino)",
-   "normalizacao_da_chave": "normalize_text da pergunta"
+   "treino": "train_so_treino of dados_texto (HEAL: train only)",
+   "normalizacao_da_chave": "normalize_text of the question"
   }
  },
  "13_4": {
@@ -1040,18 +1040,18 @@
    "decomposicao.py": [
     "harness/v7_txt/decomposicao.py",
     "bbc94ee5f73edbad2da391e7de403eca2ed4c80012879f70e7de937cc6706d38",
-    "boot_vec linha 24; replicas por linha linha 74; IC da media das sementes linhas ~93-97"
+    "boot_vec line 24; replicates per row line 74; CI of the mean of seeds lines ~93-97"
    ],
    "ic_contagem.py": [
     "harness/v7_txt/ic_contagem.py",
     "fbf5e1e66e73a778a5fdbd13b66a9f7ceb571d63a4a94d43a1104b4dba963309",
-    "exclui_zero linha 8 (IC por linha)"
+    "exclui_zero line 8 (CI per row)"
    ]
   },
-  "sorteio_de_sementes": "numpy RandomState(20260913).randint(0, 3, (2000, 3)): por replica, 3 sementes com reposicao; a mesma replica de imagens para as tres"
+  "sorteio_de_sementes": "numpy RandomState(20260913).randint(0, 3, (2000, 3)): per replicate, 3 seeds with replacement; the same image replicate for all three"
  },
  "13_5": {
-  "base": "VQA-RAD redividido, 418 fechadas",
+  "base": "VQA-RAD re-split, 418 closed-form",
   "recortes": {
    "question_type": {
     "PRES": {
@@ -1520,7 +1520,7 @@
     }
    }
   },
-  "prefixo": "duas primeiras palavras da pergunta normalizada; grupos com n >= 10"
+  "prefixo": "first two words of the normalized question; groups with n >= 10"
  },
  "13_6": [
   {

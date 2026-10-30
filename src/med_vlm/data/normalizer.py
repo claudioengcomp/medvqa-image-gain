@@ -40,8 +40,8 @@ def build_normalizer(
         if isinstance(answers, str):
             answers = [answers]
 
-        # drop_image (v7_txt, 2026-10-09): braco so-texto -- a imagem nao entra no
-        # modelo, entao nao e decodificada, pre-processada nem re-encodada no cache.
+        # drop_image (v7_txt, 2026-10-09): text-only arm -- the image does not enter the
+        # model, so it is not decoded, preprocessed, or re-encoded into the cache.
         image = None if drop_image else example[image_key]
         if isinstance(image, PILImage.Image):
             image = image.convert("RGB")

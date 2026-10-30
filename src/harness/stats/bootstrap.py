@@ -1,6 +1,6 @@
-"""Estatistica pareada por item para o braco occlusion (v7_occlusion, 2026-10-09): taxa de afirmativa induzida
-IPR_c = P(afirma | c) - P(afirma | C0), McNemar mid-p nos discordantes, bootstrap POR IMAGEM com replicas fixas
-(seed 20260913, 2000), Holm por linha. Sem interpretacao."""
+"""Paired per-item statistic for the occlusion arm (v7_occlusion, 2026-10-09): induced affirmative rate
+IPR_c = P(affirms | c) - P(affirms | C0), McNemar mid-p on the discordant pairs, bootstrap BY IMAGE with fixed replicates
+(seed 20260913, 2000), Holm by row. No interpretation."""
 from __future__ import annotations
 import numpy as np
 from scipy import stats
@@ -18,7 +18,7 @@ def holm(pvals: dict) -> dict:
     return out
 
 class ImageBootstrap:
-    """Replicas fixas: a mesma matriz de pesos por imagem para todos os bracos/linhas (seed, B, lista ordenada de imagens)."""
+    """Fixed replicates: the same weight matrix per image for all arms/rows (seed, B, ordered list of images)."""
     def __init__(self, image_ids: list, n_boot: int = 2000, seed: int = 20260913):
         self.ids = sorted(set(image_ids)); self.index = {i: k for k, i in enumerate(self.ids)}; n = len(self.ids)
         rng = np.random.RandomState(seed); draws = rng.randint(0, n, size=(n_boot, n))
@@ -26,7 +26,7 @@ class ImageBootstrap:
         for r in range(n_boot): self.W[r] = np.bincount(draws[r], minlength=n)
         self.n_boot = n_boot; self.seed = seed
     def ci_mean_diff(self, item_images: list, d: np.ndarray, alpha: float = 0.05) -> list:
-        """IC percentil da media por item de d (ex.: afirma_c - afirma_C0), reamostrando IMAGENS."""
+        """Percentile CI of the per-item mean of d (e.g.: afirma_c - afirma_C0), resampling IMAGES."""
         idx = np.array([self.index[i] for i in item_images]); n_img = len(self.ids)
         num = np.bincount(idx, weights=np.asarray(d, float), minlength=n_img); den = np.bincount(idx, minlength=n_img).astype(float)
         boot = (self.W @ num) / np.maximum(self.W @ den, 1e-9)

@@ -1,14 +1,14 @@
-"""v7_mimic/scripts/02_png_from_jpg.py -- 2026-10-10 -- lasid-gpu1 (so CPU)
+"""v7_mimic/scripts/02_png_from_jpg.py -- 2026-10-10 -- lasid-gpu1 (CPU only)
 
-PNG derivado do MIMIC-CXR-JPG com o MESMO pipeline do heal_png: reutiliza, sem editar,
-harness/isbi_occlusion/heal/dicom_to_png.py (commit 2b7e731 do repo occlusion_study) -- run() e convert_one()
-(lado maior --long-side=1024, LANCZOS, PNG optimize, manifesto com sha256/tamanhos/escala).
-Unica diferenca: a fonte e JPG 8 bits, nao DICOM. Por isso (a) o leitor dicom_to_gray8 e substituido em
-tempo de execucao (monkeypatch neste processo; workers herdam por fork) por um leitor PIL que devolve o
-cinza 8 bits tal como esta no JPG (sem VOI LUT, sem min-max -- os JPG ja sao 8 bits janelados pelos
-autores do MIMIC-CXR-JPG; min/max nativos ficam registrados no manifesto), e (b) run() espera
-<dicom_dir>/<id>.dicom, entao criamos uma arvore de SYMLINKS <stage>/<dicom_id>.dicom -> JPG original.
-Nada e copiado; o JPG original nao e tocado.
+PNG derived from MIMIC-CXR-JPG with the SAME pipeline as heal_png: reuses, without editing,
+harness/isbi_occlusion/heal/dicom_to_png.py (commit 2b7e731 of the occlusion_study repo) -- run() and convert_one()
+(longer side --long-side=1024, LANCZOS, PNG optimize, manifest with sha256/sizes/scale).
+Only difference: the source is 8-bit JPG, not DICOM. Therefore (a) the dicom_to_gray8 reader is replaced at
+runtime (monkeypatch in this process; workers inherit via fork) by a PIL reader that returns the
+8-bit grey as it is in the JPG (no VOI LUT, no min-max -- the JPGs are already 8-bit windowed by the
+MIMIC-CXR-JPG authors; native min/max are recorded in the manifest), and (b) run() expects
+<dicom_dir>/<id>.dicom, so we create a tree of SYMLINKS <stage>/<dicom_id>.dicom -> original JPG.
+Nothing is copied; the original JPG is not touched.
 
   python 02_png_from_jpg.py --items data/items_test.parquet --split test --jpg-root <raw mimic-cxr-jpg/2.1.0> \
       --stage tmp/v7_mimic/stage/test --out-dir <derived>/mimic_png/test --manifest <derived>/mimic_png/png_manifest_test.json --workers 8
@@ -23,7 +23,7 @@ import pandas as pd
 
 OCCLUSION_STUDY = f"{_MEDVQA_ROOT}/doutorado/medvqa-occlusion-study"
 sys.path.insert(0, OCCLUSION_STUDY)
-import scripts_credentialed.heal.dicom_to_png as dtp  # noqa: E402  (so leitura; nao editado)
+import scripts_credentialed.heal.dicom_to_png as dtp  # noqa: E402  (read only; not edited)
 
 
 def jpg_to_gray8(path: str):
@@ -39,7 +39,7 @@ def jpg_to_gray8(path: str):
     return g, info
 
 
-dtp.dicom_to_gray8 = jpg_to_gray8  # monkeypatch em memoria; o arquivo do repositorio nao muda
+dtp.dicom_to_gray8 = jpg_to_gray8  # monkeypatch in memory; the repository file does not change
 
 
 def main():

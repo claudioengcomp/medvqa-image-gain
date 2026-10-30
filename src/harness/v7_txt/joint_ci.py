@@ -1,6 +1,6 @@
-"""19/10/2026 (joint_ci): IC condicional (media das 3 sementes por replica) e IC conjunto (replica de imagens + 3 sementes sorteadas com reposicao, numpy RandomState(20260913))
-para G_enc, G_ft, G, A - A_swap, A_swap - A_text, A_text - PubMedBERT, A_text - TF-IDF e A_text - baseline por texto exato de pergunta, nas cinco bases do artigo (fechadas).
-HEAL: classificadores no protocolo so-treino (heal_classifiers_train_only); troca: HEAL e Medical-Diff-VQA refeitas (image_swap_v2). Bootstrap por imagem 2 000, seed 20260913. Saida: analysis/joint_ci.json."""
+"""19/10/2026 (joint_ci): conditional CI (mean of the 3 seeds per replica) and joint CI (image replica + 3 seeds drawn with replacement, numpy RandomState(20260913))
+for G_enc, G_ft, G, A - A_swap, A_swap - A_text, A_text - PubMedBERT, A_text - TF-IDF and A_text - baseline by exact question text, on the five benchmarks of the paper (closed-form).
+HEAL: classifiers under the train-only protocol (heal_classifiers_train_only); swap: HEAL and Medical-Diff-VQA redone (image_swap_v2). Bootstrap by image 2 000, seed 20260913. Output: analysis/joint_ci.json."""
 import os as _os
 _MEDVQA_ROOT = _os.environ.get("MEDVQA_ROOT", "/path/to/original/run/tree")   # original run tree root (this package: see README, "Paths")
 import collections, hashlib, json, os, sys, time
@@ -28,7 +28,7 @@ def baseline_string(b):
     return out, {"n_treino": len(tr), "fonte": dict(fonte), "cobertura_texto_exato_pct": 100 * fonte["texto_exato"] / len(te), "n_teste": len(te)}
 def bvec(bs, img, qs, d):
     idx = np.array([bs.index[img[q]] for q in qs]); n = len(bs.ids); return (bs.W @ np.bincount(idx, weights=d, minlength=n)) / np.maximum(bs.W @ np.bincount(idx, minlength=n).astype(float), 1e-9)
-def stat(ds):   # ds: lista (por semente) de (diferencas por item, qids)
+def stat(ds):   # ds: list (per seed) of (per-item differences, qids)
     vs = np.vstack([v for _, v in ds]).T; pts = [d.mean() for d, _ in ds]; cond = vs.mean(axis=1); joint = np.take_along_axis(vs, SEEDS, axis=1).mean(axis=1)
     return {"media": float(np.mean(pts)), "dp_entre_sementes": float(np.std(pts, ddof=1)), "ic_condicional": [float(np.percentile(cond, 2.5)), float(np.percentile(cond, 97.5))], "ic_conjunto": [float(np.percentile(joint, 2.5)), float(np.percentile(joint, 97.5))]}
 out = {"t": time.strftime("%Y-%m-%d %H:%M:%S"), "bases": {}, "baseline_string": {}}
@@ -46,7 +46,7 @@ for b in ART:
             pares = {"G": (v(A) - v(T)), "A_text_menos_PubMedBERT": v(T) - v(BT), "A_text_menos_TFIDF": v(T) - v(TF), "A_text_menos_exact_text_baseline": v(T) - v(PS)}
             if f != "M3AE": pares["G_enc"] = v(F) - v(T); pares["G_ft"] = v(A) - v(F)
             for k, d in pares.items(): acc[k].append((d, bvec(bs, img, qs, d)))
-            if S is None: continue   # 19/10: sem troca (VLM da divisao oficial)
+            if S is None: continue   # 19/10: no swap (VLM from the official split)
             qw = [q for q in qs if q in S]; vw = lambda X: np.array([X[q] for q in qw], float)
             acc["A_menos_A_swap"].append((vw(A) - vw(S), bvec(bs, img, qw, vw(A) - vw(S)))); acc["A_swap_menos_A_text"].append((vw(S) - vw(T), bvec(bs, img, qw, vw(S) - vw(T))))
         B[f] = {k: stat(v) for k, v in acc.items() if len(v) == 3}

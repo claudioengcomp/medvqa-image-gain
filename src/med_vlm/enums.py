@@ -21,18 +21,18 @@ class ModelName(str, enum.Enum):
     SMOLVLM = "HuggingFaceTB/SmolVLM2-2.2B-Instruct"
     # Medical-domain VLMs
     LLAVA_MED = "chaoyinshe/llava-med-v1.5-mistral-7b-hf"
-    # Qwen2.5-VL-7B + RL sobre PMC-VQA -- candidato ao quadrante acuracia
+    # Qwen2.5-VL-7B + RL over PMC-VQA -- candidate for the accuracy quadrant
     # alta / VDD baixa (ver docs/superpowers/specs/2026-08-25-medvlthinker-third-model-design.md)
     MEDVLTHINKER = "UCSC-VLAA/MedVLThinker-7B-RL_PMC"
-    # v7 (2026-10-09): largura zero-shot do artigo B -- base generalista do MedVLThinker, sem RL medico
+    # v7 (2026-10-09): zero-shot breadth of paper B -- generalist base of MedVLThinker, without medical RL
     QWEN25VL = "Qwen/Qwen2.5-VL-7B-Instruct"
-    # v7 (2026-10-10): MedGemma 1.5 4B-IT (gated; o cache tem medgemma-1.5-4b-it, nao o medgemma-4b-it do plano)
+    # v7 (2026-10-10): MedGemma 1.5 4B-IT (gated; the cache has medgemma-1.5-4b-it, not the medgemma-4b-it from the plan)
     MEDGEMMA = "google/medgemma-1.5-4b-it"
-    # v7 (2026-10-13, candidato): zero-shot novos. Lingshu e Huatuo (versao Qwen2.5-VL) reaproveitam o caminho do Qwen2.5-VL; InternVL3 (-hf, nativo do transformers) entrada propria
+    # v7 (2026-10-13, candidate): new zero-shot. Lingshu and Huatuo (Qwen2.5-VL version) reuse the Qwen2.5-VL path; InternVL3 (-hf, native to transformers) own entry point
     LINGSHU = "lingshu-medical-mllm/Lingshu-7B"
     HUATUO_QWEN25 = "FreedomIntelligence/HuatuoGPT-Vision-7B-Qwen2.5VL"
     INTERNVL3 = "OpenGVLab/InternVL3-8B-hf"
-    GEMMA3 = "google/gemma-3-4b-it"   # v7 (2026-10-13): restrito; termos aceitos e login feito pelo candidato
+    GEMMA3 = "google/gemma-3-4b-it"   # v7 (2026-10-13): restricted; terms accepted and login done by the candidate
 
 
 class PEFTMethod(str, enum.Enum):
@@ -53,7 +53,7 @@ class DatasetName(str, enum.Enum):
     # harness/isbi_occlusion/heal/make_heal_train_arrows.py (E5, 15/09/2026);
     # nunca passa pelo load_dataset() do HF.
     HEAL = "heal-local"
-    # MIMIC-CXR-JPG 2.1.0 + Medical-Diff-VQA 1.0.1 (imagem única, PhysioNet, credenciado): arrows locais
+    # MIMIC-CXR-JPG 2.1.0 + Medical-Diff-VQA 1.0.1 (single image, PhysioNet, credentialed): local arrows
     # gerados por ${MEDVQA_ROOT}/v7_mimic/scripts/05_make_arrows.py (P4, 2026-10-10); nunca passa pelo HF.
     MIMIC = "mimic-local"
     # Virtual union of all four datasets above

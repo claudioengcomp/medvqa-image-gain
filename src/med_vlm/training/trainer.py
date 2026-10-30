@@ -38,10 +38,10 @@ class TrainConfig:
     compile_backend: str = "eager"
     start_step: int = 0
     seed: int = 0
-    # Total de passos de OTIMIZADOR do scheduler (cosseno + warmup), independente de
-    # max_steps. Necessario nas retomadas (16/09/2026): max_steps conta micro-lotes e para o
-    # laco, mas tambem era usado como total do scheduler, recriando o cosseno sobre um total
-    # ~grad_accum vezes maior que o do treino original (lr voltava ao pico apos o resume).
+    # Total number of OPTIMIZER steps for the scheduler (cosine + warmup), independent of
+    # max_steps. Needed on resumption (16/09/2026): max_steps counts micro-batches and stops the
+    # loop, but was also used as the scheduler total, recreating the cosine over a total
+    # ~grad_accum times larger than the original training's (lr returned to the peak after the resume).
     # None = comportamento antigo.
     scheduler_total_steps: int | None = None
 
@@ -113,11 +113,11 @@ def create_optimizer(
 
 
 def resolve_total_optimizer_steps(cfg: TrainConfig, steps_per_epoch: int | None) -> int:
-    """Total de passos de otimizador que o scheduler deve cobrir.
+    """Total number of optimizer steps the scheduler should cover.
 
-    Prioridade: `scheduler_total_steps` explicito (retomadas) > `max_steps` (comportamento
-    historico, que trata max_steps como passos de otimizador) > ceil(steps_per_epoch /
-    grad_accum) * epochs > 1000 (dataloader sem len)."""
+    Priority: explicit `scheduler_total_steps` (resumes) > `max_steps` (historical
+    behavior, which treats max_steps as optimizer steps) > ceil(steps_per_epoch /
+    grad_accum) * epochs > 1000 (dataloader without len)."""
     if cfg.scheduler_total_steps is not None:
         return int(cfg.scheduler_total_steps)
     if cfg.max_steps is not None:
@@ -244,10 +244,10 @@ def train_vqa_generation(
     loss_meter = runningAverage()
 
     def _batches():
-        # Achata as duas malhas (epoch x batch) em uma unica sequencia, para
-        # que um "break" quando max_steps for atingido encerre o treino de
-        # verdade — e nao apenas a malha interna, deixando a externa
-        # continuar para a proxima epoca silenciosamente.
+        # Flattens the two loops (epoch x batch) into a single sequence, so that
+        # a "break" when max_steps is reached ends the training for
+        # real — and not just the inner loop, leaving the outer one
+        # continue to the next epoch silently.
         for _epoch in range(cfg.epochs):
             for batch in train_dl:
                 yield batch
@@ -324,7 +324,7 @@ def train_vqa_generation(
             model.train()
 
         if cfg.max_steps is not None and global_step >= cfg.max_steps:
-            # Interrompe treino e epoca de uma vez so: sem isso, um
+            # Stops training and epoch at once: without this, a
             # break aqui so sairia da malha interna e a malha externa
             # (epochs) continuaria rodando silenciosamente.
             break

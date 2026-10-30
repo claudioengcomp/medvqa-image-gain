@@ -88,12 +88,12 @@ def build_chat_template_vqa_collator(
     Collator for models that use apply_chat_template (Granite Vision, Qwen2-VL,
     SmolVLM, LLaVA-Med). Builds batches with label masking on the prompt portion.
 
-    no_image (v7_txt, 2026-10-09, braco so-texto): quando True a mensagem do
-    usuario contem SO {"type": "text", "text": question} (sem {"type": "image"}),
-    o template de chat e o mesmo, e o processor e chamado com images=None --
-    nunca lista vazia nem lista de listas (SmolVLM), nunca o image processor em
-    separado (Qwen2-VL, image_grid_thw). Pergunta e resposta identicas ao treino
-    com imagem; nenhuma frase avisa o modelo de que a imagem falta.
+    no_image (v7_txt, 2026-10-09, text-only arm): when True the user
+    message contains ONLY {"type": "text", "text": question} (without {"type": "image"}),
+    the chat template is the same, and the processor is called with images=None --
+    never an empty list nor a list of lists (SmolVLM), never the image processor
+    separately (Qwen2-VL, image_grid_thw). Question and answer identical to training
+    with image; no sentence warns the model that the image is missing.
 
     Truncation is applied *after* the processor call to avoid the image-token /
     input_ids count mismatch that these processors enforce.

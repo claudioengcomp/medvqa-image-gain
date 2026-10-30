@@ -1,8 +1,8 @@
-"""18/10/2026 (candidato, vqarad_overlap; so leitura): sobreposicao treino(+validacao)/teste do VQA-RAD nos arquivos que usamos -- divisao original
-(pacote do M3AE = linhagem MEVF: trainset 2 758 + valset 306 = 3 064; testset 451) e redivisao por imagem (seed 20260913).
-Normalizacao de texto = med_vlm.metrics.process_text.normalize_text (strip, minusculas, sem pontuacao, espacos colapsados), para pergunta e resposta.
-Sem campo question_frame nos nossos JSON: 'versao em template no treino' = existe pergunta de treino+validacao da MESMA imagem com phrase_type 'frame'
-e a MESMA resposta normalizada (regra R1); variante R2 = R1 + mesmo question_type. Saida: v7_txt/article_runs/analysis/vqarad_sobreposicao.json. Sem interpretacao."""
+"""18/10/2026 (the candidate, vqarad_overlap; read-only): training(+validation)/test overlap of VQA-RAD in the files we use -- original split
+(M3AE package = MEVF lineage: trainset 2 758 + valset 306 = 3 064; testset 451) and re-split by image (seed 20260913).
+Text normalization = med_vlm.metrics.process_text.normalize_text (strip, lowercase, no punctuation, collapsed spaces), for question and answer.
+Without a question_frame field in our JSON: 'template version in training' = there is a training+validation question of the SAME image with phrase_type 'frame'
+and the SAME normalized answer (rule R1); variant R2 = R1 + same question_type. Output: v7_txt/article_runs/analysis/vqarad_sobreposicao.json. No interpretation."""
 import os as _os
 _MEDVQA_ROOT = _os.environ.get("MEDVQA_ROOT", "/path/to/original/run/tree")   # original run tree root (this package: see README, "Paths")
 import hashlib, json, os, sys, time, collections

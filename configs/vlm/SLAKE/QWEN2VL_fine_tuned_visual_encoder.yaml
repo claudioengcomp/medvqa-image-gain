@@ -1,4 +1,4 @@
-# Linha NOVA (v5, torre visual adaptada). Gerada de med_vlm/configs/qwen2vl_lora_slake.yaml; difere so em run_name,
+# NEW row (v5, fine-tuned visual tower). Generated from med_vlm/configs/qwen2vl_lora_slake.yaml; differs only in run_name,
 # wandb_run_name, peft_config.target_modules (regex), outputs_dir e checkpoint_every.
 run_name: qwen2vl_lora_vt_slake
 model: QWEN2VL

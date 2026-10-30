@@ -1,4 +1,4 @@
-# v7_mimic (2026-10-11): copia de ${MEDVQA_ROOT}/doutorado/medvqa-occlusion-study/med_vlm/configs/smolvlm2_lora_heal.yaml (sha256 f7e1a7809454a055; publicada: SmolVLM2 LoRA, regex padrao (adapta a torre)), mudando so dataset: MIMIC, run_name/wandb_run_name, outputs_dir/results_json_dir e train.checkpoint_every 15000 + checkpoint_dir (convencao dos YAMLs do MIMIC de 10/10; publicado: 5000).
+# v7_mimic (2026-10-11): copy of ${MEDVQA_ROOT}/doutorado/medvqa-occlusion-study/med_vlm/configs/smolvlm2_lora_heal.yaml (sha256 f7e1a7809454a055; published: SmolVLM2 LoRA, default regex (fine-tunes the tower)), changing only dataset: MIMIC, run_name/wandb_run_name, outputs_dir/results_json_dir and train.checkpoint_every 15000 + checkpoint_dir (convention of the MIMIC YAMLs from 10/10; published: 5000).
 run_name: smolvlm2_lora_mimic
 model: SMOLVLM
 dataset: MIMIC

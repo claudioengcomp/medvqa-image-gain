@@ -1,6 +1,6 @@
-"""19/10/2026 (heal_classifiers_train_only): TF-IDF so-pergunta do HEAL treinado SO no treino (6 882 fechadas sim/nao de vqa_heal_train.arrow), mesma receita de
-harness/v7_txt/tfidf_heal_aligned.py (TF-IDF 1-2-gramas, min_df 1, lowercase; LogisticRegression C=1, max_iter 2000, random_state 0); avaliado nos 1 446 avaliaveis.
-Sem selecao de checkpoint (modelo convexo). Saida: v7_txt/article_runs/results/TFIDF_question_only_HEAL_TREINO.json."""
+"""19/10/2026 (heal_classifiers_train_only): TF-IDF question-only of HEAL trained ONLY on training (6 882 closed-form yes/no from vqa_heal_train.arrow), same recipe as
+harness/v7_txt/tfidf_heal_aligned.py (TF-IDF 1-2-grams, min_df 1, lowercase; LogisticRegression C=1, max_iter 2000, random_state 0); evaluated on the 1 446 evaluable.
+No checkpoint selection (convex model). Output: v7_txt/article_runs/results/TFIDF_question_only_HEAL_TREINO.json."""
 import os as _os
 _MEDVQA_ROOT = _os.environ.get("MEDVQA_ROOT", "/path/to/original/run/tree")   # original run tree root (this package: see README, "Paths")
 import hashlib, json, sys
@@ -14,4 +14,4 @@ pr = clf.predict(vec.transform([x["question"] for x in te])); P = [{"qid": x["qi
 k = sum(p["correct"] for p in P); sha = lambda p: hashlib.sha256(open(p, "rb").read()).hexdigest()
 json.dump({"model": "TFIDF_question_only", "dataset": "HEAL", "condition": "C0", "accuracy": k / len(P), "n": len(P), "n_correct": k, "train_rows": len(tr), "protocolo": "so treino (heal_classifiers_train_only)",
            "provenance": {"script": __file__, "script_sha256": sha(__file__), "dados": "v7_txt/article_runs/data/texto/HEAL_TREINO.json", "receita": "igual a tfidf_heal_aligned.py"}, "predictions": P},
-          open(f"{_MEDVQA_ROOT}/v7_txt/article_runs/results/TFIDF_question_only_HEAL_TREINO.json", "w"), indent=1); print("acc %.4f n %d treino %d" % (k / len(P), len(P), len(tr)))
+          open(f"{_MEDVQA_ROOT}/v7_txt/article_runs/results/TFIDF_question_only_HEAL_TREINO.json", "w"), indent=1); print("acc %.4f n %d train %d" % (k / len(P), len(P), len(tr)))

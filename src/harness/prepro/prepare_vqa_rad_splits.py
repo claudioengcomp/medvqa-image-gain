@@ -1,17 +1,17 @@
-"""Divide o trainset.json bruto do VQA-RAD (formato MEVF/data_RAD, sem
-valset.json próprio — confirmado nesta sessão baixando o pacote oficial de
-`https://huggingface.co/datasets/aiozai/MEVF/resolve/main/data_RAD.zip`) em
-train/val, já que `prepro_vqa_vqa_rad()` do M3AE espera os três arquivos
+"""Splits the raw VQA-RAD trainset.json (MEVF/data_RAD format, with no
+own valset.json — confirmed in this session by downloading the official package from
+`https://huggingface.co/datasets/aiozai/MEVF/resolve/main/data_RAD.zip`) into
+train/val, since M3AE's `prepro_vqa_vqa_rad()` expects the three files
 (trainset.json/valset.json/testset.json).
 
-Divisão por PERGUNTA (não por imagem), com seed fixa — consistente com o
-próprio split oficial train/test do VQA-RAD, que já tem sobreposição de
-imagem entre train e test (achado confirmado nesta sessão: as 203 imagens
-de `testset.json` aparecem todas também em `trainset.json` — é assim que o
-benchmark oficial funciona; não é um vazamento introduzido por nós, é uma
-limitação conhecida do dataset a registrar no artigo, não a "corrigir").
+Split by QUESTION (not by image), with a fixed seed — consistent with
+VQA-RAD's own official train/test split, which already has image
+overlap between train and test (finding confirmed in this session: the 203 images
+in `testset.json` all also appear in `trainset.json` — that is how the
+official benchmark works; it is not a leak introduced by us, it is a
+known limitation of the dataset to record in the paper, not to "fix").
 
-Uso:
+Usage:
     python -m harness.prepro.prepare_vqa_rad_splits \
         --trainset data_RAD/trainset.json \
         --train-output data_RAD/trainset_split.json \
@@ -27,13 +27,13 @@ import random
 
 def split_train_val(records: list[dict], val_fraction: float = 0.1,
                      seed: int = 42) -> tuple[list[dict], list[dict]]:
-    """Divide `records` (cada um com uma chave 'qid' única) em
-    (train, val), embaralhado deterministicamente por `seed`. `val_fraction`
-    do total (arredondado) vai para val; o resto para train. União dos dois
-    é exatamente `records`, sem sobreposição."""
+    """Splits `records` (each with a unique 'qid' key) into
+    (train, val), shuffled deterministically by `seed`. `val_fraction`
+    of the total (rounded) goes to val; the rest to train. The union of the two
+    is exactly `records`, with no overlap."""
     if not (0.0 < val_fraction < 1.0):
         raise ValueError(f"val_fraction={val_fraction} deve estar em (0, 1)")
-    records_sorted = sorted(records, key=lambda r: r["qid"])  # ordem determinística antes de embaralhar
+    records_sorted = sorted(records, key=lambda r: r["qid"])  # deterministic order before shuffling
     rng = random.Random(seed)
     shuffled = records_sorted.copy()
     rng.shuffle(shuffled)

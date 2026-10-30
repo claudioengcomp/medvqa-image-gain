@@ -66,7 +66,7 @@ def _normalize(
     )
     map_kwargs = {
         "remove_columns": ds.column_names,
-        # MED_VLM_NUM_PROC (15/09/2026): workers do map morreram no ws3 e no gpu1 com 8;
+        # MED_VLM_NUM_PROC (15/09/2026): map workers died on ws3 and on gpu1 with 8;
         # permite reduzir sem tocar no default.
         "num_proc": int(os.environ.get("MED_VLM_NUM_PROC", min(os.cpu_count() or 1, 8))),
     }
@@ -75,13 +75,13 @@ def _normalize(
     return ds.map(normalizer, **map_kwargs)
 
 
-# Kvasir-VQA-x1 não usa mais o split oficial do HF Hub para o treino
+# Kvasir-VQA-x1 no longer uses the official HF Hub split for training
 # generativo -- ver docs/superpowers/specs/2026-08-30-kvasir-clean-split-design.md
-# (split oficial tinha 94% de overlap de imagem treino/teste, e o campo
-# `answer` do HF é composto/verboso, incompatível com o formato usado na
-# avaliação). Os 3 arrows abaixo são construídos por
+# (the official split had 94% image overlap between train/test, and the field
+# `answer` field from HF is composite/verbose, incompatible with the format used in
+# evaluation). The 3 arrows below are built by
 # harness.prepro.build_kvasir_clean_split e usam a MESMA fonte que a
-# avaliação (harness.circle_data_bridge.load_condition_dataset).
+# evaluation (harness.circle_data_bridge.load_condition_dataset).
 _KVASIR_CLEAN_ARROW_PATH = {
     "train": "data/finetune_arrows/vqa_kvasir_train_clean.arrow",
     "validation": "data/finetune_arrows/vqa_kvasir_val_clean.arrow",
@@ -90,16 +90,16 @@ _KVASIR_CLEAN_ARROW_PATH = {
 
 _KVASIR_PREPROCESS_CACHE_DIR = "data/finetune_arrows/preprocessed_cache"
 
-# HEAL (E5, 15/09/2026): mesmo formato M3AE dos arrows limpos do Kvasir; train/val
+# HEAL (E5, 15/09/2026): same M3AE format as the clean Kvasir arrows; train/val
 # gerados por harness/isbi_occlusion/heal/make_heal_train_arrows.py, test = C0 do
-# braco occlusion_study (vqa_heal_occlusion_study_C0.arrow) copiado com este nome.
+# occlusion_study arm (vqa_heal_occlusion_study_C0.arrow) copied under this name.
 _HEAL_ARROW_PATH = {
     "train": "data/finetune_arrows/vqa_heal_train.arrow",
     "validation": "data/finetune_arrows/vqa_heal_val.arrow",
     "test": "data/finetune_arrows/vqa_heal_test.arrow",
 }
 
-# MIMIC (P4, 2026-10-10): mesmo formato M3AE; arrows em v7_mimic/data (sha256 em manifest_mimic_<split>.json).
+# MIMIC (P4, 2026-10-10): same M3AE format; arrows in v7_mimic/data (sha256 in manifest_mimic_<split>.json).
 _MIMIC_ARROW_PATH = {
     "train": f"{_MEDVQA_ROOT}/v7_mimic/data/vqa_mimic_train.arrow",
     "validation": f"{_MEDVQA_ROOT}/v7_mimic/data/vqa_mimic_val.arrow",
@@ -111,29 +111,29 @@ def _kvasir_preprocess_cache_path(
     arrow_path: str,
     preprocessor: Callable[[PILImage.Image], PILImage.Image] | None,
 ) -> str | None:
-    """Caminho estável de cache pro resultado do `.map()` de
-    normalização+pré-processamento do Kvasir.
+    """Stable cache path for the result of Kvasir's `.map()`
+    normalization+preprocessing.
 
-    Achado real (campanha de 31/08/2026): `load_condition_dataset` monta o
-    dataset via `Dataset.from_dict(...)` (listas Python em memória), que
-    não tem `cache_files` persistente -- sem um `cache_file_name` explícito,
-    `datasets.map()` grava em um arquivo temporário novo a cada processo,
-    então as 3 seeds de cada um dos 12 treinos da campanha recomputavam
-    denoise+CLAHE do zero (~35-90min de CPU cada, mesma transformação
-    idêntica -- é uma transformação da IMAGEM, não do modelo, e é
-    exatamente a mesma entre LoRA/DoRA e entre modelos diferentes).
+    Real finding (31/08/2026 campaign): `load_condition_dataset` builds the
+    dataset via `Dataset.from_dict(...)` (Python lists in memory), which
+    has no persistent `cache_files` -- without an explicit `cache_file_name`,
+    `datasets.map()` writes to a new temporary file on each process,
+    so the 3 seeds of each of the 12 training runs in the campaign recomputed
+    denoise+CLAHE from scratch (~35-90min of CPU each, same transformation
+    identical -- it is a transformation of the IMAGE, not of the model, and is
+    exactly the same between LoRA/DoRA and between different models).
 
-    Deriva um nome de arquivo determinístico a partir do arrow de origem
-    (caminho + mtime, pra invalidar sozinho se o arrow for reconstruído)
-    e da configuração exata do preprocessador (via `repr()` do dataclass
-    `ImagePreprocessor`, que inclui todos os campos) -- qualquer mudança
-    em um dos dois muda o hash e gera um cache novo, nunca serve resultado
-    velho por engano.
+    Derives a deterministic file name from the source arrow
+    (path + mtime, to self-invalidate if the arrow is rebuilt)
+    and from the exact preprocessor configuration (via `repr()` of the dataclass
+    `ImagePreprocessor`, which includes all fields) -- any change
+    in either one changes the hash and generates a new cache, never serving an old
+    result by mistake.
 
-    Retorna None se `preprocessor` for None (nada a cachear) ou se o
-    arquivo de origem não existir ainda (deixa o `datasets.map()` cair no
-    comportamento padrão em vez de gerar um caminho baseado em mtime
-    inexistente)."""
+    Returns None if `preprocessor` is None (nothing to cache) or if the
+    source file does not exist yet (lets `datasets.map()` fall back to the
+    default behavior instead of generating a path based on a nonexistent
+    mtime)."""
     if preprocessor is None:
         return None
     if not os.path.exists(arrow_path):
@@ -160,8 +160,8 @@ def load_dataset_by_enum(
     """Loads a dataset based on the provided enum value and applies a normalization
     function to it.
 
-    drop_image (v7_txt, 2026-10-09): braco so-texto; `image` sai como None e o
-    cache de pre-processamento (so de imagem) nao e usado.
+    drop_image (v7_txt, 2026-10-09): text-only arm; `image` comes out as None and the
+    preprocessing cache (image-only) is not used.
 
     When ``dataset_enum`` is :attr:`~med_vlm.enums.DatasetName.COMBINED` all four
     individual medical VQA datasets are loaded (with appropriate split fallbacks) and
@@ -197,8 +197,8 @@ def load_dataset_by_enum(
     if drop_image:
         preprocessor = None
 
-    # v7_txt (2026-10-15, VQA-RAD fonte unica): `data.arrows` do YAML aponta o split para um arrow local no formato M3AE
-    # (mesma leitura de Kvasir/HEAL/MIMIC); o enum do dataset continua o mesmo, entao prompt e rescoring nao mudam.
+    # v7_txt (2026-10-15, VQA-RAD single source): `data.arrows` in the YAML points the split to a local arrow in M3AE format
+    # (same reading as Kvasir/HEAL/MIMIC); the dataset enum stays the same, so prompt and rescoring do not change.
     if arrow_paths and split in arrow_paths:
         arrow_path = arrow_paths[split]
         ds = load_condition_dataset(arrow_path)
@@ -210,7 +210,7 @@ def load_dataset_by_enum(
             id_key="id",
             cache_file_name=cache_file_name,
             drop_image=drop_image,
-        )   # so toca a imagem; sem imagem, sem cache de pre-processamento
+        )   # only touches the image; without image, no preprocessing cache
 
     if dataset_enum == med_vlm.enums.DatasetName.KVASIR_VQA:
         arrow_path = _KVASIR_CLEAN_ARROW_PATH[split]

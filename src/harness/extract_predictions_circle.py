@@ -72,7 +72,7 @@ def extract_predictions(
     no_image: bool = False,
     instruction: str | None = None,
     instruction_mode: str = "system",
-    save_raw: bool = False,   # 14/10: grava tambem o texto bruto gerado e a pergunta (desligado por padrao; registros identicos aos de antes)
+    save_raw: bool = False,   # 14/10: also records the raw generated text and the question (disabled by default; records identical to before)
 ) -> list[dict]:
     """Load the base model (plus the trained PEFT adapter, if `adapter_dir`
     is given) and run generation over every question in `condition_arrow`,
@@ -102,7 +102,7 @@ def extract_predictions(
     if torch.cuda.is_available():
         bundle.model.to("cuda")
 
-    # instrucao curta (v7_zeroshot, 10/10/2026): system prompt (templates que aceitam) ou prefixo da pergunta (LLaVA-Med)
+    # short instruction (v7_zeroshot, 10/10/2026): system prompt (templates that accept it) or question prefix (LLaVA-Med)
     if instruction and instruction_mode == "system":
         spec = MODEL_SPECS[model_name](no_image=no_image, system_prompt=instruction)
     elif instruction and instruction_mode == "system_append":   # MedVLThinker _instr: prompt do VISAPP + instrucao curta
@@ -189,14 +189,14 @@ def _parse_args():
                               "harness/inference_checkpoint.py). Omitting it keeps "
                               "the checkpoint-free behaviour.")
     parser.add_argument("--no-image", action="store_true", default=False,
-                         help="v7_txt (2026-10-09): braco so-texto -- a pergunta vai sem "
-                              "{'type': 'image'} e o processor recebe images=None; a imagem "
-                              "do arrow e ignorada (so perguntas, respostas e qids sao lidos).")
-    parser.add_argument("--instruction", default=None, help="instrucao curta de resposta (zero-shot); identica em C0 e TXT")
+                         help="v7_txt (2026-10-09): text-only arm -- the question goes without "
+                              "{'type': 'image'} and the processor receives images=None; the image "
+                              "from the arrow is ignored (only questions, answers and qids are read).")
+    parser.add_argument("--instruction", default=None, help="short answer instruction (zero-shot); identical in C0 and TXT")
     parser.add_argument("--instruction-mode", default="system", choices=["system", "prefix", "system_append"],
-                         help="system = mensagem de sistema do template; prefix = prefixo do texto da pergunta (templates sem papel system)")
+                         help="system = system message of the template; prefix = prefix of the question text (templates without a system role)")
     parser.add_argument("--output", required=True)
-    parser.add_argument("--save-raw", action="store_true", default=False, help="14/10: grava o texto bruto gerado e a pergunta em cada registro")
+    parser.add_argument("--save-raw", action="store_true", default=False, help="14/10: records the raw generated text and the question in each record")
     return parser.parse_args()
 
 

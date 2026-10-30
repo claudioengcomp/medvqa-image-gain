@@ -1,16 +1,16 @@
-"""v7_mimic/scripts/01b_make_subset.py -- 2026-10-10 -- lasid-gpu1 (so CPU)
+"""v7_mimic/scripts/01b_make_subset.py -- 2026-10-10 -- lasid-gpu1 (CPU only)
 
-Subconjunto de imagem unica do Medical-Diff-VQA 1.0.1 sobre o MIMIC-CXR-JPG 2.1.0.
-Ordem de selecao (prompt do candidato de 10/10):
- 1. imagem unica: exclui question_type == difference; nenhuma outra pergunta menciona comparacao (conferido em schema_stats).
- 2. tipos: fechadas = presence (yes/no) e view com resposta yes/no ("is this AP/PA view?"); abertas curtas = location, level,
-    type com resposta no vocabulario fixo (frequencia >= MIN_FREQ na tabela inteira e <= MAX_WORDS palavras). Exclui abnormality
-    e "which view is this image taken?" (view aberta).
- 3. uma imagem por estudo: dicom_id de mimic_all.csv; ViewPosition in {PA, AP} no metadata do MIMIC-CXR-JPG.
- 4. split: mimic-cxr-2.0.0-split.csv.gz por subject_id (verifica disjuncao; paciente cruzado vai para o split com mais estudos).
- 5. tamanhos: test ~3000 perguntas / ~1500 imagens (estratificado por template x resposta, <= 2 por imagem por tipo);
-    val ~1500 / ~750 do validate; train ~15000 do train, <= 4 por estudo, quotas por template x resposta. Semente 20260913.
-Template = pergunta com a entidade (31 nomes de all_diseases.json) mascarada por <e> e, em presence, a localizacao por <loc>.
+Single-image subset of Medical-Diff-VQA 1.0.1 over MIMIC-CXR-JPG 2.1.0.
+Selection order (the candidate's prompt from 10/10):
+ 1. single image: excludes question_type == difference; no other question mentions comparison (checked in schema_stats).
+ 2. types: closed-form = presence (yes/no) and view with yes/no answer ("is this AP/PA view?"); short open = location, level,
+    type with answer in the fixed vocabulary (frequency >= MIN_FREQ in the whole table and <= MAX_WORDS words). Excludes abnormality
+    and "which view is this image taken?" (open view).
+ 3. one image per study: dicom_id from mimic_all.csv; ViewPosition in {PA, AP} in the MIMIC-CXR-JPG metadata.
+ 4. split: mimic-cxr-2.0.0-split.csv.gz by subject_id (checks disjointness; a cross patient goes to the split with more studies).
+ 5. sizes: test ~3000 questions / ~1500 images (stratified by template x answer, <= 2 per image per type);
+    val ~1500 / ~750 from validate; train ~15000 from train, <= 4 per study, quotas by template x answer. Seed 20260913.
+Template = question with the entity (31 names from all_diseases.json) masked by <e> and, in presence, the location by <loc>.
 """
 from __future__ import annotations
 import os as _os
@@ -26,8 +26,8 @@ RAW_D = Path(_os.environ.get("MEDDIFF_RAW", f"{_MEDVQA_ROOT}/doutorado/data/raw/
 RAW_M = Path(_os.environ.get("MIMICCXR_RAW", f"{_MEDVQA_ROOT}/doutorado/data/raw/mimic-cxr-jpg/2.1.0"))
 V7 = Path(_os.environ.get("MIMIC_OUT", f"{_MEDVQA_ROOT}/v7_mimic")); DATA = V7 / "data"; DOCS = V7 / "docs"; AN = V7 / "analysis"
 DATA.mkdir(exist_ok=True); DOCS.mkdir(exist_ok=True)
-TARGET = {"test": (3000, 1500, 2), "val": (1500, 750, 2), "train": (15000, None, 4)}  # (perguntas, imagens, cap por imagem[/tipo])
-QID_BASE = {"test": 3_200_000, "val": 3_210_000, "train": 3_220_000}  # HEAL usa 3_000_000 (teste) e 3_100_000 (treino); pedido do candidato 10/10: a partir de 3_200_000
+TARGET = {"test": (3000, 1500, 2), "val": (1500, 750, 2), "train": (15000, None, 4)}  # (questions, images, cap per image[/type])
+QID_BASE = {"test": 3_200_000, "val": 3_210_000, "train": 3_220_000}  # HEAL uses 3_000_000 (test) and 3_100_000 (training); the candidate's request on 10/10: starting from 3_200_000
 SPLIT_NAME = {"test": "test", "validate": "val", "train": "train"}
 rep = {"provenance": {"script": "v7_mimic/scripts/01b_make_subset.py", "seed": SEED, "min_freq": MIN_FREQ, "max_words": MAX_WORDS,
                       "date": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), "host": socket.gethostname()}}
@@ -38,7 +38,7 @@ meta = pd.read_csv(RAW_M / "mimic-cxr-2.0.0-metadata.csv.gz", keep_default_na=Fa
 sp = pd.read_csv(RAW_M / "mimic-cxr-2.0.0-split.csv.gz", dtype={"subject_id": "int64", "study_id": "int64"})
 rep["inputs"] = {"pair_questions_rows": len(q), "mimic_all_rows": len(m), "metadata_rows": len(meta), "split_rows": len(sp)}
 
-# 1. imagem unica
+# 1. single image
 rep["step1"] = {"difference_removed": int((q.question_type == "difference").sum())}
 q = q[q.question_type != "difference"].copy()
 cmp_re = re.compile(r"\b(?:compar|previous|prior|reference|change|earlier|interval|since)\w*", re.I)
@@ -76,11 +76,11 @@ def template(s: str) -> str:
     t = re.sub(r" in the .+? area\?$", " in the <loc> area?", t)
     if " in the " in t and "<loc>" not in t and "this image" not in t:
         t = re.sub(r"<e> in the .+?\?$", "<e> in the <loc>?", t)
-    t = re.sub(r"\s+", " ", t).replace(" ?", "?").strip()  # entidades com espaco final geravam variantes do mesmo template
+    t = re.sub(r"\s+", " ", t).replace(" ?", "?").strip()  # entities with trailing space generated variants of the same template
     return t
 
 
-q["template"] = [qq if ty == "view" else template(qq) for qq, ty in zip(q.question, q.question_type)]  # view: AP/PA nao e entidade de doenca; cada pergunta e seu template
+q["template"] = [qq if ty == "view" else template(qq) for qq, ty in zip(q.question, q.question_type)]  # view: AP/PA is not a disease entity; each question is its own template
 unm = q.loc[q.template.str.startswith("UNMASKED"), "question"].value_counts()
 rep["templates"] = {"unmasked": int(unm.sum()), "unmasked_examples": unm.head(20).to_dict(), "n_templates": int(q.template.nunique()),
                     "by_template": q.groupby(["question_type", "template"]).size().reset_index().values.tolist()}
@@ -88,7 +88,7 @@ assert rep["templates"]["unmasked"] == 0, unm.head(20)
 tmpl_ids = {t: f"T{i:02d}" for i, t in enumerate(sorted(q.template.unique()))}
 q["template_id"] = q.template.map(tmpl_ids)
 
-# 3. imagem por estudo + ViewPosition
+# 3. image per study + ViewPosition
 assert m.study_id.is_unique
 q = q.merge(m[["study_id", "dicom_id", "view"]], on="study_id", how="left", validate="m:1")
 rep["step3"] = {"questions_without_dicom": int(q.dicom_id.isna().sum())}

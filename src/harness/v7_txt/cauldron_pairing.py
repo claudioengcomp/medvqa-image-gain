@@ -1,8 +1,8 @@
-"""22/10/2026 (vqarad_cauldron, etapa 1; so CPU): pareamento do subconjunto vqarad da The Cauldron (HuggingFaceM4/the_cauldron, revisao 847a98a7) com o pool
-do VQA-RAD do artigo (as 314 imagens da redivisao = pool da divisao por pergunta). Imagens: hash exato dos pixels decodificados (RGB) e, se nao bater,
-pHash (DCT 32x32 -> 8x8, limiar na mediana; scipy) com distancia de Hamming <= 4. Perguntas (normalize_text do artigo): (a) mesma imagem e mesma
-pergunta; (b) (a) e mesma resposta; (c) mesma imagem e a versao em template (question_frame do OSF) da pergunta presente. Origem no split oficial:
-qid no testset.json do M3AE (teste oficial, 451) ou nao (treino oficial). Saida (fica na gpu1): cauldron_vqarad/pareamento.json"""
+"""22/10/2026 (vqarad_cauldron, stage 1; CPU only): pairing of the vqarad subset of The Cauldron (HuggingFaceM4/the_cauldron, revision 847a98a7) with the pool
+of the paper's VQA-RAD (the 314 images of the redivision = pool of the split by question). Images: exact hash of the decoded pixels (RGB) and, if it does not match,
+pHash (DCT 32x32 -> 8x8, threshold at the median; scipy) with Hamming distance <= 4. Questions (normalize_text of the paper): (a) same image and same
+question; (b) (a) and same answer; (c) same image and the template version (question_frame from the OSF) of the question present. Origin in the official split:
+qid in M3AE's testset.json (official test, 451) or not (official training). Output (stays on gpu1): cauldron_vqarad/pareamento.json"""
 import os as _os
 _MEDVQA_ROOT = _os.environ.get("MEDVQA_ROOT", "/path/to/original/run/tree")   # original run tree root (this package: see README, "Paths")
 import hashlib, io, json, random, sys
@@ -38,12 +38,12 @@ for name, v in POOL.items():
     ds = [(int((v["phash"] != c["phash"]).sum()), c["i"]) for c in C]; dmin = min(ds)[0]
     if dmin <= 4: match[name] = [i for d, i in ds if d == dmin]; metodo[name] = f"phash d={dmin}"
 usadas = {i for v in match.values() for i in v}
-# conferencia numerica de 10 pares ao acaso (sem copiar imagens para fora da gpu1)
+# numeric check of 10 random pairs (without copying images outside gpu1)
 rnd = random.Random(20260913); amostra = rnd.sample(sorted(match), min(10, len(match))); conf = []
 for name in amostra:
     a = np.asarray(POOL[name]["img"].convert("L").resize((256, 256)), dtype=float); b = np.asarray(C[match[name][0]]["img"].convert("L").resize((256, 256)), dtype=float)
     conf.append({"imagem": name, "cauldron_linha": match[name][0], "metodo": metodo[name], "tamanhos": [POOL[name]["size"], C[match[name][0]]["size"]], "dif_media_abs_0a255": round(float(np.abs(a - b).mean()), 3), "correlacao_pixels": round(float(np.corrcoef(a.ravel(), b.ravel())[0, 1]), 5)})
-# perguntas por imagem na Cauldron
+# questions per image in the Cauldron
 CQ = {}
 for name, idx in match.items():
     for i in idx:

@@ -1,14 +1,14 @@
-"""Aplica ao repositório M3AE clonado o suporte ao dataset HEAL (E5, 15/09/2026), pelo mesmo
-mecanismo de `harness/patch_m3ae_kvasir.py`: os dois arquivos gerados (`vqa_heal_dataset.py`,
-`vqa_heal_datamodule.py`) são os templates do Kvasir com `kvasir`→`heal` e `KVASIR`→`HEAL`; as
-edições nos `__init__` e o named config `task_finetune_vqa_heal` seguem o mesmo padrão
-(batch 64, 15 épocas, lr 5e-6, como o Kvasir; `vqa_label_size` do vocabulário real,
-`data/isbi_occlusion/heal_answer_vocab.json`, no=0/yes=1 fixos).
+"""Applies HEAL dataset support (E5, 15/09/2026) to the cloned M3AE repository, via the same
+mechanism as `harness/patch_m3ae_kvasir.py`: the two generated files (`vqa_heal_dataset.py`,
+`vqa_heal_datamodule.py`) are the Kvasir templates with `kvasir`→`heal` and `KVASIR`→`HEAL`; the
+edits to `__init__` and the named config `task_finetune_vqa_heal` follow the same pattern
+(batch 64, 15 epochs, lr 5e-6, like Kvasir; `vqa_label_size` from the real vocabulary,
+`data/isbi_occlusion/heal_answer_vocab.json`, no=0/yes=1 fixed).
 
-Arrows esperados em `<M3AE>/data/finetune_arrows/`: vqa_heal_train.arrow, vqa_heal_val.arrow,
-vqa_heal_test.arrow (= vqa_heal_occlusion_study_C0.arrow). Idempotente.
+Arrows expected at `<M3AE>/data/finetune_arrows/`: vqa_heal_train.arrow, vqa_heal_val.arrow,
+vqa_heal_test.arrow (= vqa_heal_occlusion_study_C0.arrow). Idempotent.
 
-Uso (gpu1):
+Usage (gpu1):
     python -m harness.patch_m3ae_heal --m3ae-dir ${MEDVQA_ROOT}/doutorado/M3AE \
         --vocab-json data/isbi_occlusion/heal_answer_vocab.json
 """
@@ -63,9 +63,9 @@ def patch_datamodules_init(m3ae_dir: str) -> None:
     if "VQAHEALDataModule" in content:
         return
     if K._DATAMODULES_MARKER not in content:
-        raise ValueError(f"{path}: marcador '_datamodules = {{' não encontrado — arquivo mudou de formato?")
+        raise ValueError(f"{path}: marcador '_datamodules = {{' not found — file format changed?")
     if K._DATAMODULES_ANCHOR_ENTRY not in content:
-        raise ValueError(f"{path}: entrada 'vqa_vqa_rad' não encontrada no dicionário — arquivo mudou de formato?")
+        raise ValueError(f"{path}: entry 'vqa_vqa_rad' not found in the dictionary — file format changed?")
     content = content.replace(K._DATAMODULES_MARKER, f"\n{_DATAMODULES_IMPORT_LINE}{K._DATAMODULES_MARKER}", 1)
     content = content.replace(K._DATAMODULES_ANCHOR_ENTRY, f"{K._DATAMODULES_ANCHOR_ENTRY}\n    {_DATAMODULES_NEW_ENTRY}", 1)
     with open(path, "w", encoding="utf-8") as fp:
@@ -88,7 +88,7 @@ def apply_patch(m3ae_dir: str, vocab_json_path: str) -> int:
     with open(vocab_json_path, "r", encoding="utf-8") as fp:
         vocab = json.load(fp)
     if vocab.get("no") != 0 or vocab.get("yes") != 1:
-        raise ValueError("vocabulário do HEAL deve ter no=0 e yes=1 (coincidir com os arrows de teste)")
+        raise ValueError("HEAL vocabulary must have no=0 and yes=1 (match the test arrows)")
     vqa_label_size = len(vocab)
     write_dataset_file(m3ae_dir)
     write_datamodule_file(m3ae_dir)
@@ -109,4 +109,4 @@ if __name__ == "__main__":
     args = _parse_args()
     n = apply_patch(args.m3ae_dir, args.vocab_json)
     print(f"Patch aplicado em {args.m3ae_dir}: VQAHEALDataset/DataModule criados e registrados, "
-          f"task_finetune_vqa_heal com vqa_label_size={n}.")
+          f"task_finetune_vqa_heal with vqa_label_size={n}.")

@@ -14,5 +14,5 @@
  "mem_placa_antes_do_inicio_mib": 4,
  "mem_placa_mediana_mib": 29317,
  "placa": 2,
- "nota_correcao_20261012": "train_peak_memory_gb original = maximo das 4 placas (poll sem -i, defeito herdado de run_finetune_m3ae.sh); usar train_peak_memory_gb_placa_do_treino (inclui terceiros nessa placa; o nivel antes do inicio estima a parte deles)"
+ "nota_correcao_20261012": "train_peak_memory_gb original = maximum of the 4 GPUs (poll without -i, defect inherited from run_finetune_m3ae.sh); use train_peak_memory_gb_placa_do_treino (includes third parties on that GPU; the level before the start estimates their share)"
 }

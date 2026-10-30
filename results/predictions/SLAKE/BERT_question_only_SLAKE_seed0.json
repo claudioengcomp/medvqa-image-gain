@@ -2517,7 +2517,7 @@
    "epochs_max_com_validacao": 10,
    "epochs_fixas_sem_validacao": 5,
    "dtype": "fp32",
-   "selecao": "acuracia na validacao fechada; empate -> epoca mais cedo"
+   "selecao": "accuracy on closed-form validation; tie -> earlier epoch"
   },
   "seed": 0,
   "dados": "SLAKE.json",
@@ -2610,7 +2610,7 @@
  },
  "provenance": {
   "line": "BERT_question_only_SLAKE_seed0",
-  "condition": "C0 (so pergunta)",
+  "condition": "C0 (question only)",
   "base_model": "microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext@e1354b7a",
   "input_arrow": null,
   "dados": "SLAKE.json",

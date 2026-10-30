@@ -1,7 +1,7 @@
-"""17/10/2026 (article_runs, vqarad_image_split): filas do M3AE (placa 3, um por vez) e do PubMedBERT no VQA-RAD redividido.
-jobs_m3ae_rediv.json: 3 treinos M3AE (receita publicada, modo rediv) + 3 predicoes C0 no teste novo; reserva = pico medido do M3AE so-texto do VQA-RAD
-(26 394 MiB -> 27 862, como na fila m3aetxt). jobs_m3ae_txt_rediv.json: o so-texto do M3AE (modo redivgray) -- PREPARADO, NAO LANCADO sem ok.
-jobs_bert_rediv.json: PubMedBERT, 3 sementes, mesma receita do pubmedbert_classifier."""
+"""17/10/2026 (article_runs, vqarad_image_split): M3AE queues (GPU 3, one at a time) and PubMedBERT queue on the re-split VQA-RAD.
+jobs_m3ae_rediv.json: 3 M3AE trainings (published recipe, rediv mode) + 3 C0 predictions on the new test set; reserve = measured peak of the VQA-RAD M3AE text-only
+(26 394 MiB -> 27 862, as in the m3aetxt queue). jobs_m3ae_txt_rediv.json: the M3AE text-only (redivgray mode) -- PREPARED, NOT LAUNCHED without ok.
+jobs_bert_rediv.json: PubMedBERT, 3 seeds, same recipe as pubmedbert_classifier."""
 import os as _os
 _MEDVQA_ROOT = _os.environ.get("MEDVQA_ROOT", "/path/to/original/run/tree")   # original run tree root (this package: see README, "Paths")
 import hashlib, json

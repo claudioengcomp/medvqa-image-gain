@@ -1,6 +1,6 @@
-"""v7_mimic/scripts/05b_validate_arrows.py -- valida arrows com o loader do med_vlm em CPU (CUDA_VISIBLE_DEVICES="").
-Usa harness.circle_data_bridge.load_condition_dataset (o mesmo que o ramo HEAL de med_vlm/data/loader.py chama) e
-monta um batch com o coletor/normalizador do med_vlm quando importavel; registra em logs/validate_arrows_medvlm.json."""
+"""v7_mimic/scripts/05b_validate_arrows.py -- validates arrows with the med_vlm loader on CPU (CUDA_VISIBLE_DEVICES="").
+Uses harness.circle_data_bridge.load_condition_dataset (the same one that the HEAL branch of med_vlm/data/loader.py calls) and
+assembles a batch with the med_vlm collator/normalizer when importable; logs to logs/validate_arrows_medvlm.json."""
 import os as _os
 _MEDVQA_ROOT = _os.environ.get("MEDVQA_ROOT", "/path/to/original/run/tree")   # original run tree root (this package: see README, "Paths")
 import json, os, sys, time, socket, hashlib

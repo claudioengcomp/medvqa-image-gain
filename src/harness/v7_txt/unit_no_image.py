@@ -1,7 +1,7 @@
-"""P1.0 teste unitario (2026-10-09): um batch SEM imagem passa no forward das duas familias (Qwen2-VL-2B,
-SmolVLM2-2.2B) com LoRA so no modelo de linguagem, a perda e finita, uma geracao devolve texto, e o numero de
-parametros treinaveis bate com a linha congelada publicada (Qwen 4.358.144; SmolVLM FT 6.291.456).
-Roda em CPU (CUDA_VISIBLE_DEVICES vazio) ou numa placa. Saida: JSON em --out. cwd = worktree."""
+"""P1.0 unit test (2026-10-09): a batch WITHOUT image passes the forward of the two families (Qwen2-VL-2B,
+SmolVLM2-2.2B) with LoRA only on the language model, the loss is finite, a generation returns text, and the number of
+trainable parameters matches the published frozen row (Qwen 4.358.144; SmolVLM FT 6.291.456).
+Runs on CPU (CUDA_VISIBLE_DEVICES empty) or on a GPU. Output: JSON in --out. cwd = worktree."""
 from __future__ import annotations
 import argparse, json, os, platform, re, time
 import torch
@@ -59,7 +59,7 @@ def main():
         gnorm = float(sum(p.grad.float().norm() ** 2 for p in model.parameters() if p.grad is not None) ** 0.5)
         model.zero_grad(); model.eval()
         gen = spec.generate_fn(model, bundle.processor, ex_noimg, max_new_tokens=8)
-        # regressao: o caminho COM imagem continua montando pixel_values (so o coletor; sem forward)
+        # regression: the path WITH image still assembles pixel_values (only the collator; no forward)
         spec_img = MODEL_SPECS[mn](max_length=1024, no_image=False)
         b_img = spec_img.build_collator(bundle.processor)(ex_img)
         report["models"][name] = {"trainable_params": int(tr), "total_params": int(tot), "expected_trainable": EXPECTED[name],

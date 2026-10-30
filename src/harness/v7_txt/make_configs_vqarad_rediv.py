@@ -1,6 +1,6 @@
-"""17/10/2026 (article_runs, vqarad_image_split): 6 YAMLs _rediv copiados dos _radorig (v7_txt/configs, receitas do A1), mudando so nome, data.arrows
-(treino/validacao/teste da divisao por imagem, v7_txt/article_runs/data/vqarad_rediv) e caminhos de saida (v7_txt/article_runs). Confere por
-yaml.safe_load que nenhuma outra chave difere da fonte. Nao sobrescreve. Manifesto: v7_txt/article_runs/configs/configs_vqarad_rediv.json."""
+"""17/10/2026 (article_runs, vqarad_image_split): 6 _rediv YAMLs copied from the _radorig ones (v7_txt/configs, A1 recipes), changing only the name, data.arrows
+(train/validation/test of the image split, v7_txt/article_runs/data/vqarad_rediv) and output paths (v7_txt/article_runs). Checks via
+yaml.safe_load that no other key differs from the source. Does not overwrite. Manifest: v7_txt/article_runs/configs/configs_vqarad_rediv.json."""
 import os as _os
 _MEDVQA_ROOT = _os.environ.get("MEDVQA_ROOT", "/path/to/original/run/tree")   # original run tree root (this package: see README, "Paths")
 import hashlib, json, pathlib, yaml

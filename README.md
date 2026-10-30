@@ -77,7 +77,7 @@ tests/              unit tests of the Kvasir-VQA-x1 split code
 | `article_runs` | the directory of the runs behind the paper in the original run tree (appears in paths) |
 | `occlusion_study`, `v7_occlusion` | the companion occlusion study on the same models (a separate paper); appears in paths and comments of shared code |
 
-Comments and docstrings inside `src/` are often in Portuguese; the logic is unchanged from the runs that produced the paper (see "Paths" for the mechanical edits).
+Comments, docstrings and messages inside `src/` were written in Portuguese during the runs and translated to English for this repository; the logic is unchanged from the runs that produced the paper (see "Paths" for the mechanical edits). A few string values that scripts read or write (report labels, dictionary keys) keep their original Portuguese identifiers.
 
 ## Reproducing the paper
 

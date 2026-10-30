@@ -1,10 +1,10 @@
-"""v7_txt (14/10/2026, candidato): C1 do HEAL para as 27 linhas afinadas. Imagem trocada pela cinza constante 384x384 RGB(128,128,128)
-de harness.interventions.make_c1_blank_images (a mesma do C1 do Kvasir e do MIMIC e dos arrows cinza do M3AE so-texto).
-Fonte (so leitura): v6_medida/results/arrows/stable_vqa_heal_test.arrow (o arrow dos C0 das 12 linhas de torre; 1 446 avaliaveis em 1 360 imagens).
-Saidas: v7_txt/data/heal_c1/vqa_heal_test_C1.arrow + manifest_heal_c1.json (sha256 de fonte, saida e script);
-data_root do M3AE em v7_txt/m3ae_roots/heal_C1/ (teste -> arrow cinza; train/val -> arrows originais do M3AE, so leitura, para o vocabulario).
-Validacao: mesmas linhas e perguntas da fonte, mesmos question_id, e load_condition_dataset carrega 1 446 itens.
-Imagens do HEAL nunca saem da gpu1."""
+"""v7_txt (14/10/2026, the candidate): HEAL C1 for the 27 fine-tuned rows. Image swapped for the constant grey 384x384 RGB(128,128,128)
+from harness.interventions.make_c1_blank_images (the same one as the C1 of Kvasir and of MIMIC and of the grey arrows of the text-only M3AE).
+Source (read only): v6_medida/results/arrows/stable_vqa_heal_test.arrow (the arrow of the C0 of the 12 tower rows; 1 446 evaluable in 1 360 images).
+Outputs: v7_txt/data/heal_c1/vqa_heal_test_C1.arrow + manifest_heal_c1.json (sha256 of source, output and script);
+M3AE data_root in v7_txt/m3ae_roots/heal_C1/ (test -> grey arrow; train/val -> original M3AE arrows, read only, for the vocabulary).
+Validation: same rows and questions as the source, same question_id, and load_condition_dataset loads 1 446 items.
+HEAL images never leave gpu1."""
 import os as _os
 _MEDVQA_ROOT = _os.environ.get("MEDVQA_ROOT", "/path/to/original/run/tree")   # original run tree root (this package: see README, "Paths")
 import hashlib, json, os, socket, sys, time

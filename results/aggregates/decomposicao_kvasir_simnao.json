@@ -7,9 +7,9 @@
   "ganho_torre": "Acc(C0 congelada) - Acc(TXT)",
   "ganho_adaptacao": "Acc(C0 adaptada) - Acc(C0 congelada)",
   "soma": "Acc(C0 adaptada) - Acc(TXT)",
-  "m3ae": "dois bracos: TXT (imagem cinza) e fine-tune completo publicado; ganho unico = FT - TXT (sem celula de torre congelada)",
-  "braco_so_texto": "LoRA em todas as celulas; linhas DoRA (congelada e adaptada) usam o TXT LoRA da mesma familia e semente; M3AE: ganho da imagem nao decomposto (14/10/2026)",
-  "c1": "imagem cinza na linha congelada: HEAL em v7_txt/results, MIMIC em v7_mimic/results (14/10/2026); Kvasir/SLAKE/VQA-RAD como antes"
+  "m3ae": "two arms: TXT (grey image) and full fine-tune published; single gain = FT - TXT (without frozen tower cell)",
+  "braco_so_texto": "LoRA in all cells; DoRA rows (frozen and fine-tuned) use the TXT LoRA of the same family and seed; M3AE: image gain not decomposed (14/10/2026)",
+  "c1": "grey image in the frozen row: HEAL in v7_txt/results, MIMIC in v7_mimic/results (14/10/2026); Kvasir/SLAKE/VQA-RAD as before"
  },
  "benchmarks": {
   "KVASIR": {
@@ -4292,7 +4292,7 @@
      "line": "M3AE_TXT_KVASIR_seed0",
      "family": "M3AE",
      "seed": 0,
-     "design": "M3AE: dois bracos (TXT cinza, FT completo)",
+     "design": "M3AE: two arms (TXT grey, full FT)",
      "files": {
       "txt": "results/predictions/KVASIR/M3AE_TXT_KVASIR_seed0_TXT.json",
       "frozen": "results/predictions/KVASIR/M3AE_KVASIR_seed0_C0.json",
@@ -4919,7 +4919,7 @@
      "line": "M3AE_TXT_KVASIR_seed1",
      "family": "M3AE",
      "seed": 1,
-     "design": "M3AE: dois bracos (TXT cinza, FT completo)",
+     "design": "M3AE: two arms (TXT grey, full FT)",
      "files": {
       "txt": "results/predictions/KVASIR/M3AE_TXT_KVASIR_seed1_TXT.json",
       "frozen": "results/predictions/KVASIR/M3AE_KVASIR_seed1_C0.json",
@@ -5546,7 +5546,7 @@
      "line": "M3AE_TXT_KVASIR_seed2",
      "family": "M3AE",
      "seed": 2,
-     "design": "M3AE: dois bracos (TXT cinza, FT completo)",
+     "design": "M3AE: two arms (TXT grey, full FT)",
      "files": {
       "txt": "results/predictions/KVASIR/M3AE_TXT_KVASIR_seed2_TXT.json",
       "frozen": "results/predictions/KVASIR/M3AE_KVASIR_seed2_C0.json",
@@ -6187,7 +6187,7 @@
     "M3AE_TXT_KVASIR_seed1|torre": 1.0851378998672956e-143,
     "M3AE_TXT_KVASIR_seed2|torre": 2.5748540008962116e-146
    },
-   "recorte": "Kvasir so sim/nao (gabarito yes/no; robustez)",
+   "recorte": "Kvasir yes/no only (gold answer yes/no; robustness)",
    "n_qids_recorte": 2294,
    "holm": {
     "SMOLVLM_LORA_TXT_KVASIR_seed1|torre": 7.719580231429396e-151,
@@ -6501,7 +6501,7 @@
     },
     "M3AE": {
      "n_seeds": 3,
-     "design": "M3AE: dois bracos (TXT cinza, FT completo)",
+     "design": "M3AE: two arms (TXT grey, full FT)",
      "own_text_only_baseline": {
       "mean": 0.7244986922406277,
       "sd": 0.0

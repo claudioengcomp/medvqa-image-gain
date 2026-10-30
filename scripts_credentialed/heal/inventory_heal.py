@@ -1,17 +1,17 @@
-"""Inventario do braco HEAL (plano v2 §10, decidido em 13/09/2026): so perguntas FECHADAS do teste
-oficial VinDr do HEAL-MedVQA ("Does [anatomia] suffer from [doenca]?" / "Is there [doenca] in the
-[anatomia]...?"), closed_yes e closed_no separados; alvo = mascara da anatomia do item (RLE do HF,
-coluna-maior); occlusion_study = mascara de OUTRA anatomia da mesma imagem (qualquer item do teste, aberta
-ou fechada) com razao de area no intervalo [0,7; 1,4] e sobreposicao <= 5 % do alvo, preferindo a
-razao mais proxima de 1; sem candidata, espelho horizontal da mascara (contralateral); se o espelho sobrepoe o alvo (> 5 %, anatomias
-da linha media como aorta e coracao), o posicionador pre-registrado do Kvasir (hflip com margem, vflip,
-rot180, 50 translacoes com seed 20260913, sem sobreposicao). **E4 (15/09):** o fallback exige >= 80 % do
-occlusion_study dentro do TORAX, definido pelo atlas populacional (thorax_atlas.py) passado em --thorax-atlas;
-sem posicao valida, a pergunta sai e e contada. Sem --thorax-atlas o FOV e o quadro inteiro (pre-E4). Abertas ficam fora (evaluable=False), com o motivo.
+"""Inventory of the HEAL arm (plan v2 §10, decided on 13/09/2026): only CLOSED-FORM questions from the official
+VinDr test of HEAL-MedVQA ("Does [anatomy] suffer from [disease]?" / "Is there [disease] in the
+[anatomy]...?"), closed_yes and closed_no separated; target = mask of the item's anatomy (HF RLE,
+column-major); occlusion_study = mask of ANOTHER anatomy of the same image (any test item, open
+or closed-form) with area ratio in the interval [0,7; 1,4] and overlap <= 5 % of the target, preferring the
+ratio closest to 1; with no candidate, horizontal mirror of the mask (contralateral); if the mirror overlaps the target (> 5 %, midline anatomies
+such as aorta and heart), the Kvasir pre-registered positioner (hflip with margin, vflip,
+rot180, 50 translations with seed 20260913, no overlap). **E4 (15/09):** the fallback requires >= 80 % of the
+occlusion_study inside the THORAX, defined by the population atlas (thorax_atlas.py) passed in --thorax-atlas;
+with no valid position, the question is dropped and counted. Without --thorax-atlas the FOV is the whole frame (pre-E4). Open ones are left out (evaluable=False), with the reason.
 
-Saida: inventory JSON no formato do Kvasir (questions[], units[]) com qids inteiros (3_000_000 +
-indice) e o question_id original do HEAL; mascaras nao sao gravadas aqui (recomputadas do RLE ao
-construir os arrows), so a area, a escolha do occlusion_study e a razao de area.
+Output: inventory JSON in Kvasir format (questions[], units[]) with integer qids (3_000_000 +
+index) and the original HEAL question_id; masks are not written here (recomputed from the RLE when
+building the arrows), only the area, the occlusion_study choice and the area ratio.
 
     python -m scripts_credentialed.heal.inventory_heal --annotations data/isbi_occlusion/heal/heal_annotations_test.parquet \
         --png-manifest data/isbi_occlusion/heal/png_manifest_test.json --out results/isbi_occlusion/inventory_heal_test.json
@@ -29,7 +29,7 @@ import numpy as np
 from scripts_credentialed.heal.heal_rle import decode_rle
 
 QID_BASE = 3_000_000
-OCCLUSION_STUDY_SEED = 20260913   # mesma seed do study plan do Kvasir
+OCCLUSION_STUDY_SEED = 20260913   # same seed as the Kvasir study plan
 AREA_RATIO = (0.7, 1.4)
 MAX_OVERLAP = 0.05
 CLOSED = {"closed_yes": "closed_yes", "closed_no": "closed_no"}
@@ -45,8 +45,8 @@ def normalize_answer(ans: str, qtype: str) -> str:
 
 
 def choose_occlusion_study(target: np.ndarray, candidates: list[tuple[str, np.ndarray]], fov: np.ndarray | None = None) -> dict:
-    """Outra anatomia da mesma imagem com razao de area em AREA_RATIO e sobreposicao <= MAX_OVERLAP;
-    empate: razao mais proxima de 1. Sem candidata: espelho horizontal."""
+    """Another anatomy of the same image with area ratio in AREA_RATIO and overlap <= MAX_OVERLAP;
+    tie: ratio closest to 1. No candidate: horizontal mirror."""
     ta = float(target.sum())
     best = None
     for name, m in candidates:
@@ -65,9 +65,9 @@ def choose_occlusion_study(target: np.ndarray, candidates: list[tuple[str, np.nd
     overlap = float((mirror & target).sum()) / ta if ta else 1.0
     if overlap <= MAX_OVERLAP:
         return {"method": "hflip", "area_ratio": 1.0, "overlap": overlap}
-    # anatomias da linha media (aorta, coracao): o espelho cai sobre o proprio alvo. Fallback = posicionador
-    # pre-registrado do Kvasir (masks.place_occlusion_study): hflip com margem de 5 px, vflip, rot180, 50 translacoes
-    # com seed fixa, FOV = quadro inteiro, >= 80 % dentro do quadro, sem sobreposicao.
+    # midline anatomies (aorta, heart): the mirror falls onto the target itself. Fallback = positioner
+    # Kvasir pre-registered (masks.place_occlusion_study): hflip with a 5 px margin, vflip, rot180, 50 translations
+    # with fixed seed, FOV = whole frame, >= 80 % inside the frame, no overlap.
     from harness.isbi_occlusion.masks import place_occlusion_study
     fov_kind = "thorax_atlas" if fov is not None else "full_frame"
     fov = fov if fov is not None else np.ones_like(target, dtype=bool)
@@ -131,7 +131,7 @@ def build_inventory(annotations: str, png_manifest: str | None, thorax_atlas: st
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--annotations", required=True); ap.add_argument("--png-manifest", default=None); ap.add_argument("--out", required=True)
-    ap.add_argument("--thorax-atlas", default=None, help="E4: .npy do atlas toracico (thorax_atlas.py); FOV do posicionador de fallback")
+    ap.add_argument("--thorax-atlas", default=None, help="E4: .npy of the thoracic atlas (thorax_atlas.py); FOV of the fallback positioner")
     a = ap.parse_args(argv)
     inv = build_inventory(a.annotations, a.png_manifest, a.thorax_atlas)
     Path(a.out).parent.mkdir(parents=True, exist_ok=True); Path(a.out).write_text(json.dumps(inv, indent=1) + "\n")

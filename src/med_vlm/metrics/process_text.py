@@ -46,8 +46,8 @@ def _squash_whitespace(s: str) -> str:
     return "".join(s.split())
 
 
-# 14/10/2026 (candidato; revision do zero-shot): numeros por extenso de "zero" a "ten" viram digitos. Usada SO na etapa de rescoring
-# (harness/v7_txt/rescore_numbers.py), depois da extracao; normalize_text nao muda (as predicoes em curso seguem identicas).
+# 14/10/2026 (the candidate; zero-shot revision): spelled-out numbers from "zero" to "ten" become digits. Used ONLY at the rescoring step
+# (harness/v7_txt/rescore_numbers.py), after extraction; normalize_text does not change (the predictions in progress remain identical).
 _NUM_WORDS = {"zero": "0", "one": "1", "two": "2", "three": "3", "four": "4", "five": "5", "six": "6", "seven": "7", "eight": "8", "nine": "9", "ten": "10"}
 _NUM_RE = re.compile(r"\b(" + "|".join(_NUM_WORDS) + r")\b")
 

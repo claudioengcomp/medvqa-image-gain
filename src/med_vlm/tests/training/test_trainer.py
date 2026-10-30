@@ -263,8 +263,8 @@ def test_train_vqa_generation_stops_at_max_steps(
     mock_train_step,
     mock_compile,
 ):
-    """max_steps deve encerrar o treino imediatamente ao ser atingido, mesmo
-    quando epochs * len(train_dl) produziria naturalmente muito mais passos."""
+    """max_steps must stop training immediately once reached, even
+    when epochs * len(train_dl) would naturally produce many more steps."""
     accelerator = Mock()
     accelerator.is_main_process = True
     mock_create_accelerator.return_value = accelerator
@@ -289,6 +289,6 @@ def test_train_vqa_generation_stops_at_max_steps(
     )
 
     # epochs=3 * len(train_dl)=10 => 30 passos "naturais", mas max_steps=5
-    # deve encerrar o treino exatamente em 5, cortando as duas malhas
+    # must stop training exactly at 5, cutting both loops
     # (epoch e batch).
     assert mock_train_step.call_count == 5

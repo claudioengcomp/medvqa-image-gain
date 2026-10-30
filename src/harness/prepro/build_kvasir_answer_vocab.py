@@ -1,20 +1,20 @@
-"""Constrói o vocabulário fechado de respostas do Kvasir (mesma lógica
-que prepro_vqa_vqa_rad() usa pro VQA-RAD: um índice por resposta única,
-ordenado por frequência decrescente), e re-escreve o campo
-answer_labels dos arrows de train+val+test com os índices reais.
+"""Builds the Kvasir closed-form answer vocabulary (same logic
+that prepro_vqa_vqa_rad() uses for VQA-RAD: one index per unique answer,
+ordered by descending frequency), and rewrites the
+answer_labels field of the train+val+test arrows with the real indices.
 
-`--val-arrow` é obrigatório: o vocabulário real do M3AE (`answer2id`,
-construído em `VQAVQARADDataModule.setup()`, confirmado lendo o código-fonte
-de `zhjohnchan/M3AE` commit `14da377255280eed547e451f368cf71a43f3ca1c`) é
-montado a partir de train+val, não train+test — sem o split de val (ver
-`harness/prepro/split_kvasir_train_val.py`), o `answer_labels` do val
-ficaria com o placeholder `[[0]]` de `prepare_kvasir_arrow.py`, quebrando o
-treino. Incluímos test também (não só train+val) pra cobrir qualquer
-resposta que só apareça lá — mais amplo que o mínimo exigido pelo M3AE em
-tempo de execução, sem custo (mesmo espírito documentado pro VQA-RAD:
-"vocabulário próprio, construído... a partir de train+val+test").
+`--val-arrow` is required: M3AE's real vocabulary (`answer2id`,
+built in `VQAVQARADDataModule.setup()`, confirmed by reading the source code
+of `zhjohnchan/M3AE` commit `14da377255280eed547e451f368cf71a43f3ca1c`) is
+built from train+val, not train+test — without the val split (see
+`harness/prepro/split_kvasir_train_val.py`), the val `answer_labels` would
+be left with the `[[0]]` placeholder from `prepare_kvasir_arrow.py`, breaking
+training. We also include test (not just train+val) to cover any
+answer that only appears there — broader than the minimum required by M3AE at
+runtime, at no cost (the same spirit documented for VQA-RAD:
+"own vocabulary, built... from train+val+test").
 
-Uso:
+Usage:
     python -m harness.prepro.build_kvasir_answer_vocab \
         --train-arrow data/finetune_arrows/vqa_kvasir_train.arrow \
         --val-arrow data/finetune_arrows/vqa_kvasir_val.arrow \
@@ -31,9 +31,9 @@ from harness.interventions.arrow_io import read_arrow, write_arrow
 
 
 def build_vocab(answer_lists: list[list[str]]) -> dict[str, int]:
-    """answer_lists: lista de [resposta_única] por pergunta (1 ref cada,
-    ver build_arrow_dataframe). Retorna {resposta: índice}, ordenado por
-    frequência decrescente (desempate por ordem alfabética, determinístico)."""
+    """answer_lists: list of [unique_answer] per question (1 ref each,
+    see build_arrow_dataframe). Returns {answer: index}, ordered by
+    descending frequency (ties broken alphabetically, deterministic)."""
     counter = collections.Counter(a[0] for a in answer_lists)
     ordered = sorted(counter.items(), key=lambda kv: (-kv[1], kv[0]))
     return {answer: i for i, (answer, _count) in enumerate(ordered)}
@@ -71,5 +71,5 @@ if __name__ == "__main__":
         df["answer_labels"] = [apply_vocab(row_answers, vocab) for row_answers in df["answers"]]
         write_arrow(df, path)
 
-    print(f"vocabulário: {len(vocab)} respostas únicas -> {args.vocab_output}")
-    print(f"arrows re-escritos com answer_labels reais: {args.train_arrow}, {args.val_arrow}, {args.test_arrow}")
+    print(f"vocabulary: {len(vocab)} unique answers -> {args.vocab_output}")
+    print(f"arrows rewritten with real answer_labels: {args.train_arrow}, {args.val_arrow}, {args.test_arrow}")

@@ -9,7 +9,7 @@
   0.1,
   0.2
  ],
- "regra": "imagens unicas em ordem alfabetica; numpy.random.default_rng(20260913).permutation; primeiras round(0,7N) treino, round(0,1N) seguintes validacao, resto teste; pergunta segue a imagem",
+ "regra": "unique images in alphabetical order; numpy.random.default_rng(20260913).permutation; first round(0,7N) training, next round(0,1N) validation, rest test; question follows the image",
  "fonte": {
   "train": {
    "path": "trainset.json",
@@ -4279,7 +4279,7 @@
    "val": "9f65a4bdd8d9f81097498fb4ad4213c0f211406e62ccffdae88abc759e687030",
    "test": "9aeb366e8bdd979aff386b06ba422e1b37a35861e74e0f0f7dd5e1e62f455ed3"
   },
-  "nota": "preparado para o M3AE so-texto; so roda com ok do candidato"
+  "nota": "prepared for the M3AE text-only; only runs with the candidate's ok"
  },
  "segundos": 0.3
 }

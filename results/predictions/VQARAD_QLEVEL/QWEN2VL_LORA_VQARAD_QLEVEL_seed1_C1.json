@@ -4229,7 +4229,7 @@
   "line": "QWEN2VL_LORA_VQARAD_QLEVEL_seed1",
   "arm": "torre congelada (LoRA q/k/v/o do LM, como a publicada qwen2vl_lora_vqarad)",
   "peft_label": "LORA",
-  "benchmark": "VQA-RAD dividido por pergunta (v7_txt/article_runs/data/vqarad_qlevel; seed 20260913; 2 460/352/703 perguntas; vqarad_question_split, 19/10)",
+  "benchmark": "VQA-RAD split by question (v7_txt/article_runs/data/vqarad_qlevel; seed 20260913; 2 460/352/703 questions; vqarad_question_split, 19/10)",
   "adapter_dir": "qwen2vl_lora_vqarad_qlevel_seed1",
   "adapter_sha256": "6788b01bc45abac779b29b0b017d936e960cbd22a12bd352bca407c43417d419",
   "adapter_bytes": 17465792,
@@ -4319,12 +4319,12 @@
   "input_arrow": "vqa_vqa_rad_test_C1.arrow",
   "input_arrow_sha256": "8b021c9d792ccccfb9edf47b442ef6253d719320e509382da1fee22316f51774",
   "input_arrow_sha256_expected_prefix": "8b021c9d792ccccf",
-  "inference": "harness.extract_predictions_circle (mesma funcao e rescoring das _C0.json publicadas); E7 nas fechadas aplicada depois por rescore_e7.py",
+  "inference": "harness.extract_predictions_circle (same function and rescoring as the published _C0.json); E7 on the closed-form applied afterwards by rescore_e7.py",
   "train_log_json": "qwen2vl_lora_vqarad_qlevel_seed1.json",
   "correcao_benchmark": {
    "t": "2026-10-19 18:53:00",
    "original": "results/predictions/VQARAD_QLEVEL/QWEN2VL_LORA_VQARAD_QLEVEL_seed1_C1.json",
-   "antes": "VQA-RAD, pacote original (M3AE/data/finetune_data/vqa_rad), divisao do M3AE 2 758/306, teste 451 (fonte unica, 15/10)"
+   "antes": "VQA-RAD, original package (M3AE/data/finetune_data/vqa_rad), M3AE split 2 758/306, test 451 (single source, 15/10)"
   }
  }
 }

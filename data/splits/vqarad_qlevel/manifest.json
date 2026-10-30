@@ -9,7 +9,7 @@
   0.1,
   0.2
  ],
- "regra": "qids em ordem crescente; default_rng(20260913).permutation; 70/10/20 por pergunta",
+ "regra": "qids in ascending order; default_rng(20260913).permutation; 70/10/20 by question",
  "fonte": {
   "train": {
    "path": "trainset.json",

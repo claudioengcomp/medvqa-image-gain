@@ -1,7 +1,7 @@
-"""C1: gera uma cópia do arquivo .arrow de teste com as imagens substituídas
-por uma imagem neutra (cor constante), preservando todas as outras colunas.
+"""C1: generates a copy of the test .arrow file with the images replaced
+by a neutral image (constant color), preserving all other columns.
 
-Uso:
+Usage:
     python -m harness.interventions.make_c1_blank_images \
         --input data/finetune_arrows/vqa_slack_test.arrow \
         --output data/finetune_arrows/vqa_slack_test_c1.arrow
@@ -20,7 +20,7 @@ DEFAULT_FILL_COLOR = (128, 128, 128)
 
 
 def make_blank_jpeg_bytes(size: int = DEFAULT_SIZE, fill_color=DEFAULT_FILL_COLOR) -> bytes:
-    """Gera os bytes JPEG de uma imagem quadrada de cor constante."""
+    """Generates the JPEG bytes of a square image of constant color."""
     img = Image.new("RGB", (size, size), fill_color)
     buf = io.BytesIO()
     img.save(buf, format="JPEG")

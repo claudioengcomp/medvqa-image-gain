@@ -4253,9 +4253,9 @@
    "libcuda": "/usr/lib/x86_64-linux-gnu/libcuda.so.580.178.04"
   },
   "dtype": "M3AE fp32 (Lightning, test_only)",
-  "inference": "copia de harness.extract_predictions_m3ae.extract_predictions com data_root proprio (sem swap no repositorio M3AE)",
+  "inference": "copy of harness.extract_predictions_m3ae.extract_predictions with its own data_root (no swap in the M3AE repository)",
   "t_start": "2026-10-21 05:42:27",
   "wall_seconds": 29.2,
-  "extra": "m3ae_frozen_vit: M3AE com encoder visual congelado; cond C2; ckpt_partida m3ae.ckpt sha256 469cf69b18cd75fbc3a010f202fb42c0cc074b34db75a0bfab442db982885442; vit_sha256 antes=depois=57533c36a73de5f16248a872afd27a97ce8e6683b20fb9d04587c8b0866f00bd (best e last); cost=M3AE_FROZEN_VQARAD_QLEVEL_seed1_cost.json; freeze=M3AE_FROZEN_VQARAD_QLEVEL_seed1_freeze.json"
+  "extra": "m3ae_frozen_vit: M3AE with frozen visual encoder; cond C2; starting checkpoint m3ae.ckpt sha256 469cf69b18cd75fbc3a010f202fb42c0cc074b34db75a0bfab442db982885442; vit_sha256 before=after=57533c36a73de5f16248a872afd27a97ce8e6683b20fb9d04587c8b0866f00bd (best and last); cost=M3AE_FROZEN_VQARAD_QLEVEL_seed1_cost.json; freeze=M3AE_FROZEN_VQARAD_QLEVEL_seed1_freeze.json"
  }
 }

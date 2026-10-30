@@ -4,7 +4,7 @@
  "script_sha256": "afe3fdcb924e80a31ef7447a3587d6d541cd1b7424ac9f57ca929d5b5b100a28",
  "normalizacao": "normalize_text: strip, lower, remove pontuacao, colapsa espacos; variante texto cru = strip + lower",
  "regra_template": {
-  "R1": "mesma imagem + phrase_type 'frame' + mesma resposta normalizada",
+  "R1": "same image + phrase_type 'frame' + same normalized answer",
   "R2": "R1 + mesmo question_type"
  },
  "divisoes": {

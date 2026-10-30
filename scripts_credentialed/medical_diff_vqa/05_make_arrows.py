@@ -1,11 +1,11 @@
-"""v7_mimic/scripts/05_make_arrows.py -- 2026-10-10 -- lasid-gpu1 (so CPU)
+"""v7_mimic/scripts/05_make_arrows.py -- 2026-10-10 -- lasid-gpu1 (CPU only)
 
-Arrows no formato M3AE/med_vlm (uma linha por imagem; listas de perguntas/respostas/labels), replicando
-harness/isbi_occlusion/heal/make_heal_train_arrows.py (repo occlusion_study @2b7e731): mesmo write_arrow
-(harness/interventions/arrow_io.py), mesma regra de vocabulario ("no"=0, "yes"=1, resto por frequencia
-decrescente em train+val+test, desempate alfabetico), answer_type 0=closed 1=open, image_id "mimic/<dicom_id>".
-Entrada: data/items_{train,val,test}.parquet (qid ja atribuido) + PNG derivados (manifesto por split).
-Saida: data/vqa_mimic_{train,val,test}.arrow, data/manifest_mimic_{split}.json, data/answer_vocab.json.
+Arrows in M3AE/med_vlm format (one row per image; lists of questions/answers/labels), replicating
+harness/isbi_occlusion/heal/make_heal_train_arrows.py (occlusion_study repo @2b7e731): same write_arrow
+(harness/interventions/arrow_io.py), same vocabulary rule ("no"=0, "yes"=1, rest by decreasing
+frequency in train+val+test, alphabetical tiebreak), answer_type 0=closed 1=open, image_id "mimic/<dicom_id>".
+Input: data/items_{train,val,test}.parquet (qid already assigned) + derived PNGs (manifest per split).
+Output: data/vqa_mimic_{train,val,test}.arrow, data/manifest_mimic_{split}.json, data/answer_vocab.json.
 
   python 05_make_arrows.py --items-dir data --png-root <derived>/mimic_png --out-dir data
 """
@@ -42,7 +42,7 @@ def main():
         assert items[s].qid.is_unique, s
     allq = pd.concat(items.values())
     assert allq.qid.is_unique, "qid repetido entre splits"
-    # disjuncao de pacientes e imagens entre splits
+    # disjunction of patients and images between splits
     for x in SPLITS:
         for y in SPLITS:
             if x < y:

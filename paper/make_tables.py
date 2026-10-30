@@ -48,7 +48,7 @@ SUF = " [M3AE no-image]"   # r42 (23/10): A_text, G_enc e G do M3AE pela secao 1
 BASES = [("KVASIR", "Kvasir-VQA-x1"), ("SLAKE", "SLAKE"), ("HEAL", "HEAL-MedVQA"), ("MIMIC", "Medical-Diff-VQA"), ("VQA-RAD (re-split by image; paper's benchmark)", "VQA-RAD")]
 FAM = [("Qwen2-VL-2B", "Qwen2-VL-2B"), ("SmolVLM2-2.2B", "SmolVLM2-2.2B"), ("M3AE", "M3AE")]
 NQ = {"KVASIR": 10779, "SLAKE": 416, "HEAL": 1446, "MIMIC": 1499, "VQA-RAD (re-split by image; paper's benchmark)": 418}
-# r16 (20/10): uma linha por modelo; intervalo ao lado da media; sem "+"; base como linha de grupo
+# r16 (20/10): one row per model; interval next to the mean; no "+"; benchmark as group row
 def nosign(v):
     v = v.strip()
     if v in ("+0.0", "-0.0"): return "0.0"
@@ -77,10 +77,10 @@ for bi, (bkey, bname) in enumerate(BASES):
             cis = get(f"{bkey} / {fkey}: joint CI (images and seeds) of G_enc / G_ft / G (pp)").split(" / ")
             genc = cell1(msd(gains[0])[0], ci1(cis[0])); gft = cell1(msd(gains[1])[0], ci1(cis[1])); gg = cell1(msd(gains[2])[0], ci1(cis[2]))
         else:
-            # r37 (21/10): cinza do M3AE = modelo de encoder congelado avaliado com imagem cinza so no teste (secao 1e; media)
+            # r37 (21/10): M3AE grey = frozen encoder model evaluated with grey image only on the test (section 1e; mean)
             grey, _ = msd(get(f"{bkey} / M3AE frozen encoder: grey image at test time only, mean (SD) / per seed (%)").split(" / ")[0])
             gm = get(f"{bkey} / M3AE: G (pp)" + SUF); gc = get(f"{bkey} / M3AE: joint CI (images and seeds) of G (pp)" + SUF)
-            # r32 (21/10): G_enc e G_ft do M3AE pela secao 1e (encoder visual congelado); G conferido contra a linha publicada
+            # r32 (21/10): G_enc and G_ft of M3AE from section 1e (frozen visual encoder); G checked against the published row
             fz = get(f"{bkey} / M3AE frozen encoder: G_enc / G_ft / G (pp)" + SUF).split(" / ")
             fzc = get(f"{bkey} / M3AE frozen encoder: joint CI (images and seeds) of G_enc / G_ft / G (pp)" + SUF).split(" / ")
             assert msd(fz[2])[0] == msd(gm)[0] and fzc[2].strip() == gc.strip(), (bkey, fz[2], gm, fzc[2], gc)

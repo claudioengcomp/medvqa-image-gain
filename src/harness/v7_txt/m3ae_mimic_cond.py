@@ -1,6 +1,6 @@
-"""v7_mimic B: predicao do M3AE_MIMIC_seed<s> numa condicao do Occlusion study/Occlusion (lapa). data_root proprio por condicao em
-v7_mimic/m3ae_arrows/cond/<COND>/ (links: vqa_mimic_test.arrow -> arrow da condicao; train/val -> data/ para o vocabulario), checkpoint best
-do Lightning, m3ae_infer_v7 com --arrow-sha256 esperado. Uso: m3ae_mimic_cond.py <seed> <COND> <arrow> <sha256> <output.json>"""
+"""v7_mimic B: prediction of M3AE_MIMIC_seed<s> under an Occlusion study/Occlusion condition (lapa). Own data_root per condition in
+v7_mimic/m3ae_arrows/cond/<COND>/ (links: vqa_mimic_test.arrow -> condition arrow; train/val -> data/ for the vocabulary), Lightning's
+best checkpoint, m3ae_infer_v7 with the expected --arrow-sha256. Usage: m3ae_mimic_cond.py <seed> <COND> <arrow> <sha256> <output.json>"""
 import os as _os
 _MEDVQA_ROOT = _os.environ.get("MEDVQA_ROOT", "/path/to/original/run/tree")   # original run tree root (this package: see README, "Paths")
 import glob, os, subprocess, sys

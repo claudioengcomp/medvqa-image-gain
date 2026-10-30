@@ -25,7 +25,7 @@
   "default_root_dir=heal",
   "log_dir=result"
  ],
- "criterio": "fim da validacao da epoca 0 (epoca inteira de treino + validacao)",
+ "criterio": "end of validation of epoch 0 (full epoch of training + validation)",
  "concluiu": true,
  "passos_otimizacao": 230,
  "lotes_treino": 922,

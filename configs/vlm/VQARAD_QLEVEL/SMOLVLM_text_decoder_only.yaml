@@ -1,4 +1,4 @@
-# vqarad_question_split (2026-10-19): copia de smolvlm2_lora_txt_vqarad_rediv.yaml (sha256 a56c166611cecf2a); mudam so nome e data.arrows (divisao por pergunta).
+# vqarad_question_split (2026-10-19): copy of smolvlm2_lora_txt_vqarad_rediv.yaml (sha256 a56c166611cecf2a); only the name and data.arrows (split by question) change.
 run_name: smolvlm2_lora_txt_vqarad_qlevel
 model: SMOLVLM
 dataset: VQA_RAD

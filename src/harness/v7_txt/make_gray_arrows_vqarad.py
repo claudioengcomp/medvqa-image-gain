@@ -1,7 +1,7 @@
-"""v7_txt (2026-10-13, candidato: Baseline no VQA-RAD): arrows do M3AE com a imagem cinza constante 384x384 RGB(128,128,128) de
-harness/interventions/make_c1_blank_images.py (a mesma de tmp/v7/make_gray_arrows.py para Kvasir, SLAKE e HEAL), para treino, validacao e
-teste do VQA-RAD. Fontes (so leitura): M3AE/data/finetune_arrows/vqa_vqa_rad_{train,val,test}.arrow. Saida: v7_txt/m3ae_arrows/vqa_vqa_rad_*_gray.arrow,
-links em m3ae_arrows/data_root/ e manifesto proprio manifest_gray_arrows_vqarad.json (o manifesto de 09/10 nao e tocado)."""
+"""v7_txt (2026-10-13, the candidate: Baseline on VQA-RAD): M3AE arrows with the constant grey image 384x384 RGB(128,128,128) from
+harness/interventions/make_c1_blank_images.py (the same one as tmp/v7/make_gray_arrows.py for Kvasir, SLAKE and HEAL), for training, validation and
+test of the VQA-RAD. Sources (read-only): M3AE/data/finetune_arrows/vqa_vqa_rad_{train,val,test}.arrow. Output: v7_txt/m3ae_arrows/vqa_vqa_rad_*_gray.arrow,
+links in m3ae_arrows/data_root/ and its own manifest manifest_gray_arrows_vqarad.json (the 09/10 manifest is not touched)."""
 import os as _os
 _MEDVQA_ROOT = _os.environ.get("MEDVQA_ROOT", "/path/to/original/run/tree")   # original run tree root (this package: see README, "Paths")
 import hashlib, json, os, socket, sys, time

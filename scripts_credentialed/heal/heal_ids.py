@@ -1,14 +1,14 @@
-"""Passo 1 do download seletivo do VinDr-CXR (HEAL-MedVQA, parte VinDr): ids das
-imagens usadas pelo HEAL, lidos dos parquets do Hugging Face por projecao de
-colunas (duckdb le por range; a coluna `image` nunca e lida nem baixada).
+"""Step 1 of the selective download of VinDr-CXR (HEAL-MedVQA, VinDr part): ids of the
+images used by HEAL, read from the Hugging Face parquets by column
+projection (duckdb reads by range; the `image` column is never read or downloaded).
 
-Fonte canonica: a configuracao com imagem (train-*-of-00033 e test-*-of-00006:
-16.380 e 2.851 linhas, os numeros do plano). A configuracao `data/` (23.091 /
-3.933 linhas) e reportada a parte para conferencia.
+Canonical source: the configuration with image (train-*-of-00033 and test-*-of-00006:
+16.380 and 2.851 rows, the numbers from the plan). The `data/` configuration (23.091 /
+3.933 rows) is reported separately for checking.
 
-Saidas em data/isbi_occlusion/heal/: heal_items.parquet (heal_split, image_id,
-question_id, anatomy, question_type, mask_h, mask_w) e heal_image_ids.txt
-(image_id<TAB>splits do HEAL, um id por linha, cabecalho). Nada de imagem.
+Outputs in data/isbi_occlusion/heal/: heal_items.parquet (heal_split, image_id,
+question_id, anatomy, question_type, mask_h, mask_w) and heal_image_ids.txt
+(image_id<TAB>HEAL splits, one id per line, header). No image data.
 
     python -m scripts_credentialed.heal.heal_ids --out data/isbi_occlusion/heal
 """

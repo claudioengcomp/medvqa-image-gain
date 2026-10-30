@@ -1,7 +1,7 @@
-"""19/10/2026 (candidato, vqarad_overlap-B2; so leitura): JSON publico do OSF (VQA_RAD Dataset Public.json) contra os nossos JSON do pacote original.
-Chave de ligacao: (image_name, pergunta normalizada, resposta normalizada) com normalize_text do harness; perguntas 'frame' nossas contra o campo
-question_frame das linhas do OSF (mesma imagem, mesma resposta). R3 = o question_frame da linha de teste do OSF aparece como pergunta (normalizada)
-de treino + validacao nossos na MESMA imagem. Saida: v7_txt/article_runs/analysis/vqarad_osf.json. Sem interpretacao."""
+"""19/10/2026 (the candidate, vqarad_overlap-B2; read-only): public OSF JSON (VQA_RAD Dataset Public.json) against our JSON from the original package.
+Link key: (image_name, normalized question, normalized answer) with the harness's normalize_text; our 'frame' questions against the field
+question_frame of the OSF rows (same image, same answer). R3 = the question_frame of the OSF test row appears as our (normalized)
+training + validation question on the SAME image. Output: v7_txt/article_runs/analysis/vqarad_osf.json. No interpretation."""
 import os as _os
 _MEDVQA_ROOT = _os.environ.get("MEDVQA_ROOT", "/path/to/original/run/tree")   # original run tree root (this package: see README, "Paths")
 import collections, hashlib, json, os, sys, time

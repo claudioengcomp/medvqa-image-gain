@@ -1,6 +1,6 @@
-"""19/10/2026 (candidato, text_analyses; CPU, so leitura): analises para numeros do texto. Bases do artigo (fechadas): KVASIR, SLAKE, HEAL, MIMIC, VQARAD_REDIV.
-Usa as mesmas celulas (txt_floors.cells, modo article_runs), os mesmos qids da decomposicao e o mesmo bootstrap por imagem (2 000, seed 20260913).
-Saida: v7_txt/article_runs/analysis/text_analyses.json. Sem interpretacao."""
+"""19/10/2026 (the candidate, text_analyses; CPU, read-only): analyses for the text numbers. Paper benchmarks (closed-form): KVASIR, SLAKE, HEAL, MIMIC, VQARAD_REDIV.
+Uses the same cells (txt_floors.cells, article_runs mode), the same qids from the decomposition and the same per-image bootstrap (2 000, seed 20260913).
+Output: v7_txt/article_runs/analysis/text_analyses.json. No interpretation."""
 import os as _os
 _MEDVQA_ROOT = _os.environ.get("MEDVQA_ROOT", "/path/to/original/run/tree")   # original run tree root (this package: see README, "Paths")
 import collections, glob, hashlib, json, os, sys, time
@@ -18,7 +18,7 @@ out = {"t": time.strftime("%Y-%m-%d %H:%M:%S"), "script": os.path.abspath(__file
 def bvec(bs, img, qs, d):
     idx = np.array([bs.index[img[q]] for q in qs]); n = len(bs.ids); num = np.bincount(idx, weights=np.asarray(d, float), minlength=n); den = np.bincount(idx, minlength=n).astype(float)
     return (bs.W @ num) / np.maximum(bs.W @ den, 1e-9)
-# ---- 13.1 G_ft por execucao
+# ---- 13.1 G_ft per run
 L = []
 for b in ART:
     for r in DEC[b]["lines"]:
@@ -28,7 +28,7 @@ out["13_1"] = {"execucoes": L, "por_base": {b: {"excluem": sum(x["exclui_zero"] 
                "total_excluem": sum(x["exclui_zero"] for x in L), "max_global_entre_as_que_excluem": max(x["G_ft"] for x in L if x["exclui_zero"])}
 # ---- 13.2 majoritaria
 out["13_2"] = {b: json.load(open(f"{PJ}/results/MAJ_question_only_{b}.json"))["accuracy"] for b in ART}
-# ---- 13.3 majoritaria por texto exato da pergunta
+# ---- 13.3 majority by exact question text
 PAT = ["is there", "are there", "have all polyps", "how many", "what type of", "what is the size", "where in the image", "does this image contain any finding", "what color is the anatomical landmark", "what color is the abnormality"]
 def tpl(q):
     q = q.strip().lower()
@@ -72,7 +72,7 @@ for b in ART:
     r134[b] = {"A_ft_menos_baseline_mean_per_family": base, "order_by_baseline": ordens, "ordem_igual_sob_todos_os_baselines_with_3_familias": len({tuple(o) for k, o in ordens.items() if k != "cinza"}) == 1,
                "ordem_VLM_sob_cinza_igual_a_ordem_VLM_sob_A_text": [f for f in ordens["A_text"] if f != "M3AE"] == ordens["cinza"],
                "pares_discordantes_TFIDF_x_Atext": [(p["a"], p["b"], "mesma familia" if fam_of(p["a"]) == fam_of(p["b"]) else "familias diferentes") for p in pares]}
-    # 13.7: IC condicional (media por replica das 3 sementes) x IC conjunto (reamostra imagens e sementes) e DP entre sementes
+    # 13.7: conditional CI (mean per replica of the 3 seeds) x joint CI (resamples images and seeds) and SD between seeds
     r137[b] = {}
     for f in FAM:
         for key in (("G_ft", "G") if f != "M3AE" else ("G",)):
@@ -91,7 +91,7 @@ out["13_4"] = r134; out["13_7"] = {"valores": r137, "codigo": {"occlusion_stats.
 # ---- 13.5 VQA-RAD redividido por recorte
 b = "VQARAD_REDIV"; TS = {x["qid"]: x for x in json.load(open(f"{PJ}/data/vqarad_rediv/testset.json"))}; closed = [q for q in TS if str(TS[q]["answer_type"]).strip().upper() == "CLOSED"]
 _OJ = json.load(open(f"{W}/doutorado/data_drive_sync/raw/vqa_rad_osf/VQA_RAD Dataset Public.json")); osf = {(x["image_name"], NT(x["question"])): x for x in _OJ}
-for x in _OJ:   # perguntas 'frame' ligadas pelo question_frame (mesma imagem)
+for x in _OJ:   # 'frame' questions linked by question_frame (same image)
     if str(x.get("question_frame", "NULL")).strip() not in ("", "NULL"): osf.setdefault((x["image_name"], NT(x["question_frame"])), x)
 src = {}
 for f in FAM:

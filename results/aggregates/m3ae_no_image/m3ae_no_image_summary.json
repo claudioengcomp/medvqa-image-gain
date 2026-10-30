@@ -1091,14 +1091,14 @@
    6.41015625,
    6.755859375
   ],
-  "medida": "duracao do job de treino e pico da arvore de processos, ambos do escalonador (mesma medida das linhas 'Custo:' da secao 9)",
+  "medida": "duration of the training job and peak of the process tree, both from the scheduler (same measurement as the 'Custo:' rows of section 9)",
   "fontes": {
    "${MEDVQA_ROOT}/v7_txt/article_runs/analysis/text_analyses.json": "c45b1d125cf88a7b12a8e30f9499edd588a65e428a92540533001dcba07f0ba1",
    "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/logs/infer_state_semimg21b.json": "f9104476cad71c5ebe6480ef9bbb9e4f24c11a89e25805fc21ca40632a9a640c"
   }
  },
  "parametros_sem_imagem": {
-  "regra": "23/10 (m3ae_no_image_atext, 2.9): parametros do M3AE sem imagem por base, contados no state_dict do checkpoint final (semente 0) de cada base do m3ae_no_image.\nCongelados (C1): vision_encoder, multi_modal_vision_proj, multi_modal_vision_layers, multi_modal_vision_pooler e crossattention.self / crossattention.output.dense\ndas camadas de texto; o resto e treinavel. Validacao: VQA-RAD por imagem tem de dar o total e o treinavel do teste do m3ae_no_image (testes_novo.json). CPU.",
+  "regra": "23/10 (m3ae_no_image_atext, 2.9): parameters of M3AE without image per benchmark, counted in the state_dict of the final checkpoint (seed 0) of each benchmark of m3ae_no_image.\nFrozen (C1): vision_encoder, multi_modal_vision_proj, multi_modal_vision_layers, multi_modal_vision_pooler and crossattention.self / crossattention.output.dense\nof the text layers; the rest is trainable. Validation: VQA-RAD per image must give the total and the trainable count of the m3ae_no_image test (testes_novo.json). CPU.",
   "bases": {
    "VQARAD_REDIV": {
     "checkpoint": "epoch=12-step=506.ckpt",

@@ -1,5 +1,5 @@
-"""22/10/2026 (m3ae_no_image): fila do M3AE sem imagem. Treinos primeiro (VQA-RAD por imagem -> SLAKE -> HEAL -> Medical-Diff-VQA -> Kvasir -> VQA-RAD por pergunta;
-sementes 0, 1, 2), depois as predicoes. Reserva treino 8 GiB (pico medido no ensaio 6 584 MiB por PID + 1,5 GB); predicao 6 GiB."""
+"""22/10/2026 (m3ae_no_image): queue of the M3AE without image. Trainings first (VQA-RAD by image -> SLAKE -> HEAL -> Medical-Diff-VQA -> Kvasir -> VQA-RAD by question;
+seeds 0, 1, 2), then the predictions. Training reserve 8 GiB (peak measured in the trial run 6 584 MiB per PID + 1,5 GB); prediction 6 GiB."""
 import json, os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); import m3ae_semimg_cfg as C
 H = C.W + "/v7_txt/worktree/harness/v7_txt"; L = C.O + "/logs"; R = C.O + "/results"; os.makedirs(R, exist_ok=True); os.makedirs(L + "/sched", exist_ok=True)

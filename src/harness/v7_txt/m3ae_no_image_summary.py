@@ -1,6 +1,6 @@
-"""23/10/2026 (m3ae_no_image_atext): sinteses usadas no texto do artigo (resumo, contribuicoes, resultados, conclusao), calculadas ANTES (analises atuais, A_text do M3AE
-com imagem cinza) e DEPOIS (espelho do m3ae_no_image_atext, A_text do M3AE sem imagem, m3ae_no_image) pelas mesmas regras. So leitura dos JSON de analise; nada digitado.
-Saida: article_runs/m3ae_no_image_atext/sinteses.json"""
+"""23/10/2026 (m3ae_no_image_atext): syntheses used in the paper text (abstract, contributions, results, conclusion), computed BEFORE (current analyses, A_text of the M3AE
+with grey image) and AFTER (mirror of m3ae_no_image_atext, A_text of the M3AE without image, m3ae_no_image) by the same rules. Read-only of the analysis JSONs; nothing typed in.
+Output: article_runs/m3ae_no_image_atext/sinteses.json"""
 import os as _os
 _MEDVQA_ROOT = _os.environ.get("MEDVQA_ROOT", "/path/to/original/run/tree")   # original run tree root (this package: see README, "Paths")
 import glob, hashlib, json, os
@@ -18,7 +18,7 @@ def sint(J):
     # 2.1 Tabela 2, M3AE
     o["tab2_m3ae"] = {b: {"A_text": [bf(b, "M3AE")["own_text_only_baseline"]["mean"], bf(b, "M3AE")["own_text_only_baseline"]["sd"]], "G_enc": [I17[b]["diferencas"]["G_enc"]["media"]] + I17[b]["diferencas"]["G_enc"]["ic_conjunto"],
                          "G_ft": [I17[b]["diferencas"]["G_ft"]["media"]] + I17[b]["diferencas"]["G_ft"]["ic_conjunto"], "G": [bf(b, "M3AE")["soma"]["mean"]] + I15[b]["M3AE"]["G"]["ic_conjunto"]} for b in ART}
-    # 2.2 contagens (45 execucoes = 30 VLM + 15 M3AE congelado; G: 45 = 5 x 9 linhas afinadas, M3AE = fine-tune completo)
+    # 2.2 counts (45 runs = 30 VLM + 15 frozen M3AE; G: 45 = 5 x 9 fine-tuned rows, M3AE = full fine-tune)
     E = {b: I17[b]["ic_por_execucao"] for b in ART}; inc = lambda x: x[1] <= 0 <= x[2]
     C = IC["contagem"]; ex_G = [[x["base"], x["linha"]] for x in IC["linhas"] if not x["G_exclui_zero"]]
     gft_vlm = [x for x in I13["13_1"]["execucoes"]]; gft_m3 = [(b, s, x) for b in ART for s, x in E[b]["G_ft"].items()]
@@ -38,7 +38,7 @@ def sint(J):
     o["M3AE_Genc_4grandes"] = [min(I17[b]["diferencas"]["G_enc"]["media"] for b in G4), max(I17[b]["diferencas"]["G_enc"]["media"] for b in G4)]
     o["M3AE_Gft_4grandes"] = [min(I17[b]["diferencas"]["G_ft"]["media"] for b in G4), max(I17[b]["diferencas"]["G_ft"]["media"] for b in G4)]
     o["VLM_Gft"] = [min(bf(b, f)["ganho_adaptacao"]["mean"] for b in ART for f in FAM[:2]), max(bf(b, f)["ganho_adaptacao"]["mean"] for b in ART for f in FAM[:2])]
-    # 2.4 baselines contra A_text (HEAL: protocolo so-treino do heal_classifiers_train_only, como na Tabela 2)
+    # 2.4 baselines against A_text (HEAL: train-only protocol of heal_classifiers_train_only, as in Table 2)
     tmb = lambda b, f: I10[f]["txt_menos_bert"]["mean"] if b == "HEAL" else bf(b, f)["txt_menos_bert"]["mean"]
     tmt = lambda b, f: I10[f]["txt_menos_tfidf"]["mean"] if b == "HEAL" else bf(b, f)["txt_menos_tfidf"]["mean"]
     o["PubMedBERT_menos_A_text"] = {b: {f: -tmb(b, f) for f in FAM} for b in ART}
@@ -54,7 +54,7 @@ def sint(J):
     o["A_text_dp_max_por_base"] = {b: max(bf(b, f)["own_text_only_baseline"]["sd"] for f in FAM) for b in ART}
     # 2.5 HEAL: ganho creditado
     o["HEAL_G"] = {f: bf("HEAL", f)["soma"]["mean"] for f in FAM}; o["HEAL_Aft_menos_TFIDF"] = {f: I10[f]["ft_menos_tfidf"]["mean"] for f in FAM}
-    # 2.6 troca
+    # 2.6 swap
     sw = {(b, f): S2[b]["por_familia"][f]["A_swap_menos_A_text"]["mean"] for b in G4 for f in FAM}
     o["A_swap_menos_A_text_4grandes"] = {"min": min(sw.values()), "max": max(sw.values()), "todas_negativas": all(v < 0 for v in sw.values()), "por_celula": {f"{b}|{f}": v for (b, f), v in sw.items()}}
     dr = {(b, f): S2[b]["por_familia"][f]["A_menos_A_swap"]["mean"] for b in ART for f in FAM}
@@ -66,7 +66,7 @@ def sint(J):
     v["A_text_sobe_nas_3"] = {f: v["VQARAD_QLEVEL"]["A_text"][f] > v["VQARAD_REDIV"]["A_text"][f] for f in FAM}
     v["G_sobe"] = {f: v["VQARAD_QLEVEL"]["G"][f][0] > v["VQARAD_REDIV"]["G"][f][0] for f in FAM}
     o["vqarad_duas_divisoes"] = v
-    # 2.8 sonda cinza do congelado (HEAL)
+    # 2.8 grey probe of the frozen (HEAL)
     o["cinza_congelado_HEAL"] = [I17["HEAL"]["por_semente"][s]["A_cinza"] for s in ("0", "1", "2")]
     return o
 out = {}

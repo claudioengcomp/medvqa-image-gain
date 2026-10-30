@@ -1,13 +1,13 @@
-"""Schema e validação para os registros de resultado do harness do P0.
+"""Schema and validation for the P0 harness result records.
 
-Um "results record" descreve o desempenho de UM modelo em UMA condição
-(C0/C1/C2) sobre UM dataset. Dois níveis de detalhe são suportados:
+A "results record" describes the performance of ONE model under ONE condition
+(C0/C1/C2) on ONE dataset. Two levels of detail are supported:
 
-- Modo agregado (sempre obrigatório): model, dataset, condition, accuracy.
-  'n'/'n_correct' são opcionais, mas necessários para bootstrap CI.
-- Modo pareado (opcional): 'predictions', uma lista de
-  {"qid": ..., "predicted": str, "gold": str, "correct": bool} por item.
-  Necessário para o teste de McNemar e o bootstrap pareado.
+- Aggregate mode (always required): model, dataset, condition, accuracy.
+  'n'/'n_correct' are optional, but required for bootstrap CI.
+- Paired mode (optional): 'predictions', a list of
+  {"qid": ..., "predicted": str, "gold": str, "correct": bool} per item.
+  Required for the McNemar test and the paired bootstrap.
 """
 from __future__ import annotations
 
@@ -16,29 +16,29 @@ VALID_CONDITIONS = (
     "C0", "C1", "C2", "C5", "C6",
     "C4_OCC_25", "C4_OCC_50", "C4_OCC_75",
     "C4_NOISE_25", "C4_NOISE_50", "C4_NOISE_75",
-    # C7 reservado (26/08/2026): condição occlusion_study de oclusão posicional
-    # (antiga "Tarefa 4" do PLANO_AJUSTES_P0_v2.md) -- renomeada de C6
-    # pra C7 quando C6 passou a significar "mesmo órgão+modalidade,
+    # C7 reserved (26/08/2026): occlusion_study condition for positional occlusion
+    # (formerly "Task 4" of PLANO_AJUSTES_P0_v2.md) -- renamed from C6
+    # to C7 when C6 came to mean "same organ+modality,
     # categoria livre" (ver docs/superpowers/plans/2026-08-21-kvasir-targeted-pathology-swap-condition.md).
-    # Ainda não implementada -- adicionada aqui só pra reservar o nome.
+    # Not yet implemented -- added here only to reserve the name.
     "C7",
     # ISBI 2027, occlusion_study posicional (docs/isbi/occlusion_study/study_plan_v2.md): C0 restrita
-    # as perguntas avaliaveis (e C0_orig, diagnostico com bytes originais), alvo T,
-    # occlusion_study P, suficiencia S, dose 1,5x/2x, e preenchimentos media/blur.
+    # the evaluable questions (and C0_orig, diagnostic with the original bytes), target T,
+    # occlusion_study P, sufficiency S, dose 1,5x/2x, and mean/blur fills.
     "C0_orig", "T", "P", "S", "T1.5", "P1.5", "T2", "P2", "S2",
     "T_mean", "P_mean", "T_blur", "P_blur",
-    # ablacao de sigma do blur (execucao, 14/09/2026): sigma = 1/3/10 % da largura, e cor media da regiao
+    # blur sigma ablation (run, 14/09/2026): sigma = 1/3/10 % of the width, and mean color of the region
     "T_blur1", "P_blur1", "T_blur3", "P_blur3", "T_blur10", "P_blur10", "T_regmean", "P_regmean",
-    "T_ringmean", "P_ringmean",   # E3: cor media do entorno (anel de 15 px)
-    # v7 (2026-10-09): braco so-texto (TXT), C0 das perguntas cruzadas do occlusion (C0_cross) e as
-    # condicoes occlusion do Kvasir/SLAKE (oclusor em imagem sem o achado)
+    "T_ringmean", "P_ringmean",   # E3: mean color of the surroundings (15 px ring)
+    # v7 (2026-10-09): text-only arm (TXT), C0 of the occlusion cross questions (C0_cross) and the
+    # occlusion conditions of Kvasir/SLAKE (occluder on image without the finding)
     "TXT", "C0_cross",
     "OCCLUSION_ART_black", "OCCLUSION_ART_blur10", "OCCLUSION_POL_Q1_black", "OCCLUSION_POL_Q1_blur10",
     "OCCLUSION_POL_Q3_black", "OCCLUSION_POL_Q3_blur10", "OCCLUSION_INS_black", "OCCLUSION_INS_blur10",
     "OCCLUSION_DIS_black", "OCCLUSION_DIS_blur10",
-    # v7_mimic (2026-10-11): suficiencia com blur/cor media (S_blur10, S_regmean) e occlusion do MIMIC (HANDOFF_OCCLUSION_STUDY_GPU.md)
+    # v7_mimic (2026-10-11): sufficiency with blur/mean color (S_blur10, S_regmean) and MIMIC occlusion (HANDOFF_OCCLUSION_STUDY_GPU.md)
     "S_blur10", "S_regmean", "OCCLUSION_black", "OCCLUSION_blur10",
-    # m3ae_black_image (22/10/2026): M3AE com imagem constante PRETA -- so-texto treinado com preta e testado com preta; qualquer modelo testado com preta
+    # m3ae_black_image (22/10/2026): M3AE with constant BLACK image -- text-only trained with black and tested with black; any model tested with black
     "TXT_PRETO", "C1_PRETO",
 )
 
@@ -48,18 +48,18 @@ class ResultsSchemaError(ValueError):
 
 
 def validate_results_dict(d: dict) -> None:
-    """Levanta ResultsSchemaError se `d` não seguir o schema. Não retorna nada em sucesso."""
+    """Raises ResultsSchemaError if `d` does not follow the schema. Returns nothing on success."""
     missing = [k for k in REQUIRED_KEYS if k not in d]
     if missing:
-        raise ResultsSchemaError(f"Campos obrigatórios ausentes: {missing}")
+        raise ResultsSchemaError(f"Missing required fields: {missing}")
 
     if d["condition"] not in VALID_CONDITIONS:
         raise ResultsSchemaError(
-            f"condition={d['condition']!r} inválida, deve ser uma de {VALID_CONDITIONS}"
+            f"condition={d['condition']!r} invalid, must be one of {VALID_CONDITIONS}"
         )
 
     if not isinstance(d["accuracy"], (int, float)) or not (0.0 <= float(d["accuracy"]) <= 1.0):
-        raise ResultsSchemaError(f"accuracy={d['accuracy']!r} deve ser um número entre 0 e 1")
+        raise ResultsSchemaError(f"accuracy={d['accuracy']!r} must be a number between 0 and 1")
 
     has_n = "n" in d
     has_n_correct = "n_correct" in d
@@ -73,7 +73,7 @@ def validate_results_dict(d: dict) -> None:
     if "predictions" in d:
         preds = d["predictions"]
         if not isinstance(preds, list) or not preds:
-            raise ResultsSchemaError("'predictions', se presente, deve ser uma lista não vazia")
+            raise ResultsSchemaError("'predictions', if present, must be a non-empty list")
         for i, p in enumerate(preds):
             for key in ("qid", "predicted", "gold", "correct"):
                 if key not in p:

@@ -1,8 +1,8 @@
-"""C2: gera uma cópia do arquivo .arrow de teste com o emparelhamento
-imagem<->pergunta embaralhado (cada linha recebe a imagem de OUTRA linha,
-nunca a própria — um derangement), com seed fixa e documentada.
+"""C2: generates a copy of the test .arrow file with the image<->question
+pairing shuffled (each row receives the image of ANOTHER row,
+never its own — a derangement), with a fixed and documented seed.
 
-Uso:
+Usage:
     python -m harness.interventions.make_c2_shuffled_pairs \
         --input data/finetune_arrows/vqa_slack_test.arrow \
         --output data/finetune_arrows/vqa_slack_test_c2.arrow \
@@ -18,8 +18,8 @@ from harness.interventions.arrow_io import read_arrow, write_arrow
 
 
 def derangement(n: int, seed: int) -> np.ndarray:
-    """Retorna uma permutação de range(n) sem pontos fixos (perm[i] != i para
-    todo i). Determinístico para (n, seed) fixos."""
+    """Returns a permutation of range(n) with no fixed points (perm[i] != i for
+    every i). Deterministic for fixed (n, seed)."""
     if n < 2:
         raise ValueError("derangement requer n >= 2")
     rng = np.random.RandomState(seed)

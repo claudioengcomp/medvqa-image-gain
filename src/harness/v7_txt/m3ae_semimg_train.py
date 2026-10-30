@@ -1,6 +1,6 @@
-"""22/10/2026 (m3ae_no_image; env lapa): treino do M3AE so-texto SEM imagem. Uso: m3ae_semimg_train.py <base> <seed>. Mesmo comando do so-texto cinza publicado
+"""22/10/2026 (m3ae_no_image; env lapa): training of the M3AE text-only WITHOUT image. Usage: m3ae_semimg_train.py <base> <seed>. Same command as the published grey text-only
 (run_m3ae_txt.sh / run_m3ae_mimic.sh: main.py, per_gpu_batchsize 16, clip16, text_roberta, image_size 384, tokenizer roberta-base, load_path m3ae.ckpt,
-vqa_label_size e transform publicados, data_root cinza), no worktree_m3ae_semimg, mais no_image=True."""
+published vqa_label_size and transform, grey data_root), in worktree_m3ae_semimg, plus no_image=True."""
 import json, os, subprocess, sys, time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); import m3ae_semimg_cfg as C
 b, s = sys.argv[1], int(sys.argv[2]); task, ls, key, ds, tkd, DR = C.B[b]; NAME = C.name(b, s); LOG = C.O + "/logs"; CK = C.ck_root(b); os.makedirs(LOG, exist_ok=True); os.makedirs(CK, exist_ok=True)

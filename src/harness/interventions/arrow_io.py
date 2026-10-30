@@ -1,13 +1,13 @@
-"""Utilitários compartilhados para ler/escrever arquivos .arrow no mesmo
-formato usado por prepro/make_arrow.py::make_arrow_vqa do repositório LaPA/M3AE.
+"""Shared utilities to read/write .arrow files in the same
+format used by prepro/make_arrow.py::make_arrow_vqa of the LaPA/M3AE repository.
 
-Schema (ordem das colunas, confirmada lendo o código-fonte de make_arrow_vqa):
-    image          bytes      - conteúdo binário do arquivo de imagem (jpg)
+Schema (column order, confirmed by reading the make_arrow_vqa source code):
+    image          bytes      - binary content of the image file (jpg)
     questions      list[str]
     answers        list[list[str]]
     answer_labels  list[list[int]]
     answer_scores  list[list[float]]
-    image_id       str        - caminho do arquivo de imagem (usado como chave)
+    image_id       str        - path of the image file (used as key)
     question_id    list[int]
     answer_type    list[int]  - 0=closed, 1=open
     split          str        - "train" | "val" | "test"
@@ -33,25 +33,25 @@ ARROW_COLUMNS = [
 
 
 def read_arrow(path: str) -> pd.DataFrame:
-    """Lê um arquivo .arrow escrito no formato do make_arrow_vqa e retorna um DataFrame."""
+    """Reads a .arrow file written in the make_arrow_vqa format and returns a DataFrame."""
     with pa.OSFile(path, "rb") as source:
         table = pa.ipc.open_file(source).read_all()
     df = table.to_pandas()
     missing = [c for c in ARROW_COLUMNS if c not in df.columns]
     if missing:
-        raise ValueError(f"Arquivo {path} não tem as colunas esperadas: {missing}")
+        raise ValueError(f"Arquivo {path} does not have the expected columns: {missing}")
     return df
 
 
 def write_arrow(df: pd.DataFrame, path: str) -> None:
-    """Escreve um DataFrame em .arrow no mesmo formato usado pelo make_arrow_vqa
-    (mesma ordem de colunas, mesmo RecordBatchFileWriter).
+    """Writes a DataFrame to .arrow in the same format used by make_arrow_vqa
+    (same column order, same RecordBatchFileWriter).
 
-    Cria o diretório de `path` se não existir (achado real em execução,
-    Colab, 21/08/2026: `data/finetune_arrows/` é gitignored e nunca
-    existiu no clone fresco do harness — pa.OSFile levanta
-    `FileNotFoundError` de baixo nível, sem mensagem clara, depois de
-    minutos de trabalho já feito, ex. baixar ~4.000 imagens do Kvasir)."""
+    Creates the directory of `path` if it does not exist (real finding in a
+    run, Colab, 21/08/2026: `data/finetune_arrows/` is gitignored and never
+    existed in a fresh clone of the harness — pa.OSFile raises a
+    low-level `FileNotFoundError`, with no clear message, after
+    minutes of work already done, e.g. downloading ~4,000 Kvasir images)."""
     parent = os.path.dirname(path)
     if parent:
         os.makedirs(parent, exist_ok=True)
@@ -63,11 +63,11 @@ def write_arrow(df: pd.DataFrame, path: str) -> None:
 
 
 def count_questions(df: pd.DataFrame) -> int:
-    """Conta o número real de perguntas avaliadas num DataFrame de arrow.
+    """Counts the real number of evaluated questions in an arrow DataFrame.
 
-    Cada LINHA do arrow é uma IMAGEM, que carrega uma LISTA de perguntas na
-    coluna 'questions' — contar linhas (len(df)) conta imagens, não
-    perguntas. Foi exatamente esse bug que produziu um IC95%(bootstrap)
-    errado no primeiro resultado do M3AE (n=96 imagens em vez de n=1061
-    perguntas) — ver HANDOFF_P0_Execucao_Harness.md §3.0."""
+    Each ROW of the arrow is an IMAGE, which carries a LIST of questions in
+    the 'questions' column — counting rows (len(df)) counts images, not
+    questions. This was exactly the bug that produced a wrong
+    CI95%(bootstrap) in the first M3AE result (n=96 images instead of n=1061
+    questions) — see HANDOFF_P0_Execucao_Harness.md §3.0."""
     return int(sum(len(qs) for qs in df["questions"]))

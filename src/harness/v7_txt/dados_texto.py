@@ -1,11 +1,11 @@
-"""17/10/2026 (article_runs, question_only_sets): conjuntos so-pergunta por base, IGUAIS aos do classificador TF-IDF (TFIDF) de cada base, e o baseline
-de resposta majoritaria (2a). Por base: treino fechado (o do TF-IDF: Kvasir = todas as 38 211 do treino limpo; SLAKE = fechadas em
-ingles do train.json; HEAL = fechadas sim/nao de treino + validacao; MIMIC = fechadas do items_train; VQA-RAD = fechadas do
-trainset.json via harness.baselines.question_only.load_closed_qa_pairs), validacao fechada onde existe (HEAL: nao ha, a validacao
-esta no treino) e teste fechado com os gold. Asserts: n de treino = o registrado no TFIDF; qids e gold do teste = os do TFIDF.
-Regua: answer_matches(normalize_text(...)) (med_vlm.metrics.process_text), conferida contra o campo correct de cada TFIDF.
-Majoritaria: resposta mais frequente nas fechadas do TREINO (HEAL: so treino; a variante treino+validacao vai junto, para conferencia).
-Saidas: <out>/data/texto/<BASE>.json, <out>/results/MAJ_question_only_<BASE>[_trainval].json. Sem interpretacao."""
+"""17/10/2026 (article_runs, question_only_sets): question-only sets per benchmark, IDENTICAL to those of the TF-IDF classifier (TFIDF) of each benchmark, and the baseline
+of the majority answer (2a). Per benchmark: closed training set (the TF-IDF one: Kvasir = all 38 211 of the cleaned training set; SLAKE = closed-form in
+English from train.json; HEAL = closed yes/no from training + validation; MIMIC = closed-form from items_train; VQA-RAD = closed-form from
+trainset.json via harness.baselines.question_only.load_closed_qa_pairs), closed validation where it exists (HEAL: there is none, the validation
+is within the training set) and closed test with the golds. Asserts: training n = the one recorded in the TFIDF; test qids and golds = those of the TFIDF.
+Rule: answer_matches(normalize_text(...)) (med_vlm.metrics.process_text), checked against the correct field of each TFIDF.
+Majority: most frequent answer in the closed-form TRAINING set (HEAL: training only; the training+validation variant goes along, for checking).
+Outputs: <out>/data/texto/<BASE>.json, <out>/results/MAJ_question_only_<BASE>[_trainval].json. No interpretation."""
 import os as _os
 _MEDVQA_ROOT = _os.environ.get("MEDVQA_ROOT", "/path/to/original/run/tree")   # original run tree root (this package: see README, "Paths")
 import argparse, collections, hashlib, json, os, sys, time
@@ -18,8 +18,8 @@ TFIDF = {"KVASIR": f"{PL}/results/isbi_occlusion/TFIDF_question_only_KVASIR_C0.j
       "MIMIC": f"{MI}/results/TFIDF_question_only_MIMIC_subset.json", "VQARAD": f"{P0}/results/TFIDF_question_only_VQARAD_C0.json"}
 NTRAIN = {"KVASIR": 38211, "SLAKE": 1943, "HEAL": 7641, "MIMIC": 7800, "VQARAD": 1643}
 QD = f"{W}/v7_txt/article_runs/data/vqarad_qlevel"; TFIDF["VQARAD_QLEVEL"] = f"{W}/v7_txt/article_runs/results/TFIDF_question_only_VQARAD_QLEVEL.json"; NTRAIN["VQARAD_QLEVEL"] = 1474   # 19/10 (vqarad_question_split)
-NTRAIN["HEAL_TREINO"] = 6882; TFIDF["HEAL_TREINO"] = TFIDF["HEAL"]   # 19/10 (heal_classifiers_train_only): HEAL so treino, validacao = val
-RD = f"{W}/v7_txt/article_runs/data/vqarad_rediv"; TFIDF["VQARAD_REDIV"] = f"{W}/v7_txt/article_runs/results/TFIDF_question_only_VQARAD_REDIV.json"; NTRAIN["VQARAD_REDIV"] = 1469   # 17/10 (vqarad_image_split): VQA-RAD redividido por imagem
+NTRAIN["HEAL_TREINO"] = 6882; TFIDF["HEAL_TREINO"] = TFIDF["HEAL"]   # 19/10 (heal_classifiers_train_only): HEAL training only, validation = val
+RD = f"{W}/v7_txt/article_runs/data/vqarad_rediv"; TFIDF["VQARAD_REDIV"] = f"{W}/v7_txt/article_runs/results/TFIDF_question_only_VQARAD_REDIV.json"; NTRAIN["VQARAD_REDIV"] = 1469   # 17/10 (vqarad_image_split): VQA-RAD redivided by image
 def sha(p):
     h = hashlib.sha256()
     with open(p, "rb") as f:

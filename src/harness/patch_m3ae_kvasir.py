@@ -1,52 +1,53 @@
-"""Aplica ao repositório M3AE clonado (`m3ae_dir`) o suporte ao dataset
-Kvasir — não existe nativamente. Confirmado (não suposto) lendo o
-código-fonte real de `zhjohnchan/M3AE`, commit
-`14da377255280eed547e451f368cf71a43f3ca1c` (o mesmo pinado por
-`environment/colab_setup_m3ae.sh`), via `curl` direto no GitHub nesta
-sessão de planejamento — não foi preciso abrir o Colab pra descobrir isso
-(diferente do que o plano de integração original previa na Task 7).
+"""Applies to the cloned M3AE repository (`m3ae_dir`) support for the
+Kvasir dataset — it does not exist natively. Confirmed (not assumed) by reading the
+actual source code of `zhjohnchan/M3AE`, commit
+`14da377255280eed547e451f368cf71a43f3ca1c` (the same one pinned by
+`environment/colab_setup_m3ae.sh`), via direct `curl` on GitHub during this
+planning session — it was not necessary to open Colab to find this out
+(unlike what the original integration plan anticipated in Task 7).
 
-Os 2 arquivos gerados (`vqa_kvasir_dataset.py`/`vqa_kvasir_datamodule.py`)
-são cópias BYTE A BYTE de `m3ae/datasets/vqa_vqa_rad_dataset.py` e
-`m3ae/datamodules/vqa_vqa_rad_datamodule.py` (o precedente mais recente),
-só trocando `VQAVQARAD`→`VQAKVASIR` e os nomes de arquivo `vqa_vqa_rad_*`→
-`vqa_kvasir_*`. As 2 edições (`datasets/__init__.py`,
-`datamodules/__init__.py`) inserem exatamente o mesmo padrão de import +
-entrada de registro já usado pros outros 6 datasets do M3AE. O named
-config (`config.py`) copia `task_finetune_vqa_vqa_rad` campo a campo, só
-com `vqa_label_size` calculado de verdade a partir do vocabulário real do
-Kvasir (não um placeholder).
+The 2 generated files (`vqa_kvasir_dataset.py`/`vqa_kvasir_datamodule.py`)
+are BYTE-FOR-BYTE copies of `m3ae/datasets/vqa_vqa_rad_dataset.py` and
+`m3ae/datamodules/vqa_vqa_rad_datamodule.py` (the most recent precedent),
+only swapping `VQAVQARAD`→`VQAKVASIR` and the file names `vqa_vqa_rad_*`→
+`vqa_kvasir_*`. The 2 edits (`datasets/__init__.py`,
+`datamodules/__init__.py`) insert exactly the same import + registry entry
+pattern already used for the other 6 M3AE datasets. The named
+config (`config.py`) copies `task_finetune_vqa_vqa_rad` field by field, only
+with `vqa_label_size` actually computed from the real Kvasir vocabulary
+(not a placeholder).
 
-Achado real que motiva `harness/prepro/split_kvasir_train_val.py`:
-`VQAVQARADDataModule.setup()` monta `answer2id`/`id2answer` a partir de
-`train_dataset`+`val_dataset` (NUNCA `test_dataset`) — confirmado lendo o
-método linha a linha. Por isso este patch pressupõe que
-`vqa_kvasir_val.arrow` já existe.
+Real finding that motivates `harness/prepro/split_kvasir_train_val.py`:
+`VQAVQARADDataModule.setup()` builds `answer2id`/`id2answer` from
+`train_dataset`+`val_dataset` (NEVER `test_dataset`) — confirmed by reading the
+method line by line. That is why this patch assumes that
+`vqa_kvasir_val.arrow` already exists.
 
-`vit`/`tokenizer`/`image_size` do named config abaixo (herdados de
-`task_finetune_vqa_vqa_rad`: 'ViT-B/32'/'bert-base-uncased'/576) são
-overridden na prática pelos argumentos de linha de comando que
-`harness/run_finetune_m3ae.sh`/`harness/extract_predictions_m3ae.py` já
-passam (`clip16 text_roberta image_size=384`) — mesmo padrão usado pro
-SLAKE e VQA-RAD, não uma escolha nova feita aqui.
+`vit`/`tokenizer`/`image_size` from the named config below (inherited from
+`task_finetune_vqa_vqa_rad`: 'ViT-B/32'/'bert-base-uncased'/576) are
+overridden in practice by the command-line arguments that
+`harness/run_finetune_m3ae.sh`/`harness/extract_predictions_m3ae.py` already
+pass (`clip16 text_roberta image_size=384`) — the same pattern used for
+SLAKE and VQA-RAD, not a new choice made here.
 
-`batch_size=64`/`max_epoch=15` combinam o `batch_size` do precedente
-VQA-RAD com o `max_epoch` (menor) do precedente SLAKE — juízo de valor
-documentado, não um dado descoberto: o arrow de treino do Kvasir decomposto
-não tem tamanho conhecido de antemão (depende de quantas imagens do split
-train do Kvasir-VQA-x1 têm pelo menos uma pergunta closed reconhecida), e o
-plano de integração já registra esse risco ("Rodada Kvasir não tem
-precedente... treino sensivelmente mais longo"). Task 5 do plano de
-integração já pede medir o tempo por step nas primeiras iterações antes de
-assumir que os 15 epochs cabem na sessão — este valor é só um ponto de
-partida seguro pra começar a medir, ajustar se necessário.
+`batch_size=64`/`max_epoch=15` combine the `batch_size` from the VQA-RAD
+precedent with the (smaller) `max_epoch` from the SLAKE precedent — a value
+judgment documented, not a discovered fact: the decomposed Kvasir training
+arrow does not have a size known in advance (it depends on how many images
+from the Kvasir-VQA-x1 train split have at least one recognized closed
+question), and the integration plan already records this risk ("Kvasir
+round has no precedent... training noticeably longer"). Task 5 of the
+integration plan already asks to measure the time per step in the first
+iterations before assuming that the 15 epochs fit in the session — this
+value is just a safe starting point to begin measuring, to be adjusted if
+necessary.
 
-Idempotente: cada `write_*`/`patch_*` verifica se a mudança já foi aplicada
-antes de escrever de novo — seguro rodar 2x na mesma sessão Colab (mesma
-disciplina de `environment/colab_setup_m3ae.sh`).
+Idempotent: each `write_*`/`patch_*` checks whether the change has already
+been applied before writing again — safe to run twice in the same Colab
+session (same discipline as `environment/colab_setup_m3ae.sh`).
 
-Uso (dentro do Colab, depois do M3AE clonado E do vocabulário do Kvasir
-construído — harness/prepro/build_kvasir_answer_vocab.py):
+Usage (inside Colab, after M3AE has been cloned AND the Kvasir vocabulary
+has been built — harness/prepro/build_kvasir_answer_vocab.py):
     python -m harness.patch_m3ae_kvasir \
         --m3ae-dir /content/M3AE \
         --vocab-json data/finetune_arrows/kvasir_answer_vocab.json
@@ -212,21 +213,21 @@ def patch_datasets_init(m3ae_dir: str) -> None:
 
 
 def patch_datamodules_init(m3ae_dir: str) -> None:
-    """Insere o import antes do dicionário `_datamodules` e a entrada nova
-    logo depois de `"vqa_vqa_rad": VQAVQARADDataModule,` — usado como âncora
-    porque VQA-RAD é o precedente mais recente e sempre presente. Levanta
-    ValueError se qualquer marcador não bater (sinal de que o `__init__.py`
-    real mudou de formato desde que este patch foi escrito — não aplicar
-    silenciosamente contra um arquivo que não reconhecemos)."""
+    """Inserts the import before the `_datamodules` dictionary and the new entry
+    right after `"vqa_vqa_rad": VQAVQARADDataModule,` — used as an anchor
+    because VQA-RAD is the most recent precedent and always present. Raises
+    ValueError if any marker does not match (a sign that the real
+    `__init__.py` has changed format since this patch was written — do not
+    apply silently against a file we do not recognize)."""
     path = os.path.join(m3ae_dir, "m3ae", "datamodules", "__init__.py")
     with open(path, "r", encoding="utf-8") as fp:
         content = fp.read()
     if "VQAKVASIRDataModule" in content:
         return
     if _DATAMODULES_MARKER not in content:
-        raise ValueError(f"{path}: marcador '_datamodules = {{' não encontrado — arquivo mudou de formato?")
+        raise ValueError(f"{path}: marcador '_datamodules = {{' not found — file format changed?")
     if _DATAMODULES_ANCHOR_ENTRY not in content:
-        raise ValueError(f"{path}: entrada 'vqa_vqa_rad' não encontrada no dicionário — arquivo mudou de formato?")
+        raise ValueError(f"{path}: entry 'vqa_vqa_rad' not found in the dictionary — file format changed?")
     content = content.replace(_DATAMODULES_MARKER, f"\n{_DATAMODULES_IMPORT_LINE}{_DATAMODULES_MARKER}", 1)
     content = content.replace(
         _DATAMODULES_ANCHOR_ENTRY,
@@ -251,8 +252,8 @@ def patch_config(m3ae_dir: str, vqa_label_size: int) -> None:
 
 
 def apply_patch(m3ae_dir: str, vocab_json_path: str) -> int:
-    """Aplica o patch completo (2 arquivos novos + 3 edições) e retorna o
-    vqa_label_size usado, pra o chamador conferir/logar."""
+    """Applies the complete patch (2 new files + 3 edits) and returns the
+    vqa_label_size used, for the caller to check/log."""
     with open(vocab_json_path, "r", encoding="utf-8") as fp:
         vocab = json.load(fp)
     vqa_label_size = len(vocab)
@@ -276,4 +277,4 @@ if __name__ == "__main__":
     args = _parse_args()
     vqa_label_size = apply_patch(args.m3ae_dir, args.vocab_json)
     print(f"Patch aplicado em {args.m3ae_dir}: VQAKVASIRDataset/DataModule criados e "
-          f"registrados, task_finetune_vqa_kvasir com vqa_label_size={vqa_label_size}.")
+          f"registered, task_finetune_vqa_kvasir with vqa_label_size={vqa_label_size}.")

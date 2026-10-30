@@ -1,27 +1,27 @@
-"""TFIDF: baseline degenerado question-only para SLAKE e VQA-RAD.
+"""TFIDF: degenerate question-only baseline for SLAKE and VQA-RAD.
 
-Treina um classificador simples (TF-IDF + regressão logística) que prevê a
-resposta olhando SÓ o texto da pergunta, nunca a imagem. Serve de controle:
-por construção, sua acurácia é idêntica em C0/C1/C2/C4x6/C5/C6 (ele nunca vê
-a imagem, e nenhuma dessas condições muda o texto da pergunta — C1/C2/C4
-perturbam a imagem, C5/C6 trocam a imagem entre pares doadores, mas o
-enunciado da pergunta é sempre o mesmo), então não tem LDV própria — o
-papel dele é servir de baseline de comparação para os modelos que realmente
-usam visão.
+Trains a simple classifier (TF-IDF + logistic regression) that predicts the
+answer looking ONLY at the question text, never the image. Serves as a control:
+by construction, its accuracy is identical across C0/C1/C2/C4x6/C5/C6 (it never sees
+the image, and none of these conditions changes the question text — C1/C2/C4
+perturb the image, C5/C6 swap the image between donor pairs, but the
+question statement is always the same), so it has no LDV of its own — its
+role is to serve as a comparison baseline for the models that actually
+use vision.
 
-Escopo desta primeira versão: apenas perguntas fechadas (answer_type=="CLOSED"),
-que têm um vocabulário de resposta fixo e permitem correspondência exata.
-Perguntas abertas ficam fora de escopo, na mesma linha de corte de escopo já
-aplicada pelo P0 em outras frentes (ver spec §1.3 do handoff).
+Scope of this first version: only closed-form questions (answer_type=="CLOSED"),
+which have a fixed answer vocabulary and allow exact matching.
+Open questions are out of scope, following the same scope cutoff already
+applied by P0 in other fronts (see spec §1.3 of the handoff).
 
-Generalizado pra VQA-RAD (03/09/2026, execução local): o filtro por
-q_lang=='en' era hardcoded pro formato do SLAKE (bilíngue, PT/EN) — o
-VQA-RAD não tem esse campo (é monolíngue inglês por natureza), e aplicar o
-filtro do mesmo jeito descartava o dataset inteiro (s.get("q_lang") retorna
-None, None != "en", tudo cai fora). Agora o filtro só é aplicado quando o
-campo existe no registro.
+Generalized for VQA-RAD (03/09/2026, local run): the filter by
+q_lang=='en' was hardcoded for the SLAKE format (bilingual, PT/EN) — the
+VQA-RAD does not have this field (it is monolingual English by nature), and applying the
+filter the same way discarded the entire dataset (s.get("q_lang") returns
+None, None != "en", everything falls out). Now the filter is only applied when the
+field exists in the record.
 
-Uso:
+Usage:
     python -m harness.baselines.question_only \
         --train_json Slake1.0/train.json \
         --test_json Slake1.0/test.json \
@@ -49,11 +49,11 @@ from harness.results_schema import VALID_CONDITIONS, validate_results_dict
 
 
 def load_closed_qa_pairs(json_path: str) -> list[dict]:
-    """Lê um arquivo train/validate/test.json (SLAKE ou VQA-RAD) e filtra
-    só as perguntas de tipo fechado (answer_type=='CLOSED'). O filtro de
-    idioma (q_lang=='en') só é aplicado se o campo existir no registro —
-    SLAKE é bilíngue e usa esse campo, VQA-RAD não tem esse campo (é
-    monolíngue por natureza do dataset original)."""
+    """Reads a train/validate/test.json file (SLAKE or VQA-RAD) and filters
+    only the closed-type questions (answer_type=='CLOSED'). The language
+    filter (q_lang=='en') is only applied if the field exists in the record —
+    SLAKE is bilingual and uses this field, VQA-RAD does not have this field (it is
+    monolingual by nature of the original dataset)."""
     with open(json_path, "r", encoding="utf-8") as fp:
         samples = json.load(fp)
 
@@ -73,7 +73,7 @@ def load_closed_qa_pairs(json_path: str) -> list[dict]:
 
 def train_question_only_model(train_pairs: list[dict]) -> Pipeline:
     if not train_pairs:
-        raise ValueError("train_pairs está vazio — nada para treinar")
+        raise ValueError("train_pairs is empty — nothing to train")
     questions = [p["question"] for p in train_pairs]
     answers = [p["answer"] for p in train_pairs]
     model = Pipeline([
@@ -87,7 +87,7 @@ def train_question_only_model(train_pairs: list[dict]) -> Pipeline:
 def evaluate_question_only_model(model: Pipeline, test_pairs: list[dict],
                                   condition: str = "C0", dataset: str = "SLAKE") -> dict:
     if not test_pairs:
-        raise ValueError("test_pairs está vazio — nada para avaliar")
+        raise ValueError("test_pairs is empty — nothing to evaluate")
     questions = [p["question"] for p in test_pairs]
     predicted = model.predict(questions)
 

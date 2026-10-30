@@ -1,4 +1,4 @@
-"""m3ae_no_image: cabeca de VQA inicializada pelo codigo publicado (worktree_m3ae), mesma semente e partida -> compara com a do codigo novo."""
+"""m3ae_no_image: VQA head initialized by the published code (worktree_m3ae), same seed and starting point -> compares with the one from the new code."""
 import os as _os
 _MEDVQA_ROOT = _os.environ.get("MEDVQA_ROOT", "/path/to/original/run/tree")   # original run tree root (this package: see README, "Paths")
 import copy, sys, torch, pytorch_lightning as pl

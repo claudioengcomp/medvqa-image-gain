@@ -1,6 +1,6 @@
-"""19/10/2026 (itens 10 e 12): analises da segunda rodada, nas fechadas, com os qids, o bootstrap por imagem (2 000, seed 20260913) e o IC da media das 3 sementes
-(media por replica) da decomposicao. heal_classifiers_train_only: PubMedBERT melhor epoca x ultima epoca (5 bases) e HEAL com protocolo so-treino (PubMedBERT e TF-IDF);
-encoder_regimes: regimes do encoder (attn64, attnmlp) em SLAKE e VQA-RAD redividido. Uso: ARTICLE2_RUNS=1 python -m harness.v7_txt.analises_rodada2 heal_classifiers_train_only|encoder_regimes"""
+"""19/10/2026 (items 10 and 12): analyses of the second round, in the closed-form questions, with the qids, the bootstrap by image (2 000, seed 20260913) and the CI of the mean across the 3 seeds
+(mean per replicate) of the decomposition. heal_classifiers_train_only: PubMedBERT best epoch x last epoch (5 benchmarks) and HEAL with the train-only protocol (PubMedBERT and TF-IDF);
+encoder_regimes: encoder regimes (attn64, attnmlp) on SLAKE and redivided VQA-RAD. Usage: ARTICLE2_RUNS=1 python -m harness.v7_txt.analises_rodada2 heal_classifiers_train_only|encoder_regimes"""
 import os as _os
 _MEDVQA_ROOT = _os.environ.get("MEDVQA_ROOT", "/path/to/original/run/tree")   # original run tree root (this package: see README, "Paths")
 import hashlib, json, os, sys, time

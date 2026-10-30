@@ -4,10 +4,10 @@
      fast_dev_run = False
      val_check_interval = 1.0
      test_only = False
-+    # 20/10/2026 (m3ae_frozen_vit): M3AE com o encoder visual congelado; desligado por padrao (linhas existentes inalteradas)
++    # 20/10/2026 (m3ae_frozen_vit): M3AE with the frozen visual encoder; off by default (existing rows unchanged)
 +    freeze_vision_encoder = False
 +    freeze_report_path = ""
-+    # m3ae_no_image (22/10/2026): M3AE sem imagem (opcao 2, A3/B1/C1); desligado por padrao
++    # m3ae_no_image (22/10/2026): M3AE without image (option 2, A3/B1/C1); off by default
 +    no_image = False
      default_root_dir = "checkpoints"
  
@@ -77,7 +77,7 @@
 +    vqa_label_size = 288
 +
 +
-+# v7_mimic (2026-10-11): copia de task_finetune_vqa_heal com vqa_label_size 82 (answer_vocab.json do v7_mimic)
++# v7_mimic (2026-10-11): copy of task_finetune_vqa_heal with vqa_label_size 82 (answer_vocab.json of v7_mimic)
 +@ex.named_config
 +def task_finetune_vqa_mimic():
 +    exp_name = "task_finetune_vqa_mimic"
@@ -156,7 +156,7 @@
  
          m3ae_utils.set_metrics(self)
          self.current_tasks = list()
-+        # m3ae_no_image (opcao 2, C1): sem imagem -> pesos que deixam de ser usados ficam congelados (continuam carregados do checkpoint)
++        # m3ae_no_image (option 2, C1): without image -> weights that stop being used remain frozen (still loaded from the checkpoint)
 +        if self.hparams.config.get("no_image", False):
 +            assert all(v == 0 for k, v in self.hparams.config["loss_names"].items() if k != "vqa"), "no_image so suporta o fine-tune de VQA"
 +            _unused = [self.vision_encoder, self.multi_modal_vision_proj, self.multi_modal_vision_layers, self.multi_modal_vision_pooler]
@@ -165,7 +165,7 @@
 +            for _m in _unused:
 +                for _p in _m.parameters():
 +                    _p.requires_grad = False
-+        # 20/10/2026 (m3ae_frozen_vit): congela so o encoder visual (requires_grad=False em todos os seus parametros), depois de carregar o checkpoint de partida
++        # 20/10/2026 (m3ae_frozen_vit): freezes only the visual encoder (requires_grad=False on all its parameters), after loading the starting checkpoint
 +        if self.hparams.config.get("freeze_vision_encoder", False):
 +            import hashlib, json as _json
 +            for p_ in self.vision_encoder.parameters():
@@ -202,7 +202,7 @@
          return ret
  
 +    def _infer_no_image(self, batch, mask_text=False):
-+        """m3ae_no_image (opcao 2): texto -> 6 camadas de fusao so do lado texto (A3) -> pooler do texto; metade da imagem = zeros (B1). ViT nao e chamado."""
++        """m3ae_no_image (option 2): text -> 6 fusion layers only on the text side (A3) -> text pooler; image half = zeros (B1). ViT is not called."""
 +        do_mlm = "_mlm" if mask_text else ""
 +        text_ids = batch[f"text_ids{do_mlm}"]
 +        text_labels = batch[f"text_labels{do_mlm}"]

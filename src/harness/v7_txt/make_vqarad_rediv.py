@@ -1,11 +1,11 @@
-"""17/10/2026 (article_runs, vqarad_image_split): VQA-RAD redividido por imagem. Pool = treino + validacao + teste do pacote original
-(doutorado/M3AE/data/finetune_data/vqa_rad/{train,val,test}set.json, so leitura: 2 758 + 306 + 451 = 3 515 perguntas, 314 imagens).
-Divisao por imagem: imagens unicas (image_name) em ordem alfabetica, permutadas por numpy.random.default_rng(20260913).permutation;
-as primeiras round(0,70 N) vao para o treino, as round(0,10 N) seguintes para a validacao, o resto para o teste; cada pergunta segue
-a sua imagem (nenhuma imagem em mais de uma particao). Arrows com a MESMA funcao do M3AE e do A1 (prepro/make_arrow.make_arrow_vqa),
-listas no formato do pacote (para o TF-IDF, o majoritario e o BERT), C1 do teste (imagem cinza, make_c1_blank_images.blank_out_images)
-para as 6 linhas congeladas, e o data_root cinza (treino/validacao/teste) que o M3AE so-texto usaria (preparado, nao usado sem ok).
-Saida: v7_txt/article_runs/data/vqarad_rediv/ + manifest_vqarad_rediv.json (ids e contagens por particao, conferencias). Nao sobrescreve."""
+"""17/10/2026 (article_runs, vqarad_image_split): VQA-RAD re-split by image. Pool = train + validation + test of the original package
+(doutorado/M3AE/data/finetune_data/vqa_rad/{train,val,test}set.json, read-only: 2 758 + 306 + 451 = 3 515 questions, 314 images).
+Split by image: unique images (image_name) in alphabetical order, permuted by numpy.random.default_rng(20260913).permutation;
+the first round(0,70 N) go to training, the next round(0,10 N) to validation, the rest to test; each question follows
+its image (no image in more than one partition). Arrows with the SAME function as the M3AE and the A1 (prepro/make_arrow.make_arrow_vqa),
+lists in the package's format (for the TF-IDF, the majority one and the BERT), test C1 (grey image, make_c1_blank_images.blank_out_images)
+for the 6 frozen rows, and the grey data_root (train/validation/test) that the M3AE text-only would use (prepared, not used without ok).
+Output: v7_txt/article_runs/data/vqarad_rediv/ + manifest_vqarad_rediv.json (ids and counts per partition, checks). Does not overwrite."""
 import os as _os
 _MEDVQA_ROOT = _os.environ.get("MEDVQA_ROOT", "/path/to/original/run/tree")   # original run tree root (this package: see README, "Paths")
 import collections, hashlib, json, os, socket, sys, time
@@ -18,7 +18,7 @@ def sha(p):
     with open(p, "rb") as f:
         for b in iter(lambda: f.read(1 << 24), b""): h.update(b)
     return h.hexdigest()
-os.makedirs(OUT, exist_ok=True); assert not os.listdir(OUT), "pasta de saida nao vazia; nada feito"
+os.makedirs(OUT, exist_ok=True); assert not os.listdir(OUT), "output folder not empty; nothing done"
 t0 = time.time(); SRC = {s: f"{M3}/data/finetune_data/vqa_rad/{s}set.json" for s in ("train", "val", "test")}
 pool = [dict(x, origem=s) for s in ("train", "val", "test") for x in json.load(open(SRC[s]))]
 assert len(pool) == 3515 and len({x["qid"] for x in pool}) == 3515
@@ -49,7 +49,7 @@ man["conferencias"]["imagens_disjuntas"] = not (I["train"] & I["val"] or I["trai
 man["conferencias"]["uniao_imagens_igual_pool"] = (I["train"] | I["val"] | I["test"]) == set(imgs)
 man["conferencias"]["uniao_qids_3515"] = sum(man["particoes"][s]["n_perguntas"] for s in S) == 3515
 dup = collections.Counter((x["image_name"], x["question"].strip().lower()) for x in pool); man["conferencias"]["pares_imagem_pergunta_repetidos_no_pool"] = sum(1 for v in dup.values() if v > 1)
-man["conferencias"]["pares_repetidos_entre_particoes"] = 0   # por construcao: a pergunta segue a imagem
+man["conferencias"]["pares_repetidos_entre_particoes"] = 0   # by construction: the question follows the image
 man["conferencias"]["perguntas_teste_identicas_a_alguma_do_treino_texto"] = len({x["question"].strip().lower() for x in S["test"]} & {x["question"].strip().lower() for x in S["train"]})
 assert all(v for k, v in man["conferencias"].items() if k in ("imagens_disjuntas", "uniao_imagens_igual_pool", "uniao_qids_3515")) and all(man["conferencias"][s]["qids_arrow_iguais_lista"] for s in S)
 t = f"{OUT}/vqa_vqa_rad_test_C1.arrow"; blank_out_images(f"{OUT}/vqa_vqa_rad_test.arrow", t); man["c1_teste"] = {"path": t, "sha256": sha(t), "gray": {"size": DEFAULT_SIZE, "rgb": DEFAULT_FILL_COLOR}}

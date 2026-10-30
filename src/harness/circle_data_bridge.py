@@ -1,19 +1,19 @@
-"""Traduz um arquivo .arrow de condição (schema M3AE/LaPA — uma linha por
-imagem, com listas de perguntas/respostas por imagem, ver
-harness/interventions/arrow_io.py) para um `datasets.Dataset` do
-HuggingFace no formato que o pacote `med_vlm` espera de cada exemplo:
+"""Translates a condition .arrow file (M3AE/LaPA schema — one row per
+image, with lists of questions/answers per image, see
+harness/interventions/arrow_io.py) into a HuggingFace `datasets.Dataset`
+in the format that the `med_vlm` package expects for each example:
 {"image": PIL.Image, "question": str, "answers": list[str], "id": int}
-(mesmo contrato produzido por med_vlm.data.normalizer.build_normalizer).
+(the same contract produced by med_vlm.data.normalizer.build_normalizer).
 
-Achata cada imagem nas N perguntas que ela carrega, reaproveitando os
-mesmos bytes de imagem (decodificados automaticamente pela feature
-`datasets.Image()` do HuggingFace ao acessar cada linha, não decodificados
-manualmente aqui). `id` é o `question_id` real do arrow — diferente do
-`id_key=None` que `med_vlm.data.loader._normalize` usa por padrão —
-necessário para preservar o pareamento por qid entre condições, usado pelo
-McNemar pareado (harness.stats.compute_ldv.compute_summary_vs_baseline).
+Flattens each image into the N questions it carries, reusing the
+same image bytes (automatically decoded by HuggingFace's
+`datasets.Image()` feature when accessing each row, not decoded
+manually here). `id` is the real `question_id` from the arrow — different from the
+`id_key=None` that `med_vlm.data.loader._normalize` uses by default —
+necessary to preserve pairing by qid across conditions, used by the
+paired McNemar (harness.stats.compute_ldv.compute_summary_vs_baseline).
 
-Ver docs/superpowers/specs/2026-08-18-circle-bridge-design.md §3."""
+See docs/superpowers/specs/2026-08-18-circle-bridge-design.md §3."""
 from __future__ import annotations
 
 from datasets import Dataset, Features, Image as HFImage, Sequence, Value
@@ -29,11 +29,11 @@ CONDITION_DATASET_FEATURES = Features({
 
 
 def load_condition_dataset(condition_arrow_path: str) -> Dataset:
-    """Lê `condition_arrow_path` (schema M3AE) e retorna um
-    `datasets.Dataset` com uma linha por pergunta, pronto para os
-    coletores (`build_chat_template_vqa_collator`) e o loop de geração
-    (`generate_chat_template`) de `med_vlm` consumirem sem nenhuma
-    alteração no pacote copiado."""
+    """Reads `condition_arrow_path` (M3AE schema) and returns a
+    `datasets.Dataset` with one row per question, ready for the
+    collators (`build_chat_template_vqa_collator`) and the generation loop
+    (`generate_chat_template`) of `med_vlm` to consume without any
+    change to the copied package."""
     df = read_arrow(condition_arrow_path)
 
     images: list[bytes] = []

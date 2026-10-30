@@ -1,13 +1,13 @@
-"""v7_mimic/scripts/06_m0_mimic.py -- 2026-10-10 -- lasid-gpu1 (so CPU)
+"""v7_mimic/scripts/06_m0_mimic.py -- 2026-10-10 -- lasid-gpu1 (CPU only)
 
-Baseline so-pergunta (TFIDF) do MIMIC/Diff-VQA de imagem unica, como harness/isbi_occlusion/heal/tfidf_heal.py (repo
-occlusion_study @2b7e731): TF-IDF de palavras (1-2-gramas, min_df=1, lowercase) + LogisticRegression(C=1, max_iter=2000),
-sem imagem, treinado nas perguntas FECHADAS (yes/no) e avaliado em todas as perguntas do teste (fechadas pela
-predicao; para as abertas a predicao yes/no nunca acerta e o baseline e reportado tambem como resposta majoritaria
-por template no treino, "prior"). Agregacao por tipo, por template_id e por answer_type; IC 95 % por bootstrap
-POR IMAGEM (dicom_id), 2 000 replicas, semente 20260913.
+Question-only baseline (TFIDF) of single-image MIMIC/Diff-VQA, like harness/isbi_occlusion/heal/tfidf_heal.py (occlusion_study
+repo @2b7e731): word TF-IDF (1-2-grams, min_df=1, lowercase) + LogisticRegression(C=1, max_iter=2000),
+no image, trained on the CLOSED-FORM questions (yes/no) and evaluated on all test questions (closed-form by
+prediction; for the open ones the yes/no prediction never gets it right, and the baseline is also reported as the majority
+answer by template on training, "prior"). Aggregation by type, by template_id and by answer_type; CI 95 % by bootstrap
+PER IMAGE (dicom_id), 2 000 replicas, seed 20260913.
 
-  python 06_m0_mimic.py --train <parquet com question,answer,template_id,question_type,answer_type> \
+  python 06_m0_mimic.py --train <parquet with question,answer,template_id,question_type,answer_type> \
       --test data/items_test.parquet --tag subset --out results/TFIDF_question_only_MIMIC_subset.json
 """
 from __future__ import annotations
@@ -26,7 +26,7 @@ def _acc(c):
 
 
 def boot_ci(correct: np.ndarray, groups: np.ndarray, b=B, seed=SEED):
-    """IC 95 % por bootstrap de imagens (grupos): reamostra imagens com reposicao, soma acertos/itens."""
+    """CI 95 % by bootstrap of images (groups): resamples images with replacement, sums hits/items."""
     uniq, inv = np.unique(groups, return_inverse=True)
     n_img = len(uniq)
     sum_c = np.bincount(inv, weights=correct, minlength=n_img)
@@ -54,7 +54,7 @@ def main():
     clf = LogisticRegression(C=1.0, max_iter=2000, random_state=0).fit(X, trc.answer)
     pred = clf.predict(vec.transform(te.question))
     correct = (pred == te.answer.values).astype(int)
-    # prior: resposta majoritaria por template no TREINO (todas as perguntas, fechadas e abertas)
+    # prior: majority answer by template on TRAINING (all questions, closed-form and open)
     maj = tr.groupby("template_id").answer.agg(lambda s: s.value_counts().idxmax()).to_dict()
     glob = tr.answer.value_counts().idxmax()
     prior_pred = np.array([maj.get(t, glob) for t in te.template_id])

@@ -1,13 +1,13 @@
-"""Split determinístico e estratificado por imagem do Kvasir-VQA-x1 --
-lógica pura, sem rede/GPU (separada do script CLI em
-build_kvasir_clean_split.py, que faz o download de verdade).
+"""Deterministic, image-stratified split of Kvasir-VQA-x1 --
+pure logic, no network/GPU (separate from the CLI script in
+build_kvasir_clean_split.py, which does the actual download).
 
-Motivação: o split oficial do HuggingFace (train/test) tem 94% de overlap
-de imagem entre os dois lados -- ver docs/superpowers/specs/
-2026-08-30-kvasir-clean-split-design.md §1.B. Este módulo agrupa TODAS as
-imagens únicas (de train+test juntos) e sorteia um split novo, disjunto
-por img_id, estratificado por pathology_label pra não deixar uma
-categoria clínica rara inteira de um lado só.
+Motivation: the official HuggingFace split (train/test) has 94% image
+overlap between the two sides -- see docs/superpowers/specs/
+2026-08-30-kvasir-clean-split-design.md §1.B. This module groups ALL the
+unique images (from train+test combined) and draws a new split, disjoint
+by img_id, stratified by pathology_label so as not to leave an entire
+rare clinical category on just one side.
 """
 from __future__ import annotations
 
@@ -20,14 +20,14 @@ def split_records_by_image(
     ratios: tuple[float, float, float] = (0.7, 0.1, 0.2),
     seed: int = 42,
 ) -> dict[str, list[dict]]:
-    """Separa `records` (saída de
-    harness.prepro.prepare_kvasir_arrow.build_image_records -- um dict por
-    imagem única, com `pathology_label`) em train/val/test, disjunto por
-    `img_id`, estratificado por `pathology_label` (imagens sem
-    pathology_label caem no estrato `None`, tratado como qualquer outro).
+    """Splits `records` (output of
+    harness.prepro.prepare_kvasir_arrow.build_image_records -- one dict per
+    unique image, with `pathology_label`) into train/val/test, disjoint by
+    `img_id`, stratified by `pathology_label` (images without a
+    pathology_label fall into the `None` stratum, treated like any other).
 
-    `ratios` = (train, val, test), deve somar 1.0 (tolerância 1e-9).
-    Determinístico: mesma `seed` produz sempre a mesma atribuição.
+    `ratios` = (train, val, test), must sum to 1.0 (tolerance 1e-9).
+    Deterministic: the same `seed` always produces the same assignment.
     """
     total = sum(ratios)
     if abs(total - 1.0) > 1e-9:

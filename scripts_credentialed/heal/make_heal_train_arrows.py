@@ -1,18 +1,18 @@
-"""E5 (15/09, D1-D2): arrows de TREINO e VALIDACAO do HEAL no formato do M3AE (o mesmo dos arrows
-de teste `vqa_heal_occlusion_study_*.arrow` e dos arrows limpos do Kvasir que o `med_vlm` carrega via
-`load_condition_dataset`): uma linha por imagem, listas de perguntas/respostas/labels.
+"""E5 (15/09, D1-D2): HEAL TRAINING and VALIDATION arrows in M3AE format (the same one as the
+test arrows `vqa_heal_occlusion_study_*.arrow` and the clean Kvasir arrows that `med_vlm` loads via
+`load_condition_dataset`): one row per image, lists of questions/answers/labels.
 
-D1 (como o Kvasir): fechadas e abertas, respostas reduzidas a fatos atomicos sem o grounding <seg>:
-  closed_yes/closed_no -> "yes"/"no" (mesma regra do inventario);
+D1 (like Kvasir): closed-form and open, answers reduced to atomic facts without the <seg> grounding:
+  closed_yes/closed_no -> "yes"/"no" (same rule as the inventory);
   open_normal          -> "none";
-  open_abnormal        -> achado(s) em minusculas, sem "it suffers from" e sem o ponto final.
-D2: 10 % das imagens de treino para validacao, sorteio por imagem estratificado por
-(anatomia predominante, presenca de achado), seed 20260913; disjunto do teste (ids conferidos).
-Vocabulario (M3AE): "no" = 0 e "yes" = 1 fixos (coincidem com os arrows de teste), o resto por
-frequencia decrescente em train + val + test; gravado em heal_answer_vocab.json.
-question_id a partir de 3_100_000 (o teste usa 3_000_000..3_002_850).
+  open_abnormal        -> finding(s) in lowercase, without "it suffers from" and without the final period.
+D2: 10 % of the training images for validation, draw per image stratified by
+(predominant anatomy, presence of finding), seed 20260913; disjoint from the test (ids checked).
+Vocabulary (M3AE): "no" = 0 and "yes" = 1 fixed (match the test arrows), the rest by
+decreasing frequency in train + val + test; written to heal_answer_vocab.json.
+question_id starting from 3_100_000 (the test uses 3_000_000..3_002_850).
 
-Uso (Mac, CPU):
+Usage (Mac, CPU):
     python -m scripts_credentialed.heal.make_heal_train_arrows \
         --annotations data/isbi_occlusion/heal/heal_annotations_train.parquet \
         --png-dir <png/train> --png-manifest data/isbi_occlusion/heal/png_manifest_train.json \
@@ -93,10 +93,10 @@ def build(annotations: str, png_dir: str, png_manifest: str, out_dir: str, manif
         test_answers = [[atomic_answer(a, t)] for a, t in zip(te["answer"], te["question_type"])]
     leak = sorted(set(ann["image_id"]) & test_ids)
     if leak:
-        raise ValueError(f"{len(leak)} imagens de treino tambem estao no teste: {leak[:5]}")
+        raise ValueError(f"{len(leak)} training images also in the test: {leak[:5]}")
     missing = sorted(set(ann["image_id"]) - set(pm))
     if missing:
-        raise ValueError(f"{len(missing)} imagens de treino sem PNG no manifesto: {missing[:5]}")
+        raise ValueError(f"{len(missing)} training images without PNG in the manifest: {missing[:5]}")
     ann = ann.copy()
     ann["atomic"] = [atomic_answer(a, t) for a, t in zip(ann["answer"], ann["question_type"])]
     assignment = split_images(ann, val_frac, seed)

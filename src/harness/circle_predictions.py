@@ -1,13 +1,13 @@
-"""Lógica pura de pontuação por item para o pipeline generativo (Qwen2-VL,
-SmolVLM2 etc. via `med_vlm`) -- reaproveita as funções REAIS de
-`med_vlm.metrics.process_text` (extract_answer, normalize_text), sem
-reimplementar nada, mas isolada das partes de `med_vlm` que exigem
-torch/transformers (models/loader.py, training/*) -- os __init__.py de
-`med_vlm` e `med_vlm.metrics` são vazios, então importar só
-`med_vlm.metrics.process_text` não arrasta nenhuma dependência pesada,
-permitindo testar este módulo localmente sem o stack pesado instalado.
+"""Pure per-item scoring logic for the generative pipeline (Qwen2-VL,
+SmolVLM2 etc. via `med_vlm`) -- reuses the REAL functions from
+`med_vlm.metrics.process_text` (extract_answer, normalize_text), without
+reimplementing anything, but isolated from the parts of `med_vlm` that require
+torch/transformers (models/loader.py, training/*) -- the __init__.py files of
+`med_vlm` and `med_vlm.metrics` are empty, so importing only
+`med_vlm.metrics.process_text` does not drag in any heavy dependency,
+allowing this module to be tested locally without the heavy stack installed.
 
-Ver docs/superpowers/specs/2026-08-18-circle-bridge-design.md §4."""
+See docs/superpowers/specs/2026-08-18-circle-bridge-design.md §4."""
 from __future__ import annotations
 
 from med_vlm.metrics.process_text import answer_matches, extract_answer, normalize_text
@@ -18,13 +18,13 @@ from harness.results_schema import validate_results_dict
 def score_prediction(
     raw_prediction: str, question: str, gold_answers: list[str]
 ) -> tuple[str, bool]:
-    """Extrai a resposta central de `raw_prediction` (remove blocos de
-    raciocínio, marcador 'the answer is:', trunca resposta aberta) e
-    verifica se bate com alguma das `gold_answers`, normalizado -- mesma
-    lógica exata usada por `med_vlm.metrics.accuracy.accuracy` internamente
-    (extract_answer aplicado primeiro, depois normalize_text), aplicada
-    aqui por item em vez de em lote, para gravar `predicted`/`correct` por
-    pergunta."""
+    """Extracts the central answer from `raw_prediction` (removes reasoning
+    blocks, 'the answer is:' marker, truncates open answer) and
+    checks whether it matches any of the `gold_answers`, normalized -- the exact
+    same logic used internally by `med_vlm.metrics.accuracy.accuracy`
+    (extract_answer applied first, then normalize_text), applied
+    here per item instead of in batch, to record `predicted`/`correct` per
+    question."""
     extracted = extract_answer(raw_prediction, question)
     extracted_norm = normalize_text(extracted)
     gold_norms = [normalize_text(a) for a in gold_answers]
@@ -35,11 +35,11 @@ def score_prediction(
 def build_results_record(
     model: str, dataset: str, condition: str, predictions: list[dict]
 ) -> dict:
-    """Monta o results record completo (harness.results_schema) a partir de
-    uma lista de predições por item já pontuadas ({"qid", "predicted",
-    "gold", "correct"}), computando accuracy/n/n_correct diretamente
-    delas -- mesmo formato gravado por harness/extract_predictions_m3ae.py,
-    herda o mesmo aparato estatístico (LDV, bootstrap, McNemar pareado)."""
+    """Builds the complete results record (harness.results_schema) from
+    a list of already-scored per-item predictions ({"qid", "predicted",
+    "gold", "correct"}), computing accuracy/n/n_correct directly
+    from them -- same format recorded by harness/extract_predictions_m3ae.py,
+    inherits the same statistical apparatus (LDV, bootstrap, paired McNemar)."""
     n = len(predictions)
     n_correct = sum(1 for p in predictions if p["correct"])
     record = {

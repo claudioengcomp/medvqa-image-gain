@@ -7,7 +7,7 @@
   "c2_arrow": "vqa_vqa_rad_test_c2.arrow",
   "c2_arrow_sha256": "cfc456b98aab32edd14bcf130549f3e68060cba8e745f2a0761c4142d9223b42",
   "seed": 42,
-  "funcao": "harness.interventions.make_c2_shuffled_pairs.shuffle_image_pairs (mesma dos C2 do p0)",
+  "funcao": "harness.interventions.make_c2_shuffled_pairs.shuffle_image_pairs (same as the C2 of p0)",
   "images": 63,
   "entries": 705,
   "images_that_kept_their_own": 0,

@@ -1,7 +1,7 @@
-"""23/10/2026 (m3ae_no_image): M3AE so-texto SEM imagem (S) x so-texto cinza publicado (Tc) x so-texto preto do m3ae_black_image (Tp, so sementes completas), nas fechadas.
-G_enc(S) = F - S e G(S) = A - S (F = encoder congelado do m3ae_frozen_vit; A = completo publicado), ao lado dos publicados (F - Tc, A - Tc); G_ft nao muda.
-IC conjunto (imagens e sementes; 2 000 replicas; seed 20260913; sementes RandomState(20260913)), como joint_ci/17/21. Base com menos de 3 sementes de S:
-so por semente. Preto: so por semente (m3ae_black_image interrompido). Categorias (so VQA-RAD): contagens e medias. Saida: analysis/m3ae_no_image.json"""
+"""23/10/2026 (m3ae_no_image): M3AE text-only WITHOUT image (S) x published grey text-only (Tc) x black text-only from m3ae_black_image (Tp, only complete seeds), on the closed-form ones.
+G_enc(S) = F - S and G(S) = A - S (F = frozen encoder from m3ae_frozen_vit; A = published full model), alongside the published ones (F - Tc, A - Tc); G_ft does not change.
+Joint CI (images and seeds; 2 000 replicas; seed 20260913; seeds RandomState(20260913)), as in joint_ci/17/21. Benchmark with fewer than 3 seeds of S:
+only per seed. Black: only per seed (m3ae_black_image interrupted). Categories (VQA-RAD only): counts and means. Output: analysis/m3ae_no_image.json"""
 import os as _os
 _MEDVQA_ROOT = _os.environ.get("MEDVQA_ROOT", "/path/to/original/run/tree")   # original run tree root (this package: see README, "Paths")
 import collections, hashlib, json, os

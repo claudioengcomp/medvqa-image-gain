@@ -1,5 +1,5 @@
-"""19/10/2026 (vqarad_question_split): filas do VQA-RAD por pergunta. jobs_m3ae_qlevel: M3AE com imagem (qlevel) e so-texto (qlevelgray), 3 sementes, treino + predicao.
-jobs_qlevel_ext: PubMedBERT (3 sementes, selecao na validacao desta divisao; grava a ultima epoca) e C2 (derangement seed 42) nas 9 linhas A_ft."""
+"""19/10/2026 (vqarad_question_split): VQA-RAD queues by question. jobs_m3ae_qlevel: M3AE with image (qlevel) and text-only (qlevelgray), 3 seeds, training + prediction.
+jobs_qlevel_ext: PubMedBERT (3 seeds, selection on this split's validation; records the last epoch) and C2 (derangement seed 42) on the 9 A_ft rows."""
 import os as _os
 _MEDVQA_ROOT = _os.environ.get("MEDVQA_ROOT", "/path/to/original/run/tree")   # original run tree root (this package: see README, "Paths")
 import hashlib, json

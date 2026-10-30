@@ -1,4 +1,4 @@
-# v7_mimic (2026-10-10): copia de med_vlm/configs/qwen2vl_lora_heal.yaml (torre congelada, como a publicada), mudando so dataset: MIMIC, run_name/wandb_run_name e os caminhos de saida.
+# v7_mimic (2026-10-10): copy of med_vlm/configs/qwen2vl_lora_heal.yaml (frozen tower, as published), changing only dataset: MIMIC, run_name/wandb_run_name and the output paths.
 run_name: qwen2vl_lora_mimic
 model: QWEN2VL
 dataset: MIMIC

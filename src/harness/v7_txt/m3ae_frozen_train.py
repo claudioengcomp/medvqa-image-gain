@@ -1,6 +1,6 @@
-"""20/10/2026 (m3ae_frozen_vit; env lapa): treino do M3AE com o ViT congelado. Uso: m3ae_frozen_train.py <bench> <seed>. Herda CUDA_VISIBLE_DEVICES do escalonador.
-Mesmo comando de run_m3ae_txt.sh / run_m3ae_mimic.sh (main.py do worktree_m3ae) + freeze_vision_encoder=True freeze_report_path=<logs>/<NAME>_freeze.json.
-Custo: nvidia-smi so da placa do treino a cada 5 s -> <NAME>_cost.json (como os M3AE anteriores)."""
+"""20/10/2026 (m3ae_frozen_vit; lapa env): M3AE training with the ViT frozen. Usage: m3ae_frozen_train.py <bench> <seed>. Inherits CUDA_VISIBLE_DEVICES from the scheduler.
+Same command as run_m3ae_txt.sh / run_m3ae_mimic.sh (worktree_m3ae's main.py) + freeze_vision_encoder=True freeze_report_path=<logs>/<NAME>_freeze.json.
+Cost: nvidia-smi only of the training GPU every 5 s -> <NAME>_cost.json (like the previous M3AEs)."""
 import os as _os
 _MEDVQA_ROOT = _os.environ.get("MEDVQA_ROOT", "/path/to/original/run/tree")   # original run tree root (this package: see README, "Paths")
 import json, os, subprocess, sys, threading, time
@@ -8,7 +8,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); import m3ae_froz
 b, s = sys.argv[1], int(sys.argv[2]); B = C.BENCH[b]; NAME = C.name(b, s); LOG = C.OUT + "/logs"; CK = C.ck_root(b); os.makedirs(LOG, exist_ok=True); os.makedirs(CK, exist_ok=True)
 TK = B["tk"].get(s, "clip"); dev = os.environ.get("CUDA_VISIBLE_DEVICES", ""); WM = C.W + "/v7_txt/worktree_m3ae"
 DR = "%s/data_roots/%s_train/" % (C.OUT, b); os.makedirs(DR, exist_ok=True)
-for sp in ("train", "val", "test"):   # data_root de treino: links para as arrows canonicas (teste = C0; so a validacao escolhe o checkpoint)
+for sp in ("train", "val", "test"):   # training data_root: links to the canonical arrows (test = C0; only validation chooses the checkpoint)
     l = DR + "%s_%s.arrow" % (B["key"], sp); t = (B["test"]["C0"] if sp == "test" else "%s/%s_%s.arrow" % (B["train_root"], B["key"], sp))
     if not os.path.islink(l): os.symlink(t, l)
     assert os.path.realpath(l) == os.path.realpath(t), (l, t)

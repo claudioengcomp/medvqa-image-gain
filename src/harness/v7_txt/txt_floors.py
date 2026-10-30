@@ -1,9 +1,9 @@
-"""P1.4 (2026-10-09): consolidacao do braco so-texto. Por linha (benchmark, familia, semente): Acc(TXT) global e por
-classe de pergunta, ao lado de Acc(C0) da congelada, Acc(C0) da adaptada, Acc(C1) onde existir e TFIDF por classe, no mesmo
-subconjunto de qids (HEAL: 1 446 avaliaveis). ICs por bootstrap POR IMAGEM (2000, seed 20260913, as mesmas replicas para
-todos os bracos); McNemar mid-p TXT vs C0 congelada e TXT vs TFIDF por linha; Holm por benchmark (sobre as linhas x 2
-testes); media e DP entre sementes; contagem acerta/erra/empata por item TXT vs C0 congelada. Sem interpretacao.
-Roda com o que existir em v7_txt/results (reexecutavel)."""
+"""P1.4 (2026-10-09): consolidation of the text-only arm. Per row (benchmark, family, seed): global Acc(TXT) and per
+question class, alongside Acc(C0) of the frozen, Acc(C0) of the fine-tuned, Acc(C1) where it exists and TFIDF per class, on the same
+subset of qids (HEAL: 1 446 assessable). CIs by bootstrap PER IMAGE (2000, seed 20260913, the same replicas for
+all arms); McNemar mid-p TXT vs frozen C0 and TXT vs TFIDF per row; Holm per benchmark (over the rows x 2
+tests); mean and SD between seeds; count of win/loss/tie per item TXT vs frozen C0. No interpretation.
+Runs with whatever exists in v7_txt/results (re-runnable)."""
 from __future__ import annotations
 import os as _os
 _MEDVQA_ROOT = _os.environ.get("MEDVQA_ROOT", "/path/to/original/run/tree")   # original run tree root (this package: see README, "Paths")
@@ -16,15 +16,15 @@ P0R = f"{_MEDVQA_ROOT}/doutorado/medvqa-main/results"; ISBI = f"{_MEDVQA_ROOT}/d
 V5Q = f"{_MEDVQA_ROOT}/v5_qwen_vt/results"; V5S = f"{_MEDVQA_ROOT}/v5_smolvlm_ft/results"; V6R = f"{_MEDVQA_ROOT}/v6_tower_heal/results"; V7 = f"{_MEDVQA_ROOT}/v7_txt"
 MIMIC = f"{_MEDVQA_ROOT}/v7_mimic"; RESULTS_DIR = {"MIMIC": f"{MIMIC}/results"}
 ARROWS = {"VQARAD": f"{_MEDVQA_ROOT}/doutorado/M3AE/data/finetune_arrows/vqa_vqa_rad_test.arrow", "MIMIC": f"{MIMIC}/data/vqa_mimic_test.arrow", "KVASIR": f"{_MEDVQA_ROOT}/doutorado/medvqa-main/data/finetune_arrows/vqa_kvasir_test_clean.arrow", "SLAKE": f"{_MEDVQA_ROOT}/doutorado/M3AE/data/finetune_arrows/vqa_slack_test.arrow", "HEAL": f"{_MEDVQA_ROOT}/doutorado/medvqa-occlusion-study/data/finetune_arrows/vqa_heal_test.arrow"}
-ARROWS["VQARAD_RADORIG"] = ARROWS["VQARAD"]   # 15/10: VQA-RAD fonte unica (revision A1); mesmo teste
-TXT_BENCH_M3AE = {"VQARAD_RADORIG": "VQARAD"}   # 15/10: o M3AE so-texto do VQA-RAD ja usava o pacote original
-# 17/10 (article_runs): ARTICLE2_RUNS=1 -> (a) base VQARAD_REDIV (VQA-RAD redividido por imagem, vqarad_image_split); (b) C1 do MIMIC = as 1 499 fechadas (baselines);
-# (c) M3AE fora da comparacao com imagem cinza em todas as bases (c1 = None); (d) baselines extras: majoritario (2a) e PubMedBERT (2b). Sem a variavel, nada muda.
+ARROWS["VQARAD_RADORIG"] = ARROWS["VQARAD"]   # 15/10: VQA-RAD single source (revision A1); same test
+TXT_BENCH_M3AE = {"VQARAD_RADORIG": "VQARAD"}   # 15/10: the M3AE text-only of VQA-RAD already used the original package
+# 17/10 (article_runs): ARTICLE2_RUNS=1 -> (a) VQARAD_REDIV benchmark (VQA-RAD re-split by image, vqarad_image_split); (b) C1 of MIMIC = the 1 499 closed-form (baselines);
+# (c) M3AE out of the grey-image comparison in all benchmarks (c1 = None); (d) extra baselines: majority (2a) and PubMedBERT (2b). Without the variable, nothing changes.
 ARTICLE_RUNS = os.environ.get("ARTICLE2_RUNS") == "1"; PJR = f"{_MEDVQA_ROOT}/v7_txt/article_runs/results"
 ARROWS["VQARAD_REDIV"] = f"{_MEDVQA_ROOT}/v7_txt/article_runs/data/vqarad_rediv/vqa_vqa_rad_test.arrow"; RESULTS_DIR["VQARAD_REDIV"] = PJR
 ARROWS["VQARAD_QLEVEL"] = f"{_MEDVQA_ROOT}/v7_txt/article_runs/data/vqarad_qlevel/vqa_vqa_rad_test.arrow"; RESULTS_DIR["VQARAD_QLEVEL"] = PJR   # 19/10 (vqarad_question_split)
 def extra_baselines(bench):
-    """17/10 (article_runs, question_only_sets): majoritario (um arquivo por base) e PubMedBERT (um por semente); dicts qid -> correct. VQARAD_RADORIG usa os do VQARAD (mesmo treino)."""
+    """17/10 (article_runs, question_only_sets): majority (one file per benchmark) and PubMedBERT (one per seed); qid -> correct dicts. VQARAD_RADORIG uses those of VQARAD (same training)."""
     b = {"VQARAD_RADORIG": "VQARAD"}.get(bench, bench); mj = f"{PJR}/MAJ_question_only_{b}.json"; bt = {s: (f"{PJR}/BERT_question_only_{b}_seed{s}.json" if os.path.exists(f"{PJR}/BERT_question_only_{b}_seed{s}.json") else f"{PJR}/BERT2_question_only_{b}_seed{s}.json") for s in range(3)}   # 19/10: VQARAD_QLEVEL so tem a versao v2 (vqarad_question_split)
     return {"maj": preds(mj) if os.path.exists(mj) else None, "maj_src": mj, "bert": {s: (preds(p) if os.path.exists(p) else None) for s, p in bt.items()}, "bert_src": bt}
 def pub(bench, fam, pe, s):   # nome publicado no p0 (SLAKE seed0 sem sufixo)
@@ -33,23 +33,23 @@ def cells(bench, fam, s):
     c = _cells(bench, fam, s)
     if ARTICLE_RUNS and c:
         c = dict(c)
-        if fam == "M3AE": c["c1"] = None   # 17/10 (article_runs): M3AE sai da comparacao com imagem cinza (o so-texto dele ja e treinado com imagem cinza)
-        elif bench == "MIMIC": c["c1"] = f"{PJR}/{c['frozen_line']}_C1.json"   # 17/10 (article_runs, baselines): C1 nas 1 499 fechadas
+        if fam == "M3AE": c["c1"] = None   # 17/10 (article_runs): M3AE leaves the grey-image comparison (its text-only is already trained with grey image)
+        elif bench == "MIMIC": c["c1"] = f"{PJR}/{c['frozen_line']}_C1.json"   # 17/10 (article_runs, baselines): C1 on the 1 499 closed-form
     return c
 def _cells(bench, fam, s):
     if bench in ("VQARAD_REDIV", "VQARAD_QLEVEL"):   # 17/10 (article_runs, vqarad_image_split): tudo em v7_txt/article_runs/results; 19/10: VQARAD_QLEVEL (vqarad_question_split)
         if fam == "M3AE": return {"frozen": f"{PJR}/M3AE_SCRATCH_{bench}_seed{s}_C0.json", "adapted": None, "c1": None, "frozen_line": f"M3AE_SCRATCH_{bench}_seed{s}", "adapted_line": None, "note": "M3AE: fine-tune completo (a unica celula)"}
         if fam == "QWEN2VL": return {"frozen": f"{PJR}/QWEN2VL_LORA_{bench}_seed{s}_C0.json", "adapted": f"{PJR}/QWEN2VL_LORA_VT_{bench}_seed{s}_C0.json", "c1": f"{PJR}/QWEN2VL_LORA_{bench}_seed{s}_C1.json", "frozen_line": f"QWEN2VL_LORA_{bench}_seed{s}", "adapted_line": f"QWEN2VL_LORA_VT_{bench}_seed{s}"}
         return {"frozen": f"{PJR}/SMOLVLM_LORA_FT_{bench}_seed{s}_C0.json", "adapted": f"{PJR}/SMOLVLM_LORA_{bench}_seed{s}_C0.json", "c1": f"{PJR}/SMOLVLM_LORA_FT_{bench}_seed{s}_C1.json", "frozen_line": f"SMOLVLM_LORA_FT_{bench}_seed{s}", "adapted_line": f"SMOLVLM_LORA_{bench}_seed{s}"}
-    if bench == "VQARAD_RADORIG":   # 15/10 (candidato, revision A1 do artigo 2): VLM do pacote original (_RADORIG, v7_txt/results); M3AE igual ao VQARAD (ja usava o pacote original)
+    if bench == "VQARAD_RADORIG":   # 15/10 (the candidate, revision A1 of paper 2): VLM from the original package (_RADORIG, v7_txt/results); M3AE same as VQARAD (already used the original package)
         if fam == "M3AE": return _cells("VQARAD", "M3AE", s)
         R7 = f"{V7}/results"
         if fam == "QWEN2VL": return {"frozen": f"{R7}/QWEN2VL_LORA_VQARAD_RADORIG_seed{s}_C0.json", "adapted": f"{R7}/QWEN2VL_LORA_VT_VQARAD_RADORIG_seed{s}_C0.json", "c1": f"{R7}/QWEN2VL_LORA_VQARAD_RADORIG_seed{s}_C1.json", "frozen_line": f"QWEN2VL_LORA_VQARAD_RADORIG_seed{s}", "adapted_line": f"QWEN2VL_LORA_VT_VQARAD_RADORIG_seed{s}"}
         return {"frozen": f"{R7}/SMOLVLM_LORA_FT_VQARAD_RADORIG_seed{s}_C0.json", "adapted": f"{R7}/SMOLVLM_LORA_VQARAD_RADORIG_seed{s}_C0.json", "c1": f"{R7}/SMOLVLM_LORA_FT_VQARAD_RADORIG_seed{s}_C1.json", "frozen_line": f"SMOLVLM_LORA_FT_VQARAD_RADORIG_seed{s}", "adapted_line": f"SMOLVLM_LORA_VQARAD_RADORIG_seed{s}"}
-    if bench == "MIMIC":   # v7_mimic (3e): congelada = QWEN2VL_LORA_FROZEN, adaptada = QWEN2VL_LORA_VT; 14/10 (exec2): C1 = imagem cinza da linha congelada em v7_mimic/results (mesma convencao do HEAL/Kvasir/SLAKE)
-        if fam == "SMOLVLM":   # 13/10: SmolVLM2 no MIMIC (TXT x3 concluido), mesmo mapeamento do HEAL: congelada = LoRA FT (torre congelada), adaptada = LoRA publicada; 14/10: C1 da congelada
+    if bench == "MIMIC":   # v7_mimic (3e): frozen = QWEN2VL_LORA_FROZEN, fine-tuned = QWEN2VL_LORA_VT; 14/10 (exec2): C1 = grey image of the frozen row in v7_mimic/results (same convention as HEAL/Kvasir/SLAKE)
+        if fam == "SMOLVLM":   # 13/10: SmolVLM2 on MIMIC (TXT x3 completed), same mapping as HEAL: frozen = LoRA FT (frozen tower), fine-tuned = published LoRA; 14/10: C1 of the frozen
             return {"frozen": f"{MIMIC}/results/SMOLVLM_LORA_FT_MIMIC_seed{s}_C0.json", "adapted": f"{MIMIC}/results/SMOLVLM_LORA_MIMIC_seed{s}_C0.json", "c1": f"{MIMIC}/results/SMOLVLM_LORA_FT_MIMIC_seed{s}_C1.json", "frozen_line": f"SMOLVLM_LORA_FT_MIMIC_seed{s}", "adapted_line": f"SMOLVLM_LORA_MIMIC_seed{s}"}
-        if fam == "M3AE":   # 13/10: M3AE no MIMIC (dois bracos, como nas outras bases): C0 = fine-tune completo com imagem; TXT = M3AE_TXT_MIMIC; 14/10: C1 = M3AE_MIMIC_seed s_C1 (imagem cinza na linha publicada)
+        if fam == "M3AE":   # 13/10: M3AE on MIMIC (two arms, as in the other benchmarks): C0 = full fine-tune with image; TXT = M3AE_TXT_MIMIC; 14/10: C1 = M3AE_MIMIC_seed s_C1 (grey image on the published row)
             return {"frozen": f"{MIMIC}/results/M3AE_MIMIC_seed{s}_C0.json", "adapted": None, "c1": f"{MIMIC}/results/M3AE_MIMIC_seed{s}_C1.json", "frozen_line": f"M3AE_MIMIC_seed{s}", "adapted_line": None, "note": "M3AE: fine-tune completo (a unica celula); TXT = imagem cinza constante no treino/val/teste"}
         if fam != "QWEN2VL": return None
         return {"frozen": f"{MIMIC}/results/QWEN2VL_LORA_FROZEN_MIMIC_seed{s}_C0.json", "adapted": f"{MIMIC}/results/QWEN2VL_LORA_VT_MIMIC_seed{s}_C0.json", "c1": f"{MIMIC}/results/QWEN2VL_LORA_FROZEN_MIMIC_seed{s}_C1.json", "frozen_line": f"QWEN2VL_LORA_FROZEN_MIMIC_seed{s}", "adapted_line": f"QWEN2VL_LORA_VT_MIMIC_seed{s}"}
@@ -57,7 +57,7 @@ def _cells(bench, fam, s):
         c0 = {"HEAL": f"{ISBI}/M3AE_HEAL_seed{s}_C0.json", "KVASIR": f"{P0R}/M3AE_KVASIR_seed{s}_C0.json", "SLAKE": f"{P0R}/M3AE_SCRATCH_SLAKE" + ("" if s == 0 else f"_seed{s}") + "_C0.json", "VQARAD": f"{P0R}/M3AE_SCRATCH_VQARAD" + ("" if s == 0 else f"_seed{s}") + "_C0.json"}[bench]
         c1 = {"HEAL": f"{V7}/results/M3AE_HEAL_seed{s}_C1.json", "KVASIR": f"{P0R}/M3AE_KVASIR_seed{s}_C1.json", "SLAKE": f"{P0R}/M3AE_SCRATCH_SLAKE" + ("" if s == 0 else f"_seed{s}") + "_C1.json", "VQARAD": f"{P0R}/M3AE_SCRATCH_VQARAD" + ("" if s == 0 else f"_seed{s}") + "_C1.json"}[bench]
         return {"frozen": c0, "adapted": None, "c1": c1, "frozen_line": c0.split("/")[-1][:-8], "adapted_line": None, "note": "M3AE: fine-tune completo (a unica celula); TXT = imagem cinza constante no treino/val/teste"}
-    if bench == "HEAL":   # 14/10 (exec2): C1 = imagem cinza da linha congelada, em v7_txt/results (fila fechamento de 14/10)
+    if bench == "HEAL":   # 14/10 (exec2): C1 = grey image of the frozen row, in v7_txt/results (14/10 closing queue)
         if fam == "QWEN2VL": return {"frozen": f"{ISBI}/QWEN2VL_LORA_HEAL_seed{s}_C0.json", "adapted": f"{V6R}/QWEN2VL_LORA_VT_HEAL_seed{s}_C0.json", "c1": f"{V7}/results/QWEN2VL_LORA_HEAL_seed{s}_C1.json", "frozen_line": f"QWEN2VL_LORA_HEAL_seed{s}", "adapted_line": f"QWEN2VL_LORA_VT_HEAL_seed{s}"}
         return {"frozen": f"{V6R}/SMOLVLM_LORA_FT_HEAL_seed{s}_C0.json", "adapted": f"{ISBI}/SMOLVLM_LORA_HEAL_seed{s}_C0.json", "c1": f"{V7}/results/SMOLVLM_LORA_FT_HEAL_seed{s}_C1.json", "frozen_line": f"SMOLVLM_LORA_FT_HEAL_seed{s}", "adapted_line": f"SMOLVLM_LORA_HEAL_seed{s}"}
     if fam == "QWEN2VL": return {"frozen": f"{P0R}/{pub(bench, 'QWEN2VL', 'LORA', s)}_C0.json", "adapted": f"{V5Q}/QWEN2VL_LORA_VT_{bench}_seed{s}_C0.json", "c1": f"{P0R}/{pub(bench, 'QWEN2VL', 'LORA', s)}_C1.json", "frozen_line": pub(bench, "QWEN2VL", "LORA", s), "adapted_line": f"QWEN2VL_LORA_VT_{bench}_seed{s}"}
@@ -77,22 +77,22 @@ def mimic_floors():
         d = json.load(open(f"{MIMIC}/results/TFIDF_question_only_MIMIC_{tag}.json"))
         tfidf = {int(q): bool(answer_matches(normalize_text(str(p)), [normalize_text(str(it[int(q)].answer))])) for q, p in d["predictions"].items()}
         pr = {int(q): bool(answer_matches(normalize_text(str(p)), [normalize_text(str(it[int(q)].answer))])) for q, p in d["prior_predictions"].items()}
-        # decisao do candidato (10/10): TFIDF (LR sim/nao) so nas FECHADAS; nas abertas o baseline e a resposta majoritaria por template ("prior por template"), nunca rotulada TFIDF
+        # decision of the candidate (10/10): TFIDF (LR yes/no) only on the CLOSED-FORM; on the open ones the baseline is the majority answer per template ("prior by template"), never labeled TFIDF
         out["TFIDF_" + tag + "_fechadas"] = {q: v for q, v in tfidf.items() if it[q].answer_type == "closed"}
         out["prior_" + tag + "_abertas"] = {q: v for q, v in pr.items() if it[q].answer_type == "open"}
         out["baseline_" + tag] = {**out["TFIDF_" + tag + "_fechadas"], **out["prior_" + tag + "_abertas"]}
     return out
 def tfidf_fechadas(bench):
-    """15/10/2026 (candidato): artigo 2 so com fechadas; TFIDF = so o classificador nas fechadas (sem o composto do MIMIC)."""
+    """15/10/2026 (the candidate): paper 2 only with closed-form; TFIDF = only the classifier on the closed-form (without the MIMIC composite)."""
     if bench == "MIMIC": return mimic_floors()["TFIDF_subset_fechadas"], f"{MIMIC}/results/TFIDF_question_only_MIMIC_subset.json -- TFIDF subset (LR sim/nao) so nas fechadas"
     if bench == "SLAKE": p = f"{_MEDVQA_ROOT}/v6_medida/design/tfidf_by_type/SLAKE_closed_recomputed.json"; return preds(p), p + " (so fechadas)"
     if bench in ("VQARAD_REDIV", "VQARAD_QLEVEL"): p = f"{PJR}/TFIDF_question_only_{bench}.json"; return preds(p), p + " (TF-IDF + LR, harness/baselines/question_only.py inalterado, nas 1 469 fechadas do treino redividido; 418 fechadas do teste novo)"   # 17/10 (article_runs, vqarad_image_split)
     if bench in ("VQARAD", "VQARAD_RADORIG"): p = f"{P0R}/TFIDF_question_only_VQARAD_C0.json"; return preds(p), p + " (classificador treinado nas fechadas do trainset.json do M3AE = treino de 2 758; 272 fechadas; reproduzido item a item por harness/v7_txt/tfidf_vqarad_orig.py, variante so_fechadas)"
-    return tfidf_preds(bench)   # Kvasir e HEAL: o TFIDF ja e so nas fechadas
+    return tfidf_preds(bench)   # Kvasir and HEAL: TFIDF is already only on the closed-form
 def tfidf_preds(bench):
     if bench == "MIMIC": return mimic_floors()["baseline_subset"], f"{MIMIC}/results/TFIDF_question_only_MIMIC_subset.json -- baseline = TFIDF subset nas fechadas + prior por template (resposta majoritaria no treino subset) nas abertas; TFIDF full e prior full nas colunas extras"
     if bench == "KVASIR": return preds(f"{ISBI}/TFIDF_question_only_KVASIR_C0.json"), f"{ISBI}/TFIDF_question_only_KVASIR_C0.json"
-    if bench in ("VQARAD_REDIV", "VQARAD_QLEVEL"): return tfidf_fechadas(bench)   # 17/10: so fechadas
+    if bench in ("VQARAD_REDIV", "VQARAD_QLEVEL"): return tfidf_fechadas(bench)   # 17/10: closed-form only
     if bench == "VQARAD_RADORIG": p = f"{V7}/results/TFIDF_question_only_VQARAD_orig.json"; return preds(p), p + " (TFIDF retreinado no treino de 2 758 do pacote original, todas as 451; harness/v7_txt/tfidf_vqarad_orig.py; 15/10)"
     if bench == "VQARAD": return preds(f"{P0R}/TFIDF_question_only_VQARAD_C0.json"), f"{P0R}/TFIDF_question_only_VQARAD_C0.json (TFIDF publicado do p0)"   # 14/10
     if bench == "SLAKE":
@@ -127,7 +127,7 @@ def diff_block(a: dict, b: dict, qids, img, bs):
     va = np.array([a[q] for q in qids], float); vb = np.array([b[q] for q in qids], float)
     return {"n": len(qids), "diff": float((va - vb).mean()), "diff_ci": bs.ci_mean_diff([img[q] for q in qids], va - vb), "mcnemar_midp": mcnemar_midp(va.astype(bool), vb.astype(bool)),
             "txt_right_other_wrong": int(((va == 1) & (vb == 0)).sum()), "txt_wrong_other_right": int(((va == 0) & (vb == 1)).sum()), "both_right": int(((va == 1) & (vb == 1)).sum()), "both_wrong": int(((va == 0) & (vb == 0)).sum())}
-NOTA_REPRO = "Reprodução entre ambientes (registro de 14/10/2026, decisão do candidato): a banda de 2,7–5,9 % de discordância item a item entre ambientes vale para os modelos generativos em bf16. O M3AE, classificador com argmax, reproduz item a item entre ambientes: o C0 do VQA-RAD, seeds 1 e 2, com os pesos do Colab recuperados do Drive, rodado na gpu1, tem 0 de 451 predições diferentes do publicado (gerado no Colab) nas duas seeds (v7_txt/analysis/c0repro_vqarad.json). Por consequência, os 10–11 % de divergência do M3AE_SCRATCH SLAKE seeds 1 e 2 (39 e 43 de 388 itens) contra a C0 do Colab são diferença de pesos (retreinos de 15/09), não de ambiente."   # 14/10/2026 (candidato)
+NOTA_REPRO = "Reprodução entre ambientes (registro de 14/10/2026, decisão do candidato): a banda de 2,7–5,9 % de discordância item a item entre ambientes vale para os modelos generativos em bf16. O M3AE, classificador com argmax, reproduz item a item entre ambientes: o C0 do VQA-RAD, seeds 1 e 2, com os pesos do Colab recuperados do Drive, rodado na gpu1, tem 0 de 451 predições diferentes do publicado (gerado no Colab) nas duas seeds (v7_txt/analysis/c0repro_vqarad.json). Por consequência, os 10–11 % de divergência do M3AE_SCRATCH SLAKE seeds 1 e 2 (39 e 43 de 388 itens) contra a C0 do Colab são diferença de pesos (retreinos de 15/09), não de ambiente."   # 14/10/2026 (the candidate)
 
 
 def main():

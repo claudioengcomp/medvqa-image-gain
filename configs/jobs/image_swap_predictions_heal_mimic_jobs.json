@@ -33,7 +33,7 @@
   ],
   "meta": {
    "line": "QWEN2VL_LORA_VT_HEAL_seed0",
-   "condition": "C2 (troca refeita, image_swap_v2)",
+   "condition": "C2 (swap redone, image_swap_v2)",
    "base_model": "Qwen/Qwen2-VL-2B-Instruct",
    "adapter_dir": "${MEDVQA_ROOT}/v6_tower_heal/models/qwen2vl_lora_vt_heal_seed0",
    "input_arrow": "${MEDVQA_ROOT}/v7_txt/article_runs/data/troca2/heal/vqa_heal_test_c2v2.arrow",
@@ -75,7 +75,7 @@
   ],
   "meta": {
    "line": "QWEN2VL_LORA_VT_HEAL_seed1",
-   "condition": "C2 (troca refeita, image_swap_v2)",
+   "condition": "C2 (swap redone, image_swap_v2)",
    "base_model": "Qwen/Qwen2-VL-2B-Instruct",
    "adapter_dir": "${MEDVQA_ROOT}/v6_tower_heal/models/qwen2vl_lora_vt_heal_seed1",
    "input_arrow": "${MEDVQA_ROOT}/v7_txt/article_runs/data/troca2/heal/vqa_heal_test_c2v2.arrow",
@@ -117,7 +117,7 @@
   ],
   "meta": {
    "line": "QWEN2VL_LORA_VT_HEAL_seed2",
-   "condition": "C2 (troca refeita, image_swap_v2)",
+   "condition": "C2 (swap redone, image_swap_v2)",
    "base_model": "Qwen/Qwen2-VL-2B-Instruct",
    "adapter_dir": "${MEDVQA_ROOT}/v6_tower_heal/models/qwen2vl_lora_vt_heal_seed2",
    "input_arrow": "${MEDVQA_ROOT}/v7_txt/article_runs/data/troca2/heal/vqa_heal_test_c2v2.arrow",
@@ -159,7 +159,7 @@
   ],
   "meta": {
    "line": "SMOLVLM_LORA_HEAL_seed0",
-   "condition": "C2 (troca refeita, image_swap_v2)",
+   "condition": "C2 (swap redone, image_swap_v2)",
    "base_model": "HuggingFaceTB/SmolVLM2-2.2B-Instruct",
    "adapter_dir": "${MEDVQA_ROOT}/doutorado/medvqa-occlusion-study/outputs/models/smolvlm2_lora_heal_seed0",
    "input_arrow": "${MEDVQA_ROOT}/v7_txt/article_runs/data/troca2/heal/vqa_heal_test_c2v2.arrow",
@@ -201,7 +201,7 @@
   ],
   "meta": {
    "line": "SMOLVLM_LORA_HEAL_seed1",
-   "condition": "C2 (troca refeita, image_swap_v2)",
+   "condition": "C2 (swap redone, image_swap_v2)",
    "base_model": "HuggingFaceTB/SmolVLM2-2.2B-Instruct",
    "adapter_dir": "${MEDVQA_ROOT}/doutorado/medvqa-occlusion-study/outputs/models/smolvlm2_lora_heal_seed1",
    "input_arrow": "${MEDVQA_ROOT}/v7_txt/article_runs/data/troca2/heal/vqa_heal_test_c2v2.arrow",
@@ -243,7 +243,7 @@
   ],
   "meta": {
    "line": "SMOLVLM_LORA_HEAL_seed2",
-   "condition": "C2 (troca refeita, image_swap_v2)",
+   "condition": "C2 (swap redone, image_swap_v2)",
    "base_model": "HuggingFaceTB/SmolVLM2-2.2B-Instruct",
    "adapter_dir": "${MEDVQA_ROOT}/doutorado/medvqa-occlusion-study/outputs/models/smolvlm2_lora_heal_seed2",
    "input_arrow": "${MEDVQA_ROOT}/v7_txt/article_runs/data/troca2/heal/vqa_heal_test_c2v2.arrow",
@@ -339,7 +339,7 @@
   ],
   "meta": {
    "line": "QWEN2VL_LORA_VT_MIMIC_seed0",
-   "condition": "C2 (troca refeita, image_swap_v2)",
+   "condition": "C2 (swap redone, image_swap_v2)",
    "base_model": "Qwen/Qwen2-VL-2B-Instruct",
    "adapter_dir": "${MEDVQA_ROOT}/v7_mimic/models/qwen2vl_lora_vt_mimic_seed0",
    "input_arrow": "${MEDVQA_ROOT}/v7_txt/article_runs/data/troca2/mimic/vqa_mimic_test_c2v2.arrow",
@@ -381,7 +381,7 @@
   ],
   "meta": {
    "line": "QWEN2VL_LORA_VT_MIMIC_seed1",
-   "condition": "C2 (troca refeita, image_swap_v2)",
+   "condition": "C2 (swap redone, image_swap_v2)",
    "base_model": "Qwen/Qwen2-VL-2B-Instruct",
    "adapter_dir": "${MEDVQA_ROOT}/v7_mimic/models/qwen2vl_lora_vt_mimic_seed1",
    "input_arrow": "${MEDVQA_ROOT}/v7_txt/article_runs/data/troca2/mimic/vqa_mimic_test_c2v2.arrow",
@@ -423,7 +423,7 @@
   ],
   "meta": {
    "line": "QWEN2VL_LORA_VT_MIMIC_seed2",
-   "condition": "C2 (troca refeita, image_swap_v2)",
+   "condition": "C2 (swap redone, image_swap_v2)",
    "base_model": "Qwen/Qwen2-VL-2B-Instruct",
    "adapter_dir": "${MEDVQA_ROOT}/v7_mimic/models/qwen2vl_lora_vt_mimic_seed2",
    "input_arrow": "${MEDVQA_ROOT}/v7_txt/article_runs/data/troca2/mimic/vqa_mimic_test_c2v2.arrow",
@@ -465,7 +465,7 @@
   ],
   "meta": {
    "line": "SMOLVLM_LORA_MIMIC_seed0",
-   "condition": "C2 (troca refeita, image_swap_v2)",
+   "condition": "C2 (swap redone, image_swap_v2)",
    "base_model": "HuggingFaceTB/SmolVLM2-2.2B-Instruct",
    "adapter_dir": "${MEDVQA_ROOT}/v7_mimic/models/smolvlm2_lora_mimic_seed0",
    "input_arrow": "${MEDVQA_ROOT}/v7_txt/article_runs/data/troca2/mimic/vqa_mimic_test_c2v2.arrow",
@@ -507,7 +507,7 @@
   ],
   "meta": {
    "line": "SMOLVLM_LORA_MIMIC_seed1",
-   "condition": "C2 (troca refeita, image_swap_v2)",
+   "condition": "C2 (swap redone, image_swap_v2)",
    "base_model": "HuggingFaceTB/SmolVLM2-2.2B-Instruct",
    "adapter_dir": "${MEDVQA_ROOT}/v7_mimic/models/smolvlm2_lora_mimic_seed1",
    "input_arrow": "${MEDVQA_ROOT}/v7_txt/article_runs/data/troca2/mimic/vqa_mimic_test_c2v2.arrow",
@@ -549,7 +549,7 @@
   ],
   "meta": {
    "line": "SMOLVLM_LORA_MIMIC_seed2",
-   "condition": "C2 (troca refeita, image_swap_v2)",
+   "condition": "C2 (swap redone, image_swap_v2)",
    "base_model": "HuggingFaceTB/SmolVLM2-2.2B-Instruct",
    "adapter_dir": "${MEDVQA_ROOT}/v7_mimic/models/smolvlm2_lora_mimic_seed2",
    "input_arrow": "${MEDVQA_ROOT}/v7_txt/article_runs/data/troca2/mimic/vqa_mimic_test_c2v2.arrow",

@@ -1,7 +1,7 @@
-# v7_txt (2026-10-09): braco so-texto -- copia do YAML da linha congelada publicada
+# v7_txt (2026-10-09): text-only arm -- copy of the YAML of the published frozen row
 # (med_vlm/configs/qwen2vl_lora_heal.yaml),
-# mudando so: data.no_image, peft_config.target_modules (LoRA so no modelo de linguagem), train.max_length (8192/2048 -> 1024,
-# sem tokens de imagem), checkpoint_every/checkpoint_dir (estados intermediarios em tmp/v7) e os caminhos de saida.
+# changing only: data.no_image, peft_config.target_modules (LoRA only on the language model), train.max_length (8192/2048 -> 1024,
+# without image tokens), checkpoint_every/checkpoint_dir (intermediate states in tmp/v7) and the output paths.
 run_name: qwen2vl_lora_txt_heal
 model: QWEN2VL
 dataset: HEAL

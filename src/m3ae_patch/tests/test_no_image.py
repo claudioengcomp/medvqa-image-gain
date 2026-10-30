@@ -1,5 +1,5 @@
-"""m3ae_no_image (22/10/2026): testes da opcao 2 (A3/B1/C1/D1), so CPU, fp32. Rodar com cwd = worktree do codigo e PYTHONPATH = esse worktree.
-Uso: test_no_image.py logits <ckpt> <no_image 0|1> <data_root> <saida.pt>   |   test_no_image.py novo <ckpt_txt_cinza> <saida.json>"""
+"""m3ae_no_image (22/10/2026): tests of option 2 (A3/B1/C1/D1), CPU only, fp32. Run with cwd = code worktree and PYTHONPATH = that worktree.
+Usage: test_no_image.py logits <ckpt> <no_image 0|1> <data_root> <saida.pt>   |   test_no_image.py novo <ckpt_txt_cinza> <saida.json>"""
 import os as _os
 _MEDVQA_ROOT = _os.environ.get("MEDVQA_ROOT", "/path/to/original/run/tree")   # original run tree root (this package: see README, "Paths")
 import copy, json, sys, os
@@ -42,8 +42,8 @@ def test_no_image(_config):
         L0 = m.multi_modal_language_layers[0]; h1 = L0.attention(x, ext, head_mask=None, output_attentions=False, past_key_value=None)[0]
         manual = L0.feed_forward_chunk(L0.crossattention.output.LayerNorm(h1)); via = L0.forward_text_only(x, ext)[0]
     out["A3_manual_camada0_identico"] = bool(torch.equal(manual, via)); out["A3_manual_max_abs_dif"] = float((manual - via).abs().max())
-    # 2. imagem nao entra: ViT proibido + gancho na entrada da cabeca + quatro imagens
-    def proibido(*a, **k): raise RuntimeError("vision_encoder chamado com no_image")
+    # 2. image does not enter: ViT forbidden + hook at the head input + four images
+    def proibido(*a, **k): raise RuntimeError("vision_encoder called with no_image")
     m.vision_encoder.forward = proibido; cap = {}
     hk = m.vqa_head.register_forward_pre_hook(lambda mod, inp: cap.__setitem__("x", inp[0].detach().clone()))
     base, _ = logits(m, b); out["metade_imagem_exatamente_zero"] = bool((cap["x"][:, 768:] == 0).all()); out["entrada_cabeca_dim"] = int(cap["x"].shape[1])
@@ -54,7 +54,7 @@ def test_no_image(_config):
     for nome, im in variantes.items():
         bb = dict(b); bb["image"] = [im]; lg, _ = logits(m, bb); iguais[nome] = bool(torch.equal(lg, base))
     out["logits_identicos_com_imagens_diferentes"] = iguais; hk.remove()
-    # 3. frente e tras (fp32, treino), gradientes e NaN
+    # 3. forward and backward (fp32, training), gradients and NaN
     m.train(); bt = batch0(cfg, "train")[0]
     r = m.infer(bt); lg = m.vqa_head(r["multi_modal_cls_feats"]); tgt = torch.zeros_like(lg)
     for i, (ls_, sc) in enumerate(zip(bt["vqa_labels"], bt["vqa_scores"])):
@@ -71,13 +71,13 @@ def test_no_image(_config):
     grp = {}
     for n, p in train: grp[n.split(".")[0]] = grp.get(n.split(".")[0], 0) + p.numel()
     out["parametros"] = {"total": tot, "treinaveis": tr, "congelados": tot - tr, "treinaveis_por_modulo": grp}
-    # 5. cabeca inicializada igual com e sem a flag (mesma semente, partida m3ae.ckpt como no treino)
+    # 5. head initialized the same with and without the flag (same seed, starting point m3ae.ckpt as in training)
     c_on = dict(cfg, load_path="downloaded/pretrained/m3ae.ckpt", test_only=False, no_image=True); c_off = dict(c_on, no_image=False)
     s_on = build(c_on).state_dict(); s_off = build(c_off).state_dict()
     out["init_mesmas_chaves"] = list(s_on) == list(s_off); out["init_todos_tensores_iguais"] = all(torch.equal(s_on[k], s_off[k]) for k in s_on)
     out["init_vqa_head_iguais"] = all(torch.equal(s_on[k], s_off[k]) for k in s_on if k.startswith("vqa_head"))
     torch.save({k: v for k, v in s_off.items() if k.startswith("vqa_head")}, os.path.dirname(sys.argv[3]) + "/vqa_head_init_novo.pt")
-    # 6. ordem das perguntas do dataloader de treino (3 lotes) com e sem a flag
+    # 6. order of the questions from the training dataloader (3 batches) with and without the flag
     q_on = [x["qid"] for x in batch0(dict(cfg, no_image=True), "train", 3)]; q_off = [x["qid"] for x in batch0(dict(cfg, no_image=False), "train", 3)]
     out["qids_treino_3_lotes_iguais_com_e_sem_flag"] = q_on == q_off
     json.dump(out, open(sys.argv[3], "w"), indent=1, default=str); print(json.dumps(out, default=str)[:3000])

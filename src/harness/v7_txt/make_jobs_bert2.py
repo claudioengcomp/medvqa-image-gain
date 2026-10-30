@@ -1,5 +1,5 @@
-"""19/10/2026 (heal_classifiers_train_only): PubMedBERT v2 -- mesma receita, grava tambem a acuracia da ultima epoca; HEAL_TREINO = so treino com selecao na validacao.
-Saidas BERT2_question_only_<BASE>_seed<s>.json (nada sobrescrito)."""
+"""19/10/2026 (heal_classifiers_train_only): PubMedBERT v2 -- same recipe, also records the accuracy of the last epoch; HEAL_TREINO = train-only with selection on validation.
+Outputs BERT2_question_only_<BASE>_seed<s>.json (nothing overwritten)."""
 import os as _os
 _MEDVQA_ROOT = _os.environ.get("MEDVQA_ROOT", "/path/to/original/run/tree")   # original run tree root (this package: see README, "Paths")
 import hashlib, json

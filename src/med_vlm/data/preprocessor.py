@@ -4,8 +4,8 @@ from dataclasses import dataclass, field
 
 import cv2
 
-# 15/09/2026: workers do datasets.map (fork) morreram com o pool de threads do cv2 herdado;
-# CLAHE/denoise sao deterministicos por pixel, o numero de threads nao muda o resultado.
+# 15/09/2026: datasets.map (fork) workers died with the inherited cv2 thread pool;
+# CLAHE/denoise are deterministic per pixel, the number of threads does not change the result.
 cv2.setNumThreads(int(__import__("os").environ.get("MED_VLM_CV2_THREADS", "1")))
 import numpy as np
 from PIL import Image as PILImage

@@ -7,14 +7,14 @@
   "ganho_torre": "Acc(C0 congelada) - Acc(TXT)",
   "ganho_adaptacao": "Acc(C0 adaptada) - Acc(C0 congelada)",
   "soma": "Acc(C0 adaptada) - Acc(TXT)",
-  "m3ae": "dois bracos: TXT (imagem cinza) e fine-tune completo publicado; ganho unico = FT - TXT (sem celula de torre congelada)",
-  "braco_so_texto": "LoRA em todas as celulas; linhas DoRA (congelada e adaptada) usam o TXT LoRA da mesma familia e semente; M3AE: ganho da imagem nao decomposto (14/10/2026)",
-  "c1": "imagem cinza na linha congelada: HEAL em v7_txt/results, MIMIC em v7_mimic/results (14/10/2026); Kvasir/SLAKE/VQA-RAD como antes"
+  "m3ae": "two arms: TXT (grey image) and full fine-tune published; single gain = FT - TXT (without frozen tower cell)",
+  "braco_so_texto": "LoRA in all cells; DoRA rows (frozen and fine-tuned) use the TXT LoRA of the same family and seed; M3AE: image gain not decomposed (14/10/2026)",
+  "c1": "grey image in the frozen row: HEAL in v7_txt/results, MIMIC in v7_mimic/results (14/10/2026); Kvasir/SLAKE/VQA-RAD as before"
  },
  "benchmarks": {
   "SLAKE": {
    "arrow": "vqa_slack_test.arrow",
-   "tfidf_source": "results/predictions/SLAKE/SLAKE_closed_recomputed.json (so fechadas)",
+   "tfidf_source": "results/predictions/SLAKE/SLAKE_closed_recomputed.json (closed-form only)",
    "lines": [
     {
      "line": "QWEN2VL_LORA_TXT_SLAKE_seed0",
@@ -17624,7 +17624,7 @@
      "line": "M3AE_TXT_SLAKE_seed0",
      "family": "M3AE",
      "seed": 0,
-     "design": "M3AE: dois bracos (TXT cinza, FT completo)",
+     "design": "M3AE: two arms (TXT grey, full FT)",
      "files": {
       "txt": "results/predictions/SLAKE/M3AE_TXT_SLAKE_seed0_TXT.json",
       "frozen": "results/predictions/SLAKE/M3AE_SCRATCH_SLAKE_C0.json",
@@ -19895,7 +19895,7 @@
      "line": "M3AE_TXT_SLAKE_seed1",
      "family": "M3AE",
      "seed": 1,
-     "design": "M3AE: dois bracos (TXT cinza, FT completo)",
+     "design": "M3AE: two arms (TXT grey, full FT)",
      "files": {
       "txt": "results/predictions/SLAKE/M3AE_TXT_SLAKE_seed1_TXT.json",
       "frozen": "results/predictions/SLAKE/M3AE_SCRATCH_SLAKE_seed1_C0.json",
@@ -22166,7 +22166,7 @@
      "line": "M3AE_TXT_SLAKE_seed2",
      "family": "M3AE",
      "seed": 2,
-     "design": "M3AE: dois bracos (TXT cinza, FT completo)",
+     "design": "M3AE: two arms (TXT grey, full FT)",
      "files": {
       "txt": "results/predictions/SLAKE/M3AE_TXT_SLAKE_seed2_TXT.json",
       "frozen": "results/predictions/SLAKE/M3AE_SCRATCH_SLAKE_seed2_C0.json",
@@ -24459,7 +24459,7 @@
      "2": "results/predictions/SLAKE/BERT_question_only_SLAKE_seed2.json"
     }
    },
-   "recorte": "so fechadas (answer_type do arrow)",
+   "recorte": "closed-form only (answer_type from the arrow)",
    "n_qids_recorte": 416,
    "holm": {
     "M3AE_TXT_SLAKE_seed2|torre": 2.175374519602746e-16,
@@ -25197,7 +25197,7 @@
     },
     "M3AE": {
      "n_seeds": 3,
-     "design": "M3AE: dois bracos (TXT cinza, FT completo)",
+     "design": "M3AE: two arms (TXT grey, full FT)",
      "own_text_only_baseline": {
       "mean": 0.6658653846153846,
       "sd": 0.007211538461538491
@@ -41723,7 +41723,7 @@
      "line": "M3AE_TXT_HEAL_seed0",
      "family": "M3AE",
      "seed": 0,
-     "design": "M3AE: dois bracos (TXT cinza, FT completo)",
+     "design": "M3AE: two arms (TXT grey, full FT)",
      "files": {
       "txt": "M3AE_TXT_HEAL_seed0_TXT.json",
       "frozen": "M3AE_HEAL_seed0_C0.json",
@@ -43821,7 +43821,7 @@
      "line": "M3AE_TXT_HEAL_seed1",
      "family": "M3AE",
      "seed": 1,
-     "design": "M3AE: dois bracos (TXT cinza, FT completo)",
+     "design": "M3AE: two arms (TXT grey, full FT)",
      "files": {
       "txt": "M3AE_TXT_HEAL_seed1_TXT.json",
       "frozen": "M3AE_HEAL_seed1_C0.json",
@@ -45919,7 +45919,7 @@
      "line": "M3AE_TXT_HEAL_seed2",
      "family": "M3AE",
      "seed": 2,
-     "design": "M3AE: dois bracos (TXT cinza, FT completo)",
+     "design": "M3AE: two arms (TXT grey, full FT)",
      "files": {
       "txt": "M3AE_TXT_HEAL_seed2_TXT.json",
       "frozen": "M3AE_HEAL_seed2_C0.json",
@@ -48039,7 +48039,7 @@
      "2": "BERT_question_only_HEAL_seed2.json"
     }
    },
-   "recorte": "so fechadas (answer_type do arrow)",
+   "recorte": "closed-form only (answer_type from the arrow)",
    "n_qids_recorte": 1446,
    "holm": {
     "M3AE_TXT_HEAL_seed0|torre": 3.6191915632111377e-10,
@@ -48739,7 +48739,7 @@
     },
     "M3AE": {
      "n_seeds": 3,
-     "design": "M3AE: dois bracos (TXT cinza, FT completo)",
+     "design": "M3AE: two arms (TXT grey, full FT)",
      "own_text_only_baseline": {
       "mean": 0.8483171968649147,
       "sd": 0.0032681989116546276
@@ -58532,7 +58532,7 @@
      "line": "M3AE_TXT_KVASIR_seed0",
      "family": "M3AE",
      "seed": 0,
-     "design": "M3AE: dois bracos (TXT cinza, FT completo)",
+     "design": "M3AE: two arms (TXT grey, full FT)",
      "files": {
       "txt": "results/predictions/KVASIR/M3AE_TXT_KVASIR_seed0_TXT.json",
       "frozen": "results/predictions/KVASIR/M3AE_KVASIR_seed0_C0.json",
@@ -59765,7 +59765,7 @@
      "line": "M3AE_TXT_KVASIR_seed1",
      "family": "M3AE",
      "seed": 1,
-     "design": "M3AE: dois bracos (TXT cinza, FT completo)",
+     "design": "M3AE: two arms (TXT grey, full FT)",
      "files": {
       "txt": "results/predictions/KVASIR/M3AE_TXT_KVASIR_seed1_TXT.json",
       "frozen": "results/predictions/KVASIR/M3AE_KVASIR_seed1_C0.json",
@@ -60998,7 +60998,7 @@
      "line": "M3AE_TXT_KVASIR_seed2",
      "family": "M3AE",
      "seed": 2,
-     "design": "M3AE: dois bracos (TXT cinza, FT completo)",
+     "design": "M3AE: two arms (TXT grey, full FT)",
      "files": {
       "txt": "results/predictions/KVASIR/M3AE_TXT_KVASIR_seed2_TXT.json",
       "frozen": "results/predictions/KVASIR/M3AE_KVASIR_seed2_C0.json",
@@ -62253,7 +62253,7 @@
      "2": "results/predictions/KVASIR/BERT_question_only_KVASIR_seed2.json"
     }
    },
-   "recorte": "so fechadas (answer_type do arrow)",
+   "recorte": "closed-form only (answer_type from the arrow)",
    "n_qids_recorte": 10779,
    "holm": {
     "QWEN2VL_LORA_TXT_KVASIR_seed0|torre": 0.0,
@@ -62763,7 +62763,7 @@
     },
     "M3AE": {
      "n_seeds": 3,
-     "design": "M3AE: dois bracos (TXT cinza, FT completo)",
+     "design": "M3AE: two arms (TXT grey, full FT)",
      "own_text_only_baseline": {
       "mean": 0.6572656709032997,
       "sd": 0.00021425003031436113
@@ -62945,7 +62945,7 @@
   },
   "MIMIC": {
    "arrow": "vqa_mimic_test.arrow",
-   "tfidf_source": "TFIDF_question_only_MIMIC_subset.json -- TFIDF subset (LR sim/nao) so nas fechadas",
+   "tfidf_source": "TFIDF_question_only_MIMIC_subset.json -- TFIDF subset (LR yes/no) only on the closed-form ones",
    "lines": [
     {
      "line": "QWEN2VL_LORA_TXT_MIMIC_seed0",
@@ -78989,7 +78989,7 @@
      "line": "M3AE_TXT_MIMIC_seed0",
      "family": "M3AE",
      "seed": 0,
-     "design": "M3AE: dois bracos (TXT cinza, FT completo)",
+     "design": "M3AE: two arms (TXT grey, full FT)",
      "files": {
       "txt": "M3AE_TXT_MIMIC_seed0_TXT.json",
       "frozen": "M3AE_MIMIC_seed0_C0.json",
@@ -81101,7 +81101,7 @@
      "line": "M3AE_TXT_MIMIC_seed1",
      "family": "M3AE",
      "seed": 1,
-     "design": "M3AE: dois bracos (TXT cinza, FT completo)",
+     "design": "M3AE: two arms (TXT grey, full FT)",
      "files": {
       "txt": "M3AE_TXT_MIMIC_seed1_TXT.json",
       "frozen": "M3AE_MIMIC_seed1_C0.json",
@@ -83213,7 +83213,7 @@
      "line": "M3AE_TXT_MIMIC_seed2",
      "family": "M3AE",
      "seed": 2,
-     "design": "M3AE: dois bracos (TXT cinza, FT completo)",
+     "design": "M3AE: two arms (TXT grey, full FT)",
      "files": {
       "txt": "M3AE_TXT_MIMIC_seed2_TXT.json",
       "frozen": "M3AE_MIMIC_seed2_C0.json",
@@ -85347,7 +85347,7 @@
      "2": "BERT_question_only_MIMIC_seed2.json"
     }
    },
-   "recorte": "so fechadas (answer_type do arrow)",
+   "recorte": "closed-form only (answer_type from the arrow)",
    "n_qids_recorte": 1499,
    "holm": {
     "M3AE_TXT_MIMIC_seed1|torre": 1.5744852282133717e-06,
@@ -86037,7 +86037,7 @@
     },
     "M3AE": {
      "n_seeds": 3,
-     "design": "M3AE: dois bracos (TXT cinza, FT completo)",
+     "design": "M3AE: two arms (TXT grey, full FT)",
      "own_text_only_baseline": {
       "mean": 0.7831887925283523,
       "sd": 0.0076935040658244
@@ -86285,7 +86285,7 @@
   },
   "VQARAD": {
    "arrow": "vqa_vqa_rad_test.arrow",
-   "tfidf_source": "TFIDF_question_only_VQARAD_C0.json (classificador treinado nas fechadas do trainset.json do M3AE = treino de 2 758; 272 fechadas; reproduzido item a item por harness/v7_txt/tfidf_vqarad_orig.py, variante so_fechadas)",
+   "tfidf_source": "TFIDF_question_only_VQARAD_C0.json (classifier trained on the closed-form ones of trainset.json of M3AE = training of 2 758; 272 closed-form; reproduced item by item by harness/v7_txt/tfidf_vqarad_orig.py, variant so_fechadas)",
    "lines": [
     {
      "line": "QWEN2VL_LORA_TXT_VQARAD_seed0",
@@ -89315,7 +89315,7 @@
      "line": "M3AE_TXT_VQARAD_seed0",
      "family": "M3AE",
      "seed": 0,
-     "design": "M3AE: dois bracos (TXT cinza, FT completo)",
+     "design": "M3AE: two arms (TXT grey, full FT)",
      "files": {
       "txt": "M3AE_TXT_VQARAD_seed0_TXT.json",
       "frozen": "M3AE_SCRATCH_VQARAD_C0.json",
@@ -89717,7 +89717,7 @@
      "line": "M3AE_TXT_VQARAD_seed1",
      "family": "M3AE",
      "seed": 1,
-     "design": "M3AE: dois bracos (TXT cinza, FT completo)",
+     "design": "M3AE: two arms (TXT grey, full FT)",
      "files": {
       "txt": "M3AE_TXT_VQARAD_seed1_TXT.json",
       "frozen": "M3AE_SCRATCH_VQARAD_seed1_C0.json",
@@ -90119,7 +90119,7 @@
      "line": "M3AE_TXT_VQARAD_seed2",
      "family": "M3AE",
      "seed": 2,
-     "design": "M3AE: dois bracos (TXT cinza, FT completo)",
+     "design": "M3AE: two arms (TXT grey, full FT)",
      "files": {
       "txt": "M3AE_TXT_VQARAD_seed2_TXT.json",
       "frozen": "M3AE_SCRATCH_VQARAD_seed2_C0.json",
@@ -90543,7 +90543,7 @@
      "2": "BERT_question_only_VQARAD_seed2.json"
     }
    },
-   "recorte": "so fechadas (answer_type do arrow)",
+   "recorte": "closed-form only (answer_type from the arrow)",
    "n_qids_recorte": 272,
    "holm": {
     "M3AE_TXT_VQARAD_seed2|torre": 0.004028101782287416,
@@ -90883,7 +90883,7 @@
     },
     "M3AE": {
      "n_seeds": 3,
-     "design": "M3AE: dois bracos (TXT cinza, FT completo)",
+     "design": "M3AE: two arms (TXT grey, full FT)",
      "own_text_only_baseline": {
       "mean": 0.7193627450980392,
       "sd": 0.008490445135141526
@@ -91010,7 +91010,7 @@
   },
   "VQARAD_RADORIG": {
    "arrow": "vqa_vqa_rad_test.arrow",
-   "tfidf_source": "TFIDF_question_only_VQARAD_C0.json (classificador treinado nas fechadas do trainset.json do M3AE = treino de 2 758; 272 fechadas; reproduzido item a item por harness/v7_txt/tfidf_vqarad_orig.py, variante so_fechadas)",
+   "tfidf_source": "TFIDF_question_only_VQARAD_C0.json (classifier trained on the closed-form ones of trainset.json of M3AE = training of 2 758; 272 closed-form; reproduced item by item by harness/v7_txt/tfidf_vqarad_orig.py, variant so_fechadas)",
    "lines": [
     {
      "line": "QWEN2VL_LORA_TXT_VQARAD_RADORIG_seed0",
@@ -94040,7 +94040,7 @@
      "line": "M3AE_TXT_VQARAD_seed0",
      "family": "M3AE",
      "seed": 0,
-     "design": "M3AE: dois bracos (TXT cinza, FT completo)",
+     "design": "M3AE: two arms (TXT grey, full FT)",
      "files": {
       "txt": "M3AE_TXT_VQARAD_seed0_TXT.json",
       "frozen": "M3AE_SCRATCH_VQARAD_C0.json",
@@ -94442,7 +94442,7 @@
      "line": "M3AE_TXT_VQARAD_seed1",
      "family": "M3AE",
      "seed": 1,
-     "design": "M3AE: dois bracos (TXT cinza, FT completo)",
+     "design": "M3AE: two arms (TXT grey, full FT)",
      "files": {
       "txt": "M3AE_TXT_VQARAD_seed1_TXT.json",
       "frozen": "M3AE_SCRATCH_VQARAD_seed1_C0.json",
@@ -94844,7 +94844,7 @@
      "line": "M3AE_TXT_VQARAD_seed2",
      "family": "M3AE",
      "seed": 2,
-     "design": "M3AE: dois bracos (TXT cinza, FT completo)",
+     "design": "M3AE: two arms (TXT grey, full FT)",
      "files": {
       "txt": "M3AE_TXT_VQARAD_seed2_TXT.json",
       "frozen": "M3AE_SCRATCH_VQARAD_seed2_C0.json",
@@ -95268,7 +95268,7 @@
      "2": "BERT_question_only_VQARAD_seed2.json"
     }
    },
-   "recorte": "so fechadas (answer_type do arrow)",
+   "recorte": "closed-form only (answer_type from the arrow)",
    "n_qids_recorte": 272,
    "holm": {
     "M3AE_TXT_VQARAD_seed2|torre": 0.004028101782287416,
@@ -95608,7 +95608,7 @@
     },
     "M3AE": {
      "n_seeds": 3,
-     "design": "M3AE: dois bracos (TXT cinza, FT completo)",
+     "design": "M3AE: two arms (TXT grey, full FT)",
      "own_text_only_baseline": {
       "mean": 0.7193627450980392,
       "sd": 0.008490445135141526
@@ -95735,7 +95735,7 @@
   },
   "VQARAD_REDIV": {
    "arrow": "vqa_vqa_rad_test.arrow",
-   "tfidf_source": "results/predictions/VQARAD_REDIV/TFIDF_question_only_VQARAD_REDIV.json (TF-IDF + LR, harness/baselines/question_only.py inalterado, nas 1 469 fechadas do treino redividido; 418 fechadas do teste novo)",
+   "tfidf_source": "results/predictions/VQARAD_REDIV/TFIDF_question_only_VQARAD_REDIV.json (TF-IDF + LR, harness/baselines/question_only.py unchanged, on the 1 469 closed-form of the re-split training; 418 closed-form of the new test)",
    "lines": [
     {
      "line": "QWEN2VL_LORA_TXT_VQARAD_REDIV_seed0",
@@ -98561,7 +98561,7 @@
      "line": "M3AE_TXT_VQARAD_REDIV_seed0",
      "family": "M3AE",
      "seed": 0,
-     "design": "M3AE: dois bracos (TXT cinza, FT completo)",
+     "design": "M3AE: two arms (TXT grey, full FT)",
      "files": {
       "txt": "results/predictions/VQARAD_REDIV/M3AE_TXT_VQARAD_REDIV_seed0_TXT.json",
       "frozen": "results/predictions/VQARAD_REDIV/M3AE_SCRATCH_VQARAD_REDIV_seed0_C0.json",
@@ -98929,7 +98929,7 @@
      "line": "M3AE_TXT_VQARAD_REDIV_seed1",
      "family": "M3AE",
      "seed": 1,
-     "design": "M3AE: dois bracos (TXT cinza, FT completo)",
+     "design": "M3AE: two arms (TXT grey, full FT)",
      "files": {
       "txt": "results/predictions/VQARAD_REDIV/M3AE_TXT_VQARAD_REDIV_seed1_TXT.json",
       "frozen": "results/predictions/VQARAD_REDIV/M3AE_SCRATCH_VQARAD_REDIV_seed1_C0.json",
@@ -99297,7 +99297,7 @@
      "line": "M3AE_TXT_VQARAD_REDIV_seed2",
      "family": "M3AE",
      "seed": 2,
-     "design": "M3AE: dois bracos (TXT cinza, FT completo)",
+     "design": "M3AE: two arms (TXT grey, full FT)",
      "files": {
       "txt": "results/predictions/VQARAD_REDIV/M3AE_TXT_VQARAD_REDIV_seed2_TXT.json",
       "frozen": "results/predictions/VQARAD_REDIV/M3AE_SCRATCH_VQARAD_REDIV_seed2_C0.json",
@@ -99687,7 +99687,7 @@
      "2": "results/predictions/VQARAD_REDIV/BERT_question_only_VQARAD_REDIV_seed2.json"
     }
    },
-   "recorte": "so fechadas (answer_type do arrow)",
+   "recorte": "closed-form only (answer_type from the arrow)",
    "n_qids_recorte": 418,
    "holm": {
     "SMOLVLM_LORA_TXT_VQARAD_REDIV_seed0|torre": 8.454423051308124e-06,
@@ -100007,7 +100007,7 @@
     },
     "M3AE": {
      "n_seeds": 3,
-     "design": "M3AE: dois bracos (TXT cinza, FT completo)",
+     "design": "M3AE: two arms (TXT grey, full FT)",
      "own_text_only_baseline": {
       "mean": 0.6124401913875598,
       "sd": 0.03314929775251438
@@ -100124,7 +100124,7 @@
   },
   "VQARAD_QLEVEL": {
    "arrow": "vqa_vqa_rad_test.arrow",
-   "tfidf_source": "results/predictions/VQARAD_QLEVEL/TFIDF_question_only_VQARAD_QLEVEL.json (TF-IDF + LR, harness/baselines/question_only.py inalterado, nas 1 469 fechadas do treino redividido; 418 fechadas do teste novo)",
+   "tfidf_source": "results/predictions/VQARAD_QLEVEL/TFIDF_question_only_VQARAD_QLEVEL.json (TF-IDF + LR, harness/baselines/question_only.py unchanged, on the 1 469 closed-form of the re-split training; 418 closed-form of the new test)",
    "lines": [
     {
      "line": "QWEN2VL_LORA_TXT_VQARAD_QLEVEL_seed0",
@@ -102950,7 +102950,7 @@
      "line": "M3AE_TXT_VQARAD_QLEVEL_seed0",
      "family": "M3AE",
      "seed": 0,
-     "design": "M3AE: dois bracos (TXT cinza, FT completo)",
+     "design": "M3AE: two arms (TXT grey, full FT)",
      "files": {
       "txt": "results/predictions/VQARAD_QLEVEL/M3AE_TXT_VQARAD_QLEVEL_seed0_TXT.json",
       "frozen": "results/predictions/VQARAD_QLEVEL/M3AE_SCRATCH_VQARAD_QLEVEL_seed0_C0.json",
@@ -103318,7 +103318,7 @@
      "line": "M3AE_TXT_VQARAD_QLEVEL_seed1",
      "family": "M3AE",
      "seed": 1,
-     "design": "M3AE: dois bracos (TXT cinza, FT completo)",
+     "design": "M3AE: two arms (TXT grey, full FT)",
      "files": {
       "txt": "results/predictions/VQARAD_QLEVEL/M3AE_TXT_VQARAD_QLEVEL_seed1_TXT.json",
       "frozen": "results/predictions/VQARAD_QLEVEL/M3AE_SCRATCH_VQARAD_QLEVEL_seed1_C0.json",
@@ -103686,7 +103686,7 @@
      "line": "M3AE_TXT_VQARAD_QLEVEL_seed2",
      "family": "M3AE",
      "seed": 2,
-     "design": "M3AE: dois bracos (TXT cinza, FT completo)",
+     "design": "M3AE: two arms (TXT grey, full FT)",
      "files": {
       "txt": "results/predictions/VQARAD_QLEVEL/M3AE_TXT_VQARAD_QLEVEL_seed2_TXT.json",
       "frozen": "results/predictions/VQARAD_QLEVEL/M3AE_SCRATCH_VQARAD_QLEVEL_seed2_C0.json",
@@ -104076,7 +104076,7 @@
      "2": "results/predictions/VQARAD_QLEVEL/BERT2_question_only_VQARAD_QLEVEL_seed2.json"
     }
    },
-   "recorte": "so fechadas (answer_type do arrow)",
+   "recorte": "closed-form only (answer_type from the arrow)",
    "n_qids_recorte": 410,
    "holm": {
     "SMOLVLM_LORA_TXT_VQARAD_QLEVEL_seed2|torre": 2.666692996833386e-10,
@@ -104396,7 +104396,7 @@
     },
     "M3AE": {
      "n_seeds": 3,
-     "design": "M3AE: dois bracos (TXT cinza, FT completo)",
+     "design": "M3AE: two arms (TXT grey, full FT)",
      "own_text_only_baseline": {
       "mean": 0.7577235772357724,
       "sd": 0.009233997310244355

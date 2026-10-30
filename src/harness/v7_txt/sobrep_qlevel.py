@@ -1,5 +1,5 @@
-"""19/10/2026 (vqarad_question_split.1): oito numeros de sobreposicao, divisao por pergunta x por imagem. R3 = question_frame (JSON do OSF) da pergunta de teste presente como
-pergunta (normalizada) de treino + validacao na mesma imagem; pergunta identica = texto normalizado (normalize_text) na mesma imagem. Saida: analysis/vqarad_qlevel_sobreposicao.json."""
+"""19/10/2026 (vqarad_question_split.1): eight overlap numbers, split by question x by image. R3 = question_frame (OSF JSON) of the test question present as
+training + validation (normalized) question on the same image; identical question = normalized text (normalize_text) on the same image. Output: analysis/vqarad_qlevel_sobreposicao.json."""
 import os as _os
 _MEDVQA_ROOT = _os.environ.get("MEDVQA_ROOT", "/path/to/original/run/tree")   # original run tree root (this package: see README, "Paths")
 import json, sys, hashlib

@@ -1,4 +1,4 @@
-"""v7_mimic/scripts/00_schema_stats.py -- 2026-10-10 -- estatisticas das tabelas do Medical-Diff-VQA 1.0.1 (so CPU)."""
+"""v7_mimic/scripts/00_schema_stats.py -- 2026-10-10 -- statistics of the Medical-Diff-VQA 1.0.1 tables (CPU only)."""
 import os as _os
 _MEDVQA_ROOT = _os.environ.get("MEDVQA_ROOT", "/path/to/original/run/tree")   # original run tree root (this package: see README, "Paths")
 import collections, json, re, socket, time

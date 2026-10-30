@@ -43,7 +43,7 @@
    "val": "6100822fdf583bf977bde796f639cc24dbbd6022f23532f454bff91e29c7df7f",
    "test": "ff5c25692c1b46326c221cd197622037e5afa6099b799a85bd7db26e83715891"
   },
-  "regra": "resposta mais frequente nas fechadas do treino; empate por ordem alfabetica; regua answer_matches(normalize_text)",
+  "regra": "most frequent answer in the closed-form of the training set; tie by alphabetical order; rule answer_matches(normalize_text)",
   "t": "2026-10-17 01:09:16"
  },
  "predictions": [

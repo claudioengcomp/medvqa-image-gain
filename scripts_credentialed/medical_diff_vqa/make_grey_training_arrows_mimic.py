@@ -1,8 +1,8 @@
-"""v7_mimic (2026-10-13, candidato): arrows do M3AE com a imagem trocada pela cinza constante 384x384 RGB(128,128,128) de
-harness/interventions/make_c1_blank_images.py (a mesma da C1 e dos M3AE so-texto de Kvasir, SLAKE e HEAL; tmp/v7/make_gray_arrows.py),
-para treino, validacao e teste do MIMIC. Fontes (so leitura): v7_mimic/data/vqa_mimic_{train,val,test}.arrow.
-Saida: v7_mimic/m3ae_arrows_gray/vqa_mimic_{split}_gray.arrow + data_root/vqa_mimic_{split}.arrow (links) + manifest_gray_arrows.json.
-Nenhum pixel do MIMIC entra nos arrows cinza; as perguntas e respostas sim (credenciado: ficam na gpu1)."""
+"""v7_mimic (2026-10-13, the candidate): M3AE arrows with the image swapped for the constant grey 384x384 RGB(128,128,128) from
+harness/interventions/make_c1_blank_images.py (the same one from the C1 and from the text-only M3AE of Kvasir, SLAKE and HEAL; tmp/v7/make_gray_arrows.py),
+for MIMIC training, validation and test. Sources (read only): v7_mimic/data/vqa_mimic_{train,val,test}.arrow.
+Output: v7_mimic/m3ae_arrows_gray/vqa_mimic_{split}_gray.arrow + data_root/vqa_mimic_{split}.arrow (links) + manifest_gray_arrows.json.
+No MIMIC pixel enters the grey arrows; the questions and answers do (credentialed: they stay on gpu1)."""
 import os as _os
 _MEDVQA_ROOT = _os.environ.get("MEDVQA_ROOT", "/path/to/original/run/tree")   # original run tree root (this package: see README, "Paths")
 import hashlib, json, os, socket, sys, time

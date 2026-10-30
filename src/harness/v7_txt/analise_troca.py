@@ -1,8 +1,8 @@
-"""17/10/2026 (decisao do candidato, 7-B): controle de imagem trocada nas 9 linhas do decomposition (M3AE fine-tune completo, Qwen2-VL LoRA VT, SmolVLM2 LoRA
-publicada; celula A_ft da decomposicao), nas fechadas, nas cinco bases do artigo (Kvasir, SLAKE, HEAL, MIMIC, VQA-RAD redividido). Troca = C2 (derangement
-das imagens do teste: seed 42 no p0 e no VQA-RAD redividido; HEAL vqa_heal_test_c2; MIMIC seed 20260913, arrow da Medida). Por linha: A_swap, A - A_swap
-[IC 95 % bootstrap por imagem, 2 000, seed 20260913], A_swap - A_text [IC]; media (DP) por familia. Qids = fechadas com C0, C2 e TXT. Sem interpretacao.
-Uso: ARTICLE2_RUNS=1 python -m harness.v7_txt.analise_troca --out <pasta>"""
+"""17/10/2026 (the candidate's decision, 7-B): swapped-image control across the 9 rows of the decomposition (M3AE full fine-tune, Qwen2-VL LoRA VT, SmolVLM2 LoRA
+published; cell A_ft of the decomposition), in the closed-form questions, across the five benchmarks of the paper (Kvasir, SLAKE, HEAL, MIMIC, VQA-RAD redivided). Swap = C2 (derangement
+of the test images: seed 42 in p0 and in the redivided VQA-RAD; HEAL vqa_heal_test_c2; MIMIC seed 20260913, the Measure's arrow). Per row: A_swap, A - A_swap
+[CI 95 % bootstrap by image, 2 000, seed 20260913], A_swap - A_text [CI]; mean (SD) per family. Qids = closed-form with C0, C2 and TXT. No interpretation.
+Usage: ARTICLE2_RUNS=1 python -m harness.v7_txt.analise_troca --out <folder>"""
 import os as _os
 _MEDVQA_ROOT = _os.environ.get("MEDVQA_ROOT", "/path/to/original/run/tree")   # original run tree root (this package: see README, "Paths")
 import argparse, hashlib, json, os, time
@@ -15,11 +15,11 @@ def sha(p): return hashlib.sha256(open(p, "rb").read()).hexdigest()
 def swap_file(b, fam, s, line):
     if b == "KVASIR": return f"{P0}/{line}_C2.json" if fam != "QWEN2VL" else f"{W}/v5_qwen_vt/results/{line}_C2.json"
     if b == "SLAKE": return f"{P0}/{line}_C2.json" if fam != "QWEN2VL" else f"{W}/v5_qwen_vt/results/{line}_C2.json"
-    if b in ("HEAL", "MIMIC") and os.environ.get("TROCA_V2") == "1": return f"{PJR}/{line}_C2v2.json"   # 19/10 (image_swap_v2): troca refeita
+    if b in ("HEAL", "MIMIC") and os.environ.get("TROCA_V2") == "1": return f"{PJR}/{line}_C2v2.json"   # 19/10 (image_swap_v2): swap redone
     if b == "HEAL": return f"{W}/v6_tower_heal/results/{line}_C2.json"
     if b == "MIMIC": return f"{W}/v7_mimic/results/{line}_C2.json"
     if b in ("VQARAD_REDIV", "VQARAD_QLEVEL"): return f"{PJR}/{line}_C2.json"
-    if b == "VQARAD_RADORIG": return f"{P0}/{line}_C2.json" if fam == "M3AE" else f"{PJR}/NAO_RODADO_{line}_C2.json"   # 19/10: divisao oficial -- so o M3AE tem troca (p0); VLM _RADORIG sem troca   # 19/10: VQARAD_QLEVEL (vqarad_question_split)
+    if b == "VQARAD_RADORIG": return f"{P0}/{line}_C2.json" if fam == "M3AE" else f"{PJR}/NAO_RODADO_{line}_C2.json"   # 19/10: official split -- only M3AE has swap (p0); VLM _RADORIG without swap   # 19/10: VQARAD_QLEVEL (vqarad_question_split)
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--out", required=True); ap.add_argument("--bases", default="KVASIR,SLAKE,HEAL,MIMIC,VQARAD_REDIV"); a = ap.parse_args()
     out = {"t": time.strftime("%Y-%m-%d %H:%M:%S"), "script": os.path.abspath(__file__), "script_sha256": sha(__file__), "n_boot": 2000, "seed": 20260913, "bases": {}}
@@ -36,7 +36,7 @@ def main():
                 r = {"familia": fam, "seed": s, "linha": line, "n": len(qs), "A": float(v(A).mean()), "A_text": float(v(T).mean()), "A_swap": float(v(S).mean()), "A_swap_ic": bs.ci_mean_diff(ia, v(S)),
                      "A_menos_A_swap": float((v(A) - v(S)).mean()), "A_menos_A_swap_ic": bs.ci_mean_diff(ia, v(A) - v(S)), "A_swap_menos_A_text": float((v(S) - v(T)).mean()), "A_swap_menos_A_text_ic": bs.ci_mean_diff(ia, v(S) - v(T)),
                      "arquivos": {"c0": a_path, "txt": tp, "c2": sp}, "sha256": {"c0": sha(a_path), "txt": sha(tp), "c2": sha(sp)}}
-                idx = np.array([bs.index[img[q]] for q in qs]); den = np.bincount(idx, minlength=len(bs.ids)).astype(float)   # 18/10: replicas para o IC da media das sementes
+                idx = np.array([bs.index[img[q]] for q in qs]); den = np.bincount(idx, minlength=len(bs.ids)).astype(float)   # 18/10: replicates for the CI of the mean across seeds
                 r["_boot"] = {k: (bs.W @ np.bincount(idx, weights=dv, minlength=len(bs.ids))) / np.maximum(bs.W @ den, 1e-9) for k, dv in (("A_menos_A_swap", v(A) - v(S)), ("A_swap_menos_A_text", v(S) - v(T)))}
                 B["linhas"].append(r)
         B["por_familia"] = {f: {k: {"mean": float(np.mean([r[k] for r in B["linhas"] if r["familia"] == f])), "sd": float(np.std([r[k] for r in B["linhas"] if r["familia"] == f], ddof=1)) if sum(r["familia"] == f for r in B["linhas"]) > 1 else None}

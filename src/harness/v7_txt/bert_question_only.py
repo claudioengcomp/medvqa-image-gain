@@ -1,11 +1,11 @@
-"""17/10/2026 (article_runs, pubmedbert_classifier): classificador so-pergunta forte -- PubMedBERT (microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext)
-afinado so nas perguntas fechadas do MESMO treino do TF-IDF de cada base (harness/v7_txt/dados_texto.py; HEAL: treino + validacao),
-classificacao sobre as respostas distintas do treino. Receita fixa para todas as bases (declarada antes de rodar): max_len 64,
-lote 32, AdamW lr 2e-5, weight decay 0.01, aquecimento linear 10 % e decaimento linear, fp32. Selecao da epoca pela acuracia na
-validacao fechada (ate 10 epocas; empate -> a mais cedo) onde ha validacao; HEAL (validacao dentro do treino): 5 epocas fixas,
-sem selecao. Regua: answer_matches(normalize_text(...)), a mesma do TF-IDF. Retomada: estado ao fim de cada epoca em <save-dir>/ultimo
-(modelo, otimizador, agendador, RNG) e uma linha por epoca em --progress-checkpoint. Saida: JSON de predicoes (escalonador carimba
-'provenance'; os dados do treino vao em 'treino') e o melhor modelo em <save-dir>/melhor (nunca apagado)."""
+"""17/10/2026 (article_runs, pubmedbert_classifier): strong question-only classifier -- PubMedBERT (microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext)
+fine-tuned only on the closed-form questions of the SAME training set as the TF-IDF of each benchmark (harness/v7_txt/dados_texto.py; HEAL: training + validation),
+classification over the distinct answers of the training set. Fixed recipe for all benchmarks (declared before running): max_len 64,
+batch 32, AdamW lr 2e-5, weight decay 0.01, linear warmup 10 % and linear decay, fp32. Epoch selection by accuracy on the
+closed-form validation (up to 10 epochs; tie -> the earliest) where there is validation; HEAL (validation within the training set): 5 fixed epochs,
+no selection. Rule: answer_matches(normalize_text(...)), the same as TF-IDF. Resumption: state at the end of each epoch in <save-dir>/ultimo
+(model, optimizer, scheduler, RNG) and one row per epoch in --progress-checkpoint. Output: predictions JSON (the scheduler stamps
+'provenance'; the training data goes in 'treino') and the best model in <save-dir>/melhor (never deleted)."""
 import os as _os
 _MEDVQA_ROOT = _os.environ.get("MEDVQA_ROOT", "/path/to/original/run/tree")   # original run tree root (this package: see README, "Paths")
 import argparse, copy, hashlib, json, os, random, sys, time
@@ -27,8 +27,8 @@ def ok(pred, refs): return bool(answer_matches(normalize_text(str(pred)), [norma
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--base", required=True); ap.add_argument("--seed", type=int, required=True); ap.add_argument("--data", required=True)
     ap.add_argument("--output", required=True); ap.add_argument("--save-dir", required=True); ap.add_argument("--progress-checkpoint", required=True); a = ap.parse_args()
-    t0 = time.time(); D = json.load(open(a.data)); tr, va, te = D["train"], D["val"], D["test"]; dev = torch.device(os.environ.get("BERT_DEVICE", "cuda"))   # BERT_DEVICE=cpu so no teste de caminho (17/10)
-    if os.environ.get("BERT_TESTE_N"): k = int(os.environ["BERT_TESTE_N"]); tr, va, te = tr[:k], va[:k], te[:k]; HP["epochs_max_com_validacao"] = HP["epochs_fixas_sem_validacao"] = 2   # so teste de caminho
+    t0 = time.time(); D = json.load(open(a.data)); tr, va, te = D["train"], D["val"], D["test"]; dev = torch.device(os.environ.get("BERT_DEVICE", "cuda"))   # BERT_DEVICE=cpu only in the path test (17/10)
+    if os.environ.get("BERT_TESTE_N"): k = int(os.environ["BERT_TESTE_N"]); tr, va, te = tr[:k], va[:k], te[:k]; HP["epochs_max_com_validacao"] = HP["epochs_fixas_sem_validacao"] = 2   # only a path test
     seed_all(a.seed); labels = sorted({x["answer"] for x in tr}); L = {l: i for i, l in enumerate(labels)}
     tok = AutoTokenizer.from_pretrained(MODEL, revision=REV)
     enc = lambda xs: tok([x["question"] for x in xs], padding="max_length", truncation=True, max_length=HP["max_len"], return_tensors="pt")
@@ -66,7 +66,7 @@ def main():
         hist.append(h); print(json.dumps(h), flush=True)
         torch.save({"model": model.state_dict(), "opt": opt.state_dict(), "sch": sch.state_dict(), "gen": g.get_state(), "rng": torch.get_rng_state(), "cuda_rng": torch.cuda.get_rng_state() if dev.type == "cuda" else None, "py_rng": random.getstate(), "np_rng": np.random.get_state(), "hist": hist, "epoch": ep, "best": best}, os.path.join(last, "estado.pt"))
         with open(a.progress_checkpoint, "a") as f: f.write(json.dumps({**h, "t": time.strftime("%Y-%m-%d %H:%M:%S")}) + "\n")
-    pl = predict(te); ult = [{"qid": x["qid"], "predicted": p, "correct": ok(p, x["refs"])} for p, x in zip(pl, te)]   # 19/10 (heal_classifiers_train_only): teste com o modelo da ULTIMA epoca, antes de carregar o melhor
+    pl = predict(te); ult = [{"qid": x["qid"], "predicted": p, "correct": ok(p, x["refs"])} for p, x in zip(pl, te)]   # 19/10 (heal_classifiers_train_only): test with the model from the LAST epoch, before loading the best one
     if has_val: model.load_state_dict(best_state)
     else: best = {"epoch": n_ep, "val_acc": None}
     mdir = os.path.join(a.save_dir, "melhor"); model.save_pretrained(mdir); tok.save_pretrained(mdir); json.dump(labels, open(os.path.join(mdir, "rotulos.json"), "w"))

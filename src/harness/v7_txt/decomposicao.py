@@ -1,10 +1,10 @@
-"""P5 (2026-10-10): tabela de decomposicao da acuracia em tres bracos, por benchmark x familia (e por classe de pergunta):
-baseline proprio = Acc(TXT); ganho da torre congelada = Acc(C0 congelada) - Acc(TXT); ganho da adaptacao = Acc(C0 adaptada) -
-Acc(C0 congelada); soma = Acc(C0 adaptada) - Acc(TXT); ao lado TFIDF e C1 e as diferencas TXT - TFIDF e TXT - C1. IC por bootstrap
-por imagem (2000, seed 20260913, mesmas replicas para todos os bracos), media e DP entre sementes, McNemar mid-p entre bracos
-adjacentes (TXT vs C0 congelada; C0 congelada vs C0 adaptada), Holm por benchmark. M3AE entra com DOIS bracos (TXT = imagem
-cinza constante; fine-tune completo publicado), sem celula de torre congelada: ganho unico = FT completo - TXT (desenho
-diferente, marcado). Sem interpretacao."""
+"""P5 (2026-10-10): accuracy decomposition table in three arms, per benchmark x family (and per question class):
+own baseline = Acc(TXT); frozen-tower gain = Acc(C0 frozen) - Acc(TXT); adaptation gain = Acc(C0 adapted) -
+Acc(C0 frozen); sum = Acc(C0 adapted) - Acc(TXT); alongside TFIDF and C1 and the differences TXT - TFIDF and TXT - C1. CI by bootstrap
+by image (2000, seed 20260913, same replicates for all arms), mean and SD across seeds, McNemar mid-p between adjacent
+arms (TXT vs C0 frozen; C0 frozen vs C0 adapted), Holm per benchmark. M3AE enters with TWO arms (TXT = constant
+grey image; full fine-tune published), without a frozen-tower cell: single gain = full FT - TXT (different
+design, marked). No interpretation."""
 from __future__ import annotations
 import os as _os
 _MEDVQA_ROOT = _os.environ.get("MEDVQA_ROOT", "/path/to/original/run/tree")   # original run tree root (this package: see README, "Paths")
@@ -14,9 +14,9 @@ from harness.v7_txt.txt_floors import ARROWS, V7, cells, classes, tfidf_preds, t
 BLABEL = {"VQARAD": "VQARAD -- versao Hugging Face (VLM: treino 1 793, sem validacao); linhas antigas, so para a nota de setup", "VQARAD_RADORIG": "VQARAD_RADORIG -- pacote original, divisao do M3AE (2 758 treino / 306 validacao / 451 teste); revision A1 do artigo 2 (15/10)", "VQARAD_QLEVEL": "VQARAD_QLEVEL -- dividido por pergunta (seed 20260913; 2 460 / 352 / 703 perguntas); controle da sobreposicao, vqarad_question_split (19/10)", "VQARAD_REDIV": "VQARAD_REDIV -- redividido por imagem (seed 20260913; 2 467 / 343 / 705 perguntas, 220 / 31 / 63 imagens); article_runs, vqarad_image_split (17/10)"}
 from harness.stats.bootstrap import ImageBootstrap, holm, mcnemar_midp
 from harness.interventions.arrow_io import read_arrow
-VQK = ("TFIDF_publicado_272", "TFIDF_novo_272", "TFIDF_novo_451")   # 15/10 (candidato): TFIDF do VQA-RAD em dois recortes, nas duas versoes
+VQK = ("TFIDF_publicado_272", "TFIDF_novo_272", "TFIDF_novo_451")   # 15/10 (the candidate): TFIDF of VQA-RAD in two subsets, in both versions
 def vqarad_floors():
-    """TFIDF publicado do p0 (272 fechadas), TFIDF novo (treino de 2 758) nas 272 fechadas e nas 451; dicts qid -> correct."""
+    """TFIDF published from p0 (272 closed-form), new TFIDF (training of 2 758) on the 272 closed-form and on the 451; qid -> correct dicts."""
     test = {int(x["qid"]): x["answer_type"].upper() for x in json.load(open(f"{_MEDVQA_ROOT}/doutorado/M3AE/data/finetune_data/vqa_rad/testset.json"))}
     pub = preds(f"{_MEDVQA_ROOT}/doutorado/medvqa-main/results/TFIDF_question_only_VQARAD_C0.json"); nov = preds(f"{V7}/results/TFIDF_question_only_VQARAD_orig.json")
     return {"TFIDF_publicado_272": pub, "TFIDF_novo_272": {q: v for q, v in nov.items() if test[q] == "CLOSED"}, "TFIDF_novo_451": nov}
@@ -24,13 +24,13 @@ def diff(a, b, qids, img, bs):
     va = np.array([a[q] for q in qids], float); vb = np.array([b[q] for q in qids], float); d = va - vb
     return {"diff": float(d.mean()), "ci": bs.ci_mean_diff([img[q] for q in qids], d), "midp": mcnemar_midp(va.astype(bool), vb.astype(bool))["p_midp"], "n": len(qids)}
 def boot_vec(a, b, qids, img, bs):
-    """17/10 (article_runs, Fig. 1 v2): vetor das 2 000 replicas da media por item de a - b (b = None: de a), reamostrando imagens com as MESMAS replicas da base."""
+    """17/10 (article_runs, Fig. 1 v2): vector of the 2 000 replicates of the mean per item of a - b (b = None: of a), resampling images with the SAME replicates as the base."""
     d = np.array([a[q] for q in qids], float) - (np.array([b[q] for q in qids], float) if b is not None else 0.0); idx = np.array([bs.index[img[q]] for q in qids]); n = len(bs.ids)
     num = np.bincount(idx, weights=d, minlength=n); den = np.bincount(idx, minlength=n).astype(float); return (bs.W @ num) / np.maximum(bs.W @ den, 1e-9)
 def acc(a, qids, img, bs):
     v = np.array([a[q] for q in qids], float); return {"acc": float(v.mean()), "ci": bs.ci_mean_diff([img[q] for q in qids], v), "n": len(qids)}
 def main():
-    ap = argparse.ArgumentParser(); ap.add_argument("--kvasir-simnao", action="store_true", help="15/10 (candidato): robustez -- so Kvasir, so perguntas com resposta sim/nao (2 294); implica --fechadas"); ap.add_argument("--fechadas", action="store_true", help="15/10 (candidato): so perguntas fechadas (answer_type do arrow); TFIDF = classificador nas fechadas"); ap.add_argument("--out-json", default=None); ap.add_argument("--out-md", default=None); a = ap.parse_args()
+    ap = argparse.ArgumentParser(); ap.add_argument("--kvasir-simnao", action="store_true", help="15/10 (the candidate): robustness -- only Kvasir, only questions with yes/no answers (2 294); implies --fechadas"); ap.add_argument("--fechadas", action="store_true", help="15/10 (the candidate): only closed-form questions (answer_type of the arrow); TFIDF = classifier on the closed-form questions"); ap.add_argument("--out-json", default=None); ap.add_argument("--out-md", default=None); a = ap.parse_args()
     KSN = a.kvasir_simnao; FECH = a.fechadas or KSN; SUF = "_kvasir_simnao" if KSN else ("_fechadas" if FECH else ""); a.out_json = a.out_json or f"{V7}/analysis/decomposicao{SUF}.json"; a.out_md = a.out_md or f"{V7}/docs/decomposicao{SUF}.md"
     out = {"t": time.strftime("%Y-%m-%d %H:%M:%S"), "n_boot": 2000, "seed": 20260913, "definitions": {"own_text_only_baseline": "Acc(TXT)", "ganho_torre": "Acc(C0 congelada) - Acc(TXT)", "ganho_adaptacao": "Acc(C0 adaptada) - Acc(C0 congelada)", "soma": "Acc(C0 adaptada) - Acc(TXT)", "m3ae": "dois bracos: TXT (imagem cinza) e fine-tune completo publicado; ganho unico = FT - TXT (sem celula de torre congelada)", "braco_so_texto": "LoRA em todas as celulas; linhas DoRA (congelada e adaptada) usam o TXT LoRA da mesma familia e semente; M3AE: ganho da imagem nao decomposto (14/10/2026)", "c1": "imagem cinza na linha congelada: HEAL em v7_txt/results, MIMIC em v7_mimic/results (14/10/2026); Kvasir/SLAKE/VQA-RAD como antes"}, "benchmarks": {}}
     from harness.v7_txt.txt_floors import RESULTS_DIR, mimic_floors
@@ -38,9 +38,9 @@ def main():
         df = read_arrow(ARROWS[bench]); cls, img = classes(bench, df); tfidf, m0src = tfidf_fechadas(bench) if FECH else tfidf_preds(bench); _g = {int(q): str(list(x)[0]).strip().lower() for _, r in df.iterrows() for q, x in zip(r["question_id"], r["answers"])} if KSN else {}
         allq = sorted(q for q in img if (not FECH or cls[q].get("answer_type") == "closed") and (not KSN or _g.get(q) in ("yes", "no"))); bs = ImageBootstrap([img[q] for q in allq], 2000, 20260913)
         B = {"arrow": ARROWS[bench], "tfidf_source": m0src, "lines": [], "pvals": {}}; extra = mimic_floors() if bench == "MIMIC" else (vqarad_floors() if bench in ("VQARAD", "VQARAD_RADORIG") else {})
-        XP = extra_baselines(bench) if ARTICLE_RUNS else None   # 17/10 (article_runs, question_only_sets): majoritario e PubMedBERT (semente da linha)
+        XP = extra_baselines(bench) if ARTICLE_RUNS else None   # 17/10 (article_runs, question_only_sets): majority and PubMedBERT (seed of the row)
         if XP: B["external_baseline_sources"] = {"maj": XP["maj_src"], "bert": XP["bert_src"]}
-        if FECH: extra = {"TFIDF_full_fechadas": extra["TFIDF_full_fechadas"]} if bench == "MIMIC" else ({"TFIDF_novo_272": extra["TFIDF_novo_272"]} if bench in ("VQARAD", "VQARAD_RADORIG") else {})   # 15/10: so colunas de fechadas
+        if FECH: extra = {"TFIDF_full_fechadas": extra["TFIDF_full_fechadas"]} if bench == "MIMIC" else ({"TFIDF_novo_272": extra["TFIDF_novo_272"]} if bench in ("VQARAD", "VQARAD_RADORIG") else {})   # 15/10: only closed-form columns
         B["recorte"] = "Kvasir so sim/nao (gabarito yes/no; robustez)" if KSN else ("so fechadas (answer_type do arrow)" if FECH else "todas as perguntas"); B["n_qids_recorte"] = len(allq)
         for fam in (("QWEN2VL", "SMOLVLM", "M3AE") if bench == "MIMIC" else ("QWEN2VL", "SMOLVLM", "M3AE")):   # 13/10: SmolVLM2 no MIMIC; M3AE pendente
             for s in range(3):
@@ -55,25 +55,25 @@ def main():
                     b = {"own_text_only_baseline": acc(T, qs, img, bs), "c0_congelada": acc(F, qs, img, bs), "ganho_torre": diff(F, T, qs, img, bs)}
                     if A is not None: b["c0_adaptada"] = acc(A, qs, img, bs); b["ganho_adaptacao"] = diff(A, F, qs, img, bs); b["soma"] = diff(A, T, qs, img, bs)
                     else: b["soma"] = b["ganho_torre"]
-                    if tfidf and [q for q in qs if q in tfidf]: qm = [q for q in qs if q in tfidf]; b["tfidf"] = acc(tfidf, qm, img, bs); b["txt_menos_tfidf"] = diff(T, tfidf, qm, img, bs); b["adaptada_menos_tfidf"] = diff(A if A is not None else F, tfidf, qm, img, bs)   # 15/10 (candidato): torre adaptada - TFIDF (M3AE: fine-tune completo - TFIDF)   # 14/10: sem qids em comum com o TFIDF (VQA-RAD: TFIDF so nas fechadas) a coluna fica vazia
-                    if C1:   # 14/10 (exec2): C1 do HEAL/MIMIC cobre so os qids do arrow C1 (unidades avaliaveis do Occlusion study); classe sem qid em C1 -> sem celula (antes: bincount vazio quebrava)
+                    if tfidf and [q for q in qs if q in tfidf]: qm = [q for q in qs if q in tfidf]; b["tfidf"] = acc(tfidf, qm, img, bs); b["txt_menos_tfidf"] = diff(T, tfidf, qm, img, bs); b["adaptada_menos_tfidf"] = diff(A if A is not None else F, tfidf, qm, img, bs)   # 15/10 (the candidate): adapted tower - TFIDF (M3AE: full fine-tune - TFIDF)   # 14/10: no qids in common with the TFIDF (VQA-RAD: TFIDF only on the closed-form) the column stays empty
+                    if C1:   # 14/10 (exec2): C1 of HEAL/MIMIC covers only the qids of the C1 arrow (evaluable units of the Occlusion study); class with no qid in C1 -> no cell (before: empty bincount used to break)
                         q1 = [q for q in qs if q in C1]
                         if q1: b["c1"] = acc(C1, q1, img, bs); b["txt_menos_c1"] = diff(T, C1, q1, img, bs)
-                    for kk, dd in (("maj", MJ), ("bert", BT)):   # 17/10 (article_runs, question_only_sets): A_maj e A_bert; A_text - baseline e A_ft - baseline, IC por linha
+                    for kk, dd in (("maj", MJ), ("bert", BT)):   # 17/10 (article_runs, question_only_sets): A_maj and A_bert; A_text - baseline and A_ft - baseline, CI per row
                         if dd and [q for q in qs if q in dd]: qx = [q for q in qs if q in dd]; b[kk] = acc(dd, qx, img, bs); b["txt_menos_" + kk] = diff(T, dd, qx, img, bs); b["adaptada_menos_" + kk] = diff(A if A is not None else F, dd, qx, img, bs)
-                    # 15/10 (candidato): tres baselines no MESMO conjunto -- qids com TXT, TFIDF e C1 (no MIMIC o C1 so existe nas unidades do Occlusion study)
+                    # 15/10 (the candidate): three baselines on the SAME set -- qids with TXT, TFIDF and C1 (in MIMIC, C1 only exists in the units of the Occlusion study)
                     q3 = [q for q in qs if (tfidf is None or q in tfidf) and (C1 is None or q in C1)]
                     if q3:
                         b["p3_baseline"] = acc(T, q3, img, bs)
                         if tfidf: b["p3_tfidf"] = acc(tfidf, q3, img, bs); b["p3_txt_menos_tfidf"] = diff(T, tfidf, q3, img, bs)
                         if C1: b["p3_c1"] = acc(C1, q3, img, bs); b["p3_txt_menos_c1"] = diff(T, C1, q3, img, bs)
-                        for kk, dd in (("maj", MJ), ("bert", BT)):   # 17/10: no mesmo conjunto (o BERT e o majoritario cobrem as mesmas fechadas do TF-IDF)
+                        for kk, dd in (("maj", MJ), ("bert", BT)):   # 17/10: on the same set (BERT and the majority cover the same closed-form questions as the TF-IDF)
                             if dd and all(q in dd for q in q3): b["p3_" + kk] = acc(dd, q3, img, bs); b["p3_txt_menos_" + kk] = diff(T, dd, q3, img, bs)
                     for k, dd in extra.items():
                         if k != "baseline_subset": qk = [q for q in qs if q in dd]; b[k] = acc(dd, qk, img, bs) if qk else None; b["txt_menos_" + k] = diff(T, dd, qk, img, bs) if qk else None
                     return b
                 rec["overall"] = block(qids)
-                if ARTICLE_RUNS: rec["_boot"] = {"ganho_torre": boot_vec(F, T, qids, img, bs), "soma": boot_vec(A if A is not None else F, T, qids, img, bs), **({"ganho_adaptacao": boot_vec(A, F, qids, img, bs)} if A is not None else {}), "own_text_only_baseline": boot_vec(T, None, qids, img, bs), **({"txt_menos_bert": boot_vec(T, BT, [q for q in qids if q in BT], img, bs)} if BT else {})}   # 17/10: replicas para o IC da media das sementes; 18/10: A_text - PubMedBERT
+                if ARTICLE_RUNS: rec["_boot"] = {"ganho_torre": boot_vec(F, T, qids, img, bs), "soma": boot_vec(A if A is not None else F, T, qids, img, bs), **({"ganho_adaptacao": boot_vec(A, F, qids, img, bs)} if A is not None else {}), "own_text_only_baseline": boot_vec(T, None, qids, img, bs), **({"txt_menos_bert": boot_vec(T, BT, [q for q in qids if q in BT], img, bs)} if BT else {})}   # 17/10: replicates for the CI of the mean across seeds; 18/10: A_text - PubMedBERT
                 for key in sorted({k for q in qids for k in cls[q] if k != "evaluable"}):
                     for val in sorted({str(cls[q].get(key)) for q in qids}):
                         sub = [q for q in qids if str(cls[q].get(key)) == val]
@@ -93,7 +93,7 @@ def main():
             for k in ("ganho_torre", "ganho_adaptacao", "soma", "txt_menos_tfidf", "txt_menos_c1", "adaptada_menos_tfidf", "p3_txt_menos_tfidf", "p3_txt_menos_c1", *["txt_menos_" + k for k in VQK], "txt_menos_maj", "txt_menos_bert", "adaptada_menos_maj", "adaptada_menos_bert", "p3_txt_menos_maj", "p3_txt_menos_bert"):
                 v = [r["overall"][k]["diff"] for r in rs if r["overall"].get(k)]
                 if v: fb[k] = {"mean": float(np.mean(v)), "sd": float(np.std(v, ddof=1)) if len(v) > 1 else None}
-            if ARTICLE_RUNS:   # 17/10 (article_runs, Fig. 1 v2): IC 95 % da MEDIA das sementes, percentis da media por replica (mesmas replicas por imagem)
+            if ARTICLE_RUNS:   # 17/10 (article_runs, Fig. 1 v2): CI 95 % of the MEAN across seeds, percentiles of the mean per replicate (same replicates per image)
                 for k in ("ganho_torre", "ganho_adaptacao", "soma", "own_text_only_baseline", "txt_menos_bert"):
                     vs = [r["_boot"][k] for r in rs if k in r.get("_boot", {})]
                     if len(vs) == len(rs): m = np.mean(vs, axis=0); fb[k + "_ic_media_sementes"] = [float(np.percentile(m, 2.5)), float(np.percentile(m, 97.5))]
@@ -104,8 +104,8 @@ def main():
             B["by_family"][fam] = fb
         for r in B["lines"]: r.pop("_boot", None)
         out["benchmarks"][bench] = B
-    # 13/10 (candidato): linhas de torre e publicadas do MIMIC contra o baseline so-texto (TXT) e o TFIDF composto, media das tres sementes, mesmo
-    # bootstrap por imagem; numeros lidos de v7_mimic/analysis/tower_mimic.json (gerado por harness/v7_txt/tower_report.py), sem recalculo.
+    # 13/10 (the candidate): tower and published rows of MIMIC against the text-only baseline (TXT) and the composite TFIDF, mean of the three seeds, same
+    # bootstrap by image; numbers read from v7_mimic/analysis/tower_mimic.json (generated by harness/v7_txt/tower_report.py), no recalculation.
     TW = f"{_MEDVQA_ROOT}/v7_mimic/analysis/tower_mimic.json"
     if os.path.exists(TW) and not FECH:
         tw = json.load(open(TW)); out["mimic_torre_txt"] = {"fonte": TW, "fonte_sha256": sha(TW), "celulas": [{"celula": r["celula"], "n": r["n"], "baseline_tfidf": r["baseline_acc"], "familias": {f: {k: v for k, v in X.items() if k not in ("publicada", "torre")} | {"publicada_acc": (X["publicada"] or {}).get("acc_media"), "torre_acc": (X["torre"] or {}).get("acc_media"), "publicada_linha": (X["publicada"] or {}).get("linha"), "torre_linha": (X["torre"] or {}).get("linha")} for f, X in r["familias"].items()}} for r in tw["acc_C0"] if r["celula"] in ("todas", "answer_type=closed", "answer_type=open")]}
@@ -126,7 +126,7 @@ def main():
                 g = lambda k: f"{b[k]:.3f}" if k in b else "-"; h = lambda k: f"{b[k]:+.3f}" if k in b else "-"
                 M.append(f"- {fam} | {cname} | n={b['n']} | {g('own_text_only_baseline')} / {g('c0_congelada')} / {g('c0_adaptada')} / {g('tfidf')} / {g('c1')} ; {h('ganho_torre')} / {h('ganho_adaptacao')} / {h('soma')}" + (f" ; extras {g('TFIDF_full_fechadas')} / {g('prior_subset_abertas')} / {g('prior_full_abertas')}" if bench == "MIMIC" else ""))
         M.append("")
-    for VB in [b for b in ("VQARAD", "VQARAD_RADORIG") if b in out["benchmarks"]]:   # 14/10 (candidato): VQA-RAD separado em fechadas e abertas, e Acc TXT por semente (lido do proprio JSON, sem recalculo); 15/10: tambem VQARAD_RADORIG
+    for VB in [b for b in ("VQARAD", "VQARAD_RADORIG") if b in out["benchmarks"]]:   # 14/10 (the candidate): VQA-RAD separated into closed-form and open, and Acc TXT per seed (read from the JSON itself, no recalculation); 15/10: also VQARAD_RADORIG
         V = out["benchmarks"][VB]; ok = [r for r in V["lines"] if r.get("status") == "ok"]
         g3 = lambda x: "-" if not x else f"{x['acc']:.3f} [{x['ci'][0]:.3f}, {x['ci'][1]:.3f}]"; d3b = lambda x: "-" if not x else f"{x['diff']:+.3f} [{x['ci'][0]:+.3f}, {x['ci'][1]:+.3f}]"
         M += [f"## {VB} por tipo de resposta (fechadas e abertas)", "", "Mesmas colunas da tabela do VQA-RAD acima, por tipo de resposta. " + ("TFIDF publicado do p0 só nas fechadas (n = 272); nas abertas a coluna fica vazia." if VB == "VQARAD" else "TFIDF = TFIDF_question_only_VQARAD_orig (treino de 2 758, todas as 451).") + " IC 95 % por bootstrap por imagem (2 000, seed 20260913). Sem interpretação.", "",
@@ -148,7 +148,7 @@ def main():
         for r in ok:
             M.append(f"| {r['line']} | {r['seed']} | {g3(r['overall'].get('own_text_only_baseline'))} | {g3(r['by_class'].get('answer_type=closed', {}).get('own_text_only_baseline'))} | {g3(r['by_class'].get('answer_type=open', {}).get('own_text_only_baseline'))} |")
         M.append("")
-    VV = [b for b in ("VQARAD", "VQARAD_RADORIG") if b in out["benchmarks"]]   # 15/10 (candidato): TFIDF em dois recortes e antes/depois por tipo
+    VV = [b for b in ("VQARAD", "VQARAD_RADORIG") if b in out["benchmarks"]]   # 15/10 (the candidate): TFIDF in two subsets and before/after by type
     if VV:
         lab = {"VQARAD": "versao HF (suplemento)", "VQARAD_RADORIG": "pacote original (artigo)"}
         M += ["## VQA-RAD: TFIDF em dois recortes, antes e depois (media (DP) entre sementes)", "", "TFIDF publicado = p0 (treino so nas fechadas), nas 272 fechadas; TFIDF novo = TFIDF_question_only_VQARAD_orig (treino de 2 758, todas), nas 272 fechadas e nas 451. TXT - TFIDF nos qids comuns. Sem interpretacao.", "",

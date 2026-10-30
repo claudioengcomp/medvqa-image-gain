@@ -1,8 +1,8 @@
-"""17/10/2026 (article_runs, vqarad_image_split + decisoes do candidato): arrows extras do VQA-RAD redividido.
-(1) C2 = imagem trocada por outra do mesmo teste: harness.interventions.make_c2_shuffled_pairs.shuffle_image_pairs (derangement sobre as linhas
-    = imagens do arrow de teste, seed 42), a mesma funcao e seed dos C2 de Kvasir/SLAKE/VQA-RAD do p0 (C2_manifest_*.json); manifesto no mesmo formato
-    (pares qid -> imagem original/doadora, recebida_sha256). (2) data_root do M3AE para o C2 (teste = C2; treino/validacao = links).
-(3) arrow so com as 418 fechadas do teste novo, para os zero-shot. Saida: v7_txt/article_runs/data/vqarad_rediv/{c2,zeroshot_fechadas}/."""
+"""17/10/2026 (article_runs, vqarad_image_split + decisions of the candidate): extra arrows of the re-split VQA-RAD.
+(1) C2 = image swapped for another from the same test set: harness.interventions.make_c2_shuffled_pairs.shuffle_image_pairs (derangement over the rows
+    = images of the test arrow, seed 42), the same function and seed as the C2 of Kvasir/SLAKE/VQA-RAD from p0 (C2_manifest_*.json); manifest in the same format
+    (pairs qid -> original/donor image, recebida_sha256). (2) M3AE data_root for the C2 (test = C2; train/validation = links).
+(3) arrow with only the 418 closed-form questions of the new test set, for the zero-shot. Output: v7_txt/article_runs/data/vqarad_rediv/{c2,zeroshot_fechadas}/."""
 import os as _os
 _MEDVQA_ROOT = _os.environ.get("MEDVQA_ROOT", "/path/to/original/run/tree")   # original run tree root (this package: see README, "Paths")
 import hashlib, json, os, sys, time
@@ -34,4 +34,4 @@ z = f"{ZD}/vqa_vqa_rad_test_fechadas.arrow"; write_arrow(pd.DataFrame(rows).rese
 tl = json.load(open(f"{RD}/testset.json")); closed = sorted(int(x["qid"]) for x in tl if str(x["answer_type"]).strip().upper() == "CLOSED")
 assert count_questions(zz) == 418 and sorted(int(q) for r in zz["question_id"] for q in r) == closed
 json.dump({"t": time.strftime("%Y-%m-%d %H:%M:%S"), "source": TE, "source_sha256": sha(TE), "output": z, "sha256": sha(z), "rows": len(zz), "questions": count_questions(zz), "load_condition_dataset_n": len(load_condition_dataset(z))}, open(f"{ZD}/manifest.json", "w"), indent=1)
-print("C2", man["header"]["images"], "imagens", man["header"]["entries"], "perguntas", man["header"]["c2_arrow_sha256"][:16], "| zero-shot fechadas", count_questions(zz), sha(z)[:16])
+print("C2", man["header"]["images"], "imagens", man["header"]["entries"], "perguntas", man["header"]["c2_arrow_sha256"][:16], "| zero-shot closed-form", count_questions(zz), sha(z)[:16])

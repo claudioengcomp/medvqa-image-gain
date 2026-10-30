@@ -1,4 +1,4 @@
-# vqarad_question_split (2026-10-19): copia de qwen2vl_lora_vt_vqarad_rediv.yaml (sha256 14361d7605e880f3); mudam so nome e data.arrows (divisao por pergunta).
+# vqarad_question_split (2026-10-19): copy of qwen2vl_lora_vt_vqarad_rediv.yaml (sha256 14361d7605e880f3); only the name and data.arrows (split by question) change.
 run_name: qwen2vl_lora_vt_vqarad_qlevel
 model: QWEN2VL
 dataset: VQA_RAD

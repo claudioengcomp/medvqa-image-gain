@@ -41,8 +41,8 @@ def test_classify_question_covers_all_known_templates():
         "Where in the image is the abnormality?",
         "Have all polyps been removed?",
         "What color is the abnormality?",
-        # achados só no split de treino, em execução real (21-22/08/2026) --
-        # ver docstring do módulo.
+        # findings only in the training split, in a real run (21-22/08/2026) --
+        # see module docstring.
         "Does this image contain any finding?",
         "What color is the anatomical landmark? If more than one separate with ;",
     ]
@@ -81,8 +81,8 @@ def test_build_image_records_pathology_label_none_when_question_absent():
 
 
 def test_build_image_records_deduplicates_repeated_atomic_questions_across_rows():
-    # a mesma imagem aparece em varias linhas do x1 (perguntas compostas
-    # diferentes), cada uma decompoe algumas das mesmas perguntas atomicas
+    # the same image appears in several rows of x1 (different composed
+    # questions), each one decomposes some of the same atomic questions
     rows = [
         {"img_id": "img1", "image": "http://x/1.jpg",
          "original": json.dumps([{"q": "Is there text?", "a": "no"}, {"q": "How many polyps are in the image?", "a": "1"}])},

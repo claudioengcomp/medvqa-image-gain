@@ -1,17 +1,17 @@
-"""Confere o sha256 de arrows M3AE contra um manifesto de checksums
-conhecidos ANTES de rodar inferência real -- pedido explícito do
-candidato depois do achado da seed 2 (`kill -9` deixou
-`vqa_nih_pa_test.arrow` temporariamente com o conteúdo de validação; o
-`.orig_backup` salvou dessa vez, mas "se o backup não existisse você
-teria descoberto isso com o arrow de teste trocado, silenciosamente").
+"""Checks the sha256 of M3AE arrows against a manifest of known
+checksums BEFORE running real inference -- explicit request from the
+candidate after the seed 2 finding (`kill -9` temporarily left
+`vqa_nih_pa_test.arrow` with validation content; the
+`.orig_backup` saved it that time, but "if the backup had not existed you
+would have discovered this with the test arrow swapped, silently").
 
-Detecta corrupção/troca silenciosa de arquivo -- não SUBSTITUI
-`swap_test_arrow`/`relabel_arrow_with_vocab` (que já cuidam de
-rótulo/vocabulário corretos); confere que o BYTE do arquivo é o mesmo
-que foi registrado como canônico da última vez que alguém confirmou
-que estava certo.
+Detects silent file corruption/swap -- does NOT REPLACE
+`swap_test_arrow`/`relabel_arrow_with_vocab` (which already take care of
+correct label/vocabulary); checks that the file's BYTES are the same
+as what was recorded as canonical the last time someone confirmed
+it was correct.
 
-Uso:
+Usage:
     python -m harness.prepro.verify_arrow_integrity \
         --manifest data/isbi/nih_test_arrow_checksums.json \
         --arrow-dir ${MEDVQA_ROOT}/doutorado/M3AE/data/finetune_arrows
@@ -35,11 +35,11 @@ def sha256_of_file(path: str) -> str:
 
 
 def verify_arrows(manifest: dict[str, str], arrow_dir: str) -> dict[str, dict]:
-    """`manifest`: {nome_do_arquivo: sha256_esperado}. Retorna
-    {nome_do_arquivo: {"ok": bool, "expected": str, "actual": str|None,
-    "error": str|None}} -- NUNCA levanta por conta própria (o chamador
-    decide o que fazer com um mismatch), mas marca claramente arquivo
-    ausente vs. hash diferente, que são achados distintos."""
+    """`manifest`: {filename: expected_sha256}. Returns
+    {filename: {"ok": bool, "expected": str, "actual": str|None,
+    "error": str|None}} -- NEVER raises on its own (the caller
+    decides what to do with a mismatch), but clearly marks a missing
+    file vs. a different hash, which are distinct findings."""
     result = {}
     for filename, expected_sha256 in manifest.items():
         path = os.path.join(arrow_dir, filename)
@@ -54,10 +54,10 @@ def verify_arrows(manifest: dict[str, str], arrow_dir: str) -> dict[str, dict]:
 
 
 def load_manifest_checksums(manifest_path: str) -> dict[str, str]:
-    """Lê o arquivo de manifesto ({"comment": ..., "checksums": {arquivo:
-    sha256}}) e retorna só o dict `checksums` -- separado da chave
-    `comment` pra `verify_arrows` nunca tentar tratar o comentário como
-    nome de arquivo."""
+    """Reads the manifest file ({"comment": ..., "checksums": {file:
+    sha256}}) and returns only the `checksums` dict -- separate from the
+    `comment` key so that `verify_arrows` never tries to treat the comment as
+    a file name."""
     with open(manifest_path, encoding="utf-8") as fp:
         manifest_doc = json.load(fp)
     return manifest_doc["checksums"]
@@ -88,7 +88,7 @@ if __name__ == "__main__":
 
     if any_failed:
         raise SystemExit(
-            "integridade dos arrows FALHOU -- não prosseguir pro Portão 1 sem investigar "
+            "arrow integrity check FAILED -- do not proceed to Gate 1 without investigating "
             "(ver docs/isbi/fase_a3_treino.md pro contexto do achado que motivou esta checagem)"
         )
-    print(f"\n{len(results)} arrow(s) conferidos, todos batem com o manifesto.")
+    print(f"\n{len(results)} arrow(s) checked, all match the manifest.")

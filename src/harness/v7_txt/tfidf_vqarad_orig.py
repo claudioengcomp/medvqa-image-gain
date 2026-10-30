@@ -1,11 +1,11 @@
-"""TFIDF_question_only_VQARAD_orig (15/10/2026, candidato): classificador so-pergunta retreinado no treino de 2 758 do VQA-RAD original
-(M3AE/data/finetune_data/vqa_rad/trainset.json, a mesma lista dos arrows v7_txt/data/vqarad_orig), em CPU.
-Receita = harness/baselines/question_only.py (TfidfVectorizer padrao + LogisticRegression max_iter 1000; resposta str().strip().lower();
-acerto = igualdade exata), em duas variantes:
-  principal: treino em todas as 2 758 (abertas e fechadas), predicao nas 451 do teste; agregado tambem nas 272 fechadas;
-  so_fechadas: treino nas fechadas do treino (a receita publicada), predicao nas 272 fechadas -- conferida item a item contra
+"""TFIDF_question_only_VQARAD_orig (15/10/2026, the candidate): question-only classifier retrained on the 2 758 training set of the original VQA-RAD
+(M3AE/data/finetune_data/vqa_rad/trainset.json, the same list as the v7_txt/data/vqarad_orig arrows), on CPU.
+Recipe = harness/baselines/question_only.py (standard TfidfVectorizer + LogisticRegression max_iter 1000; answer str().strip().lower();
+correct = exact match), in two variants:
+  principal: training on all 2 758 (open and closed-form), prediction on the 451 of the test set; also aggregated on the 272 closed-form;
+  so_fechadas: training on the closed-form training items (the published recipe), prediction on the 272 closed-form -- checked item by item against
                p0/results/TFIDF_question_only_VQARAD_C0.json.
-Saida: v7_txt/results/TFIDF_question_only_VQARAD_orig.json (formato das _C0.json + agregados + proveniencia). Nao sobrescreve."""
+Output: v7_txt/results/TFIDF_question_only_VQARAD_orig.json (format of the _C0.json files + aggregates + provenance). Does not overwrite."""
 import os as _os
 _MEDVQA_ROOT = _os.environ.get("MEDVQA_ROOT", "/path/to/original/run/tree")   # original run tree root (this package: see README, "Paths")
 import hashlib, json, os, platform, time
@@ -16,7 +16,7 @@ from sklearn.pipeline import Pipeline
 from harness.results_schema import validate_results_dict
 D = f"{_MEDVQA_ROOT}/doutorado/M3AE/data/finetune_data/vqa_rad"; PUB = f"{_MEDVQA_ROOT}/doutorado/medvqa-main/results/TFIDF_question_only_VQARAD_C0.json"
 OUT = f"{_MEDVQA_ROOT}/v7_txt/results/TFIDF_question_only_VQARAD_orig.json"
-assert not os.path.exists(OUT), "ja existe, nao sobrescrevo"
+assert not os.path.exists(OUT), "already exists, I will not overwrite"
 sha = lambda p: hashlib.sha256(open(p, "rb").read()).hexdigest()
 def load(split):
     return [{"qid": s["qid"], "question": s["question"], "answer": str(s["answer"]).strip().lower(), "closed": str(s["answer_type"]).strip().upper() == "CLOSED"} for s in json.load(open(f"{D}/{split}set.json"))]
@@ -40,5 +40,5 @@ rec = {"model": "TFIDF_question_only", "dataset": "VQA-RAD", "condition": "C0", 
                       "train_json": f"{D}/trainset.json", "train_json_sha256": sha(f"{D}/trainset.json"), "test_json": f"{D}/testset.json", "test_json_sha256": sha(f"{D}/testset.json"),
                       "sklearn": sklearn.__version__, "python": platform.python_version(), "host": platform.node(), "stamped": time.strftime("%Y-%m-%d %H:%M:%S")}}
 validate_results_dict(rec); json.dump(rec, open(OUT, "w"), indent=1)
-a = rec["aggregates"]; print("451: %.4f | 272 fechadas (principal): %.4f | 179 abertas: %.4f | so-fechadas: %.4f (publicado %.4f; %d predicoes diferentes; mesmos qids %s) | classes %d" % (
+a = rec["aggregates"]; print("451: %.4f | 272 closed-form (main): %.4f | 179 open: %.4f | closed-only: %.4f (published %.4f; %d different predictions; same qids %s) | classes %d" % (
     a["todas_451"]["accuracy"], a["fechadas_272_do_classificador_principal"]["accuracy"], a["abertas_179_do_classificador_principal"]["accuracy"], a["so_fechadas_receita_publicada"]["accuracy"], conf["acc_publicada"], conf["predicoes_diferentes_do_publicado"], conf["mesmos_qids"], a["classes_de_resposta_no_treino"]))
