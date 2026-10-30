@@ -1,0 +1,2175 @@
+{
+ "t": "2026-10-23 02:21:16",
+ "script": "text_analyses.py",
+ "script_sha256": "5c6bf35b8d0affef642750a3e8c7ea9d62ada6bb35f7599e7f1820b45b69d688",
+ "13_1": {
+  "execucoes": [
+   {
+    "base": "KVASIR",
+    "linha": "QWEN2VL_LORA_TXT_KVASIR_seed0",
+    "G_ft": 0.01651359124223026,
+    "ic": [
+     0.011600162554152825,
+     0.021827361200860602
+    ],
+    "exclui_zero": true
+   },
+   {
+    "base": "KVASIR",
+    "linha": "QWEN2VL_LORA_TXT_KVASIR_seed1",
+    "G_ft": 0.010854439187308655,
+    "ic": [
+     0.0059803453579736175,
+     0.01588094450886637
+    ],
+    "exclui_zero": true
+   },
+   {
+    "base": "KVASIR",
+    "linha": "QWEN2VL_LORA_TXT_KVASIR_seed2",
+    "G_ft": 0.015585861397161147,
+    "ic": [
+     0.010693160925906007,
+     0.02091247218141685
+    ],
+    "exclui_zero": true
+   },
+   {
+    "base": "KVASIR",
+    "linha": "SMOLVLM_LORA_TXT_KVASIR_seed0",
+    "G_ft": 0.01688468318025791,
+    "ic": [
+     0.012054481846702195,
+     0.021709629560831077
+    ],
+    "exclui_zero": true
+   },
+   {
+    "base": "KVASIR",
+    "linha": "SMOLVLM_LORA_TXT_KVASIR_seed1",
+    "G_ft": 0.01586418035068188,
+    "ic": [
+     0.0109885298145807,
+     0.020818826229433606
+    ],
+    "exclui_zero": true
+   },
+   {
+    "base": "KVASIR",
+    "linha": "SMOLVLM_LORA_TXT_KVASIR_seed2",
+    "G_ft": 0.013915947676036738,
+    "ic": [
+     0.008713601404634171,
+     0.018657029000521564
+    ],
+    "exclui_zero": true
+   },
+   {
+    "base": "SLAKE",
+    "linha": "QWEN2VL_LORA_TXT_SLAKE_seed0",
+    "G_ft": 0.03365384615384615,
+    "ic": [
+     0.005141388174807198,
+     0.06223471866283795
+    ],
+    "exclui_zero": true
+   },
+   {
+    "base": "SLAKE",
+    "linha": "QWEN2VL_LORA_TXT_SLAKE_seed1",
+    "G_ft": -0.007211538461538462,
+    "ic": [
+     -0.03597122302158273,
+     0.022171613147697663
+    ],
+    "exclui_zero": false
+   },
+   {
+    "base": "SLAKE",
+    "linha": "QWEN2VL_LORA_TXT_SLAKE_seed2",
+    "G_ft": 0.019230769230769232,
+    "ic": [
+     -0.012062644517463795,
+     0.05063612414058984
+    ],
+    "exclui_zero": false
+   },
+   {
+    "base": "SLAKE",
+    "linha": "SMOLVLM_LORA_TXT_SLAKE_seed0",
+    "G_ft": 0.028846153846153848,
+    "ic": [
+     -0.0023643469618099427,
+     0.05985787411171316
+    ],
+    "exclui_zero": false
+   },
+   {
+    "base": "SLAKE",
+    "linha": "SMOLVLM_LORA_TXT_SLAKE_seed1",
+    "G_ft": 0.028846153846153848,
+    "ic": [
+     -0.0072819963149316136,
+     0.06413462948300636
+    ],
+    "exclui_zero": false
+   },
+   {
+    "base": "SLAKE",
+    "linha": "SMOLVLM_LORA_TXT_SLAKE_seed2",
+    "G_ft": 0.007211538461538462,
+    "ic": [
+     -0.024393232902917266,
+     0.0381774592788769
+    ],
+    "exclui_zero": false
+   },
+   {
+    "base": "HEAL",
+    "linha": "QWEN2VL_LORA_TXT_HEAL_seed0",
+    "G_ft": 0.03665283540802213,
+    "ic": [
+     0.02282078872561381,
+     0.05083799103574009
+    ],
+    "exclui_zero": true
+   },
+   {
+    "base": "HEAL",
+    "linha": "QWEN2VL_LORA_TXT_HEAL_seed1",
+    "G_ft": 0.004149377593360996,
+    "ic": [
+     -0.009668842606389888,
+     0.0180935648199301
+    ],
+    "exclui_zero": false
+   },
+   {
+    "base": "HEAL",
+    "linha": "QWEN2VL_LORA_TXT_HEAL_seed2",
+    "G_ft": 0.020055325034578148,
+    "ic": [
+     0.006198133959325656,
+     0.03377039615960455
+    ],
+    "exclui_zero": true
+   },
+   {
+    "base": "HEAL",
+    "linha": "SMOLVLM_LORA_TXT_HEAL_seed0",
+    "G_ft": 0.017980636237897647,
+    "ic": [
+     0.00549073438572409,
+     0.03187803187803188
+    ],
+    "exclui_zero": true
+   },
+   {
+    "base": "HEAL",
+    "linha": "SMOLVLM_LORA_TXT_HEAL_seed1",
+    "G_ft": 0.02074688796680498,
+    "ic": [
+     0.008304498269896194,
+     0.034005937288565824
+    ],
+    "exclui_zero": true
+   },
+   {
+    "base": "HEAL",
+    "linha": "SMOLVLM_LORA_TXT_HEAL_seed2",
+    "G_ft": 0.017980636237897647,
+    "ic": [
+     0.004932446056178076,
+     0.03045035416806449
+    ],
+    "exclui_zero": true
+   },
+   {
+    "base": "MIMIC",
+    "linha": "QWEN2VL_LORA_TXT_MIMIC_seed0",
+    "G_ft": 0.0020013342228152103,
+    "ic": [
+     -0.010117216280424283,
+     0.014009339559706471
+    ],
+    "exclui_zero": false
+   },
+   {
+    "base": "MIMIC",
+    "linha": "QWEN2VL_LORA_TXT_MIMIC_seed1",
+    "G_ft": 0.004002668445630421,
+    "ic": [
+     -0.010185138898807398,
+     0.018332216743488033
+    ],
+    "exclui_zero": false
+   },
+   {
+    "base": "MIMIC",
+    "linha": "QWEN2VL_LORA_TXT_MIMIC_seed2",
+    "G_ft": 0.014009339559706471,
+    "ic": [
+     0.0013351134846461949,
+     0.027651782089141097
+    ],
+    "exclui_zero": true
+   },
+   {
+    "base": "MIMIC",
+    "linha": "SMOLVLM_LORA_TXT_MIMIC_seed0",
+    "G_ft": 0.018679119412941963,
+    "ic": [
+     0.004685408299866131,
+     0.03292399102888828
+    ],
+    "exclui_zero": true
+   },
+   {
+    "base": "MIMIC",
+    "linha": "SMOLVLM_LORA_TXT_MIMIC_seed1",
+    "G_ft": 0.00600400266844563,
+    "ic": [
+     -0.00798443113772455,
+     0.020041759121460067
+    ],
+    "exclui_zero": false
+   },
+   {
+    "base": "MIMIC",
+    "linha": "SMOLVLM_LORA_TXT_MIMIC_seed2",
+    "G_ft": 0.01467645096731154,
+    "ic": [
+     -0.0006508000034243058,
+     0.02963313787400389
+    ],
+    "exclui_zero": false
+   },
+   {
+    "base": "VQARAD_REDIV",
+    "linha": "QWEN2VL_LORA_TXT_VQARAD_REDIV_seed0",
+    "G_ft": 0.0215311004784689,
+    "ic": [
+     -0.019023034889231134,
+     0.06696928304904048
+    ],
+    "exclui_zero": false
+   },
+   {
+    "base": "VQARAD_REDIV",
+    "linha": "QWEN2VL_LORA_TXT_VQARAD_REDIV_seed1",
+    "G_ft": 0.007177033492822967,
+    "ic": [
+     -0.03688556067588326,
+     0.05433796296296287
+    ],
+    "exclui_zero": false
+   },
+   {
+    "base": "VQARAD_REDIV",
+    "linha": "QWEN2VL_LORA_TXT_VQARAD_REDIV_seed2",
+    "G_ft": -0.01674641148325359,
+    "ic": [
+     -0.059668477217238634,
+     0.026179884791762975
+    ],
+    "exclui_zero": false
+   },
+   {
+    "base": "VQARAD_REDIV",
+    "linha": "SMOLVLM_LORA_TXT_VQARAD_REDIV_seed0",
+    "G_ft": -0.03110047846889952,
+    "ic": [
+     -0.07407407407407407,
+     0.011337510492078448
+    ],
+    "exclui_zero": false
+   },
+   {
+    "base": "VQARAD_REDIV",
+    "linha": "SMOLVLM_LORA_TXT_VQARAD_REDIV_seed1",
+    "G_ft": 0.03588516746411483,
+    "ic": [
+     0.0041265178221699984,
+     0.06944694244604316
+    ],
+    "exclui_zero": true
+   },
+   {
+    "base": "VQARAD_REDIV",
+    "linha": "SMOLVLM_LORA_TXT_VQARAD_REDIV_seed2",
+    "G_ft": -0.019138755980861243,
+    "ic": [
+     -0.053195035460992905,
+     0.014219702098849008
+    ],
+    "exclui_zero": false
+   }
+  ],
+  "por_base": {
+   "KVASIR": {
+    "excluem": 6,
+    "max_G_ft_entre_as_que_excluem": 0.01688468318025791
+   },
+   "SLAKE": {
+    "excluem": 1,
+    "max_G_ft_entre_as_que_excluem": 0.03365384615384615
+   },
+   "HEAL": {
+    "excluem": 5,
+    "max_G_ft_entre_as_que_excluem": 0.03665283540802213
+   },
+   "MIMIC": {
+    "excluem": 2,
+    "max_G_ft_entre_as_que_excluem": 0.018679119412941963
+   },
+   "VQARAD_REDIV": {
+    "excluem": 1,
+    "max_G_ft_entre_as_que_excluem": 0.03588516746411483
+   }
+  },
+  "total_excluem": 15,
+  "max_global_entre_as_que_excluem": 0.03665283540802213
+ },
+ "13_2": {
+  "KVASIR": 0.1928750347898692,
+  "SLAKE": 0.4206730769230769,
+  "HEAL": 0.508298755186722,
+  "MIMIC": 0.49566377585056703,
+  "VQARAD_REDIV": 0.4904306220095694
+ },
+ "13_3": {
+  "KVASIR": {
+   "n": 10779,
+   "acc": 0.6571110492624548,
+   "fonte_da_predicao": {
+    "texto_exato": 10779
+   },
+   "treino": "train_so_treino de dados_texto (HEAL: so treino)",
+   "normalizacao_da_chave": "normalize_text da pergunta"
+  },
+  "SLAKE": {
+   "n": 416,
+   "acc": 0.6706730769230769,
+   "fonte_da_predicao": {
+    "texto_exato": 388,
+    "global": 28
+   },
+   "treino": "train_so_treino de dados_texto (HEAL: so treino)",
+   "normalizacao_da_chave": "normalize_text da pergunta"
+  },
+  "HEAL": {
+   "n": 1446,
+   "acc": 0.8533886583679114,
+   "fonte_da_predicao": {
+    "texto_exato": 1446
+   },
+   "treino": "train_so_treino de dados_texto (HEAL: so treino)",
+   "normalizacao_da_chave": "normalize_text da pergunta"
+  },
+  "MIMIC": {
+   "n": 1499,
+   "acc": 0.7751834556370913,
+   "fonte_da_predicao": {
+    "texto_exato": 1449,
+    "global": 50
+   },
+   "treino": "train_so_treino de dados_texto (HEAL: so treino)",
+   "normalizacao_da_chave": "normalize_text da pergunta"
+  },
+  "VQARAD_REDIV": {
+   "n": 418,
+   "acc": 0.5502392344497608,
+   "fonte_da_predicao": {
+    "global": 324,
+    "texto_exato": 94
+   },
+   "treino": "train_so_treino de dados_texto (HEAL: so treino)",
+   "normalizacao_da_chave": "normalize_text da pergunta"
+  }
+ },
+ "13_4": {
+  "KVASIR": {
+   "A_ft_menos_baseline_mean_per_family": {
+    "QWEN2VL": {
+     "A_text": 0.2536413396418963,
+     "TF-IDF": 0.22163465998701182,
+     "PubMedBERT": 0.22163465998701182,
+     "majoritaria": 0.6861489934131181,
+     "cinza": 0.3871107400191731
+    },
+    "SMOLVLM": {
+     "A_text": 0.21835668120110094,
+     "TF-IDF": 0.21835668120110094,
+     "PubMedBERT": 0.21835668120110094,
+     "majoritaria": 0.6828710146272071,
+     "cinza": 0.4635866035810372
+    },
+    "M3AE": {
+     "A_text": 0.21356341033491047,
+     "TF-IDF": 0.21356341033491047,
+     "PubMedBERT": 0.21356341033491047,
+     "majoritaria": 0.6780777437610167
+    }
+   },
+   "order_by_baseline": {
+    "A_text": [
+     "QWEN2VL",
+     "SMOLVLM",
+     "M3AE"
+    ],
+    "TF-IDF": [
+     "QWEN2VL",
+     "SMOLVLM",
+     "M3AE"
+    ],
+    "PubMedBERT": [
+     "QWEN2VL",
+     "SMOLVLM",
+     "M3AE"
+    ],
+    "majoritaria": [
+     "QWEN2VL",
+     "SMOLVLM",
+     "M3AE"
+    ],
+    "cinza": [
+     "SMOLVLM",
+     "QWEN2VL"
+    ]
+   },
+   "ordem_igual_sob_todos_os_baselines_with_3_familias": true,
+   "ordem_VLM_sob_cinza_igual_a_ordem_VLM_sob_A_text": false,
+   "pares_discordantes_TFIDF_x_Atext": []
+  },
+  "SLAKE": {
+   "A_ft_menos_baseline_mean_per_family": {
+    "QWEN2VL": {
+     "A_text": 0.12740384615384615,
+     "TF-IDF": 0.15144230769230763,
+     "PubMedBERT": 0.12580128205128205,
+     "majoritaria": 0.3725961538461538,
+     "cinza": 0.21794871794871795
+    },
+    "SMOLVLM": {
+     "A_text": 0.1514423076923077,
+     "TF-IDF": 0.1762820512820512,
+     "PubMedBERT": 0.15064102564102563,
+     "majoritaria": 0.3974358974358974,
+     "cinza": 0.3485576923076923
+    },
+    "M3AE": {
+     "A_text": 0.20032051282051286,
+     "TF-IDF": 0.23076923076923073,
+     "PubMedBERT": 0.20512820512820515,
+     "majoritaria": 0.4519230769230769
+    }
+   },
+   "order_by_baseline": {
+    "A_text": [
+     "M3AE",
+     "SMOLVLM",
+     "QWEN2VL"
+    ],
+    "TF-IDF": [
+     "M3AE",
+     "SMOLVLM",
+     "QWEN2VL"
+    ],
+    "PubMedBERT": [
+     "M3AE",
+     "SMOLVLM",
+     "QWEN2VL"
+    ],
+    "majoritaria": [
+     "M3AE",
+     "SMOLVLM",
+     "QWEN2VL"
+    ],
+    "cinza": [
+     "SMOLVLM",
+     "QWEN2VL"
+    ]
+   },
+   "ordem_igual_sob_todos_os_baselines_with_3_familias": true,
+   "ordem_VLM_sob_cinza_igual_a_ordem_VLM_sob_A_text": true,
+   "pares_discordantes_TFIDF_x_Atext": [
+    [
+     "M3AE_SCRATCH_SLAKE_seed0",
+     "M3AE_SCRATCH_SLAKE_seed2",
+     "mesma familia"
+    ],
+    [
+     "M3AE_SCRATCH_SLAKE_seed1",
+     "M3AE_SCRATCH_SLAKE_seed2",
+     "mesma familia"
+    ]
+   ]
+  },
+  "HEAL": {
+   "A_ft_menos_baseline_mean_per_family": {
+    "QWEN2VL": {
+     "A_text": 0.03964960811433845,
+     "TF-IDF": 0.22775472568003693,
+     "PubMedBERT": 0.04449054863992626,
+     "majoritaria": 0.3868142000922084,
+     "cinza": 0.10949746426924849
+    },
+    "SMOLVLM": {
+     "A_text": 0.049792531120331995,
+     "TF-IDF": 0.23420931304748738,
+     "PubMedBERT": 0.05094513600737671,
+     "majoritaria": 0.39326878745965893,
+     "cinza": 0.39326878745965893
+    },
+    "M3AE": {
+     "A_text": 0.04402950668510841,
+     "TF-IDF": 0.2295988934993085,
+     "PubMedBERT": 0.046334716459197844,
+     "majoritaria": 0.38865836791148006
+    }
+   },
+   "order_by_baseline": {
+    "A_text": [
+     "SMOLVLM",
+     "M3AE",
+     "QWEN2VL"
+    ],
+    "TF-IDF": [
+     "SMOLVLM",
+     "M3AE",
+     "QWEN2VL"
+    ],
+    "PubMedBERT": [
+     "SMOLVLM",
+     "M3AE",
+     "QWEN2VL"
+    ],
+    "majoritaria": [
+     "SMOLVLM",
+     "M3AE",
+     "QWEN2VL"
+    ],
+    "cinza": [
+     "SMOLVLM",
+     "QWEN2VL"
+    ]
+   },
+   "ordem_igual_sob_todos_os_baselines_with_3_familias": true,
+   "ordem_VLM_sob_cinza_igual_a_ordem_VLM_sob_A_text": true,
+   "pares_discordantes_TFIDF_x_Atext": [
+    [
+     "M3AE_HEAL_seed1",
+     "M3AE_HEAL_seed2",
+     "mesma familia"
+    ],
+    [
+     "SMOLVLM_LORA_HEAL_seed1",
+     "QWEN2VL_LORA_VT_HEAL_seed0",
+     "familias diferentes"
+    ]
+   ]
+  },
+  "MIMIC": {
+   "A_ft_menos_baseline_mean_per_family": {
+    "QWEN2VL": {
+     "A_text": 0.03380031131865687,
+     "TF-IDF": 0.05114520791638866,
+     "PubMedBERT": 0.0424727596175228,
+     "majoritaria": 0.33533466755614855,
+     "cinza": 0.1694462975316878
+    },
+    "SMOLVLM": {
+     "A_text": 0.05336891260840563,
+     "TF-IDF": 0.06270847231487657,
+     "PubMedBERT": 0.05403602401601071,
+     "majoritaria": 0.3468979319546364,
+     "cinza": 0.2770736046253058
+    },
+    "M3AE": {
+     "A_text": 0.0446964643095397,
+     "TF-IDF": 0.05470313542361571,
+     "PubMedBERT": 0.04603068712474986,
+     "majoritaria": 0.3388925950633756
+    }
+   },
+   "order_by_baseline": {
+    "A_text": [
+     "SMOLVLM",
+     "M3AE",
+     "QWEN2VL"
+    ],
+    "TF-IDF": [
+     "SMOLVLM",
+     "M3AE",
+     "QWEN2VL"
+    ],
+    "PubMedBERT": [
+     "SMOLVLM",
+     "M3AE",
+     "QWEN2VL"
+    ],
+    "majoritaria": [
+     "SMOLVLM",
+     "M3AE",
+     "QWEN2VL"
+    ],
+    "cinza": [
+     "SMOLVLM",
+     "QWEN2VL"
+    ]
+   },
+   "ordem_igual_sob_todos_os_baselines_with_3_familias": true,
+   "ordem_VLM_sob_cinza_igual_a_ordem_VLM_sob_A_text": true,
+   "pares_discordantes_TFIDF_x_Atext": [
+    [
+     "SMOLVLM_LORA_MIMIC_seed1",
+     "SMOLVLM_LORA_MIMIC_seed2",
+     "mesma familia"
+    ],
+    [
+     "QWEN2VL_LORA_VT_MIMIC_seed1",
+     "QWEN2VL_LORA_VT_MIMIC_seed2",
+     "mesma familia"
+    ],
+    [
+     "QWEN2VL_LORA_VT_MIMIC_seed1",
+     "M3AE_MIMIC_seed2",
+     "familias diferentes"
+    ],
+    [
+     "QWEN2VL_LORA_VT_MIMIC_seed2",
+     "M3AE_MIMIC_seed2",
+     "familias diferentes"
+    ],
+    [
+     "M3AE_MIMIC_seed0",
+     "M3AE_MIMIC_seed1",
+     "mesma familia"
+    ]
+   ]
+  },
+  "VQARAD_REDIV": {
+   "A_ft_menos_baseline_mean_per_family": {
+    "QWEN2VL": {
+     "A_text": 0.054226475279106845,
+     "TF-IDF": 0.12440191387559811,
+     "PubMedBERT": 0.06140350877192987,
+     "majoritaria": 0.19617224880382778,
+     "cinza": 0.0374800637958533
+    },
+    "SMOLVLM": {
+     "A_text": 0.09489633173843699,
+     "TF-IDF": 0.2232854864433812,
+     "PubMedBERT": 0.16028708133971295,
+     "majoritaria": 0.29505582137161085,
+     "cinza": 0.19856459330143542
+    },
+    "M3AE": {
+     "A_text": 0.019138755980861195,
+     "TF-IDF": 0.062200956937799035,
+     "PubMedBERT": -0.0007974481658692042,
+     "majoritaria": 0.13397129186602869
+    }
+   },
+   "order_by_baseline": {
+    "A_text": [
+     "SMOLVLM",
+     "QWEN2VL",
+     "M3AE"
+    ],
+    "TF-IDF": [
+     "SMOLVLM",
+     "QWEN2VL",
+     "M3AE"
+    ],
+    "PubMedBERT": [
+     "SMOLVLM",
+     "QWEN2VL",
+     "M3AE"
+    ],
+    "majoritaria": [
+     "SMOLVLM",
+     "QWEN2VL",
+     "M3AE"
+    ],
+    "cinza": [
+     "SMOLVLM",
+     "QWEN2VL"
+    ]
+   },
+   "ordem_igual_sob_todos_os_baselines_with_3_familias": true,
+   "ordem_VLM_sob_cinza_igual_a_ordem_VLM_sob_A_text": true,
+   "pares_discordantes_TFIDF_x_Atext": [
+    [
+     "QWEN2VL_LORA_VT_VQARAD_REDIV_seed0",
+     "M3AE_SCRATCH_VQARAD_REDIV_seed0",
+     "familias diferentes"
+    ],
+    [
+     "QWEN2VL_LORA_VT_VQARAD_REDIV_seed1",
+     "M3AE_SCRATCH_VQARAD_REDIV_seed0",
+     "familias diferentes"
+    ],
+    [
+     "QWEN2VL_LORA_VT_VQARAD_REDIV_seed2",
+     "M3AE_SCRATCH_VQARAD_REDIV_seed0",
+     "familias diferentes"
+    ]
+   ]
+  }
+ },
+ "13_7": {
+  "valores": {
+   "KVASIR": {
+    "QWEN2VL|G_ft": {
+     "media": 0.014317963942233355,
+     "dp_entre_sementes": 0.0030351562500701905,
+     "ic_condicional_media_sementes": [
+      0.010250192654221182,
+      0.018450123093257123
+     ],
+     "ic_conjunto_imagens_e_sementes": [
+      0.009261227122795554,
+      0.019464267506172164
+     ]
+    },
+    "QWEN2VL|G": {
+     "media": 0.2536413396418962,
+     "dp_entre_sementes": 0.0011844461763432456,
+     "ic_condicional_media_sementes": [
+      0.24452026503823407,
+      0.2632805830789704
+     ],
+     "ic_conjunto_imagens_e_sementes": [
+      0.2443973640402177,
+      0.2633314220252693
+     ]
+    },
+    "SMOLVLM|G_ft": {
+     "media": 0.015554937068992178,
+     "dp_entre_sementes": 0.001508333908310258,
+     "ic_condicional_media_sementes": [
+      0.01152022056221481,
+      0.019608295514588262
+     ],
+     "ic_conjunto_imagens_e_sementes": [
+      0.01096942007608807,
+      0.019979007938704104
+     ]
+    },
+    "SMOLVLM|G": {
+     "media": 0.21835668120110088,
+     "dp_entre_sementes": 0.0007085653732498266,
+     "ic_condicional_media_sementes": [
+      0.2085324866075116,
+      0.2287417775173645
+     ],
+     "ic_conjunto_imagens_e_sementes": [
+      0.20844369316163858,
+      0.22874931709212554
+     ]
+    },
+    "M3AE|G": {
+     "media": 0.21356341033491047,
+     "dp_entre_sementes": 0.0017893405252793276,
+     "ic_condicional_media_sementes": [
+      0.20496886477349596,
+      0.222883511705925
+     ],
+     "ic_conjunto_imagens_e_sementes": [
+      0.20472495214503147,
+      0.22294470813598122
+     ]
+    }
+   },
+   "SLAKE": {
+    "QWEN2VL|G_ft": {
+     "media": 0.015224358974358974,
+     "dp_entre_sementes": 0.020725187750605067,
+     "ic_condicional_media_sementes": [
+      -0.00315246261574659,
+      0.0335027924223904
+     ],
+     "ic_conjunto_imagens_e_sementes": [
+      -0.015186074375124047,
+      0.04590022296544032
+     ]
+    },
+    "QWEN2VL|G": {
+     "media": 0.12740384615384615,
+     "dp_entre_sementes": 0.016826923076923073,
+     "ic_condicional_media_sementes": [
+      0.09319598660598882,
+      0.16356730735195213
+     ],
+     "ic_conjunto_imagens_e_sementes": [
+      0.08598190673673003,
+      0.16936212449330884
+     ]
+    },
+    "SMOLVLM|G_ft": {
+     "media": 0.021634615384615388,
+     "dp_entre_sementes": 0.012490751016121713,
+     "ic_condicional_media_sementes": [
+      -0.002451282237032744,
+      0.046650932379442164
+     ],
+     "ic_conjunto_imagens_e_sementes": [
+      -0.007268428673568093,
+      0.05154349420566228
+     ]
+    },
+    "SMOLVLM|G": {
+     "media": 0.1514423076923077,
+     "dp_entre_sementes": 0.004163583672040572,
+     "ic_condicional_media_sementes": [
+      0.11137629276054097,
+      0.1910298362589546
+     ],
+     "ic_conjunto_imagens_e_sementes": [
+      0.11035746015435172,
+      0.1930274448065698
+     ]
+    },
+    "M3AE|G": {
+     "media": 0.2003205128205128,
+     "dp_entre_sementes": 0.010008009612817942,
+     "ic_condicional_media_sementes": [
+      0.16121480613950423,
+      0.2363653981677237
+     ],
+     "ic_conjunto_imagens_e_sementes": [
+      0.1599951573849879,
+      0.23787440185987718
+     ]
+    }
+   },
+   "HEAL": {
+    "QWEN2VL|G_ft": {
+     "media": 0.02028584601198709,
+     "dp_entre_sementes": 0.016252955036489002,
+     "ic_condicional_media_sementes": [
+      0.010059269789424893,
+      0.030705270464516796
+     ],
+     "ic_conjunto_imagens_e_sementes": [
+      0.0014043226234502469,
+      0.038904527679980344
+     ]
+    },
+    "QWEN2VL|G": {
+     "media": 0.03964960811433841,
+     "dp_entre_sementes": 0.010743365788594786,
+     "ic_condicional_media_sementes": [
+      0.02490214349502059,
+      0.05463899010333451
+     ],
+     "ic_conjunto_imagens_e_sementes": [
+      0.021450102907889818,
+      0.05683488266916439
+     ]
+    },
+    "SMOLVLM|G_ft": {
+     "media": 0.018902720147533424,
+     "dp_entre_sementes": 0.0015970961803309155,
+     "ic_condicional_media_sementes": [
+      0.008343339754720295,
+      0.02920064244239008
+     ],
+     "ic_conjunto_imagens_e_sementes": [
+      0.007356513028737596,
+      0.030409602516935176
+     ]
+    },
+    "SMOLVLM|G": {
+     "media": 0.04979253112033195,
+     "dp_entre_sementes": 0.0024934656123540744,
+     "ic_condicional_media_sementes": [
+      0.03432839929357802,
+      0.06483471123549514
+     ],
+     "ic_conjunto_imagens_e_sementes": [
+      0.03390127881449392,
+      0.06525757618672219
+     ]
+    },
+    "M3AE|G": {
+     "media": 0.04402950668510835,
+     "dp_entre_sementes": 0.009788323534145755,
+     "ic_condicional_media_sementes": [
+      0.027118652031725747,
+      0.060879629629629624
+     ],
+     "ic_conjunto_imagens_e_sementes": [
+      0.023395574069949614,
+      0.06390622603386927
+     ]
+    }
+   },
+   "MIMIC": {
+    "QWEN2VL|G_ft": {
+     "media": 0.0066711140760507,
+     "dp_entre_sementes": 0.006433389433617715,
+     "ic_condicional_media_sementes": [
+      -0.0029074436614365856,
+      0.016119184927330443
+     ],
+     "ic_conjunto_imagens_e_sementes": [
+      -0.005211904264214046,
+      0.01955621562156215
+     ]
+    },
+    "QWEN2VL|G": {
+     "media": 0.03380031131865688,
+     "dp_entre_sementes": 0.0063404836243643545,
+     "ic_condicional_media_sementes": [
+      0.01744937184629027,
+      0.0495853274227588
+     ],
+     "ic_conjunto_imagens_e_sementes": [
+      0.015050408445792427,
+      0.05304255836423436
+     ]
+    },
+    "SMOLVLM|G_ft": {
+     "media": 0.013119857682899713,
+     "dp_entre_sementes": 0.006479342799347773,
+     "ic_condicional_media_sementes": [
+      0.0019701722331161202,
+      0.02536481863584667
+     ],
+     "ic_conjunto_imagens_e_sementes": [
+      -5.507821105970308e-06,
+      0.026938802787869417
+     ]
+    },
+    "SMOLVLM|G": {
+     "media": 0.0533689126084056,
+     "dp_entre_sementes": 0.005460542209387893,
+     "ic_condicional_media_sementes": [
+      0.035689635248854636,
+      0.07122390036277845
+     ],
+     "ic_conjunto_imagens_e_sementes": [
+      0.033423637378085014,
+      0.07261117133075122
+     ]
+    },
+    "M3AE|G": {
+     "media": 0.0446964643095397,
+     "dp_entre_sementes": 0.0026684456304202804,
+     "ic_condicional_media_sementes": [
+      0.02522645538174663,
+      0.06393359012862676
+     ],
+     "ic_conjunto_imagens_e_sementes": [
+      0.023316764341663,
+      0.0653896961690885
+     ]
+    }
+   },
+   "VQARAD_REDIV": {
+    "QWEN2VL|G_ft": {
+     "media": 0.003987240829346092,
+     "dp_entre_sementes": 0.0193370903556334,
+     "ic_condicional_media_sementes": [
+      -0.02433325992113432,
+      0.03432677008191881
+     ],
+     "ic_conjunto_imagens_e_sementes": [
+      -0.03636261731610241,
+      0.04166917670682729
+     ]
+    },
+    "QWEN2VL|G": {
+     "media": 0.054226475279106866,
+     "dp_entre_sementes": 0.020063390152167664,
+     "ic_condicional_media_sementes": [
+      0.009477555217741213,
+      0.10215232974910395
+     ],
+     "ic_conjunto_imagens_e_sementes": [
+      0.0,
+      0.10866680517415808
+     ]
+    },
+    "SMOLVLM|G_ft": {
+     "media": -0.004784688995215311,
+     "dp_entre_sementes": 0.03572532182552172,
+     "ic_condicional_media_sementes": [
+      -0.03297865759747113,
+      0.020693247126436762
+     ],
+     "ic_conjunto_imagens_e_sementes": [
+      -0.05198401060485195,
+      0.039968824940047956
+     ]
+    },
+    "SMOLVLM|G": {
+     "media": 0.09489633173843699,
+     "dp_entre_sementes": 0.026243194054073896,
+     "ic_condicional_media_sementes": [
+      0.054144819349059424,
+      0.13765062788042787
+     ],
+     "ic_conjunto_imagens_e_sementes": [
+      0.04492606990077569,
+      0.1462768860912385
+     ]
+    },
+    "M3AE|G": {
+     "media": 0.019138755980861243,
+     "dp_entre_sementes": 0.04564302399124141,
+     "ic_condicional_media_sementes": [
+      -0.03472260716925351,
+      0.07052556818181813
+     ],
+     "ic_conjunto_imagens_e_sementes": [
+      -0.05446017962451983,
+      0.09894669915935136
+     ]
+    }
+   }
+  },
+  "codigo": {
+   "occlusion_stats.py": [
+    "harness/v7_occlusion/occlusion_stats.py",
+    "326c7ff0feb0df0248fe2055b9565fbca9e07babf5f4d94ced575df618f898a5",
+    "ImageBootstrap linhas 20-33"
+   ],
+   "decomposicao.py": [
+    "harness/v7_txt/decomposicao.py",
+    "bbc94ee5f73edbad2da391e7de403eca2ed4c80012879f70e7de937cc6706d38",
+    "boot_vec linha 24; replicas por linha linha 74; IC da media das sementes linhas ~93-97"
+   ],
+   "ic_contagem.py": [
+    "harness/v7_txt/ic_contagem.py",
+    "fbf5e1e66e73a778a5fdbd13b66a9f7ceb571d63a4a94d43a1104b4dba963309",
+    "exclui_zero linha 8 (IC por linha)"
+   ]
+  },
+  "sorteio_de_sementes": "numpy RandomState(20260913).randint(0, 3, (2000, 3)): por replica, 3 sementes com reposicao; a mesma replica de imagens para as tres"
+ },
+ "13_5": {
+  "base": "VQA-RAD redividido, 418 fechadas",
+  "recortes": {
+   "question_type": {
+    "PRES": {
+     "n": 195,
+     "QWEN2VL": {
+      "media": 0.6495726495726495,
+      "dp": 0.02135042050734494
+     },
+     "SMOLVLM": {
+      "media": 0.7162393162393162,
+      "dp": 0.00592154122245768
+     },
+     "M3AE": {
+      "media": 0.6905982905982905,
+      "dp": 0.016484873095714458
+     },
+     "PubMedBERT": {
+      "media": 0.7196581196581198,
+      "dp": 0.016484873095714458
+     },
+     "SmolVLM2_menos_PubMedBERT": -0.0034188034188035177
+    },
+    "ABN": {
+     "n": 59,
+     "QWEN2VL": {
+      "media": 0.768361581920904,
+      "dp": 0.02589025816359231
+     },
+     "SMOLVLM": {
+      "media": 0.8813559322033898,
+      "dp": 0.0
+     },
+     "M3AE": {
+      "media": 0.7627118644067797,
+      "dp": 1.3597399555105182e-16
+     },
+     "PubMedBERT": {
+      "media": 0.6836158192090395,
+      "dp": 0.10896780520895996
+     },
+     "SmolVLM2_menos_PubMedBERT": 0.19774011299435035
+    },
+    "SIZE": {
+     "n": 41,
+     "QWEN2VL": {
+      "media": 0.7235772357723578,
+      "dp": 0.028163427765347623
+     },
+     "SMOLVLM": {
+      "media": 0.6829268292682927,
+      "dp": 0.0
+     },
+     "M3AE": {
+      "media": 0.5609756097560976,
+      "dp": 0.04224514164802137
+     },
+     "PubMedBERT": {
+      "media": 0.6260162601626016,
+      "dp": 0.070408569413369
+     },
+     "SmolVLM2_menos_PubMedBERT": 0.056910569105691144
+    },
+    "ATTRIB": {
+     "n": 33,
+     "QWEN2VL": {
+      "media": 0.4646464646464647,
+      "dp": 0.03499092540543187
+     },
+     "SMOLVLM": {
+      "media": 0.6464646464646465,
+      "dp": 0.017495462702715917
+     },
+     "M3AE": {
+      "media": 0.3333333333333333,
+      "dp": 0.030303030303030304
+     },
+     "PubMedBERT": {
+      "media": 0.3333333333333333,
+      "dp": 0.030303030303030304
+     },
+     "SmolVLM2_menos_PubMedBERT": 0.3131313131313132
+    },
+    "MODALITY": {
+     "n": 20,
+     "QWEN2VL": {
+      "media": 0.3833333333333333,
+      "dp": 0.028867513459481315
+     },
+     "SMOLVLM": {
+      "media": 0.45,
+      "dp": 0.04999999999999999
+     },
+     "M3AE": {
+      "media": 0.45,
+      "dp": 0.04999999999999999
+     },
+     "PubMedBERT": {
+      "media": 0.5499999999999999,
+      "dp": 0.04999999999999999
+     },
+     "SmolVLM2_menos_PubMedBERT": -0.09999999999999992
+    },
+    "POS": {
+     "n": 14,
+     "QWEN2VL": {
+      "media": 0.42857142857142855,
+      "dp": 0.07142857142857142
+     },
+     "SMOLVLM": {
+      "media": 0.4523809523809524,
+      "dp": 0.04123930494211614
+     },
+     "M3AE": {
+      "media": 0.5238095238095238,
+      "dp": 0.10910894511799622
+     },
+     "PubMedBERT": {
+      "media": 0.5238095238095238,
+      "dp": 0.041239304942116105
+     },
+     "SmolVLM2_menos_PubMedBERT": -0.07142857142857145
+    },
+    "COLOR": {
+     "n": 13,
+     "QWEN2VL": {
+      "media": 0.6666666666666666,
+      "dp": 0.04441155916843272
+     },
+     "SMOLVLM": {
+      "media": 0.5384615384615384,
+      "dp": 0.07692307692307693
+     },
+     "M3AE": {
+      "media": 0.2820512820512821,
+      "dp": 0.04441155916843275
+     },
+     "PubMedBERT": {
+      "media": 0.3333333333333333,
+      "dp": 0.04441155916843275
+     },
+     "SmolVLM2_menos_PubMedBERT": 0.20512820512820512
+    },
+    "OTHER": {
+     "n": 12,
+     "QWEN2VL": {
+      "media": 0.3611111111111111,
+      "dp": 0.048112522432468836
+     },
+     "SMOLVLM": {
+      "media": 0.5277777777777778,
+      "dp": 0.048112522432468836
+     },
+     "M3AE": {
+      "media": 0.3888888888888889,
+      "dp": 0.048112522432468836
+     },
+     "PubMedBERT": {
+      "media": 0.4444444444444445,
+      "dp": 0.0481125224324688
+     },
+     "SmolVLM2_menos_PubMedBERT": 0.08333333333333331
+    },
+    "PLANE": {
+     "n": 12,
+     "QWEN2VL": {
+      "media": 0.6388888888888888,
+      "dp": 0.048112522432468774
+     },
+     "SMOLVLM": {
+      "media": 0.5277777777777778,
+      "dp": 0.048112522432468836
+     },
+     "M3AE": {
+      "media": 0.5277777777777778,
+      "dp": 0.048112522432468836
+     },
+     "PubMedBERT": {
+      "media": 0.5,
+      "dp": 0.0
+     },
+     "SmolVLM2_menos_PubMedBERT": 0.02777777777777779
+    },
+    "PRES, ATTRIB": {
+     "n": 8,
+     "QWEN2VL": {
+      "media": 0.9166666666666666,
+      "dp": 0.07216878364870323
+     },
+     "SMOLVLM": {
+      "media": 0.7083333333333334,
+      "dp": 0.07216878364870323
+     },
+     "M3AE": {
+      "media": 0.5416666666666666,
+      "dp": 0.14433756729740646
+     },
+     "PubMedBERT": {
+      "media": 0.4583333333333333,
+      "dp": 0.07216878364870323
+     },
+     "SmolVLM2_menos_PubMedBERT": 0.25000000000000006
+    },
+    "COLOR, PRES": {
+     "n": 4,
+     "QWEN2VL": {
+      "media": 0.0,
+      "dp": 0.0
+     },
+     "SMOLVLM": {
+      "media": 0.25,
+      "dp": 0.25
+     },
+     "M3AE": {
+      "media": 0.0,
+      "dp": 0.0
+     },
+     "PubMedBERT": {
+      "media": 0.0,
+      "dp": 0.0
+     },
+     "SmolVLM2_menos_PubMedBERT": 0.25
+    },
+    "ORGAN": {
+     "n": 4,
+     "QWEN2VL": {
+      "media": 1.0,
+      "dp": 0.0
+     },
+     "SMOLVLM": {
+      "media": 1.0,
+      "dp": 0.0
+     },
+     "M3AE": {
+      "media": 0.75,
+      "dp": 0.25
+     },
+     "PubMedBERT": {
+      "media": 0.9166666666666666,
+      "dp": 0.14433756729740646
+     },
+     "SmolVLM2_menos_PubMedBERT": 0.08333333333333337
+    },
+    "PRES, ABN": {
+     "n": 1,
+     "QWEN2VL": {
+      "media": 1.0,
+      "dp": 0.0
+     },
+     "SMOLVLM": {
+      "media": 1.0,
+      "dp": 0.0
+     },
+     "M3AE": {
+      "media": 0.3333333333333333,
+      "dp": 0.5773502691896258
+     },
+     "PubMedBERT": {
+      "media": 1.0,
+      "dp": 0.0
+     },
+     "SmolVLM2_menos_PubMedBERT": 0.0
+    },
+    "SIZE, PRES": {
+     "n": 1,
+     "QWEN2VL": {
+      "media": 0.6666666666666666,
+      "dp": 0.5773502691896258
+     },
+     "SMOLVLM": {
+      "media": 1.0,
+      "dp": 0.0
+     },
+     "M3AE": {
+      "media": 0.3333333333333333,
+      "dp": 0.5773502691896258
+     },
+     "PubMedBERT": {
+      "media": 1.0,
+      "dp": 0.0
+     },
+     "SmolVLM2_menos_PubMedBERT": 0.0
+    },
+    "COUNT": {
+     "n": 1,
+     "QWEN2VL": {
+      "media": 0.0,
+      "dp": 0.0
+     },
+     "SMOLVLM": {
+      "media": 0.0,
+      "dp": 0.0
+     },
+     "M3AE": {
+      "media": 0.3333333333333333,
+      "dp": 0.5773502691896258
+     },
+     "PubMedBERT": {
+      "media": 0.6666666666666666,
+      "dp": 0.5773502691896258
+     },
+     "SmolVLM2_menos_PubMedBERT": -0.6666666666666666
+    }
+   },
+   "answer_type_osf": {
+    "CLOSED": {
+     "n": 418,
+     "QWEN2VL": {
+      "media": 0.6323763955342904,
+      "dp": 0.004980062199679716
+     },
+     "SMOLVLM": {
+      "media": 0.6905901116427433,
+      "dp": 0.00498006219967976
+     },
+     "M3AE": {
+      "media": 0.6052631578947368,
+      "dp": 0.012659097182127231
+     },
+     "PubMedBERT": {
+      "media": 0.6251993620414673,
+      "dp": 0.022228644122434377
+     },
+     "SmolVLM2_menos_PubMedBERT": 0.065390749601276
+    }
+   },
+   "prefixo_2_palavras": {
+    "is the": {
+     "n": 81,
+     "QWEN2VL": {
+      "media": 0.6337448559670782,
+      "dp": 0.025699580240322616
+     },
+     "SMOLVLM": {
+      "media": 0.7325102880658436,
+      "dp": 0.025699580240322616
+     },
+     "M3AE": {
+      "media": 0.5679012345679012,
+      "dp": 0.012345679012345678
+     },
+     "PubMedBERT": {
+      "media": 0.5925925925925926,
+      "dp": 0.0
+     },
+     "SmolVLM2_menos_PubMedBERT": 0.13991769547325106
+    },
+    "isare there": {
+     "n": 70,
+     "QWEN2VL": {
+      "media": 0.6238095238095238,
+      "dp": 0.029738085706659038
+     },
+     "SMOLVLM": {
+      "media": 0.6571428571428571,
+      "dp": 0.02857142857142858
+     },
+     "M3AE": {
+      "media": 0.6476190476190476,
+      "dp": 0.05408484138857401
+     },
+     "PubMedBERT": {
+      "media": 0.6619047619047619,
+      "dp": 0.054084841388574036
+     },
+     "SmolVLM2_menos_PubMedBERT": -0.004761904761904745
+    },
+    "is there": {
+     "n": 69,
+     "QWEN2VL": {
+      "media": 0.6570048309178743,
+      "dp": 0.03016907245603092
+     },
+     "SMOLVLM": {
+      "media": 0.753623188405797,
+      "dp": 0.025102185616940234
+     },
+     "M3AE": {
+      "media": 0.6859903381642513,
+      "dp": 0.03647263012208091
+     },
+     "PubMedBERT": {
+      "media": 0.7294685990338164,
+      "dp": 0.03016907245603092
+     },
+     "SmolVLM2_menos_PubMedBERT": 0.02415458937198056
+    },
+    "isare the": {
+     "n": 51,
+     "QWEN2VL": {
+      "media": 0.6405228758169934,
+      "dp": 0.040816980381688905
+     },
+     "SMOLVLM": {
+      "media": 0.6078431372549019,
+      "dp": 0.033961780540566235
+     },
+     "M3AE": {
+      "media": 0.5490196078431372,
+      "dp": 0.05882352941176469
+     },
+     "PubMedBERT": {
+      "media": 0.6013071895424836,
+      "dp": 0.02264118702704413
+     },
+     "SmolVLM2_menos_PubMedBERT": 0.006535947712418277
+    },
+    "is this": {
+     "n": 49,
+     "QWEN2VL": {
+      "media": 0.6054421768707483,
+      "dp": 0.031173984319427517
+     },
+     "SMOLVLM": {
+      "media": 0.7006802721088435,
+      "dp": 0.011782658554890335
+     },
+     "M3AE": {
+      "media": 0.6802721088435374,
+      "dp": 0.02356531710978067
+     },
+     "PubMedBERT": {
+      "media": 0.6462585034013606,
+      "dp": 0.11958092402208807
+     },
+     "SmolVLM2_menos_PubMedBERT": 0.05442176870748294
+    },
+    "are the": {
+     "n": 30,
+     "QWEN2VL": {
+      "media": 0.6333333333333333,
+      "dp": 0.033333333333333326
+     },
+     "SMOLVLM": {
+      "media": 0.5888888888888889,
+      "dp": 0.01924500897298752
+     },
+     "M3AE": {
+      "media": 0.5333333333333333,
+      "dp": 0.033333333333333326
+     },
+     "PubMedBERT": {
+      "media": 0.5555555555555556,
+      "dp": 0.01924500897298752
+     },
+     "SmolVLM2_menos_PubMedBERT": 0.033333333333333326
+    },
+    "are there": {
+     "n": 11,
+     "QWEN2VL": {
+      "media": 0.7575757575757575,
+      "dp": 0.05248638810814781
+     },
+     "SMOLVLM": {
+      "media": 0.8787878787878788,
+      "dp": 0.05248638810814775
+     },
+     "M3AE": {
+      "media": 0.5151515151515151,
+      "dp": 0.052486388108147784
+     },
+     "PubMedBERT": {
+      "media": 0.5454545454545454,
+      "dp": 0.0
+     },
+     "SmolVLM2_menos_PubMedBERT": 0.33333333333333337
+    }
+   }
+  },
+  "prefixo": "duas primeiras palavras da pergunta normalizada; grupos com n >= 10"
+ },
+ "13_6": [
+  {
+   "base": "SLAKE",
+   "modelo": "Qwen2-VL",
+   "seed": 0,
+   "placa": 3,
+   "horas": 0.5269722222222222,
+   "pico_GB": 5.384765625,
+   "fonte": "v7_txt/logs/train_state.json"
+  },
+  {
+   "base": "SLAKE",
+   "modelo": "Qwen2-VL",
+   "seed": 1,
+   "placa": 3,
+   "horas": 0.5425277777777777,
+   "pico_GB": 5.38671875,
+   "fonte": "v7_txt/logs/train_state.json"
+  },
+  {
+   "base": "SLAKE",
+   "modelo": "Qwen2-VL",
+   "seed": 2,
+   "placa": 1,
+   "horas": 0.5816111111111112,
+   "pico_GB": 5.404296875,
+   "fonte": "v7_txt/logs/train_state.json"
+  },
+  {
+   "base": "SLAKE",
+   "modelo": "SmolVLM2",
+   "seed": 0,
+   "placa": 3,
+   "horas": 0.2324166666666667,
+   "pico_GB": 5.08203125,
+   "fonte": "v7_txt/logs/train_state.json"
+  },
+  {
+   "base": "SLAKE",
+   "modelo": "SmolVLM2",
+   "seed": 1,
+   "placa": 1,
+   "horas": 0.2718055555555556,
+   "pico_GB": 5.08203125,
+   "fonte": "v7_txt/logs/train_state.json"
+  },
+  {
+   "base": "SLAKE",
+   "modelo": "SmolVLM2",
+   "seed": 2,
+   "placa": 3,
+   "horas": 0.22322222222222224,
+   "pico_GB": 5.1015625,
+   "fonte": "v7_txt/logs/train_state.json"
+  },
+  {
+   "base": "HEAL",
+   "modelo": "Qwen2-VL",
+   "seed": 0,
+   "placa": 3,
+   "horas": 1.5426944444444444,
+   "pico_GB": 5.06640625,
+   "fonte": "v7_txt/logs/train_state.json"
+  },
+  {
+   "base": "HEAL",
+   "modelo": "Qwen2-VL",
+   "seed": 1,
+   "placa": 3,
+   "horas": 1.5600833333333335,
+   "pico_GB": 5.087890625,
+   "fonte": "v7_txt/logs/train_state.json"
+  },
+  {
+   "base": "HEAL",
+   "modelo": "Qwen2-VL",
+   "seed": 2,
+   "placa": 3,
+   "horas": 1.5614999999999999,
+   "pico_GB": 5.06640625,
+   "fonte": "v7_txt/logs/train_state.json"
+  },
+  {
+   "base": "HEAL",
+   "modelo": "SmolVLM2",
+   "seed": 0,
+   "placa": 3,
+   "horas": 0.6947222222222222,
+   "pico_GB": 5.09375,
+   "fonte": "v7_txt/logs/train_state.json"
+  },
+  {
+   "base": "HEAL",
+   "modelo": "SmolVLM2",
+   "seed": 1,
+   "placa": 3,
+   "horas": 0.6528611111111111,
+   "pico_GB": 5.09375,
+   "fonte": "v7_txt/logs/train_state.json"
+  },
+  {
+   "base": "HEAL",
+   "modelo": "SmolVLM2",
+   "seed": 2,
+   "placa": 3,
+   "horas": 0.6646944444444445,
+   "pico_GB": 5.09375,
+   "fonte": "v7_txt/logs/train_state.json"
+  },
+  {
+   "base": "KVASIR",
+   "modelo": "Qwen2-VL",
+   "seed": 0,
+   "placa": 0,
+   "horas": 5.621194444444444,
+   "pico_GB": 5.126953125,
+   "fonte": "v7_txt/logs/train_state.json"
+  },
+  {
+   "base": "KVASIR",
+   "modelo": "Qwen2-VL",
+   "seed": 1,
+   "placa": 3,
+   "horas": 4.889194444444444,
+   "pico_GB": 5.244140625,
+   "fonte": "v7_txt/logs/train_state.json"
+  },
+  {
+   "base": "KVASIR",
+   "modelo": "Qwen2-VL",
+   "seed": 2,
+   "placa": 3,
+   "horas": 5.081472222222222,
+   "pico_GB": 5.263671875,
+   "fonte": "v7_txt/logs/train_state.json"
+  },
+  {
+   "base": "KVASIR",
+   "modelo": "SmolVLM2",
+   "seed": 0,
+   "placa": 0,
+   "horas": 3.312416666666667,
+   "pico_GB": 5.140625,
+   "fonte": "v7_txt/logs/train_state.json"
+  },
+  {
+   "base": "KVASIR",
+   "modelo": "SmolVLM2",
+   "seed": 1,
+   "placa": 2,
+   "horas": 2.854638888888889,
+   "pico_GB": 5.140625,
+   "fonte": "v7_txt/logs/train_state.json"
+  },
+  {
+   "base": "KVASIR",
+   "modelo": "SmolVLM2",
+   "seed": 2,
+   "placa": 2,
+   "horas": 2.824027777777778,
+   "pico_GB": 5.140625,
+   "fonte": "v7_txt/logs/train_state.json"
+  },
+  {
+   "base": "VQARAD_HF",
+   "modelo": "Qwen2-VL",
+   "seed": 0,
+   "placa": 0,
+   "horas": 0.20183333333333334,
+   "pico_GB": 5.283203125,
+   "fonte": "v7_txt/logs/train_state.json"
+  },
+  {
+   "base": "VQARAD_HF",
+   "modelo": "Qwen2-VL",
+   "seed": 1,
+   "placa": 1,
+   "horas": 0.21297222222222223,
+   "pico_GB": 5.283203125,
+   "fonte": "v7_txt/logs/train_state.json"
+  },
+  {
+   "base": "VQARAD_HF",
+   "modelo": "Qwen2-VL",
+   "seed": 2,
+   "placa": 0,
+   "horas": 0.19899999999999998,
+   "pico_GB": 5.283203125,
+   "fonte": "v7_txt/logs/train_state.json"
+  },
+  {
+   "base": "VQARAD_HF",
+   "modelo": "SmolVLM2",
+   "seed": 0,
+   "placa": 1,
+   "horas": 0.08422222222222221,
+   "pico_GB": 5.1171875,
+   "fonte": "v7_txt/logs/train_state.json"
+  },
+  {
+   "base": "VQARAD_HF",
+   "modelo": "SmolVLM2",
+   "seed": 1,
+   "placa": 1,
+   "horas": 0.08727777777777777,
+   "pico_GB": 5.119140625,
+   "fonte": "v7_txt/logs/train_state.json"
+  },
+  {
+   "base": "VQARAD_HF",
+   "modelo": "SmolVLM2",
+   "seed": 2,
+   "placa": 2,
+   "horas": 0.09208333333333334,
+   "pico_GB": 5.1171875,
+   "fonte": "v7_txt/logs/train_state.json"
+  },
+  {
+   "base": "MIMIC",
+   "modelo": "Qwen2-VL",
+   "seed": 0,
+   "placa": 3,
+   "horas": 1.6866666666666668,
+   "pico_GB": 4.98828125,
+   "fonte": "v7_mimic/logs/train_state.json"
+  },
+  {
+   "base": "MIMIC",
+   "modelo": "Qwen2-VL",
+   "seed": 1,
+   "placa": 2,
+   "horas": 1.7378888888888888,
+   "pico_GB": 5.0078125,
+   "fonte": "v7_mimic/logs/train_state.json"
+  },
+  {
+   "base": "MIMIC",
+   "modelo": "Qwen2-VL",
+   "seed": 2,
+   "placa": 1,
+   "horas": 1.6714722222222222,
+   "pico_GB": 5.0078125,
+   "fonte": "v7_mimic/logs/train_state.json"
+  },
+  {
+   "base": "MIMIC",
+   "modelo": "SmolVLM2",
+   "seed": 0,
+   "placa": 0,
+   "horas": 0.91575,
+   "pico_GB": 5.052734375,
+   "fonte": "v7_mimic/logs/train_state.json"
+  },
+  {
+   "base": "MIMIC",
+   "modelo": "SmolVLM2",
+   "seed": 1,
+   "placa": 0,
+   "horas": 0.7862222222222223,
+   "pico_GB": 5.052734375,
+   "fonte": "v7_mimic/logs/train_state.json"
+  },
+  {
+   "base": "MIMIC",
+   "modelo": "SmolVLM2",
+   "seed": 2,
+   "placa": 3,
+   "horas": 0.9110555555555556,
+   "pico_GB": 5.052734375,
+   "fonte": "v7_mimic/logs/train_state.json"
+  },
+  {
+   "base": "VQARAD_REDIV",
+   "modelo": "SmolVLM2",
+   "seed": 0,
+   "placa": 1,
+   "horas": 0.11469444444444443,
+   "pico_GB": 4.861328125,
+   "fonte": "v7_txt/article_runs/logs/train_state_vqarad_rediv.json"
+  },
+  {
+   "base": "VQARAD_REDIV",
+   "modelo": "SmolVLM2",
+   "seed": 1,
+   "placa": 1,
+   "horas": 0.101,
+   "pico_GB": 4.861328125,
+   "fonte": "v7_txt/article_runs/logs/train_state_vqarad_rediv.json"
+  },
+  {
+   "base": "VQARAD_REDIV",
+   "modelo": "SmolVLM2",
+   "seed": 2,
+   "placa": 2,
+   "horas": 0.10952777777777778,
+   "pico_GB": 5.095703125,
+   "fonte": "v7_txt/article_runs/logs/train_state_vqarad_rediv.json"
+  },
+  {
+   "base": "VQARAD_REDIV",
+   "modelo": "Qwen2-VL",
+   "seed": 0,
+   "placa": 0,
+   "horas": 0.3094166666666667,
+   "pico_GB": 5.22265625,
+   "fonte": "v7_txt/article_runs/logs/train_state_vqarad_rediv.json"
+  },
+  {
+   "base": "VQARAD_REDIV",
+   "modelo": "Qwen2-VL",
+   "seed": 1,
+   "placa": 3,
+   "horas": 0.2813055555555556,
+   "pico_GB": 5.2421875,
+   "fonte": "v7_txt/article_runs/logs/train_state_vqarad_rediv.json"
+  },
+  {
+   "base": "VQARAD_REDIV",
+   "modelo": "Qwen2-VL",
+   "seed": 2,
+   "placa": 1,
+   "horas": 0.28144444444444444,
+   "pico_GB": 5.14453125,
+   "fonte": "v7_txt/article_runs/logs/train_state_vqarad_rediv.json"
+  },
+  {
+   "base": "SLAKE",
+   "modelo": "M3AE so-texto",
+   "seed": 0,
+   "placa": 2,
+   "horas": 0.7255833333333334,
+   "pico_GB": 31.456,
+   "fonte": "v7_txt/logs/infer_state_m3ae_txt.json (pico do _cost.json, placa inteira)"
+  },
+  {
+   "base": "SLAKE",
+   "modelo": "M3AE so-texto",
+   "seed": 1,
+   "placa": 1,
+   "horas": 0.7340277777777777,
+   "pico_GB": 31.456,
+   "fonte": "v7_txt/logs/infer_state_m3ae_txt.json (pico do _cost.json, placa inteira)"
+  },
+  {
+   "base": "SLAKE",
+   "modelo": "M3AE so-texto",
+   "seed": 2,
+   "placa": 1,
+   "horas": 0.7616666666666667,
+   "pico_GB": 31.452,
+   "fonte": "v7_txt/logs/infer_state_m3ae_txt.json (pico do _cost.json, placa inteira)"
+  },
+  {
+   "base": "HEAL",
+   "modelo": "M3AE so-texto",
+   "seed": 0,
+   "placa": 1,
+   "horas": 1.8443055555555556,
+   "pico_GB": 31.47,
+   "fonte": "v7_txt/logs/infer_state_m3ae_txt.json (pico do _cost.json, placa inteira)"
+  },
+  {
+   "base": "HEAL",
+   "modelo": "M3AE so-texto",
+   "seed": 1,
+   "placa": 3,
+   "horas": 2.1035833333333334,
+   "pico_GB": 31.467,
+   "fonte": "v7_txt/logs/infer_state_m3ae_txt.json (pico do _cost.json, placa inteira)"
+  },
+  {
+   "base": "HEAL",
+   "modelo": "M3AE so-texto",
+   "seed": 2,
+   "placa": 1,
+   "horas": 1.5789166666666667,
+   "pico_GB": 31.432,
+   "fonte": "v7_txt/logs/infer_state_m3ae_txt.json (pico do _cost.json, placa inteira)"
+  },
+  {
+   "base": "KVASIR",
+   "modelo": "M3AE so-texto",
+   "seed": 0,
+   "placa": 0,
+   "horas": 4.652222222222222,
+   "pico_GB": 31.471,
+   "fonte": "v7_txt/logs/infer_state_m3ae_txt.json (pico do _cost.json, placa inteira)"
+  },
+  {
+   "base": "KVASIR",
+   "modelo": "M3AE so-texto",
+   "seed": 1,
+   "placa": 2,
+   "horas": 4.81125,
+   "pico_GB": 31.471,
+   "fonte": "v7_txt/logs/infer_state_m3ae_txt.json (pico do _cost.json, placa inteira)"
+  },
+  {
+   "base": "KVASIR",
+   "modelo": "M3AE so-texto",
+   "seed": 2,
+   "placa": 3,
+   "horas": 5.294361111111112,
+   "pico_GB": 31.471,
+   "fonte": "v7_txt/logs/infer_state_m3ae_txt.json (pico do _cost.json, placa inteira)"
+  },
+  {
+   "base": "VQARAD_HF",
+   "modelo": "M3AE so-texto",
+   "seed": 0,
+   "placa": 3,
+   "horas": 1.5692777777777778,
+   "pico_GB": 25.775390625,
+   "fonte": "v7_txt/logs/infer_state_m3ae_txt.json"
+  },
+  {
+   "base": "VQARAD_HF",
+   "modelo": "M3AE so-texto",
+   "seed": 1,
+   "placa": 2,
+   "horas": 1.0770555555555557,
+   "pico_GB": 25.775390625,
+   "fonte": "v7_txt/logs/infer_state_m3ae_txt.json"
+  },
+  {
+   "base": "VQARAD_HF",
+   "modelo": "M3AE so-texto",
+   "seed": 2,
+   "placa": 1,
+   "horas": 1.0817222222222223,
+   "pico_GB": 25.767578125,
+   "fonte": "v7_txt/logs/infer_state_m3ae_txt.json"
+  },
+  {
+   "base": "MIMIC",
+   "modelo": "M3AE so-texto",
+   "seed": 0,
+   "placa": 3,
+   "horas": 2.392388888888889,
+   "pico_GB": 25.751953125,
+   "fonte": "v7_mimic/logs/infer_state_m3ae_mimic.json"
+  },
+  {
+   "base": "MIMIC",
+   "modelo": "M3AE so-texto",
+   "seed": 1,
+   "placa": 0,
+   "horas": 1.6043888888888889,
+   "pico_GB": 25.763671875,
+   "fonte": "v7_mimic/logs/infer_state_m3ae_mimic.json"
+  },
+  {
+   "base": "MIMIC",
+   "modelo": "M3AE so-texto",
+   "seed": 2,
+   "placa": 2,
+   "horas": 1.6294166666666665,
+   "pico_GB": 25.75,
+   "fonte": "v7_mimic/logs/infer_state_m3ae_mimic.json"
+  },
+  {
+   "base": "VQARAD_REDIV",
+   "modelo": "M3AE so-texto",
+   "seed": 0,
+   "placa": 1,
+   "horas": 1.9441388888888889,
+   "pico_GB": 25.759765625,
+   "fonte": "v7_txt/article_runs/logs/infer_state_m3ae_rediv.json"
+  },
+  {
+   "base": "VQARAD_REDIV",
+   "modelo": "M3AE so-texto",
+   "seed": 1,
+   "placa": 1,
+   "horas": 1.790638888888889,
+   "pico_GB": 25.783203125,
+   "fonte": "v7_txt/article_runs/logs/infer_state_m3ae_rediv.json"
+  },
+  {
+   "base": "VQARAD_REDIV",
+   "modelo": "M3AE so-texto",
+   "seed": 2,
+   "placa": 2,
+   "horas": 1.388861111111111,
+   "pico_GB": 25.779296875,
+   "fonte": "v7_txt/article_runs/logs/infer_state_m3ae_rediv.json"
+  },
+  {
+   "base": "KVASIR",
+   "modelo": "PubMedBERT",
+   "seed": 0,
+   "placa": 0,
+   "horas": 0.5413888888888889,
+   "pico_GB": 3.755859375,
+   "fonte": "v7_txt/article_runs/logs/infer_state_bert.json"
+  },
+  {
+   "base": "KVASIR",
+   "modelo": "PubMedBERT",
+   "seed": 1,
+   "placa": 2,
+   "horas": 0.40738888888888886,
+   "pico_GB": 3.755859375,
+   "fonte": "v7_txt/article_runs/logs/infer_state_bert.json"
+  },
+  {
+   "base": "KVASIR",
+   "modelo": "PubMedBERT",
+   "seed": 2,
+   "placa": 0,
+   "horas": 0.5483055555555556,
+   "pico_GB": 3.755859375,
+   "fonte": "v7_txt/article_runs/logs/infer_state_bert.json"
+  },
+  {
+   "base": "SLAKE",
+   "modelo": "PubMedBERT",
+   "seed": 0,
+   "placa": 2,
+   "horas": 0.03905555555555555,
+   "pico_GB": 3.59765625,
+   "fonte": "v7_txt/article_runs/logs/infer_state_bert.json"
+  },
+  {
+   "base": "SLAKE",
+   "modelo": "PubMedBERT",
+   "seed": 1,
+   "placa": 1,
+   "horas": 0.039,
+   "pico_GB": 3.59765625,
+   "fonte": "v7_txt/article_runs/logs/infer_state_bert.json"
+  },
+  {
+   "base": "SLAKE",
+   "modelo": "PubMedBERT",
+   "seed": 2,
+   "placa": 1,
+   "horas": 0.03827777777777778,
+   "pico_GB": 3.59765625,
+   "fonte": "v7_txt/article_runs/logs/infer_state_bert.json"
+  },
+  {
+   "base": "HEAL",
+   "modelo": "PubMedBERT",
+   "seed": 0,
+   "placa": 2,
+   "horas": 0.06530555555555555,
+   "pico_GB": 3.22265625,
+   "fonte": "v7_txt/article_runs/logs/infer_state_bert.json"
+  },
+  {
+   "base": "HEAL",
+   "modelo": "PubMedBERT",
+   "seed": 1,
+   "placa": 1,
+   "horas": 0.05091666666666667,
+   "pico_GB": 3.22265625,
+   "fonte": "v7_txt/article_runs/logs/infer_state_bert.json"
+  },
+  {
+   "base": "HEAL",
+   "modelo": "PubMedBERT",
+   "seed": 2,
+   "placa": 1,
+   "horas": 0.07141666666666667,
+   "pico_GB": 3.22265625,
+   "fonte": "v7_txt/article_runs/logs/infer_state_bert.json"
+  },
+  {
+   "base": "MIMIC",
+   "modelo": "PubMedBERT",
+   "seed": 0,
+   "placa": 2,
+   "horas": 0.13774999999999998,
+   "pico_GB": 3.59765625,
+   "fonte": "v7_txt/article_runs/logs/infer_state_bert.json"
+  },
+  {
+   "base": "MIMIC",
+   "modelo": "PubMedBERT",
+   "seed": 1,
+   "placa": 1,
+   "horas": 0.12788888888888889,
+   "pico_GB": 3.59765625,
+   "fonte": "v7_txt/article_runs/logs/infer_state_bert.json"
+  },
+  {
+   "base": "MIMIC",
+   "modelo": "PubMedBERT",
+   "seed": 2,
+   "placa": 2,
+   "horas": 0.13602777777777778,
+   "pico_GB": 3.59765625,
+   "fonte": "v7_txt/article_runs/logs/infer_state_bert.json"
+  },
+  {
+   "base": "VQARAD",
+   "modelo": "PubMedBERT",
+   "seed": 0,
+   "placa": 0,
+   "horas": 0.043611111111111114,
+   "pico_GB": 3.498046875,
+   "fonte": "v7_txt/article_runs/logs/infer_state_bert.json"
+  },
+  {
+   "base": "VQARAD",
+   "modelo": "PubMedBERT",
+   "seed": 1,
+   "placa": 2,
+   "horas": 0.05908333333333333,
+   "pico_GB": 3.873046875,
+   "fonte": "v7_txt/article_runs/logs/infer_state_bert.json"
+  },
+  {
+   "base": "VQARAD",
+   "modelo": "PubMedBERT",
+   "seed": 2,
+   "placa": 1,
+   "horas": 0.04216666666666667,
+   "pico_GB": 3.498046875,
+   "fonte": "v7_txt/article_runs/logs/infer_state_bert.json"
+  },
+  {
+   "base": "VQARAD_REDIV",
+   "modelo": "PubMedBERT",
+   "seed": 0,
+   "placa": 0,
+   "horas": 0.03930555555555556,
+   "pico_GB": 3.52734375,
+   "fonte": "v7_txt/article_runs/logs/infer_state_bert_rediv.json"
+  },
+  {
+   "base": "VQARAD_REDIV",
+   "modelo": "PubMedBERT",
+   "seed": 1,
+   "placa": 3,
+   "horas": 0.03088888888888889,
+   "pico_GB": 3.52734375,
+   "fonte": "v7_txt/article_runs/logs/infer_state_bert_rediv.json"
+  },
+  {
+   "base": "VQARAD_REDIV",
+   "modelo": "PubMedBERT",
+   "seed": 2,
+   "placa": 1,
+   "horas": 0.03347222222222222,
+   "pico_GB": 3.52734375,
+   "fonte": "v7_txt/article_runs/logs/infer_state_bert_rediv.json"
+  }
+ ]
+}

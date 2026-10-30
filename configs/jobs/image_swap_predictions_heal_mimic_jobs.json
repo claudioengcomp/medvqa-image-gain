@@ -1,0 +1,614 @@
+[
+ {
+  "name": "QWEN2VL_LORA_VT_HEAL_seed0_C2v2",
+  "env": "circle",
+  "reserve_mib": 6144,
+  "env_extra": {
+   "HF_HUB_OFFLINE": "1"
+  },
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/results/QWEN2VL_LORA_VT_HEAL_seed0_C2v2.json",
+  "skip_order": true,
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/logs/troca2/QWEN2VL_LORA_VT_HEAL_seed0_C2v2.log",
+  "cmd": [
+   "-m",
+   "harness.extract_predictions_circle",
+   "--model",
+   "QWEN2VL",
+   "--peft",
+   "LORA_VT",
+   "--dataset",
+   "HEAL",
+   "--condition",
+   "C2",
+   "--condition-arrow",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/data/troca2/heal/vqa_heal_test_c2v2.arrow",
+   "--adapter-dir",
+   "${MEDVQA_ROOT}/v6_tower_heal/models/qwen2vl_lora_vt_heal_seed0",
+   "--batch-size",
+   "4",
+   "--progress-checkpoint",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/.progress/QWEN2VL_LORA_VT_HEAL_seed0_C2v2.jsonl",
+   "--output",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/QWEN2VL_LORA_VT_HEAL_seed0_C2v2.json"
+  ],
+  "meta": {
+   "line": "QWEN2VL_LORA_VT_HEAL_seed0",
+   "condition": "C2 (troca refeita, image_swap_v2)",
+   "base_model": "Qwen/Qwen2-VL-2B-Instruct",
+   "adapter_dir": "${MEDVQA_ROOT}/v6_tower_heal/models/qwen2vl_lora_vt_heal_seed0",
+   "input_arrow": "${MEDVQA_ROOT}/v7_txt/article_runs/data/troca2/heal/vqa_heal_test_c2v2.arrow",
+   "input_arrow_sha256_expected": "2c69a86b1a2dd41449ed6bef926d7f5c5d1b6c2eca32c1174f0f8d99b7ad7b1c",
+   "dtype": "bf16 (med_vlm/models/loader.py)"
+  }
+ },
+ {
+  "name": "QWEN2VL_LORA_VT_HEAL_seed1_C2v2",
+  "env": "circle",
+  "reserve_mib": 6144,
+  "env_extra": {
+   "HF_HUB_OFFLINE": "1"
+  },
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/results/QWEN2VL_LORA_VT_HEAL_seed1_C2v2.json",
+  "skip_order": true,
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/logs/troca2/QWEN2VL_LORA_VT_HEAL_seed1_C2v2.log",
+  "cmd": [
+   "-m",
+   "harness.extract_predictions_circle",
+   "--model",
+   "QWEN2VL",
+   "--peft",
+   "LORA_VT",
+   "--dataset",
+   "HEAL",
+   "--condition",
+   "C2",
+   "--condition-arrow",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/data/troca2/heal/vqa_heal_test_c2v2.arrow",
+   "--adapter-dir",
+   "${MEDVQA_ROOT}/v6_tower_heal/models/qwen2vl_lora_vt_heal_seed1",
+   "--batch-size",
+   "4",
+   "--progress-checkpoint",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/.progress/QWEN2VL_LORA_VT_HEAL_seed1_C2v2.jsonl",
+   "--output",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/QWEN2VL_LORA_VT_HEAL_seed1_C2v2.json"
+  ],
+  "meta": {
+   "line": "QWEN2VL_LORA_VT_HEAL_seed1",
+   "condition": "C2 (troca refeita, image_swap_v2)",
+   "base_model": "Qwen/Qwen2-VL-2B-Instruct",
+   "adapter_dir": "${MEDVQA_ROOT}/v6_tower_heal/models/qwen2vl_lora_vt_heal_seed1",
+   "input_arrow": "${MEDVQA_ROOT}/v7_txt/article_runs/data/troca2/heal/vqa_heal_test_c2v2.arrow",
+   "input_arrow_sha256_expected": "2c69a86b1a2dd41449ed6bef926d7f5c5d1b6c2eca32c1174f0f8d99b7ad7b1c",
+   "dtype": "bf16 (med_vlm/models/loader.py)"
+  }
+ },
+ {
+  "name": "QWEN2VL_LORA_VT_HEAL_seed2_C2v2",
+  "env": "circle",
+  "reserve_mib": 6144,
+  "env_extra": {
+   "HF_HUB_OFFLINE": "1"
+  },
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/results/QWEN2VL_LORA_VT_HEAL_seed2_C2v2.json",
+  "skip_order": true,
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/logs/troca2/QWEN2VL_LORA_VT_HEAL_seed2_C2v2.log",
+  "cmd": [
+   "-m",
+   "harness.extract_predictions_circle",
+   "--model",
+   "QWEN2VL",
+   "--peft",
+   "LORA_VT",
+   "--dataset",
+   "HEAL",
+   "--condition",
+   "C2",
+   "--condition-arrow",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/data/troca2/heal/vqa_heal_test_c2v2.arrow",
+   "--adapter-dir",
+   "${MEDVQA_ROOT}/v6_tower_heal/models/qwen2vl_lora_vt_heal_seed2",
+   "--batch-size",
+   "4",
+   "--progress-checkpoint",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/.progress/QWEN2VL_LORA_VT_HEAL_seed2_C2v2.jsonl",
+   "--output",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/QWEN2VL_LORA_VT_HEAL_seed2_C2v2.json"
+  ],
+  "meta": {
+   "line": "QWEN2VL_LORA_VT_HEAL_seed2",
+   "condition": "C2 (troca refeita, image_swap_v2)",
+   "base_model": "Qwen/Qwen2-VL-2B-Instruct",
+   "adapter_dir": "${MEDVQA_ROOT}/v6_tower_heal/models/qwen2vl_lora_vt_heal_seed2",
+   "input_arrow": "${MEDVQA_ROOT}/v7_txt/article_runs/data/troca2/heal/vqa_heal_test_c2v2.arrow",
+   "input_arrow_sha256_expected": "2c69a86b1a2dd41449ed6bef926d7f5c5d1b6c2eca32c1174f0f8d99b7ad7b1c",
+   "dtype": "bf16 (med_vlm/models/loader.py)"
+  }
+ },
+ {
+  "name": "SMOLVLM_LORA_HEAL_seed0_C2v2",
+  "env": "circle",
+  "reserve_mib": 6144,
+  "env_extra": {
+   "HF_HUB_OFFLINE": "1"
+  },
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/results/SMOLVLM_LORA_HEAL_seed0_C2v2.json",
+  "skip_order": true,
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/logs/troca2/SMOLVLM_LORA_HEAL_seed0_C2v2.log",
+  "cmd": [
+   "-m",
+   "harness.extract_predictions_circle",
+   "--model",
+   "SMOLVLM",
+   "--peft",
+   "LORA",
+   "--dataset",
+   "HEAL",
+   "--condition",
+   "C2",
+   "--condition-arrow",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/data/troca2/heal/vqa_heal_test_c2v2.arrow",
+   "--adapter-dir",
+   "${MEDVQA_ROOT}/doutorado/medvqa-occlusion-study/outputs/models/smolvlm2_lora_heal_seed0",
+   "--batch-size",
+   "4",
+   "--progress-checkpoint",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/.progress/SMOLVLM_LORA_HEAL_seed0_C2v2.jsonl",
+   "--output",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/SMOLVLM_LORA_HEAL_seed0_C2v2.json"
+  ],
+  "meta": {
+   "line": "SMOLVLM_LORA_HEAL_seed0",
+   "condition": "C2 (troca refeita, image_swap_v2)",
+   "base_model": "HuggingFaceTB/SmolVLM2-2.2B-Instruct",
+   "adapter_dir": "${MEDVQA_ROOT}/doutorado/medvqa-occlusion-study/outputs/models/smolvlm2_lora_heal_seed0",
+   "input_arrow": "${MEDVQA_ROOT}/v7_txt/article_runs/data/troca2/heal/vqa_heal_test_c2v2.arrow",
+   "input_arrow_sha256_expected": "2c69a86b1a2dd41449ed6bef926d7f5c5d1b6c2eca32c1174f0f8d99b7ad7b1c",
+   "dtype": "bf16 (med_vlm/models/loader.py)"
+  }
+ },
+ {
+  "name": "SMOLVLM_LORA_HEAL_seed1_C2v2",
+  "env": "circle",
+  "reserve_mib": 6144,
+  "env_extra": {
+   "HF_HUB_OFFLINE": "1"
+  },
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/results/SMOLVLM_LORA_HEAL_seed1_C2v2.json",
+  "skip_order": true,
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/logs/troca2/SMOLVLM_LORA_HEAL_seed1_C2v2.log",
+  "cmd": [
+   "-m",
+   "harness.extract_predictions_circle",
+   "--model",
+   "SMOLVLM",
+   "--peft",
+   "LORA",
+   "--dataset",
+   "HEAL",
+   "--condition",
+   "C2",
+   "--condition-arrow",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/data/troca2/heal/vqa_heal_test_c2v2.arrow",
+   "--adapter-dir",
+   "${MEDVQA_ROOT}/doutorado/medvqa-occlusion-study/outputs/models/smolvlm2_lora_heal_seed1",
+   "--batch-size",
+   "4",
+   "--progress-checkpoint",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/.progress/SMOLVLM_LORA_HEAL_seed1_C2v2.jsonl",
+   "--output",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/SMOLVLM_LORA_HEAL_seed1_C2v2.json"
+  ],
+  "meta": {
+   "line": "SMOLVLM_LORA_HEAL_seed1",
+   "condition": "C2 (troca refeita, image_swap_v2)",
+   "base_model": "HuggingFaceTB/SmolVLM2-2.2B-Instruct",
+   "adapter_dir": "${MEDVQA_ROOT}/doutorado/medvqa-occlusion-study/outputs/models/smolvlm2_lora_heal_seed1",
+   "input_arrow": "${MEDVQA_ROOT}/v7_txt/article_runs/data/troca2/heal/vqa_heal_test_c2v2.arrow",
+   "input_arrow_sha256_expected": "2c69a86b1a2dd41449ed6bef926d7f5c5d1b6c2eca32c1174f0f8d99b7ad7b1c",
+   "dtype": "bf16 (med_vlm/models/loader.py)"
+  }
+ },
+ {
+  "name": "SMOLVLM_LORA_HEAL_seed2_C2v2",
+  "env": "circle",
+  "reserve_mib": 6144,
+  "env_extra": {
+   "HF_HUB_OFFLINE": "1"
+  },
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/results/SMOLVLM_LORA_HEAL_seed2_C2v2.json",
+  "skip_order": true,
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/logs/troca2/SMOLVLM_LORA_HEAL_seed2_C2v2.log",
+  "cmd": [
+   "-m",
+   "harness.extract_predictions_circle",
+   "--model",
+   "SMOLVLM",
+   "--peft",
+   "LORA",
+   "--dataset",
+   "HEAL",
+   "--condition",
+   "C2",
+   "--condition-arrow",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/data/troca2/heal/vqa_heal_test_c2v2.arrow",
+   "--adapter-dir",
+   "${MEDVQA_ROOT}/doutorado/medvqa-occlusion-study/outputs/models/smolvlm2_lora_heal_seed2",
+   "--batch-size",
+   "4",
+   "--progress-checkpoint",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/.progress/SMOLVLM_LORA_HEAL_seed2_C2v2.jsonl",
+   "--output",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/SMOLVLM_LORA_HEAL_seed2_C2v2.json"
+  ],
+  "meta": {
+   "line": "SMOLVLM_LORA_HEAL_seed2",
+   "condition": "C2 (troca refeita, image_swap_v2)",
+   "base_model": "HuggingFaceTB/SmolVLM2-2.2B-Instruct",
+   "adapter_dir": "${MEDVQA_ROOT}/doutorado/medvqa-occlusion-study/outputs/models/smolvlm2_lora_heal_seed2",
+   "input_arrow": "${MEDVQA_ROOT}/v7_txt/article_runs/data/troca2/heal/vqa_heal_test_c2v2.arrow",
+   "input_arrow_sha256_expected": "2c69a86b1a2dd41449ed6bef926d7f5c5d1b6c2eca32c1174f0f8d99b7ad7b1c",
+   "dtype": "bf16 (med_vlm/models/loader.py)"
+  }
+ },
+ {
+  "name": "M3AE_HEAL_seed0_C2v2",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/results/M3AE_HEAL_seed0_C2v2.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/logs/troca2/M3AE_HEAL_seed0_C2v2.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "skip_order": true,
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_cond_article_runs.py",
+   "heal",
+   "0",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/data/troca2/heal/vqa_heal_test_c2v2.arrow",
+   "2c69a86b1a2dd41449ed6bef926d7f5c5d1b6c2eca32c1174f0f8d99b7ad7b1c",
+   "C2v2",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/M3AE_HEAL_seed0_C2v2.json"
+  ]
+ },
+ {
+  "name": "M3AE_HEAL_seed1_C2v2",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/results/M3AE_HEAL_seed1_C2v2.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/logs/troca2/M3AE_HEAL_seed1_C2v2.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "skip_order": true,
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_cond_article_runs.py",
+   "heal",
+   "1",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/data/troca2/heal/vqa_heal_test_c2v2.arrow",
+   "2c69a86b1a2dd41449ed6bef926d7f5c5d1b6c2eca32c1174f0f8d99b7ad7b1c",
+   "C2v2",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/M3AE_HEAL_seed1_C2v2.json"
+  ]
+ },
+ {
+  "name": "M3AE_HEAL_seed2_C2v2",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/results/M3AE_HEAL_seed2_C2v2.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/logs/troca2/M3AE_HEAL_seed2_C2v2.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "skip_order": true,
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_cond_article_runs.py",
+   "heal",
+   "2",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/data/troca2/heal/vqa_heal_test_c2v2.arrow",
+   "2c69a86b1a2dd41449ed6bef926d7f5c5d1b6c2eca32c1174f0f8d99b7ad7b1c",
+   "C2v2",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/M3AE_HEAL_seed2_C2v2.json"
+  ]
+ },
+ {
+  "name": "QWEN2VL_LORA_VT_MIMIC_seed0_C2v2",
+  "env": "circle",
+  "reserve_mib": 6144,
+  "env_extra": {
+   "HF_HUB_OFFLINE": "1"
+  },
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/results/QWEN2VL_LORA_VT_MIMIC_seed0_C2v2.json",
+  "skip_order": true,
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/logs/troca2/QWEN2VL_LORA_VT_MIMIC_seed0_C2v2.log",
+  "cmd": [
+   "-m",
+   "harness.extract_predictions_circle",
+   "--model",
+   "QWEN2VL",
+   "--peft",
+   "LORA_VT",
+   "--dataset",
+   "MIMIC",
+   "--condition",
+   "C2",
+   "--condition-arrow",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/data/troca2/mimic/vqa_mimic_test_c2v2.arrow",
+   "--adapter-dir",
+   "${MEDVQA_ROOT}/v7_mimic/models/qwen2vl_lora_vt_mimic_seed0",
+   "--batch-size",
+   "4",
+   "--progress-checkpoint",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/.progress/QWEN2VL_LORA_VT_MIMIC_seed0_C2v2.jsonl",
+   "--output",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/QWEN2VL_LORA_VT_MIMIC_seed0_C2v2.json"
+  ],
+  "meta": {
+   "line": "QWEN2VL_LORA_VT_MIMIC_seed0",
+   "condition": "C2 (troca refeita, image_swap_v2)",
+   "base_model": "Qwen/Qwen2-VL-2B-Instruct",
+   "adapter_dir": "${MEDVQA_ROOT}/v7_mimic/models/qwen2vl_lora_vt_mimic_seed0",
+   "input_arrow": "${MEDVQA_ROOT}/v7_txt/article_runs/data/troca2/mimic/vqa_mimic_test_c2v2.arrow",
+   "input_arrow_sha256_expected": "b8cbd461d1609a9aafb4fba9e857718b6d8d597d77e63fbf4bcbf350df4baff5",
+   "dtype": "bf16 (med_vlm/models/loader.py)"
+  }
+ },
+ {
+  "name": "QWEN2VL_LORA_VT_MIMIC_seed1_C2v2",
+  "env": "circle",
+  "reserve_mib": 6144,
+  "env_extra": {
+   "HF_HUB_OFFLINE": "1"
+  },
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/results/QWEN2VL_LORA_VT_MIMIC_seed1_C2v2.json",
+  "skip_order": true,
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/logs/troca2/QWEN2VL_LORA_VT_MIMIC_seed1_C2v2.log",
+  "cmd": [
+   "-m",
+   "harness.extract_predictions_circle",
+   "--model",
+   "QWEN2VL",
+   "--peft",
+   "LORA_VT",
+   "--dataset",
+   "MIMIC",
+   "--condition",
+   "C2",
+   "--condition-arrow",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/data/troca2/mimic/vqa_mimic_test_c2v2.arrow",
+   "--adapter-dir",
+   "${MEDVQA_ROOT}/v7_mimic/models/qwen2vl_lora_vt_mimic_seed1",
+   "--batch-size",
+   "4",
+   "--progress-checkpoint",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/.progress/QWEN2VL_LORA_VT_MIMIC_seed1_C2v2.jsonl",
+   "--output",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/QWEN2VL_LORA_VT_MIMIC_seed1_C2v2.json"
+  ],
+  "meta": {
+   "line": "QWEN2VL_LORA_VT_MIMIC_seed1",
+   "condition": "C2 (troca refeita, image_swap_v2)",
+   "base_model": "Qwen/Qwen2-VL-2B-Instruct",
+   "adapter_dir": "${MEDVQA_ROOT}/v7_mimic/models/qwen2vl_lora_vt_mimic_seed1",
+   "input_arrow": "${MEDVQA_ROOT}/v7_txt/article_runs/data/troca2/mimic/vqa_mimic_test_c2v2.arrow",
+   "input_arrow_sha256_expected": "b8cbd461d1609a9aafb4fba9e857718b6d8d597d77e63fbf4bcbf350df4baff5",
+   "dtype": "bf16 (med_vlm/models/loader.py)"
+  }
+ },
+ {
+  "name": "QWEN2VL_LORA_VT_MIMIC_seed2_C2v2",
+  "env": "circle",
+  "reserve_mib": 6144,
+  "env_extra": {
+   "HF_HUB_OFFLINE": "1"
+  },
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/results/QWEN2VL_LORA_VT_MIMIC_seed2_C2v2.json",
+  "skip_order": true,
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/logs/troca2/QWEN2VL_LORA_VT_MIMIC_seed2_C2v2.log",
+  "cmd": [
+   "-m",
+   "harness.extract_predictions_circle",
+   "--model",
+   "QWEN2VL",
+   "--peft",
+   "LORA_VT",
+   "--dataset",
+   "MIMIC",
+   "--condition",
+   "C2",
+   "--condition-arrow",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/data/troca2/mimic/vqa_mimic_test_c2v2.arrow",
+   "--adapter-dir",
+   "${MEDVQA_ROOT}/v7_mimic/models/qwen2vl_lora_vt_mimic_seed2",
+   "--batch-size",
+   "4",
+   "--progress-checkpoint",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/.progress/QWEN2VL_LORA_VT_MIMIC_seed2_C2v2.jsonl",
+   "--output",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/QWEN2VL_LORA_VT_MIMIC_seed2_C2v2.json"
+  ],
+  "meta": {
+   "line": "QWEN2VL_LORA_VT_MIMIC_seed2",
+   "condition": "C2 (troca refeita, image_swap_v2)",
+   "base_model": "Qwen/Qwen2-VL-2B-Instruct",
+   "adapter_dir": "${MEDVQA_ROOT}/v7_mimic/models/qwen2vl_lora_vt_mimic_seed2",
+   "input_arrow": "${MEDVQA_ROOT}/v7_txt/article_runs/data/troca2/mimic/vqa_mimic_test_c2v2.arrow",
+   "input_arrow_sha256_expected": "b8cbd461d1609a9aafb4fba9e857718b6d8d597d77e63fbf4bcbf350df4baff5",
+   "dtype": "bf16 (med_vlm/models/loader.py)"
+  }
+ },
+ {
+  "name": "SMOLVLM_LORA_MIMIC_seed0_C2v2",
+  "env": "circle",
+  "reserve_mib": 6144,
+  "env_extra": {
+   "HF_HUB_OFFLINE": "1"
+  },
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/results/SMOLVLM_LORA_MIMIC_seed0_C2v2.json",
+  "skip_order": true,
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/logs/troca2/SMOLVLM_LORA_MIMIC_seed0_C2v2.log",
+  "cmd": [
+   "-m",
+   "harness.extract_predictions_circle",
+   "--model",
+   "SMOLVLM",
+   "--peft",
+   "LORA",
+   "--dataset",
+   "MIMIC",
+   "--condition",
+   "C2",
+   "--condition-arrow",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/data/troca2/mimic/vqa_mimic_test_c2v2.arrow",
+   "--adapter-dir",
+   "${MEDVQA_ROOT}/v7_mimic/models/smolvlm2_lora_mimic_seed0",
+   "--batch-size",
+   "4",
+   "--progress-checkpoint",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/.progress/SMOLVLM_LORA_MIMIC_seed0_C2v2.jsonl",
+   "--output",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/SMOLVLM_LORA_MIMIC_seed0_C2v2.json"
+  ],
+  "meta": {
+   "line": "SMOLVLM_LORA_MIMIC_seed0",
+   "condition": "C2 (troca refeita, image_swap_v2)",
+   "base_model": "HuggingFaceTB/SmolVLM2-2.2B-Instruct",
+   "adapter_dir": "${MEDVQA_ROOT}/v7_mimic/models/smolvlm2_lora_mimic_seed0",
+   "input_arrow": "${MEDVQA_ROOT}/v7_txt/article_runs/data/troca2/mimic/vqa_mimic_test_c2v2.arrow",
+   "input_arrow_sha256_expected": "b8cbd461d1609a9aafb4fba9e857718b6d8d597d77e63fbf4bcbf350df4baff5",
+   "dtype": "bf16 (med_vlm/models/loader.py)"
+  }
+ },
+ {
+  "name": "SMOLVLM_LORA_MIMIC_seed1_C2v2",
+  "env": "circle",
+  "reserve_mib": 6144,
+  "env_extra": {
+   "HF_HUB_OFFLINE": "1"
+  },
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/results/SMOLVLM_LORA_MIMIC_seed1_C2v2.json",
+  "skip_order": true,
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/logs/troca2/SMOLVLM_LORA_MIMIC_seed1_C2v2.log",
+  "cmd": [
+   "-m",
+   "harness.extract_predictions_circle",
+   "--model",
+   "SMOLVLM",
+   "--peft",
+   "LORA",
+   "--dataset",
+   "MIMIC",
+   "--condition",
+   "C2",
+   "--condition-arrow",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/data/troca2/mimic/vqa_mimic_test_c2v2.arrow",
+   "--adapter-dir",
+   "${MEDVQA_ROOT}/v7_mimic/models/smolvlm2_lora_mimic_seed1",
+   "--batch-size",
+   "4",
+   "--progress-checkpoint",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/.progress/SMOLVLM_LORA_MIMIC_seed1_C2v2.jsonl",
+   "--output",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/SMOLVLM_LORA_MIMIC_seed1_C2v2.json"
+  ],
+  "meta": {
+   "line": "SMOLVLM_LORA_MIMIC_seed1",
+   "condition": "C2 (troca refeita, image_swap_v2)",
+   "base_model": "HuggingFaceTB/SmolVLM2-2.2B-Instruct",
+   "adapter_dir": "${MEDVQA_ROOT}/v7_mimic/models/smolvlm2_lora_mimic_seed1",
+   "input_arrow": "${MEDVQA_ROOT}/v7_txt/article_runs/data/troca2/mimic/vqa_mimic_test_c2v2.arrow",
+   "input_arrow_sha256_expected": "b8cbd461d1609a9aafb4fba9e857718b6d8d597d77e63fbf4bcbf350df4baff5",
+   "dtype": "bf16 (med_vlm/models/loader.py)"
+  }
+ },
+ {
+  "name": "SMOLVLM_LORA_MIMIC_seed2_C2v2",
+  "env": "circle",
+  "reserve_mib": 6144,
+  "env_extra": {
+   "HF_HUB_OFFLINE": "1"
+  },
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/results/SMOLVLM_LORA_MIMIC_seed2_C2v2.json",
+  "skip_order": true,
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/logs/troca2/SMOLVLM_LORA_MIMIC_seed2_C2v2.log",
+  "cmd": [
+   "-m",
+   "harness.extract_predictions_circle",
+   "--model",
+   "SMOLVLM",
+   "--peft",
+   "LORA",
+   "--dataset",
+   "MIMIC",
+   "--condition",
+   "C2",
+   "--condition-arrow",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/data/troca2/mimic/vqa_mimic_test_c2v2.arrow",
+   "--adapter-dir",
+   "${MEDVQA_ROOT}/v7_mimic/models/smolvlm2_lora_mimic_seed2",
+   "--batch-size",
+   "4",
+   "--progress-checkpoint",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/.progress/SMOLVLM_LORA_MIMIC_seed2_C2v2.jsonl",
+   "--output",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/SMOLVLM_LORA_MIMIC_seed2_C2v2.json"
+  ],
+  "meta": {
+   "line": "SMOLVLM_LORA_MIMIC_seed2",
+   "condition": "C2 (troca refeita, image_swap_v2)",
+   "base_model": "HuggingFaceTB/SmolVLM2-2.2B-Instruct",
+   "adapter_dir": "${MEDVQA_ROOT}/v7_mimic/models/smolvlm2_lora_mimic_seed2",
+   "input_arrow": "${MEDVQA_ROOT}/v7_txt/article_runs/data/troca2/mimic/vqa_mimic_test_c2v2.arrow",
+   "input_arrow_sha256_expected": "b8cbd461d1609a9aafb4fba9e857718b6d8d597d77e63fbf4bcbf350df4baff5",
+   "dtype": "bf16 (med_vlm/models/loader.py)"
+  }
+ },
+ {
+  "name": "M3AE_MIMIC_seed0_C2v2",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/results/M3AE_MIMIC_seed0_C2v2.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/logs/troca2/M3AE_MIMIC_seed0_C2v2.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "skip_order": true,
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_cond_article_runs.py",
+   "mimic",
+   "0",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/data/troca2/mimic/vqa_mimic_test_c2v2.arrow",
+   "b8cbd461d1609a9aafb4fba9e857718b6d8d597d77e63fbf4bcbf350df4baff5",
+   "C2v2",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/M3AE_MIMIC_seed0_C2v2.json"
+  ]
+ },
+ {
+  "name": "M3AE_MIMIC_seed1_C2v2",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/results/M3AE_MIMIC_seed1_C2v2.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/logs/troca2/M3AE_MIMIC_seed1_C2v2.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "skip_order": true,
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_cond_article_runs.py",
+   "mimic",
+   "1",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/data/troca2/mimic/vqa_mimic_test_c2v2.arrow",
+   "b8cbd461d1609a9aafb4fba9e857718b6d8d597d77e63fbf4bcbf350df4baff5",
+   "C2v2",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/M3AE_MIMIC_seed1_C2v2.json"
+  ]
+ },
+ {
+  "name": "M3AE_MIMIC_seed2_C2v2",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/results/M3AE_MIMIC_seed2_C2v2.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/logs/troca2/M3AE_MIMIC_seed2_C2v2.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "skip_order": true,
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_cond_article_runs.py",
+   "mimic",
+   "2",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/data/troca2/mimic/vqa_mimic_test_c2v2.arrow",
+   "b8cbd461d1609a9aafb4fba9e857718b6d8d597d77e63fbf4bcbf350df4baff5",
+   "C2v2",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/M3AE_MIMIC_seed2_C2v2.json"
+  ]
+ }
+]

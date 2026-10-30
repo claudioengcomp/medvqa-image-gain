@@ -1,0 +1,51 @@
+# v7_txt (2026-10-09): braco so-texto -- copia do YAML da linha congelada publicada
+# (smolvlm2_lora_ft_* (regex FT do LM, v6_tower_heal) sobre med_vlm/configs/smolvlm2_lora_slake.yaml),
+# mudando so: data.no_image, peft_config.target_modules (LoRA so no modelo de linguagem), train.max_length (8192/2048 -> 1024,
+# sem tokens de imagem), checkpoint_every/checkpoint_dir (estados intermediarios em tmp/v7) e os caminhos de saida.
+run_name: smolvlm2_lora_txt_slake
+model: SMOLVLM
+dataset: SLAKE
+peft: LORA
+peft_config:
+  r: 16
+  lora_alpha: 32
+  target_modules: ^.*text_model\.layers\.\d+\.self_attn\.(q|k|v|o)_proj$
+  task_type: CAUSAL_LM
+data:
+  no_image: true
+train:
+  lr: 2e-4
+  warmup_ratio: 0.05
+  epochs: 3
+  batch_size: 4
+  grad_accum_steps: 8
+  max_length: 1024
+  gradient_checkpointing: true
+  compile: false
+  eval_every: 5000
+  checkpoint_every: 15000
+  checkpoint_dir: ${MEDVQA_ROOT}/tmp/v7/checkpoints
+eval:
+  batch_size: 4
+  split: test
+  max_new_tokens: 64
+logging:
+  wandb_project: "med-vlm"
+  wandb_run_name: "smolvlm2_lora_txt_slake"
+outputs_dir: ${MEDVQA_ROOT}/v7_txt
+results_json_dir: ${MEDVQA_ROOT}/v7_txt/logs
+
+# Image preprocessing applied once at dataset load (cached). Sem efeito sob no_image (mantido igual ao publicado).
+preprocessing:
+  denoise: true
+  denoise_method: "gaussian"
+  clahe: true
+  clahe_clip_limit: 2.0
+  clahe_tile_grid_size: [8, 8]
+
+# Online training-time augmentation (applied per batch, training only). Sem efeito sob no_image.
+augmentation:
+  enabled: true
+  rotation_degrees: 5
+  brightness_range: [0.85, 1.15]
+  contrast_range: [0.85, 1.15]

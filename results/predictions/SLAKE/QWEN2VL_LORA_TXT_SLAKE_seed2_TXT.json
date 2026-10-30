@@ -1,0 +1,6459 @@
+{
+ "model": "QWEN2VL_LORA_TXT",
+ "dataset": "SLAKE",
+ "condition": "TXT",
+ "accuracy": 0.5240339302544769,
+ "n": 1061,
+ "n_correct": 556,
+ "predictions": [
+  {
+   "qid": 11934,
+   "predicted": "ct",
+   "gold": "ct",
+   "correct": true
+  },
+  {
+   "qid": 11935,
+   "predicted": "chest",
+   "gold": "chest",
+   "correct": true
+  },
+  {
+   "qid": 11936,
+   "predicted": "brain",
+   "gold": "lung spinal cord",
+   "correct": false
+  },
+  {
+   "qid": 11937,
+   "predicted": "lung",
+   "gold": "lung",
+   "correct": true
+  },
+  {
+   "qid": 11938,
+   "predicted": "yes",
+   "gold": "no",
+   "correct": false
+  },
+  {
+   "qid": 11939,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 11940,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 11941,
+   "predicted": "brain edema brain enhancing tumor",
+   "gold": "lung cancer",
+   "correct": false
+  },
+  {
+   "qid": 11942,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 11943,
+   "predicted": "right lung left",
+   "gold": "left lung right",
+   "correct": false
+  },
+  {
+   "qid": 11944,
+   "predicted": "lung",
+   "gold": "lung",
+   "correct": true
+  },
+  {
+   "qid": 11945,
+   "predicted": "ct",
+   "gold": "ct",
+   "correct": true
+  },
+  {
+   "qid": 11946,
+   "predicted": "chest",
+   "gold": "chest",
+   "correct": true
+  },
+  {
+   "qid": 11947,
+   "predicted": "brain",
+   "gold": "lung",
+   "correct": false
+  },
+  {
+   "qid": 11948,
+   "predicted": "lung",
+   "gold": "lung",
+   "correct": true
+  },
+  {
+   "qid": 11949,
+   "predicted": "yes",
+   "gold": "no",
+   "correct": false
+  },
+  {
+   "qid": 11950,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 11951,
+   "predicted": "brain edema brain enhancing tumor",
+   "gold": "lung cancer",
+   "correct": false
+  },
+  {
+   "qid": 11952,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 11953,
+   "predicted": "right lung left",
+   "gold": "left lung right",
+   "correct": false
+  },
+  {
+   "qid": 11954,
+   "predicted": "lung",
+   "gold": "lung",
+   "correct": true
+  },
+  {
+   "qid": 11955,
+   "predicted": "ct",
+   "gold": "ct",
+   "correct": true
+  },
+  {
+   "qid": 11956,
+   "predicted": "chest",
+   "gold": "chest",
+   "correct": true
+  },
+  {
+   "qid": 11957,
+   "predicted": "brain",
+   "gold": "lung",
+   "correct": false
+  },
+  {
+   "qid": 11958,
+   "predicted": "lung",
+   "gold": "lung",
+   "correct": true
+  },
+  {
+   "qid": 11959,
+   "predicted": "yes",
+   "gold": "no",
+   "correct": false
+  },
+  {
+   "qid": 11960,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 11961,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 11962,
+   "predicted": "brain edema brain enhancing tumor",
+   "gold": "lung cancer",
+   "correct": false
+  },
+  {
+   "qid": 11963,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 11964,
+   "predicted": "right lung left",
+   "gold": "right lung left",
+   "correct": true
+  },
+  {
+   "qid": 11965,
+   "predicted": "ct",
+   "gold": "x ray",
+   "correct": false
+  },
+  {
+   "qid": 11966,
+   "predicted": "chest",
+   "gold": "chest",
+   "correct": true
+  },
+  {
+   "qid": 11967,
+   "predicted": "lung",
+   "gold": "lung",
+   "correct": true
+  },
+  {
+   "qid": 11968,
+   "predicted": "brain edema brain enhancing tumor",
+   "gold": "cardiomegaly",
+   "correct": false
+  },
+  {
+   "qid": 11969,
+   "predicted": "right lung left",
+   "gold": "center",
+   "correct": false
+  },
+  {
+   "qid": 11970,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 11971,
+   "predicted": "lung",
+   "gold": "heart",
+   "correct": false
+  },
+  {
+   "qid": 11972,
+   "predicted": "ct",
+   "gold": "mri",
+   "correct": false
+  },
+  {
+   "qid": 11973,
+   "predicted": "chest",
+   "gold": "abdomen",
+   "correct": false
+  },
+  {
+   "qid": 11974,
+   "predicted": "t2",
+   "gold": "t2",
+   "correct": true
+  },
+  {
+   "qid": 11975,
+   "predicted": "yes",
+   "gold": "no",
+   "correct": false
+  },
+  {
+   "qid": 11976,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 11977,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 11978,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 11979,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 11980,
+   "predicted": "ct",
+   "gold": "x ray",
+   "correct": false
+  },
+  {
+   "qid": 11981,
+   "predicted": "chest",
+   "gold": "chest",
+   "correct": true
+  },
+  {
+   "qid": 11982,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 11983,
+   "predicted": "lung",
+   "gold": "lung",
+   "correct": true
+  },
+  {
+   "qid": 11984,
+   "predicted": "brain edema brain enhancing tumor",
+   "gold": "pneumonia",
+   "correct": false
+  },
+  {
+   "qid": 11985,
+   "predicted": "right lung left",
+   "gold": "left lung lower right",
+   "correct": false
+  },
+  {
+   "qid": 11986,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 11987,
+   "predicted": "ct",
+   "gold": "x ray",
+   "correct": false
+  },
+  {
+   "qid": 11988,
+   "predicted": "chest",
+   "gold": "chest",
+   "correct": true
+  },
+  {
+   "qid": 11989,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 11990,
+   "predicted": "lung",
+   "gold": "lung",
+   "correct": true
+  },
+  {
+   "qid": 11991,
+   "predicted": "brain edema brain enhancing tumor",
+   "gold": "cardiomegaly",
+   "correct": false
+  },
+  {
+   "qid": 11992,
+   "predicted": "right lung left",
+   "gold": "center",
+   "correct": false
+  },
+  {
+   "qid": 11993,
+   "predicted": "lung",
+   "gold": "heart",
+   "correct": false
+  },
+  {
+   "qid": 11994,
+   "predicted": "ct",
+   "gold": "x ray",
+   "correct": false
+  },
+  {
+   "qid": 11995,
+   "predicted": "chest",
+   "gold": "chest",
+   "correct": true
+  },
+  {
+   "qid": 11996,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 11997,
+   "predicted": "lung",
+   "gold": "lung",
+   "correct": true
+  },
+  {
+   "qid": 11998,
+   "predicted": "brain edema brain enhancing tumor",
+   "gold": "cardiomegaly",
+   "correct": false
+  },
+  {
+   "qid": 11999,
+   "predicted": "right lung left",
+   "gold": "center",
+   "correct": false
+  },
+  {
+   "qid": 12000,
+   "predicted": "lung",
+   "gold": "heart",
+   "correct": false
+  },
+  {
+   "qid": 12001,
+   "predicted": "ct",
+   "gold": "x ray",
+   "correct": false
+  },
+  {
+   "qid": 12002,
+   "predicted": "chest",
+   "gold": "chest",
+   "correct": true
+  },
+  {
+   "qid": 12003,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12004,
+   "predicted": "lung",
+   "gold": "lung",
+   "correct": true
+  },
+  {
+   "qid": 12005,
+   "predicted": "brain edema brain enhancing tumor",
+   "gold": "atelectasis mass",
+   "correct": false
+  },
+  {
+   "qid": 12006,
+   "predicted": "right lung left",
+   "gold": "right lung",
+   "correct": false
+  },
+  {
+   "qid": 12007,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12008,
+   "predicted": "lung",
+   "gold": "lung",
+   "correct": true
+  },
+  {
+   "qid": 12009,
+   "predicted": "ct",
+   "gold": "x ray",
+   "correct": false
+  },
+  {
+   "qid": 12010,
+   "predicted": "chest",
+   "gold": "chest",
+   "correct": true
+  },
+  {
+   "qid": 12011,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12012,
+   "predicted": "lung",
+   "gold": "lung",
+   "correct": true
+  },
+  {
+   "qid": 12013,
+   "predicted": "brain edema brain enhancing tumor",
+   "gold": "cardiomegaly",
+   "correct": false
+  },
+  {
+   "qid": 12014,
+   "predicted": "right lung left",
+   "gold": "center",
+   "correct": false
+  },
+  {
+   "qid": 12015,
+   "predicted": "lung",
+   "gold": "heart",
+   "correct": false
+  },
+  {
+   "qid": 12016,
+   "predicted": "ct",
+   "gold": "x ray",
+   "correct": false
+  },
+  {
+   "qid": 12017,
+   "predicted": "chest",
+   "gold": "chest",
+   "correct": true
+  },
+  {
+   "qid": 12018,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12019,
+   "predicted": "lung",
+   "gold": "lung",
+   "correct": true
+  },
+  {
+   "qid": 12020,
+   "predicted": "brain edema brain enhancing tumor",
+   "gold": "cardiomegaly",
+   "correct": false
+  },
+  {
+   "qid": 12021,
+   "predicted": "right lung left",
+   "gold": "center",
+   "correct": false
+  },
+  {
+   "qid": 12022,
+   "predicted": "lung",
+   "gold": "heart",
+   "correct": false
+  },
+  {
+   "qid": 12023,
+   "predicted": "ct",
+   "gold": "x ray",
+   "correct": false
+  },
+  {
+   "qid": 12024,
+   "predicted": "chest",
+   "gold": "chest",
+   "correct": true
+  },
+  {
+   "qid": 12025,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12026,
+   "predicted": "lung",
+   "gold": "lung",
+   "correct": true
+  },
+  {
+   "qid": 12027,
+   "predicted": "brain edema brain enhancing tumor",
+   "gold": "nodule",
+   "correct": false
+  },
+  {
+   "qid": 12028,
+   "predicted": "right lung left",
+   "gold": "left lung right",
+   "correct": false
+  },
+  {
+   "qid": 12029,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12030,
+   "predicted": "lung",
+   "gold": "lung",
+   "correct": true
+  },
+  {
+   "qid": 12031,
+   "predicted": "ct",
+   "gold": "x ray",
+   "correct": false
+  },
+  {
+   "qid": 12032,
+   "predicted": "chest",
+   "gold": "chest",
+   "correct": true
+  },
+  {
+   "qid": 12033,
+   "predicted": "lung",
+   "gold": "lung",
+   "correct": true
+  },
+  {
+   "qid": 12034,
+   "predicted": "brain edema brain enhancing tumor",
+   "gold": "nodule",
+   "correct": false
+  },
+  {
+   "qid": 12035,
+   "predicted": "right lung left",
+   "gold": "right lung left",
+   "correct": true
+  },
+  {
+   "qid": 12036,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12037,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12038,
+   "predicted": "lung",
+   "gold": "lung",
+   "correct": true
+  },
+  {
+   "qid": 12039,
+   "predicted": "ct",
+   "gold": "x ray",
+   "correct": false
+  },
+  {
+   "qid": 12040,
+   "predicted": "chest",
+   "gold": "chest",
+   "correct": true
+  },
+  {
+   "qid": 12041,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12042,
+   "predicted": "lung",
+   "gold": "lung",
+   "correct": true
+  },
+  {
+   "qid": 12043,
+   "predicted": "brain edema brain enhancing tumor",
+   "gold": "atelectasis",
+   "correct": false
+  },
+  {
+   "qid": 12044,
+   "predicted": "right lung left",
+   "gold": "right lung lower left",
+   "correct": false
+  },
+  {
+   "qid": 12045,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12046,
+   "predicted": "lung",
+   "gold": "lung",
+   "correct": true
+  },
+  {
+   "qid": 12047,
+   "predicted": "ct",
+   "gold": "x ray",
+   "correct": false
+  },
+  {
+   "qid": 12048,
+   "predicted": "chest",
+   "gold": "chest",
+   "correct": true
+  },
+  {
+   "qid": 12049,
+   "predicted": "lung",
+   "gold": "lung",
+   "correct": true
+  },
+  {
+   "qid": 12050,
+   "predicted": "brain edema brain enhancing tumor",
+   "gold": "pneumonia",
+   "correct": false
+  },
+  {
+   "qid": 12051,
+   "predicted": "right lung left",
+   "gold": "left lung right",
+   "correct": false
+  },
+  {
+   "qid": 12052,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12053,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12054,
+   "predicted": "lung",
+   "gold": "lung",
+   "correct": true
+  },
+  {
+   "qid": 12055,
+   "predicted": "ct",
+   "gold": "mri",
+   "correct": false
+  },
+  {
+   "qid": 12056,
+   "predicted": "chest",
+   "gold": "abdomen",
+   "correct": false
+  },
+  {
+   "qid": 12057,
+   "predicted": "t2",
+   "gold": "t2",
+   "correct": true
+  },
+  {
+   "qid": 12058,
+   "predicted": "2",
+   "gold": "1",
+   "correct": false
+  },
+  {
+   "qid": 12059,
+   "predicted": "lung",
+   "gold": "liver",
+   "correct": false
+  },
+  {
+   "qid": 12060,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12061,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12062,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12063,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12064,
+   "predicted": "yes",
+   "gold": "no",
+   "correct": false
+  },
+  {
+   "qid": 12065,
+   "predicted": "yes",
+   "gold": "no",
+   "correct": false
+  },
+  {
+   "qid": 12066,
+   "predicted": "ct",
+   "gold": "x ray",
+   "correct": false
+  },
+  {
+   "qid": 12067,
+   "predicted": "chest",
+   "gold": "chest",
+   "correct": true
+  },
+  {
+   "qid": 12068,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12069,
+   "predicted": "lung",
+   "gold": "lung",
+   "correct": true
+  },
+  {
+   "qid": 12070,
+   "predicted": "brain edema brain enhancing tumor",
+   "gold": "pneumothorax",
+   "correct": false
+  },
+  {
+   "qid": 12071,
+   "predicted": "right lung left",
+   "gold": "right lung left",
+   "correct": true
+  },
+  {
+   "qid": 12072,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12073,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12074,
+   "predicted": "lung",
+   "gold": "lung",
+   "correct": true
+  },
+  {
+   "qid": 12075,
+   "predicted": "ct",
+   "gold": "ct",
+   "correct": true
+  },
+  {
+   "qid": 12076,
+   "predicted": "chest",
+   "gold": "abdomen",
+   "correct": false
+  },
+  {
+   "qid": 12077,
+   "predicted": "lung",
+   "gold": "liver",
+   "correct": false
+  },
+  {
+   "qid": 12078,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12079,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12080,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12081,
+   "predicted": "yes",
+   "gold": "no",
+   "correct": false
+  },
+  {
+   "qid": 12082,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12083,
+   "predicted": "left",
+   "gold": "left",
+   "correct": true
+  },
+  {
+   "qid": 12084,
+   "predicted": "0",
+   "gold": "2",
+   "correct": false
+  },
+  {
+   "qid": 12085,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12086,
+   "predicted": "liver",
+   "gold": "liver",
+   "correct": true
+  },
+  {
+   "qid": 12087,
+   "predicted": "spleen",
+   "gold": "left kidney",
+   "correct": false
+  },
+  {
+   "qid": 12088,
+   "predicted": "liver",
+   "gold": "liver",
+   "correct": true
+  },
+  {
+   "qid": 12089,
+   "predicted": "transverse plane",
+   "gold": "transverse plane",
+   "correct": true
+  },
+  {
+   "qid": 12090,
+   "predicted": "ct",
+   "gold": "ct",
+   "correct": true
+  },
+  {
+   "qid": 12091,
+   "predicted": "chest",
+   "gold": "abdomen",
+   "correct": false
+  },
+  {
+   "qid": 12092,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12093,
+   "predicted": "2",
+   "gold": "4",
+   "correct": false
+  },
+  {
+   "qid": 12094,
+   "predicted": "lung",
+   "gold": "lung",
+   "correct": true
+  },
+  {
+   "qid": 12095,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12096,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12097,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12098,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12099,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12100,
+   "predicted": "left",
+   "gold": "top",
+   "correct": false
+  },
+  {
+   "qid": 12101,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12102,
+   "predicted": "lung",
+   "gold": "lung",
+   "correct": true
+  },
+  {
+   "qid": 12103,
+   "predicted": "left lung",
+   "gold": "left lung",
+   "correct": true
+  },
+  {
+   "qid": 12104,
+   "predicted": "liver",
+   "gold": "right lung",
+   "correct": false
+  },
+  {
+   "qid": 12105,
+   "predicted": "transverse plane",
+   "gold": "transverse plane",
+   "correct": true
+  },
+  {
+   "qid": 12106,
+   "predicted": "ct",
+   "gold": "ct",
+   "correct": true
+  },
+  {
+   "qid": 12107,
+   "predicted": "chest",
+   "gold": "abdomen",
+   "correct": false
+  },
+  {
+   "qid": 12108,
+   "predicted": "lung",
+   "gold": "liver",
+   "correct": false
+  },
+  {
+   "qid": 12109,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12110,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12111,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12112,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12113,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12114,
+   "predicted": "left",
+   "gold": "left",
+   "correct": true
+  },
+  {
+   "qid": 12115,
+   "predicted": "0",
+   "gold": "0",
+   "correct": true
+  },
+  {
+   "qid": 12116,
+   "predicted": "liver",
+   "gold": "liver",
+   "correct": true
+  },
+  {
+   "qid": 12117,
+   "predicted": "liver",
+   "gold": "liver",
+   "correct": true
+  },
+  {
+   "qid": 12118,
+   "predicted": "spleen",
+   "gold": "spleen",
+   "correct": true
+  },
+  {
+   "qid": 12119,
+   "predicted": "transverse plane",
+   "gold": "transverse plane",
+   "correct": true
+  },
+  {
+   "qid": 12120,
+   "predicted": "ct",
+   "gold": "ct",
+   "correct": true
+  },
+  {
+   "qid": 12121,
+   "predicted": "chest",
+   "gold": "abdomen",
+   "correct": false
+  },
+  {
+   "qid": 12122,
+   "predicted": "lung",
+   "gold": "liver",
+   "correct": false
+  },
+  {
+   "qid": 12123,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12124,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12125,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12126,
+   "predicted": "brain edema brain enhancing tumor",
+   "gold": "liver cancer",
+   "correct": false
+  },
+  {
+   "qid": 12127,
+   "predicted": "left",
+   "gold": "left and top",
+   "correct": false
+  },
+  {
+   "qid": 12128,
+   "predicted": "right lung left",
+   "gold": "liver",
+   "correct": false
+  },
+  {
+   "qid": 12129,
+   "predicted": "0",
+   "gold": "0",
+   "correct": true
+  },
+  {
+   "qid": 12130,
+   "predicted": "kidney",
+   "gold": "liver",
+   "correct": false
+  },
+  {
+   "qid": 12131,
+   "predicted": "liver",
+   "gold": "liver",
+   "correct": true
+  },
+  {
+   "qid": 12132,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12133,
+   "predicted": "yes",
+   "gold": "no",
+   "correct": false
+  },
+  {
+   "qid": 12134,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12135,
+   "predicted": "left lung",
+   "gold": "spleen",
+   "correct": false
+  },
+  {
+   "qid": 12136,
+   "predicted": "heart",
+   "gold": "liver",
+   "correct": false
+  },
+  {
+   "qid": 12137,
+   "predicted": "transverse plane",
+   "gold": "transverse plane",
+   "correct": true
+  },
+  {
+   "qid": 12138,
+   "predicted": "ct",
+   "gold": "ct",
+   "correct": true
+  },
+  {
+   "qid": 12139,
+   "predicted": "chest",
+   "gold": "abdomen",
+   "correct": false
+  },
+  {
+   "qid": 12140,
+   "predicted": "lung",
+   "gold": "liver",
+   "correct": false
+  },
+  {
+   "qid": 12141,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12142,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12143,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12144,
+   "predicted": "left",
+   "gold": "left and top",
+   "correct": false
+  },
+  {
+   "qid": 12145,
+   "predicted": "right lung left",
+   "gold": "liver",
+   "correct": false
+  },
+  {
+   "qid": 12146,
+   "predicted": "0",
+   "gold": "2",
+   "correct": false
+  },
+  {
+   "qid": 12147,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12148,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12149,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12150,
+   "predicted": "liver",
+   "gold": "spleen",
+   "correct": false
+  },
+  {
+   "qid": 12151,
+   "predicted": "spleen",
+   "gold": "spleen",
+   "correct": true
+  },
+  {
+   "qid": 12152,
+   "predicted": "heart",
+   "gold": "liver",
+   "correct": false
+  },
+  {
+   "qid": 12153,
+   "predicted": "transverse plane",
+   "gold": "transverse plane",
+   "correct": true
+  },
+  {
+   "qid": 12154,
+   "predicted": "ct",
+   "gold": "mri",
+   "correct": false
+  },
+  {
+   "qid": 12155,
+   "predicted": "chest",
+   "gold": "abdomen",
+   "correct": false
+  },
+  {
+   "qid": 12156,
+   "predicted": "t2",
+   "gold": "t1",
+   "correct": false
+  },
+  {
+   "qid": 12157,
+   "predicted": "2",
+   "gold": "0",
+   "correct": false
+  },
+  {
+   "qid": 12158,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12159,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12160,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12161,
+   "predicted": "ct",
+   "gold": "mri",
+   "correct": false
+  },
+  {
+   "qid": 12162,
+   "predicted": "chest",
+   "gold": "abdomen",
+   "correct": false
+  },
+  {
+   "qid": 12163,
+   "predicted": "t2",
+   "gold": "t1",
+   "correct": false
+  },
+  {
+   "qid": 12164,
+   "predicted": "yes",
+   "gold": "no",
+   "correct": false
+  },
+  {
+   "qid": 12165,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12166,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12167,
+   "predicted": "left",
+   "gold": "not seen",
+   "correct": false
+  },
+  {
+   "qid": 12168,
+   "predicted": "0",
+   "gold": "0",
+   "correct": true
+  },
+  {
+   "qid": 12169,
+   "predicted": "liver",
+   "gold": "lung",
+   "correct": false
+  },
+  {
+   "qid": 12170,
+   "predicted": "ct",
+   "gold": "ct",
+   "correct": true
+  },
+  {
+   "qid": 12171,
+   "predicted": "chest",
+   "gold": "abdomen",
+   "correct": false
+  },
+  {
+   "qid": 12172,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12173,
+   "predicted": "lung",
+   "gold": "lung",
+   "correct": true
+  },
+  {
+   "qid": 12174,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12175,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12176,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12177,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12178,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12179,
+   "predicted": "brain edema brain enhancing tumor",
+   "gold": "liver cancer",
+   "correct": false
+  },
+  {
+   "qid": 12180,
+   "predicted": "left",
+   "gold": "upper left",
+   "correct": false
+  },
+  {
+   "qid": 12181,
+   "predicted": "right lung left",
+   "gold": "liver",
+   "correct": false
+  },
+  {
+   "qid": 12182,
+   "predicted": "0",
+   "gold": "0",
+   "correct": true
+  },
+  {
+   "qid": 12183,
+   "predicted": "heart",
+   "gold": "liver",
+   "correct": false
+  },
+  {
+   "qid": 12184,
+   "predicted": "liver",
+   "gold": "liver",
+   "correct": true
+  },
+  {
+   "qid": 12185,
+   "predicted": "right lung",
+   "gold": "right lung",
+   "correct": true
+  },
+  {
+   "qid": 12186,
+   "predicted": "heart",
+   "gold": "heart and liver",
+   "correct": false
+  },
+  {
+   "qid": 12187,
+   "predicted": "transverse plane",
+   "gold": "transverse plane",
+   "correct": true
+  },
+  {
+   "qid": 12188,
+   "predicted": "pulmonary bronchus",
+   "gold": "pulmonary bronchus",
+   "correct": true
+  },
+  {
+   "qid": 12189,
+   "predicted": "symmetrical to the bone marrow",
+   "gold": "symmetrical to bone marrow",
+   "correct": false
+  },
+  {
+   "qid": 12190,
+   "predicted": "ct",
+   "gold": "ct",
+   "correct": true
+  },
+  {
+   "qid": 12191,
+   "predicted": "chest",
+   "gold": "abdomen",
+   "correct": false
+  },
+  {
+   "qid": 12192,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12193,
+   "predicted": "lung",
+   "gold": "liver",
+   "correct": false
+  },
+  {
+   "qid": 12194,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12195,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12196,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12197,
+   "predicted": "yes",
+   "gold": "no",
+   "correct": false
+  },
+  {
+   "qid": 12198,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12199,
+   "predicted": "brain edema brain enhancing tumor",
+   "gold": "liver cancer",
+   "correct": false
+  },
+  {
+   "qid": 12200,
+   "predicted": "right lung left",
+   "gold": "liver",
+   "correct": false
+  },
+  {
+   "qid": 12201,
+   "predicted": "0",
+   "gold": "2",
+   "correct": false
+  },
+  {
+   "qid": 12202,
+   "predicted": "kidney",
+   "gold": "spleen",
+   "correct": false
+  },
+  {
+   "qid": 12203,
+   "predicted": "liver",
+   "gold": "liver",
+   "correct": true
+  },
+  {
+   "qid": 12204,
+   "predicted": "transverse plane",
+   "gold": "transverse plane",
+   "correct": true
+  },
+  {
+   "qid": 12205,
+   "predicted": "irregular",
+   "gold": "irregular",
+   "correct": true
+  },
+  {
+   "qid": 12206,
+   "predicted": "symmetrical to the bone marrow",
+   "gold": "symmetrical to bone marrow",
+   "correct": false
+  },
+  {
+   "qid": 12207,
+   "predicted": "ct",
+   "gold": "ct",
+   "correct": true
+  },
+  {
+   "qid": 12208,
+   "predicted": "chest",
+   "gold": "abdomen",
+   "correct": false
+  },
+  {
+   "qid": 12209,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12210,
+   "predicted": "lung",
+   "gold": "liver",
+   "correct": false
+  },
+  {
+   "qid": 12211,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12212,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12213,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12214,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12215,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12216,
+   "predicted": "left",
+   "gold": "left",
+   "correct": true
+  },
+  {
+   "qid": 12217,
+   "predicted": "liver",
+   "gold": "liver",
+   "correct": true
+  },
+  {
+   "qid": 12218,
+   "predicted": "right lung",
+   "gold": "right lung",
+   "correct": true
+  },
+  {
+   "qid": 12219,
+   "predicted": "transverse plane",
+   "gold": "transverse plane",
+   "correct": true
+  },
+  {
+   "qid": 12220,
+   "predicted": "colon",
+   "gold": "pulmonary bronchus",
+   "correct": false
+  },
+  {
+   "qid": 12221,
+   "predicted": "ct",
+   "gold": "ct",
+   "correct": true
+  },
+  {
+   "qid": 12222,
+   "predicted": "chest",
+   "gold": "abdomen",
+   "correct": false
+  },
+  {
+   "qid": 12223,
+   "predicted": "lung",
+   "gold": "small bowel",
+   "correct": false
+  },
+  {
+   "qid": 12224,
+   "predicted": "yes",
+   "gold": "no",
+   "correct": false
+  },
+  {
+   "qid": 12225,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12226,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12227,
+   "predicted": "yes",
+   "gold": "no",
+   "correct": false
+  },
+  {
+   "qid": 12228,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12229,
+   "predicted": "0",
+   "gold": "2",
+   "correct": false
+  },
+  {
+   "qid": 12230,
+   "predicted": "left lung",
+   "gold": "large bowel",
+   "correct": false
+  },
+  {
+   "qid": 12231,
+   "predicted": "liver",
+   "gold": "large bowel",
+   "correct": false
+  },
+  {
+   "qid": 12232,
+   "predicted": "heart",
+   "gold": "small bowel",
+   "correct": false
+  },
+  {
+   "qid": 12233,
+   "predicted": "transverse plane",
+   "gold": "transverse plane",
+   "correct": true
+  },
+  {
+   "qid": 12234,
+   "predicted": "symmetrical to the bone marrow",
+   "gold": "symmetrical to bone marrow",
+   "correct": false
+  },
+  {
+   "qid": 12235,
+   "predicted": "ct",
+   "gold": "ct",
+   "correct": true
+  },
+  {
+   "qid": 12236,
+   "predicted": "chest",
+   "gold": "abdomen",
+   "correct": false
+  },
+  {
+   "qid": 12237,
+   "predicted": "lung",
+   "gold": "liver",
+   "correct": false
+  },
+  {
+   "qid": 12238,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12239,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12240,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12241,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12242,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12243,
+   "predicted": "left lung",
+   "gold": "large bowel",
+   "correct": false
+  },
+  {
+   "qid": 12244,
+   "predicted": "liver",
+   "gold": "liver",
+   "correct": true
+  },
+  {
+   "qid": 12245,
+   "predicted": "right lung",
+   "gold": "right lung",
+   "correct": true
+  },
+  {
+   "qid": 12246,
+   "predicted": "heart",
+   "gold": "stomach",
+   "correct": false
+  },
+  {
+   "qid": 12247,
+   "predicted": "transverse plane",
+   "gold": "transverse plane",
+   "correct": true
+  },
+  {
+   "qid": 12248,
+   "predicted": "stomach",
+   "gold": "large bowel",
+   "correct": false
+  },
+  {
+   "qid": 12249,
+   "predicted": "ct",
+   "gold": "ct",
+   "correct": true
+  },
+  {
+   "qid": 12250,
+   "predicted": "chest",
+   "gold": "abdomen",
+   "correct": false
+  },
+  {
+   "qid": 12251,
+   "predicted": "lung",
+   "gold": "liver",
+   "correct": false
+  },
+  {
+   "qid": 12252,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12253,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12254,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12255,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12256,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12257,
+   "predicted": "0",
+   "gold": "0",
+   "correct": true
+  },
+  {
+   "qid": 12258,
+   "predicted": "liver",
+   "gold": "liver",
+   "correct": true
+  },
+  {
+   "qid": 12259,
+   "predicted": "left lung",
+   "gold": "large bowel",
+   "correct": false
+  },
+  {
+   "qid": 12260,
+   "predicted": "liver",
+   "gold": "liver",
+   "correct": true
+  },
+  {
+   "qid": 12261,
+   "predicted": "right lung",
+   "gold": "right lung",
+   "correct": true
+  },
+  {
+   "qid": 12262,
+   "predicted": "transverse plane",
+   "gold": "transverse plane",
+   "correct": true
+  },
+  {
+   "qid": 12263,
+   "predicted": "stomach",
+   "gold": "large bowel",
+   "correct": false
+  },
+  {
+   "qid": 12264,
+   "predicted": "mri",
+   "gold": "x ray",
+   "correct": false
+  },
+  {
+   "qid": 12265,
+   "predicted": "transverse plane",
+   "gold": "coronal plane",
+   "correct": false
+  },
+  {
+   "qid": 12266,
+   "predicted": "head",
+   "gold": "chest",
+   "correct": false
+  },
+  {
+   "qid": 12267,
+   "predicted": "left",
+   "gold": "right",
+   "correct": false
+  },
+  {
+   "qid": 12268,
+   "predicted": "lower left lung",
+   "gold": "upper right lung",
+   "correct": false
+  },
+  {
+   "qid": 12269,
+   "predicted": "head",
+   "gold": "chest",
+   "correct": false
+  },
+  {
+   "qid": 12270,
+   "predicted": "lung",
+   "gold": "lung",
+   "correct": true
+  },
+  {
+   "qid": 12271,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12272,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12273,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12274,
+   "predicted": "black",
+   "gold": "black",
+   "correct": true
+  },
+  {
+   "qid": 12275,
+   "predicted": "2",
+   "gold": "2",
+   "correct": true
+  },
+  {
+   "qid": 12276,
+   "predicted": "breathe",
+   "gold": "breathe",
+   "correct": true
+  },
+  {
+   "qid": 12277,
+   "predicted": "chest pain cough hemoptysis",
+   "gold": "chest pain dyspnea",
+   "correct": false
+  },
+  {
+   "qid": 12278,
+   "predicted": "lung",
+   "gold": "lung",
+   "correct": true
+  },
+  {
+   "qid": 12279,
+   "predicted": "mri",
+   "gold": "x ray",
+   "correct": false
+  },
+  {
+   "qid": 12280,
+   "predicted": "yes",
+   "gold": "no",
+   "correct": false
+  },
+  {
+   "qid": 12281,
+   "predicted": "head",
+   "gold": "chest",
+   "correct": false
+  },
+  {
+   "qid": 12282,
+   "predicted": "lower left lung",
+   "gold": "lower right lung",
+   "correct": false
+  },
+  {
+   "qid": 12283,
+   "predicted": "lower left lung",
+   "gold": "lower right lung",
+   "correct": false
+  },
+  {
+   "qid": 12284,
+   "predicted": "head",
+   "gold": "chest",
+   "correct": false
+  },
+  {
+   "qid": 12285,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12286,
+   "predicted": "pulmonary mass",
+   "gold": "atelectasis",
+   "correct": false
+  },
+  {
+   "qid": 12287,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12288,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12289,
+   "predicted": "black",
+   "gold": "black",
+   "correct": true
+  },
+  {
+   "qid": 12290,
+   "predicted": "2",
+   "gold": "2",
+   "correct": true
+  },
+  {
+   "qid": 12291,
+   "predicted": "breathe",
+   "gold": "breathe",
+   "correct": true
+  },
+  {
+   "qid": 12292,
+   "predicted": "inflammation tumors trauma etc",
+   "gold": "bronchial obstruction",
+   "correct": false
+  },
+  {
+   "qid": 12293,
+   "predicted": "heart",
+   "gold": "heart",
+   "correct": true
+  },
+  {
+   "qid": 12294,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12295,
+   "predicted": "yes",
+   "gold": "no",
+   "correct": false
+  },
+  {
+   "qid": 12296,
+   "predicted": "chest",
+   "gold": "chest",
+   "correct": true
+  },
+  {
+   "qid": 12297,
+   "predicted": "left",
+   "gold": "left",
+   "correct": true
+  },
+  {
+   "qid": 12298,
+   "predicted": "upper left lung",
+   "gold": "lower left lung",
+   "correct": false
+  },
+  {
+   "qid": 12299,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12300,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12301,
+   "predicted": "pulmonary mass",
+   "gold": "pulmonary mass",
+   "correct": true
+  },
+  {
+   "qid": 12302,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12303,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12304,
+   "predicted": "black",
+   "gold": "black",
+   "correct": true
+  },
+  {
+   "qid": 12305,
+   "predicted": "1",
+   "gold": "1",
+   "correct": true
+  },
+  {
+   "qid": 12306,
+   "predicted": "much",
+   "gold": "little",
+   "correct": false
+  },
+  {
+   "qid": 12307,
+   "predicted": "pay attention to respiratory health strengthen physical exercise",
+   "gold": "keep healthy",
+   "correct": false
+  },
+  {
+   "qid": 12308,
+   "predicted": "heart",
+   "gold": "heart",
+   "correct": true
+  },
+  {
+   "qid": 12309,
+   "predicted": "mri",
+   "gold": "x ray",
+   "correct": false
+  },
+  {
+   "qid": 12310,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12311,
+   "predicted": "chest",
+   "gold": "chest",
+   "correct": true
+  },
+  {
+   "qid": 12312,
+   "predicted": "lower left lung",
+   "gold": "lower left lung",
+   "correct": true
+  },
+  {
+   "qid": 12313,
+   "predicted": "lower left lung",
+   "gold": "lower left lung",
+   "correct": true
+  },
+  {
+   "qid": 12314,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12315,
+   "predicted": "brain",
+   "gold": "lung",
+   "correct": false
+  },
+  {
+   "qid": 12316,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12317,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12318,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12319,
+   "predicted": "black",
+   "gold": "black",
+   "correct": true
+  },
+  {
+   "qid": 12320,
+   "predicted": "2",
+   "gold": "2",
+   "correct": true
+  },
+  {
+   "qid": 12321,
+   "predicted": "much",
+   "gold": "little",
+   "correct": false
+  },
+  {
+   "qid": 12322,
+   "predicted": "medical treatment surgical treatment",
+   "gold": "physical therapy surgical treatment",
+   "correct": false
+  },
+  {
+   "qid": 12323,
+   "predicted": "lung",
+   "gold": "lung",
+   "correct": true
+  },
+  {
+   "qid": 12324,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12325,
+   "predicted": "transverse plane",
+   "gold": "coronal plane",
+   "correct": false
+  },
+  {
+   "qid": 12326,
+   "predicted": "chest",
+   "gold": "chest",
+   "correct": true
+  },
+  {
+   "qid": 12327,
+   "predicted": "left",
+   "gold": "right",
+   "correct": false
+  },
+  {
+   "qid": 12328,
+   "predicted": "lower left lung",
+   "gold": "right lung",
+   "correct": false
+  },
+  {
+   "qid": 12329,
+   "predicted": "chest",
+   "gold": "chest",
+   "correct": true
+  },
+  {
+   "qid": 12330,
+   "predicted": "head",
+   "gold": "chest",
+   "correct": false
+  },
+  {
+   "qid": 12331,
+   "predicted": "pulmonary mass",
+   "gold": "pneumonia",
+   "correct": false
+  },
+  {
+   "qid": 12332,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12333,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12334,
+   "predicted": "black",
+   "gold": "black",
+   "correct": true
+  },
+  {
+   "qid": 12335,
+   "predicted": "2",
+   "gold": "2",
+   "correct": true
+  },
+  {
+   "qid": 12336,
+   "predicted": "breathe",
+   "gold": "breathe",
+   "correct": true
+  },
+  {
+   "qid": 12337,
+   "predicted": "medical treatment surgical treatment",
+   "gold": "medical therapy supportive therapy",
+   "correct": false
+  },
+  {
+   "qid": 12338,
+   "predicted": "heart",
+   "gold": "heart",
+   "correct": true
+  },
+  {
+   "qid": 12339,
+   "predicted": "xray",
+   "gold": "x ray",
+   "correct": true
+  },
+  {
+   "qid": 12340,
+   "predicted": "transverse plane",
+   "gold": "coronal plane",
+   "correct": false
+  },
+  {
+   "qid": 12341,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12342,
+   "predicted": "lower left lung",
+   "gold": "heart",
+   "correct": false
+  },
+  {
+   "qid": 12343,
+   "predicted": "heart",
+   "gold": "heart",
+   "correct": true
+  },
+  {
+   "qid": 12344,
+   "predicted": "lung",
+   "gold": "lung",
+   "correct": true
+  },
+  {
+   "qid": 12345,
+   "predicted": "head",
+   "gold": "chest",
+   "correct": false
+  },
+  {
+   "qid": 12346,
+   "predicted": "brain edema brain enhancing tumor",
+   "gold": "cardiomegaly",
+   "correct": false
+  },
+  {
+   "qid": 12347,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12348,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12349,
+   "predicted": "black",
+   "gold": "black",
+   "correct": true
+  },
+  {
+   "qid": 12350,
+   "predicted": "2",
+   "gold": "2",
+   "correct": true
+  },
+  {
+   "qid": 12351,
+   "predicted": "breathe",
+   "gold": "breathe",
+   "correct": true
+  },
+  {
+   "qid": 12352,
+   "predicted": "chest tightness shortness of breath",
+   "gold": "chest tightness arrhythmia",
+   "correct": false
+  },
+  {
+   "qid": 12353,
+   "predicted": "heart",
+   "gold": "heart",
+   "correct": true
+  },
+  {
+   "qid": 12354,
+   "predicted": "mri",
+   "gold": "x ray",
+   "correct": false
+  },
+  {
+   "qid": 12355,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12356,
+   "predicted": "chest",
+   "gold": "chest",
+   "correct": true
+  },
+  {
+   "qid": 12357,
+   "predicted": "right",
+   "gold": "left",
+   "correct": false
+  },
+  {
+   "qid": 12358,
+   "predicted": "lower left lung",
+   "gold": "lower left lung",
+   "correct": true
+  },
+  {
+   "qid": 12359,
+   "predicted": "head",
+   "gold": "chest",
+   "correct": false
+  },
+  {
+   "qid": 12360,
+   "predicted": "chest",
+   "gold": "chest",
+   "correct": true
+  },
+  {
+   "qid": 12361,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12362,
+   "predicted": "brain edema brain enhancing tumor",
+   "gold": "pulmonary infiltration",
+   "correct": false
+  },
+  {
+   "qid": 12363,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12364,
+   "predicted": "black",
+   "gold": "black",
+   "correct": true
+  },
+  {
+   "qid": 12365,
+   "predicted": "2",
+   "gold": "2",
+   "correct": true
+  },
+  {
+   "qid": 12366,
+   "predicted": "breathe",
+   "gold": "breathe",
+   "correct": true
+  },
+  {
+   "qid": 12367,
+   "predicted": "pay attention to respiratory health strengthen physical exercise",
+   "gold": "live healthy enhance physical fitness",
+   "correct": false
+  },
+  {
+   "qid": 12368,
+   "predicted": "lung",
+   "gold": "lung",
+   "correct": true
+  },
+  {
+   "qid": 12369,
+   "predicted": "mri",
+   "gold": "x ray",
+   "correct": false
+  },
+  {
+   "qid": 12370,
+   "predicted": "transverse plane",
+   "gold": "coronal plane",
+   "correct": false
+  },
+  {
+   "qid": 12371,
+   "predicted": "head",
+   "gold": "chest",
+   "correct": false
+  },
+  {
+   "qid": 12372,
+   "predicted": "lower left lung",
+   "gold": "lower left lung",
+   "correct": true
+  },
+  {
+   "qid": 12373,
+   "predicted": "lower left lung",
+   "gold": "lower left lung",
+   "correct": true
+  },
+  {
+   "qid": 12374,
+   "predicted": "head",
+   "gold": "chest",
+   "correct": false
+  },
+  {
+   "qid": 12375,
+   "predicted": "head",
+   "gold": "chest",
+   "correct": false
+  },
+  {
+   "qid": 12376,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12377,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12378,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12379,
+   "predicted": "black",
+   "gold": "black",
+   "correct": true
+  },
+  {
+   "qid": 12380,
+   "predicted": "2",
+   "gold": "2",
+   "correct": true
+  },
+  {
+   "qid": 12381,
+   "predicted": "breathe",
+   "gold": "breathe",
+   "correct": true
+  },
+  {
+   "qid": 12382,
+   "predicted": "medical treatment surgical treatment",
+   "gold": "medical treatment surgical treatment",
+   "correct": true
+  },
+  {
+   "qid": 12383,
+   "predicted": "heart",
+   "gold": "heart",
+   "correct": true
+  },
+  {
+   "qid": 12384,
+   "predicted": "mri",
+   "gold": "x ray",
+   "correct": false
+  },
+  {
+   "qid": 12385,
+   "predicted": "transverse plane",
+   "gold": "coronal plane",
+   "correct": false
+  },
+  {
+   "qid": 12386,
+   "predicted": "head",
+   "gold": "chest",
+   "correct": false
+  },
+  {
+   "qid": 12387,
+   "predicted": "right lung",
+   "gold": "upper right lung",
+   "correct": false
+  },
+  {
+   "qid": 12388,
+   "predicted": "lower left lung",
+   "gold": "upper right lung",
+   "correct": false
+  },
+  {
+   "qid": 12389,
+   "predicted": "head",
+   "gold": "chest",
+   "correct": false
+  },
+  {
+   "qid": 12390,
+   "predicted": "head",
+   "gold": "chest",
+   "correct": false
+  },
+  {
+   "qid": 12391,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12392,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12393,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12394,
+   "predicted": "black",
+   "gold": "black",
+   "correct": true
+  },
+  {
+   "qid": 12395,
+   "predicted": "2",
+   "gold": "2",
+   "correct": true
+  },
+  {
+   "qid": 12396,
+   "predicted": "breathe",
+   "gold": "breathe",
+   "correct": true
+  },
+  {
+   "qid": 12397,
+   "predicted": "chest pain cough hemoptysis",
+   "gold": "chest tightness fatigue",
+   "correct": false
+  },
+  {
+   "qid": 12398,
+   "predicted": "lung",
+   "gold": "lung",
+   "correct": true
+  },
+  {
+   "qid": 12399,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12400,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12401,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12402,
+   "predicted": "lower left lung",
+   "gold": "upper left lung",
+   "correct": false
+  },
+  {
+   "qid": 12403,
+   "predicted": "lower left lung",
+   "gold": "upper left lung",
+   "correct": false
+  },
+  {
+   "qid": 12404,
+   "predicted": "head",
+   "gold": "chest",
+   "correct": false
+  },
+  {
+   "qid": 12405,
+   "predicted": "head",
+   "gold": "chest",
+   "correct": false
+  },
+  {
+   "qid": 12406,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12407,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12408,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12409,
+   "predicted": "black",
+   "gold": "black",
+   "correct": true
+  },
+  {
+   "qid": 12410,
+   "predicted": "2",
+   "gold": "2",
+   "correct": true
+  },
+  {
+   "qid": 12411,
+   "predicted": "much",
+   "gold": "little",
+   "correct": false
+  },
+  {
+   "qid": 12412,
+   "predicted": "medical treatment surgical treatment",
+   "gold": "medical therapy supportive therapy",
+   "correct": false
+  },
+  {
+   "qid": 12413,
+   "predicted": "heart",
+   "gold": "heart",
+   "correct": true
+  },
+  {
+   "qid": 12414,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12415,
+   "predicted": "transverse plane",
+   "gold": "coronal plane",
+   "correct": false
+  },
+  {
+   "qid": 12416,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12417,
+   "predicted": "lower left lung",
+   "gold": "lower left lung",
+   "correct": true
+  },
+  {
+   "qid": 12418,
+   "predicted": "lower left lung",
+   "gold": "lower left lung",
+   "correct": true
+  },
+  {
+   "qid": 12419,
+   "predicted": "head",
+   "gold": "chest",
+   "correct": false
+  },
+  {
+   "qid": 12420,
+   "predicted": "head",
+   "gold": "chest",
+   "correct": false
+  },
+  {
+   "qid": 12421,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12422,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12423,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12424,
+   "predicted": "black",
+   "gold": "black",
+   "correct": true
+  },
+  {
+   "qid": 12425,
+   "predicted": "1",
+   "gold": "1",
+   "correct": true
+  },
+  {
+   "qid": 12426,
+   "predicted": "promote blood flow",
+   "gold": "promote blood flow",
+   "correct": true
+  },
+  {
+   "qid": 12427,
+   "predicted": "inflammation trauma neoplastic transformation",
+   "gold": "chest injury lung disease bullae",
+   "correct": false
+  },
+  {
+   "qid": 12428,
+   "predicted": "heart",
+   "gold": "heart",
+   "correct": true
+  },
+  {
+   "qid": 12429,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12430,
+   "predicted": "transverse plane",
+   "gold": "coronal plane",
+   "correct": false
+  },
+  {
+   "qid": 12431,
+   "predicted": "head",
+   "gold": "chest",
+   "correct": false
+  },
+  {
+   "qid": 12432,
+   "predicted": "lower left lung",
+   "gold": "left lung",
+   "correct": false
+  },
+  {
+   "qid": 12433,
+   "predicted": "lower left lung",
+   "gold": "left lung",
+   "correct": false
+  },
+  {
+   "qid": 12434,
+   "predicted": "brain",
+   "gold": "lung",
+   "correct": false
+  },
+  {
+   "qid": 12435,
+   "predicted": "head",
+   "gold": "chest",
+   "correct": false
+  },
+  {
+   "qid": 12436,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12437,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12438,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12439,
+   "predicted": "black",
+   "gold": "black",
+   "correct": true
+  },
+  {
+   "qid": 12440,
+   "predicted": "2",
+   "gold": "2",
+   "correct": true
+  },
+  {
+   "qid": 12441,
+   "predicted": "breathe",
+   "gold": "breathe",
+   "correct": true
+  },
+  {
+   "qid": 12442,
+   "predicted": "pay attention to respiratory health strengthen physical exercise",
+   "gold": "quit smoking enhance physical fitness",
+   "correct": false
+  },
+  {
+   "qid": 12443,
+   "predicted": "lung",
+   "gold": "lung",
+   "correct": true
+  },
+  {
+   "qid": 12444,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12445,
+   "predicted": "transverse plane",
+   "gold": "coronal plane",
+   "correct": false
+  },
+  {
+   "qid": 12446,
+   "predicted": "head",
+   "gold": "chest",
+   "correct": false
+  },
+  {
+   "qid": 12447,
+   "predicted": "left",
+   "gold": "left",
+   "correct": true
+  },
+  {
+   "qid": 12448,
+   "predicted": "lower left lung",
+   "gold": "lower left lung",
+   "correct": true
+  },
+  {
+   "qid": 12449,
+   "predicted": "head",
+   "gold": "chest",
+   "correct": false
+  },
+  {
+   "qid": 12450,
+   "predicted": "lung",
+   "gold": "lung",
+   "correct": true
+  },
+  {
+   "qid": 12451,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12452,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12453,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12454,
+   "predicted": "black",
+   "gold": "black",
+   "correct": true
+  },
+  {
+   "qid": 12455,
+   "predicted": "2",
+   "gold": "2",
+   "correct": true
+  },
+  {
+   "qid": 12456,
+   "predicted": "promote blood flow",
+   "gold": "promote blood flow",
+   "correct": true
+  },
+  {
+   "qid": 12457,
+   "predicted": "medical treatment surgical treatment",
+   "gold": "medical therapy supportive therapy",
+   "correct": false
+  },
+  {
+   "qid": 12458,
+   "predicted": "lung",
+   "gold": "lung",
+   "correct": true
+  },
+  {
+   "qid": 12459,
+   "predicted": "mri",
+   "gold": "x ray",
+   "correct": false
+  },
+  {
+   "qid": 12460,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12461,
+   "predicted": "head",
+   "gold": "chest",
+   "correct": false
+  },
+  {
+   "qid": 12462,
+   "predicted": "lower left lung",
+   "gold": "upper right lung",
+   "correct": false
+  },
+  {
+   "qid": 12463,
+   "predicted": "lower left lung",
+   "gold": "upper right lung",
+   "correct": false
+  },
+  {
+   "qid": 12464,
+   "predicted": "head",
+   "gold": "chest",
+   "correct": false
+  },
+  {
+   "qid": 12465,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12466,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12467,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12468,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12469,
+   "predicted": "black",
+   "gold": "black",
+   "correct": true
+  },
+  {
+   "qid": 12470,
+   "predicted": "1",
+   "gold": "1",
+   "correct": true
+  },
+  {
+   "qid": 12471,
+   "predicted": "breathe",
+   "gold": "breathe",
+   "correct": true
+  },
+  {
+   "qid": 12472,
+   "predicted": "pay attention to respiratory health strengthen physical exercise",
+   "gold": "pay attention to prevent cold and keep warm enhance physical fitness",
+   "correct": false
+  },
+  {
+   "qid": 12473,
+   "predicted": "lung",
+   "gold": "lung",
+   "correct": true
+  },
+  {
+   "qid": 12474,
+   "predicted": "xray",
+   "gold": "x ray",
+   "correct": true
+  },
+  {
+   "qid": 12475,
+   "predicted": "yes",
+   "gold": "no",
+   "correct": false
+  },
+  {
+   "qid": 12476,
+   "predicted": "head",
+   "gold": "chest",
+   "correct": false
+  },
+  {
+   "qid": 12477,
+   "predicted": "both",
+   "gold": "right",
+   "correct": false
+  },
+  {
+   "qid": 12478,
+   "predicted": "lower left lung",
+   "gold": "lower right lung",
+   "correct": false
+  },
+  {
+   "qid": 12479,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12480,
+   "predicted": "head",
+   "gold": "chest",
+   "correct": false
+  },
+  {
+   "qid": 12481,
+   "predicted": "pulmonary mass",
+   "gold": "pneumonia",
+   "correct": false
+  },
+  {
+   "qid": 12482,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12483,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12484,
+   "predicted": "black",
+   "gold": "black",
+   "correct": true
+  },
+  {
+   "qid": 12485,
+   "predicted": "2",
+   "gold": "2",
+   "correct": true
+  },
+  {
+   "qid": 12486,
+   "predicted": "promote blood flow",
+   "gold": "promote blood flow",
+   "correct": true
+  },
+  {
+   "qid": 12487,
+   "predicted": "pay attention to respiratory health strengthen physical exercise and maintain",
+   "gold": "pay attention to prevent cold and keep warm enhance physical fitness",
+   "correct": false
+  },
+  {
+   "qid": 12488,
+   "predicted": "heart",
+   "gold": "heart",
+   "correct": true
+  },
+  {
+   "qid": 12489,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12490,
+   "predicted": "yes",
+   "gold": "no",
+   "correct": false
+  },
+  {
+   "qid": 12491,
+   "predicted": "head",
+   "gold": "chest",
+   "correct": false
+  },
+  {
+   "qid": 12492,
+   "predicted": "both",
+   "gold": "left",
+   "correct": false
+  },
+  {
+   "qid": 12493,
+   "predicted": "lower left lung",
+   "gold": "lower left lung",
+   "correct": true
+  },
+  {
+   "qid": 12494,
+   "predicted": "lung",
+   "gold": "lung",
+   "correct": true
+  },
+  {
+   "qid": 12495,
+   "predicted": "brain",
+   "gold": "lung",
+   "correct": false
+  },
+  {
+   "qid": 12496,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12497,
+   "predicted": "pulmonary mass",
+   "gold": "pulmonary infiltration",
+   "correct": false
+  },
+  {
+   "qid": 12498,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12499,
+   "predicted": "black",
+   "gold": "black",
+   "correct": true
+  },
+  {
+   "qid": 12500,
+   "predicted": "2",
+   "gold": "2",
+   "correct": true
+  },
+  {
+   "qid": 12501,
+   "predicted": "breathe",
+   "gold": "breathe",
+   "correct": true
+  },
+  {
+   "qid": 12502,
+   "predicted": "chest tightness shortness of breath",
+   "gold": "chest pain cough expectoration",
+   "correct": false
+  },
+  {
+   "qid": 12503,
+   "predicted": "heart",
+   "gold": "heart",
+   "correct": true
+  },
+  {
+   "qid": 12504,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12505,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12506,
+   "predicted": "head",
+   "gold": "chest",
+   "correct": false
+  },
+  {
+   "qid": 12507,
+   "predicted": "heart",
+   "gold": "lower left lung",
+   "correct": false
+  },
+  {
+   "qid": 12508,
+   "predicted": "lower left lung",
+   "gold": "lower left lung",
+   "correct": true
+  },
+  {
+   "qid": 12509,
+   "predicted": "head",
+   "gold": "chest",
+   "correct": false
+  },
+  {
+   "qid": 12510,
+   "predicted": "yes",
+   "gold": "no",
+   "correct": false
+  },
+  {
+   "qid": 12511,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12512,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12513,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12514,
+   "predicted": "black",
+   "gold": "black",
+   "correct": true
+  },
+  {
+   "qid": 12515,
+   "predicted": "2",
+   "gold": "2",
+   "correct": true
+  },
+  {
+   "qid": 12516,
+   "predicted": "breathe",
+   "gold": "breathe",
+   "correct": true
+  },
+  {
+   "qid": 12517,
+   "predicted": "inflammation trauma neoplastic transformation",
+   "gold": "inflammation malignant tumor trauma etc",
+   "correct": false
+  },
+  {
+   "qid": 12518,
+   "predicted": "heart",
+   "gold": "heart",
+   "correct": true
+  },
+  {
+   "qid": 12519,
+   "predicted": "ct",
+   "gold": "x ray",
+   "correct": false
+  },
+  {
+   "qid": 12520,
+   "predicted": "transverse plane",
+   "gold": "coronal plane",
+   "correct": false
+  },
+  {
+   "qid": 12521,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12522,
+   "predicted": "center",
+   "gold": "center",
+   "correct": true
+  },
+  {
+   "qid": 12523,
+   "predicted": "lower left lung",
+   "gold": "lower left lung",
+   "correct": true
+  },
+  {
+   "qid": 12524,
+   "predicted": "yes",
+   "gold": "no",
+   "correct": false
+  },
+  {
+   "qid": 12525,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12526,
+   "predicted": "brain edema brain enhancing tumor",
+   "gold": "pleural effusion",
+   "correct": false
+  },
+  {
+   "qid": 12527,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12528,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12529,
+   "predicted": "black",
+   "gold": "black",
+   "correct": true
+  },
+  {
+   "qid": 12530,
+   "predicted": "2",
+   "gold": "2",
+   "correct": true
+  },
+  {
+   "qid": 12531,
+   "predicted": "breathe",
+   "gold": "breathe",
+   "correct": true
+  },
+  {
+   "qid": 12532,
+   "predicted": "chest tightness shortness of breath",
+   "gold": "chest tightness dyspnea chest pain",
+   "correct": false
+  },
+  {
+   "qid": 12533,
+   "predicted": "lung",
+   "gold": "lung",
+   "correct": true
+  },
+  {
+   "qid": 12534,
+   "predicted": "ct",
+   "gold": "ct",
+   "correct": true
+  },
+  {
+   "qid": 12535,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12536,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12537,
+   "predicted": "center",
+   "gold": "center",
+   "correct": true
+  },
+  {
+   "qid": 12538,
+   "predicted": "lung",
+   "gold": "temporal lobe",
+   "correct": false
+  },
+  {
+   "qid": 12539,
+   "predicted": "yes",
+   "gold": "no",
+   "correct": false
+  },
+  {
+   "qid": 12540,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12541,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12542,
+   "predicted": "gray",
+   "gold": "gray",
+   "correct": true
+  },
+  {
+   "qid": 12543,
+   "predicted": "lung",
+   "gold": "brain",
+   "correct": false
+  },
+  {
+   "qid": 12544,
+   "predicted": "2",
+   "gold": "0",
+   "correct": false
+  },
+  {
+   "qid": 12545,
+   "predicted": "much",
+   "gold": "much",
+   "correct": true
+  },
+  {
+   "qid": 12546,
+   "predicted": "spinal cord",
+   "gold": "brain",
+   "correct": false
+  },
+  {
+   "qid": 12547,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12548,
+   "predicted": "yes",
+   "gold": "no",
+   "correct": false
+  },
+  {
+   "qid": 12549,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12550,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12551,
+   "predicted": "head",
+   "gold": "head",
+   "correct": true
+  },
+  {
+   "qid": 12552,
+   "predicted": "center",
+   "gold": "center",
+   "correct": true
+  },
+  {
+   "qid": 12553,
+   "predicted": "head",
+   "gold": "head",
+   "correct": true
+  },
+  {
+   "qid": 12554,
+   "predicted": "chest",
+   "gold": "head",
+   "correct": false
+  },
+  {
+   "qid": 12555,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12556,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12557,
+   "predicted": "gray",
+   "gold": "white",
+   "correct": false
+  },
+  {
+   "qid": 12558,
+   "predicted": "lung",
+   "gold": "brain",
+   "correct": false
+  },
+  {
+   "qid": 12559,
+   "predicted": "0",
+   "gold": "0",
+   "correct": true
+  },
+  {
+   "qid": 12560,
+   "predicted": "control heartbeat and breathing",
+   "gold": "control heartbeat and breathing",
+   "correct": true
+  },
+  {
+   "qid": 12561,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12562,
+   "predicted": "yes",
+   "gold": "no",
+   "correct": false
+  },
+  {
+   "qid": 12563,
+   "predicted": "xray",
+   "gold": "ct",
+   "correct": false
+  },
+  {
+   "qid": 12564,
+   "predicted": "transverse plane",
+   "gold": "transverse plane",
+   "correct": true
+  },
+  {
+   "qid": 12565,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12566,
+   "predicted": "top",
+   "gold": "top",
+   "correct": true
+  },
+  {
+   "qid": 12567,
+   "predicted": "yes",
+   "gold": "no",
+   "correct": false
+  },
+  {
+   "qid": 12568,
+   "predicted": "head",
+   "gold": "head",
+   "correct": true
+  },
+  {
+   "qid": 12569,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12570,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12571,
+   "predicted": "gray",
+   "gold": "gray",
+   "correct": true
+  },
+  {
+   "qid": 12572,
+   "predicted": "lung",
+   "gold": "brain",
+   "correct": false
+  },
+  {
+   "qid": 12573,
+   "predicted": "2",
+   "gold": "2",
+   "correct": true
+  },
+  {
+   "qid": 12574,
+   "predicted": "control heartbeat and breathing",
+   "gold": "cutting chewing maintaining facial contour and assisting pronunciation",
+   "correct": false
+  },
+  {
+   "qid": 12575,
+   "predicted": "brain",
+   "gold": "brain",
+   "correct": true
+  },
+  {
+   "qid": 12576,
+   "predicted": "yes",
+   "gold": "no",
+   "correct": false
+  },
+  {
+   "qid": 12577,
+   "predicted": "yes",
+   "gold": "no",
+   "correct": false
+  },
+  {
+   "qid": 12578,
+   "predicted": "xray",
+   "gold": "ct",
+   "correct": false
+  },
+  {
+   "qid": 12579,
+   "predicted": "transverse plane",
+   "gold": "transverse plane",
+   "correct": true
+  },
+  {
+   "qid": 12580,
+   "predicted": "yes",
+   "gold": "no",
+   "correct": false
+  },
+  {
+   "qid": 12581,
+   "predicted": "head",
+   "gold": "neck",
+   "correct": false
+  },
+  {
+   "qid": 12582,
+   "predicted": "yes",
+   "gold": "no",
+   "correct": false
+  },
+  {
+   "qid": 12583,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12584,
+   "predicted": "irregular",
+   "gold": "oval",
+   "correct": false
+  },
+  {
+   "qid": 12585,
+   "predicted": "lung",
+   "gold": "larynx",
+   "correct": false
+  },
+  {
+   "qid": 12586,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12587,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12588,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12589,
+   "predicted": "transverse plane",
+   "gold": "transverse plane",
+   "correct": true
+  },
+  {
+   "qid": 12590,
+   "predicted": "head",
+   "gold": "neck",
+   "correct": false
+  },
+  {
+   "qid": 12591,
+   "predicted": "top",
+   "gold": "under trachea",
+   "correct": false
+  },
+  {
+   "qid": 12592,
+   "predicted": "chest",
+   "gold": "neck",
+   "correct": false
+  },
+  {
+   "qid": 12593,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12594,
+   "predicted": "yes",
+   "gold": "no",
+   "correct": false
+  },
+  {
+   "qid": 12595,
+   "predicted": "black",
+   "gold": "black",
+   "correct": true
+  },
+  {
+   "qid": 12596,
+   "predicted": "irregular",
+   "gold": "irregular",
+   "correct": true
+  },
+  {
+   "qid": 12597,
+   "predicted": "breathe",
+   "gold": "gas delivery",
+   "correct": false
+  },
+  {
+   "qid": 12598,
+   "predicted": "lung",
+   "gold": "trachea",
+   "correct": false
+  },
+  {
+   "qid": 12599,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12600,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12601,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12602,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12603,
+   "predicted": "chest",
+   "gold": "neck",
+   "correct": false
+  },
+  {
+   "qid": 12604,
+   "predicted": "black hollow",
+   "gold": "black hollow",
+   "correct": true
+  },
+  {
+   "qid": 12605,
+   "predicted": "chest",
+   "gold": "neck",
+   "correct": false
+  },
+  {
+   "qid": 12606,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12607,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12608,
+   "predicted": "irregular",
+   "gold": "irregular",
+   "correct": true
+  },
+  {
+   "qid": 12609,
+   "predicted": "breathe",
+   "gold": "gas delivery",
+   "correct": false
+  },
+  {
+   "qid": 12610,
+   "predicted": "small bowel large bowel",
+   "gold": "esophagus",
+   "correct": false
+  },
+  {
+   "qid": 12611,
+   "predicted": "yes",
+   "gold": "no",
+   "correct": false
+  },
+  {
+   "qid": 12612,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12613,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12614,
+   "predicted": "t2",
+   "gold": "t2",
+   "correct": true
+  },
+  {
+   "qid": 12615,
+   "predicted": "transverse plane",
+   "gold": "transverse plane",
+   "correct": true
+  },
+  {
+   "qid": 12616,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12617,
+   "predicted": "left",
+   "gold": "right",
+   "correct": false
+  },
+  {
+   "qid": 12618,
+   "predicted": "head",
+   "gold": "head",
+   "correct": true
+  },
+  {
+   "qid": 12619,
+   "predicted": "brain edema brain enhancing tumor",
+   "gold": "brain edema brain enhancing tumor",
+   "correct": true
+  },
+  {
+   "qid": 12620,
+   "predicted": "3",
+   "gold": "2",
+   "correct": false
+  },
+  {
+   "qid": 12621,
+   "predicted": "brain trauma brain tumor brain infection",
+   "gold": "brain embryonic tissue dysplasia genetic factors chemical factors",
+   "correct": false
+  },
+  {
+   "qid": 12622,
+   "predicted": "xray",
+   "gold": "mri",
+   "correct": false
+  },
+  {
+   "qid": 12623,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12624,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12625,
+   "predicted": "head",
+   "gold": "head",
+   "correct": true
+  },
+  {
+   "qid": 12626,
+   "predicted": "lower left lobe",
+   "gold": "upper left lobe",
+   "correct": false
+  },
+  {
+   "qid": 12627,
+   "predicted": "head",
+   "gold": "head",
+   "correct": true
+  },
+  {
+   "qid": 12628,
+   "predicted": "yes",
+   "gold": "no",
+   "correct": false
+  },
+  {
+   "qid": 12629,
+   "predicted": "white",
+   "gold": "white",
+   "correct": true
+  },
+  {
+   "qid": 12630,
+   "predicted": "brain embryonic malformation trauma infection etc",
+   "gold": "brain embryonic tissue dysplasia genetic factors chemical factors",
+   "correct": false
+  },
+  {
+   "qid": 12631,
+   "predicted": "ct",
+   "gold": "mri",
+   "correct": false
+  },
+  {
+   "qid": 12632,
+   "predicted": "t2",
+   "gold": "t2",
+   "correct": true
+  },
+  {
+   "qid": 12633,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12634,
+   "predicted": "head",
+   "gold": "head",
+   "correct": true
+  },
+  {
+   "qid": 12635,
+   "predicted": "left",
+   "gold": "left",
+   "correct": true
+  },
+  {
+   "qid": 12636,
+   "predicted": "chest",
+   "gold": "head",
+   "correct": false
+  },
+  {
+   "qid": 12637,
+   "predicted": "brain edema brain enhancing tumor brain nonenhancing tumor",
+   "gold": "brain edema brain enhancing tumor brain non enhancing tumor",
+   "correct": true
+  },
+  {
+   "qid": 12638,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12639,
+   "predicted": "3",
+   "gold": "3",
+   "correct": true
+  },
+  {
+   "qid": 12640,
+   "predicted": "headache vomiting dizziness visual field impairment",
+   "gold": "visual impairment vomiting tinnitus increased intracranial pressure",
+   "correct": false
+  },
+  {
+   "qid": 12641,
+   "predicted": "xray",
+   "gold": "mri",
+   "correct": false
+  },
+  {
+   "qid": 12642,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12643,
+   "predicted": "transverse plane",
+   "gold": "transverse plane",
+   "correct": true
+  },
+  {
+   "qid": 12644,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12645,
+   "predicted": "left lobe",
+   "gold": "left lobe",
+   "correct": true
+  },
+  {
+   "qid": 12646,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12647,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12648,
+   "predicted": "3",
+   "gold": "1",
+   "correct": false
+  },
+  {
+   "qid": 12649,
+   "predicted": "medical treatment supportive treatment surgical treatment",
+   "gold": "pharmacotherapy rehabilitation",
+   "correct": false
+  },
+  {
+   "qid": 12650,
+   "predicted": "xray",
+   "gold": "mri",
+   "correct": false
+  },
+  {
+   "qid": 12651,
+   "predicted": "t1",
+   "gold": "t2",
+   "correct": false
+  },
+  {
+   "qid": 12652,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12653,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12654,
+   "predicted": "lower left lung",
+   "gold": "upper left lobe",
+   "correct": false
+  },
+  {
+   "qid": 12655,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12656,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12657,
+   "predicted": "hyperdense",
+   "gold": "hyperdense",
+   "correct": true
+  },
+  {
+   "qid": 12658,
+   "predicted": "3",
+   "gold": "1",
+   "correct": false
+  },
+  {
+   "qid": 12659,
+   "predicted": "medical treatment supportive treatment surgical treatment",
+   "gold": "pharmacotherapy rehabilitation",
+   "correct": false
+  },
+  {
+   "qid": 12660,
+   "predicted": "mri",
+   "gold": "mri",
+   "correct": true
+  },
+  {
+   "qid": 12661,
+   "predicted": "t1",
+   "gold": "t2",
+   "correct": false
+  },
+  {
+   "qid": 12662,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12663,
+   "predicted": "chest",
+   "gold": "head",
+   "correct": false
+  },
+  {
+   "qid": 12664,
+   "predicted": "upper left lobe",
+   "gold": "upper left lobe",
+   "correct": true
+  },
+  {
+   "qid": 12665,
+   "predicted": "head",
+   "gold": "head",
+   "correct": true
+  },
+  {
+   "qid": 12666,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12667,
+   "predicted": "pay attention to dietary hygiene strengthen physical fitness and avoid",
+   "gold": "pay attention to dietary hygiene strengthen physical fitness and avoid brain trauma",
+   "correct": false
+  },
+  {
+   "qid": 12668,
+   "predicted": "mri",
+   "gold": "mri",
+   "correct": true
+  },
+  {
+   "qid": 12669,
+   "predicted": "t2",
+   "gold": "t2",
+   "correct": true
+  },
+  {
+   "qid": 12670,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12671,
+   "predicted": "chest",
+   "gold": "head",
+   "correct": false
+  },
+  {
+   "qid": 12672,
+   "predicted": "upper left lobe",
+   "gold": "upper right lobe",
+   "correct": false
+  },
+  {
+   "qid": 12673,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12674,
+   "predicted": "brain edema brain enhancing tumor brain nonenhancing tumor",
+   "gold": "brain edema brain non enhancing tumor",
+   "correct": false
+  },
+  {
+   "qid": 12675,
+   "predicted": "hyperdense",
+   "gold": "hyperdense",
+   "correct": true
+  },
+  {
+   "qid": 12676,
+   "predicted": "headache vomiting dizziness visual field impairment",
+   "gold": "visual impairment vomiting tinnitus increased intracranial pressure",
+   "correct": false
+  },
+  {
+   "qid": 12677,
+   "predicted": "xray",
+   "gold": "mri",
+   "correct": false
+  },
+  {
+   "qid": 12678,
+   "predicted": "t1",
+   "gold": "t2",
+   "correct": false
+  },
+  {
+   "qid": 12679,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12680,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12681,
+   "predicted": "upper left lobe",
+   "gold": "upper right lobe",
+   "correct": false
+  },
+  {
+   "qid": 12682,
+   "predicted": "head",
+   "gold": "head",
+   "correct": true
+  },
+  {
+   "qid": 12683,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12684,
+   "predicted": "pay attention to dietary hygiene strengthen physical fitness and avoid",
+   "gold": "pay attention to dietary hygiene strengthen physical fitness and avoid brain trauma",
+   "correct": false
+  },
+  {
+   "qid": 12685,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12686,
+   "predicted": "t2",
+   "gold": "t1",
+   "correct": false
+  },
+  {
+   "qid": 12687,
+   "predicted": "transverse plane",
+   "gold": "transverse plane",
+   "correct": true
+  },
+  {
+   "qid": 12688,
+   "predicted": "head",
+   "gold": "head",
+   "correct": true
+  },
+  {
+   "qid": 12689,
+   "predicted": "left",
+   "gold": "right",
+   "correct": false
+  },
+  {
+   "qid": 12690,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12691,
+   "predicted": "brain edema brain enhancing tumor",
+   "gold": "brain edema brain non enhancing tumor",
+   "correct": false
+  },
+  {
+   "qid": 12692,
+   "predicted": "much",
+   "gold": "0",
+   "correct": false
+  },
+  {
+   "qid": 12693,
+   "predicted": "ct",
+   "gold": "mri",
+   "correct": false
+  },
+  {
+   "qid": 12694,
+   "predicted": "chest",
+   "gold": "brain",
+   "correct": false
+  },
+  {
+   "qid": 12695,
+   "predicted": "t2",
+   "gold": "t2",
+   "correct": true
+  },
+  {
+   "qid": 12696,
+   "predicted": "brain",
+   "gold": "brain",
+   "correct": true
+  },
+  {
+   "qid": 12697,
+   "predicted": "lung",
+   "gold": "brain",
+   "correct": false
+  },
+  {
+   "qid": 12698,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12699,
+   "predicted": "brain edema brain enhancing tumor",
+   "gold": "brain edema",
+   "correct": false
+  },
+  {
+   "qid": 12700,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12701,
+   "predicted": "right lung left",
+   "gold": "lower right",
+   "correct": false
+  },
+  {
+   "qid": 12702,
+   "predicted": "yes",
+   "gold": "no",
+   "correct": false
+  },
+  {
+   "qid": 12703,
+   "predicted": "t2",
+   "gold": "t1",
+   "correct": false
+  },
+  {
+   "qid": 12704,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12705,
+   "predicted": "chest",
+   "gold": "head",
+   "correct": false
+  },
+  {
+   "qid": 12706,
+   "predicted": "right lung left",
+   "gold": "upper right lobe",
+   "correct": false
+  },
+  {
+   "qid": 12707,
+   "predicted": "head",
+   "gold": "head",
+   "correct": true
+  },
+  {
+   "qid": 12708,
+   "predicted": "yes",
+   "gold": "no",
+   "correct": false
+  },
+  {
+   "qid": 12709,
+   "predicted": "3",
+   "gold": "2",
+   "correct": false
+  },
+  {
+   "qid": 12710,
+   "predicted": "much",
+   "gold": "0",
+   "correct": false
+  },
+  {
+   "qid": 12711,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12712,
+   "predicted": "t2",
+   "gold": "t1",
+   "correct": false
+  },
+  {
+   "qid": 12713,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12714,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12715,
+   "predicted": "lower left lung",
+   "gold": "left lobe",
+   "correct": false
+  },
+  {
+   "qid": 12716,
+   "predicted": "head",
+   "gold": "head",
+   "correct": true
+  },
+  {
+   "qid": 12717,
+   "predicted": "brain edema brain enhancing tumor",
+   "gold": "brain edema brain enhancing tumor brain non enhancing tumor",
+   "correct": false
+  },
+  {
+   "qid": 12718,
+   "predicted": "hypodense",
+   "gold": "hyperdense",
+   "correct": false
+  },
+  {
+   "qid": 12719,
+   "predicted": "headache vomiting dizziness visual field impairment",
+   "gold": "visual impairment vomiting tinnitus increased intracranial pressure",
+   "correct": false
+  },
+  {
+   "qid": 12720,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12721,
+   "predicted": "t2",
+   "gold": "t1",
+   "correct": false
+  },
+  {
+   "qid": 12722,
+   "predicted": "transverse plane",
+   "gold": "transverse plane",
+   "correct": true
+  },
+  {
+   "qid": 12723,
+   "predicted": "head",
+   "gold": "head",
+   "correct": true
+  },
+  {
+   "qid": 12724,
+   "predicted": "upper left lobe",
+   "gold": "lower left lobe",
+   "correct": false
+  },
+  {
+   "qid": 12725,
+   "predicted": "yes",
+   "gold": "no",
+   "correct": false
+  },
+  {
+   "qid": 12726,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12727,
+   "predicted": "brain trauma brain tumor brain infection",
+   "gold": "brain embryonic tissue dysplasia genetic factors chemical factors",
+   "correct": false
+  },
+  {
+   "qid": 12728,
+   "predicted": "xray",
+   "gold": "mri",
+   "correct": false
+  },
+  {
+   "qid": 12729,
+   "predicted": "t2",
+   "gold": "t1",
+   "correct": false
+  },
+  {
+   "qid": 12730,
+   "predicted": "transverse plane",
+   "gold": "transverse plane",
+   "correct": true
+  },
+  {
+   "qid": 12731,
+   "predicted": "head",
+   "gold": "head",
+   "correct": true
+  },
+  {
+   "qid": 12732,
+   "predicted": "upper left lobe",
+   "gold": "left lobe",
+   "correct": false
+  },
+  {
+   "qid": 12733,
+   "predicted": "yes",
+   "gold": "no",
+   "correct": false
+  },
+  {
+   "qid": 12734,
+   "predicted": "brain edema brain enhancing tumor",
+   "gold": "brain edema brain enhancing tumor brain non enhancing tumor",
+   "correct": false
+  },
+  {
+   "qid": 12735,
+   "predicted": "high",
+   "gold": "hyperdense",
+   "correct": false
+  },
+  {
+   "qid": 12736,
+   "predicted": "headache vomiting dizziness visual field impairment",
+   "gold": "visual impairment vomiting tinnitus increased intracranial pressure",
+   "correct": false
+  },
+  {
+   "qid": 12737,
+   "predicted": "yes",
+   "gold": "no",
+   "correct": false
+  },
+  {
+   "qid": 12738,
+   "predicted": "yes",
+   "gold": "no",
+   "correct": false
+  },
+  {
+   "qid": 12739,
+   "predicted": "transverse plane",
+   "gold": "transverse plane",
+   "correct": true
+  },
+  {
+   "qid": 12740,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12741,
+   "predicted": "right lung left",
+   "gold": "lower left lobe",
+   "correct": false
+  },
+  {
+   "qid": 12742,
+   "predicted": "chest",
+   "gold": "head",
+   "correct": false
+  },
+  {
+   "qid": 12743,
+   "predicted": "brain edema",
+   "gold": "brain edema brain enhancing tumor",
+   "correct": false
+  },
+  {
+   "qid": 12744,
+   "predicted": "white",
+   "gold": "white",
+   "correct": true
+  },
+  {
+   "qid": 12745,
+   "predicted": "3",
+   "gold": "2",
+   "correct": false
+  },
+  {
+   "qid": 12746,
+   "predicted": "pay attention to dietary hygiene strengthen physical fitness and avoid",
+   "gold": "pay attention to dietary hygiene strengthen physical fitness and avoid brain trauma",
+   "correct": false
+  },
+  {
+   "qid": 12747,
+   "predicted": "ct",
+   "gold": "mri",
+   "correct": false
+  },
+  {
+   "qid": 12748,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12749,
+   "predicted": "transverse plane",
+   "gold": "transverse plane",
+   "correct": true
+  },
+  {
+   "qid": 12750,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12751,
+   "predicted": "lower left lobe",
+   "gold": "left lobe",
+   "correct": false
+  },
+  {
+   "qid": 12752,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12753,
+   "predicted": "brain edema brain enhancing tumor brain nonenhancing tumor",
+   "gold": "brain edema brain non enhancing tumor",
+   "correct": false
+  },
+  {
+   "qid": 12754,
+   "predicted": "3",
+   "gold": "2",
+   "correct": false
+  },
+  {
+   "qid": 12755,
+   "predicted": "much",
+   "gold": "0",
+   "correct": false
+  },
+  {
+   "qid": 12756,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12757,
+   "predicted": "t2",
+   "gold": "t2",
+   "correct": true
+  },
+  {
+   "qid": 12758,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12759,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12760,
+   "predicted": "upper left lobe",
+   "gold": "left lobe",
+   "correct": false
+  },
+  {
+   "qid": 12761,
+   "predicted": "head",
+   "gold": "head",
+   "correct": true
+  },
+  {
+   "qid": 12762,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12763,
+   "predicted": "much",
+   "gold": "0",
+   "correct": false
+  },
+  {
+   "qid": 12764,
+   "predicted": "ct",
+   "gold": "mri",
+   "correct": false
+  },
+  {
+   "qid": 12765,
+   "predicted": "chest",
+   "gold": "brain",
+   "correct": false
+  },
+  {
+   "qid": 12766,
+   "predicted": "t2",
+   "gold": "t2",
+   "correct": true
+  },
+  {
+   "qid": 12767,
+   "predicted": "brain",
+   "gold": "brain",
+   "correct": true
+  },
+  {
+   "qid": 12768,
+   "predicted": "lung",
+   "gold": "brain",
+   "correct": false
+  },
+  {
+   "qid": 12769,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12770,
+   "predicted": "brain edema brain enhancing tumor",
+   "gold": "0",
+   "correct": false
+  },
+  {
+   "qid": 12771,
+   "predicted": "yes",
+   "gold": "no",
+   "correct": false
+  },
+  {
+   "qid": 12772,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12773,
+   "predicted": "t2",
+   "gold": "t2",
+   "correct": true
+  },
+  {
+   "qid": 12774,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12775,
+   "predicted": "head",
+   "gold": "head",
+   "correct": true
+  },
+  {
+   "qid": 12776,
+   "predicted": "lower left lung",
+   "gold": "lower left lobe",
+   "correct": false
+  },
+  {
+   "qid": 12777,
+   "predicted": "head",
+   "gold": "head",
+   "correct": true
+  },
+  {
+   "qid": 12778,
+   "predicted": "brain edema brain enhancing tumor brain nonenhancing tumor",
+   "gold": "brain edema",
+   "correct": false
+  },
+  {
+   "qid": 12779,
+   "predicted": "3",
+   "gold": "1",
+   "correct": false
+  },
+  {
+   "qid": 12780,
+   "predicted": "much",
+   "gold": "0",
+   "correct": false
+  },
+  {
+   "qid": 12781,
+   "predicted": "symmetrical to the bottom spine",
+   "gold": "symmetrical to bottom spine",
+   "correct": false
+  },
+  {
+   "qid": 12782,
+   "predicted": "liver",
+   "gold": "liver",
+   "correct": true
+  },
+  {
+   "qid": 12783,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12784,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12785,
+   "predicted": "gray",
+   "gold": "gray",
+   "correct": true
+  },
+  {
+   "qid": 12786,
+   "predicted": "liver",
+   "gold": "right kidney",
+   "correct": false
+  },
+  {
+   "qid": 12787,
+   "predicted": "2",
+   "gold": "6",
+   "correct": false
+  },
+  {
+   "qid": 12788,
+   "predicted": "much",
+   "gold": "much",
+   "correct": true
+  },
+  {
+   "qid": 12789,
+   "predicted": "lymph node",
+   "gold": "spleen",
+   "correct": false
+  },
+  {
+   "qid": 12790,
+   "predicted": "kidney",
+   "gold": "kidney",
+   "correct": true
+  },
+  {
+   "qid": 12791,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12792,
+   "predicted": "yes",
+   "gold": "no",
+   "correct": false
+  },
+  {
+   "qid": 12793,
+   "predicted": "transverse plane",
+   "gold": "transverse plane",
+   "correct": true
+  },
+  {
+   "qid": 12794,
+   "predicted": "top",
+   "gold": "upper right",
+   "correct": false
+  },
+  {
+   "qid": 12795,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12796,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12797,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12798,
+   "predicted": "liver",
+   "gold": "lung",
+   "correct": false
+  },
+  {
+   "qid": 12799,
+   "predicted": "2",
+   "gold": "2",
+   "correct": true
+  },
+  {
+   "qid": 12800,
+   "predicted": "promote blood flow",
+   "gold": "biotransformation detoxification",
+   "correct": false
+  },
+  {
+   "qid": 12801,
+   "predicted": "lung",
+   "gold": "lung",
+   "correct": true
+  },
+  {
+   "qid": 12802,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12803,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12804,
+   "predicted": "head",
+   "gold": "abdomen",
+   "correct": false
+  },
+  {
+   "qid": 12805,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12806,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12807,
+   "predicted": "liver",
+   "gold": "colon",
+   "correct": false
+  },
+  {
+   "qid": 12808,
+   "predicted": "1",
+   "gold": "0",
+   "correct": false
+  },
+  {
+   "qid": 12809,
+   "predicted": "breathe",
+   "gold": "breathe",
+   "correct": true
+  },
+  {
+   "qid": 12810,
+   "predicted": "colon small bowel",
+   "gold": "stomach colon",
+   "correct": false
+  },
+  {
+   "qid": 12811,
+   "predicted": "kidney",
+   "gold": "kidney",
+   "correct": true
+  },
+  {
+   "qid": 12812,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12813,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12814,
+   "predicted": "liver",
+   "gold": "small bowel",
+   "correct": false
+  },
+  {
+   "qid": 12815,
+   "predicted": "yes",
+   "gold": "no",
+   "correct": false
+  },
+  {
+   "qid": 12816,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12817,
+   "predicted": "kidney",
+   "gold": "kidney",
+   "correct": true
+  },
+  {
+   "qid": 12818,
+   "predicted": "1",
+   "gold": "0",
+   "correct": false
+  },
+  {
+   "qid": 12819,
+   "predicted": "promote blood flow",
+   "gold": "absorb nutrients secrete enzymes digest food",
+   "correct": false
+  },
+  {
+   "qid": 12820,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12821,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12822,
+   "predicted": "symmetrical to the bottom spine",
+   "gold": "symmetrical to bottom spine",
+   "correct": false
+  },
+  {
+   "qid": 12823,
+   "predicted": "right lung",
+   "gold": "small bowel",
+   "correct": false
+  },
+  {
+   "qid": 12824,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12825,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12826,
+   "predicted": "gray",
+   "gold": "gray",
+   "correct": true
+  },
+  {
+   "qid": 12827,
+   "predicted": "liver",
+   "gold": "liver",
+   "correct": true
+  },
+  {
+   "qid": 12828,
+   "predicted": "2",
+   "gold": "5",
+   "correct": false
+  },
+  {
+   "qid": 12829,
+   "predicted": "circular",
+   "gold": "circular",
+   "correct": true
+  },
+  {
+   "qid": 12830,
+   "predicted": "promote blood flow",
+   "gold": "absorb nutrients secrete enzymes digest food",
+   "correct": false
+  },
+  {
+   "qid": 12831,
+   "predicted": "spinal cord",
+   "gold": "spinal cord",
+   "correct": true
+  },
+  {
+   "qid": 12832,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12833,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12834,
+   "predicted": "upper left",
+   "gold": "left",
+   "correct": false
+  },
+  {
+   "qid": 12835,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12836,
+   "predicted": "yes",
+   "gold": "no",
+   "correct": false
+  },
+  {
+   "qid": 12837,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12838,
+   "predicted": "gray",
+   "gold": "gray",
+   "correct": true
+  },
+  {
+   "qid": 12839,
+   "predicted": "kidney",
+   "gold": "spleen",
+   "correct": false
+  },
+  {
+   "qid": 12840,
+   "predicted": "2",
+   "gold": "0",
+   "correct": false
+  },
+  {
+   "qid": 12841,
+   "predicted": "irregular",
+   "gold": "oval",
+   "correct": false
+  },
+  {
+   "qid": 12842,
+   "predicted": "control heartbeat and breathing",
+   "gold": "absorb nutrients secrete enzymes digest food",
+   "correct": false
+  },
+  {
+   "qid": 12843,
+   "predicted": "spinal cord",
+   "gold": "spinal cord",
+   "correct": true
+  },
+  {
+   "qid": 12844,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12845,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12846,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12847,
+   "predicted": "top",
+   "gold": "upper right",
+   "correct": false
+  },
+  {
+   "qid": 12848,
+   "predicted": "head",
+   "gold": "abdomen",
+   "correct": false
+  },
+  {
+   "qid": 12849,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12850,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12851,
+   "predicted": "liver",
+   "gold": "liver",
+   "correct": true
+  },
+  {
+   "qid": 12852,
+   "predicted": "0",
+   "gold": "0",
+   "correct": true
+  },
+  {
+   "qid": 12853,
+   "predicted": "circular",
+   "gold": "circular",
+   "correct": true
+  },
+  {
+   "qid": 12854,
+   "predicted": "breathe",
+   "gold": "improve body's immunity",
+   "correct": false
+  },
+  {
+   "qid": 12855,
+   "predicted": "lymph node",
+   "gold": "spleen",
+   "correct": false
+  },
+  {
+   "qid": 12856,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12857,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12858,
+   "predicted": "transverse plane",
+   "gold": "transverse plane",
+   "correct": true
+  },
+  {
+   "qid": 12859,
+   "predicted": "top",
+   "gold": "center",
+   "correct": false
+  },
+  {
+   "qid": 12860,
+   "predicted": "head",
+   "gold": "abdomen",
+   "correct": false
+  },
+  {
+   "qid": 12861,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12862,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12863,
+   "predicted": "gray",
+   "gold": "gray",
+   "correct": true
+  },
+  {
+   "qid": 12864,
+   "predicted": "liver",
+   "gold": "liver",
+   "correct": true
+  },
+  {
+   "qid": 12865,
+   "predicted": "1",
+   "gold": "1",
+   "correct": true
+  },
+  {
+   "qid": 12866,
+   "predicted": "much",
+   "gold": "much",
+   "correct": true
+  },
+  {
+   "qid": 12867,
+   "predicted": "yes",
+   "gold": "no",
+   "correct": false
+  },
+  {
+   "qid": 12868,
+   "predicted": "ct",
+   "gold": "mri",
+   "correct": false
+  },
+  {
+   "qid": 12869,
+   "predicted": "chest",
+   "gold": "brain",
+   "correct": false
+  },
+  {
+   "qid": 12870,
+   "predicted": "t2",
+   "gold": "t2",
+   "correct": true
+  },
+  {
+   "qid": 12871,
+   "predicted": "brain",
+   "gold": "brain",
+   "correct": true
+  },
+  {
+   "qid": 12872,
+   "predicted": "lung",
+   "gold": "brain",
+   "correct": false
+  },
+  {
+   "qid": 12873,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12874,
+   "predicted": "brain edema brain enhancing tumor",
+   "gold": "brain tumor brain edema",
+   "correct": false
+  },
+  {
+   "qid": 12875,
+   "predicted": "yes",
+   "gold": "no",
+   "correct": false
+  },
+  {
+   "qid": 12876,
+   "predicted": "right lung left",
+   "gold": "lower left",
+   "correct": false
+  },
+  {
+   "qid": 12877,
+   "predicted": "chest",
+   "gold": "abdomen",
+   "correct": false
+  },
+  {
+   "qid": 12878,
+   "predicted": "left",
+   "gold": "top",
+   "correct": false
+  },
+  {
+   "qid": 12879,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12880,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12881,
+   "predicted": "yes",
+   "gold": "no",
+   "correct": false
+  },
+  {
+   "qid": 12882,
+   "predicted": "liver",
+   "gold": "esophagus",
+   "correct": false
+  },
+  {
+   "qid": 12883,
+   "predicted": "2",
+   "gold": "2",
+   "correct": true
+  },
+  {
+   "qid": 12884,
+   "predicted": "much",
+   "gold": "much",
+   "correct": true
+  },
+  {
+   "qid": 12885,
+   "predicted": "small bowel large bowel",
+   "gold": "esophagus",
+   "correct": false
+  },
+  {
+   "qid": 12886,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12887,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12888,
+   "predicted": "transverse plane",
+   "gold": "transverse plane",
+   "correct": true
+  },
+  {
+   "qid": 12889,
+   "predicted": "liver",
+   "gold": "right lung",
+   "correct": false
+  },
+  {
+   "qid": 12890,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12891,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12892,
+   "predicted": "black",
+   "gold": "black",
+   "correct": true
+  },
+  {
+   "qid": 12893,
+   "predicted": "heart",
+   "gold": "esophagus",
+   "correct": false
+  },
+  {
+   "qid": 12894,
+   "predicted": "2",
+   "gold": "4",
+   "correct": false
+  },
+  {
+   "qid": 12895,
+   "predicted": "control heartbeat and breathing",
+   "gold": "promote blood flow",
+   "correct": false
+  },
+  {
+   "qid": 12896,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12897,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12898,
+   "predicted": "ct",
+   "gold": "ct",
+   "correct": true
+  },
+  {
+   "qid": 12899,
+   "predicted": "head",
+   "gold": "pelvic cavity",
+   "correct": false
+  },
+  {
+   "qid": 12900,
+   "predicted": "center",
+   "gold": "bottom",
+   "correct": false
+  },
+  {
+   "qid": 12901,
+   "predicted": "chest",
+   "gold": "pelvic cavity",
+   "correct": false
+  },
+  {
+   "qid": 12902,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12903,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12904,
+   "predicted": "bladder",
+   "gold": "rectum",
+   "correct": false
+  },
+  {
+   "qid": 12905,
+   "predicted": "2",
+   "gold": "0",
+   "correct": false
+  },
+  {
+   "qid": 12906,
+   "predicted": "store feces excrete feces",
+   "gold": "store feces excrete feces",
+   "correct": true
+  },
+  {
+   "qid": 12907,
+   "predicted": "small bowel large bowel",
+   "gold": "rectum",
+   "correct": false
+  },
+  {
+   "qid": 12908,
+   "predicted": "yes",
+   "gold": "no",
+   "correct": false
+  },
+  {
+   "qid": 12909,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12910,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12911,
+   "predicted": "head",
+   "gold": "pelvic cavity",
+   "correct": false
+  },
+  {
+   "qid": 12912,
+   "predicted": "bottom",
+   "gold": "bottom",
+   "correct": true
+  },
+  {
+   "qid": 12913,
+   "predicted": "head",
+   "gold": "pelvic cavity",
+   "correct": false
+  },
+  {
+   "qid": 12914,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12915,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12916,
+   "predicted": "lung",
+   "gold": "bladder",
+   "correct": false
+  },
+  {
+   "qid": 12917,
+   "predicted": "store urine excrete urine",
+   "gold": "store urine",
+   "correct": false
+  },
+  {
+   "qid": 12918,
+   "predicted": "colon small bowel",
+   "gold": "rectum",
+   "correct": false
+  },
+  {
+   "qid": 12919,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12920,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12921,
+   "predicted": "chest",
+   "gold": "pelvic cavity",
+   "correct": false
+  },
+  {
+   "qid": 12922,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12923,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12924,
+   "predicted": "kidney",
+   "gold": "bladder",
+   "correct": false
+  },
+  {
+   "qid": 12925,
+   "predicted": "yes",
+   "gold": "no",
+   "correct": false
+  },
+  {
+   "qid": 12926,
+   "predicted": "xray",
+   "gold": "ct",
+   "correct": false
+  },
+  {
+   "qid": 12927,
+   "predicted": "head",
+   "gold": "pelvic cavity",
+   "correct": false
+  },
+  {
+   "qid": 12928,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12929,
+   "predicted": "colon",
+   "gold": "small bowel",
+   "correct": false
+  },
+  {
+   "qid": 12930,
+   "predicted": "store feces excrete feces",
+   "gold": "digest food absorb water excrete body waste",
+   "correct": false
+  },
+  {
+   "qid": 12931,
+   "predicted": "yes",
+   "gold": "no",
+   "correct": false
+  },
+  {
+   "qid": 12932,
+   "predicted": "head",
+   "gold": "pelvic cavity",
+   "correct": false
+  },
+  {
+   "qid": 12933,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12934,
+   "predicted": "colon",
+   "gold": "colon",
+   "correct": true
+  },
+  {
+   "qid": 12935,
+   "predicted": "control heartbeat and breathing",
+   "gold": "absorb nutrients secrete enzymes digest food",
+   "correct": false
+  },
+  {
+   "qid": 12936,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12937,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12938,
+   "predicted": "head",
+   "gold": "pelvic cavity",
+   "correct": false
+  },
+  {
+   "qid": 12939,
+   "predicted": "top",
+   "gold": "upper left",
+   "correct": false
+  },
+  {
+   "qid": 12940,
+   "predicted": "chest",
+   "gold": "pelvic cavity",
+   "correct": false
+  },
+  {
+   "qid": 12941,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12942,
+   "predicted": "breathe",
+   "gold": "digest food absorb water excrete body waste",
+   "correct": false
+  },
+  {
+   "qid": 12943,
+   "predicted": "colon small bowel",
+   "gold": "colon small bowel",
+   "correct": true
+  },
+  {
+   "qid": 12944,
+   "predicted": "yes",
+   "gold": "no",
+   "correct": false
+  },
+  {
+   "qid": 12945,
+   "predicted": "ct",
+   "gold": "mri",
+   "correct": false
+  },
+  {
+   "qid": 12946,
+   "predicted": "chest",
+   "gold": "brain",
+   "correct": false
+  },
+  {
+   "qid": 12947,
+   "predicted": "t2",
+   "gold": "t2",
+   "correct": true
+  },
+  {
+   "qid": 12948,
+   "predicted": "brain",
+   "gold": "brain",
+   "correct": true
+  },
+  {
+   "qid": 12949,
+   "predicted": "lung",
+   "gold": "brain",
+   "correct": false
+  },
+  {
+   "qid": 12950,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12951,
+   "predicted": "brain edema brain enhancing tumor",
+   "gold": "0",
+   "correct": false
+  },
+  {
+   "qid": 12952,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12953,
+   "predicted": "ct",
+   "gold": "mri",
+   "correct": false
+  },
+  {
+   "qid": 12954,
+   "predicted": "chest",
+   "gold": "brain",
+   "correct": false
+  },
+  {
+   "qid": 12955,
+   "predicted": "t2",
+   "gold": "t2",
+   "correct": true
+  },
+  {
+   "qid": 12956,
+   "predicted": "brain",
+   "gold": "brain",
+   "correct": true
+  },
+  {
+   "qid": 12957,
+   "predicted": "lung",
+   "gold": "brain",
+   "correct": false
+  },
+  {
+   "qid": 12958,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12959,
+   "predicted": "brain edema brain enhancing tumor",
+   "gold": "0",
+   "correct": false
+  },
+  {
+   "qid": 12960,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12961,
+   "predicted": "ct",
+   "gold": "ct",
+   "correct": true
+  },
+  {
+   "qid": 12962,
+   "predicted": "chest",
+   "gold": "chest",
+   "correct": true
+  },
+  {
+   "qid": 12963,
+   "predicted": "brain",
+   "gold": "lung",
+   "correct": false
+  },
+  {
+   "qid": 12964,
+   "predicted": "lung",
+   "gold": "lung",
+   "correct": true
+  },
+  {
+   "qid": 12965,
+   "predicted": "yes",
+   "gold": "no",
+   "correct": false
+  },
+  {
+   "qid": 12966,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12967,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12968,
+   "predicted": "brain edema brain enhancing tumor",
+   "gold": "0",
+   "correct": false
+  },
+  {
+   "qid": 12969,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12970,
+   "predicted": "lung",
+   "gold": "lung",
+   "correct": true
+  },
+  {
+   "qid": 12971,
+   "predicted": "ct",
+   "gold": "ct",
+   "correct": true
+  },
+  {
+   "qid": 12972,
+   "predicted": "chest",
+   "gold": "chest",
+   "correct": true
+  },
+  {
+   "qid": 12973,
+   "predicted": "brain",
+   "gold": "liver",
+   "correct": false
+  },
+  {
+   "qid": 12974,
+   "predicted": "lung",
+   "gold": "liver",
+   "correct": false
+  },
+  {
+   "qid": 12975,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12976,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12977,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  },
+  {
+   "qid": 12978,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12979,
+   "predicted": "lung",
+   "gold": "liver",
+   "correct": false
+  },
+  {
+   "qid": 12980,
+   "predicted": "ct",
+   "gold": "ct",
+   "correct": true
+  },
+  {
+   "qid": 12981,
+   "predicted": "chest",
+   "gold": "chest",
+   "correct": true
+  },
+  {
+   "qid": 12982,
+   "predicted": "brain",
+   "gold": "lung heart",
+   "correct": false
+  },
+  {
+   "qid": 12983,
+   "predicted": "lung",
+   "gold": "lung",
+   "correct": true
+  },
+  {
+   "qid": 12984,
+   "predicted": "yes",
+   "gold": "no",
+   "correct": false
+  },
+  {
+   "qid": 12985,
+   "predicted": "yes",
+   "gold": "yes",
+   "correct": true
+  },
+  {
+   "qid": 12986,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12987,
+   "predicted": "no",
+   "gold": "yes",
+   "correct": false
+  },
+  {
+   "qid": 12988,
+   "predicted": "lung",
+   "gold": "lung",
+   "correct": true
+  },
+  {
+   "qid": 12989,
+   "predicted": "ct",
+   "gold": "ct",
+   "correct": true
+  },
+  {
+   "qid": 12990,
+   "predicted": "chest",
+   "gold": "chest",
+   "correct": true
+  },
+  {
+   "qid": 12991,
+   "predicted": "brain",
+   "gold": "spinal cord",
+   "correct": false
+  },
+  {
+   "qid": 12992,
+   "predicted": "yes",
+   "gold": "no",
+   "correct": false
+  },
+  {
+   "qid": 12993,
+   "predicted": "yes",
+   "gold": "no",
+   "correct": false
+  },
+  {
+   "qid": 12994,
+   "predicted": "no",
+   "gold": "no",
+   "correct": true
+  }
+ ],
+ "provenance": {
+  "line": "QWEN2VL_LORA_TXT_SLAKE_seed2",
+  "arm": "TXT (braco so-texto: mesma receita de fine-tune, sem imagem; LoRA so no modelo de linguagem; torre e conector congelados)",
+  "adapter_dir": "qwen2vl_lora_txt_slake_seed2",
+  "adapter_sha256": "f78893d1a95d74a17721684bcc2c52bb485b1f105523e55476116d75cf64f817",
+  "adapter_bytes": 17465792,
+  "adapter_config": {
+   "alora_invocation_tokens": null,
+   "alpha_pattern": {},
+   "arrow_config": null,
+   "auto_mapping": null,
+   "base_model_name_or_path": "Qwen/Qwen2-VL-2B-Instruct",
+   "bias": "none",
+   "corda_config": null,
+   "ensure_weight_tying": false,
+   "eva_config": null,
+   "exclude_modules": null,
+   "fan_in_fan_out": false,
+   "inference_mode": true,
+   "init_lora_weights": true,
+   "layer_replication": null,
+   "layers_pattern": null,
+   "layers_to_transform": null,
+   "loftq_config": {},
+   "lora_alpha": 32,
+   "lora_bias": false,
+   "lora_dropout": 0.0,
+   "lora_ga_config": null,
+   "megatron_config": null,
+   "megatron_core": "megatron.core",
+   "modules_to_save": null,
+   "monteclora_config": null,
+   "peft_type": "LORA",
+   "peft_version": "0.20.0",
+   "qalora_group_size": 16,
+   "r": 16,
+   "rank_pattern": {},
+   "revision": null,
+   "target_modules": "^.*model\\.layers\\.\\d+\\.self_attn\\.(q|k|v|o)_proj$",
+   "target_parameters": null,
+   "task_type": "CAUSAL_LM",
+   "trainable_token_indices": null,
+   "use_bdlora": null,
+   "use_dora": false,
+   "use_qalora": false,
+   "use_rslora": false,
+   "velora_config": null
+  },
+  "base_model": "Qwen/Qwen2-VL-2B-Instruct",
+  "dtype": "bf16 (med_vlm/models/loader.py)",
+  "versions": {
+   "torch": "2.13.0+cu130",
+   "transformers": "5.15.1",
+   "peft": "0.20.0",
+   "datasets": "4.8.5",
+   "accelerate": "0.34.2",
+   "python": "3.13.15"
+  },
+  "git": {
+   "commit": "2b7e731a85ab405041734565d255f2ba1e61c5b5",
+   "tracked_diff_sha256": "0950dfa15d3797929081dfa57d236a4857db40ff156555916cd7493aae86c445"
+  },
+  "host": "lasid-gpu1",
+  "gpu": 2,
+  "env": {
+   "OMP_NUM_THREADS": "4",
+   "MKL_NUM_THREADS": "4",
+   "WANDB_MODE": "offline",
+   "MED_VLM_NUM_PROC": "4",
+   "TOKENIZERS_PARALLELISM": "false"
+  },
+  "start": "2026-10-09 20:51:25",
+  "end": "2026-10-09 20:54:16",
+  "wall_seconds": 170.7,
+  "peak_vram_mib_nvidia_smi": 4912,
+  "stamped": "2026-10-09 20:54:16",
+  "condition": "TXT",
+  "input_arrow": "vqa_slack_test.arrow",
+  "input_arrow_sha256": "fe94d9a08770ab65608ac32c1f59f88dba4baa88611c401ceddd8452c85149d1",
+  "input_arrow_sha256_expected_prefix": "fe94d9a08770ab65",
+  "inference": "harness.extract_predictions_circle --no-image (mesma funcao e mesmo rescoring das _C0.json publicadas; so perguntas/qids/respostas lidos do arrow)",
+  "train_log_json": "qwen2vl_lora_txt_slake_seed2.json"
+ }
+}

@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+# weights are not distributed (directories named *.ckpt under configs/m3ae_hparams are not weights)
+*.ckpt
+!*.ckpt/
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.arrow
+*.parquet
+wandb/
+paper/tables_regen/
+paper/figs_regen/
+.DS_Store

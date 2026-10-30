@@ -1,0 +1,40 @@
+{
+ "A3_manual_camada0_identico": true,
+ "A3_manual_max_abs_dif": 0.0,
+ "metade_imagem_exatamente_zero": true,
+ "entrada_cabeca_dim": 1536,
+ "qids_real_iguais": true,
+ "logits_identicos_com_imagens_diferentes": {
+  "cinza (arrow D1)": true,
+  "preta": true,
+  "aleatoria": true,
+  "nenhuma (None)": true,
+  "real (arrow original)": true
+ },
+ "perda_finita": true,
+ "perda": 3.8662045001983643,
+ "congelados_com_grad": 0,
+ "treinaveis_sem_grad": [
+  "language_encoder.pooler.dense.weight",
+  "language_encoder.pooler.dense.bias"
+ ],
+ "grad_nan_ou_inf": 0,
+ "treinaveis_grad_todo_zero": [],
+ "parametros": {
+  "total": 347900914,
+  "treinaveis": 171494130,
+  "congelados": 176406784,
+  "treinaveis_por_modulo": {
+   "language_encoder": 124645632,
+   "multi_modal_language_proj": 590592,
+   "modality_type_embeddings": 1536,
+   "multi_modal_language_layers": 42536448,
+   "multi_modal_language_pooler": 590592,
+   "vqa_head": 3129330
+  }
+ },
+ "init_mesmas_chaves": true,
+ "init_todos_tensores_iguais": true,
+ "init_vqa_head_iguais": true,
+ "qids_treino_3_lotes_iguais_com_e_sem_flag": true
+}

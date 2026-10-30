@@ -1,0 +1,77 @@
+config:
+  batch_size: 64
+  data_root: ${MEDVQA_ROOT}/v7_txt/article_runs/data/vqarad_qlevel/data_root_cinza/
+  datasets:
+  - vqa_vqa_rad
+  decay_power: 1
+  default_root_dir: ${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/ckpt/VQARAD_QLEVEL
+  draw_false_image: 0
+  draw_false_text: 0
+  drop_rate: 0.1
+  end_lr: 0
+  exp_name: task_finetune_vqa_vqa_rad
+  fast_dev_run: false
+  freeze_report_path: ''
+  freeze_vision_encoder: false
+  get_recall_metric: false
+  hidden_size: 768
+  image_only: false
+  image_size: 384
+  input_image_embed_size: 768
+  input_text_embed_size: 768
+  label_column_name: ''
+  learning_rate: 5.0e-06
+  load_path: downloaded/pretrained/m3ae.ckpt
+  log_dir: ${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/ckpt/VQARAD_QLEVEL/result
+  loss_names:
+    cls: 0
+    irtr: 0
+    itm: 0
+    mim: 0
+    mlm: 0
+    vqa: 1
+  lr_multiplier_head: 50
+  lr_multiplier_multi_modal: 5
+  max_epoch: 50
+  max_steps: null
+  max_text_len: 32
+  melinda_label_size:
+    i_meth: 85
+    i_meth_label: 15
+    p_meth: 45
+    p_meth_label: 7
+  mim_decoder_hidden_size: 384
+  mim_decoder_num_heads: 6
+  mim_decoder_num_layers: 4
+  mim_layer: -1
+  mim_prob: 0.75
+  mlc_label_size: 14
+  mlm_prob: 0.15
+  mlp_ratio: 4
+  no_image: true
+  norm_pix_loss: true
+  num_gpus: 1
+  num_heads: 12
+  num_layers: 6
+  num_nodes: 1
+  num_top_layer: 6
+  num_workers: 8
+  optim_type: adamw
+  patch_size: 16
+  per_gpu_batchsize: 16
+  precision: 16
+  resume_from: null
+  seed: 2
+  test_only: false
+  tokenizer: downloaded/roberta-base
+  train_transform_keys:
+  - clip
+  val_check_interval: 1.0
+  val_transform_keys:
+  - clip
+  vit: ViT-B/16
+  vocab_size: 50265
+  vqa_label_size: 498
+  warmup_steps: 0.1
+  weight_decay: 0.01
+  whole_word_masking: true

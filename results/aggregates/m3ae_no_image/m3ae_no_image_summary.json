@@ -1,0 +1,1182 @@
+{
+ "antes": {
+  "tab2_m3ae": {
+   "KVASIR": {
+    "A_text": [
+     0.6572656709032997,
+     0.00021425003031436113
+    ],
+    "G_enc": [
+     0.2080898042490027,
+     0.19887280081146974,
+     0.2176567114365093
+    ],
+    "G_ft": [
+     0.005597303398583667,
+     0.00147987693255124,
+     0.00943801782174235
+    ],
+    "G": [
+     0.21368710764758636,
+     0.20473145957785352,
+     0.22308695478529353
+    ]
+   },
+   "SLAKE": {
+    "A_text": [
+     0.6658653846153846,
+     0.007211538461538491
+    ],
+    "G_enc": [
+     0.19471153846153846,
+     0.15100211985958362,
+     0.23707427460945077
+    ],
+    "G_ft": [
+     0.012019230769230768,
+     -0.00763177498805934,
+     0.036078532443905395
+    ],
+    "G": [
+     0.20673076923076925,
+     0.16540715476473988,
+     0.24377279462046955
+    ]
+   },
+   "HEAL": {
+    "A_text": [
+     0.8483171968649147,
+     0.0032681989116546276
+    ],
+    "G_enc": [
+     0.04426002766251729,
+     0.026260776726089792,
+     0.06190168245962604
+    ],
+    "G_ft": [
+     0.00437989857076994,
+     -0.008357569330872047,
+     0.01851980810894459
+    ],
+    "G": [
+     0.04863992623328723,
+     0.027793083625095676,
+     0.0692526000402783
+    ]
+   },
+   "MIMIC": {
+    "A_text": [
+     0.7831887925283523,
+     0.0076935040658244
+    ],
+    "G_enc": [
+     0.0555926173004225,
+     0.03361868833002432,
+     0.07627340299946422
+    ],
+    "G_ft": [
+     -0.00422503891483211,
+     -0.018189261653293855,
+     0.009396447060204092
+    ],
+    "G": [
+     0.0513675783855904,
+     0.02937911029594573,
+     0.07299306740457905
+    ]
+   },
+   "VQARAD_REDIV": {
+    "A_text": [
+     0.6124401913875598,
+     0.03314929775251438
+    ],
+    "G_enc": [
+     -0.036682615629984046,
+     -0.11829606549364614,
+     0.04239082236578735
+    ],
+    "G_ft": [
+     0.04864433811802232,
+     -0.0095728619872718,
+     0.10328565505804306
+    ],
+    "G": [
+     0.011961722488038277,
+     -0.05983200001453209,
+     0.07838659743552236
+    ]
+   }
+  },
+  "contagens_45": {
+   "G_enc_IC_inclui_zero": 6,
+   "G_enc_IC_inclui_zero_onde": [
+    [
+     "VQARAD_REDIV",
+     "M3AE_FROZEN seed0"
+    ],
+    [
+     "VQARAD_REDIV",
+     "M3AE_FROZEN seed1"
+    ],
+    [
+     "VQARAD_REDIV",
+     "M3AE_FROZEN seed2"
+    ],
+    [
+     "HEAL",
+     "QWEN2VL_LORA_TXT_HEAL_seed0"
+    ],
+    [
+     "VQARAD_REDIV",
+     "QWEN2VL_LORA_TXT_VQARAD_REDIV_seed0"
+    ],
+    [
+     "VQARAD_REDIV",
+     "QWEN2VL_LORA_TXT_VQARAD_REDIV_seed2"
+    ]
+   ],
+   "G_IC_exclui_zero": 41,
+   "G_n": 45,
+   "G_excecoes": [
+    [
+     "VQARAD_REDIV",
+     "QWEN2VL_LORA_TXT_VQARAD_REDIV_seed2"
+    ],
+    [
+     "VQARAD_REDIV",
+     "M3AE_TXT_VQARAD_REDIV_seed0"
+    ],
+    [
+     "VQARAD_REDIV",
+     "M3AE_TXT_VQARAD_REDIV_seed1"
+    ],
+    [
+     "VQARAD_REDIV",
+     "M3AE_TXT_VQARAD_REDIV_seed2"
+    ]
+   ],
+   "G_ft_IC_inclui_zero": 25,
+   "G_ft_exclui_max_4grandes": 0.03665283540802213,
+   "G_ft_exclui_max_VQARAD": 0.06937799043062201
+  },
+  "celulas_Genc_maior_Gft": {
+   "n": 13,
+   "de": 15,
+   "excecoes": {
+    "HEAL|QWEN2VL": [
+     0.019363762102351315,
+     0.02028584601198709
+    ],
+    "VQARAD_REDIV|M3AE": [
+     -0.036682615629984046,
+     0.04864433811802232
+    ]
+   }
+  },
+  "faixa_G_por_base": {
+   "KVASIR": [
+    0.21368710764758636,
+    0.2536413396418962
+   ],
+   "SLAKE": [
+    0.12740384615384615,
+    0.20673076923076925
+   ],
+   "HEAL": [
+    0.03964960811433841,
+    0.04979253112033195
+   ],
+   "MIMIC": [
+    0.03380031131865688,
+    0.0533689126084056
+   ],
+   "VQARAD_REDIV": [
+    0.011961722488038277,
+    0.09489633173843699
+   ]
+  },
+  "M3AE_Genc_4grandes": [
+   0.04426002766251729,
+   0.2080898042490027
+  ],
+  "M3AE_Gft_4grandes": [
+   -0.00422503891483211,
+   0.012019230769230768
+  ],
+  "VLM_Gft": [
+   -0.004784688995215311,
+   0.021634615384615388
+  ],
+  "PubMedBERT_menos_A_text": {
+   "KVASIR": {
+    "QWEN2VL": 0.0320066796548845,
+    "SMOLVLM": -0.0,
+    "M3AE": 0.0001236973126758821
+   },
+   "SLAKE": {
+    "QWEN2VL": 0.0016025641025641027,
+    "SMOLVLM": 0.0008012820512820514,
+    "M3AE": 0.0016025641025641027
+   },
+   "HEAL": {
+    "QWEN2VL": -0.004610419548178884,
+    "SMOLVLM": -0.0009220839096357765,
+    "M3AE": 0.0025357307514983865
+   },
+   "MIMIC": {
+    "QWEN2VL": -0.008672448298865912,
+    "SMOLVLM": -0.0006671114076050702,
+    "M3AE": 0.005336891260840561
+   },
+   "VQARAD_REDIV": {
+    "QWEN2VL": -0.007177033492822967,
+    "SMOLVLM": -0.06539074960127592,
+    "M3AE": 0.012759170653907498
+   }
+  },
+  "max_abs_PubMedBERT_menos_A_text_por_base": {
+   "KVASIR": 0.0320066796548845,
+   "SLAKE": 0.0016025641025641027,
+   "HEAL": 0.004610419548178884,
+   "MIMIC": 0.008672448298865912,
+   "VQARAD_REDIV": 0.06539074960127592
+  },
+  "bases_dentro_de_1pp": [
+   "SLAKE",
+   "HEAL",
+   "MIMIC"
+  ],
+  "A_text_menos_TFIDF_max": [
+   0.18741355463347165,
+   "HEAL",
+   "QWEN2VL"
+  ],
+  "A_text_menos_majoritaria_max": [
+   0.4645143334261063,
+   "KVASIR",
+   "SMOLVLM"
+  ],
+  "maj_por_pergunta_menos_A_text": {
+   "KVASIR": {
+    "QWEN2VL": 0.031728360701363756,
+    "SMOLVLM": -0.00027831895352070646,
+    "M3AE": -0.0001546216408448986
+   },
+   "SLAKE": {
+    "QWEN2VL": 0.004807692307692291,
+    "SMOLVLM": 0.004006410256410242,
+    "M3AE": 0.004807692307692291
+   },
+   "HEAL": {
+    "QWEN2VL": -0.0020746887966804906,
+    "SMOLVLM": 0.0016136468418626038,
+    "M3AE": 0.005071461502996755
+   },
+   "MIMIC": {
+    "QWEN2VL": -0.02201467645096733,
+    "SMOLVLM": -0.014009339559706402,
+    "M3AE": -0.008005336891260928
+   },
+   "VQARAD_REDIV": {
+    "QWEN2VL": -0.08213716108452962,
+    "SMOLVLM": -0.14035087719298256,
+    "M3AE": -0.062200956937799035
+   }
+  },
+  "maj_por_pergunta": {
+   "KVASIR": 0.6571110492624548,
+   "SLAKE": 0.6706730769230769,
+   "HEAL": 0.8533886583679114,
+   "MIMIC": 0.7751834556370913,
+   "VQARAD_REDIV": 0.5502392344497608
+  },
+  "A_text_por_familia": {
+   "KVASIR": {
+    "QWEN2VL": [
+     0.625382688561091,
+     0.0
+    ],
+    "SMOLVLM": [
+     0.6573893682159755,
+     0.0
+    ],
+    "M3AE": [
+     0.6572656709032997,
+     0.00021425003031436113
+    ]
+   },
+   "SLAKE": {
+    "QWEN2VL": [
+     0.6658653846153846,
+     0.007211538461538491
+    ],
+    "SMOLVLM": [
+     0.6666666666666666,
+     0.0027757224480270373
+    ],
+    "M3AE": [
+     0.6658653846153846,
+     0.007211538461538491
+    ]
+   },
+   "HEAL": {
+    "QWEN2VL": [
+     0.8554633471645919,
+     0.0006915629322268302
+    ],
+    "SMOLVLM": [
+     0.8517750115260488,
+     0.00039927404508272735
+    ],
+    "M3AE": [
+     0.8483171968649147,
+     0.0032681989116546276
+    ]
+   },
+   "MIMIC": {
+    "QWEN2VL": [
+     0.7971981320880587,
+     0.004621883409123138
+    ],
+    "SMOLVLM": [
+     0.7891927951967977,
+     0.005815742419667347
+    ],
+    "M3AE": [
+     0.7831887925283523,
+     0.0076935040658244
+    ]
+   },
+   "VQARAD_REDIV": {
+    "QWEN2VL": [
+     0.6323763955342904,
+     0.004980062199679716
+    ],
+    "SMOLVLM": [
+     0.6905901116427433,
+     0.00498006219967976
+    ],
+    "M3AE": [
+     0.6124401913875598,
+     0.03314929775251438
+    ]
+   }
+  },
+  "A_text_amplitude_entre_familias": {
+   "KVASIR": 0.03200667965488446,
+   "SLAKE": 0.0008012820512820484,
+   "HEAL": 0.007146150299677245,
+   "MIMIC": 0.014009339559706402,
+   "VQARAD_REDIV": 0.07814992025518352
+  },
+  "A_text_media_das_familias": {
+   "KVASIR": 0.6466792425601221,
+   "SLAKE": 0.6661324786324786,
+   "HEAL": 0.8518518518518517,
+   "MIMIC": 0.789859906604403,
+   "VQARAD_REDIV": 0.6451355661881979
+  },
+  "A_text_dp_max_por_base": {
+   "KVASIR": 0.00021425003031436113,
+   "SLAKE": 0.007211538461538491,
+   "HEAL": 0.0032681989116546276,
+   "MIMIC": 0.0076935040658244,
+   "VQARAD_REDIV": 0.03314929775251438
+  },
+  "HEAL_G": {
+   "QWEN2VL": 0.03964960811433841,
+   "SMOLVLM": 0.04979253112033195,
+   "M3AE": 0.04863992623328723
+  },
+  "HEAL_Aft_menos_TFIDF": {
+   "QWEN2VL": 0.22706316274781005,
+   "SMOLVLM": 0.23351775011526046,
+   "M3AE": 0.2289073305670816
+  },
+  "A_swap_menos_A_text_4grandes": {
+   "min": -0.14743589743589744,
+   "max": -0.07468879668049792,
+   "todas_negativas": true,
+   "por_celula": {
+    "KVASIR|QWEN2VL": -0.07808392862665059,
+    "KVASIR|SMOLVLM": -0.10838977023224171,
+    "KVASIR|M3AE": -0.10622506726041377,
+    "SLAKE|QWEN2VL": -0.11298076923076923,
+    "SLAKE|SMOLVLM": -0.14743589743589744,
+    "SLAKE|M3AE": -0.12740384615384615,
+    "HEAL|QWEN2VL": -0.07468879668049792,
+    "HEAL|SMOLVLM": -0.0850622406639004,
+    "HEAL|M3AE": -0.1136468418626095,
+    "MIMIC|QWEN2VL": -0.09495219034912165,
+    "MIMIC|SMOLVLM": -0.08961529908828109,
+    "MIMIC|M3AE": -0.08983766955748278
+   }
+  },
+  "A_menos_A_swap": {
+   "VQARAD_REDIV": [
+    0.009569377990430622,
+    0.12519936204146728
+   ],
+   "4grandes": [
+    0.11433840479483633,
+    0.3341346153846154
+   ]
+  },
+  "vqarad_duas_divisoes": {
+   "VQARAD_QLEVEL": {
+    "A_text": {
+     "QWEN2VL": 0.6991869918699187,
+     "SMOLVLM": 0.7276422764227641,
+     "M3AE": 0.7577235772357724
+    },
+    "PubMedBERT": 0.7243902439024389,
+    "G": {
+     "QWEN2VL": [
+      0.0032520325203252037,
+      -0.037899749277253314,
+      0.04368269812462187
+     ],
+     "SMOLVLM": [
+      0.15284552845528454,
+      0.10749746420047733,
+      0.19930418529665134
+     ],
+     "M3AE": [
+      0.11382113821138211,
+      0.07377947196137001,
+      0.15302609555690805
+     ]
+    }
+   },
+   "VQARAD_REDIV": {
+    "A_text": {
+     "QWEN2VL": 0.6323763955342904,
+     "SMOLVLM": 0.6905901116427433,
+     "M3AE": 0.6124401913875598
+    },
+    "PubMedBERT": 0.6251993620414673,
+    "G": {
+     "QWEN2VL": [
+      0.054226475279106866,
+      0.0,
+      0.10866680517415808
+     ],
+     "SMOLVLM": [
+      0.09489633173843699,
+      0.04492606990077569,
+      0.1462768860912385
+     ],
+     "M3AE": [
+      0.011961722488038277,
+      -0.05983200001453209,
+      0.07838659743552236
+     ]
+    }
+   },
+   "A_text_sobe_nas_3": {
+    "QWEN2VL": true,
+    "SMOLVLM": true,
+    "M3AE": true
+   },
+   "G_sobe": {
+    "QWEN2VL": false,
+    "SMOLVLM": true,
+    "M3AE": true
+   }
+  },
+  "cinza_congelado_HEAL": [
+   0.5961272475795297,
+   0.7911479944674965,
+   0.8395573997233748
+  ]
+ },
+ "antes_fontes": {
+  "${MEDVQA_ROOT}/v7_txt/article_runs/analysis/decomposicao_fechadas.json": "2bd220eb6435b89715d6f9feb3b29669442de3682d9e0b9a7f476c8f647d7668",
+  "${MEDVQA_ROOT}/v7_txt/article_runs/analysis/joint_ci.json": "c62394604546047701578b6f47b3e8152d961f05e78b58d2d21139aaa54ac207",
+  "${MEDVQA_ROOT}/v7_txt/article_runs/analysis/m3ae_frozen_vit.json": "60ae85b3b33bf0bf848b2cb12ee34784a5f39c990419f59d126ecb545fcec292",
+  "${MEDVQA_ROOT}/v7_txt/article_runs/analysis/analise_troca_v2.json": "6332a671fea67c35df1d27ac5ff5f8df9ff8ca1250fbf2997f4b0a6bdc950c8e",
+  "${MEDVQA_ROOT}/v7_txt/article_runs/analysis/ic_contagem.json": "980fc00179e5c8defce91540ed69cb4d62b68e56846a321e2653ab36c9d6f41f",
+  "${MEDVQA_ROOT}/v7_txt/article_runs/analysis/text_analyses.json": "c45b1d125cf88a7b12a8e30f9499edd588a65e428a92540533001dcba07f0ba1",
+  "${MEDVQA_ROOT}/v7_txt/article_runs/analysis/heal_classifiers_train_only.json": "86b4dc25a73a12db4b71659384068093e1284b5555a255d9473edb9cf1312fc9"
+ },
+ "depois": {
+  "tab2_m3ae": {
+   "KVASIR": {
+    "A_text": [
+     0.6573893682159755,
+     0.0
+    ],
+    "G_enc": [
+     0.2079661069363268,
+     0.19870683491895547,
+     0.21761196048775855
+    ],
+    "G_ft": [
+     0.005597303398583667,
+     0.00147987693255124,
+     0.00943801782174235
+    ],
+    "G": [
+     0.21356341033491047,
+     0.20472495214503147,
+     0.22294470813598122
+    ]
+   },
+   "SLAKE": {
+    "A_text": [
+     0.672275641025641,
+     0.012099093646267243
+    ],
+    "G_enc": [
+     0.18830128205128205,
+     0.1438291466823091,
+     0.2284151855271231
+    ],
+    "G_ft": [
+     0.012019230769230768,
+     -0.00763177498805934,
+     0.036078532443905395
+    ],
+    "G": [
+     0.2003205128205128,
+     0.1599951573849879,
+     0.23787440185987718
+    ]
+   },
+   "HEAL": {
+    "A_text": [
+     0.8529276164130936,
+     0.0010563798282516885
+    ],
+    "G_enc": [
+     0.03964960811433841,
+     0.02116988760811225,
+     0.057074178829859885
+    ],
+    "G_ft": [
+     0.00437989857076994,
+     -0.008357569330872047,
+     0.01851980810894459
+    ],
+    "G": [
+     0.04402950668510835,
+     0.023395574069949614,
+     0.06390622603386927
+    ]
+   },
+   "MIMIC": {
+    "A_text": [
+     0.789859906604403,
+     0.003057088522318806
+    ],
+    "G_enc": [
+     0.048921503224371804,
+     0.027552034570318042,
+     0.06827322722724342
+    ],
+    "G_ft": [
+     -0.00422503891483211,
+     -0.018189261653293855,
+     0.009396447060204092
+    ],
+    "G": [
+     0.0446964643095397,
+     0.023316764341663,
+     0.0653896961690885
+    ]
+   },
+   "VQARAD_REDIV": {
+    "A_text": [
+     0.6052631578947368,
+     0.012659097182127231
+    ],
+    "G_enc": [
+     -0.029505582137161087,
+     -0.10317686300032543,
+     0.038813951852744846
+    ],
+    "G_ft": [
+     0.04864433811802232,
+     -0.0095728619872718,
+     0.10328565505804306
+    ],
+    "G": [
+     0.019138755980861243,
+     -0.05446017962451983,
+     0.09894669915935136
+    ]
+   }
+  },
+  "contagens_45": {
+   "G_enc_IC_inclui_zero": 6,
+   "G_enc_IC_inclui_zero_onde": [
+    [
+     "VQARAD_REDIV",
+     "M3AE_FROZEN seed0"
+    ],
+    [
+     "VQARAD_REDIV",
+     "M3AE_FROZEN seed1"
+    ],
+    [
+     "VQARAD_REDIV",
+     "M3AE_FROZEN seed2"
+    ],
+    [
+     "HEAL",
+     "QWEN2VL_LORA_TXT_HEAL_seed0"
+    ],
+    [
+     "VQARAD_REDIV",
+     "QWEN2VL_LORA_TXT_VQARAD_REDIV_seed0"
+    ],
+    [
+     "VQARAD_REDIV",
+     "QWEN2VL_LORA_TXT_VQARAD_REDIV_seed2"
+    ]
+   ],
+   "G_IC_exclui_zero": 41,
+   "G_n": 45,
+   "G_excecoes": [
+    [
+     "VQARAD_REDIV",
+     "QWEN2VL_LORA_TXT_VQARAD_REDIV_seed2"
+    ],
+    [
+     "VQARAD_REDIV",
+     "M3AE_TXT_VQARAD_REDIV_seed0"
+    ],
+    [
+     "VQARAD_REDIV",
+     "M3AE_TXT_VQARAD_REDIV_seed1"
+    ],
+    [
+     "VQARAD_REDIV",
+     "M3AE_TXT_VQARAD_REDIV_seed2"
+    ]
+   ],
+   "G_ft_IC_inclui_zero": 25,
+   "G_ft_exclui_max_4grandes": 0.03665283540802213,
+   "G_ft_exclui_max_VQARAD": 0.06937799043062201
+  },
+  "celulas_Genc_maior_Gft": {
+   "n": 13,
+   "de": 15,
+   "excecoes": {
+    "HEAL|QWEN2VL": [
+     0.019363762102351315,
+     0.02028584601198709
+    ],
+    "VQARAD_REDIV|M3AE": [
+     -0.029505582137161087,
+     0.04864433811802232
+    ]
+   }
+  },
+  "faixa_G_por_base": {
+   "KVASIR": [
+    0.21356341033491047,
+    0.2536413396418962
+   ],
+   "SLAKE": [
+    0.12740384615384615,
+    0.2003205128205128
+   ],
+   "HEAL": [
+    0.03964960811433841,
+    0.04979253112033195
+   ],
+   "MIMIC": [
+    0.03380031131865688,
+    0.0533689126084056
+   ],
+   "VQARAD_REDIV": [
+    0.019138755980861243,
+    0.09489633173843699
+   ]
+  },
+  "M3AE_Genc_4grandes": [
+   0.03964960811433841,
+   0.2079661069363268
+  ],
+  "M3AE_Gft_4grandes": [
+   -0.00422503891483211,
+   0.012019230769230768
+  ],
+  "VLM_Gft": [
+   -0.004784688995215311,
+   0.021634615384615388
+  ],
+  "PubMedBERT_menos_A_text": {
+   "KVASIR": {
+    "QWEN2VL": 0.0320066796548845,
+    "SMOLVLM": -0.0,
+    "M3AE": -0.0
+   },
+   "SLAKE": {
+    "QWEN2VL": 0.0016025641025641027,
+    "SMOLVLM": 0.0008012820512820514,
+    "M3AE": -0.004807692307692308
+   },
+   "HEAL": {
+    "QWEN2VL": -0.004610419548178884,
+    "SMOLVLM": -0.0009220839096357765,
+    "M3AE": -0.002074688796680498
+   },
+   "MIMIC": {
+    "QWEN2VL": -0.008672448298865912,
+    "SMOLVLM": -0.0006671114076050702,
+    "M3AE": -0.0013342228152101396
+   },
+   "VQARAD_REDIV": {
+    "QWEN2VL": -0.007177033492822967,
+    "SMOLVLM": -0.06539074960127592,
+    "M3AE": 0.019936204146730464
+   }
+  },
+  "max_abs_PubMedBERT_menos_A_text_por_base": {
+   "KVASIR": 0.0320066796548845,
+   "SLAKE": 0.004807692307692308,
+   "HEAL": 0.004610419548178884,
+   "MIMIC": 0.008672448298865912,
+   "VQARAD_REDIV": 0.06539074960127592
+  },
+  "bases_dentro_de_1pp": [
+   "SLAKE",
+   "HEAL",
+   "MIMIC"
+  ],
+  "A_text_menos_TFIDF_max": [
+   0.18741355463347165,
+   "HEAL",
+   "QWEN2VL"
+  ],
+  "A_text_menos_majoritaria_max": [
+   0.4645143334261063,
+   "KVASIR",
+   "SMOLVLM"
+  ],
+  "maj_por_pergunta_menos_A_text": {
+   "KVASIR": {
+    "QWEN2VL": 0.031728360701363756,
+    "SMOLVLM": -0.00027831895352070646,
+    "M3AE": -0.00027831895352070646
+   },
+   "SLAKE": {
+    "QWEN2VL": 0.004807692307692291,
+    "SMOLVLM": 0.004006410256410242,
+    "M3AE": -0.0016025641025640969
+   },
+   "HEAL": {
+    "QWEN2VL": -0.0020746887966804906,
+    "SMOLVLM": 0.0016136468418626038,
+    "M3AE": 0.0004610419548178868
+   },
+   "MIMIC": {
+    "QWEN2VL": -0.02201467645096733,
+    "SMOLVLM": -0.014009339559706402,
+    "M3AE": -0.014676450967311627
+   },
+   "VQARAD_REDIV": {
+    "QWEN2VL": -0.08213716108452962,
+    "SMOLVLM": -0.14035087719298256,
+    "M3AE": -0.055023923444976086
+   }
+  },
+  "maj_por_pergunta": {
+   "KVASIR": 0.6571110492624548,
+   "SLAKE": 0.6706730769230769,
+   "HEAL": 0.8533886583679114,
+   "MIMIC": 0.7751834556370913,
+   "VQARAD_REDIV": 0.5502392344497608
+  },
+  "A_text_por_familia": {
+   "KVASIR": {
+    "QWEN2VL": [
+     0.625382688561091,
+     0.0
+    ],
+    "SMOLVLM": [
+     0.6573893682159755,
+     0.0
+    ],
+    "M3AE": [
+     0.6573893682159755,
+     0.0
+    ]
+   },
+   "SLAKE": {
+    "QWEN2VL": [
+     0.6658653846153846,
+     0.007211538461538491
+    ],
+    "SMOLVLM": [
+     0.6666666666666666,
+     0.0027757224480270373
+    ],
+    "M3AE": [
+     0.672275641025641,
+     0.012099093646267243
+    ]
+   },
+   "HEAL": {
+    "QWEN2VL": [
+     0.8554633471645919,
+     0.0006915629322268302
+    ],
+    "SMOLVLM": [
+     0.8517750115260488,
+     0.00039927404508272735
+    ],
+    "M3AE": [
+     0.8529276164130936,
+     0.0010563798282516885
+    ]
+   },
+   "MIMIC": {
+    "QWEN2VL": [
+     0.7971981320880587,
+     0.004621883409123138
+    ],
+    "SMOLVLM": [
+     0.7891927951967977,
+     0.005815742419667347
+    ],
+    "M3AE": [
+     0.789859906604403,
+     0.003057088522318806
+    ]
+   },
+   "VQARAD_REDIV": {
+    "QWEN2VL": [
+     0.6323763955342904,
+     0.004980062199679716
+    ],
+    "SMOLVLM": [
+     0.6905901116427433,
+     0.00498006219967976
+    ],
+    "M3AE": [
+     0.6052631578947368,
+     0.012659097182127231
+    ]
+   }
+  },
+  "A_text_amplitude_entre_familias": {
+   "KVASIR": 0.03200667965488446,
+   "SLAKE": 0.0064102564102563875,
+   "HEAL": 0.0036883356385430943,
+   "MIMIC": 0.008005336891260928,
+   "VQARAD_REDIV": 0.08532695374800647
+  },
+  "A_text_media_das_familias": {
+   "KVASIR": 0.6467204749976807,
+   "SLAKE": 0.6682692307692307,
+   "HEAL": 0.8533886583679114,
+   "MIMIC": 0.7920836112964199,
+   "VQARAD_REDIV": 0.6427432216905902
+  },
+  "A_text_dp_max_por_base": {
+   "KVASIR": 0.0,
+   "SLAKE": 0.012099093646267243,
+   "HEAL": 0.0010563798282516885,
+   "MIMIC": 0.005815742419667347,
+   "VQARAD_REDIV": 0.012659097182127231
+  },
+  "HEAL_G": {
+   "QWEN2VL": 0.03964960811433841,
+   "SMOLVLM": 0.04979253112033195,
+   "M3AE": 0.04402950668510835
+  },
+  "HEAL_Aft_menos_TFIDF": {
+   "QWEN2VL": 0.22706316274781005,
+   "SMOLVLM": 0.23351775011526046,
+   "M3AE": 0.2289073305670816
+  },
+  "A_swap_menos_A_text_4grandes": {
+   "min": -0.14743589743589744,
+   "max": -0.07468879668049792,
+   "todas_negativas": true,
+   "por_celula": {
+    "KVASIR|QWEN2VL": -0.07808392862665059,
+    "KVASIR|SMOLVLM": -0.10838977023224171,
+    "KVASIR|M3AE": -0.10634876457308966,
+    "SLAKE|QWEN2VL": -0.11298076923076923,
+    "SLAKE|SMOLVLM": -0.14743589743589744,
+    "SLAKE|M3AE": -0.13381410256410256,
+    "HEAL|QWEN2VL": -0.07468879668049792,
+    "HEAL|SMOLVLM": -0.0850622406639004,
+    "HEAL|M3AE": -0.11825726141078836,
+    "MIMIC|QWEN2VL": -0.09495219034912165,
+    "MIMIC|SMOLVLM": -0.08961529908828109,
+    "MIMIC|M3AE": -0.09650878363353348
+   }
+  },
+  "A_menos_A_swap": {
+   "VQARAD_REDIV": [
+    0.009569377990430622,
+    0.12519936204146728
+   ],
+   "4grandes": [
+    0.11433840479483633,
+    0.3341346153846154
+   ]
+  },
+  "vqarad_duas_divisoes": {
+   "VQARAD_QLEVEL": {
+    "A_text": {
+     "QWEN2VL": 0.6991869918699187,
+     "SMOLVLM": 0.7276422764227641,
+     "M3AE": 0.7715447154471544
+    },
+    "PubMedBERT": 0.7243902439024389,
+    "G": {
+     "QWEN2VL": [
+      0.0032520325203252037,
+      -0.037899749277253314,
+      0.04368269812462187
+     ],
+     "SMOLVLM": [
+      0.15284552845528454,
+      0.10749746420047733,
+      0.19930418529665134
+     ],
+     "M3AE": [
+      0.09999999999999999,
+      0.061042986378503715,
+      0.13750196540880502
+     ]
+    }
+   },
+   "VQARAD_REDIV": {
+    "A_text": {
+     "QWEN2VL": 0.6323763955342904,
+     "SMOLVLM": 0.6905901116427433,
+     "M3AE": 0.6052631578947368
+    },
+    "PubMedBERT": 0.6251993620414673,
+    "G": {
+     "QWEN2VL": [
+      0.054226475279106866,
+      0.0,
+      0.10866680517415808
+     ],
+     "SMOLVLM": [
+      0.09489633173843699,
+      0.04492606990077569,
+      0.1462768860912385
+     ],
+     "M3AE": [
+      0.019138755980861243,
+      -0.05446017962451983,
+      0.09894669915935136
+     ]
+    }
+   },
+   "A_text_sobe_nas_3": {
+    "QWEN2VL": true,
+    "SMOLVLM": true,
+    "M3AE": true
+   },
+   "G_sobe": {
+    "QWEN2VL": false,
+    "SMOLVLM": true,
+    "M3AE": true
+   }
+  },
+  "cinza_congelado_HEAL": [
+   0.5961272475795297,
+   0.7911479944674965,
+   0.8395573997233748
+  ]
+ },
+ "depois_fontes": {
+  "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_no_image_atext/espelho_semimg/v7_txt/article_runs/analysis/decomposicao_fechadas.json": "4a6499cbf281c523dd5968265f9b5d49c5368a1096e87327459f23cf83f8ca57",
+  "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_no_image_atext/espelho_semimg/v7_txt/article_runs/analysis/joint_ci.json": "108afdcc2918a90a54421ec88c34550a607beaae9d3eb41067d428f09169c313",
+  "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_no_image_atext/espelho_semimg/v7_txt/article_runs/analysis/m3ae_frozen_vit.json": "9c8607c6ef123bd65397620177575129f9fbee3f2457c1646bc48fd3ae6ffde5",
+  "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_no_image_atext/espelho_semimg/v7_txt/article_runs/analysis/analise_troca_v2.json": "4d5865f18e13d1c458124cf93e1d5cfd8f140ff685abd78de81177d549fe5d46",
+  "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_no_image_atext/espelho_semimg/v7_txt/article_runs/analysis/ic_contagem.json": "0afaad72159b01372d5dfb9c8b6ce593bba9052837a6a16550e05eec4f519c79",
+  "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_no_image_atext/espelho_semimg/v7_txt/article_runs/analysis/text_analyses.json": "32cf2e3028dff6fd5ce9f25a8834f61df5a07c6de07921d1d2a5363647c7c0ce",
+  "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_no_image_atext/espelho_semimg/v7_txt/article_runs/analysis/heal_classifiers_train_only.json": "7fa1a333be73ef26d64202296a53919d1f2faaf8e215418af833481046dd6715"
+ },
+ "custo": {
+  "por_base_h": {
+   "KVASIR": {
+    "PubMedBERT": 0.4990277777777778,
+    "Qwen2-VL": 5.197287037037036,
+    "SmolVLM2": 2.997027777777778,
+    "M3AE so-texto": 4.919277777777778,
+    "M3AE sem imagem": 1.075722222222222,
+    "M3AE sem imagem: pico por processo (GB) min-max": [
+     6.427734375,
+     6.4609375
+    ]
+   },
+   "SLAKE": {
+    "PubMedBERT": 0.03877777777777777,
+    "Qwen2-VL": 0.5503703703703704,
+    "SmolVLM2": 0.2424814814814815,
+    "M3AE so-texto": 0.7404259259259259,
+    "M3AE sem imagem": 0.16177777777777777,
+    "M3AE sem imagem: pico por processo (GB) min-max": [
+     6.41015625,
+     6.755859375
+    ]
+   },
+   "HEAL": {
+    "PubMedBERT": 0.06254629629629631,
+    "Qwen2-VL": 1.5547592592592592,
+    "SmolVLM2": 0.6707592592592593,
+    "M3AE so-texto": 1.8422685185185186,
+    "M3AE sem imagem": 0.37862962962962965,
+    "M3AE sem imagem: pico por processo (GB) min-max": [
+     6.41015625,
+     6.416015625
+    ]
+   },
+   "MIMIC": {
+    "PubMedBERT": 0.13388888888888886,
+    "Qwen2-VL": 1.6986759259259259,
+    "SmolVLM2": 0.8710092592592593,
+    "M3AE so-texto": 1.8753981481481483,
+    "M3AE sem imagem": 0.36870370370370376,
+    "M3AE sem imagem: pico por processo (GB) min-max": [
+     6.412109375,
+     6.453125
+    ]
+   },
+   "VQARAD_REDIV": {
+    "PubMedBERT": 0.034555555555555555,
+    "Qwen2-VL": 0.29072222222222227,
+    "SmolVLM2": 0.1084074074074074,
+    "M3AE so-texto": 1.7078796296296295,
+    "M3AE sem imagem": 0.23924074074074073,
+    "M3AE sem imagem: pico por processo (GB) min-max": [
+     6.4296875,
+     6.501953125
+    ]
+   }
+  },
+  "faixa_so_texto_antes_h (VLM + M3AE cinza)": [
+   0.1084074074074074,
+   5.197287037037036
+  ],
+  "faixa_so_texto_depois_h (VLM + M3AE sem imagem)": [
+   0.1084074074074074,
+   5.197287037037036
+  ],
+  "faixa_so_texto_VLM_h": [
+   0.1084074074074074,
+   5.197287037037036
+  ],
+  "faixa_PubMedBERT_h": [
+   0.034555555555555555,
+   0.4990277777777778
+  ],
+  "PubMedBERT_mais_barato_em_cada_base_antes": {
+   "KVASIR": true,
+   "SLAKE": true,
+   "HEAL": true,
+   "MIMIC": true,
+   "VQARAD_REDIV": true
+  },
+  "PubMedBERT_mais_barato_em_cada_base_depois": {
+   "KVASIR": true,
+   "SLAKE": true,
+   "HEAL": true,
+   "MIMIC": true,
+   "VQARAD_REDIV": true
+  },
+  "M3AE_sem_imagem_pico_GB_min_max_5bases": [
+   6.41015625,
+   6.755859375
+  ],
+  "medida": "duracao do job de treino e pico da arvore de processos, ambos do escalonador (mesma medida das linhas 'Custo:' da secao 9)",
+  "fontes": {
+   "${MEDVQA_ROOT}/v7_txt/article_runs/analysis/text_analyses.json": "c45b1d125cf88a7b12a8e30f9499edd588a65e428a92540533001dcba07f0ba1",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/logs/infer_state_semimg21b.json": "f9104476cad71c5ebe6480ef9bbb9e4f24c11a89e25805fc21ca40632a9a640c"
+  }
+ },
+ "parametros_sem_imagem": {
+  "regra": "23/10 (m3ae_no_image_atext, 2.9): parametros do M3AE sem imagem por base, contados no state_dict do checkpoint final (semente 0) de cada base do m3ae_no_image.\nCongelados (C1): vision_encoder, multi_modal_vision_proj, multi_modal_vision_layers, multi_modal_vision_pooler e crossattention.self / crossattention.output.dense\ndas camadas de texto; o resto e treinavel. Validacao: VQA-RAD por imagem tem de dar o total e o treinavel do teste do m3ae_no_image (testes_novo.json). CPU.",
+  "bases": {
+   "VQARAD_REDIV": {
+    "checkpoint": "epoch=12-step=506.ckpt",
+    "total": 347900914,
+    "congelados": 176406784,
+    "treinaveis": 171494130,
+    "vqa_head": 3129330,
+    "buffers_excluidos": [
+     "position_ids"
+    ]
+   },
+   "KVASIR": {
+    "checkpoint": "epoch=4-step=2989.ckpt",
+    "total": 347903988,
+    "congelados": 176406784,
+    "treinaveis": 171497204,
+    "vqa_head": 3132404,
+    "buffers_excluidos": [
+     "position_ids"
+    ]
+   },
+   "SLAKE": {
+    "checkpoint": "epoch=11-step=1847.ckpt",
+    "total": 347476702,
+    "congelados": 176406784,
+    "treinaveis": 171069918,
+    "vqa_head": 2705118,
+    "buffers_excluidos": [
+     "position_ids"
+    ]
+   },
+   "HEAL": {
+    "checkpoint": "epoch=5-step=1385.ckpt",
+    "total": 347578144,
+    "congelados": 176406784,
+    "treinaveis": 171171360,
+    "vqa_head": 2806560,
+    "buffers_excluidos": [
+     "position_ids"
+    ]
+   },
+   "MIMIC": {
+    "checkpoint": "epoch=7-step=1879.ckpt",
+    "total": 347261522,
+    "congelados": 176406784,
+    "treinaveis": 170854738,
+    "vqa_head": 2489938,
+    "buffers_excluidos": [
+     "position_ids"
+    ]
+   },
+   "VQARAD_QLEVEL": {
+    "checkpoint": "epoch=35-step=1403.ckpt",
+    "total": 347900914,
+    "congelados": 176406784,
+    "treinaveis": 171494130,
+    "vqa_head": 3129330,
+    "buffers_excluidos": [
+     "position_ids"
+    ]
+   }
+  },
+  "validacao_vqarad": {
+   "total_igual_ao_teste": true,
+   "treinaveis_igual_ao_teste": true,
+   "teste": {
+    "total": 347900914,
+    "treinaveis": 171494130,
+    "congelados": 176406784,
+    "treinaveis_por_modulo": {
+     "language_encoder": 124645632,
+     "multi_modal_language_proj": 590592,
+     "modality_type_embeddings": 1536,
+     "multi_modal_language_layers": 42536448,
+     "multi_modal_language_pooler": 590592,
+     "vqa_head": 3129330
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,44 @@
+{
+ "t": "2026-10-13 23:42:49",
+ "host": "lasid-gpu1",
+ "script": "make_gray_arrows_vqarad.py",
+ "script_sha256": "b3f88bb0351fe25ed2d6f0a96ce5820850cc55460a3d4f7aa9f12680846b7767",
+ "gray": {
+  "size": 384,
+  "rgb": [
+   128,
+   128,
+   128
+  ],
+  "encoder": "harness.interventions.make_c1_blank_images.blank_out_images (JPEG)"
+ },
+ "files": {
+  "vqa_vqa_rad_train_gray.arrow": {
+   "source": "vqa_vqa_rad_train.arrow",
+   "source_sha256": "75a9545aae1a9aa3105e4d11cc8159c7ddfb263b67d7663d1686ae2911454d56",
+   "sha256": "1afcd31c9d3c58ea60a44b6cf6c1778b6ff75f80fc1b84c55aedccd3f7988b07",
+   "bytes": 1227434,
+   "rows": 314,
+   "questions": 2758,
+   "seconds": 0.1
+  },
+  "vqa_vqa_rad_val_gray.arrow": {
+   "source": "vqa_vqa_rad_val.arrow",
+   "source_sha256": "a21c709057305eb989965e7f00d36ff86f0a6aa321b3cb2c3385164f6ca0022d",
+   "sha256": "7c6bc7a0b89404a8657ee5a069843f637663ddaa29dc4db3bc61d23a13300800",
+   "bytes": 626058,
+   "rows": 195,
+   "questions": 306,
+   "seconds": 0.0
+  },
+  "vqa_vqa_rad_test_gray.arrow": {
+   "source": "vqa_vqa_rad_test.arrow",
+   "source_sha256": "d75d6000ac1b9433ca756c272c0091639689d189906dd7e0235f880944efa2d5",
+   "sha256": "cb6a239d8512f5830b8f86264ab71e1b3a62c53cc957f278eb237d135743da18",
+   "bytes": 664610,
+   "rows": 203,
+   "questions": 451,
+   "seconds": 0.0
+  }
+ }
+}

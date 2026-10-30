@@ -1,0 +1,126 @@
+{
+ "name": "M3AE_TXT_MEM_slack_seed0",
+ "base": "slack",
+ "rc": 0,
+ "placa": "0",
+ "tempo_s": 154,
+ "cmd": [
+  "python",
+  "-u",
+  "main.py",
+  "with",
+  "data_root=data_root",
+  "num_gpus=1",
+  "num_nodes=1",
+  "task_finetune_vqa_slack",
+  "per_gpu_batchsize=16",
+  "clip16",
+  "text_roberta",
+  "image_size=384",
+  "tokenizer=downloaded/roberta-base",
+  "load_path=downloaded/pretrained/m3ae.ckpt",
+  "seed=0",
+  "vqa_label_size=222",
+  "train_transform_keys=[\"clip_resizedcrop\"]",
+  "default_root_dir=slack",
+  "log_dir=result"
+ ],
+ "criterio": "fim da validacao da epoca 0 (epoca inteira de treino + validacao)",
+ "concluiu": true,
+ "passos_otimizacao": 153,
+ "lotes_treino": 308,
+ "lotes_validacao": 66,
+ "torch_max_allocated_mib": 24369.3,
+ "torch_max_reserved_mib": 24658.0,
+ "torch_max_allocated_mib_treino": 24369.3,
+ "torch_max_allocated_mib_ate_validacao": 24369.3,
+ "nvsmi_proc_max_mib": 26314,
+ "nvsmi_placa_max_mib": 26324,
+ "terceiros_mib_max": 628,
+ "terceiros_mib_min": 4,
+ "amostras_nvsmi": 16,
+ "amostragem_s": 10,
+ "torch_log": "M3AE_TXT_MEM_slack_seed0_torch.jsonl",
+ "nvsmi": [
+  {
+   "t": 0.1,
+   "proc_mib": 0,
+   "placa_mib": 4
+  },
+  {
+   "t": 10.3,
+   "proc_mib": 1124,
+   "placa_mib": 1150
+  },
+  {
+   "t": 20.4,
+   "proc_mib": 26314,
+   "placa_mib": 26324
+  },
+  {
+   "t": 30.5,
+   "proc_mib": 26314,
+   "placa_mib": 26324
+  },
+  {
+   "t": 40.6,
+   "proc_mib": 26314,
+   "placa_mib": 26324
+  },
+  {
+   "t": 50.8,
+   "proc_mib": 26314,
+   "placa_mib": 26324
+  },
+  {
+   "t": 60.9,
+   "proc_mib": 26314,
+   "placa_mib": 26324
+  },
+  {
+   "t": 71.0,
+   "proc_mib": 26314,
+   "placa_mib": 26324
+  },
+  {
+   "t": 81.2,
+   "proc_mib": 26314,
+   "placa_mib": 26324
+  },
+  {
+   "t": 91.4,
+   "proc_mib": 26314,
+   "placa_mib": 26324
+  },
+  {
+   "t": 101.6,
+   "proc_mib": 26314,
+   "placa_mib": 26324
+  },
+  {
+   "t": 111.8,
+   "proc_mib": 26314,
+   "placa_mib": 26324
+  },
+  {
+   "t": 122.0,
+   "proc_mib": 26314,
+   "placa_mib": 26324
+  },
+  {
+   "t": 132.2,
+   "proc_mib": 26314,
+   "placa_mib": 26324
+  },
+  {
+   "t": 142.3,
+   "proc_mib": 15824,
+   "placa_mib": 16452
+  },
+  {
+   "t": 152.5,
+   "proc_mib": 10522,
+   "placa_mib": 10532
+  }
+ ]
+}

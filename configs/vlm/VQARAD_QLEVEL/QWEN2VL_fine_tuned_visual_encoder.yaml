@@ -1,0 +1,53 @@
+# vqarad_question_split (2026-10-19): copia de qwen2vl_lora_vt_vqarad_rediv.yaml (sha256 14361d7605e880f3); mudam so nome e data.arrows (divisao por pergunta).
+run_name: qwen2vl_lora_vt_vqarad_qlevel
+model: QWEN2VL
+dataset: VQA_RAD
+peft: LORA
+peft_config:
+  r: 16
+  lora_alpha: 32
+  target_modules: .*self_attn\.(q|k|v|o)_proj$|.*visual\.blocks\.\d+\.attn\.(qkv|proj)$
+  task_type: CAUSAL_LM
+train:
+  lr: 2e-4
+  warmup_ratio: 0.05
+  epochs: 3
+  batch_size: 4
+  grad_accum_steps: 8
+  max_length: 2048
+  gradient_checkpointing: true
+  compile: true
+  eval_every: 5000
+  checkpoint_every: 15000
+  checkpoint_dir: ${MEDVQA_ROOT}/tmp/v7/checkpoints
+eval:
+  batch_size: 4
+  split: validation
+  max_new_tokens: 64
+logging:
+  wandb_project: med-vlm
+  wandb_run_name: qwen2vl_lora_vt_vqarad_qlevel
+outputs_dir: ${MEDVQA_ROOT}/v7_txt/article_runs
+preprocessing:
+  denoise: true
+  denoise_method: gaussian
+  clahe: true
+  clahe_clip_limit: 2.0
+  clahe_tile_grid_size:
+  - 8
+  - 8
+augmentation:
+  enabled: true
+  rotation_degrees: 5
+  brightness_range:
+  - 0.85
+  - 1.15
+  contrast_range:
+  - 0.85
+  - 1.15
+results_json_dir: ${MEDVQA_ROOT}/v7_txt/article_runs/logs
+data:
+  arrows:
+    train: ${MEDVQA_ROOT}/v7_txt/article_runs/data/vqarad_qlevel/vqa_vqa_rad_train.arrow
+    validation: ${MEDVQA_ROOT}/v7_txt/article_runs/data/vqarad_qlevel/vqa_vqa_rad_val.arrow
+    test: ${MEDVQA_ROOT}/v7_txt/article_runs/data/vqarad_qlevel/vqa_vqa_rad_test.arrow

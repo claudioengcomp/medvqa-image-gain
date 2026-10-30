@@ -1,0 +1,5 @@
+{
+ "run_name": "task_finetune_vqa_kvasir",
+ "train_wall_time_s": 14904,
+ "train_peak_memory_gb": 25.785
+}

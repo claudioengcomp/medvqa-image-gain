@@ -1,0 +1,236 @@
+{
+ "name": "M3AE_TXT_MEM_heal_seed0",
+ "base": "heal",
+ "rc": 0,
+ "placa": "0",
+ "tempo_s": 384,
+ "cmd": [
+  "python",
+  "-u",
+  "main.py",
+  "with",
+  "data_root=data_root",
+  "num_gpus=1",
+  "num_nodes=1",
+  "task_finetune_vqa_heal",
+  "per_gpu_batchsize=16",
+  "clip16",
+  "text_roberta",
+  "image_size=384",
+  "tokenizer=downloaded/roberta-base",
+  "load_path=downloaded/pretrained/m3ae.ckpt",
+  "seed=0",
+  "vqa_label_size=288",
+  "train_transform_keys=[\"clip\"]",
+  "default_root_dir=heal",
+  "log_dir=result"
+ ],
+ "criterio": "fim da validacao da epoca 0 (epoca inteira de treino + validacao)",
+ "concluiu": true,
+ "passos_otimizacao": 230,
+ "lotes_treino": 922,
+ "lotes_validacao": 103,
+ "torch_max_allocated_mib": 24364.6,
+ "torch_max_reserved_mib": 24658.0,
+ "torch_max_allocated_mib_treino": 24364.6,
+ "torch_max_allocated_mib_ate_validacao": 24364.6,
+ "nvsmi_proc_max_mib": 26314,
+ "nvsmi_placa_max_mib": 26324,
+ "terceiros_mib_max": 26,
+ "terceiros_mib_min": 4,
+ "amostras_nvsmi": 38,
+ "amostragem_s": 10,
+ "torch_log": "M3AE_TXT_MEM_heal_seed0_torch.jsonl",
+ "nvsmi": [
+  {
+   "t": 0.1,
+   "proc_mib": 0,
+   "placa_mib": 4
+  },
+  {
+   "t": 10.3,
+   "proc_mib": 1344,
+   "placa_mib": 1370
+  },
+  {
+   "t": 20.4,
+   "proc_mib": 23830,
+   "placa_mib": 23840
+  },
+  {
+   "t": 30.5,
+   "proc_mib": 26314,
+   "placa_mib": 26324
+  },
+  {
+   "t": 40.6,
+   "proc_mib": 26314,
+   "placa_mib": 26324
+  },
+  {
+   "t": 50.8,
+   "proc_mib": 26314,
+   "placa_mib": 26324
+  },
+  {
+   "t": 60.9,
+   "proc_mib": 26314,
+   "placa_mib": 26324
+  },
+  {
+   "t": 71.0,
+   "proc_mib": 26314,
+   "placa_mib": 26324
+  },
+  {
+   "t": 81.1,
+   "proc_mib": 26314,
+   "placa_mib": 26324
+  },
+  {
+   "t": 91.3,
+   "proc_mib": 26314,
+   "placa_mib": 26324
+  },
+  {
+   "t": 101.4,
+   "proc_mib": 26314,
+   "placa_mib": 26324
+  },
+  {
+   "t": 111.5,
+   "proc_mib": 26314,
+   "placa_mib": 26324
+  },
+  {
+   "t": 121.6,
+   "proc_mib": 26314,
+   "placa_mib": 26324
+  },
+  {
+   "t": 131.8,
+   "proc_mib": 26314,
+   "placa_mib": 26324
+  },
+  {
+   "t": 141.9,
+   "proc_mib": 26314,
+   "placa_mib": 26324
+  },
+  {
+   "t": 152.0,
+   "proc_mib": 26314,
+   "placa_mib": 26324
+  },
+  {
+   "t": 162.2,
+   "proc_mib": 26314,
+   "placa_mib": 26324
+  },
+  {
+   "t": 172.3,
+   "proc_mib": 26314,
+   "placa_mib": 26324
+  },
+  {
+   "t": 182.4,
+   "proc_mib": 26314,
+   "placa_mib": 26324
+  },
+  {
+   "t": 192.6,
+   "proc_mib": 26314,
+   "placa_mib": 26324
+  },
+  {
+   "t": 202.7,
+   "proc_mib": 26314,
+   "placa_mib": 26324
+  },
+  {
+   "t": 212.8,
+   "proc_mib": 26314,
+   "placa_mib": 26324
+  },
+  {
+   "t": 223.0,
+   "proc_mib": 26314,
+   "placa_mib": 26324
+  },
+  {
+   "t": 233.1,
+   "proc_mib": 26314,
+   "placa_mib": 26324
+  },
+  {
+   "t": 243.2,
+   "proc_mib": 26314,
+   "placa_mib": 26324
+  },
+  {
+   "t": 253.3,
+   "proc_mib": 26314,
+   "placa_mib": 26324
+  },
+  {
+   "t": 263.5,
+   "proc_mib": 26314,
+   "placa_mib": 26324
+  },
+  {
+   "t": 273.6,
+   "proc_mib": 26314,
+   "placa_mib": 26324
+  },
+  {
+   "t": 283.7,
+   "proc_mib": 26314,
+   "placa_mib": 26324
+  },
+  {
+   "t": 293.9,
+   "proc_mib": 26314,
+   "placa_mib": 26324
+  },
+  {
+   "t": 304.0,
+   "proc_mib": 26314,
+   "placa_mib": 26324
+  },
+  {
+   "t": 314.1,
+   "proc_mib": 26314,
+   "placa_mib": 26324
+  },
+  {
+   "t": 324.3,
+   "proc_mib": 26314,
+   "placa_mib": 26324
+  },
+  {
+   "t": 334.4,
+   "proc_mib": 26314,
+   "placa_mib": 26324
+  },
+  {
+   "t": 344.5,
+   "proc_mib": 26314,
+   "placa_mib": 26324
+  },
+  {
+   "t": 354.7,
+   "proc_mib": 26314,
+   "placa_mib": 26324
+  },
+  {
+   "t": 364.8,
+   "proc_mib": 26314,
+   "placa_mib": 26324
+  },
+  {
+   "t": 374.9,
+   "proc_mib": 10176,
+   "placa_mib": 10186
+  }
+ ]
+}

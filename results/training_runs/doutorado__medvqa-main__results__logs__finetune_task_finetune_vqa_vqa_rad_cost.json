@@ -1,0 +1,5 @@
+{
+ "run_name": "task_finetune_vqa_vqa_rad",
+ "train_wall_time_s": 4179,
+ "train_peak_memory_gb": 25.932
+}

@@ -1,0 +1,898 @@
+{
+ "t": "2026-10-23 02:21:22",
+ "melhor_x_ultima_epoca": {
+  "KVASIR": {
+   "sementes": [
+    {
+     "seed": 0,
+     "acc_melhor": 0.6573893682159755,
+     "epoca_escolhida": 4,
+     "acc_ultima_epoca": 0.6571110492624548,
+     "epocas": 10,
+     "val_acc_escolhida": 0.6434291954859848,
+     "arquivo": "BERT2_question_only_KVASIR_seed0.json",
+     "sha256": "79ad56f2c8dba2ec324eea64856a1544621c97746865ec2b0e58a2df38d5e135"
+    },
+    {
+     "seed": 1,
+     "acc_melhor": 0.6573893682159755,
+     "epoca_escolhida": 6,
+     "acc_ultima_epoca": 0.6571110492624548,
+     "epocas": 10,
+     "val_acc_escolhida": 0.6434291954859848,
+     "arquivo": "BERT2_question_only_KVASIR_seed1.json",
+     "sha256": "7923b4925048a70fcee88552f79c7de254f965a788a32d4a315de9e7e29242d6"
+    },
+    {
+     "seed": 2,
+     "acc_melhor": 0.6573893682159755,
+     "epoca_escolhida": 1,
+     "acc_ultima_epoca": 0.6571110492624548,
+     "epocas": 10,
+     "val_acc_escolhida": 0.6434291954859848,
+     "arquivo": "BERT2_question_only_KVASIR_seed2.json",
+     "sha256": "c3186a0d1ebaf1d4b46fa2a4a5a2dc1987c0eaef5222b31a5e12273978964d72"
+    }
+   ],
+   "media_melhor": 0.6573893682159755,
+   "media_ultima": 0.6571110492624548
+  },
+  "SLAKE": {
+   "sementes": [
+    {
+     "seed": 0,
+     "acc_melhor": 0.65625,
+     "epoca_escolhida": 7,
+     "acc_ultima_epoca": 0.6706730769230769,
+     "epocas": 10,
+     "val_acc_escolhida": 0.6540284360189573,
+     "arquivo": "BERT2_question_only_SLAKE_seed0.json",
+     "sha256": "cee78b42d27b3caaa3cdc5175e8591234e7adab93882567183894bb93145e076"
+    },
+    {
+     "seed": 1,
+     "acc_melhor": 0.6682692307692307,
+     "epoca_escolhida": 10,
+     "acc_ultima_epoca": 0.6682692307692307,
+     "epocas": 10,
+     "val_acc_escolhida": 0.6398104265402843,
+     "arquivo": "BERT2_question_only_SLAKE_seed1.json",
+     "sha256": "07c79c03b41fd2e1b281894d812c8fe2486b16db1caa89df76d04bdf153a4420"
+    },
+    {
+     "seed": 2,
+     "acc_melhor": 0.6778846153846154,
+     "epoca_escolhida": 7,
+     "acc_ultima_epoca": 0.6610576923076923,
+     "epocas": 10,
+     "val_acc_escolhida": 0.6421800947867299,
+     "arquivo": "BERT2_question_only_SLAKE_seed2.json",
+     "sha256": "1080375b8181aea98118d44deddd5a20925d834e11425e54d6f3012ac34f094b"
+    }
+   ],
+   "media_melhor": 0.6674679487179488,
+   "media_ultima": 0.6666666666666666
+  },
+  "MIMIC": {
+   "sementes": [
+    {
+     "seed": 0,
+     "acc_melhor": 0.7971981320880587,
+     "epoca_escolhida": 5,
+     "acc_ultima_epoca": 0.7891927951967979,
+     "epocas": 10,
+     "val_acc_escolhida": 0.7905138339920948,
+     "arquivo": "BERT2_question_only_MIMIC_seed0.json",
+     "sha256": "1aed2275ed4bfb4b609e649b4e58b0ca3d4290d837c71aac1b49e16970134df1"
+    },
+    {
+     "seed": 1,
+     "acc_melhor": 0.7751834556370913,
+     "epoca_escolhida": 7,
+     "acc_ultima_epoca": 0.7918612408272181,
+     "epocas": 10,
+     "val_acc_escolhida": 0.7891963109354414,
+     "arquivo": "BERT2_question_only_MIMIC_seed1.json",
+     "sha256": "d3e4c242ba6d4b5e3de6dc02bb62b8dcf502c2d863184ace36c9727cccd3aa23"
+    },
+    {
+     "seed": 2,
+     "acc_melhor": 0.7931954636424283,
+     "epoca_escolhida": 4,
+     "acc_ultima_epoca": 0.789859906604403,
+     "epocas": 10,
+     "val_acc_escolhida": 0.7944664031620553,
+     "arquivo": "BERT2_question_only_MIMIC_seed2.json",
+     "sha256": "d3eacf46dc71d50ad9ed9323376e55a9576e2ad2a1924abad0e567150c10ee5e"
+    }
+   ],
+   "media_melhor": 0.7885256837891927,
+   "media_ultima": 0.7903046475428063
+  },
+  "VQARAD_REDIV": {
+   "sementes": [
+    {
+     "seed": 0,
+     "acc_melhor": 0.6004784688995215,
+     "epoca_escolhida": 5,
+     "acc_ultima_epoca": 0.6626794258373205,
+     "epocas": 10,
+     "val_acc_escolhida": 0.625,
+     "arquivo": "BERT2_question_only_VQARAD_REDIV_seed0.json",
+     "sha256": "266f145fb7ee1a40917c694ce66c653b705cc2e43a16caa56f06f561e55f5f49"
+    },
+    {
+     "seed": 1,
+     "acc_melhor": 0.631578947368421,
+     "epoca_escolhida": 10,
+     "acc_ultima_epoca": 0.631578947368421,
+     "epocas": 10,
+     "val_acc_escolhida": 0.6201923076923077,
+     "arquivo": "BERT2_question_only_VQARAD_REDIV_seed1.json",
+     "sha256": "86a773be59246981de1ae581c9cd78a737740e3da54bb09451c927db977eb35c"
+    },
+    {
+     "seed": 2,
+     "acc_melhor": 0.6435406698564593,
+     "epoca_escolhida": 10,
+     "acc_ultima_epoca": 0.6435406698564593,
+     "epocas": 10,
+     "val_acc_escolhida": 0.6586538461538461,
+     "arquivo": "BERT2_question_only_VQARAD_REDIV_seed2.json",
+     "sha256": "5078ad876f801ca259486fc0ba5ace7f3313ac007284c527356e9a41c17f97d5"
+    }
+   ],
+   "media_melhor": 0.6251993620414673,
+   "media_ultima": 0.645933014354067
+  },
+  "HEAL_TREINO": {
+   "sementes": [
+    {
+     "seed": 0,
+     "acc_melhor": 0.8540802213001383,
+     "epoca_escolhida": 8,
+     "acc_ultima_epoca": 0.8561549100968188,
+     "epocas": 10,
+     "val_acc_escolhida": 0.8603425559947299,
+     "arquivo": "BERT2_question_only_HEAL_TREINO_seed0.json",
+     "sha256": "df9d8a022c9768da1f8cc5c131311941f52703d74a333c025e739410eff006bb"
+    },
+    {
+     "seed": 1,
+     "acc_melhor": 0.8554633471645919,
+     "epoca_escolhida": 7,
+     "acc_ultima_epoca": 0.8533886583679114,
+     "epocas": 10,
+     "val_acc_escolhida": 0.8603425559947299,
+     "arquivo": "BERT2_question_only_HEAL_TREINO_seed1.json",
+     "sha256": "a2eb4a967f921186b7641d5d1332be65fffeb88ec1bd126fc2d95899b3b49d4b"
+    },
+    {
+     "seed": 2,
+     "acc_melhor": 0.843015214384509,
+     "epoca_escolhida": 5,
+     "acc_ultima_epoca": 0.8561549100968188,
+     "epocas": 10,
+     "val_acc_escolhida": 0.8537549407114624,
+     "arquivo": "BERT2_question_only_HEAL_TREINO_seed2.json",
+     "sha256": "7881fed54e602b404b72f0053797801e5ce99bc6b1b3470b118c6aa86d349deb"
+    }
+   ],
+   "media_melhor": 0.8508529276164131,
+   "media_ultima": 0.855232826187183
+  },
+  "VQARAD_QLEVEL": {
+   "sementes": [
+    {
+     "seed": 0,
+     "acc_melhor": 0.7390243902439024,
+     "epoca_escolhida": 10,
+     "acc_ultima_epoca": 0.7390243902439024,
+     "epocas": 10,
+     "val_acc_escolhida": 0.6492890995260664,
+     "arquivo": "results/predictions/VQARAD_QLEVEL/BERT2_question_only_VQARAD_QLEVEL_seed0.json",
+     "sha256": "0438107a6cf2194eb704668da00837c6ff9a2a672678ec4648a39d8cce57c420"
+    },
+    {
+     "seed": 1,
+     "acc_melhor": 0.724390243902439,
+     "epoca_escolhida": 6,
+     "acc_ultima_epoca": 0.7341463414634146,
+     "epocas": 10,
+     "val_acc_escolhida": 0.6540284360189573,
+     "arquivo": "results/predictions/VQARAD_QLEVEL/BERT2_question_only_VQARAD_QLEVEL_seed1.json",
+     "sha256": "2682646e166c44e9d41b8349e372b2e9bfbe29e4501a51270e356cc49afb77c9"
+    },
+    {
+     "seed": 2,
+     "acc_melhor": 0.7097560975609756,
+     "epoca_escolhida": 10,
+     "acc_ultima_epoca": 0.7097560975609756,
+     "epocas": 10,
+     "val_acc_escolhida": 0.6635071090047393,
+     "arquivo": "results/predictions/VQARAD_QLEVEL/BERT2_question_only_VQARAD_QLEVEL_seed2.json",
+     "sha256": "4afa884b86fc1b0b67de249457611eef80202fae148fa538c71171010bdb14c3"
+    }
+   ],
+   "media_melhor": 0.7243902439024389,
+   "media_ultima": 0.7276422764227641
+  }
+ },
+ "heal_so_treino": {
+  "linhas": [
+   {
+    "familia": "QWEN2VL",
+    "seed": 0,
+    "n": 1446,
+    "txt_menos_bert": {
+     "diff": 0.0006915629322268327,
+     "ci": [
+      -0.006887052341597796,
+      0.008208779934156127
+     ],
+     "n": 1446
+    },
+    "txt_menos_tfidf": {
+     "diff": 0.18672199170124482,
+     "ci": [
+      0.16002609319351008,
+      0.21413846697937608
+     ],
+     "n": 1446
+    },
+    "ft_menos_bert": {
+     "diff": 0.04910096818810512,
+     "ci": [
+      0.03363347973070448,
+      0.06434000269995666
+     ],
+     "n": 1446
+    },
+    "ft_menos_tfidf": {
+     "diff": 0.2351313969571231,
+     "ci": [
+      0.20772814415273516,
+      0.262614938031106
+     ],
+     "n": 1446
+    },
+    "acc_bert": 0.8540802213001383,
+    "acc_tfidf": 0.6680497925311203,
+    "anterior_txt_menos_bert": {
+     "diff": 0.0013831258644536654,
+     "ci": [
+      -0.006901549718772759,
+      0.009635569460366937
+     ],
+     "n": 1446
+    },
+    "anterior_txt_menos_tfidf": {
+     "diff": 0.18741355463347165,
+     "ci": [
+      0.16066419388270103,
+      0.21399145385784282
+     ],
+     "n": 1446
+    }
+   },
+   {
+    "familia": "QWEN2VL",
+    "seed": 1,
+    "n": 1446,
+    "txt_menos_bert": {
+     "diff": 0.0006915629322268327,
+     "ci": [
+      -0.0047815842883093,
+      0.0061317356518686
+     ],
+     "n": 1446
+    },
+    "txt_menos_tfidf": {
+     "diff": 0.18810511756569848,
+     "ci": [
+      0.1613960784069385,
+      0.21453641944869786
+     ],
+     "n": 1446
+    },
+    "ft_menos_bert": {
+     "diff": 0.028354080221300138,
+     "ci": [
+      0.01170658466401192,
+      0.04498269896193772
+     ],
+     "n": 1446
+    },
+    "ft_menos_tfidf": {
+     "diff": 0.2157676348547718,
+     "ci": [
+      0.1873215286098878,
+      0.24432209222298693
+     ],
+     "n": 1446
+    },
+    "acc_bert": 0.8554633471645919,
+    "acc_tfidf": 0.6680497925311203,
+    "anterior_txt_menos_bert": {
+     "diff": 0.007607192254495159,
+     "ci": [
+      0.0013395409011062063,
+      0.013918126784561615
+     ],
+     "n": 1446
+    },
+    "anterior_txt_menos_tfidf": {
+     "diff": 0.1887966804979253,
+     "ci": [
+      0.16249527166437414,
+      0.2145857860110803
+     ],
+     "n": 1446
+    }
+   },
+   {
+    "familia": "QWEN2VL",
+    "seed": 2,
+    "n": 1446,
+    "txt_menos_bert": {
+     "diff": 0.012448132780082987,
+     "ci": [
+      0.0027604769044049403,
+      0.02238132174992241
+     ],
+     "n": 1446
+    },
+    "txt_menos_tfidf": {
+     "diff": 0.18741355463347165,
+     "ci": [
+      0.1620795799471262,
+      0.21351080737444367
+     ],
+     "n": 1446
+    },
+    "ft_menos_bert": {
+     "diff": 0.05532503457814661,
+     "ci": [
+      0.03798211564107449,
+      0.07217228507221927
+     ],
+     "n": 1446
+    },
+    "ft_menos_tfidf": {
+     "diff": 0.23029045643153526,
+     "ci": [
+      0.20247667149192874,
+      0.2567745626905932
+     ],
+     "n": 1446
+    },
+    "acc_bert": 0.843015214384509,
+    "acc_tfidf": 0.6680497925311203,
+    "anterior_txt_menos_bert": {
+     "diff": 0.005532503457814661,
+     "ci": [
+      -0.000691085003455425,
+      0.011822180636331872
+     ],
+     "n": 1446
+    },
+    "anterior_txt_menos_tfidf": {
+     "diff": 0.18810511756569848,
+     "ci": [
+      0.16332179930795848,
+      0.21301245388382312
+     ],
+     "n": 1446
+    }
+   },
+   {
+    "familia": "SMOLVLM",
+    "seed": 0,
+    "n": 1446,
+    "txt_menos_bert": {
+     "diff": -0.0027662517289073307,
+     "ci": [
+      -0.011034863783577823,
+      0.005517431891788911
+     ],
+     "n": 1446
+    },
+    "txt_menos_tfidf": {
+     "diff": 0.18326417704011064,
+     "ci": [
+      0.15701153853609368,
+      0.20980242469918656
+     ],
+     "n": 1446
+    },
+    "ft_menos_bert": {
+     "diff": 0.04979253112033195,
+     "ci": [
+      0.03358407193893359,
+      0.06620918270146693
+     ],
+     "n": 1446
+    },
+    "ft_menos_tfidf": {
+     "diff": 0.23582295988934993,
+     "ci": [
+      0.21008881623842385,
+      0.2616275968327627
+     ],
+     "n": 1446
+    },
+    "acc_bert": 0.8540802213001383,
+    "acc_tfidf": 0.6680497925311203,
+    "anterior_txt_menos_bert": {
+     "diff": -0.002074688796680498,
+     "ci": [
+      -0.010453326395491052,
+      0.006250108582348853
+     ],
+     "n": 1446
+    },
+    "anterior_txt_menos_tfidf": {
+     "diff": 0.1839557399723375,
+     "ci": [
+      0.15822247751303686,
+      0.20991311439475374
+     ],
+     "n": 1446
+    }
+   },
+   {
+    "familia": "SMOLVLM",
+    "seed": 1,
+    "n": 1446,
+    "txt_menos_bert": {
+     "diff": -0.003457814661134163,
+     "ci": [
+      -0.010267116255520238,
+      0.0027662517289073307
+     ],
+     "n": 1446
+    },
+    "txt_menos_tfidf": {
+     "diff": 0.1839557399723375,
+     "ci": [
+      0.15873015873015872,
+      0.20944639613466615
+     ],
+     "n": 1446
+    },
+    "ft_menos_bert": {
+     "diff": 0.04564315352697095,
+     "ci": [
+      0.028863015728529395,
+      0.06194723306782285
+     ],
+     "n": 1446
+    },
+    "ft_menos_tfidf": {
+     "diff": 0.2330567081604426,
+     "ci": [
+      0.20634262003556608,
+      0.2594675972305706
+     ],
+     "n": 1446
+    },
+    "acc_bert": 0.8554633471645919,
+    "acc_tfidf": 0.6680497925311203,
+    "anterior_txt_menos_bert": {
+     "diff": 0.003457814661134163,
+     "ci": [
+      -0.0055058499655884375,
+      0.012346102971102968
+     ],
+     "n": 1446
+    },
+    "anterior_txt_menos_tfidf": {
+     "diff": 0.18464730290456433,
+     "ci": [
+      0.16010696793471094,
+      0.20954913331088368
+     ],
+     "n": 1446
+    }
+   },
+   {
+    "familia": "SMOLVLM",
+    "seed": 2,
+    "n": 1446,
+    "txt_menos_bert": {
+     "diff": 0.008990318118948824,
+     "ci": [
+      -0.002064800531599307,
+      0.01993264510078367
+     ],
+     "n": 1446
+    },
+    "txt_menos_tfidf": {
+     "diff": 0.1839557399723375,
+     "ci": [
+      0.1594783203880606,
+      0.21056334693596432
+     ],
+     "n": 1446
+    },
+    "ft_menos_bert": {
+     "diff": 0.056708160442600276,
+     "ci": [
+      0.03864734299516908,
+      0.07361367060732497
+     ],
+     "n": 1446
+    },
+    "ft_menos_tfidf": {
+     "diff": 0.23167358229598894,
+     "ci": [
+      0.20487637247506493,
+      0.25829888194541867
+     ],
+     "n": 1446
+    },
+    "acc_bert": 0.843015214384509,
+    "acc_tfidf": 0.6680497925311203,
+    "anterior_txt_menos_bert": {
+     "diff": 0.002074688796680498,
+     "ci": [
+      -0.006202832914545976,
+      0.010281367207915462
+     ],
+     "n": 1446
+    },
+    "anterior_txt_menos_tfidf": {
+     "diff": 0.18464730290456433,
+     "ci": [
+      0.16066419388270103,
+      0.20954470528050928
+     ],
+     "n": 1446
+    }
+   },
+   {
+    "familia": "M3AE",
+    "seed": 0,
+    "n": 1446,
+    "txt_menos_bert": {
+     "diff": -0.0013831258644536654,
+     "ci": [
+      -0.0076282940360610264,
+      0.004864573799027875
+     ],
+     "n": 1446
+    },
+    "txt_menos_tfidf": {
+     "diff": 0.18464730290456433,
+     "ci": [
+      0.15825573342827798,
+      0.2110393224440411
+     ],
+     "n": 1446
+    },
+    "ft_menos_bert": {
+     "diff": 0.05394190871369295,
+     "ci": [
+      0.03581267217630854,
+      0.07246627204711396
+     ],
+     "n": 1446
+    },
+    "ft_menos_tfidf": {
+     "diff": 0.23997233748271093,
+     "ci": [
+      0.21364804576951643,
+      0.2657542802277718
+     ],
+     "n": 1446
+    },
+    "acc_bert": 0.8540802213001383,
+    "acc_tfidf": 0.6680497925311203,
+    "anterior_txt_menos_bert": {
+     "diff": -0.0006915629322268327,
+     "ci": [
+      -0.0069697406551304545,
+      0.006224174072851009
+     ],
+     "n": 1446
+    },
+    "anterior_txt_menos_tfidf": {
+     "diff": 0.18533886583679116,
+     "ci": [
+      0.1591371059447849,
+      0.2115541439071124
+     ],
+     "n": 1446
+    }
+   },
+   {
+    "familia": "M3AE",
+    "seed": 1,
+    "n": 1446,
+    "txt_menos_bert": {
+     "diff": -0.003457814661134163,
+     "ci": [
+      -0.009021669461793507,
+      0.0020747246909503365
+     ],
+     "n": 1446
+    },
+    "txt_menos_tfidf": {
+     "diff": 0.1839557399723375,
+     "ci": [
+      0.15946597774674187,
+      0.20964836059861666
+     ],
+     "n": 1446
+    },
+    "ft_menos_bert": {
+     "diff": 0.035269709543568464,
+     "ci": [
+      0.014672001464454295,
+      0.05469992118599241
+     ],
+     "n": 1446
+    },
+    "ft_menos_tfidf": {
+     "diff": 0.22268326417704012,
+     "ci": [
+      0.1952138864600081,
+      0.24914844997718458
+     ],
+     "n": 1446
+    },
+    "acc_bert": 0.8554633471645919,
+    "acc_tfidf": 0.6680497925311203,
+    "anterior_txt_menos_bert": {
+     "diff": 0.003457814661134163,
+     "ci": [
+      -0.005509641873278237,
+      0.011708190703476087
+     ],
+     "n": 1446
+    },
+    "anterior_txt_menos_tfidf": {
+     "diff": 0.18464730290456433,
+     "ci": [
+      0.1599127864475122,
+      0.2098337950138504
+     ],
+     "n": 1446
+    }
+   },
+   {
+    "familia": "M3AE",
+    "seed": 2,
+    "n": 1446,
+    "txt_menos_bert": {
+     "diff": 0.011065006915629323,
+     "ci": [
+      0.0006929886950662574,
+      0.021453658618409067
+     ],
+     "n": 1446
+    },
+    "txt_menos_tfidf": {
+     "diff": 0.18603042876901799,
+     "ci": [
+      0.16049405964074043,
+      0.2111922400803616
+     ],
+     "n": 1446
+    },
+    "ft_menos_bert": {
+     "diff": 0.04910096818810512,
+     "ci": [
+      0.028846153846153848,
+      0.0695918471263448
+     ],
+     "n": 1446
+    },
+    "ft_menos_tfidf": {
+     "diff": 0.22406639004149378,
+     "ci": [
+      0.1971245111487897,
+      0.2501727832239235
+     ],
+     "n": 1446
+    },
+    "acc_bert": 0.843015214384509,
+    "acc_tfidf": 0.6680497925311203,
+    "anterior_txt_menos_bert": {
+     "diff": 0.004149377593360996,
+     "ci": [
+      -0.003434243191426605,
+      0.011748648178470072
+     ],
+     "n": 1446
+    },
+    "anterior_txt_menos_tfidf": {
+     "diff": 0.18672199170124482,
+     "ci": [
+      0.16198657908369776,
+      0.21121981109919746
+     ],
+     "n": 1446
+    }
+   }
+  ],
+  "por_familia": {
+   "QWEN2VL": {
+    "txt_menos_bert": {
+     "mean": 0.004610419548178884,
+     "sd": 0.006787658766406389,
+     "ic_media_sementes": [
+      0.0006739623675027487,
+      0.008939425531377157
+     ],
+     "n_sementes": 3
+    },
+    "txt_menos_tfidf": {
+     "mean": 0.18741355463347165,
+     "sd": 0.0006915629322268302,
+     "ic_media_sementes": [
+      0.1616768053375196,
+      0.2136357573039831
+     ],
+     "n_sementes": 3
+    },
+    "ft_menos_bert": {
+     "mean": 0.04426002766251729,
+     "sd": 0.014122114700319596,
+     "ic_media_sementes": [
+      0.030259480482541568,
+      0.058282071842339515
+     ],
+     "n_sementes": 3
+    },
+    "ft_menos_tfidf": {
+     "mean": 0.22706316274781005,
+     "sd": 0.010077221297553883,
+     "ic_media_sementes": [
+      0.20018553973161665,
+      0.2541878100305534
+     ],
+     "n_sementes": 3
+    },
+    "anterior_txt_menos_bert": {
+     "mean": 0.004840940525587829,
+     "sd": 0.003169139484755076,
+     "ic_media_sementes": [
+      -0.0009259904054472298,
+      0.010520876647303999
+     ],
+     "n_sementes": 3
+    },
+    "anterior_txt_menos_tfidf": {
+     "mean": 0.18810511756569848,
+     "sd": 0.0006915629322268302,
+     "ic_media_sementes": [
+      0.1626517073343729,
+      0.2136756569847856
+     ],
+     "n_sementes": 3
+    },
+    "acc_bert": 0.8508529276164131,
+    "acc_tfidf": 0.6680497925311203
+   },
+   "SMOLVLM": {
+    "txt_menos_bert": {
+     "mean": 0.0009220839096357765,
+     "sd": 0.006995846429457591,
+     "ic_media_sementes": [
+      -0.0050368900140923545,
+      0.006873325896821955
+     ],
+     "n_sementes": 3
+    },
+    "txt_menos_tfidf": {
+     "mean": 0.18372521899492855,
+     "sd": 0.00039927404508274334,
+     "ic_media_sementes": [
+      0.15923725200386563,
+      0.20937883027918758
+     ],
+     "n_sementes": 3
+    },
+    "ft_menos_bert": {
+     "mean": 0.05071461502996772,
+     "sd": 0.005589836631158204,
+     "ic_media_sementes": [
+      0.03513485281225608,
+      0.06550925925925925
+     ],
+     "n_sementes": 3
+    },
+    "ft_menos_tfidf": {
+     "mean": 0.23351775011526046,
+     "sd": 0.0021127596565033765,
+     "ic_media_sementes": [
+      0.2079255793994705,
+      0.2593677659728668
+     ],
+     "n_sementes": 3
+    },
+    "anterior_txt_menos_bert": {
+     "mean": 0.001152604887044721,
+     "sd": 0.0028792060850153975,
+     "ic_media_sementes": [
+      -0.005517527345518672,
+      0.007608117382114706
+     ],
+     "n_sementes": 3
+    },
+    "anterior_txt_menos_tfidf": {
+     "mean": 0.18441678192715538,
+     "sd": 0.00039927404508272735,
+     "ic_media_sementes": [
+      0.16053202332567143,
+      0.20925628441917773
+     ],
+     "n_sementes": 3
+    },
+    "acc_bert": 0.8508529276164131,
+    "acc_tfidf": 0.6680497925311203
+   },
+   "M3AE": {
+    "txt_menos_bert": {
+     "mean": 0.002074688796680498,
+     "sd": 0.007854645014938138,
+     "ic_media_sementes": [
+      -0.002066115702479339,
+      0.006428470798326924
+     ],
+     "n_sementes": 3
+    },
+    "txt_menos_tfidf": {
+     "mean": 0.18487782388197327,
+     "sd": 0.0010563798282516885,
+     "ic_media_sementes": [
+      0.15956946245191436,
+      0.2105144259350611
+     ],
+     "n_sementes": 3
+    },
+    "ft_menos_bert": {
+     "mean": 0.046104195481788846,
+     "sd": 0.009690110445820058,
+     "ic_media_sementes": [
+      0.028703512396694216,
+      0.06306555518173775
+     ],
+     "n_sementes": 3
+    },
+    "ft_menos_tfidf": {
+     "mean": 0.2289073305670816,
+     "sd": 0.00960749930114094,
+     "ic_media_sementes": [
+      0.20301485059939167,
+      0.2535255478882958
+     ],
+     "n_sementes": 3
+    },
+    "anterior_txt_menos_bert": {
+     "mean": 0.002305209774089442,
+     "sd": 0.0026182150049793794,
+     "ic_media_sementes": [
+      -0.002754868400817903,
+      0.007392007392007392
+     ],
+     "n_sementes": 3
+    },
+    "anterior_txt_menos_tfidf": {
+     "mean": 0.1855693868142001,
+     "sd": 0.0010563798282516885,
+     "ic_media_sementes": [
+      0.16027550139827015,
+      0.21050032354380177
+     ],
+     "n_sementes": 3
+    },
+    "acc_bert": 0.8508529276164131,
+    "acc_tfidf": 0.6680497925311203
+   }
+  }
+ },
+ "script": "analises_rodada2.py",
+ "script_sha256": "48640300b950d971c53391d31bb71c5207e41c017bfa1dbc4bae79d3bb3db857"
+}

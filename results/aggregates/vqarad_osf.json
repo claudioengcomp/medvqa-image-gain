@@ -1,0 +1,114 @@
+{
+ "t": "2026-10-19 01:17:23",
+ "script": "vqarad_osf.py",
+ "script_sha256": "94c39383535eb94e4dc9599843066a82e3e8c1c3fedd744f9b707df6a65a6a96",
+ "osf_json": "VQA_RAD Dataset Public.json",
+ "osf_sha256": "948b7156059b864cf72344fb10669233526b175c243e5a046d20d4201d297a95",
+ "estrutura": {
+  "linhas": 2248,
+  "campos": [
+   "answer",
+   "answer_type",
+   "evaluation",
+   "image_case_url",
+   "image_name",
+   "image_organ",
+   "phrase_type",
+   "qid",
+   "qid_linked_id",
+   "question",
+   "question_frame",
+   "question_relation",
+   "question_rephrase",
+   "question_type"
+  ],
+  "phrase_type": {
+   "freeform": 1206,
+   "test_freeform": 308,
+   "test_para": 143,
+   "para": 591
+  },
+  "treino": 1797,
+  "teste": 451,
+  "particoes": [
+   "teste",
+   "treino"
+  ],
+  "linhas_com_question_frame": 1267,
+  "treino_com_question_frame": 983,
+  "teste_com_question_frame": 284
+ },
+ "ligacao": {
+  "train": {
+   "n": 2758,
+   "nao_frame": 1619,
+   "nao_frame_casadas_question_osf": 1619,
+   "nao_frame_casadas_em_linhas_de_treino_osf": 1619,
+   "nao_frame_casadas_em_linhas_de_teste_osf": 1,
+   "frame": 1139,
+   "frame_casadas_question_frame_osf": 1139,
+   "frame_casadas_question_frame_de_linha_de_treino_osf": 878
+  },
+  "val": {
+   "n": 306,
+   "nao_frame": 178,
+   "nao_frame_casadas_question_osf": 178,
+   "nao_frame_casadas_em_linhas_de_treino_osf": 178,
+   "nao_frame_casadas_em_linhas_de_teste_osf": 0,
+   "frame": 128,
+   "frame_casadas_question_frame_osf": 128,
+   "frame_casadas_question_frame_de_linha_de_treino_osf": 106
+  },
+  "test": {
+   "n": 451,
+   "nao_frame": 451,
+   "nao_frame_casadas_question_osf": 451,
+   "nao_frame_casadas_em_linhas_de_treino_osf": 1,
+   "nao_frame_casadas_em_linhas_de_teste_osf": 451,
+   "frame": 0,
+   "frame_casadas_question_frame_osf": 0,
+   "frame_casadas_question_frame_de_linha_de_treino_osf": 0
+  },
+  "val_vindas_de_treino_osf": 284
+ },
+ "imagens": {
+  "imagens_teste_osf": 203,
+  "em_1797_linhas_treino_osf": 202,
+  "em_treino_mais_val_nossos_3064": 203
+ },
+ "R3": {
+  "todas": {
+   "n": 451,
+   "com_question_frame": 284,
+   "R3": 284
+  },
+  "fechadas": {
+   "n": 272,
+   "com_question_frame": 182,
+   "R3": 182
+  },
+  "sim_nao": {
+   "n": 251,
+   "com_question_frame": 179,
+   "R3": 179
+  }
+ },
+ "R3_nota": {
+  "linhas_de_teste_osf_casadas_ao_nosso_testset": 451,
+  "fechadas_pelo_answer_type_do_osf_com_strip": 272
+ },
+ "frames_por_origem_osf": {
+  "train": {
+   "so_teste_osf": 261,
+   "so_treino_osf": 877,
+   "ambos": 1,
+   "n_frame": 1139
+  },
+  "val": {
+   "so_treino_osf": 105,
+   "so_teste_osf": 22,
+   "ambos": 1,
+   "n_frame": 128
+  }
+ }
+}

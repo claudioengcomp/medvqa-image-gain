@@ -1,0 +1,48 @@
+# Linha NOVA (v5, torre visual adaptada). Gerada de med_vlm/configs/qwen2vl_lora_slake.yaml; difere so em run_name,
+# wandb_run_name, peft_config.target_modules (regex), outputs_dir e checkpoint_every.
+run_name: qwen2vl_lora_vt_slake
+model: QWEN2VL
+dataset: SLAKE
+peft: LORA
+peft_config:
+  r: 16
+  lora_alpha: 32
+  target_modules: .*self_attn\.(q|k|v|o)_proj$|.*visual\.blocks\.\d+\.attn\.(qkv|proj)$
+  task_type: CAUSAL_LM
+train:
+  lr: 2e-4
+  warmup_ratio: 0.05
+  epochs: 3
+  batch_size: 4
+  grad_accum_steps: 8
+  max_length: 2048
+  gradient_checkpointing: true
+  compile: true
+  eval_every: 5000
+  checkpoint_every: 15000
+  checkpoint_dir: ${MEDVQA_ROOT}/v5_qwen_vt/checkpoints
+eval:
+  batch_size: 4
+  split: test
+  max_new_tokens: 64
+logging:
+  wandb_project: med-vlm
+  wandb_run_name: qwen2vl_lora_vt_slake
+outputs_dir: ${MEDVQA_ROOT}/v5_qwen_vt
+preprocessing:
+  denoise: true
+  denoise_method: gaussian
+  clahe: true
+  clahe_clip_limit: 2.0
+  clahe_tile_grid_size:
+  - 8
+  - 8
+augmentation:
+  enabled: true
+  rotation_degrees: 5
+  brightness_range:
+  - 0.85
+  - 1.15
+  contrast_range:
+  - 0.85
+  - 1.15

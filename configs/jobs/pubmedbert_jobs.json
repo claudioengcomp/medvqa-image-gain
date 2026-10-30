@@ -1,0 +1,542 @@
+[
+ {
+  "name": "BERT2_question_only_KVASIR_seed0",
+  "env": "circle",
+  "reserve_mib": 4608,
+  "env_extra": {
+   "HF_HUB_OFFLINE": "1"
+  },
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/results/BERT2_question_only_KVASIR_seed0.json",
+  "skip_order": true,
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/logs/bert2/BERT2_question_only_KVASIR_seed0.log",
+  "cmd": [
+   "-m",
+   "harness.v7_txt.bert_question_only",
+   "--base",
+   "KVASIR",
+   "--seed",
+   "0",
+   "--data",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/data/texto/KVASIR.json",
+   "--output",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/BERT2_question_only_KVASIR_seed0.json",
+   "--save-dir",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/models/bert2_kvasir_seed0",
+   "--progress-checkpoint",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/.progress/BERT2_question_only_KVASIR_seed0.jsonl"
+  ],
+  "meta": {
+   "line": "BERT2_question_only_KVASIR_seed0",
+   "condition": "C0 (so pergunta)",
+   "base_model": "microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext@e1354b7a",
+   "input_arrow": null,
+   "dados": "${MEDVQA_ROOT}/v7_txt/article_runs/data/texto/KVASIR.json",
+   "dados_sha256": "3239834a991d41f87a26e1f9ddfd030f935da76ce608f24d9c49b1857174811c",
+   "dtype": "fp32"
+  }
+ },
+ {
+  "name": "BERT2_question_only_KVASIR_seed1",
+  "env": "circle",
+  "reserve_mib": 4608,
+  "env_extra": {
+   "HF_HUB_OFFLINE": "1"
+  },
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/results/BERT2_question_only_KVASIR_seed1.json",
+  "skip_order": true,
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/logs/bert2/BERT2_question_only_KVASIR_seed1.log",
+  "cmd": [
+   "-m",
+   "harness.v7_txt.bert_question_only",
+   "--base",
+   "KVASIR",
+   "--seed",
+   "1",
+   "--data",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/data/texto/KVASIR.json",
+   "--output",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/BERT2_question_only_KVASIR_seed1.json",
+   "--save-dir",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/models/bert2_kvasir_seed1",
+   "--progress-checkpoint",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/.progress/BERT2_question_only_KVASIR_seed1.jsonl"
+  ],
+  "meta": {
+   "line": "BERT2_question_only_KVASIR_seed1",
+   "condition": "C0 (so pergunta)",
+   "base_model": "microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext@e1354b7a",
+   "input_arrow": null,
+   "dados": "${MEDVQA_ROOT}/v7_txt/article_runs/data/texto/KVASIR.json",
+   "dados_sha256": "3239834a991d41f87a26e1f9ddfd030f935da76ce608f24d9c49b1857174811c",
+   "dtype": "fp32"
+  }
+ },
+ {
+  "name": "BERT2_question_only_KVASIR_seed2",
+  "env": "circle",
+  "reserve_mib": 4608,
+  "env_extra": {
+   "HF_HUB_OFFLINE": "1"
+  },
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/results/BERT2_question_only_KVASIR_seed2.json",
+  "skip_order": true,
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/logs/bert2/BERT2_question_only_KVASIR_seed2.log",
+  "cmd": [
+   "-m",
+   "harness.v7_txt.bert_question_only",
+   "--base",
+   "KVASIR",
+   "--seed",
+   "2",
+   "--data",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/data/texto/KVASIR.json",
+   "--output",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/BERT2_question_only_KVASIR_seed2.json",
+   "--save-dir",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/models/bert2_kvasir_seed2",
+   "--progress-checkpoint",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/.progress/BERT2_question_only_KVASIR_seed2.jsonl"
+  ],
+  "meta": {
+   "line": "BERT2_question_only_KVASIR_seed2",
+   "condition": "C0 (so pergunta)",
+   "base_model": "microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext@e1354b7a",
+   "input_arrow": null,
+   "dados": "${MEDVQA_ROOT}/v7_txt/article_runs/data/texto/KVASIR.json",
+   "dados_sha256": "3239834a991d41f87a26e1f9ddfd030f935da76ce608f24d9c49b1857174811c",
+   "dtype": "fp32"
+  }
+ },
+ {
+  "name": "BERT2_question_only_SLAKE_seed0",
+  "env": "circle",
+  "reserve_mib": 4608,
+  "env_extra": {
+   "HF_HUB_OFFLINE": "1"
+  },
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/results/BERT2_question_only_SLAKE_seed0.json",
+  "skip_order": true,
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/logs/bert2/BERT2_question_only_SLAKE_seed0.log",
+  "cmd": [
+   "-m",
+   "harness.v7_txt.bert_question_only",
+   "--base",
+   "SLAKE",
+   "--seed",
+   "0",
+   "--data",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/data/texto/SLAKE.json",
+   "--output",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/BERT2_question_only_SLAKE_seed0.json",
+   "--save-dir",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/models/bert2_slake_seed0",
+   "--progress-checkpoint",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/.progress/BERT2_question_only_SLAKE_seed0.jsonl"
+  ],
+  "meta": {
+   "line": "BERT2_question_only_SLAKE_seed0",
+   "condition": "C0 (so pergunta)",
+   "base_model": "microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext@e1354b7a",
+   "input_arrow": null,
+   "dados": "${MEDVQA_ROOT}/v7_txt/article_runs/data/texto/SLAKE.json",
+   "dados_sha256": "1fd396df93935346ccc6a522f8057975bc27348e7807aff8e804e408a4e097e7",
+   "dtype": "fp32"
+  }
+ },
+ {
+  "name": "BERT2_question_only_SLAKE_seed1",
+  "env": "circle",
+  "reserve_mib": 4608,
+  "env_extra": {
+   "HF_HUB_OFFLINE": "1"
+  },
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/results/BERT2_question_only_SLAKE_seed1.json",
+  "skip_order": true,
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/logs/bert2/BERT2_question_only_SLAKE_seed1.log",
+  "cmd": [
+   "-m",
+   "harness.v7_txt.bert_question_only",
+   "--base",
+   "SLAKE",
+   "--seed",
+   "1",
+   "--data",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/data/texto/SLAKE.json",
+   "--output",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/BERT2_question_only_SLAKE_seed1.json",
+   "--save-dir",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/models/bert2_slake_seed1",
+   "--progress-checkpoint",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/.progress/BERT2_question_only_SLAKE_seed1.jsonl"
+  ],
+  "meta": {
+   "line": "BERT2_question_only_SLAKE_seed1",
+   "condition": "C0 (so pergunta)",
+   "base_model": "microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext@e1354b7a",
+   "input_arrow": null,
+   "dados": "${MEDVQA_ROOT}/v7_txt/article_runs/data/texto/SLAKE.json",
+   "dados_sha256": "1fd396df93935346ccc6a522f8057975bc27348e7807aff8e804e408a4e097e7",
+   "dtype": "fp32"
+  }
+ },
+ {
+  "name": "BERT2_question_only_SLAKE_seed2",
+  "env": "circle",
+  "reserve_mib": 4608,
+  "env_extra": {
+   "HF_HUB_OFFLINE": "1"
+  },
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/results/BERT2_question_only_SLAKE_seed2.json",
+  "skip_order": true,
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/logs/bert2/BERT2_question_only_SLAKE_seed2.log",
+  "cmd": [
+   "-m",
+   "harness.v7_txt.bert_question_only",
+   "--base",
+   "SLAKE",
+   "--seed",
+   "2",
+   "--data",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/data/texto/SLAKE.json",
+   "--output",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/BERT2_question_only_SLAKE_seed2.json",
+   "--save-dir",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/models/bert2_slake_seed2",
+   "--progress-checkpoint",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/.progress/BERT2_question_only_SLAKE_seed2.jsonl"
+  ],
+  "meta": {
+   "line": "BERT2_question_only_SLAKE_seed2",
+   "condition": "C0 (so pergunta)",
+   "base_model": "microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext@e1354b7a",
+   "input_arrow": null,
+   "dados": "${MEDVQA_ROOT}/v7_txt/article_runs/data/texto/SLAKE.json",
+   "dados_sha256": "1fd396df93935346ccc6a522f8057975bc27348e7807aff8e804e408a4e097e7",
+   "dtype": "fp32"
+  }
+ },
+ {
+  "name": "BERT2_question_only_MIMIC_seed0",
+  "env": "circle",
+  "reserve_mib": 4608,
+  "env_extra": {
+   "HF_HUB_OFFLINE": "1"
+  },
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/results/BERT2_question_only_MIMIC_seed0.json",
+  "skip_order": true,
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/logs/bert2/BERT2_question_only_MIMIC_seed0.log",
+  "cmd": [
+   "-m",
+   "harness.v7_txt.bert_question_only",
+   "--base",
+   "MIMIC",
+   "--seed",
+   "0",
+   "--data",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/data/texto/MIMIC.json",
+   "--output",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/BERT2_question_only_MIMIC_seed0.json",
+   "--save-dir",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/models/bert2_mimic_seed0",
+   "--progress-checkpoint",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/.progress/BERT2_question_only_MIMIC_seed0.jsonl"
+  ],
+  "meta": {
+   "line": "BERT2_question_only_MIMIC_seed0",
+   "condition": "C0 (so pergunta)",
+   "base_model": "microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext@e1354b7a",
+   "input_arrow": null,
+   "dados": "${MEDVQA_ROOT}/v7_txt/article_runs/data/texto/MIMIC.json",
+   "dados_sha256": "9010568a154d3b6abde2d00ff7730376b57d18d39dc89897400f40797747fbcc",
+   "dtype": "fp32"
+  }
+ },
+ {
+  "name": "BERT2_question_only_MIMIC_seed1",
+  "env": "circle",
+  "reserve_mib": 4608,
+  "env_extra": {
+   "HF_HUB_OFFLINE": "1"
+  },
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/results/BERT2_question_only_MIMIC_seed1.json",
+  "skip_order": true,
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/logs/bert2/BERT2_question_only_MIMIC_seed1.log",
+  "cmd": [
+   "-m",
+   "harness.v7_txt.bert_question_only",
+   "--base",
+   "MIMIC",
+   "--seed",
+   "1",
+   "--data",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/data/texto/MIMIC.json",
+   "--output",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/BERT2_question_only_MIMIC_seed1.json",
+   "--save-dir",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/models/bert2_mimic_seed1",
+   "--progress-checkpoint",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/.progress/BERT2_question_only_MIMIC_seed1.jsonl"
+  ],
+  "meta": {
+   "line": "BERT2_question_only_MIMIC_seed1",
+   "condition": "C0 (so pergunta)",
+   "base_model": "microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext@e1354b7a",
+   "input_arrow": null,
+   "dados": "${MEDVQA_ROOT}/v7_txt/article_runs/data/texto/MIMIC.json",
+   "dados_sha256": "9010568a154d3b6abde2d00ff7730376b57d18d39dc89897400f40797747fbcc",
+   "dtype": "fp32"
+  }
+ },
+ {
+  "name": "BERT2_question_only_MIMIC_seed2",
+  "env": "circle",
+  "reserve_mib": 4608,
+  "env_extra": {
+   "HF_HUB_OFFLINE": "1"
+  },
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/results/BERT2_question_only_MIMIC_seed2.json",
+  "skip_order": true,
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/logs/bert2/BERT2_question_only_MIMIC_seed2.log",
+  "cmd": [
+   "-m",
+   "harness.v7_txt.bert_question_only",
+   "--base",
+   "MIMIC",
+   "--seed",
+   "2",
+   "--data",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/data/texto/MIMIC.json",
+   "--output",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/BERT2_question_only_MIMIC_seed2.json",
+   "--save-dir",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/models/bert2_mimic_seed2",
+   "--progress-checkpoint",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/.progress/BERT2_question_only_MIMIC_seed2.jsonl"
+  ],
+  "meta": {
+   "line": "BERT2_question_only_MIMIC_seed2",
+   "condition": "C0 (so pergunta)",
+   "base_model": "microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext@e1354b7a",
+   "input_arrow": null,
+   "dados": "${MEDVQA_ROOT}/v7_txt/article_runs/data/texto/MIMIC.json",
+   "dados_sha256": "9010568a154d3b6abde2d00ff7730376b57d18d39dc89897400f40797747fbcc",
+   "dtype": "fp32"
+  }
+ },
+ {
+  "name": "BERT2_question_only_VQARAD_REDIV_seed0",
+  "env": "circle",
+  "reserve_mib": 4608,
+  "env_extra": {
+   "HF_HUB_OFFLINE": "1"
+  },
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/results/BERT2_question_only_VQARAD_REDIV_seed0.json",
+  "skip_order": true,
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/logs/bert2/BERT2_question_only_VQARAD_REDIV_seed0.log",
+  "cmd": [
+   "-m",
+   "harness.v7_txt.bert_question_only",
+   "--base",
+   "VQARAD_REDIV",
+   "--seed",
+   "0",
+   "--data",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/data/texto/VQARAD_REDIV.json",
+   "--output",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/BERT2_question_only_VQARAD_REDIV_seed0.json",
+   "--save-dir",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/models/bert2_vqarad_rediv_seed0",
+   "--progress-checkpoint",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/.progress/BERT2_question_only_VQARAD_REDIV_seed0.jsonl"
+  ],
+  "meta": {
+   "line": "BERT2_question_only_VQARAD_REDIV_seed0",
+   "condition": "C0 (so pergunta)",
+   "base_model": "microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext@e1354b7a",
+   "input_arrow": null,
+   "dados": "${MEDVQA_ROOT}/v7_txt/article_runs/data/texto/VQARAD_REDIV.json",
+   "dados_sha256": "6675a4c4caae77233836b061126bba815a633e07d6a9b211e54f4a0376532061",
+   "dtype": "fp32"
+  }
+ },
+ {
+  "name": "BERT2_question_only_VQARAD_REDIV_seed1",
+  "env": "circle",
+  "reserve_mib": 4608,
+  "env_extra": {
+   "HF_HUB_OFFLINE": "1"
+  },
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/results/BERT2_question_only_VQARAD_REDIV_seed1.json",
+  "skip_order": true,
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/logs/bert2/BERT2_question_only_VQARAD_REDIV_seed1.log",
+  "cmd": [
+   "-m",
+   "harness.v7_txt.bert_question_only",
+   "--base",
+   "VQARAD_REDIV",
+   "--seed",
+   "1",
+   "--data",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/data/texto/VQARAD_REDIV.json",
+   "--output",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/BERT2_question_only_VQARAD_REDIV_seed1.json",
+   "--save-dir",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/models/bert2_vqarad_rediv_seed1",
+   "--progress-checkpoint",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/.progress/BERT2_question_only_VQARAD_REDIV_seed1.jsonl"
+  ],
+  "meta": {
+   "line": "BERT2_question_only_VQARAD_REDIV_seed1",
+   "condition": "C0 (so pergunta)",
+   "base_model": "microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext@e1354b7a",
+   "input_arrow": null,
+   "dados": "${MEDVQA_ROOT}/v7_txt/article_runs/data/texto/VQARAD_REDIV.json",
+   "dados_sha256": "6675a4c4caae77233836b061126bba815a633e07d6a9b211e54f4a0376532061",
+   "dtype": "fp32"
+  }
+ },
+ {
+  "name": "BERT2_question_only_VQARAD_REDIV_seed2",
+  "env": "circle",
+  "reserve_mib": 4608,
+  "env_extra": {
+   "HF_HUB_OFFLINE": "1"
+  },
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/results/BERT2_question_only_VQARAD_REDIV_seed2.json",
+  "skip_order": true,
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/logs/bert2/BERT2_question_only_VQARAD_REDIV_seed2.log",
+  "cmd": [
+   "-m",
+   "harness.v7_txt.bert_question_only",
+   "--base",
+   "VQARAD_REDIV",
+   "--seed",
+   "2",
+   "--data",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/data/texto/VQARAD_REDIV.json",
+   "--output",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/BERT2_question_only_VQARAD_REDIV_seed2.json",
+   "--save-dir",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/models/bert2_vqarad_rediv_seed2",
+   "--progress-checkpoint",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/.progress/BERT2_question_only_VQARAD_REDIV_seed2.jsonl"
+  ],
+  "meta": {
+   "line": "BERT2_question_only_VQARAD_REDIV_seed2",
+   "condition": "C0 (so pergunta)",
+   "base_model": "microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext@e1354b7a",
+   "input_arrow": null,
+   "dados": "${MEDVQA_ROOT}/v7_txt/article_runs/data/texto/VQARAD_REDIV.json",
+   "dados_sha256": "6675a4c4caae77233836b061126bba815a633e07d6a9b211e54f4a0376532061",
+   "dtype": "fp32"
+  }
+ },
+ {
+  "name": "BERT2_question_only_HEAL_TREINO_seed0",
+  "env": "circle",
+  "reserve_mib": 4608,
+  "env_extra": {
+   "HF_HUB_OFFLINE": "1"
+  },
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/results/BERT2_question_only_HEAL_TREINO_seed0.json",
+  "skip_order": true,
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/logs/bert2/BERT2_question_only_HEAL_TREINO_seed0.log",
+  "cmd": [
+   "-m",
+   "harness.v7_txt.bert_question_only",
+   "--base",
+   "HEAL_TREINO",
+   "--seed",
+   "0",
+   "--data",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/data/texto/HEAL_TREINO.json",
+   "--output",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/BERT2_question_only_HEAL_TREINO_seed0.json",
+   "--save-dir",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/models/bert2_heal_treino_seed0",
+   "--progress-checkpoint",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/.progress/BERT2_question_only_HEAL_TREINO_seed0.jsonl"
+  ],
+  "meta": {
+   "line": "BERT2_question_only_HEAL_TREINO_seed0",
+   "condition": "C0 (so pergunta)",
+   "base_model": "microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext@e1354b7a",
+   "input_arrow": null,
+   "dados": "${MEDVQA_ROOT}/v7_txt/article_runs/data/texto/HEAL_TREINO.json",
+   "dados_sha256": "1cd899184b519f5f5dd0f229f79fe7a44436f5c715be0d4e372986d4f1096101",
+   "dtype": "fp32"
+  }
+ },
+ {
+  "name": "BERT2_question_only_HEAL_TREINO_seed1",
+  "env": "circle",
+  "reserve_mib": 4608,
+  "env_extra": {
+   "HF_HUB_OFFLINE": "1"
+  },
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/results/BERT2_question_only_HEAL_TREINO_seed1.json",
+  "skip_order": true,
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/logs/bert2/BERT2_question_only_HEAL_TREINO_seed1.log",
+  "cmd": [
+   "-m",
+   "harness.v7_txt.bert_question_only",
+   "--base",
+   "HEAL_TREINO",
+   "--seed",
+   "1",
+   "--data",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/data/texto/HEAL_TREINO.json",
+   "--output",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/BERT2_question_only_HEAL_TREINO_seed1.json",
+   "--save-dir",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/models/bert2_heal_treino_seed1",
+   "--progress-checkpoint",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/.progress/BERT2_question_only_HEAL_TREINO_seed1.jsonl"
+  ],
+  "meta": {
+   "line": "BERT2_question_only_HEAL_TREINO_seed1",
+   "condition": "C0 (so pergunta)",
+   "base_model": "microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext@e1354b7a",
+   "input_arrow": null,
+   "dados": "${MEDVQA_ROOT}/v7_txt/article_runs/data/texto/HEAL_TREINO.json",
+   "dados_sha256": "1cd899184b519f5f5dd0f229f79fe7a44436f5c715be0d4e372986d4f1096101",
+   "dtype": "fp32"
+  }
+ },
+ {
+  "name": "BERT2_question_only_HEAL_TREINO_seed2",
+  "env": "circle",
+  "reserve_mib": 4608,
+  "env_extra": {
+   "HF_HUB_OFFLINE": "1"
+  },
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/results/BERT2_question_only_HEAL_TREINO_seed2.json",
+  "skip_order": true,
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/logs/bert2/BERT2_question_only_HEAL_TREINO_seed2.log",
+  "cmd": [
+   "-m",
+   "harness.v7_txt.bert_question_only",
+   "--base",
+   "HEAL_TREINO",
+   "--seed",
+   "2",
+   "--data",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/data/texto/HEAL_TREINO.json",
+   "--output",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/BERT2_question_only_HEAL_TREINO_seed2.json",
+   "--save-dir",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/models/bert2_heal_treino_seed2",
+   "--progress-checkpoint",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/results/.progress/BERT2_question_only_HEAL_TREINO_seed2.jsonl"
+  ],
+  "meta": {
+   "line": "BERT2_question_only_HEAL_TREINO_seed2",
+   "condition": "C0 (so pergunta)",
+   "base_model": "microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext@e1354b7a",
+   "input_arrow": null,
+   "dados": "${MEDVQA_ROOT}/v7_txt/article_runs/data/texto/HEAL_TREINO.json",
+   "dados_sha256": "1cd899184b519f5f5dd0f229f79fe7a44436f5c715be0d4e372986d4f1096101",
+   "dtype": "fp32"
+  }
+ }
+]

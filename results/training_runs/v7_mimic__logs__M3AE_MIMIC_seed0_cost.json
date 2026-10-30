@@ -1,0 +1,15 @@
+{
+ "run_name": "M3AE_MIMIC_seed0",
+ "task": "task_finetune_vqa_mimic",
+ "seed": 0,
+ "vqa_label_size": 82,
+ "train_transform_keys": [
+  "clip"
+ ],
+ "data_root": "data_root",
+ "train_wall_time_s": 5799,
+ "train_peak_memory_gb": 26.116,
+ "note": "pico = nvidia-smi da placa do treino (-i 0; inclui terceiros nessa placa); 12/10: corrigido o poll das 4 placas",
+ "placa": "0",
+ "ld_library_path": "nvidia-580.173.02-compute"
+}

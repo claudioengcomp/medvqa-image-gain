@@ -1,0 +1,78 @@
+{
+ "vision_encoder_state_dict_sha256_antes": "57533c36a73de5f16248a872afd27a97ce8e6683b20fb9d04587c8b0866f00bd",
+ "load_path": "downloaded/pretrained/m3ae.ckpt",
+ "modulos": {
+  "vision_encoder": {
+   "total": 104340736,
+   "treinaveis": 0
+  },
+  "language_encoder": {
+   "total": 124645632,
+   "treinaveis": 124645632
+  },
+  "multi_modal_language_proj": {
+   "total": 590592,
+   "treinaveis": 590592
+  },
+  "multi_modal_vision_proj": {
+   "total": 590592,
+   "treinaveis": 590592
+  },
+  "modality_type_embeddings": {
+   "total": 1536,
+   "treinaveis": 1536
+  },
+  "multi_modal_vision_layers": {
+   "total": 56710656,
+   "treinaveis": 56710656
+  },
+  "multi_modal_language_layers": {
+   "total": 56710656,
+   "treinaveis": 56710656
+  },
+  "multi_modal_vision_pooler": {
+   "total": 590592,
+   "treinaveis": 590592
+  },
+  "multi_modal_language_pooler": {
+   "total": 590592,
+   "treinaveis": 590592
+  },
+  "vqa_head": {
+   "total": 2705118,
+   "treinaveis": 2705118
+  },
+  "train_vqa_score": {
+   "total": 0,
+   "treinaveis": 0
+  },
+  "train_vqa_loss": {
+   "total": 0,
+   "treinaveis": 0
+  },
+  "val_vqa_score": {
+   "total": 0,
+   "treinaveis": 0
+  },
+  "val_vqa_loss": {
+   "total": 0,
+   "treinaveis": 0
+  },
+  "test_vqa_score": {
+   "total": 0,
+   "treinaveis": 0
+  },
+  "test_vqa_loss": {
+   "total": 0,
+   "treinaveis": 0
+  }
+ },
+ "parametros_total": 347476702,
+ "parametros_treinaveis": 243135966,
+ "parametros_congelados": 104340736,
+ "vision_encoder_normalizacao": [
+  "LayerNorm"
+ ],
+ "vision_encoder_batchnorm_com_estatisticas": 0,
+ "vision_encoder_dropout_p_maior_que_0": 0
+}

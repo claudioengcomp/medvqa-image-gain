@@ -1,0 +1,45 @@
+# v7_mimic (2026-10-10): copia de v6_tower_heal/worktree/med_vlm/configs/qwen2vl_lora_vt_heal.yaml (torre adaptada, VT), mudando so dataset: MIMIC, run_name/wandb_run_name e os caminhos de saida.
+run_name: qwen2vl_lora_vt_mimic
+model: QWEN2VL
+dataset: MIMIC
+peft: LORA
+peft_config:
+  r: 16
+  lora_alpha: 32
+  target_modules: .*self_attn\.(q|k|v|o)_proj$|.*visual\.blocks\.\d+\.attn\.(qkv|proj)$
+  task_type: CAUSAL_LM
+train:
+  lr: 2e-4
+  warmup_ratio: 0.05
+  epochs: 3
+  batch_size: 4
+  grad_accum_steps: 4
+  max_length: 8192
+  gradient_checkpointing: true
+  compile: true
+  eval_every: 5000
+  checkpoint_every: 15000
+  checkpoint_dir: ${MEDVQA_ROOT}/tmp/v7/checkpoints_mimic
+eval:
+  batch_size: 2
+  max_new_tokens: 64
+logging:
+  wandb_project: "med-vlm"
+  wandb_run_name: "qwen2vl_lora_vt_mimic"
+outputs_dir: ${MEDVQA_ROOT}/v7_mimic
+results_json_dir: ${MEDVQA_ROOT}/v7_mimic/logs
+
+# Image preprocessing applied once at dataset load (cached).
+preprocessing:
+  denoise: true
+  denoise_method: "gaussian"
+  clahe: true
+  clahe_clip_limit: 2.0
+  clahe_tile_grid_size: [8, 8]
+
+# Online training-time augmentation (applied per batch, training only). No flips.
+augmentation:
+  enabled: true
+  rotation_degrees: 5
+  brightness_range: [0.85, 1.15]
+  contrast_range: [0.85, 1.15]

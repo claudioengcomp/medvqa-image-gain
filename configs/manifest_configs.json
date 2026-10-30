@@ -1,0 +1,523 @@
+{
+ "vlm": {
+  "configs/vlm/KVASIR/QWEN2VL_frozen_visual_encoder.yaml": {
+   "benchmark": "KVASIR",
+   "family": "QWEN2VL",
+   "approach": "frozen_visual_encoder",
+   "from": "doutorado/medvqa-main/med_vlm/configs/qwen2vl_lora_kvasir.yaml",
+   "sha256_original": "fd0255400f9bba09605211ec204278fde984b110874c241054a9ecd5314b5a04"
+  },
+  "configs/vlm/KVASIR/QWEN2VL_fine_tuned_visual_encoder.yaml": {
+   "benchmark": "KVASIR",
+   "family": "QWEN2VL",
+   "approach": "fine_tuned_visual_encoder",
+   "from": "doutorado/medvqa-main/med_vlm/configs/qwen2vl_lora_vt_kvasir.yaml",
+   "sha256_original": "b9aa48573029d9540f79397c7e939cba92f44b2a9557ae595e562280987ead67"
+  },
+  "configs/vlm/KVASIR/QWEN2VL_text_decoder_only.yaml": {
+   "benchmark": "KVASIR",
+   "family": "QWEN2VL",
+   "approach": "text_decoder_only",
+   "from": "v7_txt/configs/qwen2vl_lora_txt_kvasir.yaml",
+   "sha256_original": "73f0f2a7d0924f2c5cb4c98ead5341d12cba961df2e757a5f3fd2eed694f76c7"
+  },
+  "configs/vlm/KVASIR/SMOLVLM_frozen_visual_encoder.yaml": {
+   "benchmark": "KVASIR",
+   "family": "SMOLVLM",
+   "approach": "frozen_visual_encoder",
+   "from": "doutorado/medvqa-main/med_vlm/configs/smolvlm2_lora_ft_kvasir.yaml",
+   "sha256_original": "e407b35a94ec226e8a46ef74c670efe4e92a0e3e8df86da0a0984c825df7c07f"
+  },
+  "configs/vlm/KVASIR/SMOLVLM_fine_tuned_visual_encoder.yaml": {
+   "benchmark": "KVASIR",
+   "family": "SMOLVLM",
+   "approach": "fine_tuned_visual_encoder",
+   "from": "doutorado/medvqa-main/med_vlm/configs/smolvlm2_lora_kvasir.yaml",
+   "sha256_original": "9e4ea70cb2ee37255a13a9cf01fadba2d08b6e876573bd413d003d96953eda8a"
+  },
+  "configs/vlm/KVASIR/SMOLVLM_text_decoder_only.yaml": {
+   "benchmark": "KVASIR",
+   "family": "SMOLVLM",
+   "approach": "text_decoder_only",
+   "from": "v7_txt/configs/smolvlm2_lora_txt_kvasir.yaml",
+   "sha256_original": "b4a43099b6881498ca19b54a27435ae4c9bf03d4126336eccfdc823096531839"
+  },
+  "configs/vlm/SLAKE/QWEN2VL_frozen_visual_encoder.yaml": {
+   "benchmark": "SLAKE",
+   "family": "QWEN2VL",
+   "approach": "frozen_visual_encoder",
+   "from": "doutorado/medvqa-main/med_vlm/configs/qwen2vl_lora_slake.yaml",
+   "sha256_original": "6ef4c8c0da7da841c7dce5ac7e2e6e49a0e405e3e0f80c0aa4558dce8b1cc458"
+  },
+  "configs/vlm/SLAKE/QWEN2VL_fine_tuned_visual_encoder.yaml": {
+   "benchmark": "SLAKE",
+   "family": "QWEN2VL",
+   "approach": "fine_tuned_visual_encoder",
+   "from": "doutorado/medvqa-main/med_vlm/configs/qwen2vl_lora_vt_slake.yaml",
+   "sha256_original": "6d3fcc38c211136a349117596c3ba6e757580f69939a74c5659939faf100cae9"
+  },
+  "configs/vlm/SLAKE/QWEN2VL_text_decoder_only.yaml": {
+   "benchmark": "SLAKE",
+   "family": "QWEN2VL",
+   "approach": "text_decoder_only",
+   "from": "v7_txt/configs/qwen2vl_lora_txt_slake.yaml",
+   "sha256_original": "ada27c2278807705603f3f3b983651f4e594d5c354a1420e2473cc555272dd76"
+  },
+  "configs/vlm/SLAKE/SMOLVLM_frozen_visual_encoder.yaml": {
+   "benchmark": "SLAKE",
+   "family": "SMOLVLM",
+   "approach": "frozen_visual_encoder",
+   "from": "doutorado/medvqa-main/med_vlm/configs/smolvlm2_lora_ft_slake.yaml",
+   "sha256_original": "6c7eb3752038d2b84065e4975efd36b57c653f546bdf889be1fed5b35abf0456"
+  },
+  "configs/vlm/SLAKE/SMOLVLM_fine_tuned_visual_encoder.yaml": {
+   "benchmark": "SLAKE",
+   "family": "SMOLVLM",
+   "approach": "fine_tuned_visual_encoder",
+   "from": "doutorado/medvqa-main/med_vlm/configs/smolvlm2_lora_slake.yaml",
+   "sha256_original": "ecef70d281fe8184e7f561cc8c13fcc733af367aa009a7162ae13d06ba32b3a5"
+  },
+  "configs/vlm/SLAKE/SMOLVLM_text_decoder_only.yaml": {
+   "benchmark": "SLAKE",
+   "family": "SMOLVLM",
+   "approach": "text_decoder_only",
+   "from": "v7_txt/configs/smolvlm2_lora_txt_slake.yaml",
+   "sha256_original": "6571c11f6c928b4ef1342bfdb95d06d1106595b18a299f264dab71af674ec08f"
+  },
+  "configs/vlm/HEAL/QWEN2VL_frozen_visual_encoder.yaml": {
+   "benchmark": "HEAL",
+   "family": "QWEN2VL",
+   "approach": "frozen_visual_encoder",
+   "from": "doutorado/medvqa-occlusion-study/med_vlm/configs/qwen2vl_lora_heal.yaml",
+   "sha256_original": "f399b9a544e57cda224ccb6150f5d5dafd91093e0fc6e5f63e43c0e42c87fc15"
+  },
+  "configs/vlm/HEAL/QWEN2VL_fine_tuned_visual_encoder.yaml": {
+   "benchmark": "HEAL",
+   "family": "QWEN2VL",
+   "approach": "fine_tuned_visual_encoder",
+   "from": "v6_tower_heal/worktree/med_vlm/configs/qwen2vl_lora_vt_heal.yaml",
+   "sha256_original": "35bbe185956c79e671c1d6efdaba8bab854400de5fc03a455f0bc41736472a70"
+  },
+  "configs/vlm/HEAL/QWEN2VL_text_decoder_only.yaml": {
+   "benchmark": "HEAL",
+   "family": "QWEN2VL",
+   "approach": "text_decoder_only",
+   "from": "v7_txt/configs/qwen2vl_lora_txt_heal.yaml",
+   "sha256_original": "4a0b8b55ba3564db8d83ca1caebf1bc5dae0320ed52ca8e97e96871ff1413457"
+  },
+  "configs/vlm/HEAL/SMOLVLM_frozen_visual_encoder.yaml": {
+   "benchmark": "HEAL",
+   "family": "SMOLVLM",
+   "approach": "frozen_visual_encoder",
+   "from": "v6_tower_heal/worktree/med_vlm/configs/smolvlm2_lora_ft_heal.yaml",
+   "sha256_original": "9c5a3ce34f1a4358811cdeaa464f70169d32e2076b6497e0b9e3985e289a8c24"
+  },
+  "configs/vlm/HEAL/SMOLVLM_fine_tuned_visual_encoder.yaml": {
+   "benchmark": "HEAL",
+   "family": "SMOLVLM",
+   "approach": "fine_tuned_visual_encoder",
+   "from": "doutorado/medvqa-occlusion-study/med_vlm/configs/smolvlm2_lora_heal.yaml",
+   "sha256_original": "f7e1a7809454a05505270a30cfdf197eb63f3877fa0c29f92cf721300a0a689f"
+  },
+  "configs/vlm/HEAL/SMOLVLM_text_decoder_only.yaml": {
+   "benchmark": "HEAL",
+   "family": "SMOLVLM",
+   "approach": "text_decoder_only",
+   "from": "v7_txt/configs/smolvlm2_lora_txt_heal.yaml",
+   "sha256_original": "8bcb4bb063589030fc64475b0f3a3a7b2094d667aa9dcfe230047957d40ffb66"
+  },
+  "configs/vlm/MIMIC/QWEN2VL_frozen_visual_encoder.yaml": {
+   "benchmark": "MIMIC",
+   "family": "QWEN2VL",
+   "approach": "frozen_visual_encoder",
+   "from": "v7_mimic/configs/qwen2vl_lora_mimic.yaml",
+   "sha256_original": "0f35c7e00c24d1174ceeab08637b91ec527eb7a61072a20537beb40e3c3fc227"
+  },
+  "configs/vlm/MIMIC/QWEN2VL_fine_tuned_visual_encoder.yaml": {
+   "benchmark": "MIMIC",
+   "family": "QWEN2VL",
+   "approach": "fine_tuned_visual_encoder",
+   "from": "v7_mimic/configs/qwen2vl_lora_vt_mimic.yaml",
+   "sha256_original": "b5fd6378d1869b4b2107c405ca10d1a4199fea0697851f22341f9a6a16d73804"
+  },
+  "configs/vlm/MIMIC/QWEN2VL_text_decoder_only.yaml": {
+   "benchmark": "MIMIC",
+   "family": "QWEN2VL",
+   "approach": "text_decoder_only",
+   "from": "v7_mimic/configs/qwen2vl_lora_txt_mimic.yaml",
+   "sha256_original": "793f0356e4ec352ad8c1611290f960952c6aff446a1b830eedc4c0f1b575c519"
+  },
+  "configs/vlm/MIMIC/SMOLVLM_frozen_visual_encoder.yaml": {
+   "benchmark": "MIMIC",
+   "family": "SMOLVLM",
+   "approach": "frozen_visual_encoder",
+   "from": "v7_mimic/configs/smolvlm2_lora_ft_mimic.yaml",
+   "sha256_original": "c9e621ba9acc4ebe5f7b3c7609fddb028937241158ea97699a807265b4789290"
+  },
+  "configs/vlm/MIMIC/SMOLVLM_fine_tuned_visual_encoder.yaml": {
+   "benchmark": "MIMIC",
+   "family": "SMOLVLM",
+   "approach": "fine_tuned_visual_encoder",
+   "from": "v7_mimic/configs/smolvlm2_lora_mimic.yaml",
+   "sha256_original": "90e3659e60208858d88235f43861a46b9fdb470af435e94d0c8d3a9c7c2f4cc8"
+  },
+  "configs/vlm/MIMIC/SMOLVLM_text_decoder_only.yaml": {
+   "benchmark": "MIMIC",
+   "family": "SMOLVLM",
+   "approach": "text_decoder_only",
+   "from": "v7_mimic/configs/smolvlm2_lora_txt_mimic.yaml",
+   "sha256_original": "46f085ab130defac4085ac57a94586afdd5b34eef8b2a3120f8d9dddc8c19929"
+  },
+  "configs/vlm/VQARAD_REDIV/QWEN2VL_frozen_visual_encoder.yaml": {
+   "benchmark": "VQARAD_REDIV",
+   "family": "QWEN2VL",
+   "approach": "frozen_visual_encoder",
+   "from": "v7_txt/article_runs/configs/qwen2vl_lora_vqarad_rediv.yaml",
+   "sha256_original": "17c109c61bf2511b6b3d48557d6a4c9cf6f57d11feff1f228d2cb9505f016243"
+  },
+  "configs/vlm/VQARAD_REDIV/QWEN2VL_fine_tuned_visual_encoder.yaml": {
+   "benchmark": "VQARAD_REDIV",
+   "family": "QWEN2VL",
+   "approach": "fine_tuned_visual_encoder",
+   "from": "v7_txt/article_runs/configs/qwen2vl_lora_vt_vqarad_rediv.yaml",
+   "sha256_original": "14361d7605e880f3382a73f78624a666bf1cd2c64a9c491262ee21f284fd4d12"
+  },
+  "configs/vlm/VQARAD_REDIV/QWEN2VL_text_decoder_only.yaml": {
+   "benchmark": "VQARAD_REDIV",
+   "family": "QWEN2VL",
+   "approach": "text_decoder_only",
+   "from": "v7_txt/article_runs/configs/qwen2vl_lora_txt_vqarad_rediv.yaml",
+   "sha256_original": "5e55f8f9c3d82e4b8d1f850861e221d2b8a6e92ee60618c8568f0ca2d934a73b"
+  },
+  "configs/vlm/VQARAD_REDIV/SMOLVLM_frozen_visual_encoder.yaml": {
+   "benchmark": "VQARAD_REDIV",
+   "family": "SMOLVLM",
+   "approach": "frozen_visual_encoder",
+   "from": "v7_txt/article_runs/configs/smolvlm2_lora_ft_vqarad_rediv.yaml",
+   "sha256_original": "8addf7c4b308acd4a1792f73397f1683fb239656bebc42f1a36a8893602c1207"
+  },
+  "configs/vlm/VQARAD_REDIV/SMOLVLM_fine_tuned_visual_encoder.yaml": {
+   "benchmark": "VQARAD_REDIV",
+   "family": "SMOLVLM",
+   "approach": "fine_tuned_visual_encoder",
+   "from": "v7_txt/article_runs/configs/smolvlm2_lora_vqarad_rediv.yaml",
+   "sha256_original": "4a8c5d3bf9df90026d190ba6747d9b7c8134d94fb0d5f313c4131c5c146879b5"
+  },
+  "configs/vlm/VQARAD_REDIV/SMOLVLM_text_decoder_only.yaml": {
+   "benchmark": "VQARAD_REDIV",
+   "family": "SMOLVLM",
+   "approach": "text_decoder_only",
+   "from": "v7_txt/article_runs/configs/smolvlm2_lora_txt_vqarad_rediv.yaml",
+   "sha256_original": "a56c166611cecf2af286e77ca02dc53b7fc6734997c347a7034e8016534f919e"
+  },
+  "configs/vlm/VQARAD_QLEVEL/QWEN2VL_frozen_visual_encoder.yaml": {
+   "benchmark": "VQARAD_QLEVEL",
+   "family": "QWEN2VL",
+   "approach": "frozen_visual_encoder",
+   "from": "v7_txt/article_runs/configs/qwen2vl_lora_vqarad_qlevel.yaml",
+   "sha256_original": "4e2b009eae3241b366800177b93d3b32a41bc127f424cd4cf4b6e917861f6573"
+  },
+  "configs/vlm/VQARAD_QLEVEL/QWEN2VL_fine_tuned_visual_encoder.yaml": {
+   "benchmark": "VQARAD_QLEVEL",
+   "family": "QWEN2VL",
+   "approach": "fine_tuned_visual_encoder",
+   "from": "v7_txt/article_runs/configs/qwen2vl_lora_vt_vqarad_qlevel.yaml",
+   "sha256_original": "0775e7844745bc1f3e04ad837f75f8029b0b54326bc5bdb2e3c8178bd9c51f5b"
+  },
+  "configs/vlm/VQARAD_QLEVEL/QWEN2VL_text_decoder_only.yaml": {
+   "benchmark": "VQARAD_QLEVEL",
+   "family": "QWEN2VL",
+   "approach": "text_decoder_only",
+   "from": "v7_txt/article_runs/configs/qwen2vl_lora_txt_vqarad_qlevel.yaml",
+   "sha256_original": "d31066df8bf8b8db562bf016f77bac55a14aff945e712bf5207e7b39c8ed83b2"
+  },
+  "configs/vlm/VQARAD_QLEVEL/SMOLVLM_frozen_visual_encoder.yaml": {
+   "benchmark": "VQARAD_QLEVEL",
+   "family": "SMOLVLM",
+   "approach": "frozen_visual_encoder",
+   "from": "v7_txt/article_runs/configs/smolvlm2_lora_ft_vqarad_qlevel.yaml",
+   "sha256_original": "df388545acfd7a4cb5c0503f9e4544471626a6893b19f6e6ddfd2baedaaa01d4"
+  },
+  "configs/vlm/VQARAD_QLEVEL/SMOLVLM_fine_tuned_visual_encoder.yaml": {
+   "benchmark": "VQARAD_QLEVEL",
+   "family": "SMOLVLM",
+   "approach": "fine_tuned_visual_encoder",
+   "from": "v7_txt/article_runs/configs/smolvlm2_lora_vqarad_qlevel.yaml",
+   "sha256_original": "8ebf6f74f0c143b94d84aee76b83fe8f1cb4855ef450f415404f0ba185c30ce8"
+  },
+  "configs/vlm/VQARAD_QLEVEL/SMOLVLM_text_decoder_only.yaml": {
+   "benchmark": "VQARAD_QLEVEL",
+   "family": "SMOLVLM",
+   "approach": "text_decoder_only",
+   "from": "v7_txt/article_runs/configs/smolvlm2_lora_txt_vqarad_qlevel.yaml",
+   "sha256_original": "bb4f43f5c769b0fdc883ba6f2d86977f9521e1341024dc643133071a636523b3"
+  }
+ },
+ "m3ae_hparams": {
+  "configs/m3ae_hparams/doutorado_M3AE/task_finetune_vqa_heal-seed0-from_downloaded_pretrained_m3ae.ckpt/hparams.yaml": {
+   "approach": "full_fine_tuning",
+   "from": "doutorado/M3AE/result/task_finetune_vqa_heal-seed0-from_downloaded_pretrained_m3ae.ckpt/version_0/hparams.yaml",
+   "sha256_original": "40373d9c4a047520f044fd6dd3afe1c237d02f6b87c8080f09af044e17616948"
+  },
+  "configs/m3ae_hparams/doutorado_M3AE/task_finetune_vqa_kvasir-seed0-from_downloaded_pretrained_m3ae.ckpt/hparams.yaml": {
+   "approach": "full_fine_tuning",
+   "from": "doutorado/M3AE/result/task_finetune_vqa_kvasir-seed0-from_downloaded_pretrained_m3ae.ckpt/version_1/hparams.yaml",
+   "sha256_original": "d44484dfaf52ca32d9ed48524703120a19461a1a325561d1c8c84b1fab0dd032"
+  },
+  "configs/m3ae_hparams/doutorado_M3AE/task_finetune_vqa_slack-seed0-from_downloaded_pretrained_m3ae.ckpt/hparams.yaml": {
+   "approach": "full_fine_tuning",
+   "from": "doutorado/M3AE/result/task_finetune_vqa_slack-seed0-from_downloaded_pretrained_m3ae.ckpt/version_0/hparams.yaml",
+   "sha256_original": "4f17990c22443c46cb8c3edd710a1c8500bcb427ccb63f2c3e0bdf1eab095909"
+  },
+  "configs/m3ae_hparams/doutorado_M3AE/task_finetune_vqa_vqa_rad-seed0-from_downloaded_pretrained_m3ae.ckpt/hparams.yaml": {
+   "approach": "full_fine_tuning",
+   "from": "doutorado/M3AE/result/task_finetune_vqa_vqa_rad-seed0-from_downloaded_pretrained_m3ae.ckpt/version_0/hparams.yaml",
+   "sha256_original": "43039bc87b8def01e34278d39503e184cc8f0a17702def50e0f29bd6c9a0703b"
+  },
+  "configs/m3ae_hparams/v7_mimic_m3ae/task_finetune_vqa_mimic-seed0-from_downloaded_pretrained_m3ae.ckpt/hparams.yaml": {
+   "approach": "full_fine_tuning",
+   "from": "v7_mimic/m3ae/result/task_finetune_vqa_mimic-seed0-from_downloaded_pretrained_m3ae.ckpt/version_4/hparams.yaml",
+   "sha256_original": "26bb8b368c3ee875193f40e1c2aea986d3da32b021843d282f709721735f100b"
+  },
+  "configs/m3ae_hparams/v7_mimic_m3ae_txt/task_finetune_vqa_mimic-seed0-from_downloaded_pretrained_m3ae.ckpt/hparams.yaml": {
+   "approach": "text_only_grey",
+   "from": "v7_mimic/m3ae_txt/result/task_finetune_vqa_mimic-seed0-from_downloaded_pretrained_m3ae.ckpt/version_0/hparams.yaml",
+   "sha256_original": "f9bff3d9e806b62d89241be6262cf30556bcf42772a6e2ef2e6c9439c2f541db"
+  },
+  "configs/m3ae_hparams/v7_mimic_m3ae_txt/task_finetune_vqa_mimic-seed1-from_downloaded_pretrained_m3ae.ckpt/hparams.yaml": {
+   "approach": "text_only_grey",
+   "from": "v7_mimic/m3ae_txt/result/task_finetune_vqa_mimic-seed1-from_downloaded_pretrained_m3ae.ckpt/version_0/hparams.yaml",
+   "sha256_original": "a100b754ac080161bcfc18e3ead513952ce089bde08b99932bfa4dbb24db5c0f"
+  },
+  "configs/m3ae_hparams/v7_mimic_m3ae_txt/task_finetune_vqa_mimic-seed2-from_downloaded_pretrained_m3ae.ckpt/hparams.yaml": {
+   "approach": "text_only_grey",
+   "from": "v7_mimic/m3ae_txt/result/task_finetune_vqa_mimic-seed2-from_downloaded_pretrained_m3ae.ckpt/version_0/hparams.yaml",
+   "sha256_original": "f29de98a2ab5b55b16e59dec490458ae10995b683fdee2c1b26061936435bd28"
+  },
+  "configs/m3ae_hparams/v7_txt_m3ae/task_finetune_vqa_heal-seed0-from_downloaded_pretrained_m3ae.ckpt/hparams.yaml": {
+   "approach": "text_only_grey",
+   "from": "v7_txt/m3ae/result/task_finetune_vqa_heal-seed0-from_downloaded_pretrained_m3ae.ckpt/version_0/hparams.yaml",
+   "sha256_original": "f51602f09ebc2c661282b751e2ff72ff9fedc3ee3ca5a0ae590039b439ce9c2d"
+  },
+  "configs/m3ae_hparams/v7_txt_m3ae/task_finetune_vqa_heal-seed1-from_downloaded_pretrained_m3ae.ckpt/hparams.yaml": {
+   "approach": "text_only_grey",
+   "from": "v7_txt/m3ae/result/task_finetune_vqa_heal-seed1-from_downloaded_pretrained_m3ae.ckpt/version_0/hparams.yaml",
+   "sha256_original": "3c21dc46d10454a0ae00cc4c1f2626c4c93f4713e7124d1d96f0dfc5471dd6e9"
+  },
+  "configs/m3ae_hparams/v7_txt_m3ae/task_finetune_vqa_heal-seed2-from_downloaded_pretrained_m3ae.ckpt/hparams.yaml": {
+   "approach": "text_only_grey",
+   "from": "v7_txt/m3ae/result/task_finetune_vqa_heal-seed2-from_downloaded_pretrained_m3ae.ckpt/version_0/hparams.yaml",
+   "sha256_original": "1cb53add41c0eb4c6d61720ebb9a2f6f17042545911a8d0b661cd64856e004c4"
+  },
+  "configs/m3ae_hparams/v7_txt_m3ae/task_finetune_vqa_kvasir-seed0-from_downloaded_pretrained_m3ae.ckpt/hparams.yaml": {
+   "approach": "text_only_grey",
+   "from": "v7_txt/m3ae/result/task_finetune_vqa_kvasir-seed0-from_downloaded_pretrained_m3ae.ckpt/version_0/hparams.yaml",
+   "sha256_original": "9ec420339cb110c5de80765d0be6c85c2004f990c08cd77f57c4d58b620091e6"
+  },
+  "configs/m3ae_hparams/v7_txt_m3ae/task_finetune_vqa_kvasir-seed1-from_downloaded_pretrained_m3ae.ckpt/hparams.yaml": {
+   "approach": "text_only_grey",
+   "from": "v7_txt/m3ae/result/task_finetune_vqa_kvasir-seed1-from_downloaded_pretrained_m3ae.ckpt/version_0/hparams.yaml",
+   "sha256_original": "8c49466cfc57cd614a80642bdce72a1191ff2b47de67f4058bd73a5c1982288a"
+  },
+  "configs/m3ae_hparams/v7_txt_m3ae/task_finetune_vqa_kvasir-seed2-from_downloaded_pretrained_m3ae.ckpt/hparams.yaml": {
+   "approach": "text_only_grey",
+   "from": "v7_txt/m3ae/result/task_finetune_vqa_kvasir-seed2-from_downloaded_pretrained_m3ae.ckpt/version_0/hparams.yaml",
+   "sha256_original": "e742c551db343c959ed3077a88d7a73797ecd2b890f66e36e014444c6303a266"
+  },
+  "configs/m3ae_hparams/v7_txt_m3ae/task_finetune_vqa_slack-seed0-from_downloaded_pretrained_m3ae.ckpt/hparams.yaml": {
+   "approach": "text_only_grey",
+   "from": "v7_txt/m3ae/result/task_finetune_vqa_slack-seed0-from_downloaded_pretrained_m3ae.ckpt/version_0/hparams.yaml",
+   "sha256_original": "49bed087990b466c81da33c93c9a57bdd9c5dc52e53f66fff0199361b3b91da4"
+  },
+  "configs/m3ae_hparams/v7_txt_m3ae/task_finetune_vqa_slack-seed1-from_downloaded_pretrained_m3ae.ckpt/hparams.yaml": {
+   "approach": "text_only_grey",
+   "from": "v7_txt/m3ae/result/task_finetune_vqa_slack-seed1-from_downloaded_pretrained_m3ae.ckpt/version_0/hparams.yaml",
+   "sha256_original": "cb39f3963f19eb24d24be676a127a62f601466773acb425b76a620afb055b6f6"
+  },
+  "configs/m3ae_hparams/v7_txt_m3ae/task_finetune_vqa_slack-seed2-from_downloaded_pretrained_m3ae.ckpt/hparams.yaml": {
+   "approach": "text_only_grey",
+   "from": "v7_txt/m3ae/result/task_finetune_vqa_slack-seed2-from_downloaded_pretrained_m3ae.ckpt/version_0/hparams.yaml",
+   "sha256_original": "ff40ba3567490954c95a1359abf9f7df26a35822653e011e4e79685a0eb4160f"
+  },
+  "configs/m3ae_hparams/m3ae/task_finetune_vqa_vqa_rad-seed0-from_downloaded_pretrained_m3ae.ckpt/hparams.yaml": {
+   "approach": "full_fine_tuning",
+   "from": "v7_txt/article_runs/m3ae/result/task_finetune_vqa_vqa_rad-seed0-from_downloaded_pretrained_m3ae.ckpt/version_0/hparams.yaml",
+   "sha256_original": "8f4f4ef4cdd0ed3177538fce16697e9bd15c07d2a3263ac16f920e3e9d3ef738"
+  },
+  "configs/m3ae_hparams/m3ae/task_finetune_vqa_vqa_rad-seed1-from_downloaded_pretrained_m3ae.ckpt/hparams.yaml": {
+   "approach": "full_fine_tuning",
+   "from": "v7_txt/article_runs/m3ae/result/task_finetune_vqa_vqa_rad-seed1-from_downloaded_pretrained_m3ae.ckpt/version_0/hparams.yaml",
+   "sha256_original": "1651acdd4bb3388cb82221ea19a1f6abdd9dddc02d76cf96bd9d96c852c6e22b"
+  },
+  "configs/m3ae_hparams/m3ae/task_finetune_vqa_vqa_rad-seed2-from_downloaded_pretrained_m3ae.ckpt/hparams.yaml": {
+   "approach": "full_fine_tuning",
+   "from": "v7_txt/article_runs/m3ae/result/task_finetune_vqa_vqa_rad-seed2-from_downloaded_pretrained_m3ae.ckpt/version_2/hparams.yaml",
+   "sha256_original": "3a5a9fd46b3812d1d03c73f8bbaff0b76767668c80a876b99fda84c198cb207c"
+  },
+  "configs/m3ae_hparams/m3ae_frozen_ckpt_vqarad_qlevel/task_finetune_vqa_vqa_rad-seed0-from_downloaded_pretrained_m3ae.ckpt/hparams.yaml": {
+   "approach": "frozen_vit",
+   "from": "v7_txt/article_runs/m3ae_frozen/ckpt/vqarad_qlevel/result/task_finetune_vqa_vqa_rad-seed0-from_downloaded_pretrained_m3ae.ckpt/version_0/hparams.yaml",
+   "sha256_original": "00206186e73f0d808a42568ccb4591ba8a8ebfdd5b97f02854ad0498c0fcd21d"
+  },
+  "configs/m3ae_hparams/m3ae_frozen_ckpt_vqarad_qlevel/task_finetune_vqa_vqa_rad-seed1-from_downloaded_pretrained_m3ae.ckpt/hparams.yaml": {
+   "approach": "frozen_vit",
+   "from": "v7_txt/article_runs/m3ae_frozen/ckpt/vqarad_qlevel/result/task_finetune_vqa_vqa_rad-seed1-from_downloaded_pretrained_m3ae.ckpt/version_0/hparams.yaml",
+   "sha256_original": "6b5ba0353f129a50ceda585f57e225d0cd7beb3fed98c4b102f078531203fb0b"
+  },
+  "configs/m3ae_hparams/m3ae_frozen_ckpt_vqarad_qlevel/task_finetune_vqa_vqa_rad-seed2-from_downloaded_pretrained_m3ae.ckpt/hparams.yaml": {
+   "approach": "frozen_vit",
+   "from": "v7_txt/article_runs/m3ae_frozen/ckpt/vqarad_qlevel/result/task_finetune_vqa_vqa_rad-seed2-from_downloaded_pretrained_m3ae.ckpt/version_0/hparams.yaml",
+   "sha256_original": "12f628014a2b72583379e65d7ce662132da6f7ea11971026792bc4f71962e336"
+  },
+  "configs/m3ae_hparams/m3ae_frozen_ckpt_vqarad_rediv/task_finetune_vqa_vqa_rad-seed0-from_downloaded_pretrained_m3ae.ckpt/hparams.yaml": {
+   "approach": "frozen_vit",
+   "from": "v7_txt/article_runs/m3ae_frozen/ckpt/vqarad_rediv/result/task_finetune_vqa_vqa_rad-seed0-from_downloaded_pretrained_m3ae.ckpt/version_0/hparams.yaml",
+   "sha256_original": "633c4f0954f8efcb382c973df2f6abe178ea06c270b1ce79eb40b0a41593ed05"
+  },
+  "configs/m3ae_hparams/m3ae_frozen_ckpt_vqarad_rediv/task_finetune_vqa_vqa_rad-seed1-from_downloaded_pretrained_m3ae.ckpt/hparams.yaml": {
+   "approach": "frozen_vit",
+   "from": "v7_txt/article_runs/m3ae_frozen/ckpt/vqarad_rediv/result/task_finetune_vqa_vqa_rad-seed1-from_downloaded_pretrained_m3ae.ckpt/version_0/hparams.yaml",
+   "sha256_original": "ffe466fb91ae24b1dcfa9e1e3b29fb4a892cfa4505350b60f27e3a1339bc452d"
+  },
+  "configs/m3ae_hparams/m3ae_frozen_ckpt_vqarad_rediv/task_finetune_vqa_vqa_rad-seed2-from_downloaded_pretrained_m3ae.ckpt/hparams.yaml": {
+   "approach": "frozen_vit",
+   "from": "v7_txt/article_runs/m3ae_frozen/ckpt/vqarad_rediv/result/task_finetune_vqa_vqa_rad-seed2-from_downloaded_pretrained_m3ae.ckpt/version_0/hparams.yaml",
+   "sha256_original": "a72f7667b4b964966c3b631ef5f87d62b78ab0ef9e99ac57c8bc57642bc9a3dc"
+  },
+  "configs/m3ae_hparams/m3ae_qlevel/task_finetune_vqa_vqa_rad-seed0-from_downloaded_pretrained_m3ae.ckpt/hparams.yaml": {
+   "approach": "full_fine_tuning",
+   "from": "v7_txt/article_runs/m3ae_qlevel/result/task_finetune_vqa_vqa_rad-seed0-from_downloaded_pretrained_m3ae.ckpt/version_0/hparams.yaml",
+   "sha256_original": "db637691f1f43dbad9e7a894596a921c7733312d55a05f804918e5d79f705513"
+  },
+  "configs/m3ae_hparams/m3ae_qlevel/task_finetune_vqa_vqa_rad-seed1-from_downloaded_pretrained_m3ae.ckpt/hparams.yaml": {
+   "approach": "full_fine_tuning",
+   "from": "v7_txt/article_runs/m3ae_qlevel/result/task_finetune_vqa_vqa_rad-seed1-from_downloaded_pretrained_m3ae.ckpt/version_0/hparams.yaml",
+   "sha256_original": "09ccf5a6144ae3c5176c623d800eb37cd4b2707330395398857aeb7554fc2e68"
+  },
+  "configs/m3ae_hparams/m3ae_qlevel/task_finetune_vqa_vqa_rad-seed2-from_downloaded_pretrained_m3ae.ckpt/hparams.yaml": {
+   "approach": "full_fine_tuning",
+   "from": "v7_txt/article_runs/m3ae_qlevel/result/task_finetune_vqa_vqa_rad-seed2-from_downloaded_pretrained_m3ae.ckpt/version_0/hparams.yaml",
+   "sha256_original": "83d11f4ba5b0bb1afadb15d780f11da4e80de7a9dd3cebca9fe3f1d051b1bdbe"
+  },
+  "configs/m3ae_hparams/m3ae_txt/task_finetune_vqa_vqa_rad-seed0-from_downloaded_pretrained_m3ae.ckpt/hparams.yaml": {
+   "approach": "text_only_grey",
+   "from": "v7_txt/article_runs/m3ae_txt/result/task_finetune_vqa_vqa_rad-seed0-from_downloaded_pretrained_m3ae.ckpt/version_2/hparams.yaml",
+   "sha256_original": "3f83e2bb91542fd0f36f8e158eae5a89db1f3cd69bc609d77baae971fea5224a"
+  },
+  "configs/m3ae_hparams/m3ae_txt/task_finetune_vqa_vqa_rad-seed1-from_downloaded_pretrained_m3ae.ckpt/hparams.yaml": {
+   "approach": "text_only_grey",
+   "from": "v7_txt/article_runs/m3ae_txt/result/task_finetune_vqa_vqa_rad-seed1-from_downloaded_pretrained_m3ae.ckpt/version_0/hparams.yaml",
+   "sha256_original": "12762b84c02667a5c5c8e41c65369a55b042facd6b19079a8bdb90905f813312"
+  },
+  "configs/m3ae_hparams/m3ae_txt/task_finetune_vqa_vqa_rad-seed2-from_downloaded_pretrained_m3ae.ckpt/hparams.yaml": {
+   "approach": "text_only_grey",
+   "from": "v7_txt/article_runs/m3ae_txt/result/task_finetune_vqa_vqa_rad-seed2-from_downloaded_pretrained_m3ae.ckpt/version_0/hparams.yaml",
+   "sha256_original": "fbf4633fa44009243d43f2b01f98a1bffcd4b322371d9056f1e98436672921be"
+  },
+  "configs/m3ae_hparams/m3ae_txt_qlevel/task_finetune_vqa_vqa_rad-seed0-from_downloaded_pretrained_m3ae.ckpt/hparams.yaml": {
+   "approach": "text_only_grey",
+   "from": "v7_txt/article_runs/m3ae_txt_qlevel/result/task_finetune_vqa_vqa_rad-seed0-from_downloaded_pretrained_m3ae.ckpt/version_0/hparams.yaml",
+   "sha256_original": "c9b16cc4e26a7422ef41fbe98fb92dee4861990a2429f06aaf8f0d1c2557f7f4"
+  },
+  "configs/m3ae_hparams/m3ae_txt_qlevel/task_finetune_vqa_vqa_rad-seed1-from_downloaded_pretrained_m3ae.ckpt/hparams.yaml": {
+   "approach": "text_only_grey",
+   "from": "v7_txt/article_runs/m3ae_txt_qlevel/result/task_finetune_vqa_vqa_rad-seed1-from_downloaded_pretrained_m3ae.ckpt/version_0/hparams.yaml",
+   "sha256_original": "32a1cdec9d4ba3a9f2a15224c35e441ae39edf5ae4072c83e50c52f52602141b"
+  },
+  "configs/m3ae_hparams/m3ae_txt_qlevel/task_finetune_vqa_vqa_rad-seed2-from_downloaded_pretrained_m3ae.ckpt/hparams.yaml": {
+   "approach": "text_only_grey",
+   "from": "v7_txt/article_runs/m3ae_txt_qlevel/result/task_finetune_vqa_vqa_rad-seed2-from_downloaded_pretrained_m3ae.ckpt/version_0/hparams.yaml",
+   "sha256_original": "3ca28a254dd6a985009b411d0ad5f0593527ce3e40fc05b27f003154bb86f085"
+  },
+  "configs/m3ae_hparams/no_image/VQARAD_REDIV_seed0/hparams.yaml": {
+   "approach": "no_image",
+   "from": "v7_txt/article_runs/m3ae_semimg/ckpt/VQARAD_REDIV/result/task_finetune_vqa_vqa_rad-seed0-from_downloaded_pretrained_m3ae.ckpt/version_0/hparams.yaml",
+   "sha256_original": "aba24316333f3ffca32871e2d87bfcb4e0bbda77950f668f1bde08c1723943d4"
+  },
+  "configs/m3ae_hparams/no_image/VQARAD_REDIV_seed1/hparams.yaml": {
+   "approach": "no_image",
+   "from": "v7_txt/article_runs/m3ae_semimg/ckpt/VQARAD_REDIV/result/task_finetune_vqa_vqa_rad-seed1-from_downloaded_pretrained_m3ae.ckpt/version_0/hparams.yaml",
+   "sha256_original": "1936bcc04f13e2e759a0ab7545a92f396dac5fcd2234510f44d99c0d677da44f"
+  },
+  "configs/m3ae_hparams/no_image/VQARAD_REDIV_seed2/hparams.yaml": {
+   "approach": "no_image",
+   "from": "v7_txt/article_runs/m3ae_semimg/ckpt/VQARAD_REDIV/result/task_finetune_vqa_vqa_rad-seed2-from_downloaded_pretrained_m3ae.ckpt/version_0/hparams.yaml",
+   "sha256_original": "650b96c9cfac5628813fddae1fa1d217affc8e817c29c758053f69a6272e92a1"
+  },
+  "configs/m3ae_hparams/no_image/SLAKE_seed0/hparams.yaml": {
+   "approach": "no_image",
+   "from": "v7_txt/article_runs/m3ae_semimg/ckpt/SLAKE/result/task_finetune_vqa_slack-seed0-from_downloaded_pretrained_m3ae.ckpt/version_0/hparams.yaml",
+   "sha256_original": "4988e40cbb61fd28f9e931864d20f74a80502234e31126d4227e834d647e0f22"
+  },
+  "configs/m3ae_hparams/no_image/SLAKE_seed1/hparams.yaml": {
+   "approach": "no_image",
+   "from": "v7_txt/article_runs/m3ae_semimg/ckpt/SLAKE/result/task_finetune_vqa_slack-seed1-from_downloaded_pretrained_m3ae.ckpt/version_0/hparams.yaml",
+   "sha256_original": "c7f0493c2310ee47e5cceb3ebf9de7b9834d777db11404180aef13af5b804fee"
+  },
+  "configs/m3ae_hparams/no_image/SLAKE_seed2/hparams.yaml": {
+   "approach": "no_image",
+   "from": "v7_txt/article_runs/m3ae_semimg/ckpt/SLAKE/result/task_finetune_vqa_slack-seed2-from_downloaded_pretrained_m3ae.ckpt/version_0/hparams.yaml",
+   "sha256_original": "65b4897258ae3e61e8a3cac1211cd7eee853477ad6cd096bdba3ec27870783bd"
+  },
+  "configs/m3ae_hparams/no_image/HEAL_seed0/hparams.yaml": {
+   "approach": "no_image",
+   "from": "v7_txt/article_runs/m3ae_semimg/ckpt/HEAL/result/task_finetune_vqa_heal-seed0-from_downloaded_pretrained_m3ae.ckpt/version_0/hparams.yaml",
+   "sha256_original": "8fcd4045946fb6f02fd0079818abc86003cc1445d599cb07704fc418042ca96e"
+  },
+  "configs/m3ae_hparams/no_image/HEAL_seed1/hparams.yaml": {
+   "approach": "no_image",
+   "from": "v7_txt/article_runs/m3ae_semimg/ckpt/HEAL/result/task_finetune_vqa_heal-seed1-from_downloaded_pretrained_m3ae.ckpt/version_0/hparams.yaml",
+   "sha256_original": "104bc3c3834284b9197226692321098b3e947b3c3285ecef50a39a86c261639a"
+  },
+  "configs/m3ae_hparams/no_image/HEAL_seed2/hparams.yaml": {
+   "approach": "no_image",
+   "from": "v7_txt/article_runs/m3ae_semimg/ckpt/HEAL/result/task_finetune_vqa_heal-seed2-from_downloaded_pretrained_m3ae.ckpt/version_0/hparams.yaml",
+   "sha256_original": "91cf448a0b3315c1421122864257b1871abf741454464e7068dbf6edbbc4a54e"
+  },
+  "configs/m3ae_hparams/no_image/MIMIC_seed0/hparams.yaml": {
+   "approach": "no_image",
+   "from": "v7_txt/article_runs/m3ae_semimg/ckpt/MIMIC/result/task_finetune_vqa_mimic-seed0-from_downloaded_pretrained_m3ae.ckpt/version_0/hparams.yaml",
+   "sha256_original": "c2f5b7110b7bc64cbbe2f47f2c3be1d1f3afefd3963a71e44bdb62eb65084117"
+  },
+  "configs/m3ae_hparams/no_image/MIMIC_seed1/hparams.yaml": {
+   "approach": "no_image",
+   "from": "v7_txt/article_runs/m3ae_semimg/ckpt/MIMIC/result/task_finetune_vqa_mimic-seed1-from_downloaded_pretrained_m3ae.ckpt/version_0/hparams.yaml",
+   "sha256_original": "4113d1c8a4e1139310e8b26eeddc371226e4b47ecd65df5fff10e24a515dea54"
+  },
+  "configs/m3ae_hparams/no_image/MIMIC_seed2/hparams.yaml": {
+   "approach": "no_image",
+   "from": "v7_txt/article_runs/m3ae_semimg/ckpt/MIMIC/result/task_finetune_vqa_mimic-seed2-from_downloaded_pretrained_m3ae.ckpt/version_0/hparams.yaml",
+   "sha256_original": "95efd84579093e424eea019eb22f3085600ac939d9885399f0dffb9cf917ff9c"
+  },
+  "configs/m3ae_hparams/no_image/KVASIR_seed0/hparams.yaml": {
+   "approach": "no_image",
+   "from": "v7_txt/article_runs/m3ae_semimg/ckpt/KVASIR/result/task_finetune_vqa_kvasir-seed0-from_downloaded_pretrained_m3ae.ckpt/version_0/hparams.yaml",
+   "sha256_original": "cf494fa9d32b7e6fe913989b7e837eb2ebb9f13a4136b86630c104d3c3576523"
+  },
+  "configs/m3ae_hparams/no_image/KVASIR_seed1/hparams.yaml": {
+   "approach": "no_image",
+   "from": "v7_txt/article_runs/m3ae_semimg/ckpt/KVASIR/result/task_finetune_vqa_kvasir-seed1-from_downloaded_pretrained_m3ae.ckpt/version_0/hparams.yaml",
+   "sha256_original": "00dd387fdad9bc3176f07264727c89158c895c96985d832e4b2592326cc95a7d"
+  },
+  "configs/m3ae_hparams/no_image/KVASIR_seed2/hparams.yaml": {
+   "approach": "no_image",
+   "from": "v7_txt/article_runs/m3ae_semimg/ckpt/KVASIR/result/task_finetune_vqa_kvasir-seed2-from_downloaded_pretrained_m3ae.ckpt/version_0/hparams.yaml",
+   "sha256_original": "d01e32140d661976bc4305b8d05fda1b8e9277515d2f0ba62dac77dc81fa56dc"
+  },
+  "configs/m3ae_hparams/no_image/VQARAD_QLEVEL_seed0/hparams.yaml": {
+   "approach": "no_image",
+   "from": "v7_txt/article_runs/m3ae_semimg/ckpt/VQARAD_QLEVEL/result/task_finetune_vqa_vqa_rad-seed0-from_downloaded_pretrained_m3ae.ckpt/version_0/hparams.yaml",
+   "sha256_original": "53e53f8c47ea0dc963e934584c827886cf99bafe9f64a952b4b8c070bc2fe28d"
+  },
+  "configs/m3ae_hparams/no_image/VQARAD_QLEVEL_seed1/hparams.yaml": {
+   "approach": "no_image",
+   "from": "v7_txt/article_runs/m3ae_semimg/ckpt/VQARAD_QLEVEL/result/task_finetune_vqa_vqa_rad-seed1-from_downloaded_pretrained_m3ae.ckpt/version_0/hparams.yaml",
+   "sha256_original": "5420607021190b0031f144fff96b1d3d0c3ab67071190d420ea7e45a802dc132"
+  },
+  "configs/m3ae_hparams/no_image/VQARAD_QLEVEL_seed2/hparams.yaml": {
+   "approach": "no_image",
+   "from": "v7_txt/article_runs/m3ae_semimg/ckpt/VQARAD_QLEVEL/result/task_finetune_vqa_vqa_rad-seed2-from_downloaded_pretrained_m3ae.ckpt/version_0/hparams.yaml",
+   "sha256_original": "5f4bf7892607580ff934eb10e7e6423a281ebd5e5d5603711b68b67f6be3b271"
+  }
+ }
+}

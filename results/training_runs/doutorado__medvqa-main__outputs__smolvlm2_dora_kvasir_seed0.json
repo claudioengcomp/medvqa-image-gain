@@ -1,0 +1,59 @@
+{
+ "model": "HuggingFaceTB/SmolVLM2-2.2B-Instruct",
+ "dataset": "SimulaMet/Kvasir-VQA-x1",
+ "peft": "dora",
+ "clip_encoder": null,
+ "train": {
+  "lr": 0.0002,
+  "warmup_ratio": 0.05,
+  "epochs": 3,
+  "grad_accum_steps": 4,
+  "max_grad_norm": 1.0,
+  "log_every": 10,
+  "max_steps": null,
+  "eval_every": 5000,
+  "checkpoint_every": 5000,
+  "compile": false,
+  "compile_backend": "eager",
+  "start_step": 0,
+  "seed": 0
+ },
+ "train_max_length": 8192,
+ "eval": {
+  "split": "validation",
+  "num_samples": null,
+  "max_new_tokens": 64
+ },
+ "metrics": {
+  "accuracy": 0.8707681106661813,
+  "bleu": 0.7572388143542832,
+  "rouge1": 0.9288859702543634,
+  "rouge2": 0.1716509181470955,
+  "rougeL": 0.9276362090939245,
+  "meteor": 0.5482868598279349,
+  "bert_score_f1": 0.9097322225570679
+ },
+ "efficiency": {
+  "params": {
+   "total_params": 2256352240,
+   "trainable_params": 9567360,
+   "trainable_ratio": 0.004240189022969215
+  },
+  "flops": {
+   "flops": 4575886306816.0,
+   "macs": 2287320727040.0
+  },
+  "training": {
+   "train_wall_time_s": 282073.052407525,
+   "train_throughput_sps": 0.5080066981831876,
+   "train_peak_memory_gb": 6.885698318481445
+  },
+  "inference": {
+   "infer_total_s": 5456.69934601197,
+   "infer_latency_s": 0.9932106563545632,
+   "infer_throughput_sps": 1.0068357539279291,
+   "infer_peak_memory_gb": 4.405899524688721
+  }
+ },
+ "wandb_run_id": "md568jxr"
+}

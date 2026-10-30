@@ -1,0 +1,46 @@
+# v7_mimic (2026-10-11): copia de ${MEDVQA_ROOT}/v6_tower_heal/worktree/med_vlm/configs/smolvlm2_lora_ft_heal.yaml (sha256 9c5a3ce34f1a4358; torre: SmolVLM2 LoRA FT (regex text_model.layers, torre congelada)), mudando so dataset: MIMIC, run_name/wandb_run_name, outputs_dir/results_json_dir e train.checkpoint_every 15000 + checkpoint_dir (convencao dos YAMLs do MIMIC de 10/10; publicado: 5000).
+run_name: smolvlm2_lora_ft_mimic
+model: SMOLVLM
+dataset: MIMIC
+peft: LORA
+peft_config:
+  r: 16
+  lora_alpha: 32
+  target_modules: ^.*text_model\.layers\.\d+\.self_attn\.(q|k|v|o)_proj$
+  task_type: CAUSAL_LM
+train:
+  lr: 2e-4
+  warmup_ratio: 0.05
+  epochs: 3
+  batch_size: 4
+  grad_accum_steps: 4
+  max_length: 8192
+  gradient_checkpointing: true
+  compile: false
+  eval_every: 5000
+  checkpoint_every: 15000
+  checkpoint_dir: ${MEDVQA_ROOT}/tmp/v7/checkpoints_mimic
+eval:
+  batch_size: 2
+  max_new_tokens: 64
+logging:
+  wandb_project: "med-vlm"
+  wandb_run_name: "smolvlm2_lora_ft_mimic"
+outputs_dir: ${MEDVQA_ROOT}/v7_mimic
+results_json_dir: ${MEDVQA_ROOT}/v7_mimic/logs
+
+# Image preprocessing applied once at dataset load (cached).
+preprocessing:
+  denoise: true
+  denoise_method: "gaussian"
+  clahe: true
+  clahe_clip_limit: 2.0
+  clahe_tile_grid_size: [8, 8]
+
+# Online training-time augmentation (applied per batch, training only).
+# No flips — intentionally omitted to preserve laterality answers.
+augmentation:
+  enabled: true
+  rotation_degrees: 5
+  brightness_range: [0.85, 1.15]
+  contrast_range: [0.85, 1.15]

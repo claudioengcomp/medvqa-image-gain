@@ -1,0 +1,13 @@
+{
+ "run_name": "M3AE_TXT_vqa_rad_seed0",
+ "task": "task_finetune_vqa_vqa_rad",
+ "seed": 0,
+ "vqa_label_size": 498,
+ "train_transform_keys": [
+  "clip"
+ ],
+ "data_root": "data_root",
+ "train_wall_time_s": 5631,
+ "train_peak_memory_gb": 26.487,
+ "note": "pico = nvidia-smi da placa inteira (inclui terceiros), como nas linhas publicadas"
+}

@@ -1,0 +1,5 @@
+{
+ "run_name": "task_finetune_vqa_heal",
+ "train_wall_time_s": 7552,
+ "train_peak_memory_gb": 27.004
+}

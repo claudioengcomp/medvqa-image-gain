@@ -1,0 +1,16 @@
+{
+ "source": "harness/prepro/prepare_kvasir_arrow.py (classify_question): a Kvasir-VQA-x1 atomic question is closed-form if its lower-cased text starts with one of these prefixes",
+ "closed_prefixes": [
+  "is there",
+  "are there",
+  "have all polyps",
+  "how many",
+  "what type of",
+  "what is the size",
+  "where in the image",
+  "does this image contain any finding",
+  "what color is the anatomical landmark",
+  "what color is the abnormality"
+ ],
+ "n_templates": 10
+}

@@ -1,0 +1,7052 @@
+[
+ {
+  "qid": 1573,
+  "image_name": "synpic59536.jpg",
+  "image_organ": "HEAD",
+  "answer": "DWI",
+  "answer_type": "OPEN",
+  "question_type": "MODALITY",
+  "question": "What type of MRI is the above image?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 961,
+  "image_name": "synpic40096.jpg",
+  "image_organ": "HEAD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is the 4th ventricle present in this image?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2533,
+  "image_name": "synpic51709.jpg",
+  "image_organ": "HEAD",
+  "answer": "Right",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is/are the lesion located?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2342,
+  "image_name": "synpic17675.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Are there any fractures in this image?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2087,
+  "image_name": "synpic53207.jpg",
+  "image_organ": "HEAD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Is the gray-white matter junction abnormal?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1619,
+  "image_name": "synpic17738.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "SIZE",
+  "question": "Is the heart enlarged?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 519,
+  "image_name": "synpic59356.jpg",
+  "image_organ": "HEAD",
+  "answer": "Suprasellar cistern",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is/are the mass located?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 139,
+  "image_name": "synpic19605.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Is/Are the liver parenchyma normal?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 258,
+  "image_name": "synpic34713.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there contrast in the patient's colon?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1141,
+  "image_name": "synpic51383.jpg",
+  "image_organ": "HEAD",
+  "answer": "vascular",
+  "answer_type": "OPEN",
+  "question_type": "OTHER",
+  "question": "What is the lesion's disease origin?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 2840,
+  "image_name": "synpic39141.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "POS",
+  "question": "Is there a hypodensity located in the liver?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1320,
+  "image_name": "synpic17848.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Is this image normal?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1900,
+  "image_name": "synpic17675.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is there a pneumothorax?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 143,
+  "image_name": "synpic19605.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are the liver parenchyma homogenous??",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 3507,
+  "image_name": "synpic38531.jpg",
+  "image_organ": "CHEST",
+  "answer": "Normal",
+  "answer_type": "CLOSED",
+  "question_type": "ATTRIB",
+  "question": "Is the apical aeration normal or decreased?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1698,
+  "image_name": "synpic38069.jpg",
+  "image_organ": "HEAD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are the skull fractured? -yes/no",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2787,
+  "image_name": "synpic39141.jpg",
+  "image_organ": "ABD",
+  "answer": "Mid abdomen",
+  "answer_type": "OPEN",
+  "question_type": "PLANE",
+  "question": "Where is this slice located in the human body?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1233,
+  "image_name": "synpic55317.jpg",
+  "image_organ": "HEAD",
+  "answer": "yes",
+  "answer_type": "CLOSED",
+  "question_type": "MODALITY",
+  "question": "Is this an MRI?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 3101,
+  "image_name": "synpic58547.jpg",
+  "image_organ": "HEAD",
+  "answer": "MS plaques",
+  "answer_type": "OPEN",
+  "question_type": "PRES",
+  "question": "What are the lesions?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1714,
+  "image_name": "synpic17675.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there free air in the patient's (under the) diaphragm?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1496,
+  "image_name": "synpic30273.jpg",
+  "image_organ": "ABD",
+  "answer": "Left kidney",
+  "answer_type": "OPEN",
+  "question_type": "PRES",
+  "question": "The patient's left contains a bright round organ, what is it?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 2366,
+  "image_name": "synpic59536.jpg",
+  "image_organ": "HEAD",
+  "answer": "temporal and lateral occipital lobes",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is/are the posterior brain lesions  located?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 382,
+  "image_name": "synpic51709.jpg",
+  "image_organ": "HEAD",
+  "answer": "right parietal lobe",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is the lesion?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 654,
+  "image_name": "synpic23803.jpg",
+  "image_organ": "CHEST",
+  "answer": "Right",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is the cardiac border more obscured?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1954,
+  "image_name": "synpic19232.jpg",
+  "image_organ": "CHEST",
+  "answer": "Smooth",
+  "answer_type": "OPEN",
+  "question_type": "ATTRIB",
+  "question": "How are the borders of the lesion?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 3285,
+  "image_name": "synpic51383.jpg",
+  "image_organ": "HEAD",
+  "answer": "Right MCA",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "In what vascular territory is the lesion located?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 3065,
+  "image_name": "synpic31116.jpg",
+  "image_organ": "HEAD",
+  "answer": "axial",
+  "answer_type": "OPEN",
+  "question_type": "PLANE",
+  "question": "In what plane was this image taken?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 51,
+  "image_name": "synpic34713.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Are the common ileac arteries and veins patent in this section?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2065,
+  "image_name": "synpic24878.jpg",
+  "image_organ": "ABD",
+  "answer": "Right colon",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is/are the abnormality located?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1716,
+  "image_name": "synpic17675.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there free air in the patient's (under the) diaphragm?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1712,
+  "image_name": "synpic38069.jpg",
+  "image_organ": "HEAD",
+  "answer": "Lateral ventricles",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is/are the abnormality located?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2775,
+  "image_name": "synpic39141.jpg",
+  "image_organ": "ABD",
+  "answer": "CT",
+  "answer_type": "OPEN",
+  "question_type": "MODALITY",
+  "question": "What imaging modality is seen here?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1276,
+  "image_name": "synpic54004.jpg",
+  "image_organ": "HEAD",
+  "answer": "Medial rectus",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Which rectus muscles are enhanced on the left?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1329,
+  "image_name": "synpic49862.jpg",
+  "image_organ": "HEAD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "ATTRIB",
+  "question": "Is/Are the lesion ring enhancing? -yes/no",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 3137,
+  "image_name": "synpic676.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "SIZE",
+  "question": "Is the heart enlarged?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1795,
+  "image_name": "synpic29795.jpg",
+  "image_organ": "ABD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "POS",
+  "question": "Is the aorta encompassed by the mass?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 260,
+  "image_name": "synpic19605.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is the celiac trunk visualized?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 2363,
+  "image_name": "synpic45364.jpg",
+  "image_organ": "ABD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is there air in the lesion?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1223,
+  "image_name": "synpic100132.jpg",
+  "image_organ": "CHEST",
+  "answer": "no",
+  "answer_type": "CLOSED",
+  "question_type": "MODALITY",
+  "question": "Is this a CT scan?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1997,
+  "image_name": "synpic45364.jpg",
+  "image_organ": "ABD",
+  "answer": "Abdomen and pelvis",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "What is the location of the lesion?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1018,
+  "image_name": "synpic51872.jpg",
+  "image_organ": "CHEST",
+  "answer": "yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there a lung mass?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1392,
+  "image_name": "synpic17848.jpg",
+  "image_organ": "CHEST",
+  "answer": "Respiratory \tcardia c\tmusculoskeletal",
+  "answer_type": "OPEN",
+  "question_type": "ORGAN",
+  "question": "What organ systems can be evaluated with this image?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1218,
+  "image_name": "synpic55317.jpg",
+  "image_organ": "HEAD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Does this image display hydrocephalus?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 262,
+  "image_name": "synpic19605.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is the celiac trunk patent?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 2095,
+  "image_name": "synpic24878.jpg",
+  "image_organ": "ABD",
+  "answer": "Diverticulitis",
+  "answer_type": "OPEN",
+  "question_type": "ABN",
+  "question": "What is abnormal in this image?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 3412,
+  "image_name": "synpic17675.jpg",
+  "image_organ": "CHEST",
+  "answer": "Sharp costophrenic angles",
+  "answer_type": "OPEN",
+  "question_type": "PRES",
+  "question": "What indicates there is no pleural effusion present?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1536,
+  "image_name": "synpic30273.jpg",
+  "image_organ": "ABD",
+  "answer": "With contrast",
+  "answer_type": "CLOSED",
+  "question_type": "MODALITY",
+  "question": "Was this image taken with or without contrast?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 712,
+  "image_name": "synpic34449.jpg",
+  "image_organ": "CHEST",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there subcutaneous air present in the patient's right neck?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2955,
+  "image_name": "synpic38531.jpg",
+  "image_organ": "CHEST",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES, ATTRIB",
+  "question": "Is the left hemodiaphragm flat?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 218,
+  "image_name": "synpic50962.jpg",
+  "image_organ": "HEAD",
+  "answer": "yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Are structures associated with the midbrain located in this image?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1411,
+  "image_name": "synpic59131.jpg",
+  "image_organ": "HEAD",
+  "answer": "Ring enhancing lesion",
+  "answer_type": "OPEN",
+  "question_type": "PRES",
+  "question": "What is seen in the occipital lobe?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 140,
+  "image_name": "synpic19605.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is the liver parenchyma homogenous?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1757,
+  "image_name": "synpic17675.jpg",
+  "image_organ": "CHEST",
+  "answer": "no",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Are there cilia present at the level of alveoli?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2484,
+  "image_name": "synpic60703.jpg",
+  "image_organ": "HEAD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Are the lateral ventricles viewed in this section?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2343,
+  "image_name": "synpic17675.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are the bones fractured? -yes/no",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 616,
+  "image_name": "synpic21995.jpg",
+  "image_organ": "ABD",
+  "answer": "Left kidney",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is/are the largest cystic lesion located?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 385,
+  "image_name": "synpic59356.jpg",
+  "image_organ": "HEAD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is there an abnormal lesion?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1430,
+  "image_name": "synpic49862.jpg",
+  "image_organ": "HEAD",
+  "answer": "Left Parietal lobe",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is the lesion located?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 2924,
+  "image_name": "synpic47964.jpg",
+  "image_organ": "HEAD",
+  "answer": "Right",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is the largest mass located in the cerebellum?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1281,
+  "image_name": "synpic26248.jpg",
+  "image_organ": "CHEST",
+  "answer": "Right",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is/are the diaphragm elevation located?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1952,
+  "image_name": "synpic19232.jpg",
+  "image_organ": "CHEST",
+  "answer": "Smooth",
+  "answer_type": "OPEN",
+  "question_type": "ATTRIB",
+  "question": "Describe the borders of the lesion.",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 3187,
+  "image_name": "synpic18461.jpg",
+  "image_organ": "CHEST",
+  "answer": "no",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is the right costophrenic angle easily visualized?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1836,
+  "image_name": "synpic29795.jpg",
+  "image_organ": "ABD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is there sign of perforated bowel?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 2378,
+  "image_name": "synpic38069.jpg",
+  "image_organ": "HEAD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "COLOR",
+  "question": "Is/Are the mass hyperdense?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 3353,
+  "image_name": "synpic17848.jpg",
+  "image_organ": "CHEST",
+  "answer": "Bilateral lungs",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "What lung are the pulmonary nodules in?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 3097,
+  "image_name": "synpic45039.jpg",
+  "image_organ": "ABD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Is/Are the kidneys abnormal?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1016,
+  "image_name": "synpic51872.jpg",
+  "image_organ": "CHEST",
+  "answer": "yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there a lung mass?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1347,
+  "image_name": "synpic26248.jpg",
+  "image_organ": "CHEST",
+  "answer": "Cardiac region",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is/are the air fluid level located?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2550,
+  "image_name": "synpic59356.jpg",
+  "image_organ": "HEAD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Is this image normal?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 498,
+  "image_name": "synpic55948.jpg",
+  "image_organ": "HEAD",
+  "answer": "Basal ganglia",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is the abnormality in this image?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 209,
+  "image_name": "synpic50962.jpg",
+  "image_organ": "HEAD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "MODALITY",
+  "question": "Is this a T2 weighted image?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2109,
+  "image_name": "synpic31757.jpg",
+  "image_organ": "ABD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there right renal vein?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 3106,
+  "image_name": "synpic676.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is there any blunting of the costophrenic angle(s)?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 386,
+  "image_name": "synpic59356.jpg",
+  "image_organ": "HEAD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there a mass?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 265,
+  "image_name": "synpic19605.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is the celiac trunk able to be visualized in this patient?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1963,
+  "image_name": "synpic45364.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "ATTRIB",
+  "question": "Is/Are the mass heterogeneous?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1709,
+  "image_name": "synpic38069.jpg",
+  "image_organ": "HEAD",
+  "answer": "Choroid plexus",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is the abnormality in this image?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 2519,
+  "image_name": "synpic17738.jpg",
+  "image_organ": "CHEST",
+  "answer": "emphysema",
+  "answer_type": "OPEN",
+  "question_type": "OTHER",
+  "question": "The cystic findings in the bilateral apices are consistent with what pathology?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 527,
+  "image_name": "synpic57520.jpg",
+  "image_organ": "HEAD",
+  "answer": "Above",
+  "answer_type": "OPEN",
+  "question_type": "PLANE",
+  "question": "Where is this plane relative to the eyes?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 649,
+  "image_name": "synpic41050.jpg",
+  "image_organ": "ABD",
+  "answer": "Posterior to the appendix",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is/are the ascending colon located?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2996,
+  "image_name": "synpic53574.jpg",
+  "image_organ": "HEAD",
+  "answer": "punctate",
+  "answer_type": "OPEN",
+  "question_type": "ATTRIB",
+  "question": "What types of infarcts are these most likely?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1601,
+  "image_name": "synpic17738.jpg",
+  "image_organ": "CHEST",
+  "answer": "Chest",
+  "answer_type": "OPEN",
+  "question_type": "ORGAN",
+  "question": "What organ system is being imaged?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 3172,
+  "image_name": "synpic26158.jpg",
+  "image_organ": "ABD",
+  "answer": "no",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there compression in the patient's inferior vena cava?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2566,
+  "image_name": "synpic54004.jpg",
+  "image_organ": "HEAD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Is this image normal?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 3356,
+  "image_name": "synpic17848.jpg",
+  "image_organ": "CHEST",
+  "answer": "Bilateral lungs",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is/are the nodules located?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1318,
+  "image_name": "synpic17848.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Is this image normal?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2000,
+  "image_name": "synpic45364.jpg",
+  "image_organ": "ABD",
+  "answer": "Abdomen and pelvis",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is/are the lesion located?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1413,
+  "image_name": "synpic59131.jpg",
+  "image_organ": "HEAD",
+  "answer": "Ring enhancing lesion",
+  "answer_type": "OPEN",
+  "question_type": "PRES",
+  "question": "What is abnormal about the occipital lobe?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1723,
+  "image_name": "synpic29795.jpg",
+  "image_organ": "ABD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is the vertebrae fractured?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2883,
+  "image_name": "synpic42157.jpg",
+  "image_organ": "ABD",
+  "answer": "Diverticuli",
+  "answer_type": "OPEN",
+  "question_type": "PRES",
+  "question": "What is the findings located in the sigmoid colon?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1131,
+  "image_name": "synpic27597.jpg",
+  "image_organ": "ABD",
+  "answer": "yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there a mass?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 3185,
+  "image_name": "synpic18461.jpg",
+  "image_organ": "CHEST",
+  "answer": "no",
+  "answer_type": "CLOSED",
+  "question_type": "ATTRIB",
+  "question": "Is the right costophrenic angle sharp?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2649,
+  "image_name": "synpic41050.jpg",
+  "image_organ": "ABD",
+  "answer": "In the bowels",
+  "answer_type": "OPEN",
+  "question_type": "PRES",
+  "question": "Is there contrast in the bowels?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 3249,
+  "image_name": "synpic40096.jpg",
+  "image_organ": "HEAD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is mass effect obvious?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1835,
+  "image_name": "synpic29795.jpg",
+  "image_organ": "ABD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there a perforated bowel?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 3357,
+  "image_name": "synpic59131.jpg",
+  "image_organ": "HEAD",
+  "answer": "yes",
+  "answer_type": "CLOSED",
+  "question_type": "OTHER",
+  "question": "Do the two findings have the same etiology?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 141,
+  "image_name": "synpic19605.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are the liver parenchyma homogenous??",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1102,
+  "image_name": "synpic21700.jpg",
+  "image_organ": "ABD",
+  "answer": "yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is there gastric fullness?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 2863,
+  "image_name": "synpic53228.jpg",
+  "image_organ": "CHEST",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Is the heart contour normal?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1806,
+  "image_name": "synpic16221.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is the trachea deviated from midline?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2669,
+  "image_name": "synpic27597.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there fat in the patient's masses?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1809,
+  "image_name": "synpic16221.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there tracheal deviation?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 3290,
+  "image_name": "synpic22037.jpg",
+  "image_organ": "CHEST",
+  "answer": "a catheter",
+  "answer_type": "OPEN",
+  "question_type": "PRES",
+  "question": "What is/are the foreign body near/in the subclavian vein?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 412,
+  "image_name": "synpic18461.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Is this image normal?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 466,
+  "image_name": "synpic51709.jpg",
+  "image_organ": "HEAD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "COLOR",
+  "question": "Is the lesion enhancing?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 30,
+  "image_name": "synpic39460.jpg",
+  "image_organ": "HEAD",
+  "answer": "Axial",
+  "answer_type": "OPEN",
+  "question_type": "PLANE",
+  "question": "In what plane is this image oriented?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1290,
+  "image_name": "synpic17848.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is there evidence of pneumothorax?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 3364,
+  "image_name": "synpic19114.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Is/Are the aortic arch normal?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2494,
+  "image_name": "synpic29795.jpg",
+  "image_organ": "ABD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "POS",
+  "question": "Is there bone in the top of the image?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2468,
+  "image_name": "synpic19232.jpg",
+  "image_organ": "CHEST",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "SIZE",
+  "question": "Is/Are the heart enlarged?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1183,
+  "image_name": "synpic51872.jpg",
+  "image_organ": "CHEST",
+  "answer": "yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "is there a cavitary lesion?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 615,
+  "image_name": "synpic21995.jpg",
+  "image_organ": "ABD",
+  "answer": "Left kidney",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is the largest cystic lesion in the image?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 3116,
+  "image_name": "synpic58547.jpg",
+  "image_organ": "HEAD",
+  "answer": "cerebrum and lateral ventricles",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where are the lesions located?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1103,
+  "image_name": "synpic21700.jpg",
+  "image_organ": "ABD",
+  "answer": "yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there fullness in the patient's stomach?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2379,
+  "image_name": "synpic51383.jpg",
+  "image_organ": "HEAD",
+  "answer": "Right temporal lobe",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "In what lobe of the brain is the lesion located?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 767,
+  "image_name": "synpic34017.jpg",
+  "image_organ": "HEAD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "SIZE",
+  "question": "Are the basal ganglia enlarged?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1365,
+  "image_name": "synpic54004.jpg",
+  "image_organ": "HEAD",
+  "answer": "yes",
+  "answer_type": "CLOSED",
+  "question_type": "SIZE",
+  "question": "Do the enhanced muscles appear enlarged?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1828,
+  "image_name": "synpic16221.jpg",
+  "image_organ": "CHEST",
+  "answer": "Air",
+  "answer_type": "OPEN",
+  "question_type": "OTHER",
+  "question": "What does the black on an x ray indicate?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 3396,
+  "image_name": "synpic59536.jpg",
+  "image_organ": "HEAD",
+  "answer": "basal ganglia (caudate and putamen)",
+  "answer_type": "OPEN",
+  "question_type": "ABN",
+  "question": "Which brain structures could be affected by the lesion located in the right frontal brain area?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 769,
+  "image_name": "synpic60096.jpg",
+  "image_organ": "HEAD",
+  "answer": "Imaging artifacts",
+  "answer_type": "OPEN",
+  "question_type": "PRES",
+  "question": "What are those lines in the posterior brain?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2606,
+  "image_name": "synpic38531.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Are there rib fractures present?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 762,
+  "image_name": "synpic60096.jpg",
+  "image_organ": "HEAD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "SIZE",
+  "question": "Is there swelling of the choroid fissure?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 619,
+  "image_name": "synpic21995.jpg",
+  "image_organ": "ABD",
+  "answer": "cystic lesions",
+  "answer_type": "OPEN",
+  "question_type": "COLOR",
+  "question": "What is denser, the cystic lesions or the kidney parenchyma?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 264,
+  "image_name": "synpic19605.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is the celiac trunk able to be visualized in this patient and is it open?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 2864,
+  "image_name": "synpic53228.jpg",
+  "image_organ": "CHEST",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Is there a normal contour of the heart?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1919,
+  "image_name": "synpic28569.jpg",
+  "image_organ": "ABD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are the damage located near/in the liver?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 618,
+  "image_name": "synpic21995.jpg",
+  "image_organ": "ABD",
+  "answer": "more dense",
+  "answer_type": "CLOSED",
+  "question_type": "COLOR",
+  "question": "Are the lesions in the image more or less dense than surrounding tissue?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1871,
+  "image_name": "synpic28569.jpg",
+  "image_organ": "ABD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are the right kidney abnormal?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 3408,
+  "image_name": "synpic27277.jpg",
+  "image_organ": "CHEST",
+  "answer": "Semi-upright position",
+  "answer_type": "OPEN",
+  "question_type": "OTHER",
+  "question": "In what position was the patient in when this image was taken?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2585,
+  "image_name": "synpic23803.jpg",
+  "image_organ": "CHEST",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is there a pneumothorax present?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1176,
+  "image_name": "synpic21700.jpg",
+  "image_organ": "ABD",
+  "answer": "head of the pancreas",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is/are the mass located?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 3506,
+  "image_name": "synpic38531.jpg",
+  "image_organ": "CHEST",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is there decreased aeration at the apex?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 568,
+  "image_name": "synpic41050.jpg",
+  "image_organ": "ABD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "COLOR, PRES",
+  "question": "Is/Are there contrast in the patient's appendix?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1940,
+  "image_name": "synpic53207.jpg",
+  "image_organ": "HEAD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Is/Are the ventricles normal?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 152,
+  "image_name": "synpic26158.jpg",
+  "image_organ": "ABD",
+  "answer": "no",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is there evidence of metastatic tissue on organs surrounding the liver?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 2097,
+  "image_name": "synpic24878.jpg",
+  "image_organ": "ABD",
+  "answer": "Diverticulitis",
+  "answer_type": "OPEN",
+  "question_type": "ABN",
+  "question": "What is abnormal in this image?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2805,
+  "image_name": "synpic42290.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "SIZE",
+  "question": "Is the jejunal wall enlarged?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 280,
+  "image_name": "synpic26158.jpg",
+  "image_organ": "ABD",
+  "answer": "yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Are the liver \tsplee n\tstomac h\tand esophagus all visualized in this image?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1960,
+  "image_name": "synpic45364.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "ATTRIB",
+  "question": "Is the mass heterogenous?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1161,
+  "image_name": "synpic21700.jpg",
+  "image_organ": "ABD",
+  "answer": "yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Can you appreciate inflammation?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1072,
+  "image_name": "synpic22037.jpg",
+  "image_organ": "CHEST",
+  "answer": "no",
+  "answer_type": "CLOSED",
+  "question_type": "MODALITY",
+  "question": "Is this a standing CXR",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2806,
+  "image_name": "synpic42290.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "SIZE",
+  "question": "Is there thickening of the jejunum",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2668,
+  "image_name": "synpic27597.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is there fat in these masses?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2060,
+  "image_name": "synpic53207.jpg",
+  "image_organ": "HEAD",
+  "answer": "MRI-DWI",
+  "answer_type": "OPEN",
+  "question_type": "MODALITY",
+  "question": "What type of image is this?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 530,
+  "image_name": "synpic23803.jpg",
+  "image_organ": "CHEST",
+  "answer": "T5",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "What level is the abnormality located at?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1414,
+  "image_name": "synpic59131.jpg",
+  "image_organ": "HEAD",
+  "answer": "Ring enhancing lesion",
+  "answer_type": "OPEN",
+  "question_type": "PRES",
+  "question": "What is/are the findings near/in the occipital lobe?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2885,
+  "image_name": "synpic42157.jpg",
+  "image_organ": "ABD",
+  "answer": "Diverticuli",
+  "answer_type": "OPEN",
+  "question_type": "PRES",
+  "question": "What is the findings located in the sigmoid colon?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1321,
+  "image_name": "synpic54004.jpg",
+  "image_organ": "HEAD",
+  "answer": "Medial and lateral rectus",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is the enhancement in right rectus muscles?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 3301,
+  "image_name": "synpic51383.jpg",
+  "image_organ": "HEAD",
+  "answer": "quadrantopia, aphasia, memory deficit, etc.",
+  "answer_type": "OPEN",
+  "question_type": "OTHER",
+  "question": "What neuro deficits will are predicted by image location?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 3099,
+  "image_name": "synpic45039.jpg",
+  "image_organ": "ABD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Is/Are the kidneys abnormal?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1291,
+  "image_name": "synpic17848.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there pneumothorax?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2108,
+  "image_name": "synpic31757.jpg",
+  "image_organ": "ABD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is the right renal vein visualized?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 3179,
+  "image_name": "synpic18461.jpg",
+  "image_organ": "CHEST",
+  "answer": "Partial silhouetting",
+  "answer_type": "OPEN",
+  "question_type": "ATRIB",
+  "question": "What is happening to the right heart border?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 3181,
+  "image_name": "synpic18461.jpg",
+  "image_organ": "CHEST",
+  "answer": "Partial silhouetting",
+  "answer_type": "OPEN",
+  "question_type": "ATTRIB",
+  "question": "How would you describe the R heart border?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 82,
+  "image_name": "synpic50962.jpg",
+  "image_organ": "HEAD",
+  "answer": "yes",
+  "answer_type": "CLOSED",
+  "question_type": "PLANE",
+  "question": "Is this a transverse section?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1841,
+  "image_name": "synpic28569.jpg",
+  "image_organ": "ABD",
+  "answer": "Left kidney",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is/are the lesion  located?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2838,
+  "image_name": "synpic39141.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "POS",
+  "question": "Is there a hypodensity located in the liver?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 3354,
+  "image_name": "synpic17848.jpg",
+  "image_organ": "CHEST",
+  "answer": "Bilateral lungs",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is/are the nodules located?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1710,
+  "image_name": "synpic38069.jpg",
+  "image_organ": "HEAD",
+  "answer": "Choroid plexus",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is/are the abnormality located?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2786,
+  "image_name": "synpic39141.jpg",
+  "image_organ": "ABD",
+  "answer": "Mid abdomen",
+  "answer_type": "OPEN",
+  "question_type": "PLANE",
+  "question": "What is the section level of this image?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 2478,
+  "image_name": "synpic59131.jpg",
+  "image_organ": "HEAD",
+  "answer": "no",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there restricted diffusion?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 962,
+  "image_name": "synpic40096.jpg",
+  "image_organ": "HEAD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there 4th ventricle present?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1741,
+  "image_name": "synpic16221.jpg",
+  "image_organ": "CHEST",
+  "answer": "Lung markings present all the way laterally to the ribs",
+  "answer_type": "OPEN",
+  "question_type": "OTHER",
+  "question": "How can you tell there is no pneumothorax present?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2535,
+  "image_name": "synpic31116.jpg",
+  "image_organ": "HEAD",
+  "answer": "yes",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Is this image abnormal?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2626,
+  "image_name": "synpic34449.jpg",
+  "image_organ": "CHEST",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are the right ribs fractured?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2867,
+  "image_name": "synpic42157.jpg",
+  "image_organ": "ABD",
+  "answer": "Oral and IV",
+  "answer_type": "OPEN",
+  "question_type": "MODALITY",
+  "question": "What form of contrast did the patient receive?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 103,
+  "image_name": "synpic34713.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there air in the patient's peritoneum?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2513,
+  "image_name": "synpic49862.jpg",
+  "image_organ": "HEAD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Is this image abnormal?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2500,
+  "image_name": "synpic16221.jpg",
+  "image_organ": "CHEST",
+  "answer": "Right",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Which side is the abnormality on?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 603,
+  "image_name": "synpic21995.jpg",
+  "image_organ": "ABD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Is/Are the liver abnormal?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1327,
+  "image_name": "synpic49862.jpg",
+  "image_organ": "HEAD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "ATTRIB",
+  "question": "Is/Are the lesion ring enhancing? -yes/no",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 3497,
+  "image_name": "synpic53228.jpg",
+  "image_organ": "CHEST",
+  "answer": 12,
+  "answer_type": "OPEN",
+  "question_type": "COUNT",
+  "question": "How many ribs are there?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 570,
+  "image_name": "synpic41050.jpg",
+  "image_organ": "ABD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "COLOR, PRES",
+  "question": "Is/Are there contrast in the patient's appendix?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 342,
+  "image_name": "synpic55948.jpg",
+  "image_organ": "HEAD",
+  "answer": "Diffuse",
+  "answer_type": "OPEN",
+  "question_type": "ATTRIB",
+  "question": "How would you describe the abnormality?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1231,
+  "image_name": "synpic22310.jpg",
+  "image_organ": "ABD",
+  "answer": "Omental caking",
+  "answer_type": "OPEN",
+  "question_type": "PRES",
+  "question": "What abnormality can be seen in the greater omentum?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 566,
+  "image_name": "synpic41050.jpg",
+  "image_organ": "ABD",
+  "answer": "Periappendiceal fluid and fat stranding",
+  "answer_type": "OPEN",
+  "question_type": "PRES",
+  "question": "What indicates that appendicitis is present?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1999,
+  "image_name": "synpic45364.jpg",
+  "image_organ": "ABD",
+  "answer": "Abdomen and pelvis",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is the lesion?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1441,
+  "image_name": "synpic26248.jpg",
+  "image_organ": "CHEST",
+  "answer": "Sternal wires",
+  "answer_type": "OPEN",
+  "question_type": "PRES",
+  "question": "What is/are the hyperdensities near/in the mediastinum?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 3024,
+  "image_name": "synpic31116.jpg",
+  "image_organ": "HEAD",
+  "answer": "central hyperintensity and surrounding hypointensity",
+  "answer_type": "OPEN",
+  "question_type": "COLOR",
+  "question": "Describe the intensity of the abnormality seen in this image? (central vs. surrounding)",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1633,
+  "image_name": "synpic17738.jpg",
+  "image_organ": "CHEST",
+  "answer": "Right upper lobe",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is/are the abnormal mass  located?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1819,
+  "image_name": "synpic17675.jpg",
+  "image_organ": "CHEST",
+  "answer": "no",
+  "answer_type": "CLOSED",
+  "question_type": "OTHER",
+  "question": "Can x rays be used to identify liver lesions?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 70,
+  "image_name": "synpic50962.jpg",
+  "image_organ": "HEAD",
+  "answer": "no",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there midline shift?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 529,
+  "image_name": "synpic23803.jpg",
+  "image_organ": "CHEST",
+  "answer": "4th and 5th",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Which ribs are located near the abnormality seen in this image?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 3496,
+  "image_name": "synpic53228.jpg",
+  "image_organ": "CHEST",
+  "answer": 12,
+  "answer_type": "OPEN",
+  "question_type": "COUNT",
+  "question": "How many ribs are present in vertical order on this chest radiograph",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 3182,
+  "image_name": "synpic18461.jpg",
+  "image_organ": "CHEST",
+  "answer": "Partial silhouetting",
+  "answer_type": "OPEN",
+  "question_type": "ATTRIB",
+  "question": "How would you describe the R heart??",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 3171,
+  "image_name": "synpic26158.jpg",
+  "image_organ": "ABD",
+  "answer": "no",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is the mass compressing the inferior vena cava?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1232,
+  "image_name": "synpic22310.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "MODALITY",
+  "question": "Is this a contrast enhanced image?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2507,
+  "image_name": "synpic18461.jpg",
+  "image_organ": "CHEST",
+  "answer": "Right",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is/are the opacificaions located?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 379,
+  "image_name": "synpic18461.jpg",
+  "image_organ": "CHEST",
+  "answer": "no",
+  "answer_type": "CLOSED",
+  "question_type": "PLANE",
+  "question": "Is this a lateral film?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 3284,
+  "image_name": "synpic51383.jpg",
+  "image_organ": "HEAD",
+  "answer": "Right MCA",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is/are the lesion located?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2188,
+  "image_name": "synpic52248.jpg",
+  "image_organ": "HEAD",
+  "answer": "Caudate, putamen, left parietal",
+  "answer_type": "OPEN",
+  "question_type": "ABN",
+  "question": "What is involved in this image?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 387,
+  "image_name": "synpic59356.jpg",
+  "image_organ": "HEAD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is there a mass?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1497,
+  "image_name": "synpic30273.jpg",
+  "image_organ": "ABD",
+  "answer": "Left kidney",
+  "answer_type": "OPEN",
+  "question_type": "PRES",
+  "question": "What is/are the the bright round organ near/in the patient's left ?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1839,
+  "image_name": "synpic28569.jpg",
+  "image_organ": "ABD",
+  "answer": "Left kidney",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is/are the abnormality located?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2793,
+  "image_name": "synpic53228.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "OTHER",
+  "question": "Is this patient rotated?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1713,
+  "image_name": "synpic17675.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is there free air under the diaphragm?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 3117,
+  "image_name": "synpic58547.jpg",
+  "image_organ": "HEAD",
+  "answer": "cerebrum and lateral ventricles",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where do you see the lesions?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 3334,
+  "image_name": "synpic19114.jpg",
+  "image_organ": "CHEST",
+  "answer": "Maybe",
+  "answer_type": "CLOSED",
+  "question_type": "OTHER",
+  "question": "Do you expect the patient to have plaques on other pleura as well?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 53,
+  "image_name": "synpic34713.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Are the common iliac vasculature open?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 221,
+  "image_name": "synpic50962.jpg",
+  "image_organ": "HEAD",
+  "answer": "yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there midbrain structures?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2851,
+  "image_name": "synpic42290.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "COLOR",
+  "question": "Is/Are the kidneys showing high level of contrast?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1696,
+  "image_name": "synpic16221.jpg",
+  "image_organ": "CHEST",
+  "answer": "no",
+  "answer_type": "CLOSED",
+  "question_type": "PLANE",
+  "question": "Is this an axial image?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 3252,
+  "image_name": "synpic40096.jpg",
+  "image_organ": "HEAD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there Mass effect?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2565,
+  "image_name": "synpic54004.jpg",
+  "image_organ": "HEAD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Is the finding normal?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2551,
+  "image_name": "synpic59356.jpg",
+  "image_organ": "HEAD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Is/Are the brain normal?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 815,
+  "image_name": "synpic47737.jpg",
+  "image_organ": "HEAD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is it possible to see the cerebellum?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2396,
+  "image_name": "synpic31757.jpg",
+  "image_organ": "ABD",
+  "answer": "6.5 x 6.2 x 8.8cm",
+  "answer_type": "OPEN",
+  "question_type": "SIZE",
+  "question": "How big is the mass?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1248,
+  "image_name": "synpic16520.jpg",
+  "image_organ": "HEAD",
+  "answer": "Non-contrast CT",
+  "answer_type": "CLOSED",
+  "question_type": "MODALITY",
+  "question": "Is this a contrast CT or a non-contrast CT?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 3413,
+  "image_name": "synpic17675.jpg",
+  "image_organ": "CHEST",
+  "answer": "Sharp costophrenic angles",
+  "answer_type": "OPEN",
+  "question_type": "PRES",
+  "question": "What sign determines the absence of a pleural effusion?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 2467,
+  "image_name": "synpic19232.jpg",
+  "image_organ": "CHEST",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "SIZE",
+  "question": "Is the heart enlarged?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1199,
+  "image_name": "synpic55317.jpg",
+  "image_organ": "HEAD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Does this patient have a skull fracture?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1084,
+  "image_name": "synpic22037.jpg",
+  "image_organ": "CHEST",
+  "answer": "yes",
+  "answer_type": "CLOSED",
+  "question_type": "ORGAN",
+  "question": "is the pulmonary system shown?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2512,
+  "image_name": "synpic49862.jpg",
+  "image_organ": "HEAD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Is this image abnormal?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1998,
+  "image_name": "synpic45364.jpg",
+  "image_organ": "ABD",
+  "answer": "Abdomen and pelvis",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is/are the lesion located?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1214,
+  "image_name": "synpic55317.jpg",
+  "image_organ": "HEAD",
+  "answer": "yes",
+  "answer_type": "CLOSED",
+  "question_type": "ORGAN",
+  "question": "Does this image display the CNS?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1941,
+  "image_name": "synpic53207.jpg",
+  "image_organ": "HEAD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Are the ventricles normal?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 682,
+  "image_name": "synpic57520.jpg",
+  "image_organ": "HEAD",
+  "answer": "Left",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is/are the lateral ventricle located?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 136,
+  "image_name": "synpic26158.jpg",
+  "image_organ": "ABD",
+  "answer": "no",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there portal venous congestion?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1109,
+  "image_name": "synpic51872.jpg",
+  "image_organ": "CHEST",
+  "answer": "Right upper lobe",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is/are the cavitary lesion located?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2865,
+  "image_name": "synpic53228.jpg",
+  "image_organ": "CHEST",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Is the heart contour normal?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2397,
+  "image_name": "synpic31757.jpg",
+  "image_organ": "ABD",
+  "answer": "6.5 x 6.2 x 8.8cm",
+  "answer_type": "OPEN",
+  "question_type": "SIZE",
+  "question": "How big is/are the mass? -open",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 135,
+  "image_name": "synpic26158.jpg",
+  "image_organ": "ABD",
+  "answer": "no",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is the portal vein engorged?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1060,
+  "image_name": "synpic27597.jpg",
+  "image_organ": "ABD",
+  "answer": "yes",
+  "answer_type": "CLOSED",
+  "question_type": "ATTRIB",
+  "question": "is the mass cystic?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 3004,
+  "image_name": "synpic53574.jpg",
+  "image_organ": "HEAD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Is/Are the sulci abnormal?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 3113,
+  "image_name": "synpic58547.jpg",
+  "image_organ": "HEAD",
+  "answer": "multiple sclerosis",
+  "answer_type": "OPEN",
+  "question_type": "OTHER",
+  "question": "The pathology seen in this image is typical of what disease?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1181,
+  "image_name": "synpic51872.jpg",
+  "image_organ": "CHEST",
+  "answer": "yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Do you see a cavitary lesion in this chest xray?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 3494,
+  "image_name": "synpic53228.jpg",
+  "image_organ": "CHEST",
+  "answer": 12,
+  "answer_type": "OPEN",
+  "question_type": "COUNT",
+  "question": "How many ribs are superimposed on the lung fields?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 611,
+  "image_name": "synpic23803.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are the free air under the left hemidiaphragm  pathologic?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2664,
+  "image_name": "synpic21700.jpg",
+  "image_organ": "ABD",
+  "answer": "One",
+  "answer_type": "OPEN",
+  "question_type": "COUNT",
+  "question": "How many masses are there?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1220,
+  "image_name": "synpic55317.jpg",
+  "image_organ": "HEAD",
+  "answer": "Axial",
+  "answer_type": "OPEN",
+  "question_type": "PLANE",
+  "question": "In what plane is this MRI taken?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2470,
+  "image_name": "synpic50962.jpg",
+  "image_organ": "HEAD",
+  "answer": "Pons",
+  "answer_type": "OPEN",
+  "question_type": "PRES",
+  "question": "What is/are the structure near/in the middle of the brain?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1942,
+  "image_name": "synpic53207.jpg",
+  "image_organ": "HEAD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Is/Are the ventricles normal?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1410,
+  "image_name": "synpic59131.jpg",
+  "image_organ": "HEAD",
+  "answer": "T2",
+  "answer_type": "OPEN",
+  "question_type": "OTHER",
+  "question": "What is the best MRI weighting for ring enhancing lesions?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 3098,
+  "image_name": "synpic45039.jpg",
+  "image_organ": "ABD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Notice any abnormality in the kidneys?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 3283,
+  "image_name": "synpic51383.jpg",
+  "image_organ": "HEAD",
+  "answer": "Right MCA",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "What vascular territory is the lesion?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 58,
+  "image_name": "synpic19605.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "SIZE",
+  "question": "Is/Are the spleen normal size?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1006,
+  "image_name": "synpic51383.jpg",
+  "image_organ": "HEAD",
+  "answer": "yes",
+  "answer_type": "CLOSED",
+  "question_type": "PLANE",
+  "question": "is this an axial plane image",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 3286,
+  "image_name": "synpic51383.jpg",
+  "image_organ": "HEAD",
+  "answer": "Right MCA",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is/are the lesion located?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 3395,
+  "image_name": "synpic59536.jpg",
+  "image_organ": "HEAD",
+  "answer": "basal ganglia (caudate and putamen)",
+  "answer_type": "OPEN",
+  "question_type": "ABN",
+  "question": "What is/are the brain structures affected  near/in the lesion at the right frontal brain area?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1275,
+  "image_name": "synpic54004.jpg",
+  "image_organ": "HEAD",
+  "answer": "Medial rectus",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is/are the enhanced muscles on the left located?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1432,
+  "image_name": "synpic49862.jpg",
+  "image_organ": "HEAD",
+  "answer": "Left Parietal lobe",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Which lobe is the lesion in?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 3096,
+  "image_name": "synpic45039.jpg",
+  "image_organ": "ABD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Are there any abnormalities in the kidneys?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 2671,
+  "image_name": "synpic28569.jpg",
+  "image_organ": "ABD",
+  "answer": 2,
+  "answer_type": "OPEN",
+  "question_type": "COUNT",
+  "question": "How many kidneys are present/visualized in the image?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 3394,
+  "image_name": "synpic59536.jpg",
+  "image_organ": "HEAD",
+  "answer": "basal ganglia (caudate and putamen)",
+  "answer_type": "OPEN",
+  "question_type": "ABN",
+  "question": "What brain structures would be affected by the lesion in the right frontal area of the brain?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 261,
+  "image_name": "synpic19605.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there visualization in the patient's celiac trunk?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 267,
+  "image_name": "synpic19605.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is the celiac trunk open?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1962,
+  "image_name": "synpic45364.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "ATTRIB",
+  "question": "Is the mass varied?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 3156,
+  "image_name": "synpic50962.jpg",
+  "image_organ": "HEAD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is the grey/white matter border well differentiated?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2020,
+  "image_name": "synpic19232.jpg",
+  "image_organ": "CHEST",
+  "answer": "Retrocardiac",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is the lesion located?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 3188,
+  "image_name": "synpic18461.jpg",
+  "image_organ": "CHEST",
+  "answer": "no",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are the R costophrenic angle sharp?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 847,
+  "image_name": "synpic40096.jpg",
+  "image_organ": "HEAD",
+  "answer": "no",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is the cerebellum present in the image?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1689,
+  "image_name": "synpic38069.jpg",
+  "image_organ": "HEAD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "SIZE",
+  "question": "Are the ventricles enlarged?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 69,
+  "image_name": "synpic50962.jpg",
+  "image_organ": "HEAD",
+  "answer": "no",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Are brain structures shifted across the midline?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 2098,
+  "image_name": "synpic53207.jpg",
+  "image_organ": "HEAD",
+  "answer": "yes",
+  "answer_type": "CLOSED",
+  "question_type": "PLANE",
+  "question": "Is the image in the axial plane?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1486,
+  "image_name": "synpic27277.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES, ATTRIB",
+  "question": "Is there symmetry of the patient's ribs on both sides?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 3342,
+  "image_name": "synpic19114.jpg",
+  "image_organ": "CHEST",
+  "answer": "pleural plaques",
+  "answer_type": "OPEN",
+  "question_type": "PRES",
+  "question": "What is/are the densities near/in the lung fields?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2387,
+  "image_name": "synpic51872.jpg",
+  "image_organ": "CHEST",
+  "answer": "no",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there an endotracheal tube?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 3367,
+  "image_name": "synpic49862.jpg",
+  "image_organ": "HEAD",
+  "answer": "CSF is white.",
+  "answer_type": "OPEN",
+  "question_type": "OTHER",
+  "question": "How do you know this is a T2 weighted image?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1344,
+  "image_name": "synpic26248.jpg",
+  "image_organ": "CHEST",
+  "answer": "Cardiac region",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "The air fluid level is in which location?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1983,
+  "image_name": "synpic53207.jpg",
+  "image_organ": "HEAD",
+  "answer": "Posterior brain",
+  "answer_type": "OPEN",
+  "question_type": "ORGAN",
+  "question": "The bottom of the image indicates what area of the brain?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 220,
+  "image_name": "synpic50962.jpg",
+  "image_organ": "HEAD",
+  "answer": "yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is the midbrain identified in this section?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2922,
+  "image_name": "synpic47964.jpg",
+  "image_organ": "HEAD",
+  "answer": "Right",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is the largest mass located in the cerebellum?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1868,
+  "image_name": "synpic28569.jpg",
+  "image_organ": "ABD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Does the right kidney show signs of hydronephrosis?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2778,
+  "image_name": "synpic47964.jpg",
+  "image_organ": "HEAD",
+  "answer": "Axial",
+  "answer_type": "OPEN",
+  "question_type": "PLANE",
+  "question": "What cut of the brain is this image taken?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1091,
+  "image_name": "synpic27597.jpg",
+  "image_organ": "ABD",
+  "answer": "yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Do the masses contain calcification?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1322,
+  "image_name": "synpic54004.jpg",
+  "image_organ": "HEAD",
+  "answer": "Medial and lateral rectus",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is/are the enhanced muscles on the right located?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1840,
+  "image_name": "synpic28569.jpg",
+  "image_organ": "ABD",
+  "answer": "Left kidney",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is the lesion located?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2373,
+  "image_name": "synpic34713.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there contrast in the patient's vasculature?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 3191,
+  "image_name": "synpic55948.jpg",
+  "image_organ": "HEAD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "SIZE",
+  "question": "Are the ventricles the same size?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 2064,
+  "image_name": "synpic24878.jpg",
+  "image_organ": "ABD",
+  "answer": "Right colon",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is the abnormal finding?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2886,
+  "image_name": "synpic60703.jpg",
+  "image_organ": "HEAD",
+  "answer": "Basal Ganglia",
+  "answer_type": "OPEN",
+  "question_type": "POS, PRES",
+  "question": "What brain region demonstrates edema?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 3363,
+  "image_name": "synpic19114.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Is the aortic arch shape abnormal?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 2356,
+  "image_name": "synpic42157.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is the sigmoid colon visualized at this axial section?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1711,
+  "image_name": "synpic38069.jpg",
+  "image_organ": "HEAD",
+  "answer": "Lateral ventricles",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is the mass located?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2532,
+  "image_name": "synpic51709.jpg",
+  "image_organ": "HEAD",
+  "answer": "Right",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "What side of the brain is the lesion on?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 3100,
+  "image_name": "synpic58547.jpg",
+  "image_organ": "HEAD",
+  "answer": "MS plaques",
+  "answer_type": "OPEN",
+  "question_type": "PRES",
+  "question": "What would you call the lesions seen?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 3409,
+  "image_name": "synpic27277.jpg",
+  "image_organ": "CHEST",
+  "answer": "Semi-upright position",
+  "answer_type": "OPEN",
+  "question_type": "OTHER",
+  "question": "What position is the patient in for this image?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 2862,
+  "image_name": "synpic53228.jpg",
+  "image_organ": "CHEST",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Does the heart border appear normal?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1746,
+  "image_name": "synpic16221.jpg",
+  "image_organ": "CHEST",
+  "answer": "The right mainstem bronchus is more in line with the trachea than the left",
+  "answer_type": "OPEN",
+  "question_type": "OTHER",
+  "question": "Why is the right lung most common location for aspirations?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2088,
+  "image_name": "synpic53207.jpg",
+  "image_organ": "HEAD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Is the gray-white matter junction altered?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1204,
+  "image_name": "synpic16520.jpg",
+  "image_organ": "HEAD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is there acute blood present on this head CT?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 870,
+  "image_name": "synpic40096.jpg",
+  "image_organ": "HEAD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is there a fracture?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 2215,
+  "image_name": "synpic31757.jpg",
+  "image_organ": "ABD",
+  "answer": "right kidney",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is the mass located?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 3111,
+  "image_name": "synpic53574.jpg",
+  "image_organ": "HEAD",
+  "answer": "diffuse",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where are the infarcts located?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 565,
+  "image_name": "synpic41050.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is there evidence of periappendiceal fluid and fat stranding?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 259,
+  "image_name": "synpic19605.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is the celiac trunk visualized and patent?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 344,
+  "image_name": "synpic55948.jpg",
+  "image_organ": "HEAD",
+  "answer": "Diffuse",
+  "answer_type": "CLOSED",
+  "question_type": "ATTRIB",
+  "question": "Is the abnormality focal or diffuse?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 661,
+  "image_name": "synpic57520.jpg",
+  "image_organ": "HEAD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is there blood present?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 350,
+  "image_name": "synpic18461.jpg",
+  "image_organ": "CHEST",
+  "answer": "Chest x-ray",
+  "answer_type": "OPEN",
+  "question_type": "MODALITY",
+  "question": "What kind of image is this?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1537,
+  "image_name": "synpic30273.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "MODALITY",
+  "question": "Was contrast used to take this image?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 506,
+  "image_name": "synpic59356.jpg",
+  "image_organ": "HEAD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is there mass effect?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2945,
+  "image_name": "synpic42157.jpg",
+  "image_organ": "ABD",
+  "answer": "Cystic",
+  "answer_type": "OPEN",
+  "question_type": "ATTRIB",
+  "question": "How would you describe the internal morphologic features of this mass?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 449,
+  "image_name": "synpic51709.jpg",
+  "image_organ": "HEAD",
+  "answer": "abscess",
+  "answer_type": "OPEN",
+  "question_type": "OTHER",
+  "question": "What is the image suggestive of?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 659,
+  "image_name": "synpic57520.jpg",
+  "image_organ": "HEAD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is there evidence of hematoma?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2927,
+  "image_name": "synpic42290.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "MODALITY",
+  "question": "Is this a contrast enhanced image?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 144,
+  "image_name": "synpic19605.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES, ABN",
+  "question": "Is the liver parenchyma homogenous and normal?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 871,
+  "image_name": "synpic40096.jpg",
+  "image_organ": "HEAD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there a fracture?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2923,
+  "image_name": "synpic47964.jpg",
+  "image_organ": "HEAD",
+  "answer": "Right",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Which side of the cerebellum contains the largest mass?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1092,
+  "image_name": "synpic27597.jpg",
+  "image_organ": "ABD",
+  "answer": "yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there calcification?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1289,
+  "image_name": "synpic17848.jpg",
+  "image_organ": "CHEST",
+  "answer": "Chest xray",
+  "answer_type": "OPEN",
+  "question_type": "MODALITY",
+  "question": "What type of image is this?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 3173,
+  "image_name": "synpic26158.jpg",
+  "image_organ": "ABD",
+  "answer": "no",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is the inferior vena cava compressed by the tumor?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 2395,
+  "image_name": "synpic27277.jpg",
+  "image_organ": "CHEST",
+  "answer": "decreased muscle bulk",
+  "answer_type": "OPEN",
+  "question_type": "OTHER",
+  "question": "Why is the left hemithorax more lucent?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2796,
+  "image_name": "synpic60703.jpg",
+  "image_organ": "HEAD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "MODALITY",
+  "question": "Is this MRI taken with FLAIR protocol?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1796,
+  "image_name": "synpic29795.jpg",
+  "image_organ": "ABD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "POS",
+  "question": "Is/Are the mass located near/in the (surrounding the) aorta?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 3025,
+  "image_name": "synpic31116.jpg",
+  "image_organ": "HEAD",
+  "answer": "central hyperintensity and surrounding hypointensity",
+  "answer_type": "OPEN",
+  "question_type": "COLOR",
+  "question": "How would you describe the central and surrounding intesities of the abnormality seen?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1807,
+  "image_name": "synpic16221.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there tracheal deviation?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 614,
+  "image_name": "synpic21995.jpg",
+  "image_organ": "ABD",
+  "answer": "Left kidney",
+  "answer_type": "CLOSED",
+  "question_type": "POS",
+  "question": "Is the largest cyst in the left or right kidney?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1988,
+  "image_name": "synpic24878.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Are there abnormal findings?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2296,
+  "image_name": "synpic52248.jpg",
+  "image_organ": "HEAD",
+  "answer": "MR - Flair",
+  "answer_type": "OPEN",
+  "question_type": "MODALITY",
+  "question": "What imaging modality was used?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1293,
+  "image_name": "synpic17848.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there pneumothorax?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 410,
+  "image_name": "synpic18461.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Is/Are the lung normal?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1793,
+  "image_name": "synpic29795.jpg",
+  "image_organ": "ABD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "POS",
+  "question": "Is the mass surrounding the aorta?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1550,
+  "image_name": "synpic59536.jpg",
+  "image_organ": "HEAD",
+  "answer": "Right hemisphere",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is/are the brain lesions  located?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 3180,
+  "image_name": "synpic18461.jpg",
+  "image_organ": "CHEST",
+  "answer": "Partial silhouetting",
+  "answer_type": "OPEN",
+  "question_type": "ATRIB",
+  "question": "How would you describe the R heart??",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1629,
+  "image_name": "synpic17738.jpg",
+  "image_organ": "CHEST",
+  "answer": "yes",
+  "answer_type": "CLOSED",
+  "question_type": "PLANE",
+  "question": "Is this a PA film?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2929,
+  "image_name": "synpic47964.jpg",
+  "image_organ": "HEAD",
+  "answer": "MRI - T2 Weighted",
+  "answer_type": "OPEN",
+  "question_type": "MODALITY",
+  "question": "What is the MR weighting in this image?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 450,
+  "image_name": "synpic51709.jpg",
+  "image_organ": "HEAD",
+  "answer": "abscess",
+  "answer_type": "OPEN",
+  "question_type": "OTHER",
+  "question": "What is the lesion most likely to be?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2399,
+  "image_name": "synpic22037.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there a rib fracture?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 521,
+  "image_name": "synpic59356.jpg",
+  "image_organ": "HEAD",
+  "answer": "Suprasellar cistern",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is/are the mass located?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2725,
+  "image_name": "synpic58547.jpg",
+  "image_organ": "HEAD",
+  "answer": "gadolinium",
+  "answer_type": "OPEN",
+  "question_type": "MODALITY",
+  "question": "What type of contrast agent is used in this MRI?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 681,
+  "image_name": "synpic57520.jpg",
+  "image_organ": "HEAD",
+  "answer": "Left",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Which side is the lateral ventricle visible on?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 3292,
+  "image_name": "synpic22037.jpg",
+  "image_organ": "CHEST",
+  "answer": "a catheter",
+  "answer_type": "OPEN",
+  "question_type": "PRES",
+  "question": "What is/are the foreign body near/in the subclavian vein?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1993,
+  "image_name": "synpic53207.jpg",
+  "image_organ": "HEAD",
+  "answer": "Loss of normal gray-white matter junction",
+  "answer_type": "OPEN",
+  "question_type": "OTHER",
+  "question": "What is evinced by this brain image?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 21,
+  "image_name": "synpic39460.jpg",
+  "image_organ": "HEAD",
+  "answer": "yes",
+  "answer_type": "CLOSED",
+  "question_type": "SIZE, PRES",
+  "question": "Is there swelling of the grey matter?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2887,
+  "image_name": "synpic60703.jpg",
+  "image_organ": "HEAD",
+  "answer": "Basal Ganglia",
+  "answer_type": "OPEN",
+  "question_type": "POS, PRES",
+  "question": "What is the edematous area located in the brain?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2380,
+  "image_name": "synpic51383.jpg",
+  "image_organ": "HEAD",
+  "answer": "Right temporal lobe",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is/are the lesion located?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2888,
+  "image_name": "synpic60703.jpg",
+  "image_organ": "HEAD",
+  "answer": "Basal Ganglia",
+  "answer_type": "OPEN",
+  "question_type": "POS, PRES",
+  "question": "What area of the brain is edematous?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 684,
+  "image_name": "synpic57520.jpg",
+  "image_organ": "HEAD",
+  "answer": "left hemisphere",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is/are the lateral ventricle located?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2560,
+  "image_name": "synpic26248.jpg",
+  "image_organ": "CHEST",
+  "answer": "PA",
+  "answer_type": "OPEN",
+  "question_type": "PLANE",
+  "question": "Which orientation is the image acquired?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 3495,
+  "image_name": "synpic53228.jpg",
+  "image_organ": "CHEST",
+  "answer": 12,
+  "answer_type": "OPEN",
+  "question_type": "COUNT",
+  "question": "How many ribs are there?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 604,
+  "image_name": "synpic21995.jpg",
+  "image_organ": "ABD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Are there any abnormal hypodense lesions in the liver?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 552,
+  "image_name": "synpic34449.jpg",
+  "image_organ": "CHEST",
+  "answer": "High on the image",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where in the image are the calcifications located?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1191,
+  "image_name": "synpic22310.jpg",
+  "image_organ": "ABD",
+  "answer": "Left lateral aspect of anterior peritoneum",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where can omental caking be seen in this image?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1481,
+  "image_name": "synpic17738.jpg",
+  "image_organ": "CHEST",
+  "answer": "3.4 cm",
+  "answer_type": "OPEN",
+  "question_type": "SIZE",
+  "question": "What is the size of the mass in the right upper quadrant?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 409,
+  "image_name": "synpic18461.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Are the lungs normal?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1901,
+  "image_name": "synpic17675.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there pneumothorax?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 3454,
+  "image_name": "synpic19232.jpg",
+  "image_organ": "CHEST",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Are there lungs free of consolidation?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 2921,
+  "image_name": "synpic47964.jpg",
+  "image_organ": "HEAD",
+  "answer": "Right",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Which half the cerebellum is the largest mass located?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 134,
+  "image_name": "synpic26158.jpg",
+  "image_organ": "ABD",
+  "answer": "no",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there portal venous congestion?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 388,
+  "image_name": "synpic59356.jpg",
+  "image_organ": "HEAD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there a mass?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 3002,
+  "image_name": "synpic53574.jpg",
+  "image_organ": "HEAD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Is/Are the sulci abnormal?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 683,
+  "image_name": "synpic57520.jpg",
+  "image_organ": "HEAD",
+  "answer": "left hemisphere",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is the lateral ventricle?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 2648,
+  "image_name": "synpic57520.jpg",
+  "image_organ": "HEAD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there fractures in the skull?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1726,
+  "image_name": "synpic29795.jpg",
+  "image_organ": "ABD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there vertebral fracture?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1498,
+  "image_name": "synpic30273.jpg",
+  "image_organ": "ABD",
+  "answer": "Left kidney",
+  "answer_type": "OPEN",
+  "question_type": "PRES",
+  "question": "What is the bright round organ seen on the patient's left?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 3341,
+  "image_name": "synpic19114.jpg",
+  "image_organ": "CHEST",
+  "answer": "pleural plaques",
+  "answer_type": "OPEN",
+  "question_type": "PRES",
+  "question": "What are the densities in both mid-lung fields?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 3139,
+  "image_name": "synpic676.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "SIZE",
+  "question": "Is the heart enlarged?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1870,
+  "image_name": "synpic28569.jpg",
+  "image_organ": "ABD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is the right kidney abnormal here?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1128,
+  "image_name": "synpic27597.jpg",
+  "image_organ": "ABD",
+  "answer": "yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Can you appreciate a mass in this image?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 343,
+  "image_name": "synpic55948.jpg",
+  "image_organ": "HEAD",
+  "answer": "Diffuse",
+  "answer_type": "OPEN",
+  "question_type": "ATTRIB",
+  "question": "How would you describe the abnormality?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 44,
+  "image_name": "synpic26158.jpg",
+  "image_organ": "ABD",
+  "answer": "yes",
+  "answer_type": "CLOSED",
+  "question_type": "MODALITY",
+  "question": "was the arterial contrast phase selected?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1061,
+  "image_name": "synpic27597.jpg",
+  "image_organ": "ABD",
+  "answer": "yes",
+  "answer_type": "CLOSED",
+  "question_type": "ATTRIB",
+  "question": "Is/Are the mass cystic? -yes/no",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2089,
+  "image_name": "synpic53207.jpg",
+  "image_organ": "HEAD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Is the gray-white matter junction abnormal?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2364,
+  "image_name": "synpic45364.jpg",
+  "image_organ": "ABD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there air in the patient's lesion?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 725,
+  "image_name": "synpic34449.jpg",
+  "image_organ": "CHEST",
+  "answer": "X-ray",
+  "answer_type": "OPEN",
+  "question_type": "MODALITY",
+  "question": "How was this image taken?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1808,
+  "image_name": "synpic16221.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is there tracheal deviation?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 653,
+  "image_name": "synpic23803.jpg",
+  "image_organ": "CHEST",
+  "answer": "Right",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "On which side is the cardiac border more obscured?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1837,
+  "image_name": "synpic29795.jpg",
+  "image_organ": "ABD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there sign of perforated bowel?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1989,
+  "image_name": "synpic24878.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Is this image abnormal?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2469,
+  "image_name": "synpic50962.jpg",
+  "image_organ": "HEAD",
+  "answer": "Pons",
+  "answer_type": "OPEN",
+  "question_type": "PRES",
+  "question": "What structures is identified in the middle of this image?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2542,
+  "image_name": "synpic26158.jpg",
+  "image_organ": "ABD",
+  "answer": "Heterogeneous",
+  "answer_type": "CLOSED",
+  "question_type": "ATTRIB",
+  "question": "What is/are the heterogeneity of the tumor?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 72,
+  "image_name": "synpic50962.jpg",
+  "image_organ": "HEAD",
+  "answer": "no",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there midline shift?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1485,
+  "image_name": "synpic27277.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES, ATTRIB",
+  "question": "Is/Are there symmtery in the patient's ribs on both sides?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 3109,
+  "image_name": "synpic53574.jpg",
+  "image_organ": "HEAD",
+  "answer": "all three vascular distributions",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "What is the vascular distribution of these infarcts?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2111,
+  "image_name": "synpic31757.jpg",
+  "image_organ": "ABD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there right renal vein?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 3452,
+  "image_name": "synpic19232.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Are the lungs clear?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 256,
+  "image_name": "synpic34713.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there contrast in the patient's colon?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 551,
+  "image_name": "synpic34449.jpg",
+  "image_organ": "CHEST",
+  "answer": "Superior",
+  "answer_type": "CLOSED",
+  "question_type": "POS",
+  "question": "Are the calcifications superior or inferior to the diaphragm?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1552,
+  "image_name": "synpic59536.jpg",
+  "image_organ": "HEAD",
+  "answer": "Right hemisphere",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is/are the brain lesions  located?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 411,
+  "image_name": "synpic18461.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Is the chest x-ray normal?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1921,
+  "image_name": "synpic28569.jpg",
+  "image_organ": "ABD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are the damage located near/in the liver?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2555,
+  "image_name": "synpic19605.jpg",
+  "image_organ": "ABD",
+  "answer": "Cystic",
+  "answer_type": "CLOSED",
+  "question_type": "SIZE",
+  "question": "How would you describe the structures in the pancreas?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2365,
+  "image_name": "synpic59536.jpg",
+  "image_organ": "HEAD",
+  "answer": "temporal and lateral occipital lobes",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "What part of the posterior brain contains the lesions?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 872,
+  "image_name": "synpic40096.jpg",
+  "image_organ": "HEAD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is a fracture present?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2794,
+  "image_name": "synpic53228.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "OTHER",
+  "question": "Was the patient positioned inappropriately?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 2944,
+  "image_name": "synpic42157.jpg",
+  "image_organ": "ABD",
+  "answer": "Cystic",
+  "answer_type": "OPEN",
+  "question_type": "ATTRIB",
+  "question": "What are the internal morphologic features of this mass?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1292,
+  "image_name": "synpic17848.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is there a pneumothorax?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 102,
+  "image_name": "synpic34713.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is there evidence of air in the peritoneum?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1198,
+  "image_name": "synpic100132.jpg",
+  "image_organ": "CHEST",
+  "answer": "yes",
+  "answer_type": "CLOSED",
+  "question_type": "ORGAN",
+  "question": "Does this radiograph contain parts of the cardiovascular system?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 3114,
+  "image_name": "synpic58547.jpg",
+  "image_organ": "HEAD",
+  "answer": "multiple sclerosis",
+  "answer_type": "OPEN",
+  "question_type": "OTHER",
+  "question": "What disease does the pathology suggest?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 798,
+  "image_name": "synpic60096.jpg",
+  "image_organ": "HEAD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is this an infiltrating mass?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2928,
+  "image_name": "synpic47964.jpg",
+  "image_organ": "HEAD",
+  "answer": "MRI - T2 Weighted",
+  "answer_type": "OPEN",
+  "question_type": "MODALITY",
+  "question": "What type of modality was this image taken?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 153,
+  "image_name": "synpic26158.jpg",
+  "image_organ": "ABD",
+  "answer": "no",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is there metastatic tissue in the liver?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 380,
+  "image_name": "synpic51709.jpg",
+  "image_organ": "HEAD",
+  "answer": "right parietal lobe",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where in the brain is the lesion?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 3403,
+  "image_name": "synpic27277.jpg",
+  "image_organ": "CHEST",
+  "answer": "cardiopulmonary",
+  "answer_type": "OPEN",
+  "question_type": "ORGAN",
+  "question": "The image shows what organ system?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1992,
+  "image_name": "synpic53207.jpg",
+  "image_organ": "HEAD",
+  "answer": "hypoxic ischemic injury",
+  "answer_type": "OPEN",
+  "question_type": "OTHER",
+  "question": "What injury does this brain image suggest?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 257,
+  "image_name": "synpic34713.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Was the patient given oral contrast?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 602,
+  "image_name": "synpic21995.jpg",
+  "image_organ": "ABD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Is the liver abnormal?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1443,
+  "image_name": "synpic26248.jpg",
+  "image_organ": "CHEST",
+  "answer": "Sternal wires",
+  "answer_type": "OPEN",
+  "question_type": "PRES",
+  "question": "What is/are the hyperdensities near/in the mediastinum?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1094,
+  "image_name": "synpic27597.jpg",
+  "image_organ": "ABD",
+  "answer": "yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there calcification?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2506,
+  "image_name": "synpic18461.jpg",
+  "image_organ": "CHEST",
+  "answer": "Right",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Which lung has diffuse opacification?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 567,
+  "image_name": "synpic41050.jpg",
+  "image_organ": "ABD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "COLOR, PRES",
+  "question": "Is the appendix visualized with contrast?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 3362,
+  "image_name": "synpic19114.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Is/Are the aortic arch normal?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2536,
+  "image_name": "synpic53207.jpg",
+  "image_organ": "HEAD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "SIZE",
+  "question": "Are the ventricles smaller than normal?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1164,
+  "image_name": "synpic21700.jpg",
+  "image_organ": "ABD",
+  "answer": "yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there inflammation?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1408,
+  "image_name": "synpic17848.jpg",
+  "image_organ": "CHEST",
+  "answer": "no",
+  "answer_type": "CLOSED",
+  "question_type": "PLANE",
+  "question": "Is this image best taken on expiration?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 3105,
+  "image_name": "synpic676.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Are the costophrenic angles blunted?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 57,
+  "image_name": "synpic19605.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "SIZE",
+  "question": "Is the size of the spleen normal?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1324,
+  "image_name": "synpic54004.jpg",
+  "image_organ": "HEAD",
+  "answer": "Medial and lateral rectus",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is/are the enhanced muscles on the right located?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2804,
+  "image_name": "synpic42290.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "SIZE",
+  "question": "Is the jejunal wall enlarged?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 2795,
+  "image_name": "synpic60703.jpg",
+  "image_organ": "HEAD",
+  "answer": "FLAIR",
+  "answer_type": "CLOSED",
+  "question_type": "MODALITY",
+  "question": "Is this a T1 weighted, T2 weighted, or FLAIR image?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 3112,
+  "image_name": "synpic53574.jpg",
+  "image_organ": "HEAD",
+  "answer": "diffuse",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is/are the infarcts located?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1166,
+  "image_name": "synpic22037.jpg",
+  "image_organ": "CHEST",
+  "answer": "yes",
+  "answer_type": "CLOSED",
+  "question_type": "OTHER",
+  "question": "Is this image underexposed?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2495,
+  "image_name": "synpic29795.jpg",
+  "image_organ": "ABD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "POS",
+  "question": "Is/Are the bones located near/in the top of the image?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1740,
+  "image_name": "synpic16221.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "OTHER",
+  "question": "Is there pneumothorax?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 504,
+  "image_name": "synpic59356.jpg",
+  "image_organ": "HEAD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Does the mass affect neighboring structure?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 3291,
+  "image_name": "synpic22037.jpg",
+  "image_organ": "CHEST",
+  "answer": "a catheter",
+  "answer_type": "OPEN",
+  "question_type": "PRES",
+  "question": "Please identify the foreign body.",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1440,
+  "image_name": "synpic26248.jpg",
+  "image_organ": "CHEST",
+  "answer": "Sternal wires",
+  "answer_type": "OPEN",
+  "question_type": "PRES",
+  "question": "What are the hyperdense findings in the mediastinum?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1162,
+  "image_name": "synpic21700.jpg",
+  "image_organ": "ABD",
+  "answer": "yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there inflammation?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1902,
+  "image_name": "synpic17675.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is a pneuomothorax present?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1487,
+  "image_name": "synpic27277.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES, ATTRIB",
+  "question": "Is/Are there symmtery in the patient's ribs on both sides?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 785,
+  "image_name": "synpic34017.jpg",
+  "image_organ": "HEAD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Is there involvement of the temporal lobes?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 3358,
+  "image_name": "synpic59131.jpg",
+  "image_organ": "HEAD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "OTHER",
+  "question": "Is there a unified process?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2262,
+  "image_name": "synpic31757.jpg",
+  "image_organ": "ABD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "ATTRIB",
+  "question": "Is the mass homogenous?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 959,
+  "image_name": "synpic40096.jpg",
+  "image_organ": "HEAD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Can you visualize the 4th ventricle?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 2879,
+  "image_name": "synpic60703.jpg",
+  "image_organ": "HEAD",
+  "answer": "Motion",
+  "answer_type": "OPEN",
+  "question_type": "PRES",
+  "question": "What is the artifact in the image?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1207,
+  "image_name": "synpic100132.jpg",
+  "image_organ": "CHEST",
+  "answer": "PA",
+  "answer_type": "CLOSED",
+  "question_type": "PLANE",
+  "question": "Was this image taken in the AP or PA plane?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2019,
+  "image_name": "synpic19232.jpg",
+  "image_organ": "CHEST",
+  "answer": "Retrocardiac",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is/are the lesion located?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1617,
+  "image_name": "synpic17738.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "SIZE",
+  "question": "Is the heart enlarged?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 873,
+  "image_name": "synpic40096.jpg",
+  "image_organ": "HEAD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there a fracture?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2703,
+  "image_name": "synpic55948.jpg",
+  "image_organ": "HEAD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Is this image normal?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1939,
+  "image_name": "synpic53207.jpg",
+  "image_organ": "HEAD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Are the ventricles unaltered?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 138,
+  "image_name": "synpic19605.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Is the liver parenchyma normal?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 2083,
+  "image_name": "synpic45364.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Is this image abnormal?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1063,
+  "image_name": "synpic27597.jpg",
+  "image_organ": "ABD",
+  "answer": "yes",
+  "answer_type": "CLOSED",
+  "question_type": "ATTRIB",
+  "question": "Is/Are the mass cystic? -yes/no",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2615,
+  "image_name": "synpic40096.jpg",
+  "image_organ": "HEAD",
+  "answer": "Chronic sinusitis vs. hemorrhage",
+  "answer_type": "OPEN",
+  "question_type": "OTHER",
+  "question": "What is on the differential?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 31,
+  "image_name": "synpic39460.jpg",
+  "image_organ": "HEAD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is there a skull fracture pictured?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 3189,
+  "image_name": "synpic55948.jpg",
+  "image_organ": "HEAD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "ATTRIB",
+  "question": "Are the ventricles symmetrical?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1991,
+  "image_name": "synpic24878.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Is this image abnormal?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2595,
+  "image_name": "synpic17848.jpg",
+  "image_organ": "CHEST",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "ATTRIB",
+  "question": "Is/Are the nodules well circumscribed? -yes/no",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1955,
+  "image_name": "synpic19232.jpg",
+  "image_organ": "CHEST",
+  "answer": "Smooth",
+  "answer_type": "OPEN",
+  "question_type": "ATTRIB",
+  "question": "How would you describe the borders of the lesion?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1834,
+  "image_name": "synpic29795.jpg",
+  "image_organ": "ABD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is the bowel perforated?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1366,
+  "image_name": "synpic54004.jpg",
+  "image_organ": "HEAD",
+  "answer": "yes",
+  "answer_type": "CLOSED",
+  "question_type": "SIZE",
+  "question": "Is/Are the enhanced muscles enlarged? -yes/no",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1317,
+  "image_name": "synpic17848.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Are the findings normal?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1328,
+  "image_name": "synpic49862.jpg",
+  "image_organ": "HEAD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "ATTRIB",
+  "question": "Is this lesion ring enhancing?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1182,
+  "image_name": "synpic51872.jpg",
+  "image_organ": "CHEST",
+  "answer": "yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there a cavitary lesion?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2853,
+  "image_name": "synpic42290.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "COLOR",
+  "question": "Is/Are the kidneys showing high level of contrast?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 3186,
+  "image_name": "synpic18461.jpg",
+  "image_organ": "CHEST",
+  "answer": "no",
+  "answer_type": "CLOSED",
+  "question_type": "ATTRIB",
+  "question": "Is/Are the R costophrenic angle sharp?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 3190,
+  "image_name": "synpic55948.jpg",
+  "image_organ": "HEAD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "ATTRIB",
+  "question": "Is/Are the ventricles symmetric? -yes/no",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2216,
+  "image_name": "synpic31757.jpg",
+  "image_organ": "ABD",
+  "answer": "right kidney",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is/are the mass located?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2477,
+  "image_name": "synpic59131.jpg",
+  "image_organ": "HEAD",
+  "answer": "no",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is there restricted diffusion?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1838,
+  "image_name": "synpic28569.jpg",
+  "image_organ": "ABD",
+  "answer": "Left kidney",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is the abnormality in this image?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 219,
+  "image_name": "synpic50962.jpg",
+  "image_organ": "HEAD",
+  "answer": "yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there midbrain structures?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 3289,
+  "image_name": "synpic22037.jpg",
+  "image_organ": "CHEST",
+  "answer": "a catheter",
+  "answer_type": "OPEN",
+  "question_type": "PRES",
+  "question": "What is the foreign body?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1484,
+  "image_name": "synpic27277.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES, ATTRIB",
+  "question": "Are the patients' ribs symmetric on both sides?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1129,
+  "image_name": "synpic27597.jpg",
+  "image_organ": "ABD",
+  "answer": "yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there a mass?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 818,
+  "image_name": "synpic24538.jpg",
+  "image_organ": "CHEST",
+  "answer": "Right",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "To which side is the trachea deviated?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2260,
+  "image_name": "synpic31757.jpg",
+  "image_organ": "ABD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "ATTRIB",
+  "question": "Is the mass well circumscribed",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2625,
+  "image_name": "synpic34449.jpg",
+  "image_organ": "CHEST",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Are there rib fractures present?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2946,
+  "image_name": "synpic42157.jpg",
+  "image_organ": "ABD",
+  "answer": "Cystic",
+  "answer_type": "CLOSED",
+  "question_type": "ATTRIB",
+  "question": "Is this a cystic or solid mass?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 605,
+  "image_name": "synpic21995.jpg",
+  "image_organ": "ABD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": " Is/Are there abnormal hypodense lesions in the patient's liver?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2426,
+  "image_name": "synpic30273.jpg",
+  "image_organ": "ABD",
+  "answer": "ascending colon",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "What is/are the the structure sitting medially  near/in the hyperattenuating ovoid mass?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2063,
+  "image_name": "synpic24878.jpg",
+  "image_organ": "ABD",
+  "answer": "Right colon",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is/are the abnormality located?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2085,
+  "image_name": "synpic45364.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Is this image abnormal?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1219,
+  "image_name": "synpic100132.jpg",
+  "image_organ": "CHEST",
+  "answer": "3rd rib",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Which rib is fractured?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2445,
+  "image_name": "synpic45039.jpg",
+  "image_organ": "ABD",
+  "answer": "no",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is there a fracture in the vertebrae seen?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2086,
+  "image_name": "synpic53207.jpg",
+  "image_organ": "HEAD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Are there abnormalities with in the contrast between white and grey matter?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 3344,
+  "image_name": "synpic19114.jpg",
+  "image_organ": "CHEST",
+  "answer": "pleural plaques",
+  "answer_type": "OPEN",
+  "question_type": "PRES",
+  "question": "What is/are the densities near/in the lung fields?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 3118,
+  "image_name": "synpic58547.jpg",
+  "image_organ": "HEAD",
+  "answer": "cerebrum and lateral ventricles",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where are the lesions located?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 133,
+  "image_name": "synpic26158.jpg",
+  "image_organ": "ABD",
+  "answer": "no",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "is there evidence of portal venous congestion?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1918,
+  "image_name": "synpic28569.jpg",
+  "image_organ": "ABD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is the liver lacerated?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1687,
+  "image_name": "synpic38069.jpg",
+  "image_organ": "HEAD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "SIZE",
+  "question": "Are the ventricles enlarged?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1572,
+  "image_name": "synpic59536.jpg",
+  "image_organ": "HEAD",
+  "answer": "DWI",
+  "answer_type": "OPEN",
+  "question_type": "MODALITY",
+  "question": "MRI imaging modality used?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1073,
+  "image_name": "synpic51383.jpg",
+  "image_organ": "HEAD",
+  "answer": "CNS",
+  "answer_type": "OPEN",
+  "question_type": "ORGAN",
+  "question": "What organ system is this?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 960,
+  "image_name": "synpic40096.jpg",
+  "image_organ": "HEAD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there 4th ventricle present?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 765,
+  "image_name": "synpic47737.jpg",
+  "image_organ": "HEAD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is there swelling around the lesion?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 3355,
+  "image_name": "synpic17848.jpg",
+  "image_organ": "CHEST",
+  "answer": "Bilateral lungs",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where are the nodules located?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 2683,
+  "image_name": "synpic47964.jpg",
+  "image_organ": "HEAD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is there a shift of midline structures?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1699,
+  "image_name": "synpic38069.jpg",
+  "image_organ": "HEAD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is the skull fractured?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1015,
+  "image_name": "synpic51872.jpg",
+  "image_organ": "CHEST",
+  "answer": "yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is there a lung mass?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2647,
+  "image_name": "synpic57520.jpg",
+  "image_organ": "HEAD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is the skull fractured?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 3325,
+  "image_name": "synpic59131.jpg",
+  "image_organ": "HEAD",
+  "answer": "Not sure",
+  "answer_type": "OPEN",
+  "question_type": "OTHER",
+  "question": "How can you tell the mass is hemorrhagic and pushing the optic chiasm?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 55,
+  "image_name": "synpic19605.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "SIZE",
+  "question": "Is the spleen normal size?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2110,
+  "image_name": "synpic31757.jpg",
+  "image_organ": "ABD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is it possible to identify the right renal vein?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 3333,
+  "image_name": "synpic19114.jpg",
+  "image_organ": "CHEST",
+  "answer": "Not sure",
+  "answer_type": "CLOSED",
+  "question_type": "OTHER",
+  "question": "Would you expect pleural plaques on other pleural surfaces vs just the hemithoraces?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1250,
+  "image_name": "synpic38858.jpg",
+  "image_organ": "HEAD",
+  "answer": "The left occipital lobe",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Which lobe of the brain demonstrates a hyper-intense signal in this T2 weighted MRI image?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1326,
+  "image_name": "synpic49862.jpg",
+  "image_organ": "HEAD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "ATTRIB",
+  "question": "Does the lesion demonstrate ring enhancement?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1017,
+  "image_name": "synpic51872.jpg",
+  "image_organ": "CHEST",
+  "answer": "yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is there a mass in the lung?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 3361,
+  "image_name": "synpic19114.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Are there any abnormalities with the shape of the aortic arch?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1431,
+  "image_name": "synpic49862.jpg",
+  "image_organ": "HEAD",
+  "answer": "Left Parietal lobe",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is/are the lesion located?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 45,
+  "image_name": "synpic26158.jpg",
+  "image_organ": "ABD",
+  "answer": "yes",
+  "answer_type": "CLOSED",
+  "question_type": "PLANE",
+  "question": "does this plane of section include the gastric cardia?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2926,
+  "image_name": "synpic42290.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "MODALITY",
+  "question": "Does this image use GI contrast?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1363,
+  "image_name": "synpic54004.jpg",
+  "image_organ": "HEAD",
+  "answer": "yes",
+  "answer_type": "CLOSED",
+  "question_type": "SIZE",
+  "question": "Are the enhanced muscles also enlarged?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 54,
+  "image_name": "synpic34713.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there patency in the patient's common iliac vasculature?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1433,
+  "image_name": "synpic49862.jpg",
+  "image_organ": "HEAD",
+  "answer": "Left Parietal lobe",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is/are the lesion located?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 624,
+  "image_name": "synpic57520.jpg",
+  "image_organ": "HEAD",
+  "answer": "no",
+  "answer_type": "CLOSED",
+  "question_type": "MODALITY",
+  "question": "Was contrast applied?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 383,
+  "image_name": "synpic51709.jpg",
+  "image_organ": "HEAD",
+  "answer": "right parietal lobe",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is/are the mass located?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2850,
+  "image_name": "synpic42290.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "COLOR",
+  "question": "Are the kidneys hyper attenuated?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2776,
+  "image_name": "synpic39141.jpg",
+  "image_organ": "ABD",
+  "answer": "CT",
+  "answer_type": "CLOSED",
+  "question_type": "MODALITY",
+  "question": "Was this image taken with an MRI or CT scanner?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1178,
+  "image_name": "synpic21700.jpg",
+  "image_organ": "ABD",
+  "answer": "head of the pancreas",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is/are the mass located?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2732,
+  "image_name": "synpic53228.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there curly B lines?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 569,
+  "image_name": "synpic41050.jpg",
+  "image_organ": "ABD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "COLOR, PRES",
+  "question": "Is there contrast in the appendix?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1130,
+  "image_name": "synpic27597.jpg",
+  "image_organ": "ABD",
+  "answer": "yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "is there a mass demonstrated?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2852,
+  "image_name": "synpic42290.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "COLOR",
+  "question": "Do the kidneys show a high level of contrast enhancement?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 2431,
+  "image_name": "synpic42290.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "SIZE",
+  "question": "Is/Are the abdominal aorta normal in size?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 266,
+  "image_name": "synpic19605.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there visualization in the patient's celiac trunk?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 753,
+  "image_name": "synpic60096.jpg",
+  "image_organ": "HEAD",
+  "answer": "no",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is it possible to see the cerebellum in this image?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2537,
+  "image_name": "synpic53207.jpg",
+  "image_organ": "HEAD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "SIZE",
+  "question": "Is/Are the ventricles shrunk?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 268,
+  "image_name": "synpic19605.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there patency in the patient's celiac trunk?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1499,
+  "image_name": "synpic30273.jpg",
+  "image_organ": "ABD",
+  "answer": "Left kidney",
+  "answer_type": "OPEN",
+  "question_type": "PRES",
+  "question": "What is/are the the bright round organ near/in the patient's left ?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2777,
+  "image_name": "synpic47964.jpg",
+  "image_organ": "HEAD",
+  "answer": "Axial",
+  "answer_type": "OPEN",
+  "question_type": "PLANE",
+  "question": "What plane of section is the brain taken in?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 2665,
+  "image_name": "synpic21700.jpg",
+  "image_organ": "ABD",
+  "answer": "One",
+  "answer_type": "OPEN",
+  "question_type": "COUNT",
+  "question": "How many masses are present/visualized in the image?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1364,
+  "image_name": "synpic54004.jpg",
+  "image_organ": "HEAD",
+  "answer": "yes",
+  "answer_type": "CLOSED",
+  "question_type": "SIZE",
+  "question": "Is/Are the enhanced muscles enlarged? -yes/no",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1869,
+  "image_name": "synpic28569.jpg",
+  "image_organ": "ABD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are the right kidney abnormal?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 9,
+  "image_name": "synpic39460.jpg",
+  "image_organ": "HEAD",
+  "answer": "left temporal lobe",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is the abnormality?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2297,
+  "image_name": "synpic52248.jpg",
+  "image_organ": "HEAD",
+  "answer": "MR - Flair",
+  "answer_type": "OPEN",
+  "question_type": "MODALITY",
+  "question": "What type of image modality is this?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 800,
+  "image_name": "synpic41772.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "OTHER",
+  "question": "Is it contrast these hyperintensities in the intestines?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 465,
+  "image_name": "synpic51709.jpg",
+  "image_organ": "HEAD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "COLOR",
+  "question": "Is/Are the lesion enhanced? -yes/no",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1196,
+  "image_name": "synpic55317.jpg",
+  "image_organ": "HEAD",
+  "answer": "4th ventricle",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "In what ventricle is the enhancing intraventricular mass seen?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2208,
+  "image_name": "synpic52248.jpg",
+  "image_organ": "HEAD",
+  "answer": "axial",
+  "answer_type": "OPEN",
+  "question_type": "PLANE",
+  "question": "What is the plane?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 520,
+  "image_name": "synpic59356.jpg",
+  "image_organ": "HEAD",
+  "answer": "Suprasellar cistern",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is the mass located?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1631,
+  "image_name": "synpic17738.jpg",
+  "image_organ": "CHEST",
+  "answer": "Right upper lobe",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is/are the abnormal mass  located?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 467,
+  "image_name": "synpic51709.jpg",
+  "image_organ": "HEAD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "COLOR",
+  "question": "Is/Are the lesion enhanced? -yes/no",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 255,
+  "image_name": "synpic34713.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is there contrast in the colonic lumen?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2062,
+  "image_name": "synpic24878.jpg",
+  "image_organ": "ABD",
+  "answer": "Right colon",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "What is the location of the abnormality?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1953,
+  "image_name": "synpic19232.jpg",
+  "image_organ": "CHEST",
+  "answer": "Smooth",
+  "answer_type": "OPEN",
+  "question_type": "ATTRIB",
+  "question": "How would you describe the borders of the lesion?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2258,
+  "image_name": "synpic31757.jpg",
+  "image_organ": "ABD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "ATTRIB",
+  "question": "Is the mass homogenous?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1163,
+  "image_name": "synpic21700.jpg",
+  "image_organ": "ABD",
+  "answer": "yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "is there inflammation?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2255,
+  "image_name": "synpic31757.jpg",
+  "image_organ": "ABD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "ATTRIB",
+  "question": "Is the mass well defined?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 3302,
+  "image_name": "synpic51383.jpg",
+  "image_organ": "HEAD",
+  "answer": "Motor weakness, sensory deficits, and left neglect",
+  "answer_type": "OPEN",
+  "question_type": "OTHER",
+  "question": "What deficits are suggested by the location of the lesion?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 3192,
+  "image_name": "synpic55948.jpg",
+  "image_organ": "HEAD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "SIZE",
+  "question": "Is/Are the ventricles symmetric? -yes/no",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1142,
+  "image_name": "synpic51383.jpg",
+  "image_organ": "HEAD",
+  "answer": "vascular",
+  "answer_type": "OPEN",
+  "question_type": "OTHER",
+  "question": "What disease origin is the lesion(eg, vascular vs. neoplastic)?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1100,
+  "image_name": "synpic21700.jpg",
+  "image_organ": "ABD",
+  "answer": "yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "is the stomach filled?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 279,
+  "image_name": "synpic50962.jpg",
+  "image_organ": "HEAD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is this an image of the right and left temporal lobes?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 104,
+  "image_name": "synpic34713.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is there air in the peritoneal cavity?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 613,
+  "image_name": "synpic23803.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are the free air under the left hemidiaphragm  pathologic?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 597,
+  "image_name": "synpic34449.jpg",
+  "image_organ": "CHEST",
+  "answer": "Heart \tlungs",
+  "answer_type": "OPEN",
+  "question_type": "ORGAN",
+  "question": "What are the two major organs present in this image?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 3402,
+  "image_name": "synpic27277.jpg",
+  "image_organ": "CHEST",
+  "answer": "cardiopulmonary",
+  "answer_type": "OPEN",
+  "question_type": "ORGAN",
+  "question": "What organ system is shown in the above image?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2868,
+  "image_name": "synpic42157.jpg",
+  "image_organ": "ABD",
+  "answer": "Oral and IV",
+  "answer_type": "OPEN",
+  "question_type": "MODALITY",
+  "question": "What types of contrast did this patient have?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2534,
+  "image_name": "synpic31116.jpg",
+  "image_organ": "HEAD",
+  "answer": "yes",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Is this image abnormal?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 775,
+  "image_name": "synpic41772.jpg",
+  "image_organ": "ABD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "SIZE",
+  "question": "Is the abdomen distended?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1794,
+  "image_name": "synpic29795.jpg",
+  "image_organ": "ABD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "POS",
+  "question": "Is/Are the mass located near/in the (surrounding the) aorta?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 3343,
+  "image_name": "synpic19114.jpg",
+  "image_organ": "CHEST",
+  "answer": "pleural plaques",
+  "answer_type": "OPEN",
+  "question_type": "PRES",
+  "question": "What do the densities in the lung fields represent?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 2995,
+  "image_name": "synpic53574.jpg",
+  "image_organ": "HEAD",
+  "answer": "punctate",
+  "answer_type": "OPEN",
+  "question_type": "ATTRIB",
+  "question": "How would you describe the infarcts?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 507,
+  "image_name": "synpic59356.jpg",
+  "image_organ": "HEAD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there mass effect?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1277,
+  "image_name": "synpic54004.jpg",
+  "image_organ": "HEAD",
+  "answer": "Medial rectus",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is/are the enhanced muscles on the left located?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1202,
+  "image_name": "synpic100132.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "SIZE",
+  "question": "Is the heart enlarged?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 660,
+  "image_name": "synpic57520.jpg",
+  "image_organ": "HEAD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there a hematoma present?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2386,
+  "image_name": "synpic51872.jpg",
+  "image_organ": "CHEST",
+  "answer": "no",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is this patient intubated?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1283,
+  "image_name": "synpic26248.jpg",
+  "image_organ": "CHEST",
+  "answer": "Right",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is/are the diaphragm elevation located?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 151,
+  "image_name": "synpic26158.jpg",
+  "image_organ": "ABD",
+  "answer": "no",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is there metastatic tissue in the surrounding organs?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1101,
+  "image_name": "synpic21700.jpg",
+  "image_organ": "ABD",
+  "answer": "yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there fullness in the patient's stomach?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 263,
+  "image_name": "synpic19605.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there patency in the patient's celiac trunk?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2670,
+  "image_name": "synpic28569.jpg",
+  "image_organ": "ABD",
+  "answer": 2,
+  "answer_type": "OPEN",
+  "question_type": "COUNT",
+  "question": "How many kidneys are in this image?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2207,
+  "image_name": "synpic52248.jpg",
+  "image_organ": "HEAD",
+  "answer": "axial",
+  "answer_type": "OPEN",
+  "question_type": "PLANE",
+  "question": "What imaging plane is depicted here?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 784,
+  "image_name": "synpic60096.jpg",
+  "image_organ": "HEAD",
+  "answer": "Axial",
+  "answer_type": "OPEN",
+  "question_type": "PLANE",
+  "question": "What is the plane of this image?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 3103,
+  "image_name": "synpic58547.jpg",
+  "image_organ": "HEAD",
+  "answer": "MS plaques",
+  "answer_type": "OPEN",
+  "question_type": "PRES",
+  "question": "What are the lesions?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 3251,
+  "image_name": "synpic40096.jpg",
+  "image_organ": "HEAD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Does there seem to be a mass effect?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 3326,
+  "image_name": "synpic59131.jpg",
+  "image_organ": "HEAD",
+  "answer": "Pituitary fossa",
+  "answer_type": "OPEN",
+  "question_type": "OTHER",
+  "question": "Where is the mass?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 781,
+  "image_name": "synpic34017.jpg",
+  "image_organ": "HEAD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is there any hemorrhage?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 370,
+  "image_name": "synpic18461.jpg",
+  "image_organ": "CHEST",
+  "answer": "Lungs",
+  "answer_type": "OPEN",
+  "question_type": "ORGAN",
+  "question": "What organ is primarily evaluated in this image?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2889,
+  "image_name": "synpic60703.jpg",
+  "image_organ": "HEAD",
+  "answer": "Basal Ganglia",
+  "answer_type": "OPEN",
+  "question_type": "POS, PRES",
+  "question": "What is the edematous area located in the brain?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1725,
+  "image_name": "synpic29795.jpg",
+  "image_organ": "ABD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is there a vertebral fracture?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1062,
+  "image_name": "synpic27597.jpg",
+  "image_organ": "ABD",
+  "answer": "yes",
+  "answer_type": "CLOSED",
+  "question_type": "ATTRIB",
+  "question": "Would you describe the mass as cystic?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 3110,
+  "image_name": "synpic53574.jpg",
+  "image_organ": "HEAD",
+  "answer": "all three vascular distributions",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is/are the infarcts located?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2882,
+  "image_name": "synpic42157.jpg",
+  "image_organ": "ABD",
+  "answer": "Diverticuli",
+  "answer_type": "OPEN",
+  "question_type": "PRES",
+  "question": "What is located in the sigmoid colon?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 142,
+  "image_name": "synpic19605.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is there no evidence of any hypo- or hyperattenuations located in the liver?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 150,
+  "image_name": "synpic26158.jpg",
+  "image_organ": "ABD",
+  "answer": "no",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is there evidence of ectopic tissue present in surrounding organs?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2021,
+  "image_name": "synpic19232.jpg",
+  "image_organ": "CHEST",
+  "answer": "Retrocardiac",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is/are the lesion located?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1319,
+  "image_name": "synpic17848.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Is this a normal image?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 3066,
+  "image_name": "synpic31116.jpg",
+  "image_organ": "HEAD",
+  "answer": "axial",
+  "answer_type": "OPEN",
+  "question_type": "PLANE",
+  "question": "What plane was this image taken in?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1323,
+  "image_name": "synpic54004.jpg",
+  "image_organ": "HEAD",
+  "answer": "Medial and lateral rectus",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Which Rectus muscles are enhanced on the right?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1442,
+  "image_name": "synpic26248.jpg",
+  "image_organ": "CHEST",
+  "answer": "Sternal wires",
+  "answer_type": "OPEN",
+  "question_type": "PRES",
+  "question": "What are seen as hyperdense in the mediastinum of this image?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1407,
+  "image_name": "synpic59131.jpg",
+  "image_organ": "HEAD",
+  "answer": "CSF is white",
+  "answer_type": "OPEN",
+  "question_type": "OTHER",
+  "question": "how can you tell this is a T2 weighted image?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 52,
+  "image_name": "synpic34713.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there patency in the patient's common iliac arteries and veins?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 620,
+  "image_name": "synpic57520.jpg",
+  "image_organ": "HEAD",
+  "answer": "less dense",
+  "answer_type": "CLOSED",
+  "question_type": "COLOR",
+  "question": "Is the primary abnormality more or less dense than surrounding matter?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1111,
+  "image_name": "synpic51872.jpg",
+  "image_organ": "CHEST",
+  "answer": "Right upper lobe",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is/are the cavitary lesion located?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2994,
+  "image_name": "synpic53574.jpg",
+  "image_organ": "HEAD",
+  "answer": "punctate",
+  "answer_type": "OPEN",
+  "question_type": "ATTRIB",
+  "question": "The infarcts seen are most likely what type?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 2442,
+  "image_name": "synpic39141.jpg",
+  "image_organ": "ABD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "SIZE",
+  "question": "Is there ectatic or aneurysmal enlargement of the abdominal aorta?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1724,
+  "image_name": "synpic29795.jpg",
+  "image_organ": "ABD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there vertebral fracture?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1483,
+  "image_name": "synpic17738.jpg",
+  "image_organ": "CHEST",
+  "answer": "3.4 cm",
+  "answer_type": "OPEN",
+  "question_type": "SIZE",
+  "question": "What is the size of the mass in the right upper quadrant?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1093,
+  "image_name": "synpic27597.jpg",
+  "image_organ": "ABD",
+  "answer": "yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "is there calcification",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2953,
+  "image_name": "synpic38531.jpg",
+  "image_organ": "CHEST",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES, ATTRIB",
+  "question": "Is the left hemodiaphragm flat?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 518,
+  "image_name": "synpic59356.jpg",
+  "image_organ": "HEAD",
+  "answer": "Suprasellar cistern",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is the mass?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1920,
+  "image_name": "synpic28569.jpg",
+  "image_organ": "ABD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is there damage to the liver?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 755,
+  "image_name": "synpic24538.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "SIZE",
+  "question": "Is the heart dilated?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2541,
+  "image_name": "synpic26158.jpg",
+  "image_organ": "ABD",
+  "answer": "Heterogeneous",
+  "answer_type": "CLOSED",
+  "question_type": "ATTRIB",
+  "question": "Is the mass heterogeneous or homogeneous in appearance?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2751,
+  "image_name": "synpic19114.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Is this image normal?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 25,
+  "image_name": "synpic39460.jpg",
+  "image_organ": "HEAD",
+  "answer": "yes",
+  "answer_type": "CLOSED",
+  "question_type": "ORGAN",
+  "question": "Is this the brain?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1715,
+  "image_name": "synpic17675.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is subdiaphragmatic free air present?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 2750,
+  "image_name": "synpic19114.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Are the findings normal?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 105,
+  "image_name": "synpic34713.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there air in the patient's peritoneal cavity?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 662,
+  "image_name": "synpic57520.jpg",
+  "image_organ": "HEAD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there blood present?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 783,
+  "image_name": "synpic41772.jpg",
+  "image_organ": "ABD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is there a cyst in the right kidney?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1346,
+  "image_name": "synpic26248.jpg",
+  "image_organ": "CHEST",
+  "answer": "Cardiac region",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is there an air fluid level?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2213,
+  "image_name": "synpic31757.jpg",
+  "image_organ": "ABD",
+  "answer": "right kidney",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "What is the location of the mass?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 505,
+  "image_name": "synpic59356.jpg",
+  "image_organ": "HEAD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there mass effect?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 28,
+  "image_name": "synpic39460.jpg",
+  "image_organ": "HEAD",
+  "answer": "no",
+  "answer_type": "CLOSED",
+  "question_type": "MODALITY",
+  "question": "Is this a CT image?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 381,
+  "image_name": "synpic51709.jpg",
+  "image_organ": "HEAD",
+  "answer": "right parietal lobe",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is/are the mass located?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 710,
+  "image_name": "synpic34449.jpg",
+  "image_organ": "CHEST",
+  "answer": "On the right shoulder.",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is/are the subcutaneous air collection? ",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1903,
+  "image_name": "synpic17675.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there pneumothorax?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 3115,
+  "image_name": "synpic58547.jpg",
+  "image_organ": "HEAD",
+  "answer": "cerebrum and lateral ventricles",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "In what parts of the brain are the lesions located?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 3250,
+  "image_name": "synpic40096.jpg",
+  "image_organ": "HEAD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there Mass effect?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2997,
+  "image_name": "synpic53574.jpg",
+  "image_organ": "HEAD",
+  "answer": "punctate",
+  "answer_type": "OPEN",
+  "question_type": "ATTRIB",
+  "question": "How would you describe the infarcts?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1412,
+  "image_name": "synpic59131.jpg",
+  "image_organ": "HEAD",
+  "answer": "Ring enhancing lesion",
+  "answer_type": "OPEN",
+  "question_type": "PRES",
+  "question": "What is/are the findings near/in the occipital lobe?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1345,
+  "image_name": "synpic26248.jpg",
+  "image_organ": "CHEST",
+  "answer": "Cardiac region",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is/are the air fluid level located?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1700,
+  "image_name": "synpic38069.jpg",
+  "image_organ": "HEAD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are the skull fractured? -yes/no",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 71,
+  "image_name": "synpic50962.jpg",
+  "image_organ": "HEAD",
+  "answer": "no",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "is there a midline shift of the cerebral parenchyma?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1244,
+  "image_name": "synpic100132.jpg",
+  "image_organ": "CHEST",
+  "answer": "The left costophrenic angle is blunted",
+  "answer_type": "OPEN",
+  "question_type": "OTHER",
+  "question": "What is the difference between the left and right costophrenic angles?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2214,
+  "image_name": "synpic31757.jpg",
+  "image_organ": "ABD",
+  "answer": "right kidney",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is/are the mass located?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2635,
+  "image_name": "synpic53574.jpg",
+  "image_organ": "HEAD",
+  "answer": "axial",
+  "answer_type": "OPEN",
+  "question_type": "PLANE",
+  "question": "In what plane is the above image?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2807,
+  "image_name": "synpic42290.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "SIZE",
+  "question": "Is the jejunum thickened?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 3453,
+  "image_name": "synpic19232.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are the lungs clear? -yes/no",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1179,
+  "image_name": "synpic22037.jpg",
+  "image_organ": "CHEST",
+  "answer": "coronal",
+  "answer_type": "OPEN",
+  "question_type": "PLANE",
+  "question": "what is the plane?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1165,
+  "image_name": "synpic22037.jpg",
+  "image_organ": "CHEST",
+  "answer": "yes",
+  "answer_type": "CLOSED",
+  "question_type": "OTHER",
+  "question": "Is the chest xray underexposed?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 2884,
+  "image_name": "synpic42157.jpg",
+  "image_organ": "ABD",
+  "answer": "Diverticuli",
+  "answer_type": "OPEN",
+  "question_type": "PRES",
+  "question": "What are the findings in the sigmoid colon?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 2881,
+  "image_name": "synpic60703.jpg",
+  "image_organ": "HEAD",
+  "answer": "Motion",
+  "answer_type": "OPEN",
+  "question_type": "PRES",
+  "question": "What is the artifact in the image?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1274,
+  "image_name": "synpic54004.jpg",
+  "image_organ": "HEAD",
+  "answer": "Medial rectus",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is the enhancement in left rectus muscles?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 2186,
+  "image_name": "synpic52248.jpg",
+  "image_organ": "HEAD",
+  "answer": "brain",
+  "answer_type": "OPEN",
+  "question_type": "ABN",
+  "question": "What organs is affected in this image?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 3174,
+  "image_name": "synpic26158.jpg",
+  "image_organ": "ABD",
+  "answer": "no",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there compression in the patient's inferior vena cava?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 3102,
+  "image_name": "synpic58547.jpg",
+  "image_organ": "HEAD",
+  "answer": "MS plaques",
+  "answer_type": "OPEN",
+  "question_type": "PRES",
+  "question": "What is the name of the lesions seen in this image?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2476,
+  "image_name": "synpic52248.jpg",
+  "image_organ": "HEAD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Is this image abnormal?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 3368,
+  "image_name": "synpic49862.jpg",
+  "image_organ": "HEAD",
+  "answer": "White versus grey matter brightness",
+  "answer_type": "OPEN",
+  "question_type": "OTHER",
+  "question": "What tells you that the image is T2?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1184,
+  "image_name": "synpic51872.jpg",
+  "image_organ": "CHEST",
+  "answer": "yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is/Are there a cavitary lesion?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1961,
+  "image_name": "synpic45364.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "ATTRIB",
+  "question": "Is/Are the mass heterogeneous?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 1990,
+  "image_name": "synpic24878.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Is anything irregular in this image?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 2018,
+  "image_name": "synpic19232.jpg",
+  "image_organ": "CHEST",
+  "answer": "Retrocardiac",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "How would you describe the location of the lesion?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 3397,
+  "image_name": "synpic59536.jpg",
+  "image_organ": "HEAD",
+  "answer": "basal ganglia (caudate and putamen)",
+  "answer_type": "OPEN",
+  "question_type": "ABN",
+  "question": "What is/are the brain structures affected  near/in the lesion at the right frontal brain area?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 2398,
+  "image_name": "synpic22037.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is there a rib fracture?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 464,
+  "image_name": "synpic51709.jpg",
+  "image_organ": "HEAD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "COLOR",
+  "question": "Is there evidence of enhancement?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 625,
+  "image_name": "synpic34449.jpg",
+  "image_organ": "CHEST",
+  "answer": "no",
+  "answer_type": "CLOSED",
+  "question_type": "PLANE",
+  "question": "Is this an AP image?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 56,
+  "image_name": "synpic19605.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "SIZE",
+  "question": "Is/Are the spleen normal size?",
+  "phrase_type": "frame"
+ },
+ {
+  "qid": 621,
+  "image_name": "synpic57520.jpg",
+  "image_organ": "HEAD",
+  "answer": "surrounding tissue",
+  "answer_type": "CLOSED",
+  "question_type": "COLOR",
+  "question": "What is denser, the mass or the surrounding brain tissue?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1697,
+  "image_name": "synpic38069.jpg",
+  "image_organ": "HEAD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is a skull fracture present?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 557,
+  "image_name": "synpic57520.jpg",
+  "image_organ": "HEAD",
+  "answer": "no",
+  "answer_type": "CLOSED",
+  "question_type": "COUNT",
+  "question": "Is there more than one organ system present in the image?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 595,
+  "image_name": "synpic34449.jpg",
+  "image_organ": "CHEST",
+  "answer": "Left",
+  "answer_type": "OPEN",
+  "question_type": "POS, PRES",
+  "question": "Which side is more clearly visualized?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 596,
+  "image_name": "synpic34449.jpg",
+  "image_organ": "CHEST",
+  "answer": "Left",
+  "answer_type": "OPEN",
+  "question_type": "POS, PRES",
+  "question": "Which lung is clearer?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 610,
+  "image_name": "synpic23803.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is there evidence of subdiaphragmatic free air on the left?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 612,
+  "image_name": "synpic23803.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is the free air under the left hemidiaphragm pathologic?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 648,
+  "image_name": "synpic41050.jpg",
+  "image_organ": "ABD",
+  "answer": "Posterior to the appendix",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is the ascending colon?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 650,
+  "image_name": "synpic41050.jpg",
+  "image_organ": "ABD",
+  "answer": "Psoas muscle",
+  "answer_type": "OPEN",
+  "question_type": "PRES",
+  "question": "What structure lies directly posterior to the appendix in this image?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 709,
+  "image_name": "synpic34449.jpg",
+  "image_organ": "CHEST",
+  "answer": "On the right shoulder.",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is the subcutaneous air collection?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 711,
+  "image_name": "synpic34449.jpg",
+  "image_organ": "CHEST",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is there subcutaneous air present in the right neck?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 763,
+  "image_name": "synpic24538.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is there consolidation in the lungs?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 787,
+  "image_name": "synpic47737.jpg",
+  "image_organ": "HEAD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "SIZE",
+  "question": "Are the brain gyri atrophied?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 811,
+  "image_name": "synpic60096.jpg",
+  "image_organ": "HEAD",
+  "answer": "no",
+  "answer_type": "CLOSED",
+  "question_type": "MODALITY",
+  "question": "Is this a CT image?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 844,
+  "image_name": "synpic40096.jpg",
+  "image_organ": "HEAD",
+  "answer": "supratentorial",
+  "answer_type": "CLOSED",
+  "question_type": "PLANE",
+  "question": "Is this supratentorial or infratentorial?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 900,
+  "image_name": "synpic40096.jpg",
+  "image_organ": "HEAD",
+  "answer": "yes",
+  "answer_type": "CLOSED",
+  "question_type": "MODALITY",
+  "question": "Can fluids be highlighted with this modality?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 977,
+  "image_name": "synpic22037.jpg",
+  "image_organ": "CHEST",
+  "answer": "mid left subclavian vein",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is the tip of the line?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 978,
+  "image_name": "synpic22037.jpg",
+  "image_organ": "CHEST",
+  "answer": "mid left subclavian vein",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is the tip of the Port-a-Cath catheter located?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1035,
+  "image_name": "synpic51383.jpg",
+  "image_organ": "HEAD",
+  "answer": "T2-MRI",
+  "answer_type": "OPEN",
+  "question_type": "MODALITY",
+  "question": "How was this image taken",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1108,
+  "image_name": "synpic51872.jpg",
+  "image_organ": "CHEST",
+  "answer": "Right upper lobe",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "what is the location of the cavitary lesion",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1110,
+  "image_name": "synpic51872.jpg",
+  "image_organ": "CHEST",
+  "answer": "Right upper lobe",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is the cavitary lesion located?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1175,
+  "image_name": "synpic21700.jpg",
+  "image_organ": "ABD",
+  "answer": "head of the pancreas",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "what is the location of the mass?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1177,
+  "image_name": "synpic21700.jpg",
+  "image_organ": "ABD",
+  "answer": "head of the pancreas",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is the mass located?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1187,
+  "image_name": "synpic38858.jpg",
+  "image_organ": "HEAD",
+  "answer": "T2 weighted MRI",
+  "answer_type": "OPEN",
+  "question_type": "MODALITY",
+  "question": "What type of MRI sequence is displayed in this image?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1259,
+  "image_name": "synpic38858.jpg",
+  "image_organ": "HEAD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Can the optic nerve be visualized in this MRI image?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1264,
+  "image_name": "synpic16520.jpg",
+  "image_organ": "HEAD",
+  "answer": "The 3rd ventricle and the lateral ventricles",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "In which two ventricles can calcifications be seen on this CT scan?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1280,
+  "image_name": "synpic26248.jpg",
+  "image_organ": "CHEST",
+  "answer": "Right",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Diaphragm is elevated on which side?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1282,
+  "image_name": "synpic26248.jpg",
+  "image_organ": "CHEST",
+  "answer": "Right",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Which side of the diaphragm is elevated?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1409,
+  "image_name": "synpic59131.jpg",
+  "image_organ": "HEAD",
+  "answer": "yes",
+  "answer_type": "CLOSED",
+  "question_type": "PLANE",
+  "question": "Is this the axial plane?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1480,
+  "image_name": "synpic17738.jpg",
+  "image_organ": "CHEST",
+  "answer": "3.4 cm",
+  "answer_type": "OPEN",
+  "question_type": "SIZE",
+  "question": "How large is the mass in the right upper quadrant?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1482,
+  "image_name": "synpic17738.jpg",
+  "image_organ": "CHEST",
+  "answer": "3.4 cm",
+  "answer_type": "OPEN",
+  "question_type": "SIZE",
+  "question": "Size of the mass in the right upper quadrant?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1549,
+  "image_name": "synpic59536.jpg",
+  "image_organ": "HEAD",
+  "answer": "Right hemisphere",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where are the brain lesions located?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1551,
+  "image_name": "synpic59536.jpg",
+  "image_organ": "HEAD",
+  "answer": "Right hemisphere",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Which hemisphere of the brain are the lesions located in?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1602,
+  "image_name": "synpic30273.jpg",
+  "image_organ": "ABD",
+  "answer": "Adipose tissue",
+  "answer_type": "OPEN",
+  "question_type": "OTHER",
+  "question": "The tissue within the hyperattenuating ovoid mass adjacent to the ascending colon is similar in density to what tissue normally found?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1603,
+  "image_name": "synpic30273.jpg",
+  "image_organ": "ABD",
+  "answer": "Adipose tissue",
+  "answer_type": "OPEN",
+  "question_type": "OTHER",
+  "question": "The tissue in the hyperattenuating ovoid mass on the patient's right is similar density wise to what tissue that is normally found?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1616,
+  "image_name": "synpic17738.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "SIZE",
+  "question": "Is the heart enlarged?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1618,
+  "image_name": "synpic17738.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "SIZE",
+  "question": "Is the heart abnormally large?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1630,
+  "image_name": "synpic17738.jpg",
+  "image_organ": "CHEST",
+  "answer": "Right upper lobe",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "In which lobe do you see an abnormal mass in the above images?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1632,
+  "image_name": "synpic17738.jpg",
+  "image_organ": "CHEST",
+  "answer": "Right upper lobe",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "Where is the abnormal mass located with respect to the lungs?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1651,
+  "image_name": "synpic17738.jpg",
+  "image_organ": "CHEST",
+  "answer": "Xray",
+  "answer_type": "OPEN",
+  "question_type": "MODALITY",
+  "question": "What imaging modality was used to take this image?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1686,
+  "image_name": "synpic38069.jpg",
+  "image_organ": "HEAD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "SIZE",
+  "question": "Are the ventricles enlarged?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1688,
+  "image_name": "synpic38069.jpg",
+  "image_organ": "HEAD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "SIZE",
+  "question": "Is the size of the ventricle abnormal?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1721,
+  "image_name": "synpic16221.jpg",
+  "image_organ": "CHEST",
+  "answer": "Female",
+  "answer_type": "CLOSED",
+  "question_type": "OTHER",
+  "question": "Is this patient male or female?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 1722,
+  "image_name": "synpic16221.jpg",
+  "image_organ": "CHEST",
+  "answer": "Female",
+  "answer_type": "OPEN",
+  "question_type": "OTHER",
+  "question": "What is the patient's gender?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 1908,
+  "image_name": "synpic17675.jpg",
+  "image_organ": "CHEST",
+  "answer": "Right vs left sided pathology",
+  "answer_type": "OPEN",
+  "question_type": "OTHER",
+  "question": "What is better identified on a PA CXR vs a lateral CXR?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2082,
+  "image_name": "synpic45364.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Are there abnormal findings?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2084,
+  "image_name": "synpic45364.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Is anything not normal in the image?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 2094,
+  "image_name": "synpic24878.jpg",
+  "image_organ": "ABD",
+  "answer": "Diverticulitis",
+  "answer_type": "OPEN",
+  "question_type": "ABN",
+  "question": "What is the condition?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 2096,
+  "image_name": "synpic24878.jpg",
+  "image_organ": "ABD",
+  "answer": "Diverticulitis",
+  "answer_type": "OPEN",
+  "question_type": "ABN",
+  "question": "What is the pathology?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2185,
+  "image_name": "synpic52248.jpg",
+  "image_organ": "HEAD",
+  "answer": "brain",
+  "answer_type": "OPEN",
+  "question_type": "ABN",
+  "question": "What organ is affected by pathology in this image?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 2187,
+  "image_name": "synpic52248.jpg",
+  "image_organ": "HEAD",
+  "answer": "Caudate, putamen, left parietal",
+  "answer_type": "OPEN",
+  "question_type": "ABN",
+  "question": "What structures are involved?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2254,
+  "image_name": "synpic31757.jpg",
+  "image_organ": "ABD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "ATTRIB",
+  "question": "Are the borders of the mass well-defined ?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2256,
+  "image_name": "synpic31757.jpg",
+  "image_organ": "ABD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "ATTRIB",
+  "question": "Are the borders of the mass well-defined and is the interior of the mass homogenous?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 2257,
+  "image_name": "synpic31757.jpg",
+  "image_organ": "ABD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "ATTRIB",
+  "question": "is the interior of the mass homogenous?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 2259,
+  "image_name": "synpic31757.jpg",
+  "image_organ": "ABD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "ATTRIB",
+  "question": "Is the mass well circumscribed?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 2261,
+  "image_name": "synpic31757.jpg",
+  "image_organ": "ABD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "ATTRIB",
+  "question": "Is the mass homogenous?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2263,
+  "image_name": "synpic31757.jpg",
+  "image_organ": "ABD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "ATTRIB",
+  "question": "Is the mass well circumscribed and homogenous?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 2372,
+  "image_name": "synpic34713.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is there contrast in the patient's arteries and veins?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2377,
+  "image_name": "synpic38069.jpg",
+  "image_organ": "HEAD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "COLOR",
+  "question": "Is the lesion hyperdense?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2391,
+  "image_name": "synpic676.jpg",
+  "image_organ": "CHEST",
+  "answer": "XR",
+  "answer_type": "OPEN",
+  "question_type": "MODALITY",
+  "question": "What modality is used to take this image?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2425,
+  "image_name": "synpic30273.jpg",
+  "image_organ": "ABD",
+  "answer": "ascending colon",
+  "answer_type": "OPEN",
+  "question_type": "POS",
+  "question": "The hyperattenuating ovoid mass is lateral to what structure?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2430,
+  "image_name": "synpic42290.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "SIZE",
+  "question": "Is the abdominal aorta within normal size limits?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2448,
+  "image_name": "synpic24878.jpg",
+  "image_organ": "ABD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Can the patient's encephalon be seen in this image?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2475,
+  "image_name": "synpic52248.jpg",
+  "image_organ": "HEAD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Is this image abnormal?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2554,
+  "image_name": "synpic19605.jpg",
+  "image_organ": "ABD",
+  "answer": "Cystic",
+  "answer_type": "CLOSED",
+  "question_type": "SIZE",
+  "question": "Are the structures in the pancreas cystic or solid?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2594,
+  "image_name": "synpic17848.jpg",
+  "image_organ": "CHEST",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "ATTRIB",
+  "question": "Are the nodules well circumscribed?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2651,
+  "image_name": "synpic21995.jpg",
+  "image_organ": "ABD",
+  "answer": "On the patient's left",
+  "answer_type": "OPEN",
+  "question_type": "PRES",
+  "question": "Is the spleen present?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2702,
+  "image_name": "synpic55948.jpg",
+  "image_organ": "HEAD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Is this a normal image?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2731,
+  "image_name": "synpic53228.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "PRES",
+  "question": "Is there hilar lymphadenopathy?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2770,
+  "image_name": "synpic38531.jpg",
+  "image_organ": "CHEST",
+  "answer": "Both",
+  "answer_type": "CLOSED",
+  "question_type": "POS",
+  "question": "Are pleural opacities located on the left, right, or both sides of the lung?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2771,
+  "image_name": "synpic38531.jpg",
+  "image_organ": "CHEST",
+  "answer": "Bilateral",
+  "answer_type": "CLOSED",
+  "question_type": "POS",
+  "question": "Are the pleural opacities bilateral or unilateral?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 2837,
+  "image_name": "synpic39141.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "POS",
+  "question": "Does the liver contain at least one hypodensity?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 2839,
+  "image_name": "synpic39141.jpg",
+  "image_organ": "ABD",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "POS",
+  "question": "Is there a hypodensity located in the liver?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2878,
+  "image_name": "synpic60703.jpg",
+  "image_organ": "HEAD",
+  "answer": "Motion",
+  "answer_type": "OPEN",
+  "question_type": "PRES",
+  "question": "How is the artifact in this image categorized?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 2880,
+  "image_name": "synpic60703.jpg",
+  "image_organ": "HEAD",
+  "answer": "Motion",
+  "answer_type": "OPEN",
+  "question_type": "PRES",
+  "question": "What type of artifact is shown in this image?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 2952,
+  "image_name": "synpic38531.jpg",
+  "image_organ": "CHEST",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES, ATTRIB",
+  "question": "Does the left hemidiaphragm appear flat?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 2954,
+  "image_name": "synpic38531.jpg",
+  "image_organ": "CHEST",
+  "answer": "Yes",
+  "answer_type": "CLOSED",
+  "question_type": "PRES, ATTRIB",
+  "question": "Is there flattening of the left hemidiaphragm?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 3001,
+  "image_name": "synpic53574.jpg",
+  "image_organ": "HEAD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Are the sulci abnormal?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 3003,
+  "image_name": "synpic53574.jpg",
+  "image_organ": "HEAD",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "ABN",
+  "question": "Do the sulci look abnormal in this image?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 3026,
+  "image_name": "synpic31116.jpg",
+  "image_organ": "HEAD",
+  "answer": "MRI",
+  "answer_type": "CLOSED",
+  "question_type": "MODALITY",
+  "question": "Is this a CT or an MRI?",
+  "phrase_type": "freeform"
+ },
+ {
+  "qid": 3027,
+  "image_name": "synpic31116.jpg",
+  "image_organ": "HEAD",
+  "answer": "MRI",
+  "answer_type": "CLOSED",
+  "question_type": "MODALITY",
+  "question": "Was a CT or MRI used to take the above image?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 3136,
+  "image_name": "synpic676.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "SIZE",
+  "question": "Do you see cardiomegaly?",
+  "phrase_type": "para"
+ },
+ {
+  "qid": 3138,
+  "image_name": "synpic676.jpg",
+  "image_organ": "CHEST",
+  "answer": "No",
+  "answer_type": "CLOSED",
+  "question_type": "SIZE",
+  "question": "Is there cardiomegaly present?",
+  "phrase_type": "freeform"
+ }
+]

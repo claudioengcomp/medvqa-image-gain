@@ -1,0 +1,227 @@
+--- a/m3ae/config.py	2026-10-30 17:33:37.551447512 +0000
++++ b/m3ae/config.py	2026-10-30 17:33:37.551447512 +0000
+@@ -81,6 +81,11 @@
+     fast_dev_run = False
+     val_check_interval = 1.0
+     test_only = False
++    # 20/10/2026 (m3ae_frozen_vit): M3AE com o encoder visual congelado; desligado por padrao (linhas existentes inalteradas)
++    freeze_vision_encoder = False
++    freeze_report_path = ""
++    # m3ae_no_image (22/10/2026): M3AE sem imagem (opcao 2, A3/B1/C1); desligado por padrao
++    no_image = False
+     default_root_dir = "checkpoints"
+ 
+     # below params varies with the environment
+@@ -409,4 +414,87 @@
+ 
+ @ex.named_config
+ def clip_resizedcrop():
+-    train_transform_keys = ["clip_resizedcrop"]
+\ No newline at end of file
++    train_transform_keys = ["clip_resizedcrop"]
++
++
++@ex.named_config
++def task_finetune_vqa_kvasir():
++    exp_name = "task_finetune_vqa_kvasir"
++    datasets = ["vqa_kvasir"]
++    loss_names = _loss_names({"vqa": 1})
++    batch_size = 64
++    max_epoch = 15
++    max_steps = None
++    warmup_steps = 0.1
++    draw_false_image = 0
++    learning_rate = 5e-6
++    val_check_interval = 1.0
++    lr_multiplier_head = 50
++    lr_multiplier_multi_modal = 5
++    tokenizer = "bert-base-uncased"
++    max_text_len = 32
++    input_text_embed_size = 768
++    vit = 'ViT-B/32'
++    train_transform_keys = ["clip"]
++    val_transform_keys = ["clip"]
++    input_image_embed_size = 768
++    image_size = 576
++
++    vqa_label_size = 501
++
++
++
++
++
++
++@ex.named_config
++def task_finetune_vqa_heal():
++    exp_name = "task_finetune_vqa_heal"
++    datasets = ["vqa_heal"]
++    loss_names = _loss_names({"vqa": 1})
++    batch_size = 64
++    max_epoch = 15
++    max_steps = None
++    warmup_steps = 0.1
++    draw_false_image = 0
++    learning_rate = 5e-6
++    val_check_interval = 1.0
++    lr_multiplier_head = 50
++    lr_multiplier_multi_modal = 5
++    tokenizer = "bert-base-uncased"
++    max_text_len = 32
++    input_text_embed_size = 768
++    vit = 'ViT-B/32'
++    train_transform_keys = ["clip"]
++    val_transform_keys = ["clip"]
++    input_image_embed_size = 768
++    image_size = 576
++
++    vqa_label_size = 288
++
++
++# v7_mimic (2026-10-11): copia de task_finetune_vqa_heal com vqa_label_size 82 (answer_vocab.json do v7_mimic)
++@ex.named_config
++def task_finetune_vqa_mimic():
++    exp_name = "task_finetune_vqa_mimic"
++    datasets = ["vqa_mimic"]
++    loss_names = _loss_names({"vqa": 1})
++    batch_size = 64
++    max_epoch = 15
++    max_steps = None
++    warmup_steps = 0.1
++    draw_false_image = 0
++    learning_rate = 5e-6
++    val_check_interval = 1.0
++    lr_multiplier_head = 50
++    lr_multiplier_multi_modal = 5
++    tokenizer = "bert-base-uncased"
++    max_text_len = 32
++    input_text_embed_size = 768
++    vit = 'ViT-B/32'
++    train_transform_keys = ["clip"]
++    val_transform_keys = ["clip"]
++    input_image_embed_size = 768
++    image_size = 576
++
++    vqa_label_size = 82
+--- a/m3ae/datamodules/__init__.py	2026-10-30 17:33:37.554447512 +0000
++++ b/m3ae/datamodules/__init__.py	2026-10-30 17:33:37.554447512 +0000
+@@ -6,10 +6,20 @@
+ from .vqa_slack_datamodule import VQASLACKDataModule
+ from .vqa_vqa_rad_datamodule import VQAVQARADDataModule
+ 
++from .vqa_kvasir_datamodule import VQAKVASIRDataModule
++
++
++
++from .vqa_heal_datamodule import VQAHEALDataModule
++from .vqa_mimic_datamodule import VQAMIMICDataModule
++
+ _datamodules = {
+     "medicat": MedicatDataModule,
+     "roco": ROCODataModule,
+     "vqa_vqa_rad": VQAVQARADDataModule,
++    "vqa_heal": VQAHEALDataModule,
++    "vqa_mimic": VQAMIMICDataModule,
++    "vqa_kvasir": VQAKVASIRDataModule,
+     "vqa_slack": VQASLACKDataModule,
+     "vqa_medvqa_2019": VQAMEDVQA2019DataModule,
+     "cls_melinda": CLSMELINDADataModule,
+--- a/m3ae/datasets/__init__.py	2026-10-30 17:33:37.557447513 +0000
++++ b/m3ae/datasets/__init__.py	2026-10-30 17:33:37.557447513 +0000
+@@ -5,3 +5,6 @@
+ from .vqa_medvqa_2019_dataset import VQAMEDVQA2019Dataset
+ from .vqa_slack_dataset import VQASLACKDataset
+ from .vqa_vqa_rad_dataset import VQAVQARADDataset
++from .vqa_kvasir_dataset import VQAKVASIRDataset
++from .vqa_heal_dataset import VQAHEALDataset
++from .vqa_mimic_dataset import VQAMIMICDataset
+--- a/m3ae/modules/language_encoders/bert_model.py	2026-10-30 17:33:37.561447513 +0000
++++ b/m3ae/modules/language_encoders/bert_model.py	2026-10-30 17:33:37.561447513 +0000
+@@ -497,6 +497,13 @@
+ 
+         return outputs
+ 
++    def forward_text_only(self, hidden_states, attention_mask=None):
++        """m3ae_no_image (opcao 2, A3): auto-atencao -> h2 = LN_c(h1) (termo da cross-atencao anulado, residuo e LayerNorm mantidos) -> FFN."""
++        attention_output = self.attention(hidden_states, attention_mask, head_mask=None, output_attentions=False, past_key_value=None)[0]
++        attention_output = self.crossattention.output.LayerNorm(attention_output)
++        layer_output = apply_chunking_to_forward(self.feed_forward_chunk, self.chunk_size_feed_forward, self.seq_len_dim, attention_output)
++        return (layer_output,)
++
+     def feed_forward_chunk(self, attention_output):
+         intermediate_output = self.intermediate(attention_output)
+         layer_output = self.output(intermediate_output, attention_output)
+--- a/m3ae/modules/m3ae_module.py	2026-10-30 17:33:37.564447513 +0000
++++ b/m3ae/modules/m3ae_module.py	2026-10-30 17:33:37.564447513 +0000
+@@ -145,6 +145,35 @@
+ 
+         m3ae_utils.set_metrics(self)
+         self.current_tasks = list()
++        # m3ae_no_image (opcao 2, C1): sem imagem -> pesos que deixam de ser usados ficam congelados (continuam carregados do checkpoint)
++        if self.hparams.config.get("no_image", False):
++            assert all(v == 0 for k, v in self.hparams.config["loss_names"].items() if k != "vqa"), "no_image so suporta o fine-tune de VQA"
++            _unused = [self.vision_encoder, self.multi_modal_vision_proj, self.multi_modal_vision_layers, self.multi_modal_vision_pooler]
++            for _layer in self.multi_modal_language_layers:
++                _unused += [_layer.crossattention.self, _layer.crossattention.output.dense]
++            for _m in _unused:
++                for _p in _m.parameters():
++                    _p.requires_grad = False
++        # 20/10/2026 (m3ae_frozen_vit): congela so o encoder visual (requires_grad=False em todos os seus parametros), depois de carregar o checkpoint de partida
++        if self.hparams.config.get("freeze_vision_encoder", False):
++            import hashlib, json as _json
++            for p_ in self.vision_encoder.parameters():
++                p_.requires_grad = False
++            def _sha_sd(sd):
++                h = hashlib.sha256()
++                for k in sorted(sd):
++                    h.update(k.encode()); h.update(sd[k].detach().cpu().contiguous().numpy().tobytes())
++                return h.hexdigest()
++            _rep = {"vision_encoder_state_dict_sha256_antes": _sha_sd(self.vision_encoder.state_dict()),
++                    "load_path": self.hparams.config["load_path"],
++                    "modulos": {n: {"total": sum(p_.numel() for p_ in m.parameters()), "treinaveis": sum(p_.numel() for p_ in m.parameters() if p_.requires_grad)} for n, m in self.named_children()},
++                    "parametros_total": sum(p_.numel() for p_ in self.parameters()), "parametros_treinaveis": sum(p_.numel() for p_ in self.parameters() if p_.requires_grad),
++                    "parametros_congelados": sum(p_.numel() for p_ in self.parameters() if not p_.requires_grad),
++                    "vision_encoder_normalizacao": sorted({type(m).__name__ for m in self.vision_encoder.modules() if "Norm" in type(m).__name__}),
++                    "vision_encoder_batchnorm_com_estatisticas": sum(1 for m in self.vision_encoder.modules() if isinstance(m, torch.nn.modules.batchnorm._BatchNorm)),
++                    "vision_encoder_dropout_p_maior_que_0": sum(1 for m in self.vision_encoder.modules() if isinstance(m, torch.nn.Dropout) and m.p > 0)}
++            if self.hparams.config.get("freeze_report_path"):
++                with open(self.hparams.config["freeze_report_path"], "w") as _f: _json.dump(_rep, _f, indent=1)
+         # == End:  4. Build Heads For Downstream Tasks ==
+ 
+         # == Begin: 5. Load Models For Testing ==
+@@ -216,6 +245,8 @@
+             output_attentions=False,
+             unimodal=False
+     ):
++        if self.hparams.config.get("no_image", False):   # m3ae_no_image (opcao 2)
++            return self._infer_no_image(batch, mask_text=mask_text)
+         ret = dict()
+ 
+         # == Begin: Fetch the inputs ==
+@@ -317,6 +348,27 @@
+ 
+         return ret
+ 
++    def _infer_no_image(self, batch, mask_text=False):
++        """m3ae_no_image (opcao 2): texto -> 6 camadas de fusao so do lado texto (A3) -> pooler do texto; metade da imagem = zeros (B1). ViT nao e chamado."""
++        do_mlm = "_mlm" if mask_text else ""
++        text_ids = batch[f"text_ids{do_mlm}"]
++        text_labels = batch[f"text_labels{do_mlm}"]
++        text_masks = batch["text_masks"]
++        device = text_ids.device
++        x = self.language_encoder.embeddings(input_ids=text_ids)
++        extended_text_masks = self.language_encoder.get_extended_attention_mask(text_masks, text_masks.size(), device)
++        for layer in self.language_encoder.encoder.layer:
++            x = layer(x, extended_text_masks)[0]
++        x = self.multi_modal_language_proj(x)
++        x = x + self.modality_type_embeddings(torch.zeros_like(text_masks))
++        for text_layer in self.multi_modal_language_layers:
++            x = text_layer.forward_text_only(x, extended_text_masks)[0]
++        multi_modal_text_cls_feats = self.multi_modal_language_pooler(x)
++        multi_modal_image_cls_feats = torch.zeros_like(multi_modal_text_cls_feats)
++        return {"text_labels": text_labels, "text_ids": text_ids, "text_masks": text_masks, "extended_text_masks": extended_text_masks,
++                "multi_modal_text_feats": x, "multi_modal_image_feats": None, "images": None, "patched_images": None,
++                "multi_modal_cls_feats": torch.cat([multi_modal_text_cls_feats, multi_modal_image_cls_feats], dim=-1)}
++
+     def forward(self, batch, test=False):
+         ret = dict()
+ 

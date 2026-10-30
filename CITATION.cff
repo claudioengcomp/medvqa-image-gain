@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this code or these data splits, please cite the paper below and the datasets and models listed in README.md."
+title: "medvqa-image-gain: code and data for 'How Much Does the Image Add? Decomposing the Accuracy of Fine-Tuned Medical VQA Models'"
+type: software
+authors:
+  - family-names: Leite
+    given-names: Claudio
+    affiliation: "Department of Computing, Federal University of São Carlos (UFSCar), Sorocaba, Brazil"
+  - family-names: Almeida
+    given-names: Jurandy
+    affiliation: "Department of Computing, Federal University of São Carlos (UFSCar), Sorocaba, Brazil"
+repository-code: "https://github.com/claudioengcomp/medvqa-image-gain"
+license: MIT
+preferred-citation:
+  type: unpublished
+  title: "How Much Does the Image Add? Decomposing the Accuracy of Fine-Tuned Medical VQA Models"
+  authors:
+    - family-names: Leite
+      given-names: Claudio
+    - family-names: Almeida
+      given-names: Jurandy
+  year: 2026
+  notes: "Submitted to the IEEE International Symposium on Biomedical Imaging (ISBI) 2027."

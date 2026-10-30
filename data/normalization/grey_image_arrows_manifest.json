@@ -1,0 +1,95 @@
+{
+ "t": "2026-10-09 19:25:38",
+ "gray": {
+  "size": 384,
+  "rgb": [
+   128,
+   128,
+   128
+  ],
+  "encoder": "harness.interventions.make_c1_blank_images.blank_out_images (JPEG)"
+ },
+ "files": {
+  "vqa_slack_train_gray.arrow": {
+   "source": "vqa_slack_train.arrow",
+   "source_sha256": "6267d69739da6af1ce5c75afc0a49bca6135de55efd2b83805ad827f02abbe1c",
+   "sha256": "1b85ad742608e458fa4fa2060aa0aa965ea2bfc4e1092f9e4de1a14ec03151b3",
+   "bytes": 1865594,
+   "rows": 450,
+   "questions": 4919,
+   "seconds": 0.1
+  },
+  "vqa_slack_val_gray.arrow": {
+   "source": "vqa_slack_val.arrow",
+   "source_sha256": "1867015da13b2205183ace5dd84dfdb15b03ef841d2506d5675a7a78912c1efe",
+   "sha256": "135c630c239a5027937211728167055a394ce2e8751c8f42b781fd47aa7df6e5",
+   "bytes": 405018,
+   "rows": 96,
+   "questions": 1053,
+   "seconds": 0.0
+  },
+  "vqa_slack_test_gray.arrow": {
+   "source": "vqa_slack_test.arrow",
+   "source_sha256": "fe94d9a08770ab65608ac32c1f59f88dba4baa88611c401ceddd8452c85149d1",
+   "sha256": "43c2c553656fc426ee2f47ef1cbdf9dbddacc8aa16bdf71bed887a3628d59faa",
+   "bytes": 404954,
+   "rows": 96,
+   "questions": 1061,
+   "seconds": 0.0
+  },
+  "vqa_kvasir_train_gray.arrow": {
+   "source": "vqa_kvasir_train.arrow",
+   "source_sha256": "3f75d18fa1129a65623d45e9f9a08b6748e660d4fc8dcdb969692e8d870fa502",
+   "sha256": "290f8b6ecb45bba191fc694d53c9884ecba206397c2fe3f5a96279a25a0c7d03",
+   "bytes": 17574842,
+   "rows": 4514,
+   "questions": 38211,
+   "seconds": 0.5
+  },
+  "vqa_kvasir_val_gray.arrow": {
+   "source": "vqa_kvasir_val.arrow",
+   "source_sha256": "6100822fdf583bf977bde796f639cc24dbbd6022f23532f454bff91e29c7df7f",
+   "sha256": "cf15d184c60068e76ac885ebb330761af75370c42322d8cf41e2a2c3c320cffc",
+   "bytes": 2514298,
+   "rows": 644,
+   "questions": 5494,
+   "seconds": 0.1
+  },
+  "vqa_kvasir_test_gray.arrow": {
+   "source": "vqa_kvasir_test.arrow",
+   "source_sha256": "ff5c25692c1b46326c221cd197622037e5afa6099b799a85bd7db26e83715891",
+   "sha256": "5e25da22db58d4d65b185f9054c4f425a26f888d549b2ba88d74ade80fb950b7",
+   "bytes": 5012434,
+   "rows": 1291,
+   "questions": 10779,
+   "seconds": 0.1
+  },
+  "vqa_heal_train_gray.arrow": {
+   "source": "vqa_heal_train.arrow",
+   "source_sha256": "47fd265f5dd5658a3569bf15248be072975876f809b4d246b509933c93b31db9",
+   "sha256": "1ef5bbfc30778c5bf9979967b516d1c7eb13b07ebe2e03e8c83006e8f4020906",
+   "bytes": 21822282,
+   "rows": 6709,
+   "questions": 14740,
+   "seconds": 3.2
+  },
+  "vqa_heal_val_gray.arrow": {
+   "source": "vqa_heal_val.arrow",
+   "source_sha256": "5780ccc40b1f9825ef96c076e517e9455e2f7169f2d738afc651b9005e5ed3a3",
+   "sha256": "cb93ea528135869de425023ac8d566d4c0e522d59f97ab8d6b006ba78aa733fd",
+   "bytes": 2430306,
+   "rows": 746,
+   "questions": 1640,
+   "seconds": 0.4
+  },
+  "vqa_heal_test_gray.arrow": {
+   "source": "vqa_heal_test.arrow",
+   "source_sha256": "a106ad849f50ddd9f9421e5f69a288653b9fe88e1af0c2c9e1e892281ee22ece",
+   "sha256": "5ea63a45ddacf97401ec57c68f955dbd08535eb253ed5efda87446228982b6a1",
+   "bytes": 4274578,
+   "rows": 1360,
+   "questions": 1446,
+   "seconds": 0.6
+  }
+ }
+}

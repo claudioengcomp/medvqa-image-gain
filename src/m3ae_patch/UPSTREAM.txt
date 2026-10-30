@@ -1,0 +1,2 @@
+M3AE upstream: https://github.com/zhjohnchan/M3AE  commit 14da377255280eed547e451f368cf71a43f3ca1c
+Pre-trained checkpoint: downloaded/pretrained/m3ae.ckpt from the upstream README (sha256 469cf69b18cd75fbc3a010f202fb42c0cc074b34db75a0bfab442db982885442)

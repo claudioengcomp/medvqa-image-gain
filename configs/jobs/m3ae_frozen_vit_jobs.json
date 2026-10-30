@@ -1,0 +1,1172 @@
+[
+ {
+  "name": "train_M3AE_FROZEN_SLAKE_seed0",
+  "env": "lapa",
+  "reserve_mib": 17638,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/M3AE_FROZEN_SLAKE_seed0_cost.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_SLAKE_seed0.train.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_train.py",
+   "slake",
+   "0"
+  ],
+  "skip_order": true
+ },
+ {
+  "name": "train_M3AE_FROZEN_SLAKE_seed1",
+  "env": "lapa",
+  "reserve_mib": 17638,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/M3AE_FROZEN_SLAKE_seed1_cost.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_SLAKE_seed1.train.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_train.py",
+   "slake",
+   "1"
+  ],
+  "skip_order": true
+ },
+ {
+  "name": "train_M3AE_FROZEN_SLAKE_seed2",
+  "env": "lapa",
+  "reserve_mib": 17638,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/M3AE_FROZEN_SLAKE_seed2_cost.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_SLAKE_seed2.train.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_train.py",
+   "slake",
+   "2"
+  ],
+  "skip_order": true
+ },
+ {
+  "name": "train_M3AE_FROZEN_VQARAD_REDIV_seed0",
+  "env": "lapa",
+  "reserve_mib": 17638,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/M3AE_FROZEN_VQARAD_REDIV_seed0_cost.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_VQARAD_REDIV_seed0.train.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_train.py",
+   "vqarad_rediv",
+   "0"
+  ],
+  "skip_order": true
+ },
+ {
+  "name": "train_M3AE_FROZEN_VQARAD_REDIV_seed1",
+  "env": "lapa",
+  "reserve_mib": 17638,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/M3AE_FROZEN_VQARAD_REDIV_seed1_cost.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_VQARAD_REDIV_seed1.train.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_train.py",
+   "vqarad_rediv",
+   "1"
+  ],
+  "skip_order": true
+ },
+ {
+  "name": "train_M3AE_FROZEN_VQARAD_REDIV_seed2",
+  "env": "lapa",
+  "reserve_mib": 17638,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/M3AE_FROZEN_VQARAD_REDIV_seed2_cost.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_VQARAD_REDIV_seed2.train.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_train.py",
+   "vqarad_rediv",
+   "2"
+  ],
+  "skip_order": true
+ },
+ {
+  "name": "train_M3AE_FROZEN_HEAL_seed0",
+  "env": "lapa",
+  "reserve_mib": 17638,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/M3AE_FROZEN_HEAL_seed0_cost.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_HEAL_seed0.train.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_train.py",
+   "heal",
+   "0"
+  ],
+  "skip_order": true
+ },
+ {
+  "name": "train_M3AE_FROZEN_HEAL_seed1",
+  "env": "lapa",
+  "reserve_mib": 17638,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/M3AE_FROZEN_HEAL_seed1_cost.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_HEAL_seed1.train.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_train.py",
+   "heal",
+   "1"
+  ],
+  "skip_order": true
+ },
+ {
+  "name": "train_M3AE_FROZEN_HEAL_seed2",
+  "env": "lapa",
+  "reserve_mib": 17638,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/M3AE_FROZEN_HEAL_seed2_cost.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_HEAL_seed2.train.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_train.py",
+   "heal",
+   "2"
+  ],
+  "skip_order": true
+ },
+ {
+  "name": "train_M3AE_FROZEN_MIMIC_seed0",
+  "env": "lapa",
+  "reserve_mib": 17638,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/M3AE_FROZEN_MIMIC_seed0_cost.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_MIMIC_seed0.train.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_train.py",
+   "mimic",
+   "0"
+  ],
+  "skip_order": true
+ },
+ {
+  "name": "train_M3AE_FROZEN_MIMIC_seed1",
+  "env": "lapa",
+  "reserve_mib": 17638,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/M3AE_FROZEN_MIMIC_seed1_cost.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_MIMIC_seed1.train.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_train.py",
+   "mimic",
+   "1"
+  ],
+  "skip_order": true
+ },
+ {
+  "name": "train_M3AE_FROZEN_MIMIC_seed2",
+  "env": "lapa",
+  "reserve_mib": 17638,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/M3AE_FROZEN_MIMIC_seed2_cost.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_MIMIC_seed2.train.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_train.py",
+   "mimic",
+   "2"
+  ],
+  "skip_order": true
+ },
+ {
+  "name": "train_M3AE_FROZEN_KVASIR_seed0",
+  "env": "lapa",
+  "reserve_mib": 17638,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/M3AE_FROZEN_KVASIR_seed0_cost.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_KVASIR_seed0.train.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_train.py",
+   "kvasir",
+   "0"
+  ],
+  "skip_order": true
+ },
+ {
+  "name": "train_M3AE_FROZEN_KVASIR_seed1",
+  "env": "lapa",
+  "reserve_mib": 17638,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/M3AE_FROZEN_KVASIR_seed1_cost.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_KVASIR_seed1.train.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_train.py",
+   "kvasir",
+   "1"
+  ],
+  "skip_order": true
+ },
+ {
+  "name": "train_M3AE_FROZEN_KVASIR_seed2",
+  "env": "lapa",
+  "reserve_mib": 17638,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/M3AE_FROZEN_KVASIR_seed2_cost.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_KVASIR_seed2.train.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_train.py",
+   "kvasir",
+   "2"
+  ],
+  "skip_order": true
+ },
+ {
+  "name": "train_M3AE_FROZEN_VQARAD_QLEVEL_seed0",
+  "env": "lapa",
+  "reserve_mib": 17638,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/M3AE_FROZEN_VQARAD_QLEVEL_seed0_cost.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_VQARAD_QLEVEL_seed0.train.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_train.py",
+   "vqarad_qlevel",
+   "0"
+  ],
+  "skip_order": true
+ },
+ {
+  "name": "train_M3AE_FROZEN_VQARAD_QLEVEL_seed1",
+  "env": "lapa",
+  "reserve_mib": 17638,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/M3AE_FROZEN_VQARAD_QLEVEL_seed1_cost.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_VQARAD_QLEVEL_seed1.train.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_train.py",
+   "vqarad_qlevel",
+   "1"
+  ],
+  "skip_order": true
+ },
+ {
+  "name": "train_M3AE_FROZEN_VQARAD_QLEVEL_seed2",
+  "env": "lapa",
+  "reserve_mib": 17638,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/M3AE_FROZEN_VQARAD_QLEVEL_seed2_cost.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_VQARAD_QLEVEL_seed2.train.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_train.py",
+   "vqarad_qlevel",
+   "2"
+  ],
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_FROZEN_SLAKE_seed0_C0",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_SLAKE_seed0_C0.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_SLAKE_seed0_C0.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_predict.py",
+   "slake",
+   "0",
+   "C0",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_SLAKE_seed0_C0.json"
+  ],
+  "after": "train_M3AE_FROZEN_SLAKE_seed0",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_FROZEN_SLAKE_seed0_C1",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_SLAKE_seed0_C1.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_SLAKE_seed0_C1.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_predict.py",
+   "slake",
+   "0",
+   "C1",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_SLAKE_seed0_C1.json"
+  ],
+  "after": "train_M3AE_FROZEN_SLAKE_seed0",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_FROZEN_SLAKE_seed0_C2",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_SLAKE_seed0_C2.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_SLAKE_seed0_C2.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_predict.py",
+   "slake",
+   "0",
+   "C2",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_SLAKE_seed0_C2.json"
+  ],
+  "after": "train_M3AE_FROZEN_SLAKE_seed0",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_FROZEN_SLAKE_seed1_C0",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_SLAKE_seed1_C0.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_SLAKE_seed1_C0.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_predict.py",
+   "slake",
+   "1",
+   "C0",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_SLAKE_seed1_C0.json"
+  ],
+  "after": "train_M3AE_FROZEN_SLAKE_seed1",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_FROZEN_SLAKE_seed1_C1",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_SLAKE_seed1_C1.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_SLAKE_seed1_C1.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_predict.py",
+   "slake",
+   "1",
+   "C1",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_SLAKE_seed1_C1.json"
+  ],
+  "after": "train_M3AE_FROZEN_SLAKE_seed1",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_FROZEN_SLAKE_seed1_C2",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_SLAKE_seed1_C2.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_SLAKE_seed1_C2.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_predict.py",
+   "slake",
+   "1",
+   "C2",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_SLAKE_seed1_C2.json"
+  ],
+  "after": "train_M3AE_FROZEN_SLAKE_seed1",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_FROZEN_SLAKE_seed2_C0",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_SLAKE_seed2_C0.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_SLAKE_seed2_C0.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_predict.py",
+   "slake",
+   "2",
+   "C0",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_SLAKE_seed2_C0.json"
+  ],
+  "after": "train_M3AE_FROZEN_SLAKE_seed2",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_FROZEN_SLAKE_seed2_C1",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_SLAKE_seed2_C1.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_SLAKE_seed2_C1.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_predict.py",
+   "slake",
+   "2",
+   "C1",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_SLAKE_seed2_C1.json"
+  ],
+  "after": "train_M3AE_FROZEN_SLAKE_seed2",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_FROZEN_SLAKE_seed2_C2",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_SLAKE_seed2_C2.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_SLAKE_seed2_C2.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_predict.py",
+   "slake",
+   "2",
+   "C2",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_SLAKE_seed2_C2.json"
+  ],
+  "after": "train_M3AE_FROZEN_SLAKE_seed2",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_FROZEN_VQARAD_REDIV_seed0_C0",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_VQARAD_REDIV_seed0_C0.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_VQARAD_REDIV_seed0_C0.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_predict.py",
+   "vqarad_rediv",
+   "0",
+   "C0",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_VQARAD_REDIV_seed0_C0.json"
+  ],
+  "after": "train_M3AE_FROZEN_VQARAD_REDIV_seed0",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_FROZEN_VQARAD_REDIV_seed0_C1",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_VQARAD_REDIV_seed0_C1.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_VQARAD_REDIV_seed0_C1.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_predict.py",
+   "vqarad_rediv",
+   "0",
+   "C1",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_VQARAD_REDIV_seed0_C1.json"
+  ],
+  "after": "train_M3AE_FROZEN_VQARAD_REDIV_seed0",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_FROZEN_VQARAD_REDIV_seed0_C2",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_VQARAD_REDIV_seed0_C2.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_VQARAD_REDIV_seed0_C2.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_predict.py",
+   "vqarad_rediv",
+   "0",
+   "C2",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_VQARAD_REDIV_seed0_C2.json"
+  ],
+  "after": "train_M3AE_FROZEN_VQARAD_REDIV_seed0",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_FROZEN_VQARAD_REDIV_seed1_C0",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_VQARAD_REDIV_seed1_C0.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_VQARAD_REDIV_seed1_C0.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_predict.py",
+   "vqarad_rediv",
+   "1",
+   "C0",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_VQARAD_REDIV_seed1_C0.json"
+  ],
+  "after": "train_M3AE_FROZEN_VQARAD_REDIV_seed1",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_FROZEN_VQARAD_REDIV_seed1_C1",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_VQARAD_REDIV_seed1_C1.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_VQARAD_REDIV_seed1_C1.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_predict.py",
+   "vqarad_rediv",
+   "1",
+   "C1",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_VQARAD_REDIV_seed1_C1.json"
+  ],
+  "after": "train_M3AE_FROZEN_VQARAD_REDIV_seed1",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_FROZEN_VQARAD_REDIV_seed1_C2",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_VQARAD_REDIV_seed1_C2.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_VQARAD_REDIV_seed1_C2.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_predict.py",
+   "vqarad_rediv",
+   "1",
+   "C2",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_VQARAD_REDIV_seed1_C2.json"
+  ],
+  "after": "train_M3AE_FROZEN_VQARAD_REDIV_seed1",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_FROZEN_VQARAD_REDIV_seed2_C0",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_VQARAD_REDIV_seed2_C0.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_VQARAD_REDIV_seed2_C0.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_predict.py",
+   "vqarad_rediv",
+   "2",
+   "C0",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_VQARAD_REDIV_seed2_C0.json"
+  ],
+  "after": "train_M3AE_FROZEN_VQARAD_REDIV_seed2",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_FROZEN_VQARAD_REDIV_seed2_C1",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_VQARAD_REDIV_seed2_C1.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_VQARAD_REDIV_seed2_C1.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_predict.py",
+   "vqarad_rediv",
+   "2",
+   "C1",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_VQARAD_REDIV_seed2_C1.json"
+  ],
+  "after": "train_M3AE_FROZEN_VQARAD_REDIV_seed2",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_FROZEN_VQARAD_REDIV_seed2_C2",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_VQARAD_REDIV_seed2_C2.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_VQARAD_REDIV_seed2_C2.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_predict.py",
+   "vqarad_rediv",
+   "2",
+   "C2",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_VQARAD_REDIV_seed2_C2.json"
+  ],
+  "after": "train_M3AE_FROZEN_VQARAD_REDIV_seed2",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_FROZEN_HEAL_seed0_C0",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_HEAL_seed0_C0.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_HEAL_seed0_C0.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_predict.py",
+   "heal",
+   "0",
+   "C0",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_HEAL_seed0_C0.json"
+  ],
+  "after": "train_M3AE_FROZEN_HEAL_seed0",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_FROZEN_HEAL_seed0_C1",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_HEAL_seed0_C1.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_HEAL_seed0_C1.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_predict.py",
+   "heal",
+   "0",
+   "C1",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_HEAL_seed0_C1.json"
+  ],
+  "after": "train_M3AE_FROZEN_HEAL_seed0",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_FROZEN_HEAL_seed0_C2v2",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_HEAL_seed0_C2v2.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_HEAL_seed0_C2v2.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_predict.py",
+   "heal",
+   "0",
+   "C2v2",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_HEAL_seed0_C2v2.json"
+  ],
+  "after": "train_M3AE_FROZEN_HEAL_seed0",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_FROZEN_HEAL_seed1_C0",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_HEAL_seed1_C0.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_HEAL_seed1_C0.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_predict.py",
+   "heal",
+   "1",
+   "C0",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_HEAL_seed1_C0.json"
+  ],
+  "after": "train_M3AE_FROZEN_HEAL_seed1",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_FROZEN_HEAL_seed1_C1",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_HEAL_seed1_C1.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_HEAL_seed1_C1.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_predict.py",
+   "heal",
+   "1",
+   "C1",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_HEAL_seed1_C1.json"
+  ],
+  "after": "train_M3AE_FROZEN_HEAL_seed1",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_FROZEN_HEAL_seed1_C2v2",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_HEAL_seed1_C2v2.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_HEAL_seed1_C2v2.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_predict.py",
+   "heal",
+   "1",
+   "C2v2",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_HEAL_seed1_C2v2.json"
+  ],
+  "after": "train_M3AE_FROZEN_HEAL_seed1",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_FROZEN_HEAL_seed2_C0",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_HEAL_seed2_C0.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_HEAL_seed2_C0.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_predict.py",
+   "heal",
+   "2",
+   "C0",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_HEAL_seed2_C0.json"
+  ],
+  "after": "train_M3AE_FROZEN_HEAL_seed2",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_FROZEN_HEAL_seed2_C1",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_HEAL_seed2_C1.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_HEAL_seed2_C1.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_predict.py",
+   "heal",
+   "2",
+   "C1",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_HEAL_seed2_C1.json"
+  ],
+  "after": "train_M3AE_FROZEN_HEAL_seed2",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_FROZEN_HEAL_seed2_C2v2",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_HEAL_seed2_C2v2.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_HEAL_seed2_C2v2.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_predict.py",
+   "heal",
+   "2",
+   "C2v2",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_HEAL_seed2_C2v2.json"
+  ],
+  "after": "train_M3AE_FROZEN_HEAL_seed2",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_FROZEN_MIMIC_seed0_C0",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_MIMIC_seed0_C0.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_MIMIC_seed0_C0.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_predict.py",
+   "mimic",
+   "0",
+   "C0",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_MIMIC_seed0_C0.json"
+  ],
+  "after": "train_M3AE_FROZEN_MIMIC_seed0",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_FROZEN_MIMIC_seed0_C1",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_MIMIC_seed0_C1.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_MIMIC_seed0_C1.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_predict.py",
+   "mimic",
+   "0",
+   "C1",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_MIMIC_seed0_C1.json"
+  ],
+  "after": "train_M3AE_FROZEN_MIMIC_seed0",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_FROZEN_MIMIC_seed0_C2v2",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_MIMIC_seed0_C2v2.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_MIMIC_seed0_C2v2.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_predict.py",
+   "mimic",
+   "0",
+   "C2v2",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_MIMIC_seed0_C2v2.json"
+  ],
+  "after": "train_M3AE_FROZEN_MIMIC_seed0",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_FROZEN_MIMIC_seed1_C0",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_MIMIC_seed1_C0.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_MIMIC_seed1_C0.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_predict.py",
+   "mimic",
+   "1",
+   "C0",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_MIMIC_seed1_C0.json"
+  ],
+  "after": "train_M3AE_FROZEN_MIMIC_seed1",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_FROZEN_MIMIC_seed1_C1",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_MIMIC_seed1_C1.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_MIMIC_seed1_C1.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_predict.py",
+   "mimic",
+   "1",
+   "C1",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_MIMIC_seed1_C1.json"
+  ],
+  "after": "train_M3AE_FROZEN_MIMIC_seed1",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_FROZEN_MIMIC_seed1_C2v2",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_MIMIC_seed1_C2v2.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_MIMIC_seed1_C2v2.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_predict.py",
+   "mimic",
+   "1",
+   "C2v2",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_MIMIC_seed1_C2v2.json"
+  ],
+  "after": "train_M3AE_FROZEN_MIMIC_seed1",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_FROZEN_MIMIC_seed2_C0",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_MIMIC_seed2_C0.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_MIMIC_seed2_C0.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_predict.py",
+   "mimic",
+   "2",
+   "C0",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_MIMIC_seed2_C0.json"
+  ],
+  "after": "train_M3AE_FROZEN_MIMIC_seed2",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_FROZEN_MIMIC_seed2_C1",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_MIMIC_seed2_C1.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_MIMIC_seed2_C1.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_predict.py",
+   "mimic",
+   "2",
+   "C1",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_MIMIC_seed2_C1.json"
+  ],
+  "after": "train_M3AE_FROZEN_MIMIC_seed2",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_FROZEN_MIMIC_seed2_C2v2",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_MIMIC_seed2_C2v2.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_MIMIC_seed2_C2v2.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_predict.py",
+   "mimic",
+   "2",
+   "C2v2",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_MIMIC_seed2_C2v2.json"
+  ],
+  "after": "train_M3AE_FROZEN_MIMIC_seed2",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_FROZEN_KVASIR_seed0_C0",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_KVASIR_seed0_C0.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_KVASIR_seed0_C0.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_predict.py",
+   "kvasir",
+   "0",
+   "C0",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_KVASIR_seed0_C0.json"
+  ],
+  "after": "train_M3AE_FROZEN_KVASIR_seed0",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_FROZEN_KVASIR_seed0_C1",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_KVASIR_seed0_C1.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_KVASIR_seed0_C1.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_predict.py",
+   "kvasir",
+   "0",
+   "C1",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_KVASIR_seed0_C1.json"
+  ],
+  "after": "train_M3AE_FROZEN_KVASIR_seed0",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_FROZEN_KVASIR_seed0_C2",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_KVASIR_seed0_C2.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_KVASIR_seed0_C2.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_predict.py",
+   "kvasir",
+   "0",
+   "C2",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_KVASIR_seed0_C2.json"
+  ],
+  "after": "train_M3AE_FROZEN_KVASIR_seed0",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_FROZEN_KVASIR_seed1_C0",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_KVASIR_seed1_C0.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_KVASIR_seed1_C0.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_predict.py",
+   "kvasir",
+   "1",
+   "C0",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_KVASIR_seed1_C0.json"
+  ],
+  "after": "train_M3AE_FROZEN_KVASIR_seed1",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_FROZEN_KVASIR_seed1_C1",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_KVASIR_seed1_C1.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_KVASIR_seed1_C1.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_predict.py",
+   "kvasir",
+   "1",
+   "C1",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_KVASIR_seed1_C1.json"
+  ],
+  "after": "train_M3AE_FROZEN_KVASIR_seed1",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_FROZEN_KVASIR_seed1_C2",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_KVASIR_seed1_C2.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_KVASIR_seed1_C2.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_predict.py",
+   "kvasir",
+   "1",
+   "C2",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_KVASIR_seed1_C2.json"
+  ],
+  "after": "train_M3AE_FROZEN_KVASIR_seed1",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_FROZEN_KVASIR_seed2_C0",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_KVASIR_seed2_C0.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_KVASIR_seed2_C0.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_predict.py",
+   "kvasir",
+   "2",
+   "C0",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_KVASIR_seed2_C0.json"
+  ],
+  "after": "train_M3AE_FROZEN_KVASIR_seed2",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_FROZEN_KVASIR_seed2_C1",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_KVASIR_seed2_C1.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_KVASIR_seed2_C1.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_predict.py",
+   "kvasir",
+   "2",
+   "C1",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_KVASIR_seed2_C1.json"
+  ],
+  "after": "train_M3AE_FROZEN_KVASIR_seed2",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_FROZEN_KVASIR_seed2_C2",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_KVASIR_seed2_C2.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_KVASIR_seed2_C2.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_predict.py",
+   "kvasir",
+   "2",
+   "C2",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_KVASIR_seed2_C2.json"
+  ],
+  "after": "train_M3AE_FROZEN_KVASIR_seed2",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_FROZEN_VQARAD_QLEVEL_seed0_C0",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_VQARAD_QLEVEL_seed0_C0.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_VQARAD_QLEVEL_seed0_C0.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_predict.py",
+   "vqarad_qlevel",
+   "0",
+   "C0",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_VQARAD_QLEVEL_seed0_C0.json"
+  ],
+  "after": "train_M3AE_FROZEN_VQARAD_QLEVEL_seed0",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_FROZEN_VQARAD_QLEVEL_seed0_C1",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_VQARAD_QLEVEL_seed0_C1.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_VQARAD_QLEVEL_seed0_C1.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_predict.py",
+   "vqarad_qlevel",
+   "0",
+   "C1",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_VQARAD_QLEVEL_seed0_C1.json"
+  ],
+  "after": "train_M3AE_FROZEN_VQARAD_QLEVEL_seed0",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_FROZEN_VQARAD_QLEVEL_seed0_C2",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_VQARAD_QLEVEL_seed0_C2.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_VQARAD_QLEVEL_seed0_C2.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_predict.py",
+   "vqarad_qlevel",
+   "0",
+   "C2",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_VQARAD_QLEVEL_seed0_C2.json"
+  ],
+  "after": "train_M3AE_FROZEN_VQARAD_QLEVEL_seed0",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_FROZEN_VQARAD_QLEVEL_seed1_C0",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_VQARAD_QLEVEL_seed1_C0.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_VQARAD_QLEVEL_seed1_C0.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_predict.py",
+   "vqarad_qlevel",
+   "1",
+   "C0",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_VQARAD_QLEVEL_seed1_C0.json"
+  ],
+  "after": "train_M3AE_FROZEN_VQARAD_QLEVEL_seed1",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_FROZEN_VQARAD_QLEVEL_seed1_C1",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_VQARAD_QLEVEL_seed1_C1.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_VQARAD_QLEVEL_seed1_C1.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_predict.py",
+   "vqarad_qlevel",
+   "1",
+   "C1",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_VQARAD_QLEVEL_seed1_C1.json"
+  ],
+  "after": "train_M3AE_FROZEN_VQARAD_QLEVEL_seed1",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_FROZEN_VQARAD_QLEVEL_seed1_C2",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_VQARAD_QLEVEL_seed1_C2.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_VQARAD_QLEVEL_seed1_C2.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_predict.py",
+   "vqarad_qlevel",
+   "1",
+   "C2",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_VQARAD_QLEVEL_seed1_C2.json"
+  ],
+  "after": "train_M3AE_FROZEN_VQARAD_QLEVEL_seed1",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_FROZEN_VQARAD_QLEVEL_seed2_C0",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_VQARAD_QLEVEL_seed2_C0.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_VQARAD_QLEVEL_seed2_C0.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_predict.py",
+   "vqarad_qlevel",
+   "2",
+   "C0",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_VQARAD_QLEVEL_seed2_C0.json"
+  ],
+  "after": "train_M3AE_FROZEN_VQARAD_QLEVEL_seed2",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_FROZEN_VQARAD_QLEVEL_seed2_C1",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_VQARAD_QLEVEL_seed2_C1.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_VQARAD_QLEVEL_seed2_C1.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_predict.py",
+   "vqarad_qlevel",
+   "2",
+   "C1",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_VQARAD_QLEVEL_seed2_C1.json"
+  ],
+  "after": "train_M3AE_FROZEN_VQARAD_QLEVEL_seed2",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_FROZEN_VQARAD_QLEVEL_seed2_C2",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_VQARAD_QLEVEL_seed2_C2.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/logs/sched/M3AE_FROZEN_VQARAD_QLEVEL_seed2_C2.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_frozen_predict.py",
+   "vqarad_qlevel",
+   "2",
+   "C2",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_frozen/results/M3AE_FROZEN_VQARAD_QLEVEL_seed2_C2.json"
+  ],
+  "after": "train_M3AE_FROZEN_VQARAD_QLEVEL_seed2",
+  "skip_order": true
+ }
+]

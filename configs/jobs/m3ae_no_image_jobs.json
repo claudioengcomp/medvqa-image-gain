@@ -1,0 +1,542 @@
+[
+ {
+  "name": "train_M3AE_SEMIMG_VQARAD_REDIV_seed0",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/logs/M3AE_SEMIMG_VQARAD_REDIV_seed0_cost.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/logs/sched/M3AE_SEMIMG_VQARAD_REDIV_seed0.train.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_semimg_train.py",
+   "VQARAD_REDIV",
+   "0"
+  ],
+  "skip_order": true
+ },
+ {
+  "name": "train_M3AE_SEMIMG_VQARAD_REDIV_seed1",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/logs/M3AE_SEMIMG_VQARAD_REDIV_seed1_cost.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/logs/sched/M3AE_SEMIMG_VQARAD_REDIV_seed1.train.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_semimg_train.py",
+   "VQARAD_REDIV",
+   "1"
+  ],
+  "skip_order": true
+ },
+ {
+  "name": "train_M3AE_SEMIMG_VQARAD_REDIV_seed2",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/logs/M3AE_SEMIMG_VQARAD_REDIV_seed2_cost.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/logs/sched/M3AE_SEMIMG_VQARAD_REDIV_seed2.train.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_semimg_train.py",
+   "VQARAD_REDIV",
+   "2"
+  ],
+  "skip_order": true
+ },
+ {
+  "name": "train_M3AE_SEMIMG_SLAKE_seed0",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/logs/M3AE_SEMIMG_SLAKE_seed0_cost.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/logs/sched/M3AE_SEMIMG_SLAKE_seed0.train.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_semimg_train.py",
+   "SLAKE",
+   "0"
+  ],
+  "skip_order": true
+ },
+ {
+  "name": "train_M3AE_SEMIMG_SLAKE_seed1",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/logs/M3AE_SEMIMG_SLAKE_seed1_cost.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/logs/sched/M3AE_SEMIMG_SLAKE_seed1.train.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_semimg_train.py",
+   "SLAKE",
+   "1"
+  ],
+  "skip_order": true
+ },
+ {
+  "name": "train_M3AE_SEMIMG_SLAKE_seed2",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/logs/M3AE_SEMIMG_SLAKE_seed2_cost.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/logs/sched/M3AE_SEMIMG_SLAKE_seed2.train.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_semimg_train.py",
+   "SLAKE",
+   "2"
+  ],
+  "skip_order": true
+ },
+ {
+  "name": "train_M3AE_SEMIMG_HEAL_seed0",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/logs/M3AE_SEMIMG_HEAL_seed0_cost.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/logs/sched/M3AE_SEMIMG_HEAL_seed0.train.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_semimg_train.py",
+   "HEAL",
+   "0"
+  ],
+  "skip_order": true
+ },
+ {
+  "name": "train_M3AE_SEMIMG_HEAL_seed1",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/logs/M3AE_SEMIMG_HEAL_seed1_cost.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/logs/sched/M3AE_SEMIMG_HEAL_seed1.train.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_semimg_train.py",
+   "HEAL",
+   "1"
+  ],
+  "skip_order": true
+ },
+ {
+  "name": "train_M3AE_SEMIMG_HEAL_seed2",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/logs/M3AE_SEMIMG_HEAL_seed2_cost.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/logs/sched/M3AE_SEMIMG_HEAL_seed2.train.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_semimg_train.py",
+   "HEAL",
+   "2"
+  ],
+  "skip_order": true
+ },
+ {
+  "name": "train_M3AE_SEMIMG_MIMIC_seed0",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/logs/M3AE_SEMIMG_MIMIC_seed0_cost.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/logs/sched/M3AE_SEMIMG_MIMIC_seed0.train.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_semimg_train.py",
+   "MIMIC",
+   "0"
+  ],
+  "skip_order": true
+ },
+ {
+  "name": "train_M3AE_SEMIMG_MIMIC_seed1",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/logs/M3AE_SEMIMG_MIMIC_seed1_cost.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/logs/sched/M3AE_SEMIMG_MIMIC_seed1.train.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_semimg_train.py",
+   "MIMIC",
+   "1"
+  ],
+  "skip_order": true
+ },
+ {
+  "name": "train_M3AE_SEMIMG_MIMIC_seed2",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/logs/M3AE_SEMIMG_MIMIC_seed2_cost.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/logs/sched/M3AE_SEMIMG_MIMIC_seed2.train.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_semimg_train.py",
+   "MIMIC",
+   "2"
+  ],
+  "skip_order": true
+ },
+ {
+  "name": "train_M3AE_SEMIMG_KVASIR_seed0",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/logs/M3AE_SEMIMG_KVASIR_seed0_cost.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/logs/sched/M3AE_SEMIMG_KVASIR_seed0.train.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_semimg_train.py",
+   "KVASIR",
+   "0"
+  ],
+  "skip_order": true
+ },
+ {
+  "name": "train_M3AE_SEMIMG_KVASIR_seed1",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/logs/M3AE_SEMIMG_KVASIR_seed1_cost.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/logs/sched/M3AE_SEMIMG_KVASIR_seed1.train.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_semimg_train.py",
+   "KVASIR",
+   "1"
+  ],
+  "skip_order": true
+ },
+ {
+  "name": "train_M3AE_SEMIMG_KVASIR_seed2",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/logs/M3AE_SEMIMG_KVASIR_seed2_cost.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/logs/sched/M3AE_SEMIMG_KVASIR_seed2.train.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_semimg_train.py",
+   "KVASIR",
+   "2"
+  ],
+  "skip_order": true
+ },
+ {
+  "name": "train_M3AE_SEMIMG_VQARAD_QLEVEL_seed0",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/logs/M3AE_SEMIMG_VQARAD_QLEVEL_seed0_cost.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/logs/sched/M3AE_SEMIMG_VQARAD_QLEVEL_seed0.train.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_semimg_train.py",
+   "VQARAD_QLEVEL",
+   "0"
+  ],
+  "skip_order": true
+ },
+ {
+  "name": "train_M3AE_SEMIMG_VQARAD_QLEVEL_seed1",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/logs/M3AE_SEMIMG_VQARAD_QLEVEL_seed1_cost.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/logs/sched/M3AE_SEMIMG_VQARAD_QLEVEL_seed1.train.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_semimg_train.py",
+   "VQARAD_QLEVEL",
+   "1"
+  ],
+  "skip_order": true
+ },
+ {
+  "name": "train_M3AE_SEMIMG_VQARAD_QLEVEL_seed2",
+  "env": "lapa",
+  "reserve_mib": 8192,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/logs/M3AE_SEMIMG_VQARAD_QLEVEL_seed2_cost.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/logs/sched/M3AE_SEMIMG_VQARAD_QLEVEL_seed2.train.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_semimg_train.py",
+   "VQARAD_QLEVEL",
+   "2"
+  ],
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_SEMIMG_VQARAD_REDIV_seed0",
+  "env": "lapa",
+  "reserve_mib": 6144,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/results/M3AE_SEMIMG_VQARAD_REDIV_seed0_TXT.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/logs/sched/M3AE_SEMIMG_VQARAD_REDIV_seed0.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_semimg_predict.py",
+   "VQARAD_REDIV",
+   "0",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/results/M3AE_SEMIMG_VQARAD_REDIV_seed0_TXT.json"
+  ],
+  "after": "train_M3AE_SEMIMG_VQARAD_REDIV_seed0",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_SEMIMG_VQARAD_REDIV_seed1",
+  "env": "lapa",
+  "reserve_mib": 6144,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/results/M3AE_SEMIMG_VQARAD_REDIV_seed1_TXT.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/logs/sched/M3AE_SEMIMG_VQARAD_REDIV_seed1.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_semimg_predict.py",
+   "VQARAD_REDIV",
+   "1",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/results/M3AE_SEMIMG_VQARAD_REDIV_seed1_TXT.json"
+  ],
+  "after": "train_M3AE_SEMIMG_VQARAD_REDIV_seed1",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_SEMIMG_VQARAD_REDIV_seed2",
+  "env": "lapa",
+  "reserve_mib": 6144,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/results/M3AE_SEMIMG_VQARAD_REDIV_seed2_TXT.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/logs/sched/M3AE_SEMIMG_VQARAD_REDIV_seed2.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_semimg_predict.py",
+   "VQARAD_REDIV",
+   "2",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/results/M3AE_SEMIMG_VQARAD_REDIV_seed2_TXT.json"
+  ],
+  "after": "train_M3AE_SEMIMG_VQARAD_REDIV_seed2",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_SEMIMG_SLAKE_seed0",
+  "env": "lapa",
+  "reserve_mib": 6144,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/results/M3AE_SEMIMG_SLAKE_seed0_TXT.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/logs/sched/M3AE_SEMIMG_SLAKE_seed0.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_semimg_predict.py",
+   "SLAKE",
+   "0",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/results/M3AE_SEMIMG_SLAKE_seed0_TXT.json"
+  ],
+  "after": "train_M3AE_SEMIMG_SLAKE_seed0",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_SEMIMG_SLAKE_seed1",
+  "env": "lapa",
+  "reserve_mib": 6144,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/results/M3AE_SEMIMG_SLAKE_seed1_TXT.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/logs/sched/M3AE_SEMIMG_SLAKE_seed1.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_semimg_predict.py",
+   "SLAKE",
+   "1",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/results/M3AE_SEMIMG_SLAKE_seed1_TXT.json"
+  ],
+  "after": "train_M3AE_SEMIMG_SLAKE_seed1",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_SEMIMG_SLAKE_seed2",
+  "env": "lapa",
+  "reserve_mib": 6144,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/results/M3AE_SEMIMG_SLAKE_seed2_TXT.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/logs/sched/M3AE_SEMIMG_SLAKE_seed2.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_semimg_predict.py",
+   "SLAKE",
+   "2",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/results/M3AE_SEMIMG_SLAKE_seed2_TXT.json"
+  ],
+  "after": "train_M3AE_SEMIMG_SLAKE_seed2",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_SEMIMG_HEAL_seed0",
+  "env": "lapa",
+  "reserve_mib": 6144,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/results/M3AE_SEMIMG_HEAL_seed0_TXT.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/logs/sched/M3AE_SEMIMG_HEAL_seed0.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_semimg_predict.py",
+   "HEAL",
+   "0",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/results/M3AE_SEMIMG_HEAL_seed0_TXT.json"
+  ],
+  "after": "train_M3AE_SEMIMG_HEAL_seed0",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_SEMIMG_HEAL_seed1",
+  "env": "lapa",
+  "reserve_mib": 6144,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/results/M3AE_SEMIMG_HEAL_seed1_TXT.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/logs/sched/M3AE_SEMIMG_HEAL_seed1.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_semimg_predict.py",
+   "HEAL",
+   "1",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/results/M3AE_SEMIMG_HEAL_seed1_TXT.json"
+  ],
+  "after": "train_M3AE_SEMIMG_HEAL_seed1",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_SEMIMG_HEAL_seed2",
+  "env": "lapa",
+  "reserve_mib": 6144,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/results/M3AE_SEMIMG_HEAL_seed2_TXT.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/logs/sched/M3AE_SEMIMG_HEAL_seed2.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_semimg_predict.py",
+   "HEAL",
+   "2",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/results/M3AE_SEMIMG_HEAL_seed2_TXT.json"
+  ],
+  "after": "train_M3AE_SEMIMG_HEAL_seed2",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_SEMIMG_MIMIC_seed0",
+  "env": "lapa",
+  "reserve_mib": 6144,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/results/M3AE_SEMIMG_MIMIC_seed0_TXT.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/logs/sched/M3AE_SEMIMG_MIMIC_seed0.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_semimg_predict.py",
+   "MIMIC",
+   "0",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/results/M3AE_SEMIMG_MIMIC_seed0_TXT.json"
+  ],
+  "after": "train_M3AE_SEMIMG_MIMIC_seed0",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_SEMIMG_MIMIC_seed1",
+  "env": "lapa",
+  "reserve_mib": 6144,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/results/M3AE_SEMIMG_MIMIC_seed1_TXT.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/logs/sched/M3AE_SEMIMG_MIMIC_seed1.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_semimg_predict.py",
+   "MIMIC",
+   "1",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/results/M3AE_SEMIMG_MIMIC_seed1_TXT.json"
+  ],
+  "after": "train_M3AE_SEMIMG_MIMIC_seed1",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_SEMIMG_MIMIC_seed2",
+  "env": "lapa",
+  "reserve_mib": 6144,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/results/M3AE_SEMIMG_MIMIC_seed2_TXT.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/logs/sched/M3AE_SEMIMG_MIMIC_seed2.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_semimg_predict.py",
+   "MIMIC",
+   "2",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/results/M3AE_SEMIMG_MIMIC_seed2_TXT.json"
+  ],
+  "after": "train_M3AE_SEMIMG_MIMIC_seed2",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_SEMIMG_KVASIR_seed0",
+  "env": "lapa",
+  "reserve_mib": 6144,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/results/M3AE_SEMIMG_KVASIR_seed0_TXT.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/logs/sched/M3AE_SEMIMG_KVASIR_seed0.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_semimg_predict.py",
+   "KVASIR",
+   "0",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/results/M3AE_SEMIMG_KVASIR_seed0_TXT.json"
+  ],
+  "after": "train_M3AE_SEMIMG_KVASIR_seed0",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_SEMIMG_KVASIR_seed1",
+  "env": "lapa",
+  "reserve_mib": 6144,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/results/M3AE_SEMIMG_KVASIR_seed1_TXT.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/logs/sched/M3AE_SEMIMG_KVASIR_seed1.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_semimg_predict.py",
+   "KVASIR",
+   "1",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/results/M3AE_SEMIMG_KVASIR_seed1_TXT.json"
+  ],
+  "after": "train_M3AE_SEMIMG_KVASIR_seed1",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_SEMIMG_KVASIR_seed2",
+  "env": "lapa",
+  "reserve_mib": 6144,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/results/M3AE_SEMIMG_KVASIR_seed2_TXT.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/logs/sched/M3AE_SEMIMG_KVASIR_seed2.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_semimg_predict.py",
+   "KVASIR",
+   "2",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/results/M3AE_SEMIMG_KVASIR_seed2_TXT.json"
+  ],
+  "after": "train_M3AE_SEMIMG_KVASIR_seed2",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_SEMIMG_VQARAD_QLEVEL_seed0",
+  "env": "lapa",
+  "reserve_mib": 6144,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/results/M3AE_SEMIMG_VQARAD_QLEVEL_seed0_TXT.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/logs/sched/M3AE_SEMIMG_VQARAD_QLEVEL_seed0.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_semimg_predict.py",
+   "VQARAD_QLEVEL",
+   "0",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/results/M3AE_SEMIMG_VQARAD_QLEVEL_seed0_TXT.json"
+  ],
+  "after": "train_M3AE_SEMIMG_VQARAD_QLEVEL_seed0",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_SEMIMG_VQARAD_QLEVEL_seed1",
+  "env": "lapa",
+  "reserve_mib": 6144,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/results/M3AE_SEMIMG_VQARAD_QLEVEL_seed1_TXT.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/logs/sched/M3AE_SEMIMG_VQARAD_QLEVEL_seed1.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_semimg_predict.py",
+   "VQARAD_QLEVEL",
+   "1",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/results/M3AE_SEMIMG_VQARAD_QLEVEL_seed1_TXT.json"
+  ],
+  "after": "train_M3AE_SEMIMG_VQARAD_QLEVEL_seed1",
+  "skip_order": true
+ },
+ {
+  "name": "predict_M3AE_SEMIMG_VQARAD_QLEVEL_seed2",
+  "env": "lapa",
+  "reserve_mib": 6144,
+  "output": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/results/M3AE_SEMIMG_VQARAD_QLEVEL_seed2_TXT.json",
+  "log": "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/logs/sched/M3AE_SEMIMG_VQARAD_QLEVEL_seed2.predict.log",
+  "cwd": "${MEDVQA_ROOT}/v7_txt",
+  "cmd": [
+   "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_semimg_predict.py",
+   "VQARAD_QLEVEL",
+   "2",
+   "${MEDVQA_ROOT}/v7_txt/article_runs/m3ae_semimg/results/M3AE_SEMIMG_VQARAD_QLEVEL_seed2_TXT.json"
+  ],
+  "after": "train_M3AE_SEMIMG_VQARAD_QLEVEL_seed2",
+  "skip_order": true
+ }
+]

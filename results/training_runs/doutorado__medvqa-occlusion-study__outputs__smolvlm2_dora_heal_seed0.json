@@ -1,0 +1,59 @@
+{
+ "model": "HuggingFaceTB/SmolVLM2-2.2B-Instruct",
+ "dataset": "heal-local",
+ "peft": "dora",
+ "clip_encoder": null,
+ "train": {
+  "lr": 0.0002,
+  "warmup_ratio": 0.05,
+  "epochs": 3,
+  "grad_accum_steps": 4,
+  "max_grad_norm": 1.0,
+  "log_every": 10,
+  "max_steps": null,
+  "eval_every": 5000,
+  "checkpoint_every": 5000,
+  "compile": false,
+  "compile_backend": "eager",
+  "start_step": 0,
+  "seed": 0
+ },
+ "train_max_length": 8192,
+ "eval": {
+  "split": "validation",
+  "num_samples": null,
+  "max_new_tokens": 64
+ },
+ "metrics": {
+  "accuracy": 0.848170731707317,
+  "bleu": 0.162651342350188,
+  "rouge1": 0.8762965455953261,
+  "rouge2": 0.09807007355787847,
+  "rougeL": 0.8759892258825186,
+  "meteor": 0.48217465783332203,
+  "bert_score_f1": 0.9378921389579773
+ },
+ "efficiency": {
+  "params": {
+   "total_params": 2256352240,
+   "trainable_params": 9567360,
+   "trainable_ratio": 0.004240189022969215
+  },
+  "flops": {
+   "flops": 4593065586176.0,
+   "macs": 2295909875200.0
+  },
+  "training": {
+   "train_wall_time_s": 104805.08257167297,
+   "train_throughput_sps": 0.5274076279859722,
+   "train_peak_memory_gb": 6.828696250915527
+  },
+  "inference": {
+   "infer_total_s": 2486.5038459079806,
+   "infer_latency_s": 1.5161608816512078,
+   "infer_throughput_sps": 0.6595606126646194,
+   "infer_peak_memory_gb": 4.4061126708984375
+  }
+ },
+ "wandb_run_id": "d8j31gem"
+}

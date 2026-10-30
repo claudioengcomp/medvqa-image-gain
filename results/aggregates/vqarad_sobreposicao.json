@@ -1,0 +1,175 @@
+{
+ "t": "2026-10-19 01:04:02",
+ "script": "vqarad_sobreposicao.py",
+ "script_sha256": "afe3fdcb924e80a31ef7447a3587d6d541cd1b7424ac9f57ca929d5b5b100a28",
+ "normalizacao": "normalize_text: strip, lower, remove pontuacao, colapsa espacos; variante texto cru = strip + lower",
+ "regra_template": {
+  "R1": "mesma imagem + phrase_type 'frame' + mesma resposta normalizada",
+  "R2": "R1 + mesmo question_type"
+ },
+ "divisoes": {
+  "original": {
+   "arquivos": {
+    "train": {
+     "path": "trainset.json",
+     "sha256": "d651351d37657bd92a915c1a024709ab73bdfbc0e5c182a0637ce1e4f9fe52ba",
+     "linhas": 2758,
+     "imagens": 314,
+     "phrase_type": {
+      "frame": 1139,
+      "freeform": 1081,
+      "para": 538
+     },
+     "fechadas": 1643,
+     "sim_nao": 1547
+    },
+    "val": {
+     "path": "valset.json",
+     "sha256": "df13e13a1c473287fbbfecec40f5c1061cf8b947b3803c46a472d741192045cd",
+     "linhas": 306,
+     "imagens": 195,
+     "phrase_type": {
+      "para": 53,
+      "frame": 128,
+      "freeform": 125
+     },
+     "fechadas": 180,
+     "sim_nao": 166
+    },
+    "test": {
+     "path": "testset.json",
+     "sha256": "3d32a047592cb680e18054030b38b1a44d6b17105fc62d3088c8655d56a00ced",
+     "linhas": 451,
+     "imagens": 203,
+     "phrase_type": {
+      "freeform": 308,
+      "para": 143
+     },
+     "fechadas": 272,
+     "sim_nao": 251
+    }
+   },
+   "n_treino_mais_validacao": 3064,
+   "n_teste": 451,
+   "imagens_teste": 203,
+   "imagens_teste_em_treino_ou_validacao": 203,
+   "imagens_teste_em_treino": 203,
+   "imagens_teste_em_validacao": 124,
+   "imagens_validacao_em_treino": 195,
+   "contagens": {
+    "todas": {
+     "n": 451,
+     "pergunta_identica_qualquer_imagem": 90,
+     "pergunta_identica_mesma_imagem": 16,
+     "pergunta_identica_texto_cru_qualquer_imagem": 86,
+     "pergunta_identica_texto_cru_mesma_imagem": 14,
+     "template_mesma_imagem_R1": 313,
+     "template_mesma_imagem_R2": 295,
+     "mesma_imagem_mesma_resposta": 339
+    },
+    "fechadas": {
+     "n": 272,
+     "pergunta_identica_qualquer_imagem": 61,
+     "pergunta_identica_mesma_imagem": 10,
+     "pergunta_identica_texto_cru_qualquer_imagem": 59,
+     "pergunta_identica_texto_cru_mesma_imagem": 9,
+     "template_mesma_imagem_R1": 210,
+     "template_mesma_imagem_R2": 193,
+     "mesma_imagem_mesma_resposta": 235
+    },
+    "sim_nao": {
+     "n": 251,
+     "pergunta_identica_qualquer_imagem": 59,
+     "pergunta_identica_mesma_imagem": 10,
+     "pergunta_identica_texto_cru_qualquer_imagem": 57,
+     "pergunta_identica_texto_cru_mesma_imagem": 9,
+     "template_mesma_imagem_R1": 205,
+     "template_mesma_imagem_R2": 188,
+     "mesma_imagem_mesma_resposta": 230
+    }
+   }
+  },
+  "redividido": {
+   "arquivos": {
+    "train": {
+     "path": "trainset.json",
+     "sha256": "a7971a121d82a498a20094aa0d075b6dc89d3f36bc3cfa4416c35b7676ed212a",
+     "linhas": 2467,
+     "imagens": 220,
+     "phrase_type": {
+      "frame": 892,
+      "freeform": 1066,
+      "para": 509
+     },
+     "fechadas": 1469,
+     "sim_nao": 1377
+    },
+    "val": {
+     "path": "valset.json",
+     "sha256": "7a1d1118744b05221d82bf19b02ca9c2183ee0fb33540793d51620d76c6f7809",
+     "linhas": 343,
+     "imagens": 31,
+     "phrase_type": {
+      "frame": 123,
+      "freeform": 147,
+      "para": 73
+     },
+     "fechadas": 208,
+     "sim_nao": 194
+    },
+    "test": {
+     "path": "testset.json",
+     "sha256": "f5e99a12fa8e51a71aaad4587d3a7fa68b5ccbf6ef33cc7fe18b22c47b2027a5",
+     "linhas": 705,
+     "imagens": 63,
+     "phrase_type": {
+      "freeform": 301,
+      "frame": 252,
+      "para": 152
+     },
+     "fechadas": 418,
+     "sim_nao": 393
+    }
+   },
+   "n_treino_mais_validacao": 2810,
+   "n_teste": 705,
+   "imagens_teste": 63,
+   "imagens_teste_em_treino_ou_validacao": 0,
+   "imagens_teste_em_treino": 0,
+   "imagens_teste_em_validacao": 0,
+   "imagens_validacao_em_treino": 0,
+   "contagens": {
+    "todas": {
+     "n": 705,
+     "pergunta_identica_qualquer_imagem": 177,
+     "pergunta_identica_mesma_imagem": 0,
+     "pergunta_identica_texto_cru_qualquer_imagem": 173,
+     "pergunta_identica_texto_cru_mesma_imagem": 0,
+     "template_mesma_imagem_R1": 0,
+     "template_mesma_imagem_R2": 0,
+     "mesma_imagem_mesma_resposta": 0
+    },
+    "fechadas": {
+     "n": 418,
+     "pergunta_identica_qualquer_imagem": 99,
+     "pergunta_identica_mesma_imagem": 0,
+     "pergunta_identica_texto_cru_qualquer_imagem": 97,
+     "pergunta_identica_texto_cru_mesma_imagem": 0,
+     "template_mesma_imagem_R1": 0,
+     "template_mesma_imagem_R2": 0,
+     "mesma_imagem_mesma_resposta": 0
+    },
+    "sim_nao": {
+     "n": 393,
+     "pergunta_identica_qualquer_imagem": 97,
+     "pergunta_identica_mesma_imagem": 0,
+     "pergunta_identica_texto_cru_qualquer_imagem": 95,
+     "pergunta_identica_texto_cru_mesma_imagem": 0,
+     "template_mesma_imagem_R1": 0,
+     "template_mesma_imagem_R2": 0,
+     "mesma_imagem_mesma_resposta": 0
+    }
+   }
+  }
+ }
+}

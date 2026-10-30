@@ -1,0 +1,32 @@
+"""v7_mimic A (2026-10-11): suporte ao MIMIC no worktree do M3AE (v7_txt/worktree_m3ae @14da377 + patch), pelo mesmo mecanismo de
+harness/patch_m3ae_heal.py: vqa_mimic_dataset.py e vqa_mimic_datamodule.py = copias dos do HEAL com heal->mimic / HEAL->MIMIC;
+imports nos __init__; entrada "vqa_mimic" em _datamodules; named config task_finetune_vqa_mimic = copia de task_finetune_vqa_heal com
+vqa_label_size 82 (answer_vocab.json do v7_mimic, no=0/yes=1). Idempotente; nao toca em nada do HEAL/Kvasir/SLAKE."""
+import os as _os
+_MEDVQA_ROOT = _os.environ.get("MEDVQA_ROOT", "/path/to/original/run/tree")   # original run tree root (this package: see README, "Paths")
+import json, pathlib, re
+WM = pathlib.Path(f"{_MEDVQA_ROOT}/v7_txt/worktree_m3ae"); V = json.load(open(f"{_MEDVQA_ROOT}/v7_mimic/data/answer_vocab.json")); assert len(V) == 82 and V["no"] == 0 and V["yes"] == 1
+for sub in ("datasets", "datamodules"):
+    src = WM / "m3ae" / sub / ("vqa_heal_%s.py" % sub[:-1]); dst = WM / "m3ae" / sub / ("vqa_mimic_%s.py" % sub[:-1])
+    t = src.read_text().replace("heal", "mimic").replace("HEAL", "MIMIC").replace("Gerado por harness/patch_m3ae_heal.py", "Gerado por harness/v7_txt/patch_m3ae_mimic.py (v7_mimic, 2026-10-11) a partir do arquivo do HEAL")
+    if not dst.exists(): dst.write_text(t); print("criado", dst)
+    else: assert dst.read_text() == t, "divergente: %s" % dst; print("ja existia igual", dst)
+p = WM / "m3ae/datasets/__init__.py"; t = p.read_text(); line = "from .vqa_mimic_dataset import VQAMIMICDataset\n"
+if line not in t: p.write_text(t.rstrip("\n") + "\n" + line); print("import dataset ok")
+p = WM / "m3ae/datamodules/__init__.py"; t = p.read_text(); line = "from .vqa_mimic_datamodule import VQAMIMICDataModule\n"
+if line not in t: t = t.replace("from .vqa_heal_datamodule import VQAHEALDataModule\n", "from .vqa_heal_datamodule import VQAHEALDataModule\n" + line, 1); assert line in t
+if '"vqa_mimic": VQAMIMICDataModule,' not in t: t = t.replace('    "vqa_heal": VQAHEALDataModule,\n', '    "vqa_heal": VQAHEALDataModule,\n    "vqa_mimic": VQAMIMICDataModule,\n', 1); assert '"vqa_mimic"' in t
+p.write_text(t); print("datamodules __init__ ok")
+p = WM / "m3ae/config.py"; t = p.read_text()
+if "def task_finetune_vqa_mimic" not in t:
+    m = re.search(r"@ex\.named_config\ndef task_finetune_vqa_heal\(\):\n(?:    .*\n|\n)*?    vqa_label_size = 288\n", t); assert m, "bloco heal nao achado"
+    blk = m.group(0).replace("heal", "mimic").replace("vqa_label_size = 288", "vqa_label_size = 82"); assert blk.count("mimic") >= 2
+    t = t[:m.end()] + "\n\n# v7_mimic (2026-10-11): copia de task_finetune_vqa_heal com vqa_label_size 82 (answer_vocab.json do v7_mimic)\n" + blk + t[m.end():]; p.write_text(t); print("named config ok")
+else: print("named config ja existia")
+# data_root com links para os arrows (v7_mimic/data e so leitura; nada e copiado)
+DR = pathlib.Path(f"{_MEDVQA_ROOT}/v7_mimic/m3ae_arrows/data_root"); DR.mkdir(parents=True, exist_ok=True)
+for s in ("train", "val", "test"):
+    l = DR / ("vqa_mimic_%s.arrow" % s); tgt = pathlib.Path(f"{_MEDVQA_ROOT}/v7_mimic/data/vqa_mimic_%s.arrow" % s); assert tgt.exists()
+    if not l.exists(): l.symlink_to(tgt)
+    print(l, "->", l.resolve())
+print("FIM patch m3ae mimic")

@@ -1,0 +1,302 @@
+{
+ "t": "2026-10-20 20:16:33",
+ "versoes": {
+  "torch": "2.13.0+cu130",
+  "transformers": "5.15.1",
+  "peft": "0.20.0"
+ },
+ "vlm": {
+  "QWEN2VL|text-decoder-only": {
+   "yaml": "qwen2vl_lora_txt_slake.yaml",
+   "yaml_sha256": "ada27c2278807705603f3f3b983651f4e594d5c354a1420e2473cc555272dd76",
+   "peft_config": {
+    "r": 16,
+    "lora_alpha": 32,
+    "target_modules": "^.*model\\.layers\\.\\d+\\.self_attn\\.(q|k|v|o)_proj$",
+    "task_type": "CAUSAL_LM"
+   },
+   "total_base": 2208985600,
+   "total_com_adaptadores": 2213343744,
+   "treinaveis": 4358144,
+   "modulos_alvo": {
+    "decodificador:base_model.model.model.language_model.layers.N.self_attn.k_proj": 28,
+    "decodificador:base_model.model.model.language_model.layers.N.self_attn.o_proj": 28,
+    "decodificador:base_model.model.model.language_model.layers.N.self_attn.q_proj": 28,
+    "decodificador:base_model.model.model.language_model.layers.N.self_attn.v_proj": 28
+   },
+   "dtypes": [
+    "torch.bfloat16",
+    "torch.float32"
+   ],
+   "modelo_hf": "Qwen/Qwen2-VL-2B-Instruct"
+  },
+  "QWEN2VL|frozen visual encoder": {
+   "yaml": "qwen2vl_lora_slake.yaml",
+   "yaml_sha256": "6ef4c8c0da7da841c7dce5ac7e2e6e49a0e405e3e0f80c0aa4558dce8b1cc458",
+   "peft_config": {
+    "r": 16,
+    "lora_alpha": 32,
+    "target_modules": [
+     "q_proj",
+     "k_proj",
+     "v_proj",
+     "o_proj"
+    ],
+    "task_type": "CAUSAL_LM"
+   },
+   "total_base": 2208985600,
+   "total_com_adaptadores": 2213343744,
+   "treinaveis": 4358144,
+   "modulos_alvo": {
+    "decodificador:base_model.model.model.language_model.layers.N.self_attn.k_proj": 28,
+    "decodificador:base_model.model.model.language_model.layers.N.self_attn.o_proj": 28,
+    "decodificador:base_model.model.model.language_model.layers.N.self_attn.q_proj": 28,
+    "decodificador:base_model.model.model.language_model.layers.N.self_attn.v_proj": 28
+   },
+   "dtypes": [
+    "torch.bfloat16",
+    "torch.float32"
+   ],
+   "modelo_hf": "Qwen/Qwen2-VL-2B-Instruct"
+  },
+  "QWEN2VL|fine-tuned visual encoder": {
+   "yaml": "qwen2vl_lora_vt_slake.yaml",
+   "yaml_sha256": "6d3fcc38c211136a349117596c3ba6e757580f69939a74c5659939faf100cae9",
+   "peft_config": {
+    "r": 16,
+    "lora_alpha": 32,
+    "target_modules": ".*self_attn\\.(q|k|v|o)_proj$|.*visual\\.blocks\\.\\d+\\.attn\\.(qkv|proj)$",
+    "task_type": "CAUSAL_LM"
+   },
+   "total_base": 2208985600,
+   "total_com_adaptadores": 2217275904,
+   "treinaveis": 8290304,
+   "modulos_alvo": {
+    "decodificador:base_model.model.model.language_model.layers.N.self_attn.k_proj": 28,
+    "decodificador:base_model.model.model.language_model.layers.N.self_attn.o_proj": 28,
+    "decodificador:base_model.model.model.language_model.layers.N.self_attn.q_proj": 28,
+    "decodificador:base_model.model.model.language_model.layers.N.self_attn.v_proj": 28,
+    "encoder:base_model.model.model.visual.blocks.N.attn.proj": 32,
+    "encoder:base_model.model.model.visual.blocks.N.attn.qkv": 32
+   },
+   "dtypes": [
+    "torch.bfloat16",
+    "torch.float32"
+   ],
+   "modelo_hf": "Qwen/Qwen2-VL-2B-Instruct"
+  },
+  "SMOLVLM|text-decoder-only": {
+   "yaml": "smolvlm2_lora_txt_slake.yaml",
+   "yaml_sha256": "6571c11f6c928b4ef1342bfdb95d06d1106595b18a299f264dab71af674ec08f",
+   "peft_config": {
+    "r": 16,
+    "lora_alpha": 32,
+    "target_modules": "^.*text_model\\.layers\\.\\d+\\.self_attn\\.(q|k|v|o)_proj$",
+    "task_type": "CAUSAL_LM"
+   },
+   "total_base": 2246784880,
+   "total_com_adaptadores": 2253076336,
+   "treinaveis": 6291456,
+   "modulos_alvo": {
+    "decodificador:base_model.model.model.text_model.layers.N.self_attn.k_proj": 24,
+    "decodificador:base_model.model.model.text_model.layers.N.self_attn.o_proj": 24,
+    "decodificador:base_model.model.model.text_model.layers.N.self_attn.q_proj": 24,
+    "decodificador:base_model.model.model.text_model.layers.N.self_attn.v_proj": 24
+   },
+   "dtypes": [
+    "torch.bfloat16",
+    "torch.float32"
+   ],
+   "modelo_hf": "HuggingFaceTB/SmolVLM2-2.2B-Instruct"
+  },
+  "SMOLVLM|frozen visual encoder": {
+   "yaml": "smolvlm2_lora_ft_slake.yaml",
+   "yaml_sha256": "6c7eb3752038d2b84065e4975efd36b57c653f546bdf889be1fed5b35abf0456",
+   "peft_config": {
+    "r": 16,
+    "lora_alpha": 32,
+    "target_modules": "^.*text_model\\.layers\\.\\d+\\.self_attn\\.(q|k|v|o)_proj$",
+    "task_type": "CAUSAL_LM"
+   },
+   "total_base": 2246784880,
+   "total_com_adaptadores": 2253076336,
+   "treinaveis": 6291456,
+   "modulos_alvo": {
+    "decodificador:base_model.model.model.text_model.layers.N.self_attn.k_proj": 24,
+    "decodificador:base_model.model.model.text_model.layers.N.self_attn.o_proj": 24,
+    "decodificador:base_model.model.model.text_model.layers.N.self_attn.q_proj": 24,
+    "decodificador:base_model.model.model.text_model.layers.N.self_attn.v_proj": 24
+   },
+   "dtypes": [
+    "torch.bfloat16",
+    "torch.float32"
+   ],
+   "modelo_hf": "HuggingFaceTB/SmolVLM2-2.2B-Instruct"
+  },
+  "SMOLVLM|fine-tuned visual encoder": {
+   "yaml": "smolvlm2_lora_slake.yaml",
+   "yaml_sha256": "ecef70d281fe8184e7f561cc8c13fcc733af367aa009a7162ae13d06ba32b3a5",
+   "peft_config": {
+    "r": 16,
+    "lora_alpha": 32,
+    "target_modules": [
+     "q_proj",
+     "k_proj",
+     "v_proj",
+     "o_proj"
+    ],
+    "task_type": "CAUSAL_LM"
+   },
+   "total_base": 2246784880,
+   "total_com_adaptadores": 2256062320,
+   "treinaveis": 9277440,
+   "modulos_alvo": {
+    "decodificador:base_model.model.model.text_model.layers.N.self_attn.k_proj": 24,
+    "decodificador:base_model.model.model.text_model.layers.N.self_attn.o_proj": 24,
+    "decodificador:base_model.model.model.text_model.layers.N.self_attn.q_proj": 24,
+    "decodificador:base_model.model.model.text_model.layers.N.self_attn.v_proj": 24,
+    "encoder:base_model.model.model.vision_model.encoder.layers.N.self_attn.k_proj": 27,
+    "encoder:base_model.model.model.vision_model.encoder.layers.N.self_attn.q_proj": 27,
+    "encoder:base_model.model.model.vision_model.encoder.layers.N.self_attn.v_proj": 27
+   },
+   "dtypes": [
+    "torch.bfloat16",
+    "torch.float32"
+   ],
+   "modelo_hf": "HuggingFaceTB/SmolVLM2-2.2B-Instruct"
+  }
+ },
+ "pubmedbert": {
+  "KVASIR": {
+   "n_rotulos": 448,
+   "fonte_n_rotulos": "BERT2_question_only_KVASIR_seed0.json",
+   "total": 109826752,
+   "treinaveis": 109826752,
+   "cabeca": 344512
+  },
+  "SLAKE": {
+   "n_rotulos": 33,
+   "fonte_n_rotulos": "BERT2_question_only_SLAKE_seed0.json",
+   "total": 109507617,
+   "treinaveis": 109507617,
+   "cabeca": 25377
+  },
+  "HEAL_TREINO": {
+   "n_rotulos": 2,
+   "fonte_n_rotulos": "BERT2_question_only_HEAL_TREINO_seed0.json",
+   "total": 109483778,
+   "treinaveis": 109483778,
+   "cabeca": 1538
+  },
+  "MIMIC": {
+   "n_rotulos": 2,
+   "fonte_n_rotulos": "BERT2_question_only_MIMIC_seed0.json",
+   "total": 109483778,
+   "treinaveis": 109483778,
+   "cabeca": 1538
+  },
+  "VQARAD_REDIV": {
+   "n_rotulos": 51,
+   "fonte_n_rotulos": "BERT2_question_only_VQARAD_REDIV_seed0.json",
+   "total": 109521459,
+   "treinaveis": 109521459,
+   "cabeca": 39219
+  },
+  "VQARAD_QLEVEL": {
+   "n_rotulos": 54,
+   "fonte_n_rotulos": "results/predictions/VQARAD_QLEVEL/BERT2_question_only_VQARAD_QLEVEL_seed0.json",
+   "total": 109523766,
+   "treinaveis": 109523766,
+   "cabeca": 41526
+  }
+ },
+ "peft_config_entre_bases": {
+  "QWEN2VL|text-decoder-only": {
+   "referencia": "qwen2vl_lora_txt_slake.yaml",
+   "yaml_conferidas": [
+    "qwen2vl_lora_txt_mimic.yaml",
+    "qwen2vl_lora_txt_heal.yaml",
+    "qwen2vl_lora_txt_kvasir.yaml",
+    "qwen2vl_lora_txt_slake.yaml",
+    "qwen2vl_lora_txt_vqarad.yaml",
+    "qwen2vl_lora_txt_vqarad_radorig.yaml",
+    "qwen2vl_lora_txt_vqarad_qlevel.yaml",
+    "qwen2vl_lora_txt_vqarad_rediv.yaml"
+   ],
+   "diferentes": []
+  },
+  "QWEN2VL|frozen visual encoder": {
+   "referencia": "qwen2vl_lora_slake.yaml",
+   "yaml_conferidas": [
+    "qwen2vl_lora_combined.yaml",
+    "qwen2vl_lora_kvasir.yaml",
+    "qwen2vl_lora_pathvqa.yaml",
+    "qwen2vl_lora_slake.yaml",
+    "qwen2vl_lora_vqamed.yaml",
+    "qwen2vl_lora_vqarad.yaml",
+    "qwen2vl_lora_mimic.yaml",
+    "qwen2vl_lora_vqarad_radorig.yaml",
+    "qwen2vl_lora_vqarad_qlevel.yaml",
+    "qwen2vl_lora_vqarad_rediv.yaml"
+   ],
+   "diferentes": []
+  },
+  "QWEN2VL|fine-tuned visual encoder": {
+   "referencia": "qwen2vl_lora_vt_slake.yaml",
+   "yaml_conferidas": [
+    "qwen2vl_lora_vt_kvasir.yaml",
+    "qwen2vl_lora_vt_slake.yaml",
+    "qwen2vl_lora_vt_vqarad.yaml",
+    "qwen2vl_lora_vt_mimic.yaml",
+    "qwen2vl_lora_vt_vqarad_radorig.yaml",
+    "qwen2vl_lora_vt_vqarad_qlevel.yaml",
+    "qwen2vl_lora_vt_vqarad_rediv.yaml"
+   ],
+   "diferentes": []
+  },
+  "SMOLVLM|text-decoder-only": {
+   "referencia": "smolvlm2_lora_txt_slake.yaml",
+   "yaml_conferidas": [
+    "smolvlm2_lora_txt_mimic.yaml",
+    "smolvlm2_lora_txt_heal.yaml",
+    "smolvlm2_lora_txt_kvasir.yaml",
+    "smolvlm2_lora_txt_slake.yaml",
+    "smolvlm2_lora_txt_vqarad.yaml",
+    "smolvlm2_lora_txt_vqarad_radorig.yaml",
+    "smolvlm2_lora_txt_vqarad_qlevel.yaml",
+    "smolvlm2_lora_txt_vqarad_rediv.yaml"
+   ],
+   "diferentes": []
+  },
+  "SMOLVLM|frozen visual encoder": {
+   "referencia": "smolvlm2_lora_ft_slake.yaml",
+   "yaml_conferidas": [
+    "smolvlm2_lora_ft_kvasir.yaml",
+    "smolvlm2_lora_ft_slake.yaml",
+    "smolvlm2_lora_ft_vqarad.yaml",
+    "smolvlm2_lora_ft_mimic.yaml",
+    "smolvlm2_lora_ft_vqarad_radorig.yaml",
+    "smolvlm2_lora_ft_vqarad_qlevel.yaml",
+    "smolvlm2_lora_ft_vqarad_rediv.yaml"
+   ],
+   "diferentes": []
+  },
+  "SMOLVLM|fine-tuned visual encoder": {
+   "referencia": "smolvlm2_lora_slake.yaml",
+   "yaml_conferidas": [
+    "smolvlm2_lora_kvasir.yaml",
+    "smolvlm2_lora_pathvqa.yaml",
+    "smolvlm2_lora_slake.yaml",
+    "smolvlm2_lora_vqamed.yaml",
+    "smolvlm2_lora_vqarad.yaml",
+    "smolvlm2_lora_mimic.yaml",
+    "smolvlm2_lora_vqarad_radorig.yaml",
+    "smolvlm2_lora_vqarad_qlevel.yaml",
+    "smolvlm2_lora_vqarad_rediv.yaml"
+   ],
+   "diferentes": []
+  }
+ },
+ "script": "model_parameters.py",
+ "script_sha256": "77a94f57b282f43ed1db0da125b0fbaca6d91b0d7d079479663cd6c875e4a9c7"
+}

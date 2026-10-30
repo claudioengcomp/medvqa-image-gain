@@ -1,0 +1,18 @@
+{
+ "run_name": "M3AE_TXT_heal_seed0",
+ "task": "task_finetune_vqa_heal",
+ "seed": 0,
+ "vqa_label_size": 288,
+ "train_transform_keys": [
+  "clip"
+ ],
+ "data_root": "data_root",
+ "train_wall_time_s": 6631,
+ "train_peak_memory_gb": 31.47,
+ "note": "pico = nvidia-smi da placa inteira (inclui terceiros), como nas linhas publicadas",
+ "train_peak_memory_gb_placa_do_treino": 30.259,
+ "mem_placa_antes_do_inicio_mib": 4284,
+ "mem_placa_mediana_mib": 28703,
+ "placa": 1,
+ "nota_correcao_20261012": "train_peak_memory_gb original = maximo das 4 placas (poll sem -i, defeito herdado de run_finetune_m3ae.sh); usar train_peak_memory_gb_placa_do_treino (inclui terceiros nessa placa; o nivel antes do inicio estima a parte deles)"
+}

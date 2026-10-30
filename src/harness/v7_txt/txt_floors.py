@@ -1,0 +1,216 @@
+"""P1.4 (2026-10-09): consolidacao do braco so-texto. Por linha (benchmark, familia, semente): Acc(TXT) global e por
+classe de pergunta, ao lado de Acc(C0) da congelada, Acc(C0) da adaptada, Acc(C1) onde existir e TFIDF por classe, no mesmo
+subconjunto de qids (HEAL: 1 446 avaliaveis). ICs por bootstrap POR IMAGEM (2000, seed 20260913, as mesmas replicas para
+todos os bracos); McNemar mid-p TXT vs C0 congelada e TXT vs TFIDF por linha; Holm por benchmark (sobre as linhas x 2
+testes); media e DP entre sementes; contagem acerta/erra/empata por item TXT vs C0 congelada. Sem interpretacao.
+Roda com o que existir em v7_txt/results (reexecutavel)."""
+from __future__ import annotations
+import os as _os
+_MEDVQA_ROOT = _os.environ.get("MEDVQA_ROOT", "/path/to/original/run/tree")   # original run tree root (this package: see README, "Paths")
+import argparse, collections, hashlib, json, os, time
+import numpy as np
+from harness.interventions.arrow_io import read_arrow
+from harness.stats.bootstrap import ImageBootstrap, holm, mcnemar_midp
+
+P0R = f"{_MEDVQA_ROOT}/doutorado/medvqa-main/results"; ISBI = f"{_MEDVQA_ROOT}/doutorado/medvqa-occlusion-study/results/isbi_occlusion"
+V5Q = f"{_MEDVQA_ROOT}/v5_qwen_vt/results"; V5S = f"{_MEDVQA_ROOT}/v5_smolvlm_ft/results"; V6R = f"{_MEDVQA_ROOT}/v6_tower_heal/results"; V7 = f"{_MEDVQA_ROOT}/v7_txt"
+MIMIC = f"{_MEDVQA_ROOT}/v7_mimic"; RESULTS_DIR = {"MIMIC": f"{MIMIC}/results"}
+ARROWS = {"VQARAD": f"{_MEDVQA_ROOT}/doutorado/M3AE/data/finetune_arrows/vqa_vqa_rad_test.arrow", "MIMIC": f"{MIMIC}/data/vqa_mimic_test.arrow", "KVASIR": f"{_MEDVQA_ROOT}/doutorado/medvqa-main/data/finetune_arrows/vqa_kvasir_test_clean.arrow", "SLAKE": f"{_MEDVQA_ROOT}/doutorado/M3AE/data/finetune_arrows/vqa_slack_test.arrow", "HEAL": f"{_MEDVQA_ROOT}/doutorado/medvqa-occlusion-study/data/finetune_arrows/vqa_heal_test.arrow"}
+ARROWS["VQARAD_RADORIG"] = ARROWS["VQARAD"]   # 15/10: VQA-RAD fonte unica (revision A1); mesmo teste
+TXT_BENCH_M3AE = {"VQARAD_RADORIG": "VQARAD"}   # 15/10: o M3AE so-texto do VQA-RAD ja usava o pacote original
+# 17/10 (article_runs): ARTICLE2_RUNS=1 -> (a) base VQARAD_REDIV (VQA-RAD redividido por imagem, vqarad_image_split); (b) C1 do MIMIC = as 1 499 fechadas (baselines);
+# (c) M3AE fora da comparacao com imagem cinza em todas as bases (c1 = None); (d) baselines extras: majoritario (2a) e PubMedBERT (2b). Sem a variavel, nada muda.
+ARTICLE_RUNS = os.environ.get("ARTICLE2_RUNS") == "1"; PJR = f"{_MEDVQA_ROOT}/v7_txt/article_runs/results"
+ARROWS["VQARAD_REDIV"] = f"{_MEDVQA_ROOT}/v7_txt/article_runs/data/vqarad_rediv/vqa_vqa_rad_test.arrow"; RESULTS_DIR["VQARAD_REDIV"] = PJR
+ARROWS["VQARAD_QLEVEL"] = f"{_MEDVQA_ROOT}/v7_txt/article_runs/data/vqarad_qlevel/vqa_vqa_rad_test.arrow"; RESULTS_DIR["VQARAD_QLEVEL"] = PJR   # 19/10 (vqarad_question_split)
+def extra_baselines(bench):
+    """17/10 (article_runs, question_only_sets): majoritario (um arquivo por base) e PubMedBERT (um por semente); dicts qid -> correct. VQARAD_RADORIG usa os do VQARAD (mesmo treino)."""
+    b = {"VQARAD_RADORIG": "VQARAD"}.get(bench, bench); mj = f"{PJR}/MAJ_question_only_{b}.json"; bt = {s: (f"{PJR}/BERT_question_only_{b}_seed{s}.json" if os.path.exists(f"{PJR}/BERT_question_only_{b}_seed{s}.json") else f"{PJR}/BERT2_question_only_{b}_seed{s}.json") for s in range(3)}   # 19/10: VQARAD_QLEVEL so tem a versao v2 (vqarad_question_split)
+    return {"maj": preds(mj) if os.path.exists(mj) else None, "maj_src": mj, "bert": {s: (preds(p) if os.path.exists(p) else None) for s, p in bt.items()}, "bert_src": bt}
+def pub(bench, fam, pe, s):   # nome publicado no p0 (SLAKE seed0 sem sufixo)
+    return "%s_%s_%s" % (fam, pe, bench) + ("" if (bench in ("SLAKE", "VQARAD") and s == 0) else "_seed%d" % s)   # 14/10: VQA-RAD como o SLAKE
+def cells(bench, fam, s):
+    c = _cells(bench, fam, s)
+    if ARTICLE_RUNS and c:
+        c = dict(c)
+        if fam == "M3AE": c["c1"] = None   # 17/10 (article_runs): M3AE sai da comparacao com imagem cinza (o so-texto dele ja e treinado com imagem cinza)
+        elif bench == "MIMIC": c["c1"] = f"{PJR}/{c['frozen_line']}_C1.json"   # 17/10 (article_runs, baselines): C1 nas 1 499 fechadas
+    return c
+def _cells(bench, fam, s):
+    if bench in ("VQARAD_REDIV", "VQARAD_QLEVEL"):   # 17/10 (article_runs, vqarad_image_split): tudo em v7_txt/article_runs/results; 19/10: VQARAD_QLEVEL (vqarad_question_split)
+        if fam == "M3AE": return {"frozen": f"{PJR}/M3AE_SCRATCH_{bench}_seed{s}_C0.json", "adapted": None, "c1": None, "frozen_line": f"M3AE_SCRATCH_{bench}_seed{s}", "adapted_line": None, "note": "M3AE: fine-tune completo (a unica celula)"}
+        if fam == "QWEN2VL": return {"frozen": f"{PJR}/QWEN2VL_LORA_{bench}_seed{s}_C0.json", "adapted": f"{PJR}/QWEN2VL_LORA_VT_{bench}_seed{s}_C0.json", "c1": f"{PJR}/QWEN2VL_LORA_{bench}_seed{s}_C1.json", "frozen_line": f"QWEN2VL_LORA_{bench}_seed{s}", "adapted_line": f"QWEN2VL_LORA_VT_{bench}_seed{s}"}
+        return {"frozen": f"{PJR}/SMOLVLM_LORA_FT_{bench}_seed{s}_C0.json", "adapted": f"{PJR}/SMOLVLM_LORA_{bench}_seed{s}_C0.json", "c1": f"{PJR}/SMOLVLM_LORA_FT_{bench}_seed{s}_C1.json", "frozen_line": f"SMOLVLM_LORA_FT_{bench}_seed{s}", "adapted_line": f"SMOLVLM_LORA_{bench}_seed{s}"}
+    if bench == "VQARAD_RADORIG":   # 15/10 (candidato, revision A1 do artigo 2): VLM do pacote original (_RADORIG, v7_txt/results); M3AE igual ao VQARAD (ja usava o pacote original)
+        if fam == "M3AE": return _cells("VQARAD", "M3AE", s)
+        R7 = f"{V7}/results"
+        if fam == "QWEN2VL": return {"frozen": f"{R7}/QWEN2VL_LORA_VQARAD_RADORIG_seed{s}_C0.json", "adapted": f"{R7}/QWEN2VL_LORA_VT_VQARAD_RADORIG_seed{s}_C0.json", "c1": f"{R7}/QWEN2VL_LORA_VQARAD_RADORIG_seed{s}_C1.json", "frozen_line": f"QWEN2VL_LORA_VQARAD_RADORIG_seed{s}", "adapted_line": f"QWEN2VL_LORA_VT_VQARAD_RADORIG_seed{s}"}
+        return {"frozen": f"{R7}/SMOLVLM_LORA_FT_VQARAD_RADORIG_seed{s}_C0.json", "adapted": f"{R7}/SMOLVLM_LORA_VQARAD_RADORIG_seed{s}_C0.json", "c1": f"{R7}/SMOLVLM_LORA_FT_VQARAD_RADORIG_seed{s}_C1.json", "frozen_line": f"SMOLVLM_LORA_FT_VQARAD_RADORIG_seed{s}", "adapted_line": f"SMOLVLM_LORA_VQARAD_RADORIG_seed{s}"}
+    if bench == "MIMIC":   # v7_mimic (3e): congelada = QWEN2VL_LORA_FROZEN, adaptada = QWEN2VL_LORA_VT; 14/10 (exec2): C1 = imagem cinza da linha congelada em v7_mimic/results (mesma convencao do HEAL/Kvasir/SLAKE)
+        if fam == "SMOLVLM":   # 13/10: SmolVLM2 no MIMIC (TXT x3 concluido), mesmo mapeamento do HEAL: congelada = LoRA FT (torre congelada), adaptada = LoRA publicada; 14/10: C1 da congelada
+            return {"frozen": f"{MIMIC}/results/SMOLVLM_LORA_FT_MIMIC_seed{s}_C0.json", "adapted": f"{MIMIC}/results/SMOLVLM_LORA_MIMIC_seed{s}_C0.json", "c1": f"{MIMIC}/results/SMOLVLM_LORA_FT_MIMIC_seed{s}_C1.json", "frozen_line": f"SMOLVLM_LORA_FT_MIMIC_seed{s}", "adapted_line": f"SMOLVLM_LORA_MIMIC_seed{s}"}
+        if fam == "M3AE":   # 13/10: M3AE no MIMIC (dois bracos, como nas outras bases): C0 = fine-tune completo com imagem; TXT = M3AE_TXT_MIMIC; 14/10: C1 = M3AE_MIMIC_seed s_C1 (imagem cinza na linha publicada)
+            return {"frozen": f"{MIMIC}/results/M3AE_MIMIC_seed{s}_C0.json", "adapted": None, "c1": f"{MIMIC}/results/M3AE_MIMIC_seed{s}_C1.json", "frozen_line": f"M3AE_MIMIC_seed{s}", "adapted_line": None, "note": "M3AE: fine-tune completo (a unica celula); TXT = imagem cinza constante no treino/val/teste"}
+        if fam != "QWEN2VL": return None
+        return {"frozen": f"{MIMIC}/results/QWEN2VL_LORA_FROZEN_MIMIC_seed{s}_C0.json", "adapted": f"{MIMIC}/results/QWEN2VL_LORA_VT_MIMIC_seed{s}_C0.json", "c1": f"{MIMIC}/results/QWEN2VL_LORA_FROZEN_MIMIC_seed{s}_C1.json", "frozen_line": f"QWEN2VL_LORA_FROZEN_MIMIC_seed{s}", "adapted_line": f"QWEN2VL_LORA_VT_MIMIC_seed{s}"}
+    if fam == "M3AE":   # M3AE: so o fine-tune completo publicado (sem celula de torre congelada/adaptada); "frozen" = C0 publicada, "adapted" = n/a
+        c0 = {"HEAL": f"{ISBI}/M3AE_HEAL_seed{s}_C0.json", "KVASIR": f"{P0R}/M3AE_KVASIR_seed{s}_C0.json", "SLAKE": f"{P0R}/M3AE_SCRATCH_SLAKE" + ("" if s == 0 else f"_seed{s}") + "_C0.json", "VQARAD": f"{P0R}/M3AE_SCRATCH_VQARAD" + ("" if s == 0 else f"_seed{s}") + "_C0.json"}[bench]
+        c1 = {"HEAL": f"{V7}/results/M3AE_HEAL_seed{s}_C1.json", "KVASIR": f"{P0R}/M3AE_KVASIR_seed{s}_C1.json", "SLAKE": f"{P0R}/M3AE_SCRATCH_SLAKE" + ("" if s == 0 else f"_seed{s}") + "_C1.json", "VQARAD": f"{P0R}/M3AE_SCRATCH_VQARAD" + ("" if s == 0 else f"_seed{s}") + "_C1.json"}[bench]
+        return {"frozen": c0, "adapted": None, "c1": c1, "frozen_line": c0.split("/")[-1][:-8], "adapted_line": None, "note": "M3AE: fine-tune completo (a unica celula); TXT = imagem cinza constante no treino/val/teste"}
+    if bench == "HEAL":   # 14/10 (exec2): C1 = imagem cinza da linha congelada, em v7_txt/results (fila fechamento de 14/10)
+        if fam == "QWEN2VL": return {"frozen": f"{ISBI}/QWEN2VL_LORA_HEAL_seed{s}_C0.json", "adapted": f"{V6R}/QWEN2VL_LORA_VT_HEAL_seed{s}_C0.json", "c1": f"{V7}/results/QWEN2VL_LORA_HEAL_seed{s}_C1.json", "frozen_line": f"QWEN2VL_LORA_HEAL_seed{s}", "adapted_line": f"QWEN2VL_LORA_VT_HEAL_seed{s}"}
+        return {"frozen": f"{V6R}/SMOLVLM_LORA_FT_HEAL_seed{s}_C0.json", "adapted": f"{ISBI}/SMOLVLM_LORA_HEAL_seed{s}_C0.json", "c1": f"{V7}/results/SMOLVLM_LORA_FT_HEAL_seed{s}_C1.json", "frozen_line": f"SMOLVLM_LORA_FT_HEAL_seed{s}", "adapted_line": f"SMOLVLM_LORA_HEAL_seed{s}"}
+    if fam == "QWEN2VL": return {"frozen": f"{P0R}/{pub(bench, 'QWEN2VL', 'LORA', s)}_C0.json", "adapted": f"{V5Q}/QWEN2VL_LORA_VT_{bench}_seed{s}_C0.json", "c1": f"{P0R}/{pub(bench, 'QWEN2VL', 'LORA', s)}_C1.json", "frozen_line": pub(bench, "QWEN2VL", "LORA", s), "adapted_line": f"QWEN2VL_LORA_VT_{bench}_seed{s}"}
+    return {"frozen": f"{V5S}/SMOLVLM_LORA_FT_{bench}_seed{s}_C0.json", "adapted": f"{P0R}/{pub(bench, 'SMOLVLM', 'LORA', s)}_C0.json", "c1": f"{V5S}/SMOLVLM_LORA_FT_{bench}_seed{s}_C1.json", "frozen_line": f"SMOLVLM_LORA_FT_{bench}_seed{s}", "adapted_line": pub(bench, "SMOLVLM", "LORA", s)}
+def sha(p):
+    if p is None: return None
+    h = hashlib.sha256(); h.update(open(p, "rb").read()); return h.hexdigest()
+def preds(p): return {int(x["qid"]): bool(x["correct"]) for x in json.load(open(p))["predictions"]}
+def mimic_items():
+    import pandas as pd
+    d = pd.read_parquet(f"{MIMIC}/data/items_test.parquet"); return {int(r.qid): r for r in d.itertuples()}
+def mimic_floors():
+    """TFIDF subset/full e prior-majoritario subset/full por item (dicts qid -> correct), gold do items_test.parquet."""
+    from med_vlm.metrics.process_text import answer_matches, normalize_text
+    it = mimic_items(); out = {}
+    for tag in ("subset", "full"):
+        d = json.load(open(f"{MIMIC}/results/TFIDF_question_only_MIMIC_{tag}.json"))
+        tfidf = {int(q): bool(answer_matches(normalize_text(str(p)), [normalize_text(str(it[int(q)].answer))])) for q, p in d["predictions"].items()}
+        pr = {int(q): bool(answer_matches(normalize_text(str(p)), [normalize_text(str(it[int(q)].answer))])) for q, p in d["prior_predictions"].items()}
+        # decisao do candidato (10/10): TFIDF (LR sim/nao) so nas FECHADAS; nas abertas o baseline e a resposta majoritaria por template ("prior por template"), nunca rotulada TFIDF
+        out["TFIDF_" + tag + "_fechadas"] = {q: v for q, v in tfidf.items() if it[q].answer_type == "closed"}
+        out["prior_" + tag + "_abertas"] = {q: v for q, v in pr.items() if it[q].answer_type == "open"}
+        out["baseline_" + tag] = {**out["TFIDF_" + tag + "_fechadas"], **out["prior_" + tag + "_abertas"]}
+    return out
+def tfidf_fechadas(bench):
+    """15/10/2026 (candidato): artigo 2 so com fechadas; TFIDF = so o classificador nas fechadas (sem o composto do MIMIC)."""
+    if bench == "MIMIC": return mimic_floors()["TFIDF_subset_fechadas"], f"{MIMIC}/results/TFIDF_question_only_MIMIC_subset.json -- TFIDF subset (LR sim/nao) so nas fechadas"
+    if bench == "SLAKE": p = f"{_MEDVQA_ROOT}/v6_medida/design/tfidf_by_type/SLAKE_closed_recomputed.json"; return preds(p), p + " (so fechadas)"
+    if bench in ("VQARAD_REDIV", "VQARAD_QLEVEL"): p = f"{PJR}/TFIDF_question_only_{bench}.json"; return preds(p), p + " (TF-IDF + LR, harness/baselines/question_only.py inalterado, nas 1 469 fechadas do treino redividido; 418 fechadas do teste novo)"   # 17/10 (article_runs, vqarad_image_split)
+    if bench in ("VQARAD", "VQARAD_RADORIG"): p = f"{P0R}/TFIDF_question_only_VQARAD_C0.json"; return preds(p), p + " (classificador treinado nas fechadas do trainset.json do M3AE = treino de 2 758; 272 fechadas; reproduzido item a item por harness/v7_txt/tfidf_vqarad_orig.py, variante so_fechadas)"
+    return tfidf_preds(bench)   # Kvasir e HEAL: o TFIDF ja e so nas fechadas
+def tfidf_preds(bench):
+    if bench == "MIMIC": return mimic_floors()["baseline_subset"], f"{MIMIC}/results/TFIDF_question_only_MIMIC_subset.json -- baseline = TFIDF subset nas fechadas + prior por template (resposta majoritaria no treino subset) nas abertas; TFIDF full e prior full nas colunas extras"
+    if bench == "KVASIR": return preds(f"{ISBI}/TFIDF_question_only_KVASIR_C0.json"), f"{ISBI}/TFIDF_question_only_KVASIR_C0.json"
+    if bench in ("VQARAD_REDIV", "VQARAD_QLEVEL"): return tfidf_fechadas(bench)   # 17/10: so fechadas
+    if bench == "VQARAD_RADORIG": p = f"{V7}/results/TFIDF_question_only_VQARAD_orig.json"; return preds(p), p + " (TFIDF retreinado no treino de 2 758 do pacote original, todas as 451; harness/v7_txt/tfidf_vqarad_orig.py; 15/10)"
+    if bench == "VQARAD": return preds(f"{P0R}/TFIDF_question_only_VQARAD_C0.json"), f"{P0R}/TFIDF_question_only_VQARAD_C0.json (TFIDF publicado do p0)"   # 14/10
+    if bench == "SLAKE":
+        d = {}; fs = [f"{_MEDVQA_ROOT}/v6_medida/design/tfidf_by_type/SLAKE_closed_recomputed.json", f"{_MEDVQA_ROOT}/v6_medida/design/tfidf_by_type/SLAKE_open.json"]
+        for f in fs: d.update(preds(f))
+        return d, "+".join(fs)
+    p = f"{V7}/results/TFIDF_question_only_HEAL_aligned.json"
+    if os.path.exists(p): return preds(p), p + " (TFIDF alinhado aos 1446 qids, harness/v7_txt/tfidf_heal_aligned.py)"
+    return None, "TFIDF por item do HEAL nao existe em disco (tfidf_by_type_heal.json so traz agregados): McNemar TXT vs TFIDF nao calculado; TFIDF por classe lido dos agregados"
+def classes(bench, df):
+    """qid -> dict de classes; e qid -> image_id."""
+    img = {}; cls = collections.defaultdict(dict)
+    for _, r in df.iterrows():
+        for qid, t in zip(r["question_id"], r["answer_type"]): img[int(qid)] = r["image_id"]; cls[int(qid)]["answer_type"] = {0: "closed", 1: "open"}.get(int(t), str(t))
+    if bench == "KVASIR":
+        inv = json.load(open(f"{ISBI}/inventory_kvasir_test_clean.json"))
+        for q in inv["questions"]: cls[q["qid"]]["question_class"] = q["question_class"]
+    elif bench == "SLAKE":
+        inv = json.load(open(f"{ISBI}/inventory_slake_test.json"))
+        for q in inv["questions"]: cls[q["qid"]]["content_type"] = q.get("content_type"); cls[q["qid"]]["question_class"] = q.get("question_class")
+    elif bench == "MIMIC":
+        for q, r in mimic_items().items(): cls[q]["question_type"] = r.question_type; cls[q]["template"] = f"{r.template_id} {r.template}"
+    elif bench in ("VQARAD", "VQARAD_RADORIG", "VQARAD_REDIV", "VQARAD_QLEVEL"):   # 14/10: sem inventario proprio; so answer_type (do arrow); 17/10: VQARAD_REDIV
+        pass
+    else:
+        inv = json.load(open(f"{ISBI}/inventory_heal_test.json"))
+        for q in inv["questions"]: cls[q["qid"]]["question_class"] = q["question_class"]; cls[q["qid"]]["anatomy"] = q["anatomy"]; cls[q["qid"]]["evaluable"] = q["evaluable"]
+    return cls, img
+def acc_block(c: dict, qids, img, bs):
+    v = np.array([c[q] for q in qids], float); return {"n": len(qids), "acc": float(v.mean()) if len(qids) else None, "acc_ci": bs.ci_mean_diff([img[q] for q in qids], v) if len(qids) else None}
+def diff_block(a: dict, b: dict, qids, img, bs):
+    va = np.array([a[q] for q in qids], float); vb = np.array([b[q] for q in qids], float)
+    return {"n": len(qids), "diff": float((va - vb).mean()), "diff_ci": bs.ci_mean_diff([img[q] for q in qids], va - vb), "mcnemar_midp": mcnemar_midp(va.astype(bool), vb.astype(bool)),
+            "txt_right_other_wrong": int(((va == 1) & (vb == 0)).sum()), "txt_wrong_other_right": int(((va == 0) & (vb == 1)).sum()), "both_right": int(((va == 1) & (vb == 1)).sum()), "both_wrong": int(((va == 0) & (vb == 0)).sum())}
+NOTA_REPRO = "Reprodução entre ambientes (registro de 14/10/2026, decisão do candidato): a banda de 2,7–5,9 % de discordância item a item entre ambientes vale para os modelos generativos em bf16. O M3AE, classificador com argmax, reproduz item a item entre ambientes: o C0 do VQA-RAD, seeds 1 e 2, com os pesos do Colab recuperados do Drive, rodado na gpu1, tem 0 de 451 predições diferentes do publicado (gerado no Colab) nas duas seeds (v7_txt/analysis/c0repro_vqarad.json). Por consequência, os 10–11 % de divergência do M3AE_SCRATCH SLAKE seeds 1 e 2 (39 e 43 de 388 itens) contra a C0 do Colab são diferença de pesos (retreinos de 15/09), não de ambiente."   # 14/10/2026 (candidato)
+
+
+def main():
+    ap = argparse.ArgumentParser(); ap.add_argument("--out-json", default=f"{V7}/analysis/txt_floors.json"); ap.add_argument("--out-md", default=f"{V7}/docs/txt_floors.md"); a = ap.parse_args()
+    out = {"t": time.strftime("%Y-%m-%d %H:%M:%S"), "n_boot": 2000, "seed": 20260913, "benchmarks": {}}
+    for bench in ("SLAKE", "HEAL", "KVASIR", "MIMIC", "VQARAD", "VQARAD_RADORIG"):   # 14/10: VQA-RAD; 15/10: VQA-RAD fonte unica (A1)
+        df = read_arrow(ARROWS[bench]); cls, img = classes(bench, df); tfidf, m0src = tfidf_preds(bench)
+        allq = sorted(img); bs = ImageBootstrap([img[q] for q in allq], 2000, 20260913)
+        B = {"arrow": ARROWS[bench], "arrow_sha256": sha(ARROWS[bench]), "n_questions": len(allq), "n_images": len(bs.ids), "tfidf_source": m0src, "lines": [], "holm": {}}
+        if bench == "HEAL": B["tfidf_by_class_aggregates"] = json.load(open(f"{ISBI}/tfidf_by_type_heal.json"))["by_class"]["evaluable"]
+        extra = mimic_floors() if bench == "MIMIC" else {}
+        for fam in (("QWEN2VL",) if bench == "MIMIC" else ("QWEN2VL", "SMOLVLM", "M3AE")):
+            for s in range(3):
+                line = f"{fam}_LORA_TXT_{bench}_seed{s}" if fam != "M3AE" else f"M3AE_TXT_{TXT_BENCH_M3AE.get(bench, bench)}_seed{s}"; tp = f"{RESULTS_DIR.get(bench, V7 + '/results')}/{line}_TXT.json"; c = cells(bench, fam, s)
+                rec = {"line": line, "family": fam, "seed": s, "txt_file": tp, "cells": c}
+                if not os.path.exists(tp): rec["status"] = "TXT ausente"; B["lines"].append(rec); continue
+                if not os.path.exists(c["frozen"]) or (c["adapted"] and not os.path.exists(c["adapted"])): rec["status"] = "C0 congelada/adaptada ausente"; B["lines"].append(rec); continue
+                T = preds(tp); F = preds(c["frozen"]); A = preds(c["adapted"]) if c["adapted"] else None; C1 = preds(c["c1"]) if c["c1"] and os.path.exists(c["c1"]) else None
+                qids = [q for q in allq if q in T and q in F and (A is None or q in A)]; rec["n_aligned"] = len(qids); rec["sha256"] = {"txt": sha(tp), "frozen": sha(c["frozen"]), "adapted": sha(c["adapted"]), "c1": sha(c["c1"]) if C1 else None}
+                rec["overall"] = {"TXT": acc_block(T, qids, img, bs), "C0_frozen": acc_block(F, qids, img, bs)}
+                if A is not None: rec["overall"]["C0_adapted"] = acc_block(A, qids, img, bs)
+                if C1: q1 = [q for q in qids if q in C1]; rec["overall"]["C1_frozen"] = acc_block(C1, q1, img, bs)
+                if tfidf: qm = [q for q in qids if q in tfidf]; rec["overall"]["TFIDF"] = acc_block(tfidf, qm, img, bs); rec["TXT_vs_M0"] = diff_block(T, tfidf, qm, img, bs)
+                for k, dd in extra.items():
+                    if k != "baseline_subset": qk = [q for q in qids if q in dd]; rec["overall"][k] = acc_block(dd, qk, img, bs); rec["TXT_vs_" + k] = diff_block(T, dd, qk, img, bs)
+                rec["TXT_vs_C0_frozen"] = diff_block(T, F, qids, img, bs)
+                if A is not None: rec["TXT_vs_C0_adapted"] = diff_block(T, A, qids, img, bs)
+                rec["by_class"] = {}
+                for key in sorted({k for q in qids for k in cls[q] if k != "evaluable"}):
+                    for val in sorted({str(cls[q].get(key)) for q in qids}):
+                        sub = [q for q in qids if str(cls[q].get(key)) == val]
+                        if len(sub) < 5: continue
+                        blk = {"TXT": acc_block(T, sub, img, bs), "C0_frozen": acc_block(F, sub, img, bs), "C0_adapted": acc_block(A, sub, img, bs) if A is not None else None, "TXT_vs_C0_frozen": diff_block(T, F, sub, img, bs)}
+                        if C1: blk["C1_frozen"] = acc_block(C1, [q for q in sub if q in C1], img, bs)
+                        if tfidf: sm = [q for q in sub if q in tfidf]; blk["TFIDF"] = acc_block(tfidf, sm, img, bs); blk["TXT_vs_M0"] = diff_block(T, tfidf, sm, img, bs) if sm else None
+                        for k, dd in extra.items():
+                            if k != "baseline_subset": sk = [q for q in sub if q in dd]; blk[k] = acc_block(dd, sk, img, bs) if sk else None
+                        rec["by_class"][f"{key}={val}"] = blk
+                rec["status"] = "ok"; rec["sha256"]["adapted"] = sha(c["adapted"]) if c["adapted"] else None; B["lines"].append(rec); print(bench, line, "n", len(qids), "TXT", round(rec["overall"]["TXT"]["acc"], 4), "C0f", round(rec["overall"]["C0_frozen"]["acc"], 4), flush=True)
+        pv = {}
+        for r in B["lines"]:
+            if r.get("status") == "ok":
+                pv[r["line"] + "|TXT_vs_C0_frozen"] = r["TXT_vs_C0_frozen"]["mcnemar_midp"]["p_midp"]
+                if "TXT_vs_M0" in r: pv[r["line"] + "|TXT_vs_M0"] = r["TXT_vs_M0"]["mcnemar_midp"]["p_midp"]
+        B["holm"] = holm(pv) if pv else {}
+        B["by_family"] = {}
+        for fam in ("QWEN2VL", "SMOLVLM", "M3AE"):
+            rs = [r for r in B["lines"] if r["family"] == fam and r.get("status") == "ok"]
+            if rs: B["by_family"][fam] = {"n_seeds": len(rs), **{k: {"mean": float(np.mean([r["overall"][k]["acc"] for r in rs])), "sd": float(np.std([r["overall"][k]["acc"] for r in rs], ddof=1)) if len(rs) > 1 else None} for k in rs[0]["overall"] if all(k in r["overall"] for r in rs)}}
+        out["benchmarks"][bench] = B
+    json.dump(out, open(a.out_json, "w"), indent=1)
+    M = ["# Baselines so-texto (P1.4)", "", NOTA_REPRO, "", f"Gerado {out['t']}. Acc(TXT) = braco so-texto treinado (mesma receita, sem imagem, LoRA so no LM); C0 congelada / adaptada = linhas ja treinadas; C1 = imagem cinza (onde existe); TFIDF = TF-IDF+LR por item (Kvasir, SLAKE) ou agregados (HEAL). IC 95 % por bootstrap por imagem (2000, seed 20260913, replicas compartilhadas); McNemar mid-p; Holm por benchmark sobre todos os testes da tabela. Sem interpretacao.", ""]
+    for bench, B in out["benchmarks"].items():
+        M += [f"## {bench} (n questoes {B['n_questions']}, imagens {B['n_images']})", "", "| linha | n | Acc TXT [IC] | Acc C0 congelada | Acc C0 adaptada | Acc C1 | TFIDF | TXT-C0f [IC] mid-p (Holm) | TXT-TFIDF [IC] mid-p (Holm) | acerta/erra/empata TXT vs C0f |", "|---|---|---|---|---|---|---|---|---|---|"]
+        for r in B["lines"]:
+            if r.get("status") != "ok": M.append(f"| {r['line']} | {r.get('status')} |"); continue
+            o = r["overall"]; f = lambda b: f"{b['acc']:.4f} [{b['acc_ci'][0]:.3f}, {b['acc_ci'][1]:.3f}]" if b and b.get("acc") is not None else "-"
+            d1 = r["TXT_vs_C0_frozen"]; dm = r.get("TXT_vs_M0")
+            M.append(f"| {r['line']} | {r['n_aligned']} | {f(o['TXT'])} | {f(o['C0_frozen'])} | {f(o.get('C0_adapted'))} | {f(o.get('C1_frozen'))} | {f(o.get('TFIDF'))} | {d1['diff']:+.4f} [{d1['diff_ci'][0]:+.3f}, {d1['diff_ci'][1]:+.3f}] p={d1['mcnemar_midp']['p_midp']:.3g} ({B['holm'].get(r['line'] + '|TXT_vs_C0_frozen', float('nan')):.3g}) | " + (f"{dm['diff']:+.4f} [{dm['diff_ci'][0]:+.3f}, {dm['diff_ci'][1]:+.3f}] p={dm['mcnemar_midp']['p_midp']:.3g} ({B['holm'].get(r['line'] + '|TXT_vs_M0', float('nan')):.3g})" if dm else "-") + f" | {d1['txt_right_other_wrong']}/{d1['txt_wrong_other_right']}/{d1['both_right'] + d1['both_wrong']} |")
+        if bench == "MIMIC":
+            M += ["", "MIMIC: a coluna 'TFIDF' acima e o baseline composto = TFIDF subset (LR sim/nao) nas FECHADAS + prior por template (resposta majoritaria no treino) nas ABERTAS. Por linha, as partes e as alternativas (Acc [IC]; TXT - baseline [IC]):", ""]
+            for r in B["lines"]:
+                if r.get("status") == "ok": M.append(f"- {r['line']}: " + "; ".join(f"{k} {f(r['overall'][k])}, TXT-{k} {r['TXT_vs_' + k]['diff']:+.4f} [{r['TXT_vs_' + k]['diff_ci'][0]:+.3f}, {r['TXT_vs_' + k]['diff_ci'][1]:+.3f}]" for k in ("TFIDF_subset_fechadas", "TFIDF_full_fechadas", "prior_subset_abertas", "prior_full_abertas", "baseline_full") if k in r["overall"]))
+        M += ["", "Media (DP) entre sementes:", ""]
+        for fam, v in B.get("by_family", {}).items(): M.append(f"- {fam} (n={v['n_seeds']}): " + "; ".join(f"{k} {x['mean']:.4f} ({x['sd']:.4f})" if x["sd"] is not None else f"{k} {x['mean']:.4f}" for k, x in v.items() if k != "n_seeds"))
+        M += ["", "### Por classe (mesmos qids; Acc [IC 95 % bootstrap por imagem])", "", "| linha | classe | n | TXT | C0 congelada | C0 adaptada | C1 | TFIDF | TXT-C0f [IC] | TXT-TFIDF [IC] |", "|---|---|---|---|---|---|---|---|---|---|"]
+        g = lambda z: f"{z['acc']:.3f} [{z['acc_ci'][0]:.3f}, {z['acc_ci'][1]:.3f}]" if z and z.get("acc") is not None else "-"
+        for r in B["lines"]:
+            if r.get("status") != "ok": continue
+            for k, b in r["by_class"].items():
+                dm = b.get("TXT_vs_M0")
+                M.append(f"| {r['line']} | {k} | {b['TXT']['n']} | {g(b['TXT'])} | {g(b['C0_frozen'])} | {g(b['C0_adapted'])} | {g(b.get('C1_frozen'))} | {g(b.get('TFIDF'))} | {b['TXT_vs_C0_frozen']['diff']:+.3f} [{b['TXT_vs_C0_frozen']['diff_ci'][0]:+.3f}, {b['TXT_vs_C0_frozen']['diff_ci'][1]:+.3f}] | " + (f"{dm['diff']:+.3f} [{dm['diff_ci'][0]:+.3f}, {dm['diff_ci'][1]:+.3f}]" if dm else "-") + " |")
+        M += ["", "### Acerta/erra/empata por item, TXT vs TFIDF (TXT certo & TFIDF errado / TXT errado & TFIDF certo / ambos certos / ambos errados)", ""]
+        for r in B["lines"]:
+            if r.get("status") == "ok" and r.get("TXT_vs_M0"): d = r["TXT_vs_M0"]; M.append(f"- {r['line']}: {d['txt_right_other_wrong']} / {d['txt_wrong_other_right']} / {d['both_right']} / {d['both_wrong']} (n={d['n']})")
+            elif r.get("status") == "ok": M.append(f"- {r['line']}: TFIDF por item indisponivel neste benchmark")
+        M += ["", "### Acerta/erra/empata TXT vs TFIDF por classe (TXT certo & TFIDF errado / TXT errado & TFIDF certo / ambos certos / ambos errados; n)", "", "| linha | classe | TXT>TFIDF | TFIDF>TXT | ambos certos | ambos errados | n |", "|---|---|---|---|---|---|---|"]
+        for r in B["lines"]:
+            if r.get("status") != "ok": continue
+            for k, b in r["by_class"].items():
+                dm = b.get("TXT_vs_M0")
+                if dm: M.append(f"| {r['line']} | {k} | {dm['txt_right_other_wrong']} | {dm['txt_wrong_other_right']} | {dm['both_right']} | {dm['both_wrong']} | {dm['n']} |")
+        if bench == "HEAL": M += ["", f"TFIDF HEAL (agregados tfidf_by_type_heal.json, n_test 1512, alinhamento aos 1446 avaliaveis nao possivel por item): {json.dumps(B['tfidf_by_class_aggregates'])}"]
+        M.append("")
+    open(a.out_md, "w").write("\n".join(M) + "\n"); print("FIM", a.out_json)
+if __name__ == "__main__": main()

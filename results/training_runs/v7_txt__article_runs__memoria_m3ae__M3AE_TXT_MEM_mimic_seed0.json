@@ -1,0 +1,241 @@
+{
+ "name": "M3AE_TXT_MEM_mimic_seed0",
+ "base": "mimic",
+ "rc": 0,
+ "placa": "0",
+ "tempo_s": 391,
+ "cmd": [
+  "python",
+  "-u",
+  "main.py",
+  "with",
+  "data_root=data_root",
+  "num_gpus=1",
+  "num_nodes=1",
+  "task_finetune_vqa_mimic",
+  "per_gpu_batchsize=16",
+  "clip16",
+  "text_roberta",
+  "image_size=384",
+  "tokenizer=downloaded/roberta-base",
+  "load_path=downloaded/pretrained/m3ae.ckpt",
+  "seed=0",
+  "vqa_label_size=82",
+  "train_transform_keys=[\"clip\"]",
+  "default_root_dir=mimic",
+  "log_dir=result"
+ ],
+ "criterio": "fim da validacao da epoca 0 (epoca inteira de treino + validacao)",
+ "concluiu": true,
+ "passos_otimizacao": 234,
+ "lotes_treino": 938,
+ "lotes_validacao": 94,
+ "torch_max_allocated_mib": 24366.4,
+ "torch_max_reserved_mib": 24662.0,
+ "torch_max_allocated_mib_treino": 24366.4,
+ "torch_max_allocated_mib_ate_validacao": 24366.4,
+ "nvsmi_proc_max_mib": 26318,
+ "nvsmi_placa_max_mib": 26328,
+ "terceiros_mib_max": 38,
+ "terceiros_mib_min": -6502,
+ "amostras_nvsmi": 39,
+ "amostragem_s": 10,
+ "torch_log": "M3AE_TXT_MEM_mimic_seed0_torch.jsonl",
+ "nvsmi": [
+  {
+   "t": 0.1,
+   "proc_mib": 0,
+   "placa_mib": 4
+  },
+  {
+   "t": 10.3,
+   "proc_mib": 1450,
+   "placa_mib": 1488
+  },
+  {
+   "t": 20.4,
+   "proc_mib": 23846,
+   "placa_mib": 23856
+  },
+  {
+   "t": 30.6,
+   "proc_mib": 26318,
+   "placa_mib": 26328
+  },
+  {
+   "t": 40.7,
+   "proc_mib": 26318,
+   "placa_mib": 26328
+  },
+  {
+   "t": 50.8,
+   "proc_mib": 26318,
+   "placa_mib": 26328
+  },
+  {
+   "t": 61.0,
+   "proc_mib": 26318,
+   "placa_mib": 26328
+  },
+  {
+   "t": 71.1,
+   "proc_mib": 26318,
+   "placa_mib": 26328
+  },
+  {
+   "t": 81.2,
+   "proc_mib": 26318,
+   "placa_mib": 26328
+  },
+  {
+   "t": 91.4,
+   "proc_mib": 26318,
+   "placa_mib": 26328
+  },
+  {
+   "t": 101.5,
+   "proc_mib": 26318,
+   "placa_mib": 26328
+  },
+  {
+   "t": 111.6,
+   "proc_mib": 26318,
+   "placa_mib": 26328
+  },
+  {
+   "t": 121.8,
+   "proc_mib": 26318,
+   "placa_mib": 26328
+  },
+  {
+   "t": 131.9,
+   "proc_mib": 26318,
+   "placa_mib": 26328
+  },
+  {
+   "t": 142.0,
+   "proc_mib": 26318,
+   "placa_mib": 26328
+  },
+  {
+   "t": 152.2,
+   "proc_mib": 26318,
+   "placa_mib": 26328
+  },
+  {
+   "t": 162.3,
+   "proc_mib": 26318,
+   "placa_mib": 26328
+  },
+  {
+   "t": 172.5,
+   "proc_mib": 26318,
+   "placa_mib": 26328
+  },
+  {
+   "t": 182.6,
+   "proc_mib": 26318,
+   "placa_mib": 26328
+  },
+  {
+   "t": 192.7,
+   "proc_mib": 26318,
+   "placa_mib": 26328
+  },
+  {
+   "t": 202.8,
+   "proc_mib": 26318,
+   "placa_mib": 26328
+  },
+  {
+   "t": 213.0,
+   "proc_mib": 26318,
+   "placa_mib": 26328
+  },
+  {
+   "t": 223.1,
+   "proc_mib": 26318,
+   "placa_mib": 26328
+  },
+  {
+   "t": 233.2,
+   "proc_mib": 26318,
+   "placa_mib": 26328
+  },
+  {
+   "t": 243.3,
+   "proc_mib": 26318,
+   "placa_mib": 26328
+  },
+  {
+   "t": 253.5,
+   "proc_mib": 26318,
+   "placa_mib": 26328
+  },
+  {
+   "t": 263.6,
+   "proc_mib": 26318,
+   "placa_mib": 26328
+  },
+  {
+   "t": 273.8,
+   "proc_mib": 26318,
+   "placa_mib": 26328
+  },
+  {
+   "t": 283.9,
+   "proc_mib": 26318,
+   "placa_mib": 26328
+  },
+  {
+   "t": 294.0,
+   "proc_mib": 26318,
+   "placa_mib": 26328
+  },
+  {
+   "t": 304.1,
+   "proc_mib": 26318,
+   "placa_mib": 26328
+  },
+  {
+   "t": 314.3,
+   "proc_mib": 26318,
+   "placa_mib": 26328
+  },
+  {
+   "t": 324.4,
+   "proc_mib": 26318,
+   "placa_mib": 26328
+  },
+  {
+   "t": 334.6,
+   "proc_mib": 26318,
+   "placa_mib": 26328
+  },
+  {
+   "t": 344.7,
+   "proc_mib": 26318,
+   "placa_mib": 26328
+  },
+  {
+   "t": 354.8,
+   "proc_mib": 26318,
+   "placa_mib": 26328
+  },
+  {
+   "t": 364.9,
+   "proc_mib": 26318,
+   "placa_mib": 26328
+  },
+  {
+   "t": 375.1,
+   "proc_mib": 23028,
+   "placa_mib": 16526
+  },
+  {
+   "t": 385.2,
+   "proc_mib": 10150,
+   "placa_mib": 10160
+  }
+ ]
+}
