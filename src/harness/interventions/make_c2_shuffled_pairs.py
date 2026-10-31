@@ -1,6 +1,6 @@
 """C2: generates a copy of the test .arrow file with the image<->question
 pairing shuffled (each row receives the image of ANOTHER row,
-never its own — a derangement), with a fixed and documented seed.
+never its own; a derangement), with a fixed and documented seed.
 
 Usage:
     python -m harness.interventions.make_c2_shuffled_pairs \

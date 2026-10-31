@@ -13,9 +13,9 @@ sys.path.insert(0, f"{_MEDVQA_ROOT}/v7_txt/worktree"); sys.path.insert(0, f"{_ME
 import pandas as pd, pyarrow as pa
 from med_vlm.metrics.process_text import answer_matches, normalize_text
 from harness.baselines.question_only import load_closed_qa_pairs
-W = f"{_MEDVQA_ROOT}"; P0 = f"{W}/doutorado/medvqa-main"; PL = f"{W}/doutorado/medvqa-occlusion-study"; M3 = f"{W}/doutorado/M3AE/data/finetune_data"; MI = f"{W}/v7_mimic"
+W = f"{_MEDVQA_ROOT}"; P_MAIN = f"{W}/doutorado/medvqa-main"; PL = f"{W}/doutorado/medvqa-occlusion-study"; M3 = f"{W}/doutorado/M3AE/data/finetune_data"; MI = f"{W}/v7_mimic"
 TFIDF = {"KVASIR": f"{PL}/results/isbi_occlusion/TFIDF_question_only_KVASIR_C0.json", "SLAKE": f"{W}/v6_medida/design/tfidf_by_type/SLAKE_closed_recomputed.json", "HEAL": f"{W}/v7_txt/results/TFIDF_question_only_HEAL_aligned.json",
-      "MIMIC": f"{MI}/results/TFIDF_question_only_MIMIC_subset.json", "VQARAD": f"{P0}/results/TFIDF_question_only_VQARAD_C0.json"}
+      "MIMIC": f"{MI}/results/TFIDF_question_only_MIMIC_subset.json", "VQARAD": f"{P_MAIN}/results/TFIDF_question_only_VQARAD_C0.json"}
 NTRAIN = {"KVASIR": 38211, "SLAKE": 1943, "HEAL": 7641, "MIMIC": 7800, "VQARAD": 1643}
 QD = f"{W}/v7_txt/article_runs/data/vqarad_qlevel"; TFIDF["VQARAD_QLEVEL"] = f"{W}/v7_txt/article_runs/results/TFIDF_question_only_VQARAD_QLEVEL.json"; NTRAIN["VQARAD_QLEVEL"] = 1474   # 19/10 (vqarad_question_split)
 NTRAIN["HEAL_TREINO"] = 6882; TFIDF["HEAL_TREINO"] = TFIDF["HEAL"]   # 19/10 (heal_classifiers_train_only): HEAL training only, validation = val
@@ -42,7 +42,7 @@ def mimic(split):
 def build(b):
     src = {}
     if b == "KVASIR":
-        A = f"{P0}/data/finetune_arrows"; tr = flat(f"{A}/vqa_kvasir_train_clean.arrow"); va = flat(f"{A}/vqa_kvasir_val_clean.arrow"); te = flat(f"{A}/vqa_kvasir_test_clean.arrow"); src = {"train": f"{A}/vqa_kvasir_train_clean.arrow", "val": f"{A}/vqa_kvasir_val_clean.arrow", "test": f"{A}/vqa_kvasir_test_clean.arrow"}; tr_only = tr
+        A = f"{P_MAIN}/data/finetune_arrows"; tr = flat(f"{A}/vqa_kvasir_train_clean.arrow"); va = flat(f"{A}/vqa_kvasir_val_clean.arrow"); te = flat(f"{A}/vqa_kvasir_test_clean.arrow"); src = {"train": f"{A}/vqa_kvasir_train_clean.arrow", "val": f"{A}/vqa_kvasir_val_clean.arrow", "test": f"{A}/vqa_kvasir_test_clean.arrow"}; tr_only = tr
     elif b in ("SLAKE", "VQARAD"):
         f = {"SLAKE": ("slack/train.json", "slack/validate.json", "slack/test.json"), "VQARAD": ("vqa_rad/trainset.json", "vqa_rad/valset.json", "vqa_rad/testset.json")}[b]
         tr, va, te = (slake_vqarad(f"{M3}/{x}") for x in f); src = dict(zip(("train", "val", "test"), (f"{M3}/{x}" for x in f))); tr_only = tr

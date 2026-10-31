@@ -5,9 +5,7 @@ reimplementing anything, but isolated from the parts of `med_vlm` that require
 torch/transformers (models/loader.py, training/*) -- the __init__.py files of
 `med_vlm` and `med_vlm.metrics` are empty, so importing only
 `med_vlm.metrics.process_text` does not drag in any heavy dependency,
-allowing this module to be tested locally without the heavy stack installed.
-
-See docs/superpowers/specs/2026-08-18-circle-bridge-design.md §4."""
+allowing this module to be tested locally without the heavy stack installed."""
 from __future__ import annotations
 
 from med_vlm.metrics.process_text import answer_matches, extract_answer, normalize_text

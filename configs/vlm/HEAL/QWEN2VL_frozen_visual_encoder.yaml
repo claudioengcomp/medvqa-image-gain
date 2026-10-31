@@ -27,7 +27,7 @@ logging:
 outputs_dir: "./outputs"
 
 # Image preprocessing applied once at dataset load (cached).
-# All options default to false — enable to experiment.
+# All options default to false; enable to experiment.
 preprocessing:
   denoise: true
   denoise_method: "gaussian" # "gaussian" (mild) or "bilateral" (edge-preserving)
@@ -36,7 +36,7 @@ preprocessing:
   clahe_tile_grid_size: [8, 8]
 
 # Online training-time augmentation (applied per batch, training only).
-# No flips — intentionally omitted to preserve laterality answers.
+# No flips; intentionally omitted to preserve laterality answers.
 augmentation:
   enabled: true
   rotation_degrees: 5

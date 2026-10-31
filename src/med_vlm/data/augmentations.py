@@ -18,7 +18,7 @@ class TrainingAugmentor:
 
     Pipeline (all steps individually toggleable):
     1. Random rotation   – small angle to simulate patient positioning variance.
-    2. Random brightness – simulates exposure/illumination differences.
+    2. Random brightness; simulates exposure/illumination differences.
     3. Random contrast   – simulates scanner contrast variance.
 
     Args:

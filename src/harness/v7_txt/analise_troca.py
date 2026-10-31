@@ -10,16 +10,16 @@ import numpy as np
 from harness.v7_txt.txt_floors import ARROWS, RESULTS_DIR, V7, TXT_BENCH_M3AE, cells, classes, preds
 from harness.stats.bootstrap import ImageBootstrap
 from harness.interventions.arrow_io import read_arrow
-W = f"{_MEDVQA_ROOT}"; P0 = f"{W}/doutorado/medvqa-main/results"; PJR = f"{W}/v7_txt/article_runs/results"
+W = f"{_MEDVQA_ROOT}"; P_MAIN = f"{W}/doutorado/medvqa-main/results"; PJR = f"{W}/v7_txt/article_runs/results"
 def sha(p): return hashlib.sha256(open(p, "rb").read()).hexdigest()
 def swap_file(b, fam, s, line):
-    if b == "KVASIR": return f"{P0}/{line}_C2.json" if fam != "QWEN2VL" else f"{W}/v5_qwen_vt/results/{line}_C2.json"
-    if b == "SLAKE": return f"{P0}/{line}_C2.json" if fam != "QWEN2VL" else f"{W}/v5_qwen_vt/results/{line}_C2.json"
+    if b == "KVASIR": return f"{P_MAIN}/{line}_C2.json" if fam != "QWEN2VL" else f"{W}/v5_qwen_vt/results/{line}_C2.json"
+    if b == "SLAKE": return f"{P_MAIN}/{line}_C2.json" if fam != "QWEN2VL" else f"{W}/v5_qwen_vt/results/{line}_C2.json"
     if b in ("HEAL", "MIMIC") and os.environ.get("TROCA_V2") == "1": return f"{PJR}/{line}_C2v2.json"   # 19/10 (image_swap_v2): swap redone
     if b == "HEAL": return f"{W}/v6_tower_heal/results/{line}_C2.json"
     if b == "MIMIC": return f"{W}/v7_mimic/results/{line}_C2.json"
     if b in ("VQARAD_REDIV", "VQARAD_QLEVEL"): return f"{PJR}/{line}_C2.json"
-    if b == "VQARAD_RADORIG": return f"{P0}/{line}_C2.json" if fam == "M3AE" else f"{PJR}/NAO_RODADO_{line}_C2.json"   # 19/10: official split -- only M3AE has swap (p0); VLM _RADORIG without swap   # 19/10: VQARAD_QLEVEL (vqarad_question_split)
+    if b == "VQARAD_RADORIG": return f"{P_MAIN}/{line}_C2.json" if fam == "M3AE" else f"{PJR}/NAO_RODADO_{line}_C2.json"   # 19/10: official split -- only M3AE has swap (p0); VLM _RADORIG without swap   # 19/10: VQARAD_QLEVEL (vqarad_question_split)
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--out", required=True); ap.add_argument("--bases", default="KVASIR,SLAKE,HEAL,MIMIC,VQARAD_REDIV"); a = ap.parse_args()
     out = {"t": time.strftime("%Y-%m-%d %H:%M:%S"), "script": os.path.abspath(__file__), "script_sha256": sha(__file__), "n_boot": 2000, "seed": 20260913, "bases": {}}

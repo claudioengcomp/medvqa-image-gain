@@ -6,19 +6,19 @@ answer) back into the atomic questions that generated it, via the
 `original` field (JSON with the list {"q":..., "a":...} of the base
 Kvasir-VQA template questions that were combined). This is necessary because:
 - M3AE needs a short, closed-form answer vocabulary for
-  classification — x1's composite answers are long sentences.
+  classification: x1's composite answers are long sentences.
 - The condition evaluation (C0-C4, C5) reuses this same arrow
-  for the generative models via harness/circle_data_bridge.py — they
+  for the generative models via harness/circle_data_bridge.py; they
   receive the atomic question just like the others, with no disadvantage.
 
 It also separately captures the answer to the finding-category template
 question ("Are there any abnormalities in the image? Check
-all that are present.") as `pathology_label` per image — used by
+all that are present.") as `pathology_label` per image; used by
 condition C5 (harness/interventions/make_c5_matched_pathology_swap.py)
 to restrict the swap to a different category. See docs/superpowers/
 plans/2026-08-21-kvasir-targeted-pathology-swap-condition.md.
 
-TRAINING of the generative models (LoRA) does NOT use this arrow — it uses
+TRAINING of the generative models (LoRA) does NOT use this arrow; it uses
 Kvasir-VQA-x1 directly via med_vlm.data.loader (composite questions),
 because med_vlm is already configured natively for this format.
 
@@ -29,15 +29,15 @@ Usage:
 
 Real finding during execution (Colab, 21-22/08/2026), not covered by the 17
 patterns mapped in the planning session (which only looked at the TEST
-split): the TRAIN split has 2 extra patterns — "Does this image contain
+split): the TRAIN split has 2 extra patterns; "Does this image contain
 any finding?" (2263/6212 train images, 36%, had ONLY this question and
 were being discarded entirely; answer 100% "no" across the 2263+237
-occurrences measured in train+test — a degenerate question, with no
+occurrences measured in train+test; a degenerate question, with no
 variance, but legitimately closed) and "What color is the anatomical
-landmark?..." (small vocabulary, 22 combinations in train — the same
+landmark?..." (small vocabulary, 22 combinations in train; the same
 categorical pattern already handled for its sibling "what color is the
 abnormality"). Both also appear in the test split (237 and 55
-occurrences) — the test arrow had to be regenerated after this fix to
+occurrences): the test arrow had to be regenerated after this fix to
 stay consistent with the train one.
 """
 from __future__ import annotations
@@ -73,7 +73,7 @@ _PATHOLOGY_QUESTION = "are there any abnormalities in the image? check all that 
 def classify_question(question_text: str) -> str:
     """Classifies an atomic Kvasir question as 'closed' or 'open'.
     Raises ValueError if the text does not match any of the known
-    patterns — a sign that Kvasir-VQA-x1 has changed or was poorly decomposed,
+    patterns: a sign that Kvasir-VQA-x1 has changed or was poorly decomposed,
     which should not be silenced."""
     q = question_text.strip().lower()
     for pat in _CLOSED_PATTERNS:
@@ -88,7 +88,7 @@ def decompose_original_field(original_json: str) -> list[dict]:
     """Parses the `original` field (JSON string) of a Kvasir-VQA-x1 row,
     returning the list of atomic {"question":..., "answer":...}
     dicts. Returns [] if the field is empty or malformed (it does not
-    raise an exception — third-party data, treat as absence of data)."""
+    raise an exception; third-party data, treat as absence of data)."""
     if not original_json:
         return []
     try:
@@ -128,13 +128,13 @@ def build_image_records(rows: list[dict]) -> list[dict]:
                 if classify_question(q) != "closed":
                     continue
             except ValueError:
-                continue  # unknown pattern — skip, do not halt the entire build
+                continue  # unknown pattern; skip, do not halt the entire build
             by_img[img_id]["seen_questions"][q] = a
 
     records = []
     for img_id, data in by_img.items():
         if not data["seen_questions"]:
-            continue  # image with no recognized closed question — out of scope
+            continue  # image with no recognized closed question; out of scope
         records.append({
             "img_id": img_id,
             "image_url": data["image_url"],
@@ -149,10 +149,10 @@ def _download_image_bytes(url: str, max_retries: int = 5, backoff_base_s: float 
     """Downloads the bytes of `url`, with exponential retry. Real finding in a
     run (21/08/2026, Colab): a transient `ConnectionResetError`/`URLError`
     happened in the middle of ~4,000 sequential downloads via
-    urllib — without retry, a single network failure would bring down
+    urllib: without retry, a single network failure would bring down
     the entire script after having already downloaded most of it successfully, with no
     progress saved (`build_arrow_dataframe` only writes the arrow at the end).
-    5 attempts, backoff 1s/2s/4s/8s/16s — generous enough to
+    5 attempts, backoff 1s/2s/4s/8s/16s; generous enough to
     absorb transient instability of the image host without masking a
     real failure (broken URL, 404, etc., which `URLError` also covers)."""
     last_exc: Exception | None = None
@@ -172,13 +172,13 @@ _PLACEHOLDER_JPEG_BYTES: bytes | None = None
 
 
 def _placeholder_image_bytes(url: str) -> bytes:
-    """Always returns the same bytes of a black 1x1 JPEG, ignoring `url`
-    — used in place of `_download_image_bytes` when the pixels will never
+    """Always returns the same bytes of a black 1x1 JPEG, ignoring `url`;
+    used in place of `_download_image_bytes` when the pixels will never
     actually be decoded (real finding, 22/08/2026: `train`/`val` only
-    enter the M3AE pipeline to build the answer vocabulary —
+    enter the M3AE pipeline to build the answer vocabulary; 
     `VQAKVASIRDataModule.setup()`, confirmed by reading m3ae/datamodules/
     base_datamodule.py, only reads the `answers`/`answer_labels` columns, never
-    calls `train_dataloader()`/`val_dataloader()` — which would be the only
+    calls `train_dataloader()`/`val_dataloader()`; which would be the only
     points that decode the `image` column). Saves downloading thousands of
     whole training images when all that is needed is to rebuild the vocabulary
     to run inference from an already-ready checkpoint (e.g.: resuming
@@ -218,7 +218,7 @@ def build_arrow_dataframe(records: list[dict], split: str, qid_offset: int = 0,
         rows["image"].append(image_bytes)
         rows["questions"].append(rec["questions"])
         rows["answers"].append([[a] for a in rec["answers"]])  # 1 reference answer per question
-        rows["answer_labels"].append([[0]] * n_q)  # placeholder — real vocabulary in build_kvasir_answer_vocab.py
+        rows["answer_labels"].append([[0]] * n_q)  # placeholder: real vocabulary in build_kvasir_answer_vocab.py
         rows["answer_scores"].append([[1.0]] * n_q)
         rows["image_id"].append(f"kvasir/{rec['img_id']}")
         rows["question_id"].append(qids)
@@ -233,10 +233,10 @@ def _parse_args():
     parser.add_argument("--qid-offset", type=int, default=0)
     parser.add_argument("--output", required=True)
     parser.add_argument("--skip-images", action="store_true",
-                         help="Does not download the actual pixels — writes a 1x1 placeholder JPEG in "
+                         help="Does not download the actual pixels; writes a 1x1 placeholder JPEG in "
                               "place of each image. Only use for --split train when the goal is "
                               "to rebuild the answer vocabulary to run inference from "
-                              "an already-ready checkpoint (without actually training) — see "
+                              "an already-ready checkpoint (without actually training); see "
                               "_placeholder_image_bytes(). NUNCA use pro --split test, cujas imagens "
                               "are actually evaluated.")
     return parser.parse_args()

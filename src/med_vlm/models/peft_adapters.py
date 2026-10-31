@@ -4,7 +4,7 @@ from peft import AdaLoraConfig, LoraConfig, TaskType, get_peft_model
 
 import med_vlm.enums
 
-# AdaLoRA only supports nn.Linear / Conv1D targets — Embedding layers raise ValueError.
+# AdaLoRA only supports nn.Linear / Conv1D targets; Embedding layers raise ValueError.
 # These module names are stripped from target_modules before building AdaLoraConfig.
 _ADALORA_UNSUPPORTED_TARGETS = {"embed_tokens", "lm_head", "wte", "wpe"}
 
@@ -68,7 +68,7 @@ def apply_peft_adapter(
             )
 
         cfg = {**DEFAULT_LORA_CONFIG, **peft_config}
-        # AdaLoRA only supports Linear/Conv1D — strip Embedding targets silently.
+        # AdaLoRA only supports Linear/Conv1D; strip Embedding targets silently.
         if "target_modules" in cfg:
             cfg["target_modules"] = _filter_adalora_targets(cfg["target_modules"])
         config = AdaLoraConfig(**cfg)

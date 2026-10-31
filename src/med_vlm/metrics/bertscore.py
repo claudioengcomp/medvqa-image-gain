@@ -19,9 +19,9 @@ def bert_score_metric(
                When multiple references are given, the first is used.
 
     Returns:
-        {"bert_score_f1": float}  — mean F1 across all samples (0.0–1.0).
+        {"bert_score_f1": float} ; mean F1 across all samples (0.0–1.0).
     """
-    from bert_score import score as bs_score  # lazy import — heavy dependency
+    from bert_score import score as bs_score  # lazy import; heavy dependency
 
     flat_refs = [r[0] if isinstance(r, list) else r for r in refs]
 
@@ -38,5 +38,5 @@ def bert_score_metric(
         except Exception:
             continue
 
-    # Both models failed — return 0 so the rest of evaluation still succeeds
+    # Both models failed; return 0 so the rest of evaluation still succeeds
     return {"bert_score_f1": 0.0}

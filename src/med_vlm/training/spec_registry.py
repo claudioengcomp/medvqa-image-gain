@@ -83,9 +83,9 @@ def build_chat_template_spec(
 # "lung"). This is a disclosed, deliberate prompt adaptation for a zero-shot
 # model being scored against a closed-vocabulary benchmark it was never
 # fine-tuned on -- not a change to the exact-match scoring logic itself,
-# which stays identical across every model in the protocol (see design doc
-# §7 for the limitation this doesn't fully resolve: dataset-specific
-# synonym/compound-answer mismatches).
+# which stays identical across every model in the protocol (a limitation this
+# does not fully resolve: dataset-specific synonym/compound-answer
+# mismatches).
 _MEDVLTHINKER_SYSTEM_PROMPT = (
     "You will solve a medical visual question answering problem. Provide "
     "your reasoning within <think> </think> tags. Then write your final "
@@ -124,7 +124,7 @@ MODEL_SPECS: dict[ModelName, Callable[..., ModelSpec]] = {
     # with our protocol). Phase 2 (LoRA/DoRA) evaluated later, see spec.
     # Needs the structured reasoning system prompt (see
     # _MEDVLTHINKER_SYSTEM_PROMPT above) and more tokens than the default of 64
-    # -- the model does explicit CoT before <answer>, see design doc §4.
+    # -- the model does explicit CoT before <answer>.
     ModelName.MEDVLTHINKER: lambda max_length=2048, augment_fn=None, no_image=False, system_prompt=None: (
         build_chat_template_spec(
             max_length=max_length,

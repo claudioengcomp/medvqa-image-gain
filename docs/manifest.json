@@ -2,8 +2,8 @@
  "repository": "medvqa-image-gain",
  "generated": "2026-10-30",
  "n_files": 585,
- "total_bytes": 87558848,
- "note": "origin = path of the source file in the original run tree (prefix ${MEDVQA_ROOT}), with the same directory/file renaming applied as in this repository; sha256_original = sha256 of that file there; modified_from_original = the file was edited mechanically (paths -> ${MEDVQA_ROOT}, internal identifiers -> descriptive English names, provenance paths reduced, template text -> template id); comments, docstrings, messages and free-text notes translated from Portuguese to English (Translate commit).",
+ "total_bytes": 87557964,
+ "note": "origin = path of the source file in the original run tree (prefix ${MEDVQA_ROOT}), with the same directory/file renaming applied as in this repository; sha256_original = sha256 of that file there; modified_from_original = the file was edited mechanically (paths -> ${MEDVQA_ROOT}, internal identifiers -> descriptive English names, provenance paths reduced, template text -> template id); comments, docstrings, messages and free-text notes translated from Portuguese to English (Translate commit); comments, docstrings, messages and free-text notes translated from Portuguese to English (Translate commit); internal document references removed and dashes replaced by ordinary punctuation (Edit commit).",
  "files": {
   ".gitignore": {
    "sha256": "5b21b82936ef76f4ebfadf6ba9e15d7fba1c58d656844acfc50ff6a5bc654aca",
@@ -18,12 +18,13 @@
    "bytes": 1090
   },
   "LICENSE-DATA.md": {
-   "sha256": "04d97e89fa063c59cb56356a907f07cc83f695556623f1be8e549b733107da2a",
-   "bytes": 2582
+   "sha256": "b0a9fa084399fdd37f5d5648fd8d0a7f3259483eafc0fc137c925e3b4b7d9557",
+   "bytes": 2570,
+   "modified_from_original": true
   },
   "README.md": {
-   "sha256": "2e3122ee81261d6065cc68324dc58fc25534febca75763e78084c011ceb37436",
-   "bytes": 21403,
+   "sha256": "714eceed457ab4c0d067428654873329043bd73bdd1fe57429b712e0d0fd444a",
+   "bytes": 21395,
    "modified_from_original": true
   },
   "configs/jobs/image_swap_predictions_heal_mimic_jobs.json": {
@@ -430,15 +431,15 @@
    "bytes": 31335
   },
   "configs/vlm/HEAL/QWEN2VL_fine_tuned_visual_encoder.yaml": {
-   "sha256": "15fe8516259d705c5f29d5139984bf953f3aa1351737cec5ca66d707b3c51bdd",
-   "bytes": 1197,
+   "sha256": "538d133f8cc2b186c9fc87ce1d35f7371d0a359fdc7afdf326ee35e413b29fc5",
+   "bytes": 1191,
    "origin": "${MEDVQA_ROOT}/v6_tower_heal/worktree/med_vlm/configs/qwen2vl_lora_vt_heal.yaml",
    "sha256_original": "35bbe185956c79e671c1d6efdaba8bab854400de5fc03a455f0bc41736472a70",
    "modified_from_original": true
   },
   "configs/vlm/HEAL/QWEN2VL_frozen_visual_encoder.yaml": {
-   "sha256": "f399b9a544e57cda224ccb6150f5d5dafd91093e0fc6e5f63e43c0e42c87fc15",
-   "bytes": 1080,
+   "sha256": "251188510071381638c9f5827a19330dc0f3e2b1baa17efea5c6bef77d298df0",
+   "bytes": 1074,
    "origin": "${MEDVQA_ROOT}/doutorado/medvqa-occlusion-study/med_vlm/configs/qwen2vl_lora_heal.yaml",
    "sha256_original": "f399b9a544e57cda224ccb6150f5d5dafd91093e0fc6e5f63e43c0e42c87fc15",
    "modified_from_original": true
@@ -451,15 +452,15 @@
    "modified_from_original": true
   },
   "configs/vlm/HEAL/SMOLVLM_fine_tuned_visual_encoder.yaml": {
-   "sha256": "f7e1a7809454a05505270a30cfdf197eb63f3877fa0c29f92cf721300a0a689f",
-   "bytes": 973,
+   "sha256": "396de55687a37cd29ac47efa01d4994442cd13f942ef90a4f78ceb34f71c9915",
+   "bytes": 970,
    "origin": "${MEDVQA_ROOT}/doutorado/medvqa-occlusion-study/med_vlm/configs/smolvlm2_lora_heal.yaml",
    "sha256_original": "f7e1a7809454a05505270a30cfdf197eb63f3877fa0c29f92cf721300a0a689f",
    "modified_from_original": true
   },
   "configs/vlm/HEAL/SMOLVLM_frozen_visual_encoder.yaml": {
-   "sha256": "cf4d3181b3eecc89cc581462103644b4b7795bff4928e727a1e3c3b50810dc48",
-   "bytes": 1075,
+   "sha256": "de69015d83a8b54071a3eb50f5d5bc57d71aa450e9b2fc3b3ce23cb607bbe527",
+   "bytes": 1072,
    "origin": "${MEDVQA_ROOT}/v6_tower_heal/worktree/med_vlm/configs/smolvlm2_lora_ft_heal.yaml",
    "sha256_original": "9c5a3ce34f1a4358811cdeaa464f70169d32e2076b6497e0b9e3985e289a8c24",
    "modified_from_original": true
@@ -479,8 +480,8 @@
    "modified_from_original": true
   },
   "configs/vlm/KVASIR/QWEN2VL_frozen_visual_encoder.yaml": {
-   "sha256": "fd0255400f9bba09605211ec204278fde984b110874c241054a9ecd5314b5a04",
-   "bytes": 1090,
+   "sha256": "2475e9a6257495003d6bb57dafef6b24346fff7ecafc7a47d64d8dc5f1538397",
+   "bytes": 1084,
    "origin": "${MEDVQA_ROOT}/doutorado/medvqa-main/med_vlm/configs/qwen2vl_lora_kvasir.yaml",
    "sha256_original": "fd0255400f9bba09605211ec204278fde984b110874c241054a9ecd5314b5a04",
    "modified_from_original": true
@@ -493,8 +494,8 @@
    "modified_from_original": true
   },
   "configs/vlm/KVASIR/SMOLVLM_fine_tuned_visual_encoder.yaml": {
-   "sha256": "9e4ea70cb2ee37255a13a9cf01fadba2d08b6e876573bd413d003d96953eda8a",
-   "bytes": 983,
+   "sha256": "b27e1b74baec1c1cda33bd5fe711f2b06e8a74bcec323932c3ad531872aaf4a1",
+   "bytes": 980,
    "origin": "${MEDVQA_ROOT}/doutorado/medvqa-main/med_vlm/configs/smolvlm2_lora_kvasir.yaml",
    "sha256_original": "9e4ea70cb2ee37255a13a9cf01fadba2d08b6e876573bd413d003d96953eda8a",
    "modified_from_original": true
@@ -535,15 +536,15 @@
    "modified_from_original": true
   },
   "configs/vlm/MIMIC/SMOLVLM_fine_tuned_visual_encoder.yaml": {
-   "sha256": "b46b36f97ece54509c07d8e680c94a4d1dc45bb99aa722c5959ac5d29cbdb28a",
-   "bytes": 1501,
+   "sha256": "cafd1674a9db14cc1eccd89c5a131a810a1c94ffe0496b38d4c267a0521f2981",
+   "bytes": 1498,
    "origin": "${MEDVQA_ROOT}/v7_mimic/configs/smolvlm2_lora_mimic.yaml",
    "sha256_original": "90e3659e60208858d88235f43861a46b9fdb470af435e94d0c8d3a9c7c2f4cc8",
    "modified_from_original": true
   },
   "configs/vlm/MIMIC/SMOLVLM_frozen_visual_encoder.yaml": {
-   "sha256": "9469462ab7acb5318f37b58d480b16b9e0da0bd207df0b3e30768b7f5a2b61e4",
-   "bytes": 1523,
+   "sha256": "b5415db3241b8685d4bec91b88bd882ce43942562ddb4052e9dcd1d69d615380",
+   "bytes": 1520,
    "origin": "${MEDVQA_ROOT}/v7_mimic/configs/smolvlm2_lora_ft_mimic.yaml",
    "sha256_original": "c9e621ba9acc4ebe5f7b3c7609fddb028937241158ea97699a807265b4789290",
    "modified_from_original": true
@@ -563,8 +564,8 @@
    "modified_from_original": true
   },
   "configs/vlm/SLAKE/QWEN2VL_frozen_visual_encoder.yaml": {
-   "sha256": "6ef4c8c0da7da841c7dce5ac7e2e6e49a0e405e3e0f80c0aa4558dce8b1cc458",
-   "bytes": 1097,
+   "sha256": "93ca6e587351b5ea74ace3cc06bf24a146d3e89f74e810a714adc358f177e94c",
+   "bytes": 1091,
    "origin": "${MEDVQA_ROOT}/doutorado/medvqa-main/med_vlm/configs/qwen2vl_lora_slake.yaml",
    "sha256_original": "6ef4c8c0da7da841c7dce5ac7e2e6e49a0e405e3e0f80c0aa4558dce8b1cc458",
    "modified_from_original": true
@@ -577,8 +578,8 @@
    "modified_from_original": true
   },
   "configs/vlm/SLAKE/SMOLVLM_fine_tuned_visual_encoder.yaml": {
-   "sha256": "ecef70d281fe8184e7f561cc8c13fcc733af367aa009a7162ae13d06ba32b3a5",
-   "bytes": 1100,
+   "sha256": "c2a2267569e29753fc92350bce2d2f9e5f659a64526e6aecbe5437634d3fd067",
+   "bytes": 1094,
    "origin": "${MEDVQA_ROOT}/doutorado/medvqa-main/med_vlm/configs/smolvlm2_lora_slake.yaml",
    "sha256_original": "ecef70d281fe8184e7f561cc8c13fcc733af367aa009a7162ae13d06ba32b3a5",
    "modified_from_original": true
@@ -2833,8 +2834,9 @@
    "modified_from_original": true
   },
   "scripts_credentialed/README.md": {
-   "sha256": "052d1ba66ffac956c8b66b6d0c7b0c99cf0aea6f9f8685be55d3610bf1e0787b",
-   "bytes": 3973
+   "sha256": "d08352f98859b21b1b6dfef5635b147c8c40c3938dcf51bd4027b843ac77d9a3",
+   "bytes": 3921,
+   "modified_from_original": true
   },
   "scripts_credentialed/__init__.py": {
    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
@@ -2866,8 +2868,8 @@
    "modified_from_original": true
   },
   "scripts_credentialed/heal/inventory_heal.py": {
-   "sha256": "079e214fd85417144500b506c440bb7e82042c080fb13cf866437a80b4c4d494",
-   "bytes": 8418,
+   "sha256": "49efcf6fd633dbe05dc2a29b56aef6c6ee93bd6b924f88d23eff8d3a93458557",
+   "bytes": 8395,
    "origin": "${MEDVQA_ROOT}/doutorado/medvqa-occlusion-study/harness/isbi_occlusion/heal/inventory_heal.py",
    "sha256_original": "08edb695fa8f12e2aab25e0cc67b98ac80c7865e15417dcf46b0185ff0bde9fd",
    "modified_from_original": true
@@ -2997,22 +2999,22 @@
    "modified_from_original": true
   },
   "src/harness/baselines/question_only.py": {
-   "sha256": "ef9b81a4506743a4b88449f4fa06321ea7b1fa31a981759b09c22793814bd564",
-   "bytes": 5412,
+   "sha256": "ca733733293ae19fcc6537ad9f035bfcff68f9d80d46e93f394eadfa99a1c3f5",
+   "bytes": 5387,
    "origin": "${MEDVQA_ROOT}/v7_txt/worktree/harness/baselines/question_only.py",
    "sha256_original": "51a8356dab20e3bf37d389b7565e8fa36cc20fc7ace0100070612f8b3b470d55",
    "modified_from_original": true
   },
   "src/harness/circle_data_bridge.py": {
-   "sha256": "e301f2028d898be432e770ff97a603435f70247a46797781100dc2f5edca0c8a",
-   "bytes": 2347,
+   "sha256": "67910b3c066018c83d43868197297195fa7c167c43f4175a54f1b864f8ab6781",
+   "bytes": 2271,
    "origin": "${MEDVQA_ROOT}/v7_txt/worktree/harness/circle_data_bridge.py",
    "sha256_original": "ab53b3476b319d4622b5340617c7a8f9e3fece1eb191c8f5d1b8ff01d5f7ce13",
    "modified_from_original": true
   },
   "src/harness/circle_predictions.py": {
-   "sha256": "8619cfb47c9f4db394394ece6234c65ffef9e874f8a4124365609b1881099f25",
-   "bytes": 2487,
+   "sha256": "48cd9ebef76b4607c8d953395d3b89d1aed920468d494b15546f4d2eb52d4b72",
+   "bytes": 2419,
    "origin": "${MEDVQA_ROOT}/v7_txt/worktree/harness/circle_predictions.py",
    "sha256_original": "27cc26a00d6ef4317a43786e27d8b217242975d0e451c698aeba59c8e488c665",
    "modified_from_original": true
@@ -3039,8 +3041,8 @@
    "modified_from_original": true
   },
   "src/harness/interventions/arrow_io.py": {
-   "sha256": "63ebcbd5f307db3d9623d81081524379bfb9f9f917fd08005432afcb96cb98a4",
-   "bytes": 2744,
+   "sha256": "11cf41ca7ff8e5c866a17db422fa94619cd4c9550acc454fd2fd8537a007927d",
+   "bytes": 2751,
    "origin": "${MEDVQA_ROOT}/v7_txt/worktree/harness/interventions/arrow_io.py",
    "sha256_original": "8456a278840c19df22bde9290e143f716a5b5fbc32f2bf4162739c50fce4cf01",
    "modified_from_original": true
@@ -3053,22 +3055,22 @@
    "modified_from_original": true
   },
   "src/harness/interventions/make_c2_shuffled_pairs.py": {
-   "sha256": "225f4143aeb17266949ee7c584b366a05f8e09db73c153cb87f2ec1d3277ed57",
-   "bytes": 2093,
+   "sha256": "2a687a36fa99ff2d5c8c0d6a7205522957eb3d3e32ec631c04557191df398058",
+   "bytes": 2090,
    "origin": "${MEDVQA_ROOT}/v7_txt/worktree/harness/interventions/make_c2_shuffled_pairs.py",
    "sha256_original": "54a66ec8591262f3d4f8d8c7a468f87ca2d08bb8610ce9f0087964f5349e8a2f",
    "modified_from_original": true
   },
   "src/harness/patch_m3ae_heal.py": {
-   "sha256": "f842da7a54429b00b3783fcb5a5579522c87e66d7a3d8bf9b8a3937f8aeb4b02",
-   "bytes": 4856,
+   "sha256": "ad4c4d7f987c868bbcacd036b7dbf9096102d2b1d8a49e33a70c1f2f9571ac12",
+   "bytes": 4850,
    "origin": "${MEDVQA_ROOT}/v7_txt/worktree/harness/patch_m3ae_heal.py",
    "sha256_original": "46c330f9bd6a3f3b921842a89b7d4eda73f97c3af62b787543964addf2f44c49",
    "modified_from_original": true
   },
   "src/harness/patch_m3ae_kvasir.py": {
-   "sha256": "0773f94c6a598dcf1e741c6c7f37e9aba95b0c5e22d728903bcc7e21f470de1e",
-   "bytes": 11410,
+   "sha256": "ab3d9d9874fb19b05fece5d1e92ed3f4f5c3cac069e467abea243cf66ec7f095",
+   "bytes": 11374,
    "origin": "${MEDVQA_ROOT}/v7_txt/worktree/harness/patch_m3ae_kvasir.py",
    "sha256_original": "a622d1823ea69019c196f1d4ac1f83d3de9eecc2139be3b88b0dad94de864658",
    "modified_from_original": true
@@ -3081,8 +3083,8 @@
    "modified_from_original": true
   },
   "src/harness/prepro/build_kvasir_answer_vocab.py": {
-   "sha256": "61dcd93f2610726f8d28f53db980e27c0ada05896cc80764bd235374a88668be",
-   "bytes": 3316,
+   "sha256": "71bbd3bbca3ba84e863ca85468103fc9ad539806523e05b1f8715b9f64d6818a",
+   "bytes": 3310,
    "origin": "${MEDVQA_ROOT}/v7_txt/worktree/harness/prepro/build_kvasir_answer_vocab.py",
    "sha256_original": "42976bcd586ff252d56e73d9fe4c63ac9f891513e22734d9ec6813306deb4491",
    "modified_from_original": true
@@ -3095,29 +3097,29 @@
    "modified_from_original": true
   },
   "src/harness/prepro/kvasir_split.py": {
-   "sha256": "3ccf7bc0277175b775c85a8498c73a3fd7db29f2c833b9c1e07af4308b388506",
-   "bytes": 2060,
+   "sha256": "5ade1f68a8aacb9070b5c2b01e1fe71b5a8c45c18f5ed3a3c9ef9570e4b54c5d",
+   "bytes": 1983,
    "origin": "${MEDVQA_ROOT}/v7_txt/worktree/harness/prepro/kvasir_split.py",
    "sha256_original": "adcad1855fcd6f3b5338c7a61c3ea83714a716f3439ddf61f027d9106b624e91",
    "modified_from_original": true
   },
   "src/harness/prepro/prepare_kvasir_arrow.py": {
-   "sha256": "d6d4f54cbed912a5c0b6ea5d285230e10f180e51944b412869f93a7b7f62d2b8",
-   "bytes": 12569,
+   "sha256": "ffb33e3833aec35df18ea0a68955da49e6d5ca67cf397cb8000970c7c720c798",
+   "bytes": 12510,
    "origin": "${MEDVQA_ROOT}/v7_txt/worktree/harness/prepro/prepare_kvasir_arrow.py",
    "sha256_original": "12199fb9f1c208e363c20c21d3def50a78ca3509ea88dccf1a1b8fab80886515",
    "modified_from_original": true
   },
   "src/harness/prepro/prepare_vqa_rad_splits.py": {
-   "sha256": "bd127be0fc71c509bf42f8f5cb3e3955b9670615c47e6c16ee506537cf47d0c4",
-   "bytes": 3059,
+   "sha256": "6496a5a7053f043b297c3c4d1b770c837fddf7671fdfb2de329f7105a48a09e9",
+   "bytes": 3050,
    "origin": "${MEDVQA_ROOT}/v7_txt/worktree/harness/prepro/prepare_vqa_rad_splits.py",
    "sha256_original": "adffd989d5786114636662541b9dbf069dcd0912a4e9cee5530da75b7081e7db",
    "modified_from_original": true
   },
   "src/harness/prepro/split_kvasir_train_val.py": {
-   "sha256": "366e3f3cb01aa45b415e11769e549211273c7bc480d948ebe4135fc11eba0a25",
-   "bytes": 4029,
+   "sha256": "2da01fdf9b2f8bd011eeef1e24ad4ba4f9dff9fb240dfc8d8195a2d742c82a27",
+   "bytes": 4017,
    "origin": "${MEDVQA_ROOT}/v7_txt/worktree/harness/prepro/split_kvasir_train_val.py",
    "sha256_original": "af43244f994d453cd628dee878e29878293900f095b1248cd4090a9caf22b4c3",
    "modified_from_original": true
@@ -3130,8 +3132,8 @@
    "modified_from_original": true
   },
   "src/harness/results_schema.py": {
-   "sha256": "5bfdde7d3b495ceb2210feb8f051933dfd4bc86a485e614d041e0b892dd29830",
-   "bytes": 4576,
+   "sha256": "bef5b4cf6700af5fb3a06849291aa57f6aaf53459efbec3933394b8c89aa2094",
+   "bytes": 4540,
    "origin": "${MEDVQA_ROOT}/v7_txt/worktree/harness/results_schema.py",
    "sha256_original": "42f79f04e38cfc9e6238761a2c2e78650063ad889dd63bc2c7583a7f9a369e52",
    "modified_from_original": true
@@ -3155,8 +3157,8 @@
    "modified_from_original": true
   },
   "src/harness/v7_txt/analise_troca.py": {
-   "sha256": "97e3cf09c28a2574cdaa960c1b9bf5f4ea1b7f109421362422ca5c4f01b7cdb6",
-   "bytes": 7538,
+   "sha256": "d8e411f5c6abb7f13e6baf41c739b9bc31f5c9d2b86d8108f8798da1a3e70bdf",
+   "bytes": 7554,
    "origin": "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/analise_troca.py",
    "sha256_original": "d1fada28813a2d20dbb3902fb531933a87e8c9cfb282fb26c03c461628cf99f2",
    "modified_from_original": true
@@ -3190,8 +3192,8 @@
    "modified_from_original": true
   },
   "src/harness/v7_txt/dados_texto.py": {
-   "sha256": "387b0862befd20da25dea32df949e983649defeba5d614408b9552412cac43cd",
-   "bytes": 9843,
+   "sha256": "5e944420b865292a85cb935884b73dc08c03b64eadb72bb953f52b5e70452c95",
+   "bytes": 9855,
    "origin": "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/dados_texto.py",
    "sha256_original": "fd79f4facb4cf6abf79b471f1dafe412590fd9cc0917789db44b46b2cfe87807",
    "modified_from_original": true
@@ -3260,8 +3262,8 @@
    "modified_from_original": true
   },
   "src/harness/v7_txt/m3ae_mimic_cond.py": {
-   "sha256": "7c25327270bf5b3a9855b60ed815a2cc5561ac2ed29e431e5138ea17b522f8ee",
-   "bytes": 1815,
+   "sha256": "e09b57eb0f3fba5decb82feaa7f951bc16711831c9a7f5a8050e5918561b161e",
+   "bytes": 1769,
    "origin": "${MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_mimic_cond.py",
    "sha256_original": "e45e8b4f0fbb978cd5f6cedc98d13b75a9a6ba410668cc5f5d2d6b946291222a",
    "modified_from_original": true
@@ -3479,43 +3481,43 @@
    "modified_from_original": true
   },
   "src/m3ae_patch/new_files/m3ae/datamodules/vqa_heal_datamodule.py": {
-   "sha256": "83383d5dde463c5088ed2c6fcd05f5a3776ceba4e92464b7ab9669034ed28c13",
-   "bytes": 1694,
+   "sha256": "3a5d3951a0be70709834278a476341f90a48265f28eeef3ed618b87c82848f24",
+   "bytes": 1688,
    "origin": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae_semimg/m3ae/datamodules/vqa_heal_datamodule.py",
    "sha256_original": "f349183f8f6441e827eface2f51d68feb0d3c51f4350c76ccfec6b5e94f6ac62",
    "modified_from_original": true
   },
   "src/m3ae_patch/new_files/m3ae/datamodules/vqa_kvasir_datamodule.py": {
-   "sha256": "a273a4bb2a0aa54cdbf3c72bd53f624af2ff5b1d6a5732386442582e7ebe86c8",
-   "bytes": 1708,
+   "sha256": "e0248e80e4174ad771411fe1165d00a86d5ccaaaea7627517e0486c9b3bdfc24",
+   "bytes": 1702,
    "origin": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae_semimg/m3ae/datamodules/vqa_kvasir_datamodule.py",
    "sha256_original": "05a28c81097ebf8afb403e0693cf35a0d1cf418229e9343e8155872fce85d954",
    "modified_from_original": true
   },
   "src/m3ae_patch/new_files/m3ae/datamodules/vqa_mimic_datamodule.py": {
-   "sha256": "301908bbffd36bd5c916b945e84ecc3954e68d8e0fb972aa27882f647ece07e5",
-   "bytes": 1701,
+   "sha256": "8013ad0959d09056a2e7de7baecd1cc947e911ee6d2a2f75a43dabd86d858891",
+   "bytes": 1695,
    "origin": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae_semimg/m3ae/datamodules/vqa_mimic_datamodule.py",
    "sha256_original": "db46c051ded0c04abbbdb251b80c84c19b7be3467db29e8508d8e76dd511ce20",
    "modified_from_original": true
   },
   "src/m3ae_patch/new_files/m3ae/datasets/vqa_heal_dataset.py": {
-   "sha256": "1a79873149e422b1c95106932cb8d87d0badc390b01a582dcf573567203febad",
-   "bytes": 1654,
+   "sha256": "5de816b5cc4dd0e0afb69758ebe9441d1107a58eda33d33ce45baaba227c0390",
+   "bytes": 1648,
    "origin": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae_semimg/m3ae/datasets/vqa_heal_dataset.py",
    "sha256_original": "d607b4c0c1dbc4daff7792643fcd5bfd131fe001358d8786d6da95d406d1b6fc",
    "modified_from_original": true
   },
   "src/m3ae_patch/new_files/m3ae/datasets/vqa_kvasir_dataset.py": {
-   "sha256": "be7b38c2b55b2b97c2324bb84150482edf4a3d573243e1e0a8e36103210f36d8",
-   "bytes": 1668,
+   "sha256": "562f5e507094141add4ce0d0f8f4d218f4f740803fb0d8c04648d9193b74f59e",
+   "bytes": 1662,
    "origin": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae_semimg/m3ae/datasets/vqa_kvasir_dataset.py",
    "sha256_original": "875918fbae00124300a2eaba1c768d8f2c20d9c757d07aca4ee909df12449146",
    "modified_from_original": true
   },
   "src/m3ae_patch/new_files/m3ae/datasets/vqa_mimic_dataset.py": {
-   "sha256": "68a56a6832d371d122341d981e0a0235cf109713ca2131d27e106cf4a932deb4",
-   "bytes": 1661,
+   "sha256": "c2ef0cfd047cdb054e523c369cd45e73a212cfe1324ea35062cc0f71916b9082",
+   "bytes": 1655,
    "origin": "${MEDVQA_ROOT}/v7_txt/worktree_m3ae_semimg/m3ae/datasets/vqa_mimic_dataset.py",
    "sha256_original": "67bdd045f40f2370066cc526b580850e3fae8577d75cb9791d91ddf425404744",
    "modified_from_original": true
@@ -3560,8 +3562,8 @@
    "modified_from_original": true
   },
   "src/med_vlm/analyze_results.py": {
-   "sha256": "2ddd9b57147d650bb12654960a2f11cabf2ea80e8d72bf24d8937eeb7903276b",
-   "bytes": 15587,
+   "sha256": "730a7a6fb8628ae5552ac55dccf229c8608b5e23230160dbb02ba5dbd29d37cc",
+   "bytes": 15572,
    "origin": "${MEDVQA_ROOT}/v7_txt/worktree/med_vlm/analyze_results.py",
    "sha256_original": "2ddd9b57147d650bb12654960a2f11cabf2ea80e8d72bf24d8937eeb7903276b",
    "modified_from_original": true
@@ -3574,8 +3576,8 @@
    "modified_from_original": true
   },
   "src/med_vlm/data/augmentations.py": {
-   "sha256": "2b1d9ff8b2b1a4ef6711819f022f50aa6f16a56650d261edbf1445cf78139c55",
-   "bytes": 3340,
+   "sha256": "ca88dd9ad74724481226a8b60ddddaadb8f4caca4c391dfd773e8550dffd7d51",
+   "bytes": 3337,
    "origin": "${MEDVQA_ROOT}/v7_txt/worktree/med_vlm/data/augmentations.py",
    "sha256_original": "2b1d9ff8b2b1a4ef6711819f022f50aa6f16a56650d261edbf1445cf78139c55",
    "modified_from_original": true
@@ -3616,8 +3618,8 @@
    "modified_from_original": true
   },
   "src/med_vlm/metrics/bertscore.py": {
-   "sha256": "2b8d55cc060f0a98e42709cb8ae946adeb98492c4c0a5de6c73ce0570917534d",
-   "bytes": 1454,
+   "sha256": "90db001a4543d1411d910328b6a0a347b2db79affe33eac6ccd1934c7e8baf21",
+   "bytes": 1445,
    "origin": "${MEDVQA_ROOT}/v7_txt/worktree/med_vlm/metrics/bertscore.py",
    "sha256_original": "2b8d55cc060f0a98e42709cb8ae946adeb98492c4c0a5de6c73ce0570917534d",
    "modified_from_original": true
@@ -3630,8 +3632,8 @@
    "modified_from_original": true
   },
   "src/med_vlm/metrics/efficiency.py": {
-   "sha256": "0a45613351fe7e737cfcee2625eb51e1d7fb5f93b43e811c03ccd562f16c278f",
-   "bytes": 6145,
+   "sha256": "ca9da9b00a0dacd991134b461288de45613dfa10646cb84e982251e4c24f4934",
+   "bytes": 6114,
    "origin": "${MEDVQA_ROOT}/v7_txt/worktree/med_vlm/metrics/efficiency.py",
    "sha256_original": "0a45613351fe7e737cfcee2625eb51e1d7fb5f93b43e811c03ccd562f16c278f",
    "modified_from_original": true
@@ -3644,8 +3646,8 @@
    "modified_from_original": true
   },
   "src/med_vlm/metrics/process_text.py": {
-   "sha256": "b81289d423c9a819967b5fc8c44dcca3e4e2319e9d9b5bccd37870c0d2844efa",
-   "bytes": 5508,
+   "sha256": "ecbe1bcf295b9a14fb1a3472f86a7e056e76ced8b2ee314fe0b797554efcc328",
+   "bytes": 5426,
    "origin": "${MEDVQA_ROOT}/v7_txt/worktree/med_vlm/metrics/process_text.py",
    "sha256_original": "9e09b7067e0056a1d393d730e7753628fa818c9fbaf9b4022075c09db33f3d8b",
    "modified_from_original": true
@@ -3672,8 +3674,8 @@
    "modified_from_original": true
   },
   "src/med_vlm/models/peft_adapters.py": {
-   "sha256": "e2420d776e86fd8479d4232bad46ef33bdd350768f934b0e5697aac33d32e7c3",
-   "bytes": 2761,
+   "sha256": "fe3d9b24190f67c86874d6754ebc90b931995bfa88d11c254687b02dacbac16c",
+   "bytes": 2755,
    "origin": "${MEDVQA_ROOT}/v7_txt/worktree/med_vlm/models/peft_adapters.py",
    "sha256_original": "e2420d776e86fd8479d4232bad46ef33bdd350768f934b0e5697aac33d32e7c3",
    "modified_from_original": true
@@ -3700,8 +3702,8 @@
    "modified_from_original": true
   },
   "src/med_vlm/seeding.py": {
-   "sha256": "a33f348001c1020d597589ff1ec2ce2993ff9562bc51c4408a92e7d9a84538e2",
-   "bytes": 1081,
+   "sha256": "22d54649d4929005fcbc3e0d3a004b9cba632a7494e61ad1979d3c03e0643699",
+   "bytes": 1005,
    "origin": "${MEDVQA_ROOT}/v7_txt/worktree/med_vlm/seeding.py",
    "sha256_original": "7fffd7c822cd5ca3dc9569cc253f2556d8dc0005485d65d951c2e4948840e493",
    "modified_from_original": true
@@ -3791,8 +3793,8 @@
    "modified_from_original": true
   },
   "src/med_vlm/tests/metrics/test_process_text.py": {
-   "sha256": "96b05f2bf5d1ab64667e4d244fad428660bb1e38df57a765a6338cc961ea639b",
-   "bytes": 7533,
+   "sha256": "64c86743c22d33555260bec1fa8554a986ad2ca425191518b045708c3df87195",
+   "bytes": 7524,
    "origin": "${MEDVQA_ROOT}/v7_txt/worktree/med_vlm/tests/metrics/test_process_text.py",
    "sha256_original": "96b05f2bf5d1ab64667e4d244fad428660bb1e38df57a765a6338cc961ea639b",
    "modified_from_original": true
@@ -3931,8 +3933,8 @@
    "modified_from_original": true
   },
   "src/med_vlm/training/collators.py": {
-   "sha256": "88d1d2317798b56c3730679ad14a45b8fe1bc5ada2ec19c54ae5534d2a6671b1",
-   "bytes": 8092,
+   "sha256": "d5e991efbe3d44c602f5310ee1dbff900745145cae479a63c6c8c1d6eea01c78",
+   "bytes": 8086,
    "origin": "${MEDVQA_ROOT}/v7_txt/worktree/med_vlm/training/collators.py",
    "sha256_original": "c16d382281ee83f3c8eed7ea0a0a227e0d7d937897a7c6e06028377550905675",
    "modified_from_original": true
@@ -3952,8 +3954,8 @@
    "modified_from_original": true
   },
   "src/med_vlm/training/spec_registry.py": {
-   "sha256": "d53c8dd53b116cd288645186f3771f8f9699f5de3641e49e8623b7f8525568f4",
-   "bytes": 6888,
+   "sha256": "4545406aa32bf48d211c5bd7cef3e5ee66f960225fbbe3712a93ecff7da5ba37",
+   "bytes": 6844,
    "origin": "${MEDVQA_ROOT}/v7_txt/worktree/med_vlm/training/spec_registry.py",
    "sha256_original": "8c7df64d980ff702743c96ca7c9377c28bf27fac933f28aca225976d8b4963b9",
    "modified_from_original": true
@@ -3973,8 +3975,8 @@
    "modified_from_original": true
   },
   "src/med_vlm/training/trainer.py": {
-   "sha256": "08e73a15a52f0e738cd854ea14f45204816a7aacfb64d448d43a8654f98ba90b",
-   "bytes": 11097,
+   "sha256": "ceab338ca7f68fdd6f8a22dd30e08eaed08d91daa0496525af659931b78f09e8",
+   "bytes": 11094,
    "origin": "${MEDVQA_ROOT}/v7_txt/worktree/med_vlm/training/trainer.py",
    "sha256_original": "b8f41b59807a6f76a9b1d6c39cfa71582aed09d68e427d9767ca11221850a5fe",
    "modified_from_original": true

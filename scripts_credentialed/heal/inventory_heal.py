@@ -1,4 +1,4 @@
-"""Inventory of the HEAL arm (plan v2 §10, decided on 13/09/2026): only CLOSED-FORM questions from the official
+"""Inventory of the HEAL arm (decided on 13/09/2026): only CLOSED-FORM questions from the official
 VinDr test of HEAL-MedVQA ("Does [anatomy] suffer from [disease]?" / "Is there [disease] in the
 [anatomy]...?"), closed_yes and closed_no separated; target = mask of the item's anatomy (HF RLE,
 column-major); occlusion_study = mask of ANOTHER anatomy of the same image (any test item, open
@@ -109,7 +109,7 @@ def build_inventory(annotations: str, png_manifest: str | None, thorax_atlas: st
                  "answer": normalize_answer(r.answer, r.question_type) if closed else str(r.answer),
                  "question_type": r.question_type, "anatomy": r.anatomy,
                  "question_class": r.question_type if closed else "open", "evaluable": bool(closed) and not no_place,
-                 "exclusion_reason": None if closed and not no_place else ("sem posicao valida para o occlusion_study" if closed else "pergunta aberta (fora, §10 do plano)"),
+                 "exclusion_reason": None if closed and not no_place else ("sem posicao valida para o occlusion_study" if closed else "open question (out of scope)"),
                  "target_area_frac": float(target.mean()), "occlusion_study": plc, "xray": True,
                  "n_anatomies_in_image": len(masks)}
             if pm and image_id not in pm:

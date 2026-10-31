@@ -246,7 +246,7 @@ def train_vqa_generation(
     def _batches():
         # Flattens the two loops (epoch x batch) into a single sequence, so that
         # a "break" when max_steps is reached ends the training for
-        # real — and not just the inner loop, leaving the outer one
+        # real: and not just the inner loop, leaving the outer one
         # continue to the next epoch silently.
         for _epoch in range(cfg.epochs):
             for batch in train_dl:

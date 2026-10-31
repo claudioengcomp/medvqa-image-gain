@@ -1,4 +1,4 @@
-"""Schema and validation for the P0 harness result records.
+"""Schema and validation for the harness result records.
 
 A "results record" describes the performance of ONE model under ONE condition
 (C0/C1/C2) on ONE dataset. Two levels of detail are supported:
@@ -36,7 +36,7 @@ VALID_CONDITIONS = (
     "OCCLUSION_ART_black", "OCCLUSION_ART_blur10", "OCCLUSION_POL_Q1_black", "OCCLUSION_POL_Q1_blur10",
     "OCCLUSION_POL_Q3_black", "OCCLUSION_POL_Q3_blur10", "OCCLUSION_INS_black", "OCCLUSION_INS_blur10",
     "OCCLUSION_DIS_black", "OCCLUSION_DIS_blur10",
-    # v7_mimic (2026-10-11): sufficiency with blur/mean color (S_blur10, S_regmean) and MIMIC occlusion (HANDOFF_OCCLUSION_STUDY_GPU.md)
+    # v7_mimic (2026-10-11): sufficiency with blur/mean color (S_blur10, S_regmean) and MIMIC occlusion
     "S_blur10", "S_regmean", "OCCLUSION_black", "OCCLUSION_blur10",
     # m3ae_black_image (22/10/2026): M3AE with constant BLACK image -- text-only trained with black and tested with black; any model tested with black
     "TXT_PRETO", "C1_PRETO",

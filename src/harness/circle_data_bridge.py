@@ -1,4 +1,4 @@
-"""Translates a condition .arrow file (M3AE/LaPA schema — one row per
+"""Translates a condition .arrow file (M3AE/LaPA schema; one row per
 image, with lists of questions/answers per image, see
 harness/interventions/arrow_io.py) into a HuggingFace `datasets.Dataset`
 in the format that the `med_vlm` package expects for each example:
@@ -8,12 +8,10 @@ in the format that the `med_vlm` package expects for each example:
 Flattens each image into the N questions it carries, reusing the
 same image bytes (automatically decoded by HuggingFace's
 `datasets.Image()` feature when accessing each row, not decoded
-manually here). `id` is the real `question_id` from the arrow — different from the
-`id_key=None` that `med_vlm.data.loader._normalize` uses by default —
+manually here). `id` is the real `question_id` from the arrow; different from the
+`id_key=None` that `med_vlm.data.loader._normalize` uses by default; 
 necessary to preserve pairing by qid across conditions, used by the
-paired McNemar (harness.stats.compute_ldv.compute_summary_vs_baseline).
-
-See docs/superpowers/specs/2026-08-18-circle-bridge-design.md §3."""
+paired McNemar (harness.stats.compute_ldv.compute_summary_vs_baseline)."""
 from __future__ import annotations
 
 from datasets import Dataset, Features, Image as HFImage, Sequence, Value

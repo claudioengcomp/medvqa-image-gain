@@ -14,5 +14,5 @@ for name, tgt in (("vqa_mimic_test.arrow", arrow), ("vqa_mimic_train.arrow", R +
     assert os.path.realpath(l) == os.path.realpath(tgt), (l, tgt)
 name = "M3AE_MIMIC_seed%s" % seed
 cmd = [sys.executable, "-u", f"{_MEDVQA_ROOT}/v7_txt/worktree/harness/v7_txt/m3ae_infer_v7.py", "--name", name + "_" + cond, "--checkpoint", cands[0], "--data-root", dr + "/", "--dataset-key", "vqa_mimic", "--vqa-label-size", "82",
-       "--dataset", "MIMIC", "--condition", cond, "--output", out, "--model-label", "M3AE", "--arrow-sha256", sha, "--extra", "bateria Occlusion study/Occlusion do MIMIC (HANDOFF_OCCLUSION_STUDY_GPU.md); arrow " + arrow]
+       "--dataset", "MIMIC", "--condition", cond, "--output", out, "--model-label", "M3AE", "--arrow-sha256", sha, "--extra", "MIMIC occlusion-study battery; arrow " + arrow]
 print(" ".join(cmd), flush=True); sys.exit(subprocess.call(cmd))

@@ -3,19 +3,19 @@
 Trains a simple classifier (TF-IDF + logistic regression) that predicts the
 answer looking ONLY at the question text, never the image. Serves as a control:
 by construction, its accuracy is identical across C0/C1/C2/C4x6/C5/C6 (it never sees
-the image, and none of these conditions changes the question text — C1/C2/C4
+the image, and none of these conditions changes the question text; C1/C2/C4
 perturb the image, C5/C6 swap the image between donor pairs, but the
-question statement is always the same), so it has no LDV of its own — its
+question statement is always the same), so it has no LDV of its own; its
 role is to serve as a comparison baseline for the models that actually
 use vision.
 
 Scope of this first version: only closed-form questions (answer_type=="CLOSED"),
 which have a fixed answer vocabulary and allow exact matching.
-Open questions are out of scope, following the same scope cutoff already
-applied by P0 in other fronts (see spec §1.3 of the handoff).
+Open questions are out of scope, following the same scope cutoff used
+elsewhere in this code base (closed-form questions only).
 
 Generalized for VQA-RAD (03/09/2026, local run): the filter by
-q_lang=='en' was hardcoded for the SLAKE format (bilingual, PT/EN) — the
+q_lang=='en' was hardcoded for the SLAKE format (bilingual, PT/EN); the
 VQA-RAD does not have this field (it is monolingual English by nature), and applying the
 filter the same way discarded the entire dataset (s.get("q_lang") returns
 None, None != "en", everything falls out). Now the filter is only applied when the
@@ -51,7 +51,7 @@ from harness.results_schema import VALID_CONDITIONS, validate_results_dict
 def load_closed_qa_pairs(json_path: str) -> list[dict]:
     """Reads a train/validate/test.json file (SLAKE or VQA-RAD) and filters
     only the closed-type questions (answer_type=='CLOSED'). The language
-    filter (q_lang=='en') is only applied if the field exists in the record —
+    filter (q_lang=='en') is only applied if the field exists in the record; 
     SLAKE is bilingual and uses this field, VQA-RAD does not have this field (it is
     monolingual by nature of the original dataset)."""
     with open(json_path, "r", encoding="utf-8") as fp:
@@ -73,7 +73,7 @@ def load_closed_qa_pairs(json_path: str) -> list[dict]:
 
 def train_question_only_model(train_pairs: list[dict]) -> Pipeline:
     if not train_pairs:
-        raise ValueError("train_pairs is empty — nothing to train")
+        raise ValueError("train_pairs is empty; nothing to train")
     questions = [p["question"] for p in train_pairs]
     answers = [p["answer"] for p in train_pairs]
     model = Pipeline([
@@ -87,7 +87,7 @@ def train_question_only_model(train_pairs: list[dict]) -> Pipeline:
 def evaluate_question_only_model(model: Pipeline, test_pairs: list[dict],
                                   condition: str = "C0", dataset: str = "SLAKE") -> dict:
     if not test_pairs:
-        raise ValueError("test_pairs is empty — nothing to evaluate")
+        raise ValueError("test_pairs is empty; nothing to evaluate")
     questions = [p["question"] for p in test_pairs]
     predicted = model.predict(questions)
 

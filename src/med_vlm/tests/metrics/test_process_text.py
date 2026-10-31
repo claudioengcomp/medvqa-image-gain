@@ -43,7 +43,7 @@ def test_strip_thinking_multiple_blocks():
 
 
 # ---------------------------------------------------------------------------
-# extract_answer — yes/no questions
+# extract_answer: yes/no questions
 # ---------------------------------------------------------------------------
 
 YES_NO_QUESTIONS = [
@@ -87,7 +87,7 @@ def test_extract_yesno_verbose_with_marker():
 
 
 # ---------------------------------------------------------------------------
-# extract_answer — open-ended questions
+# extract_answer: open-ended questions
 # ---------------------------------------------------------------------------
 
 OPEN_QUESTION = "What is the primary finding in this chest X-ray?"
@@ -128,7 +128,7 @@ def test_extract_open_fallback_when_cleaned_empty():
 
 
 # ---------------------------------------------------------------------------
-# extract_answer — <answer>…</answer> tags (MedVLThinker-style)
+# extract_answer: <answer>…</answer> tags (MedVLThinker-style)
 # ---------------------------------------------------------------------------
 
 

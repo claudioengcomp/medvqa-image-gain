@@ -1,5 +1,5 @@
 """Splits the Kvasir training arrow (harness/prepro/prepare_kvasir_arrow.py
---split train) into train/val — `SimulaMet/Kvasir-VQA-x1` only publishes
+--split train) into train/val; `SimulaMet/Kvasir-VQA-x1` only publishes
 `train`/`test` splits (finding confirmed in `docs/superpowers/plans/
 2026-08-21-kvasir-vqa-integration.md`), and M3AE needs all three.
 
@@ -9,16 +9,16 @@ by `environment/colab_setup_m3ae.sh`), file
 `m3ae/datamodules/vqa_vqa_rad_datamodule.py`: `VQAVQARADDataModule.setup()`
 builds `self.answer2id`/`self.id2answer` (used by
 `harness/extract_predictions_m3ae.py` to decode the prediction) by reading the
-`answers`/`answer_labels` columns from `self.train_dataset` + `self.val_dataset`
-— NOT from `test_dataset`. Without a `vqa_kvasir_val.arrow`, the equivalent
+`answers`/`answer_labels` columns from `self.train_dataset` + `self.val_dataset`;
+NOT from `test_dataset`. Without a `vqa_kvasir_val.arrow`, the equivalent
 `VQAKVASIRDataModule` setup() would break due to the missing split.
 
 Unlike `harness/prepro/prepare_vqa_rad_splits.py` (which splits the raw
 VQA-RAD JSON *by question*, before the arrow exists): here the Kvasir arrow
 already groups all the questions of an image into a single row (schema
-`harness/interventions/arrow_io.py`) — splitting by question would require
+`harness/interventions/arrow_io.py`): splitting by question would require
 duplicating the image between train and val. We split by ROW (image) instead:
-same spirit (deterministic, fixed seed, documented — it is not "the correct
+same spirit (deterministic, fixed seed, documented; it is not "the correct
 split" clinically, just a stable choice).
 
 Usage:

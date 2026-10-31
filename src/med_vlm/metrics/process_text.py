@@ -69,8 +69,7 @@ def answer_matches(pred_norm: str, gold_norms: list[str]) -> bool:
 
     Deliberately does NOT grant credit for genuine synonyms with different
     tokens (e.g. "no" vs "negative", "chest" vs "thorax") -- that would be a
-    scoring-semantics change, not a normalization fix. See
-    docs/superpowers/specs/2026-08-25-medvlthinker-third-model-design.md §8.
+    scoring-semantics change, not a normalization fix.
     """
     if pred_norm in gold_norms:
         return True

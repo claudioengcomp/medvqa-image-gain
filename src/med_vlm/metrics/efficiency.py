@@ -1,9 +1,9 @@
 """Computational efficiency metrics.
 
 Provides three functions:
-- measure_model_params   — counts total and trainable parameters.
-- measure_flops          — estimates FLOPs/MACs via calflops for one forward pass.
-- measure_inference_efficiency — times and measures peak GPU memory for inference.
+- measure_model_params  : counts total and trainable parameters.
+- measure_flops         : estimates FLOPs/MACs via calflops for one forward pass.
+- measure_inference_efficiency: times and measures peak GPU memory for inference.
 """
 
 from __future__ import annotations
@@ -47,8 +47,8 @@ def measure_flops(
     """Estimate FLOPs and MACs for a single forward pass using calflops.
 
     Only the prefill / encoder forward pass is measured (``forward_mode='forward'``).
-    Keys that are not valid ``model.forward()`` arguments — namely ``labels`` and
-    ``max_new_tokens`` — are stripped from the batch before the measurement so that:
+    Keys that are not valid ``model.forward()`` arguments; namely ``labels`` and
+    ``max_new_tokens``: are stripped from the batch before the measurement so that:
 
     * no loss computation is triggered (which would fail with gradient checkpointing
       enabled but no actual gradients flowing);
@@ -74,7 +74,7 @@ def measure_flops(
 
         _had_gc = getattr(model, "is_gradient_checkpointing", False)
         try:
-            # Gradient checkpointing is not needed for a FLOPs count — disabling
+            # Gradient checkpointing is not needed for a FLOPs count; disabling
             # it reduces peak memory by removing the recomputation overhead that
             # torch.compile inserts via tag_activation_checkpoint.
             if _had_gc and hasattr(model, "gradient_checkpointing_disable"):
@@ -118,7 +118,7 @@ def measure_inference_efficiency(
     """Time and measure peak GPU memory for the full inference pass over eval_dl.
 
     This mirrors the generation loop inside ``evaluate_vqa`` but only tracks
-    wall-clock time and GPU memory — it does **not** re-compute quality metrics.
+    wall-clock time and GPU memory; it does **not** re-compute quality metrics.
 
     Args:
         model: Model already placed on the target device (not wrapped by Accelerator).
@@ -129,10 +129,10 @@ def measure_inference_efficiency(
 
     Returns:
         Dict with keys:
-        - ``infer_total_s``       — total wall-clock seconds.
-        - ``infer_latency_s``     — seconds per sample (total / n_samples).
-        - ``infer_throughput_sps``— samples per second.
-        - ``infer_peak_memory_gb``— peak GPU memory in GB.
+        - ``infer_total_s``      : total wall-clock seconds.
+        - ``infer_latency_s``    : seconds per sample (total / n_samples).
+        - ``infer_throughput_sps``: samples per second.
+        - ``infer_peak_memory_gb``: peak GPU memory in GB.
     """
     use_cuda = torch.cuda.is_available()
     if use_cuda:

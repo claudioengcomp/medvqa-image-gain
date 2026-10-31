@@ -63,9 +63,9 @@ def patch_datamodules_init(m3ae_dir: str) -> None:
     if "VQAHEALDataModule" in content:
         return
     if K._DATAMODULES_MARKER not in content:
-        raise ValueError(f"{path}: marcador '_datamodules = {{' not found — file format changed?")
+        raise ValueError(f"{path}: marcador '_datamodules = {{' not found; file format changed?")
     if K._DATAMODULES_ANCHOR_ENTRY not in content:
-        raise ValueError(f"{path}: entry 'vqa_vqa_rad' not found in the dictionary — file format changed?")
+        raise ValueError(f"{path}: entry 'vqa_vqa_rad' not found in the dictionary; file format changed?")
     content = content.replace(K._DATAMODULES_MARKER, f"\n{_DATAMODULES_IMPORT_LINE}{K._DATAMODULES_MARKER}", 1)
     content = content.replace(K._DATAMODULES_ANCHOR_ENTRY, f"{K._DATAMODULES_ANCHOR_ENTRY}\n    {_DATAMODULES_NEW_ENTRY}", 1)
     with open(path, "w", encoding="utf-8") as fp:

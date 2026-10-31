@@ -1,9 +1,9 @@
 """Reads all experiment result JSON files from an outputs directory and produces:
 
-  - <out_dir>/results.csv          — flat table with all metrics
-  - <out_dir>/results.tex          — LaTeX booktabs table (ready to paste)
-  - <out_dir>/metrics_bar.png      — 2×3 grid of per-metric bar charts
-  - <out_dir>/efficiency_bar.png   — bar charts of computational efficiency metrics
+  - <out_dir>/results.csv         : flat table with all metrics
+  - <out_dir>/results.tex         : LaTeX booktabs table (ready to paste)
+  - <out_dir>/metrics_bar.png     : 2×3 grid of per-metric bar charts
+  - <out_dir>/efficiency_bar.png  : bar charts of computational efficiency metrics
 
 Usage:
   poetry run python -m med_vlm.analyze_results \
@@ -218,7 +218,7 @@ def _family_color(run: str) -> str:
 
 
 def _apply_ieee_style(ax) -> None:
-    """Remove chart junk, apply light grid — consistent IEEE-adjacent style."""
+    """Remove chart junk, apply light grid; consistent IEEE-adjacent style."""
     ax.spines[["top", "right"]].set_visible(False)
     ax.grid(axis="x", linestyle="--", linewidth=0.5, alpha=0.5, color="#aaaaaa")
     ax.set_axisbelow(True)

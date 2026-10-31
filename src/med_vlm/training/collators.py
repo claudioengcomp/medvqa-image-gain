@@ -145,7 +145,7 @@ def build_chat_template_vqa_collator(
             for q in questions
         ]
 
-        # Do NOT pass truncation/max_length here — these processors validate that
+        # Do NOT pass truncation/max_length here; these processors validate that
         # the number of image tokens in text matches input_ids, which truncation
         # would break.  We truncate manually below.
         proc_images = None if no_image else ([[img] for img in images] if wrap_images_per_sample else images)
@@ -164,7 +164,7 @@ def build_chat_template_vqa_collator(
         )
         prompt_lens: list[int] = p_enc["attention_mask"].sum(dim=1).tolist()
 
-        # Manual post-hoc truncation to max_length — text tensors only.
+        # Manual post-hoc truncation to max_length; text tensors only.
         # pixel_values / image_sizes / image_grid_thw must NOT be truncated:
         # slicing them along dim-1 would corrupt tile counts and break the
         # image-token / input_ids invariant checked by LLaVA-Next / SmolVLM.
