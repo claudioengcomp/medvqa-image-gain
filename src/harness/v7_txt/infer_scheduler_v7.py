@@ -143,7 +143,7 @@ class Sched:
             self.st = {"jobs": [dict(j, status="queued", retries=0, oom=0, peak_mib=0) for j in json.loads(Path(a.jobs).read_text())], "t0": now(), "versions": self.vers}
             self.log("scheduler_start", pid=os.getpid(), jobs=len(self.st["jobs"]), rules={"cap_mib": CAP_MIB, "load_cap": LOAD_CAP, "slots": a.slots, "util_sat": UTIL_SAT}, gpu=gpu_query(), load1=round(load1(), 1), df=df_h(), worktree=worktree_state())
         for j in self.st["jobs"]:
-            if j["status"] == "queued" and Path(j["output"]).exists() and "provenance" in json.loads(Path(j["output"]).read_text()): j["status"] = "done"; j["note"] = "output ja existia com carimbo"
+            if j["status"] == "queued" and Path(j["output"]).exists() and "provenance" in json.loads(Path(j["output"]).read_text()): j["status"] = "done"; j["note"] = "output already existed with timestamp"
         self.save()
     def log(self, e, **kw):
         r = {"t": now(), "event": e, **kw}; open(self.logd / "schedule.jsonl", "a").write(json.dumps(r, default=str) + "\n"); print(json.dumps(r, default=str), flush=True)
@@ -215,7 +215,7 @@ class Sched:
             self.st["third_slot_cards"] = sorted(set(self.st.get("third_slot_cards", [])) | third_cards); self.log("third_slot_suspended_card", cards=self.st["third_slot_cards"], deaths=[d for d in deaths if d["cause"] == "terceiros"], rule="death by third-party growth: third slot suspended only on this GPU"); self.save()
         if mine:
             if not self.st.get("third_slot_suspended"): self.st["third_slot_suspended"] = now(); self.log("third_slot_suspended", deaths=mine, rule="MIMIC training died due to memory attributable to my jobs: third slot suspended on GPUs with training; no launch until relaunch"); self.save()
-            return False, "treino do MIMIC morto por memoria minha e nao relancado (%s): nenhum lancamento" % ",".join(mine)
+            return False, "MIMIC training killed by my own memory and not relaunched (%s): no launch" % ",".join(mine)
         slots = min(self.a.slots, 2) if ((self.st.get("third_slot_suspended") and img_train) or g in self.st.get("third_slot_cards", [])) else self.a.slots
         lmax = getattr(self.a, "light_max_mib", 7168); is_light = lambda o: (not o.get("is_train") and (o.get("reserve") or 10 ** 9) <= lmax) if o.get("peer") else (o.get("reserve_mib") or 10 ** 9) <= lmax
         if getattr(self.a, "light_slots", None) and slots == self.a.slots and j["reserve_mib"] <= lmax and all(is_light(o) for o in ours): slots = max(slots, self.a.light_slots)   # 12/10 13:20
@@ -225,7 +225,7 @@ class Sched:
         if hi: return False, "cede a prioridade maior (%s vai lancar nesta placa)" % hi
         if getattr(self.a, "yield_to_train", None) and self.trains_queued():
             ntr = sum(1 for o in ours if o.get("kind") == "train" or (o.get("peer") and o.get("img_train")) or o.get("is_train"))
-            if len(ours) + 1 + max(0, 2 - ntr) > slots: return False, "vaga guardada para treino (treinos na fila; %d treino(s) na placa)" % ntr
+            if len(ours) + 1 + max(0, 2 - ntr) > slots: return False, "slot reserved for training (trainings in queue; %d training(s) on the GPU)" % ntr
         if not j.get("exclusive") and not ours and self.exclusive_waiting() and len([x for x in GPUS if not self.ours_on(x)]) <= 1: return False, "ultima placa vazia reservada ao job exclusivo (M3AE) de %s" % self.a.reserve_for_exclusive
         if any(time.time() - (o.get("start_ts") or 0) < STAGGER_S for o in ours): return False, "stagger"   # 14/10: 5 s (antes 90 s meus / 240 s dos pares)
         if j.get("exclusive") and ours: return False, "exclusive"
@@ -235,7 +235,7 @@ class Sched:
         if img_train:   # revision 10/10 20:45 (a): measured peaks of jobs on the GPU + third parties (current usage) + reserve of the new one < limit
             pm = self.pm_cached(); mine = [o.get("pid") for o in ours if o.get("pid")]
             third = max(0, q[g]["used"] - sum(tree_mem(pm, x) for x in mine)); peaks = sum(max(o.get("peak_mib", 0) or 0, tree_mem(pm, o.get("pid"))) for o in ours)
-            if peaks + third + j["reserve_mib"] >= cap: return False, "picos %d + terceiros %d + reserva %d >= %d (placa com treino do MIMIC com imagem)" % (peaks, third, j["reserve_mib"], cap)
+            if peaks + third + j["reserve_mib"] >= cap: return False, "peaks %d + third parties %d + reserve %d >= %d (GPU with MIMIC training with image)" % (peaks, third, j["reserve_mib"], cap)
         if load1() + LOAD_DELTA > LOAD_CAP: return False, "load %.1f" % load1()
         rmin = getattr(self.a, "min_free_ram_gb", None)   # 22/10 (round 17): does not launch with little free RAM
         if rmin and mem_available_gb() < rmin: return False, "ram %.0f GB disponiveis < %.0f" % (mem_available_gb(), rmin)
@@ -338,14 +338,14 @@ class Sched:
     def dry_run(self):
         """Safeguard (11/10): prints constants, jobs on each GPU and the decision for each job in the queue per GPU; does not write, does not launch."""
         try: gpu_query(); nv_ok = True
-        except Exception as e: nv_ok = False; print("dry_run: nvidia-smi indisponivel (%r): fila listada sem decisao de placa" % (e,), flush=True)
+        except Exception as e: nv_ok = False; print("dry_run: nvidia-smi unavailable (%r): queue listed without a GPU decision" % (e,), flush=True)
         if not nv_ok:
             print(json.dumps({"dry_run": now(), "consts": {"CAP_MIB": CAP_MIB, "CAP_IMG_TRAIN_MIB": CAP_IMG_TRAIN_MIB, "LOAD_CAP": LOAD_CAP, "UTIL_SAT": UTIL_SAT}, "load1": round(load1(), 1), "df": df_h()}), flush=True)
             print("estados:", {s: len(self.jobs(status=s)) for s in ("done", "failed", "running", "queued")}, flush=True)
             for j in self.st["jobs"]:
                 if j["status"] in ("running", "failed"): print("estado:", j["status"], j["name"], "gpu", j.get("gpu"), "pid", j.get("pid"), "vivo" if j.get("pid") and os.path.exists("/proc/%d" % j["pid"]) else "", flush=True)
             for j in self.jobs(status="queued"): print("fila:", j["name"], "reserva", j["reserve_mib"], "| requires ausente" if any(not Path(x).exists() for x in j.get("requires", [])) else "", flush=True)
-            print("fim do ciclo a seco (sem nvidia-smi): nada lancado, nada gravado", flush=True); return
+            print("end of the dry cycle (no nvidia-smi): nothing launched, nothing written", flush=True); return
         print(json.dumps({"dry_run": now(), "pid": os.getpid(), "jobs_file": self.a.jobs, "state": self.a.state, "slots": self.a.slots, "peer_state": self.a.peer_state, "consts": {"CAP_MIB": CAP_MIB, "CAP_IMG_TRAIN_MIB": CAP_IMG_TRAIN_MIB, "LOAD_CAP": LOAD_CAP, "LOAD_DELTA": LOAD_DELTA, "DISK_MIN_GB": DISK_MIN_GB, "UTIL_SAT": UTIL_SAT, "POLL": POLL}, "load1": round(load1(), 1), "df": df_h(), "gpu": gpu_query(), "train_deaths": self.train_deaths(), "third_slot_suspended": self.st.get("third_slot_suspended"), "third_slot_cards": self.st.get("third_slot_cards"), "libcuda_jobs": libcuda_info(ENV), "reserve_for_exclusive": getattr(self.a, "reserve_for_exclusive", None), "exclusive_waiting": self.exclusive_waiting(), "yield_to_train": getattr(self.a, "yield_to_train", None), "trains_queued": self.trains_queued(), "versions": self.vers}, default=str), flush=True)
         q = gpu_query(); done_names = {x["name"] for x in self.jobs(status="done")}
         for g in GPUS: print("placa", g, "used", q[g]["used"], "util", q[g]["util"], "na placa:", [(o["name"], o.get("pid"), "pico", o.get("peak_mib"), "img_train" if o.get("img_train") else "") for o in self.ours_on(g)], flush=True)

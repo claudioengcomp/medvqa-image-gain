@@ -7,7 +7,7 @@
   "c2_arrow": "vqa_kvasir_test_clean_c2.arrow",
   "c2_arrow_sha256": "c50a302be8454ae7c011a92a580a95bc1ee81895dd35b2bed507768371c94f26",
   "seed": 42,
-  "seed_evidence": "observed command (docs/superpowers/plans/2026-08-21-kvasir-vqa-integration.md)",
+  "seed_evidence": "seed fixed at 42 in the original command",
   "seed_verified": "pairing reproduced by regenerating with this seed; see docs/visapp/v4/seed_map_verification.json",
   "images": 1291,
   "entries": 10779,

@@ -17,9 +17,8 @@ VALID_CONDITIONS = (
     "C4_OCC_25", "C4_OCC_50", "C4_OCC_75",
     "C4_NOISE_25", "C4_NOISE_50", "C4_NOISE_75",
     # C7 reserved (26/08/2026): occlusion_study condition for positional occlusion
-    # (formerly "Task 4" of PLANO_AJUSTES_P0_v2.md) -- renamed from C6
-    # to C7 when C6 came to mean "same organ+modality,
-    # categoria livre" (ver docs/superpowers/plans/2026-08-21-kvasir-targeted-pathology-swap-condition.md).
+    # renamed from C6 to C7 when C6 came to mean "same organ+modality,
+    # free category".
     # Not yet implemented -- added here only to reserve the name.
     "C7",
     # ISBI 2027, occlusion_study posicional (docs/isbi/occlusion_study/study_plan_v2.md): C0 restrita
@@ -77,7 +76,7 @@ def validate_results_dict(d: dict) -> None:
         for i, p in enumerate(preds):
             for key in ("qid", "predicted", "gold", "correct"):
                 if key not in p:
-                    raise ResultsSchemaError(f"predictions[{i}] sem o campo '{key}'")
+                    raise ResultsSchemaError(f"predictions[{i}] without the field '{key}'")
             if not isinstance(p["correct"], bool):
                 raise ResultsSchemaError(f"predictions[{i}]['correct'] deve ser bool")
 

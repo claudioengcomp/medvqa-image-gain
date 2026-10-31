@@ -124,7 +124,7 @@ def test_build_arrow_dataframe_produces_expected_schema_columns():
 
 def test_download_image_bytes_retries_on_transient_error_then_succeeds():
     # Achado real (Colab, 21/08/2026): ConnectionResetError no meio de
-    # ~4.000 downloads sequenciais derrubava o script inteiro sem essa
+    # ~4.000 sequential downloads would bring down the entire script without this
     # retentativa.
     mock_resp = type("Resp", (), {
         "__enter__": lambda self: self, "__exit__": lambda self, *a: None,

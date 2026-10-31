@@ -29,7 +29,7 @@ import numpy as np
 from scripts_credentialed.heal.heal_rle import decode_rle
 
 QID_BASE = 3_000_000
-OCCLUSION_STUDY_SEED = 20260913   # same seed as the Kvasir study plan
+OCCLUSION_STUDY_SEED = 20260913   # same seed as the Kvasir occlusion study
 AREA_RATIO = (0.7, 1.4)
 MAX_OVERLAP = 0.05
 CLOSED = {"closed_yes": "closed_yes", "closed_no": "closed_no"}
@@ -109,7 +109,7 @@ def build_inventory(annotations: str, png_manifest: str | None, thorax_atlas: st
                  "answer": normalize_answer(r.answer, r.question_type) if closed else str(r.answer),
                  "question_type": r.question_type, "anatomy": r.anatomy,
                  "question_class": r.question_type if closed else "open", "evaluable": bool(closed) and not no_place,
-                 "exclusion_reason": None if closed and not no_place else ("sem posicao valida para o occlusion_study" if closed else "open question (out of scope)"),
+                 "exclusion_reason": None if closed and not no_place else ("no valid position for the occlusion_study" if closed else "open question (out of scope)"),
                  "target_area_frac": float(target.mean()), "occlusion_study": plc, "xray": True,
                  "n_anatomies_in_image": len(masks)}
             if pm and image_id not in pm:

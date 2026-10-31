@@ -36,7 +36,7 @@ def resumo(p):
     t = pa.ipc.open_file(pa.memory_map(p, "rb")).read_all(); q = t.column("question_id").to_pylist(); lab = {l for row in t.column("answer_labels").to_pylist() for ls in row for l in ls}
     return {"path": p, "sha256": sha(p), "linhas_imagens": t.num_rows, "perguntas": sum(len(x) for x in q), "image_ids": sorted(t.column("image_id").to_pylist())}, [i for x in q for i in x], lab
 man = {"t": time.strftime("%Y-%m-%d %H:%M:%S"), "host": socket.gethostname(), "script": __file__, "script_sha256": sha(__file__), "seed": SEED, "fracoes": FR,
-       "regra": "imagens unicas em ordem alfabetica; numpy.random.default_rng(20260913).permutation; primeiras round(0,7N) treino, round(0,1N) seguintes validacao, resto teste; pergunta segue a imagem",
+       "regra": "unique images in alphabetical order; numpy.random.default_rng(20260913).permutation; first round(0,7N) train, next round(0,1N) validation, rest test; question follows the image",
        "fonte": {s: {"path": p, "sha256": sha(p)} for s, p in SRC.items()}, "funcao": f"{M3}/prepro/make_arrow.py::make_arrow_vqa (sha256 {sha(M3 + '/prepro/make_arrow.py')})", "n_imagens_pool": N, "particoes": {}, "conferencias": {}}
 labs = {}
 for s, v in S.items():
@@ -55,6 +55,6 @@ assert all(v for k, v in man["conferencias"].items() if k in ("imagens_disjuntas
 t = f"{OUT}/vqa_vqa_rad_test_C1.arrow"; blank_out_images(f"{OUT}/vqa_vqa_rad_test.arrow", t); man["c1_teste"] = {"path": t, "sha256": sha(t), "gray": {"size": DEFAULT_SIZE, "rgb": DEFAULT_FILL_COLOR}}
 G = f"{OUT}/data_root_cinza"; os.makedirs(G)
 for s in S: blank_out_images(f"{OUT}/vqa_vqa_rad_{s}.arrow", f"{G}/vqa_vqa_rad_{s}.arrow")
-man["data_root_cinza_m3ae_txt"] = {"path": G, "sha256": {s: sha(f"{G}/vqa_vqa_rad_{s}.arrow") for s in S}, "nota": "preparado para o M3AE so-texto; so roda com ok do candidato"}
+man["data_root_cinza_m3ae_txt"] = {"path": G, "sha256": {s: sha(f"{G}/vqa_vqa_rad_{s}.arrow") for s in S}, "nota": "prepared for text-decoder-only M3AE; only runs with the candidate's approval"}
 man["segundos"] = round(time.time() - t0, 1); json.dump(man, open(f"{OUT}/manifest_vqarad_rediv.json", "w"), indent=1)
 print(json.dumps({s: {k: man["particoes"][s][k] for k in ("n_imagens", "n_perguntas", "n_fechadas", "n_sim_nao", "n_abertas", "origem_no_pacote")} for s in S}, indent=1)); print({k: v for k, v in man["conferencias"].items() if not isinstance(v, dict)})

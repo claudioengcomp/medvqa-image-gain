@@ -15,7 +15,7 @@ from torch.utils.data import DataLoader, TensorDataset
 from transformers import AutoModelForSequenceClassification, AutoTokenizer, get_linear_schedule_with_warmup
 from med_vlm.metrics.process_text import answer_matches, normalize_text
 MODEL = "microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext"; REV = "e1354b7a3a09615f6aba48dfad4b7a613eef7062"
-HP = {"max_len": 64, "batch": 32, "lr": 2e-5, "weight_decay": 0.01, "warmup_frac": 0.1, "epochs_max_com_validacao": 10, "epochs_fixas_sem_validacao": 5, "dtype": "fp32", "selecao": "acuracia na validacao fechada; empate -> epoca mais cedo"}
+HP = {"max_len": 64, "batch": 32, "lr": 2e-5, "weight_decay": 0.01, "warmup_frac": 0.1, "epochs_max_com_validacao": 10, "epochs_fixas_sem_validacao": 5, "dtype": "fp32", "selecao": "accuracy on the closed-form validation; tie -> earliest epoch"}
 def sha(p):
     h = hashlib.sha256()
     with open(p, "rb") as f:

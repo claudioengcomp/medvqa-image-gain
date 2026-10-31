@@ -3,7 +3,7 @@ images used by HEAL, read from the Hugging Face parquets by column
 projection (duckdb reads by range; the `image` column is never read or downloaded).
 
 Canonical source: the configuration with image (train-*-of-00033 and test-*-of-00006:
-16.380 and 2.851 rows, the numbers from the plan). The `data/` configuration (23.091 /
+16.380 and 2.851 rows). The `data/` configuration (23.091 /
 3.933 rows) is reported separately for checking.
 
 Outputs in data/isbi_occlusion/heal/: heal_items.parquet (heal_split, image_id,

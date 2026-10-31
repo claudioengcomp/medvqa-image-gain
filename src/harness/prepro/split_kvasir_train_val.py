@@ -1,7 +1,6 @@
 """Splits the Kvasir training arrow (harness/prepro/prepare_kvasir_arrow.py
 --split train) into train/val; `SimulaMet/Kvasir-VQA-x1` only publishes
-`train`/`test` splits (finding confirmed in `docs/superpowers/plans/
-2026-08-21-kvasir-vqa-integration.md`), and M3AE needs all three.
+`train`/`test` splits, and M3AE needs all three.
 
 Real finding (not an assumption), confirmed by reading the source code of the
 `zhjohnchan/M3AE` repository, commit `14da377255280eed547e451f368cf71a43f3ca1c` (pinned

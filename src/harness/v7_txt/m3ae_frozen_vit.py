@@ -46,7 +46,7 @@ def bert_file(b, s): return f"{PJR}/BERT2_question_only_HEAL_TREINO_seed{s}.json
 I15 = json.load(open(f"{PJ}/analysis/joint_ci.json")); out = {"t": time.strftime("%Y-%m-%d %H:%M:%S"), "bases": {}, "fontes": {}}
 for b in BASES:
     seeds = [s for s in range(3) if os.path.exists(frozen_file(b, s, "C0"))]
-    if not seeds: out["bases"][b] = {"estado": "sem predicoes"}; continue
+    if not seeds: out["bases"][b] = {"estado": "no predictions"}; continue
     df = read_arrow(ARROWS[b]); cls, img = classes(b, df); allq = sorted(q for q in img if cls[q].get("answer_type") == "closed"); bs = ImageBootstrap([img[q] for q in allq], 2000, 20260913)
     TF = preds(f"{PJR}/TFIDF_question_only_HEAL_TREINO.json") if b == "HEAL" else tfidf_fechadas(b)[0]; PS = baseline_string(b); MJ = preds(maj_file(b))
     acc = collections.defaultdict(list); por_semente = {}; ic_exec = {}; accs = collections.defaultdict(list)

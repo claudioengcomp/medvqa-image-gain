@@ -88,7 +88,7 @@ out["custo"] = {"por_base_h": cus, "faixa_so_texto_antes_h (VLM + M3AE cinza)": 
                 "PubMedBERT_mais_barato_em_cada_base_antes": {b: cus[b]["PubMedBERT"] < min(cus[b][m] for m in ("Qwen2-VL", "SmolVLM2", "M3AE so-texto")) for b in ART},
                 "PubMedBERT_mais_barato_em_cada_base_depois": {b: cus[b]["PubMedBERT"] < min(cus[b][m] for m in ("Qwen2-VL", "SmolVLM2", "M3AE sem imagem")) for b in ART},
                 "M3AE_sem_imagem_pico_GB_min_max_5bases": [min(cus[b]["M3AE sem imagem: pico por processo (GB) min-max"][0] for b in ART), max(cus[b]["M3AE sem imagem: pico por processo (GB) min-max"][1] for b in ART)],
-                "medida": "duracao do job de treino e pico da arvore de processos, ambos do escalonador (mesma medida das linhas 'Custo:' da secao 9)", "fontes": {A + "/text_analyses.json": sha(A + "/text_analyses.json"), PJ + "/m3ae_semimg/logs/infer_state_semimg21b.json": sha(PJ + "/m3ae_semimg/logs/infer_state_semimg21b.json")}}
+                "medida": "training job duration and process-tree peak, both from the scheduler (same measurement as the 'Cost:' rows in section 9)", "fontes": {A + "/text_analyses.json": sha(A + "/text_analyses.json"), PJ + "/m3ae_semimg/logs/infer_state_semimg21b.json": sha(PJ + "/m3ae_semimg/logs/infer_state_semimg21b.json")}}
 P = json.load(open(PJ + "/m3ae_no_image_atext/parametros_semimg.json")) if os.path.exists(PJ + "/m3ae_no_image_atext/parametros_semimg.json") else None
 out["parametros_sem_imagem"] = P
 json.dump(out, open(PJ + "/m3ae_no_image_atext/sinteses.json", "w"), indent=1, default=float); print("FIM")

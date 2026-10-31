@@ -21,5 +21,5 @@ for s in range(3):
     n = f"BERT_question_only_VQARAD_REDIV_seed{s}"; out = f"{PJ}/results/{n}.json"
     B.append({"name": n, "env": "circle", "reserve_mib": 6144, "env_extra": {"HF_HUB_OFFLINE": "1"}, "output": out, "skip_order": True, "log": f"{PJ}/logs/bert/{n}.log",
               "cmd": ["-m", "harness.v7_txt.bert_question_only", "--base", "VQARAD_REDIV", "--seed", str(s), "--data", data, "--output", out, "--save-dir", f"{PJ}/models/bert_vqarad_rediv_seed{s}", "--progress-checkpoint", f"{PJ}/results/.progress/{n}.jsonl"],
-              "meta": {"line": n, "condition": "C0 (so pergunta)", "base_model": "microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext@e1354b7a", "input_arrow": None, "dados": data, "dados_sha256": dsha, "dtype": "fp32"}})
+              "meta": {"line": n, "condition": "C0 (question only)", "base_model": "microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext@e1354b7a", "input_arrow": None, "dados": data, "dados_sha256": dsha, "dtype": "fp32"}})
 json.dump(B, open(f"{PJ}/logs/jobs_bert_rediv.json", "w"), indent=1); print("ok")

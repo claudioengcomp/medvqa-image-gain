@@ -36,7 +36,7 @@ rec = {"model": "TFIDF_question_only", "dataset": "VQA-RAD", "condition": "C0", 
        "aggregates": {"todas_451": agg(main), "fechadas_272_do_classificador_principal": agg([p for p in main if p["closed"]]), "abertas_179_do_classificador_principal": agg([p for p in main if not p["closed"]]),
                       "so_fechadas_receita_publicada": {**agg(clo), "treino_n": len(trc), "conferencia_publicado": conf, "predictions": [{k: v for k, v in p.items() if k != "closed"} for p in clo]},
                       "treino_n": len(tr), "treino_fechadas": len(trc), "classes_de_resposta_no_treino": len({r["answer"] for r in tr})},
-       "provenance": {"line": "TFIDF_question_only_VQARAD_orig", "recipe": "harness/baselines/question_only.py (TfidfVectorizer() + LogisticRegression(max_iter=1000)); resposta strip().lower(); acerto por igualdade exata",
+       "provenance": {"line": "TFIDF_question_only_VQARAD_orig", "recipe": "harness/baselines/question_only.py (TfidfVectorizer() + LogisticRegression(max_iter=1000)); answer strip().lower(); correctness by exact match",
                       "train_json": f"{D}/trainset.json", "train_json_sha256": sha(f"{D}/trainset.json"), "test_json": f"{D}/testset.json", "test_json_sha256": sha(f"{D}/testset.json"),
                       "sklearn": sklearn.__version__, "python": platform.python_version(), "host": platform.node(), "stamped": time.strftime("%Y-%m-%d %H:%M:%S")}}
 validate_results_dict(rec); json.dump(rec, open(OUT, "w"), indent=1)

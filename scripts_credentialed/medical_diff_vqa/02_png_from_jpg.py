@@ -67,7 +67,7 @@ def main():
     man = json.loads(Path(a.manifest).read_text())
     man["provenance"] = {"source": "MIMIC-CXR-JPG 2.1.0 (PhysioNet) JPG -> PNG", "split": a.split, "items_parquet": a.items,
                          "script": "v7_mimic/scripts/02_png_from_jpg.py", "reused": f"{OCCLUSION_STUDY}/harness/isbi_occlusion/heal/dicom_to_png.py @2b7e731 (run, convert_one)",
-                         "reader": "PIL JPEG -> L 8 bits, sem VOI LUT/min-max (jpeg_as_is)", "long_side": a.long_side,
+                         "reader": "PIL JPEG -> L 8 bits, without VOI LUT/min-max (jpeg_as_is)", "long_side": a.long_side,
                          "date": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), "host": socket.gethostname(), "seconds": round(time.time() - t0, 1)}
     Path(a.manifest).write_text(json.dumps(man, indent=1) + "\n")
     print(json.dumps(r))

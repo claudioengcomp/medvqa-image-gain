@@ -66,7 +66,7 @@ def run_experiment(cfg: Dict[str, Any]) -> Dict[str, Any]:
     eval_cfg_dict = cfg.get("eval", {})
     logging_cfg = cfg.get("logging", {})
     # data.no_image (v7_txt, 2026-10-09): text-only arm. Same question, same
-    # template de chat, sem {"type": "image"} e processor(images=None); o
+    # chat template, without {"type": "image"} and processor(images=None); the
     # pre-processing and the augmentation (image-only) have no effect.
     no_image = bool(cfg.get("data", {}).get("no_image", False))
 
@@ -147,8 +147,8 @@ def run_experiment(cfg: Dict[str, Any]) -> Dict[str, Any]:
     )
 
     if no_image:
-        print("[no_image] braco so-texto: sem {'type': 'image'} na mensagem, "
-              "processor(images=None); preprocessing/augmentation sem efeito", flush=True)
+        print("[no_image] text-decoder-only branch: no {'type': 'image'} in the message, "
+              "processor(images=None); preprocessing/augmentation without effect", flush=True)
     train_ds = load_dataset_by_enum(
         dataset_name, split=train_split, preprocessor=preprocessor, drop_image=no_image,
         arrow_paths=cfg.get("data", {}).get("arrows"),

@@ -28,5 +28,5 @@ print("[m3ae_frozen_train] %s %s bench=%s seed=%d task=%s ls=%d tk=%s data_root=
 rc = subprocess.call(cmd, cwd=WM, env=dict(os.environ, WANDB_MODE="disabled")); stop.set(); th.join(10); t = time.time() - t0
 json.dump({"run_name": NAME, "rc": rc, "task": B["task"], "seed": s, "vqa_label_size": B["ls"], "train_transform_keys": [TK], "data_root": DR, "placa": dev, "train_wall_time_s": round(t),
            "train_peak_memory_gb": round(max(mem) / 1024, 3) if mem else None, "freeze_report": REP, "start_ckpt": C.START_CKPT, "start_ckpt_sha256": C.START_SHA,
-           "note": "pico = nvidia-smi da placa do treino (inclui terceiros nessa placa)", "cmd": cmd}, open("%s/%s_cost.json" % (LOG, NAME) if rc == 0 else "%s/%s_cost_FALHOU.json" % (LOG, NAME), "w"), indent=2)
+           "note": "peak = nvidia-smi of the training GPU (includes third parties on that GPU)", "cmd": cmd}, open("%s/%s_cost.json" % (LOG, NAME) if rc == 0 else "%s/%s_cost_FALHOU.json" % (LOG, NAME), "w"), indent=2)
 print("FIM_TREINO_M3AE_FROZEN", NAME, "rc", rc, "s", round(t), flush=True); sys.exit(rc)

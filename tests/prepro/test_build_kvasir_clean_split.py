@@ -47,7 +47,7 @@ def test_build_clean_arrows_writes_three_files_with_zero_overlap(tmp_path):
     assert set(manifest["counts"].keys()) == {"train", "val", "test"}
     total_images = sum(manifest["counts"].values())
     # 71 unique img_id in total (60 from train + 10 new from test, 20 repeated,
-    # + 1 sem pathology_label)
+    # + 1 without pathology_label)
     assert total_images == 71
 
     for split in ("train", "val", "test"):

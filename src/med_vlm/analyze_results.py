@@ -34,7 +34,7 @@ _PEFT_LABELS: dict[str, str] = {
     "lora": "LoRA",
     "adalora": "AdaLoRA",
     "dora": "DoRA",
-    "none": "—",
+    "none": "-",
 }
 
 _METRICS = ["accuracy", "bleu", "rouge1", "rouge2", "rougeL", "meteor", "bert_score_f1"]
@@ -127,7 +127,7 @@ def _save_latex(df: pd.DataFrame, out_dir: Path) -> Path:
     for lbl in _METRIC_LABELS:
         if lbl in display.columns:
             display[lbl] = display[lbl].apply(
-                lambda v: f"{v * 100:.1f}" if pd.notna(v) else "—"
+                lambda v: f"{v * 100:.1f}" if pd.notna(v) else "-"
             )
 
     all_metric_labels = _METRIC_LABELS + _EFFICIENCY_LABELS
@@ -151,7 +151,7 @@ def _save_latex(df: pd.DataFrame, out_dir: Path) -> Path:
     for _, row in display.iterrows():
         lines.append(
             " & ".join(
-                str(row[c]) if c in display.columns else "—" for c in header_cols
+                str(row[c]) if c in display.columns else "-" for c in header_cols
             )
             + r" \\"
         )

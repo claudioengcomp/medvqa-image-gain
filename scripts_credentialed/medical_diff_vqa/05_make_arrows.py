@@ -57,7 +57,7 @@ def main():
         pm = json.loads(Path(a.png_root, f"png_manifest_{s}.json").read_text())["items"]
         missing = sorted(set(df.dicom_id) - set(pm))
         if missing:
-            raise SystemExit(f"{len(missing)} imagens de {s} sem PNG no manifesto: {missing[:5]}")
+            raise SystemExit(f"{len(missing)} images out of {s} without PNG in the manifest: {missing[:5]}")
         rows = []
         for d, g in df.groupby("dicom_id", sort=True):
             p = Path(a.png_root, s, pm[d]["png"]); b = p.read_bytes()

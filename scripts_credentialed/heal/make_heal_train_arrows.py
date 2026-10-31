@@ -42,7 +42,7 @@ _TAIL = re.compile(r"<seg>\.?", re.I)
 
 
 def atomic_answer(answer: str, qtype: str) -> str:
-    """Fato atomico sem <seg>, no espirito do Kvasir limpo (respostas curtas, minusculas)."""
+    """Atomic fact without <seg>, in the spirit of the clean Kvasir (short, lowercase answers)."""
     if qtype in ("closed_yes", "closed_no"):
         return normalize_answer(answer, qtype)
     tail = _TAIL.split(str(answer))[-1].strip()

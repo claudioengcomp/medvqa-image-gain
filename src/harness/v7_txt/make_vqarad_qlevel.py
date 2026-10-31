@@ -36,7 +36,7 @@ os.makedirs(f"{OUT}/c2/data_root"); c2 = f"{OUT}/c2/vqa_vqa_rad_test_c2.arrow"; 
 os.symlink(c2, f"{OUT}/c2/data_root/vqa_vqa_rad_test.arrow"); [os.symlink(f"{OUT}/vqa_vqa_rad_{s}.arrow", f"{OUT}/c2/data_root/vqa_vqa_rad_{s}.arrow") for s in ("train", "val")]
 clo = lambda x: str(x["answer_type"]).strip().upper() == "CLOSED"; yn = lambda x: clo(x) and str(x["answer"]).strip().lower() in ("yes", "no")
 I = {s: {x["image_name"] for x in v} for s, v in S.items()}
-man = {"t": time.strftime("%Y-%m-%d %H:%M:%S"), "host": socket.gethostname(), "script": __file__, "script_sha256": sha(__file__), "seed": SEED, "fracoes": FR, "regra": "qids em ordem crescente; default_rng(20260913).permutation; 70/10/20 por pergunta",
+man = {"t": time.strftime("%Y-%m-%d %H:%M:%S"), "host": socket.gethostname(), "script": __file__, "script_sha256": sha(__file__), "seed": SEED, "fracoes": FR, "regra": "qids in ascending order; default_rng(20260913).permutation; 70/10/20 by question",
        "fonte": {s: {"path": p, "sha256": sha(p)} for s, p in SRC.items()}, "particoes": {s: {"qids": sorted(x["qid"] for x in v), "n_perguntas": len(v), "n_imagens": len(I[s]), "n_fechadas": sum(clo(x) for x in v), "n_sim_nao": sum(yn(x) for x in v),
        "arrow": f"{OUT}/vqa_vqa_rad_{s}.arrow", "arrow_sha256": sha(f"{OUT}/vqa_vqa_rad_{s}.arrow")} for s, v in S.items()}, "imagens_teste_em_treino_ou_validacao": len(I["test"] & (I["train"] | I["val"])), "labels": len(labs),
        "c1": {"path": f"{OUT}/vqa_vqa_rad_test_C1.arrow", "sha256": sha(f"{OUT}/vqa_vqa_rad_test_C1.arrow")}, "c2": {"path": c2, "sha256": sha(c2), "seed": 42}}

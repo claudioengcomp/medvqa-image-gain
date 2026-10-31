@@ -7,7 +7,7 @@
   "c2_arrow": "vqa_slack_test_c2.arrow",
   "c2_arrow_sha256": "7551cd37b76c88937a6c998ef26865edc8492d669d56cc86f7ac21d73ad7603a",
   "seed": 42,
-  "seed_evidence": "observed command (docs/superpowers/plans/2026-08-21-colab-session-A-m3ae-prompt.md)",
+  "seed_evidence": "seed fixed at 42 in the original command",
   "seed_verified": "pairing reproduced by regenerating with this seed; see docs/visapp/v4/seed_map_verification.json",
   "images": 96,
   "entries": 1061,

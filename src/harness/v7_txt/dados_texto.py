@@ -83,6 +83,6 @@ if __name__ == "__main__":
         for which, suf in (("train_so_treino", ""),) + ((("train", "_trainval"),) if b == "HEAL" else ()):
             top, c, preds = majority(D, which); n = len(preds); k = sum(p["correct"] for p in preds)
             rec = {"model": "MAJ_question_only", "dataset": b, "condition": "C0", "accuracy": k / n, "n": n, "n_correct": k, "majoritaria": top, "contagem_top5_treino": c.most_common(5), "n_treino": len(D[which]),
-                   "provenance": {"script": os.path.abspath(__file__), "script_sha256": sha(__file__), "treino": which, "fontes": D["fontes"], "fontes_sha256": D["fontes_sha256"], "regra": "resposta mais frequente nas fechadas do treino; empate por ordem alfabetica; regua answer_matches(normalize_text)", "t": time.strftime("%Y-%m-%d %H:%M:%S")}, "predictions": preds}
+                   "provenance": {"script": os.path.abspath(__file__), "script_sha256": sha(__file__), "treino": which, "fontes": D["fontes"], "fontes_sha256": D["fontes_sha256"], "regra": "most frequent answer among the closed-form training questions; tie by alphabetical order; rule answer_matches(normalize_text)", "t": time.strftime("%Y-%m-%d %H:%M:%S")}, "predictions": preds}
             json.dump(rec, open(f"{a.out}/results/MAJ_question_only_{b}{suf}.json", "w"), indent=1)
             print(b, which, "n", D["n"], "regua x TFIDF", D["regua_confere_tfidf"], "| majoritaria", repr(top), "acc %.4f" % (k / n), "| %.1f s" % (time.time() - t0), flush=True)

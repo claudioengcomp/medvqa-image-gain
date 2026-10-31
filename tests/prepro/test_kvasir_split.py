@@ -54,7 +54,7 @@ def test_split_is_deterministic_given_same_seed():
 
 
 def test_split_stratifies_rare_label_across_all_three_splits():
-    # 6 imagens raras (label "rare") -- estratificado, cada split deve ganhar
+    # 6 rare images (label "rare") -- stratified, each split must gain
     # at least 1 (without stratification, free random draw could put all of them in a single split).
     records = [_record(f"rare{i}", "rare") for i in range(6)]
     records += [_record(f"common{i}", "normal") for i in range(300)]

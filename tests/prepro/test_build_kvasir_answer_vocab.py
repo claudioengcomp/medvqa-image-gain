@@ -11,7 +11,7 @@ def test_build_vocab_assigns_stable_indices_by_frequency():
 
 
 def test_build_vocab_breaks_ties_alphabetically():
-    answers = [["b"], ["a"]]  # empate em frequencia (1 cada)
+    answers = [["b"], ["a"]]  # tie in frequency (1 each)
     vocab = build_vocab(answers)
     assert vocab["a"] == 0
     assert vocab["b"] == 1

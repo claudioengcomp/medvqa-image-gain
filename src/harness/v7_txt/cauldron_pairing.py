@@ -24,13 +24,13 @@ t = pq.read_table(PQ); rows = t.to_pylist(); C = []
 for i, r in enumerate(rows):
     im, ph = pix(r["images"][0]["bytes"]); C.append({"i": i, "pix": ph, "phash": phash(im), "size": im.size, "path": r["images"][0].get("path"), "img": im,
                                                      "qa": [(N(x["user"].split("\n")[0]), N(x["assistant"].strip().rstrip("."))) for x in r["texts"]]})
-# pool do artigo (redivisao: train/val/test cobrem as 314 imagens)
+# paper's pool (re-split: train/val/test cover the 314 images)
 POOL = {}
 for sp in ("train", "val", "test"):
     tb = pa.ipc.RecordBatchFileReader(pa.memory_map(f"{P}/data/vqarad_rediv/vqa_vqa_rad_{sp}.arrow", "r")).read_all()
     for r in tb.select(["image", "image_id"]).to_pylist():
         im, ph = pix(r["image"]); POOL[str(r["image_id"]).split("/")[-1]] = {"pix": ph, "phash": phash(im), "size": im.size, "img": im}
-# pareamento de imagens
+# image pairing
 bypix = {}; [bypix.setdefault(c["pix"], []).append(c["i"]) for c in C]
 match = {}; metodo = {}
 for name, v in POOL.items():

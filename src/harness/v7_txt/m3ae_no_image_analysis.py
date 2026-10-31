@@ -25,7 +25,7 @@ PARES = {"A_text_sem_imagem": ("S", None), "A_text_cinza": ("Tc", None), "sem_im
 out = {"bases": {}, "fontes": {}}
 for b in ("VQARAD_REDIV", "SLAKE", "HEAL", "MIMIC", "KVASIR", "VQARAD_QLEVEL"):
     ok = [s for s in range(3) if all(os.path.exists(files(b, s)[k]) for k in ("S", "Tc", "F", "A"))]
-    if not ok: out["bases"][b] = {"estado": "sem sementes completas"}; continue
+    if not ok: out["bases"][b] = {"estado": "no complete seeds"}; continue
     df = read_arrow(ARROWS[b]); cls, img = classes(b, df); allq = sorted(q for q in img if cls[q].get("answer_type") == "closed"); bs = ImageBootstrap([img[q] for q in allq], 2000, 20260913)
     acc = collections.defaultdict(lambda: ([], [])); preto = {}; nps = {}; difr = {}
     for s in ok:

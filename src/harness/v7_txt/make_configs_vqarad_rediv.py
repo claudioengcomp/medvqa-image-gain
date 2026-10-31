@@ -21,7 +21,7 @@ for n in NAMES:
     d["outputs_dir"] = f"{_MEDVQA_ROOT}/v7_txt/article_runs"; d["results_json_dir"] = f"{_MEDVQA_ROOT}/v7_txt/article_runs/logs"; d["data"]["arrows"] = dict(ARR)
     a, b = dict(flat(s)), dict(flat(d)); diff = {k for k in set(a) | set(b) if a.get(k) != b.get(k)}; assert diff <= ALLOWED, (name, diff - ALLOWED)
     assert d["eval"]["split"] == "validation", name
-    dst.write_text("# article_runs vqarad_image_split (2026-10-17): copia de %s (sha256 %s); mudam so nome, data.arrows (divisao por imagem, seed 20260913) e caminhos de saida.\n" % (src, sha(src)[:16]) + yaml.safe_dump(d, sort_keys=False, allow_unicode=True))
+    dst.write_text("# article_runs vqarad_image_split (2026-10-17): copy of %s (sha256 %s); only name, data.arrows (split by image, seed 20260913) and output paths change.\n" % (src, sha(src)[:16]) + yaml.safe_dump(d, sort_keys=False, allow_unicode=True))
     assert yaml.safe_load(dst.read_text()) == d
     rep[name] = {"source": str(src), "source_sha256": sha(src), "yaml_sha256": sha(dst), "changed_keys": sorted(".".join(k) for k in diff), "target_modules": d["peft_config"]["target_modules"], "no_image": d.get("data", {}).get("no_image", False), "epochs": d["train"]["epochs"]}
     print(name, "<-", src.name, "| alteradas:", rep[name]["changed_keys"])

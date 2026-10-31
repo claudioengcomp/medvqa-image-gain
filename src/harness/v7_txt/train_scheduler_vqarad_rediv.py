@@ -39,8 +39,8 @@ LINES = [("smol_txt", "smolvlm2_lora_txt_vqarad_rediv", "smol_txt", "smolvlm2", 
          ("smol_lora", "smolvlm2_lora_vqarad_rediv", "smol_img", "smolvlm2", "LORA", "SMOLVLM_LORA_VQARAD_REDIV_seed%d", ["C0"]),
          ("smol_lora_ft", "smolvlm2_lora_ft_vqarad_rediv", "smol_img", "smolvlm2", "LORA_FT", "SMOLVLM_LORA_FT_VQARAD_REDIV_seed%d", ["C0", "C1"])]
 ADAPTED_TOWER = {"vt", "smol_lora"}
-ARM_DESC = {"txt": "TXT (so-texto: sem imagem; LoRA so no LM)", "frozen": "torre congelada (LoRA q/k/v/o do LM, como a publicada qwen2vl_lora_vqarad)", "vt": "torre adaptada (LoRA no LM + visual.blocks, regex VT)",
-            "smol_txt": "TXT do SmolVLM2 (so-texto; LoRA so no LM, regex text_model.layers)", "smol_lora": "publicada: SmolVLM2 LoRA, lista padrao q/k/v/o (pega LM e torre)", "smol_lora_ft": "torre: SmolVLM2 LoRA so no LM (regex text_model.layers, FT), torre congelada"}
+ARM_DESC = {"txt": "TXT (text-decoder-only: no image; LoRA only on the LM)", "frozen": "torre congelada (LoRA q/k/v/o do LM, como a publicada qwen2vl_lora_vqarad)", "vt": "torre adaptada (LoRA no LM + visual.blocks, regex VT)",
+            "smol_txt": "TXT of SmolVLM2 (text-decoder-only; LoRA only on the LM, regex text_model.layers)", "smol_lora": "publicada: SmolVLM2 LoRA, lista padrao q/k/v/o (pega LM e torre)", "smol_lora_ft": "torre: SmolVLM2 LoRA so no LM (regex text_model.layers, FT), torre congelada"}
 TXT_ARMS = {"txt", "smol_txt"}
 SFX = "vqarad_rediv"   # suffix of this scheduler's state/log files
 for d in (LOGS, MODELS, RESULTS, PROG): d.mkdir(parents=True, exist_ok=True)
@@ -198,7 +198,7 @@ class Sched:
         return last_step_loss(j["log"])[0] >= ENTERED_STEP
     def can_launch(self, j, gpu, q):
         if self.halt: return False, "halt: %s" % self.halt
-        if not is_txt(j) and gpu not in IMG_GPUS: return False, "job com imagem so na placa %s (candidato 15/10)" % IMG_GPUS
+        if not is_txt(j) and gpu not in IMG_GPUS: return False, "job with image only on GPU %s (the candidate, 15/10)" % IMG_GPUS
         if False and q[gpu]["util"] >= UTIL_SAT: return False, "placa %d saturada por terceiros (util %d %%)" % (gpu, q[gpu]["util"])
         ours = self.ours_on(gpu)
         if len(ours) >= self.slots: return False, "slots"
@@ -209,7 +209,7 @@ class Sched:
         if j["kind"] == "predict" and img_train:   # revision 10/10 20:45 (a)
             pm = proc_mem(); mine = [o.get("pid") for o in ours if o.get("pid")]
             third = max(0, q[gpu]["used"] - sum(tree_mem(pm, x) for x in mine)); peaks = sum(max(o.get("peak_mib", 0) or 0, tree_mem(pm, o.get("pid"))) for o in ours)
-            if peaks + third + self.reserve[j["fam"]] >= cap: return False, "picos %d + terceiros %d + reserva %d >= %d (placa com treino com imagem)" % (peaks, third, self.reserve[j["fam"]], cap)
+            if peaks + third + self.reserve[j["fam"]] >= cap: return False, "peaks %d + third parties %d + reserve %d >= %d (GPU with training with image)" % (peaks, third, self.reserve[j["fam"]], cap)
         if load1() + LOAD_DELTA > LOAD_CAP: return False, "load %.1f" % load1()
         free = disk_free_gb()
         if free < DISK_MIN_GB:
@@ -280,7 +280,7 @@ class Sched:
             else: j["status"] = "failed"; alert("died_%s" % j["name"], "predicao caiu 2x (log %s)" % j["log"])
         self.save()
     def provenance(self, j, ad):
-        return {"line": j["line"], "arm": ARM_DESC[j["arm"]], "peft_label": j.get("peft_label"), "benchmark": "VQA-RAD, pacote original (M3AE/data/finetune_data/vqa_rad), divisao do M3AE 2 758/306, teste 451 (fonte unica, 15/10)",
+        return {"line": j["line"], "arm": ARM_DESC[j["arm"]], "peft_label": j.get("peft_label"), "benchmark": "VQA-RAD, original package (M3AE/data/finetune_data/vqa_rad), M3AE split 2 758/306, test 451 (single source, 15/10)",
                 "adapter_dir": str(ad.parent), "adapter_sha256": sha_file(ad), "adapter_bytes": ad.stat().st_size, "adapter_config": json.loads((ad.parent / "adapter_config.json").read_text()),
                 "base_model": {"qwen2vl": "Qwen/Qwen2-VL-2B-Instruct", "smolvlm2": "HuggingFaceTB/SmolVLM2-2.2B-Instruct"}[j["family"]], "dtype": "bf16 (med_vlm/models/loader.py)",
                 "versions": self.vers, "git": worktree_state(), "host": HOST, "gpu": j.get("gpu"), "env": ENV, "start": j.get("start"), "end": j.get("end"), "wall_seconds": j.get("duration_s"), "peak_vram_mib_nvidia_smi": j.get("peak_mib"), "stamped": now(), "libcuda": j.get("libcuda") or libcuda_info(ENV)}
@@ -293,7 +293,7 @@ class Sched:
                            "adapter_keys": keys, "tower_frozen_verified": keys["visual"] == 0 and keys["connector"] == 0 and keys["language"] > 0,
                            "trainable_params": trainable, "expected_trainable_params": EXPECTED_TRAINABLE[j["arm"]], "trainable_matches_expected": trainable == EXPECTED_TRAINABLE[j["arm"]], "params_log_line": pr,
                            "last_step": step, "final_logged_loss": loss, "loss_first_logged": losses[0][1] if losses else None, "loss_mean_first_10_logs": sum(l for _, l in losses[:10]) / max(1, len(losses[:10])) if losses else None, "loss_mean_last_10_logs": sum(l for _, l in losses[-10:]) / max(1, len(losses[-10:])) if losses else None,
-                           "retries": j["retries"], "note": j.get("note"), "published_reference": "YAML copiado da configuracao publicada da mesma familia (v7_txt/article_runs/configs/configs_vqarad_rediv.json), mudando so nome, data.arrows e caminhos de saida"}
+                           "retries": j["retries"], "note": j.get("note"), "published_reference": "YAML copied from the published configuration of the same family (v7_txt/article_runs/configs/configs_vqarad_rediv.json), changing only name, data.arrows and output paths"}
         d["provenance"]["tower_frozen_verified"] = (keys["visual"] == 0 and keys["connector"] == 0) if j["arm"] not in ADAPTED_TOWER else None
         oj.write_text(json.dumps(d, indent=1, default=str))
         if not d["provenance"]["trainable_matches_expected"]: alert("params_%s" % j["name"], "parametros treinaveis %s != esperado %s" % (trainable, EXPECTED_TRAINABLE[j["arm"]]))
@@ -301,7 +301,7 @@ class Sched:
     def stamp_predict(self, j):
         ad = MODELS / j["train"] / "adapter_model.safetensors"; out = Path(j["output"]); d = json.loads(out.read_text())
         d["provenance"] = {**self.provenance(j, ad), "condition": j["cond"], "input_arrow": TEST_ARROW[j["cond"]], "input_arrow_sha256": sha_file(TEST_ARROW[j["cond"]]), "input_arrow_sha256_expected_prefix": TEST_ARROW_SHA[j["cond"]],
-                           "inference": "harness.extract_predictions_circle" + (" --no-image" if is_txt(j) else "") + " (mesma funcao e rescoring das _C0.json publicadas); E7 nas fechadas aplicada depois por rescore_e7.py", "train_log_json": str(LOGS / (j["train"] + ".json"))}
+                           "inference": "harness.extract_predictions_circle" + (" --no-image" if is_txt(j) else "") + " (same function and rescoring as the published _C0.json); E7 on the closed-form applied afterward by rescore_e7.py", "train_log_json": str(LOGS / (j["train"] + ".json"))}
         if not d["provenance"]["input_arrow_sha256"].startswith(TEST_ARROW_SHA[j["cond"]]): alert("arrow_%s" % j["name"], "unexpected test arrow sha: %s" % d["provenance"]["input_arrow_sha256"])
         out.write_text(json.dumps(d, indent=1, default=str))
     def sample(self):
@@ -329,14 +329,14 @@ class Sched:
     def dry_run(self):
         """Safeguard (11/10): constants, jobs per GPU and can_launch decision per GPU for each active job in the queue (actual queue order); nothing written, nothing launched."""
         try: gpu_query(); nv_ok = True
-        except Exception as e: nv_ok = False; print("dry_run: nvidia-smi indisponivel (%r): fila listada sem decisao de placa" % (e,), flush=True)
+        except Exception as e: nv_ok = False; print("dry_run: nvidia-smi unavailable (%r): queue listed without a GPU decision" % (e,), flush=True)
         if not nv_ok:
             print(json.dumps({"dry_run": now(), "consts": {"CAP_MIB": CAP_MIB, "LOAD_CAP": LOAD_CAP, "UTIL_SAT": UTIL_SAT}, "reserve": self.reserve, "load1": round(load1(), 1), "df": df_h()}), flush=True)
             print("estados:", {s: len(self.jobs(status=s)) for s in ("done", "failed", "running", "queued")}, flush=True)
             for j in self.st["jobs"]:
                 if j["status"] in ("running", "failed"): print("estado:", j["status"], j["name"], "gpu", j.get("gpu"), "pid", j.get("pid"), "vivo" if j.get("pid") and os.path.exists("/proc/%d" % j["pid"]) else "", flush=True)
             for j in sorted(self.jobs(status="queued"), key=lambda x: (not (x["kind"] == "train" and (x.get("retries", 0) > 0 or x.get("oom_step0", 0) > 0)), x["kind"] != "predict", x["order"])): print("fila:", j["name"], j["kind"], flush=True)
-            print("fim do ciclo a seco (sem nvidia-smi): nada lancado, nada gravado", flush=True); return
+            print("end of the dry cycle (no nvidia-smi): nothing launched, nothing written", flush=True); return
         print(json.dumps({"dry_run": now(), "pid": os.getpid(), "only": self.only, "slots": self.slots, "peer_state": self.peer_state, "consts": {"CAP_MIB": CAP_MIB, "CAP_PREDICT_IMG_TRAIN_MIB": 30720, "LOAD_CAP": LOAD_CAP, "LOAD_DELTA": LOAD_DELTA, "DISK_MIN_GB": DISK_MIN_GB, "UTIL_SAT": UTIL_SAT, "ENTERED_STEP": ENTERED_STEP, "POLL": POLL}, "reserve": self.reserve, "m3ae_state": self.m3ae_state, "m3ae_waiting": self.m3ae_waiting(), "expected_trainable": EXPECTED_TRAINABLE, "reserve_src": RESERVE_SRC, "img_gpus": IMG_GPUS, "use_driver_workaround": USE_WA, "nvsmi": NVSMI, "load1": round(load1(), 1), "df": df_h(), "gpu": gpu_query(), "versions": self.vers}, default=str), flush=True)
         q = gpu_query()
         for g in GPUS: print("placa", g, "used", q[g]["used"], "util", q[g]["util"], "na placa:", [(o["name"], o.get("pid"), "pico", o.get("peak_mib"), "entrou" if self.entered(o) else "iniciando") for o in self.ours_on(g)], flush=True)

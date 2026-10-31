@@ -49,4 +49,4 @@ for i in range(n):
 assert all(ok(i, perm[i]) for i in range(n)) and sorted(perm) == list(range(n))
 img, iid = df["image"].tolist(), df["image_id"].tolist(); new = df.copy(); new["image"] = [img[p] for p in perm]; new["image_id"] = [iid[p] for p in perm]
 finish("mimic", src, new, [{"linha": i, "image_id_receptora": iid[i], "image_id_doadora": iid[perm[i]], "question_ids": [int(q) for q in df["question_id"][i]]} for i in range(n)],
-       {"regra": "derangement com exclusao de mesmo paciente (subject_id do items_test)", "reparos": trocas, "perguntas_mesmo_paciente": sum(len(df["question_id"][i]) for i in range(n) if subj[perm[i]] == subj[i]), "perguntas_mesmo_estudo": sum(len(df["question_id"][i]) for i in range(n) if stud[perm[i]] == stud[i])})
+       {"regra": "derangement excluding the same patient (subject_id from items_test)", "reparos": trocas, "perguntas_mesmo_paciente": sum(len(df["question_id"][i]) for i in range(n) if subj[perm[i]] == subj[i]), "perguntas_mesmo_estudo": sum(len(df["question_id"][i]) for i in range(n) if stud[perm[i]] == stud[i])})

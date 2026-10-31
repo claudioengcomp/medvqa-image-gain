@@ -7,7 +7,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); import m3ae_froz
 import torch
 b, s, cond, out = sys.argv[1], int(sys.argv[2]), sys.argv[3], sys.argv[4]; B = C.BENCH[b]; NAME = C.name(b, s); LOG = C.OUT + "/logs"
 cands = sorted(glob.glob("%s/%s-seed%d-from_*/*/checkpoints/epoch=*.ckpt" % (C.ck_root(b), B["task"], s)), key=lambda p: os.path.getmtime(os.path.dirname(os.path.dirname(p))))
-nota = "" if len(cands) == 1 else "; checkpoints best de outras versoes (relancamentos) nao usados: " + ", ".join(cands[:-1])
+nota = "" if len(cands) == 1 else "; best checkpoints from other versions (reruns) not used: " + ", ".join(cands[:-1])
 assert cands, "no best checkpoint"; ck = cands[-1]; last = os.path.join(os.path.dirname(ck), "last.ckpt")
 def vit_sha(path):
     sd = torch.load(path, map_location="cpu")["state_dict"]; sub = {k[len("vision_encoder."):]: v for k, v in sd.items() if k.startswith("vision_encoder.")}; h = hashlib.sha256()
@@ -24,7 +24,7 @@ for sp in ("train", "val", "test"):   # test -> arrow of the condition; training
     if not os.path.islink(l): os.symlink(t, l)
     assert os.path.realpath(l) == os.path.realpath(t), (l, t)
 sha = hashlib.sha256(open(B["test"][cond], "rb").read()).hexdigest()
-extra = ("m3ae_frozen_vit: M3AE com encoder visual congelado; cond %s; ckpt_partida %s sha256 %s; vit_sha256 antes=depois=%s (best e last); cost=%s/%s_cost.json; freeze=%s/%s_freeze.json%s"
+extra = ("m3ae_frozen_vit: M3AE with frozen visual encoder; cond %s; ckpt_partida %s sha256 %s; vit_sha256 before=after=%s (best and last); cost=%s/%s_cost.json; freeze=%s/%s_freeze.json%s"
          % (cond, C.START_CKPT, C.START_SHA, depois, LOG, NAME, LOG, NAME, nota))
 cmd = [sys.executable, "-u", C.W + "/v7_txt/worktree/harness/v7_txt/m3ae_infer_v7.py", "--name", NAME, "--checkpoint", ck, "--data-root", dr, "--dataset-key", B["key"], "--vqa-label-size", str(B["ls"]),
        "--dataset", B["ds"], "--condition", "C2" if cond.startswith("C2") else cond, "--output", out, "--model-label", "M3AE_FROZEN", "--arrow-sha256", sha, "--extra", extra]

@@ -21,12 +21,11 @@ class ModelName(str, enum.Enum):
     SMOLVLM = "HuggingFaceTB/SmolVLM2-2.2B-Instruct"
     # Medical-domain VLMs
     LLAVA_MED = "chaoyinshe/llava-med-v1.5-mistral-7b-hf"
-    # Qwen2.5-VL-7B + RL over PMC-VQA -- candidate for the accuracy quadrant
-    # alta / VDD baixa (ver docs/superpowers/specs/2026-08-25-medvlthinker-third-model-design.md)
+    # Qwen2.5-VL-7B + RL over PMC-VQA; candidate for the high-accuracy / low-VDD quadrant
     MEDVLTHINKER = "UCSC-VLAA/MedVLThinker-7B-RL_PMC"
     # v7 (2026-10-09): zero-shot breadth of paper B -- generalist base of MedVLThinker, without medical RL
     QWEN25VL = "Qwen/Qwen2.5-VL-7B-Instruct"
-    # v7 (2026-10-10): MedGemma 1.5 4B-IT (gated; the cache has medgemma-1.5-4b-it, not the medgemma-4b-it from the plan)
+    # v7 (2026-10-10): MedGemma 1.5 4B-IT (gated; the cache has medgemma-1.5-4b-it, not medgemma-4b-it)
     MEDGEMMA = "google/medgemma-1.5-4b-it"
     # v7 (2026-10-13, candidate): new zero-shot. Lingshu and Huatuo (Qwen2.5-VL version) reuse the Qwen2.5-VL path; InternVL3 (-hf, native to transformers) own entry point
     LINGSHU = "lingshu-medical-mllm/Lingshu-7B"

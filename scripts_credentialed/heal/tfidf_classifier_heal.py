@@ -12,6 +12,6 @@ D = json.load(open(f"{_MEDVQA_ROOT}/v7_txt/article_runs/data/texto/HEAL_TREINO.j
 vec = TfidfVectorizer(ngram_range=(1, 2), min_df=1, lowercase=True); X = vec.fit_transform([x["question"] for x in tr]); clf = LogisticRegression(C=1.0, max_iter=2000, random_state=0).fit(X, [x["answer"] for x in tr])
 pr = clf.predict(vec.transform([x["question"] for x in te])); P = [{"qid": x["qid"], "predicted": str(p), "gold": x["refs"][0], "correct": bool(answer_matches(normalize_text(str(p)), [normalize_text(r) for r in x["refs"]]))} for p, x in zip(pr, te)]
 k = sum(p["correct"] for p in P); sha = lambda p: hashlib.sha256(open(p, "rb").read()).hexdigest()
-json.dump({"model": "TFIDF_question_only", "dataset": "HEAL", "condition": "C0", "accuracy": k / len(P), "n": len(P), "n_correct": k, "train_rows": len(tr), "protocolo": "so treino (heal_classifiers_train_only)",
+json.dump({"model": "TFIDF_question_only", "dataset": "HEAL", "condition": "C0", "accuracy": k / len(P), "n": len(P), "n_correct": k, "train_rows": len(tr), "protocolo": "train only (heal_classifiers_train_only)",
            "provenance": {"script": __file__, "script_sha256": sha(__file__), "dados": "v7_txt/article_runs/data/texto/HEAL_TREINO.json", "receita": "igual a tfidf_heal_aligned.py"}, "predictions": P},
           open(f"{_MEDVQA_ROOT}/v7_txt/article_runs/results/TFIDF_question_only_HEAL_TREINO.json", "w"), indent=1); print("acc %.4f n %d train %d" % (k / len(P), len(P), len(tr)))

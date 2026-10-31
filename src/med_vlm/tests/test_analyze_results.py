@@ -135,7 +135,7 @@ def test_save_latex_nan_values(tmp_path):
             {
                 "run": "r",
                 "model": "M",
-                "peft": "—",
+                "peft": "-",
                 "accuracy": None,
                 "bleu": None,
                 "rouge1": None,
@@ -148,7 +148,7 @@ def test_save_latex_nan_values(tmp_path):
     )
     path = _save_latex(df, tmp_path)
     content = path.read_text()
-    assert "—" in content
+    assert "-" in content
 
 
 # ── _save_chart ───────────────────────────────────────────────────────────────
@@ -167,7 +167,7 @@ def test_save_chart_multiple_runs(tmp_path):
             {
                 "run": f"run_{i}",
                 "model": f"M{i}",
-                "peft": "—",
+                "peft": "-",
                 "accuracy": 0.5 + i * 0.1,
                 "bleu": 0.3,
                 "rouge1": 0.4,

@@ -15,8 +15,7 @@ It also separately captures the answer to the finding-category template
 question ("Are there any abnormalities in the image? Check
 all that are present.") as `pathology_label` per image; used by
 condition C5 (harness/interventions/make_c5_matched_pathology_swap.py)
-to restrict the swap to a different category. See docs/superpowers/
-plans/2026-08-21-kvasir-targeted-pathology-swap-condition.md.
+to restrict the swap to a different category.
 
 TRAINING of the generative models (LoRA) does NOT use this arrow; it uses
 Kvasir-VQA-x1 directly via med_vlm.data.loader (composite questions),
@@ -209,7 +208,7 @@ def build_arrow_dataframe(records: list[dict], split: str, qid_offset: int = 0,
     next_qid = qid_offset
     for i, rec in enumerate(records):
         if i > 0 and i % 200 == 0:
-            print(f"  ... {i}/{len(records)} imagens baixadas")
+            print(f"  ... {i}/{len(records)} images downloaded")
         image_bytes = download_fn(rec["image_url"])
         n_q = len(rec["questions"])
         qids = list(range(next_qid, next_qid + n_q))
@@ -237,7 +236,7 @@ def _parse_args():
                               "place of each image. Only use for --split train when the goal is "
                               "to rebuild the answer vocabulary to run inference from "
                               "an already-ready checkpoint (without actually training); see "
-                              "_placeholder_image_bytes(). NUNCA use pro --split test, cujas imagens "
+                              "_placeholder_image_bytes(). NEVER use for --split test, whose images "
                               "are actually evaluated.")
     return parser.parse_args()
 

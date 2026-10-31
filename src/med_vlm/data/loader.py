@@ -67,7 +67,7 @@ def _normalize(
     map_kwargs = {
         "remove_columns": ds.column_names,
         # MED_VLM_NUM_PROC (15/09/2026): map workers died on ws3 and on gpu1 with 8;
-        # permite reduzir sem tocar no default.
+        # allows reducing without touching the default.
         "num_proc": int(os.environ.get("MED_VLM_NUM_PROC", min(os.cpu_count() or 1, 8))),
     }
     if cache_file_name is not None:
@@ -76,7 +76,7 @@ def _normalize(
 
 
 # Kvasir-VQA-x1 no longer uses the official HF Hub split for training
-# generativo -- ver docs/superpowers/specs/2026-08-30-kvasir-clean-split-design.md
+# of the generative models; a leakage-free split is built instead
 # (the official split had 94% image overlap between train/test, and the field
 # `answer` field from HF is composite/verbose, incompatible with the format used in
 # evaluation). The 3 arrows below are built by

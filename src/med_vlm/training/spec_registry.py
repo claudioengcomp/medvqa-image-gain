@@ -42,8 +42,7 @@ def build_chat_template_spec(
 ) -> ModelSpec:
     # `build_collator` (training path) intentionally does NOT receive
     # system_prompt -- no model registered here is fine-tuned with one yet.
-    # If MedVLThinker is fine-tuned later (Fase 2, see
-    # docs/superpowers/specs/2026-08-25-medvlthinker-third-model-design.md),
+    # If MedVLThinker is fine-tuned later (phase 2),
     # the collator will need the same system message for train/eval consistency.
     return ModelSpec(
         prompt_fn=lambda q: q,  # prompt formatting handled by apply_chat_template

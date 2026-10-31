@@ -22,7 +22,7 @@ _LOAD_KWARGS: dict[med_vlm.enums.ModelName, dict] = {
     med_vlm.enums.ModelName.MEDVLTHINKER: {"dtype": torch.bfloat16},
     med_vlm.enums.ModelName.QWEN25VL: {"dtype": torch.bfloat16},
     med_vlm.enums.ModelName.MEDGEMMA: {"dtype": torch.bfloat16},
-    # v7 (2026-10-13): zero-shot novos (e o MedVLM-R1, registrado antes sem dtype)
+    # v7 (2026-10-13): new zero-shot (and MedVLM-R1, registered before without dtype)
     med_vlm.enums.ModelName.MEDVLM: {"dtype": torch.bfloat16},
     med_vlm.enums.ModelName.LINGSHU: {"dtype": torch.bfloat16},
     med_vlm.enums.ModelName.HUATUO_QWEN25: {"dtype": torch.bfloat16},

@@ -45,7 +45,7 @@ def verify_arrows(manifest: dict[str, str], arrow_dir: str) -> dict[str, dict]:
         path = os.path.join(arrow_dir, filename)
         if not os.path.isfile(path):
             result[filename] = {"ok": False, "expected": expected_sha256, "actual": None,
-                                 "error": f"arquivo não existe: {path}"}
+                                 "error": f"file does not exist: {path}"}
             continue
         actual = sha256_of_file(path)
         result[filename] = {"ok": actual == expected_sha256, "expected": expected_sha256,
@@ -89,6 +89,6 @@ if __name__ == "__main__":
     if any_failed:
         raise SystemExit(
             "arrow integrity check FAILED -- do not proceed to Gate 1 without investigating "
-            "(ver docs/isbi/fase_a3_treino.md pro contexto do achado que motivou esta checagem)"
+            "(check motivated by an earlier arrow mismatch found during training)"
         )
     print(f"\n{len(results)} arrow(s) checked, all match the manifest.")

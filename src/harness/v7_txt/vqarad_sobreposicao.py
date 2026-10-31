@@ -13,7 +13,7 @@ O = f"{_MEDVQA_ROOT}/doutorado/M3AE/data/finetune_data/vqa_rad"; R = f"{_MEDVQA_
 SETS = {"original": {"train": f"{O}/trainset.json", "val": f"{O}/valset.json", "test": f"{O}/testset.json"}, "redividido": {"train": f"{R}/trainset.json", "val": f"{R}/valset.json", "test": f"{R}/testset.json"}}
 closed = lambda x: str(x["answer_type"]).strip().upper() == "CLOSED"; yn = lambda x: closed(x) and N(str(x["answer"])) in ("yes", "no")
 out = {"t": time.strftime("%Y-%m-%d %H:%M:%S"), "script": os.path.abspath(__file__), "script_sha256": sha(__file__), "normalizacao": "normalize_text: strip, lower, remove pontuacao, colapsa espacos; variante texto cru = strip + lower",
-       "regra_template": {"R1": "mesma imagem + phrase_type 'frame' + mesma resposta normalizada", "R2": "R1 + mesmo question_type"}, "divisoes": {}}
+       "regra_template": {"R1": "same image + phrase_type 'frame' + same normalized answer", "R2": "R1 + mesmo question_type"}, "divisoes": {}}
 for nome, fs in SETS.items():
     D = {k: json.load(open(p)) for k, p in fs.items()}; TR = D["train"] + D["val"]; TE = D["test"]
     timg = {x["image_name"] for x in TE}; trimg = {x["image_name"] for x in TR}

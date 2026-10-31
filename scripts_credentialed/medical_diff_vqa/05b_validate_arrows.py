@@ -25,7 +25,7 @@ for s in splits:
          "ds_len_equals_questions": len(ds) == count_questions(df), "features": str(ds.features), "example": {"id": ex["id"], "question": ex["question"], "answers": ex["answers"], "image_mode": img.mode, "image_size": img.size},
          "batch8_ids": [b["id"] for b in batch], "batch8_image_sizes": sorted({b["image"].size for b in batch}), "answer_labels_match_vocab": labels_ok,
          "answer_type_values": sorted({int(t) for ts in df.answer_type for t in ts}), "image_id_prefix_ok": all(i.startswith("mimic/") for i in df.image_id), "split_values": sorted(set(df.split))}
-    # tenta o normalizador/coletor do med_vlm (sem modelo)
+    # tries the med_vlm normalizer/collector (without model)
     try:
         from med_vlm.data.normalizer import build_normalizer
         norm = build_normalizer(image_key="image", question_key="question", answers_key="answers", id_key="id", preprocessor=None)

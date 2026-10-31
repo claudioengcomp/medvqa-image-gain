@@ -174,41 +174,41 @@ rep["template_ids"] = {v: k for k, v in tmpl_ids.items()}
 json.dump(rep, open(AN / "subset_report.json", "w"), indent=1, ensure_ascii=False)
 
 # docs/subset.md
-L = ["# Subconjunto MIMIC/Diff-VQA de imagem única (v7_mimic)", "",
-     f"Gerado em {rep['provenance']['date']} na {rep['provenance']['host']} por `scripts/01b_make_subset.py`, semente {SEED}. Números brutos em `analysis/subset_report.json`.",
-     f"Vocabulário fixo das abertas (frequência ≥ {MIN_FREQ} na tabela inteira e ≤ {MAX_WORDS} palavras): "
-     + "; ".join(f"{t}: {rep['step2'][t]['n_vocab']} respostas de {rep['step2'][t]['n_distinct_all']} ({100*rep['step2'][t]['coverage_rows']:.1f} % das linhas)" for t in ("location", "level", "type")) + ". Lista em `data/open_answer_vocab_fixed.json`.", "",
+L = ["# Single-image MIMIC/Diff-VQA subset (v7_mimic)", "",
+     f"Gerado em {rep['provenance']['date']} na {rep['provenance']['host']} by `scripts/01b_make_subset.py`, seed {SEED}. Raw numbers in `analysis/subset_report.json`.",
+     f"Fixed vocabulary of open questions (frequency ≥ {MIN_FREQ} na tabela inteira e ≤ {MAX_WORDS} palavras): "
+     + "; ".join(f"{t}: {rep['step2'][t]['n_vocab']} respostas de {rep['step2'][t]['n_distinct_all']} ({100*rep['step2'][t]['coverage_rows']:.1f} % of rows)" for t in ("location", "level", "type")) + ". Lista em `data/open_answer_vocab_fixed.json`.", "",
      "## Funil",
-     f"- Linhas: {rep['inputs']['pair_questions_rows']}; `difference` removidas: {rep['step1']['difference_removed']}; menções a comparação fora de difference: {rep['step1']['comparison_mentions_removed']}.",
-     f"- Removidas `abnormality`: {rep['step2']['removed_abnormality']}; `view` aberta (which view): {rep['step2']['removed_view_open']}; abertas fora do vocabulário: {rep['step2']['removed_open_out_of_vocab']}. Mantidas: {rep['step2']['kept']}.",
+     f"- Linhas: {rep['inputs']['pair_questions_rows']}; `difference` removidas: {rep['step1']['difference_removed']}; mentions of comparison outside difference: {rep['step1']['comparison_mentions_removed']}.",
+     f"- Removidas `abnormality`: {rep['step2']['removed_abnormality']}; `view` aberta (which view): {rep['step2']['removed_view_open']}; open questions outside the vocabulary: {rep['step2']['removed_open_out_of_vocab']}. Mantidas: {rep['step2']['kept']}.",
      f"- Sem dicom em mimic_all: {rep['step3']['questions_without_dicom']}; ViewPosition antes do filtro: {rep['step3']['ViewPosition_counts_before']}; mantidas PA/AP: {rep['step3']['kept']}.",
-     f"- Split CSV do MIMIC-CXR-JPG: {rep['step4']['split_csv_subjects']} pacientes, {rep['step4']['split_csv_subjects_in_two_splits']} em dois splits" + (f" (movidos para o split com mais estudos: {rep['step4'].get('moved_subjects')})" if len(cross) else "") + f"; perguntas sem split: {rep['step4']['questions_without_split']}; concordância com o `split` do mimic_all: {100*rep['step4']['mimic_all_split_agrees_with_split_csv_frac']:.1f} %.",
-     f"- Pool elegível por split (perguntas): {rep['step4']['pool_by_split']}; imagens: {rep['step4']['pool_images_by_split']}; pacientes: {rep['step4']['pool_subjects_by_split']}.",
+     f"- Split CSV do MIMIC-CXR-JPG: {rep['step4']['split_csv_subjects']} pacientes, {rep['step4']['split_csv_subjects_in_two_splits']} em dois splits" + (f" (moved to the split with more studies: {rep['step4'].get('moved_subjects')})" if len(cross) else "") + f"; questions without split: {rep['step4']['questions_without_split']}; agreement with the `split` of mimic_all: {100*rep['step4']['mimic_all_split_agrees_with_split_csv_frac']:.1f} %.",
+     f"- Eligible pool by split (questions): {rep['step4']['pool_by_split']}; images: {rep['step4']['pool_images_by_split']}; pacientes: {rep['step4']['pool_subjects_by_split']}.",
      f"- Pool por split × tipo: {rep['step4']['pool_by_split_type']}", "",
-     "## Tamanhos do subconjunto", "| split | perguntas | imagens | estudos | pacientes | fechadas | abertas | máx q/imagem | PA / AP |", "|---|---:|---:|---:|---:|---:|---:|---:|---|"]
+     "## Tamanhos do subconjunto", "| split | questions | images | studies | patients | closed | open | max q/image | PA / AP |", "|---|---:|---:|---:|---:|---:|---:|---:|---|"]
 for s in ("train", "val", "test"):
     r = rep["step5"][s]
     L.append(f"| {s} | {r['n_questions']} | {r['n_images']} | {r['n_studies']} | {r['n_subjects']} | {r['by_answer_type'].get('closed',0)} | {r['by_answer_type'].get('open',0)} | {r['max_q_per_image']} | {r['ViewPosition'].get('PA',0)} / {r['ViewPosition'].get('AP',0)} |")
 L += ["", "Por tipo: " + "; ".join(f"{s}: {rep['step5'][s]['by_type']}" for s in ("train", "val", "test")),
-      "", f"Imagens distintas a baixar: {rep['step5']['total_images']} (≈ {rep['step5']['est_gb_at_1.5MB']} GB a 1,5 MB/imagem). Lista: `data/image_list.txt`.",
-      "Disjunção: nenhum subject_id e nenhum dicom_id em dois splits (assert no script).", "",
+      "", f"Imagens distintas a baixar: {rep['step5']['total_images']} (≈ {rep['step5']['est_gb_at_1.5MB']} GB at 1,5 MB/image). List: `data/image_list.txt`.",
+      "Disjointness: no subject_id and no dicom_id in two splits (assert in the script).", "",
       "## Templates", "| id | tipo | template | train | val | test |", "|---|---|---|---:|---:|---:|"]
 allit = pd.concat(items.values())
 tt = allit.groupby(["template_id", "question_type", "template", "split"]).size().unstack("split").fillna(0).astype(int)
 for (tid, ty, tp), r in tt.iterrows():
     L.append(f"| {tid} | {ty} | `{tp}` | {r.get('train',0)} | {r.get('val',0)} | {r.get('test',0)} |")
-L += ["", "## Template × resposta × split (até 12 respostas por template)", "| template | resposta | train | val | test |", "|---|---|---:|---:|---:|"]
+L += ["", "## Template × answer × split (up to 12 answers per template)", "| template | answer | train | val | test |", "|---|---|---:|---:|---:|"]
 ta = allit.groupby(["template_id", "answer", "split"]).size().unstack("split").fillna(0).astype(int)
 for tid in sorted(allit.template_id.unique()):
     sub = ta.loc[tid].copy(); sub["tot"] = sub.sum(axis=1); sub = sub.sort_values("tot", ascending=False).head(12)
     for ans, r in sub.iterrows():
         L.append(f"| {tid} | {ans} | {r.get('train',0)} | {r.get('val',0)} | {r.get('test',0)} |")
-L += ["", "## Prior por template (resposta majoritária)", "| template | train: majoritária (fração, n) | test: majoritária (fração, n) |", "|---|---|---|"]
+L += ["", "## Prior by template (majority answer)", "| template | train: majority (fraction, n) | test: majority (fraction, n) |", "|---|---|---|"]
 for tid in sorted(allit.template_id.unique()):
     row = []
     for s in ("train", "test"):
         d = items[s][items[s].template_id == tid]
-        row.append(f"{d.answer.value_counts().idxmax()} ({d.answer.value_counts().iloc[0]/len(d):.3f}, n={len(d)})" if len(d) else "—")
+        row.append(f"{d.answer.value_counts().idxmax()} ({d.answer.value_counts().iloc[0]/len(d):.3f}, n={len(d)})" if len(d) else "-")
     L.append(f"| {tid} | {row[0]} | {row[1]} |")
 (DOCS / "subset.md").write_text("\n".join(L) + "\n")
 print(json.dumps({k: rep[k] for k in ("step1", "step2", "step3", "step4", "step5")}, indent=1, ensure_ascii=False, default=str))

@@ -36,5 +36,5 @@ for s in (() if True else (1, 2)):
     name = "M3AE_SCRATCH_VQARAD_seed%d_C0_colabrepro" % s; ck = f"{_MEDVQA_ROOT}/doutorado/M3AE/checkpoints_colab/M3AE_SCRATCH_VQARAD_seed%d.ckpt" % s
     jobs.append({"name": name, "env": "lapa", "reserve_mib": 8 * 1024, "output": "%s/results/%s.json" % (R, name), "log": "%s/logs/%s.log" % (R, name), "cwd": R + "/worktree_m3ae", "skip_order": True,
                  "cmd": [H + "/m3ae_infer_v7.py", "--name", name, "--checkpoint", ck, "--data-root", VR, "--dataset-key", "vqa_vqa_rad", "--vqa-label-size", "498", "--dataset", "VQARAD", "--condition", "C0",
-                         "--output", "%s/results/%s.json" % (R, name), "--model-label", "M3AE_SCRATCH", "--extra", "reproducao C0 pesos Colab 6cc9eac; md5 arrow teste %s" % ORIG_SHA]})
+                         "--output", "%s/results/%s.json" % (R, name), "--model-label", "M3AE_SCRATCH", "--extra", "C0 reproduction, Colab weights 6cc9eac; md5 test arrow %s" % ORIG_SHA]})
 json.dump(jobs, open(R + "/logs/jobs_m3ae_txt.json", "w"), indent=1); print(len(jobs), "jobs")

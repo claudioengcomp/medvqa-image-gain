@@ -16,7 +16,7 @@ for s in range(3):
     n = f"BERT2_question_only_VQARAD_QLEVEL_seed{s}"; out = f"{PJ}/results/{n}.json"
     E.append({"name": n, "env": "circle", "reserve_mib": 4608, "env_extra": {"HF_HUB_OFFLINE": "1"}, "output": out, "skip_order": True, "log": f"{PJ}/logs/qlevel_ext/{n}.log",
               "cmd": ["-m", "harness.v7_txt.bert_question_only", "--base", "VQARAD_QLEVEL", "--seed", str(s), "--data", data, "--output", out, "--save-dir", f"{PJ}/models/bert2_vqarad_qlevel_seed{s}", "--progress-checkpoint", f"{PJ}/results/.progress/{n}.jsonl"],
-              "meta": {"line": n, "condition": "C0 (so pergunta)", "base_model": "microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext@e1354b7a", "input_arrow": None, "dados": data, "dados_sha256": dsha, "dtype": "fp32"}})
+              "meta": {"line": n, "condition": "C0 (question only)", "base_model": "microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext@e1354b7a", "input_arrow": None, "dados": data, "dados_sha256": dsha, "dtype": "fp32"}})
 C2 = f"{QD}/c2/vqa_vqa_rad_test_c2.arrow"
 for fam, peft, cfg, line in (("QWEN2VL", "LORA_VT", "qwen2vl_lora_vt_vqarad_qlevel", "QWEN2VL_LORA_VT_VQARAD_QLEVEL"), ("SMOLVLM", "LORA", "smolvlm2_lora_vqarad_qlevel", "SMOLVLM_LORA_VQARAD_QLEVEL")):
     for s in range(3):
