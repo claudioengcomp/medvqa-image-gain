@@ -23,7 +23,7 @@ a control. Every number of the paper is listed in `paper/numbers.csv` with the f
 ## Repository map
 
 ```
-README.md, LICENSE (code: MIT), LICENSE-DATA.md (our splits/maps/aggregates: CC BY 4.0; files derived from a dataset follow that dataset's licence), CITATION.cff
+README.md, LICENSE (code: MIT), LICENSE-DATA.md (our splits/maps/aggregates: CC BY 4.0; files derived from a dataset follow that dataset's licence), CITATION.cff, pytest.ini
 environment/        pinned requirements of the two environments (VLM fine-tuning; M3AE) and hardware/software notes
 src/med_vlm/        data loading, LoRA fine-tuning and generation for Qwen2-VL-2B, Qwen2.5-VL-7B and SmolVLM2-2.2B (run_experiment.py)
 src/harness/        everything else that ran for the paper: arrow building, grey image, image swap, classifiers, M3AE drivers,
@@ -43,7 +43,8 @@ results/training_runs/  metadata of the training runs (time, peak memory, parame
 paper/              the generated results table (tables/), numbers.csv (every number of the paper -> source file and field), the table generator and the
                     number verifier; the text of the paper (.tex) is not distributed
 docs/manifest.json  sha256 of every file, and the origin map (which file of the original run tree each file came from)
-tests/              unit tests of the Kvasir-VQA-x1 split code
+tests/              unit tests of the Kvasir-VQA-x1 split code; python -m pytest -q, run from the repository root, runs them together
+                    with the unit tests in src/med_vlm/tests (pytest.ini); the M3AE no-image test runs separately (step 3 below)
 ```
 
 ## Glossary: identifiers used in the code and files → terms of the paper

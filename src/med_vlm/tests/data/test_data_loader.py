@@ -115,4 +115,5 @@ def test_load_dataset_by_enum_kvasir_normalizes_with_plural_answers_key(mock_dat
                 answers_key="answers",
                 id_key="id",
                 preprocessor=None,
+                drop_image=False,
             )

@@ -1,8 +1,8 @@
 {
  "repository": "medvqa-image-gain",
- "generated": "2026-11-02",
- "n_files": 722,
- "total_bytes": 89828155,
+ "generated": "2026-11-03",
+ "n_files": 724,
+ "total_bytes": 89830570,
  "note": "origin = path of the source file in the original run tree (prefix ${MEDVQA_ROOT}), with the same directory/file renaming applied as in this repository; sha256_original = sha256 of that file there; modified_from_original = the file was edited mechanically (paths -> ${MEDVQA_ROOT}, internal identifiers -> descriptive English names, provenance paths reduced, template text -> template id), with comments, docstrings, messages and free-text notes translated from Portuguese to English, internal document references removed and dashes replaced by ordinary punctuation; the Qwen2.5-VL-7B per-question prediction files are gzip-compressed (*.json.gz) copies of the cleaned JSON, and sha256_original refers to the uncompressed original.",
  "files": {
   ".gitignore": {
@@ -24,8 +24,8 @@
    "modified_from_original": true
   },
   "README.md": {
-   "sha256": "86c1ca6d9a395359bc59381647cc88edd94a0ca4fe22ca3dafe706eff86d7d10",
-   "bytes": 22603,
+   "sha256": "6e8a5387c5072caa73dc55b0c70d57137ddea7ae6c02ea35c23f7f4e5cb3b7e2",
+   "bytes": 22815,
    "modified_from_original": true
   },
   "configs/jobs/image_swap_predictions_heal_mimic_jobs.json": {
@@ -970,6 +970,10 @@
    "origin": "${MEDVQA_ROOT}/tmp/v7/public_repository/mac16b/verify_numbers.py",
    "sha256_original": "60219da83fde1221d938bd10f6c065db38e654dc19255d72773e1d7b46b7c32d",
    "modified_from_original": true
+  },
+  "pytest.ini": {
+   "sha256": "4e2bdfc43d77450793ad4b1046c597ea932973b29daac94bd54966f062adcf3d",
+   "bytes": 64
   },
   "results/aggregates/analise_troca.json": {
    "sha256": "309d356fad882f8e7813793f5695e0907c5bef3bd53002103002b10711edd75e",
@@ -4717,8 +4721,8 @@
    "modified_from_original": true
   },
   "src/med_vlm/tests/data/test_data_loader.py": {
-   "sha256": "daa935d8ed284c9b4ee597fe413710114da5ff9c9838efcb37cd7e1ffead9137",
-   "bytes": 4708,
+   "sha256": "af70f28c2d2a325fb966c3d6ca2b593ad5aa87e98506cf167c37244e2a15063f",
+   "bytes": 4742,
    "origin": "${MEDVQA_ROOT}/v7_txt/worktree/med_vlm/tests/data/test_data_loader.py",
    "sha256_original": "daa935d8ed284c9b4ee597fe413710114da5ff9c9838efcb37cd7e1ffead9137",
    "modified_from_original": true
@@ -4899,8 +4903,8 @@
    "modified_from_original": true
   },
   "src/med_vlm/tests/training/test_task_types.py": {
-   "sha256": "9f47f6308a7dc7116195f6dd29c42f55483bc38555920a545627c28c3dc8b942",
-   "bytes": 1428,
+   "sha256": "c07192765364747e2b1516e01f62dd80ed169c18770dcf8fd69b643d12edfe1f",
+   "bytes": 1858,
    "origin": "${MEDVQA_ROOT}/v7_txt/worktree/med_vlm/tests/training/test_task_types.py",
    "sha256_original": "9f47f6308a7dc7116195f6dd29c42f55483bc38555920a545627c28c3dc8b942",
    "modified_from_original": true
@@ -4971,6 +4975,13 @@
   "tests/__init__.py": {
    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
    "bytes": 0
+  },
+  "tests/helpers.py": {
+   "origin": "${MEDVQA_ROOT}/doutorado/medvqa-main/tests/helpers.py",
+   "sha256_original": "a78057f5019f7d6d93ea18bb8b4e08712fd33b843dd0ebcc2bc344553201d2bb",
+   "modified_from_original": true,
+   "sha256": "357aa5eabe1da6b6f053a39547b90f9d569c6e5f3b6068a4bbfaad888ac8bb32",
+   "bytes": 1675
   },
   "tests/prepro/__init__.py": {
    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
