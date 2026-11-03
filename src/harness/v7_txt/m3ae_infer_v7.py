@@ -37,7 +37,7 @@ def main():
     ap.add_argument("--model-label", default="M3AE"); ap.add_argument("--extra", default="")
     a = ap.parse_args(); out_path = os.path.abspath(a.output); data_root = os.path.abspath(a.data_root).rstrip("/") + "/"
     test_arrow = os.path.join(data_root, "%s_test.arrow" % a.dataset_key); arrow_sha = sha256_file(test_arrow)
-    if a.arrow_sha256 and arrow_sha != a.arrow_sha256: print("arrow sha inesperado", arrow_sha); sys.exit(5)
+    if a.arrow_sha256 and arrow_sha != a.arrow_sha256: print("unexpected arrow sha", arrow_sha); sys.exit(5)
     sys.path.insert(0, HARNESS); sys.path.insert(0, WM); os.chdir(WM)
     import torch
     from harness.results_schema import validate_results_dict

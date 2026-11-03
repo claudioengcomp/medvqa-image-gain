@@ -21,7 +21,7 @@ VALID_CONDITIONS = (
     # free category".
     # Not yet implemented -- added here only to reserve the name.
     "C7",
-    # ISBI 2027, occlusion_study posicional (docs/isbi/occlusion_study/study_plan_v2.md): C0 restrita
+    # ISBI 2027, positional occlusion study: C0 restricted to
     # the evaluable questions (and C0_orig, diagnostic with the original bytes), target T,
     # occlusion_study P, sufficiency S, dose 1,5x/2x, and mean/blur fills.
     "C0_orig", "T", "P", "S", "T1.5", "P1.5", "T2", "P2", "S2",
@@ -63,11 +63,11 @@ def validate_results_dict(d: dict) -> None:
     has_n = "n" in d
     has_n_correct = "n_correct" in d
     if has_n != has_n_correct:
-        raise ResultsSchemaError("'n' e 'n_correct' devem estar ambos presentes ou ambos ausentes")
+        raise ResultsSchemaError("'n' and 'n_correct' must be both present or both absent")
     if has_n and (not isinstance(d["n"], int) or d["n"] <= 0):
-        raise ResultsSchemaError(f"n={d['n']!r} deve ser um inteiro positivo")
+        raise ResultsSchemaError(f"n={d['n']!r} must be a positive integer")
     if has_n_correct and (not isinstance(d["n_correct"], int) or not (0 <= d["n_correct"] <= d["n"])):
-        raise ResultsSchemaError(f"n_correct={d['n_correct']!r} deve estar entre 0 e n")
+        raise ResultsSchemaError(f"n_correct={d['n_correct']!r} must be between 0 and n")
 
     if "predictions" in d:
         preds = d["predictions"]
@@ -78,7 +78,7 @@ def validate_results_dict(d: dict) -> None:
                 if key not in p:
                     raise ResultsSchemaError(f"predictions[{i}] without the field '{key}'")
             if not isinstance(p["correct"], bool):
-                raise ResultsSchemaError(f"predictions[{i}]['correct'] deve ser bool")
+                raise ResultsSchemaError(f"predictions[{i}]['correct'] must be a bool")
 
 
 def has_paired_data(d: dict) -> bool:

@@ -41,4 +41,4 @@ man = {"t": time.strftime("%Y-%m-%d %H:%M:%S"), "host": socket.gethostname(), "s
        "arrow": f"{OUT}/vqa_vqa_rad_{s}.arrow", "arrow_sha256": sha(f"{OUT}/vqa_vqa_rad_{s}.arrow")} for s, v in S.items()}, "imagens_teste_em_treino_ou_validacao": len(I["test"] & (I["train"] | I["val"])), "labels": len(labs),
        "c1": {"path": f"{OUT}/vqa_vqa_rad_test_C1.arrow", "sha256": sha(f"{OUT}/vqa_vqa_rad_test_C1.arrow")}, "c2": {"path": c2, "sha256": sha(c2), "seed": 42}}
 json.dump(man, open(f"{OUT}/manifest_vqarad_qlevel.json", "w"), indent=1)
-print({s: {k: v for k, v in p.items() if k in ("n_perguntas", "n_imagens", "n_fechadas", "n_sim_nao")} for s, p in man["particoes"].items()}, "test images in train+val:", man["imagens_teste_em_treino_ou_validacao"], "de", len(I["test"]))
+print({s: {k: v for k, v in p.items() if k in ("n_perguntas", "n_imagens", "n_fechadas", "n_sim_nao")} for s, p in man["particoes"].items()}, "test images in train+val:", man["imagens_teste_em_treino_ou_validacao"], "of", len(I["test"]))

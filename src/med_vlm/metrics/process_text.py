@@ -53,7 +53,7 @@ _NUM_RE = re.compile(r"\b(" + "|".join(_NUM_WORDS) + r")\b")
 
 
 def numbers_to_digits(text_norm: str) -> str:
-    """Troca palavras inteiras de 'zero' a 'ten' pelos digitos (texto ja normalizado)."""
+    """Replaces whole words from 'zero' to 'ten' with digits (text already normalised)."""
     return _NUM_RE.sub(lambda m: _NUM_WORDS[m.group(1)], text_norm)
 
 

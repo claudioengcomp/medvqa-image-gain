@@ -252,7 +252,7 @@ if __name__ == "__main__":
                                 qid_offset=args.qid_offset, download_fn=download_fn)
     write_arrow(df, args.output)
     n_questions = sum(len(q) for q in df["questions"])
-    print(f"{len(df)} imagens, {n_questions} perguntas -> {args.output}")
+    print(f"{len(df)} images, {n_questions} questions -> {args.output}")
 
     pathology_labels = {f"kvasir/{r['img_id']}": r["pathology_label"] for r in records if r["pathology_label"]}
     labels_path = args.output.replace(".arrow", "_pathology_labels.json")

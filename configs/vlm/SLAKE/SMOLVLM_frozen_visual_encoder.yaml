@@ -1,6 +1,6 @@
 # NEW row (v5, FROZEN visual tower: adapter only on the LLM). Generated from smolvlm2_lora_slake.yaml; differs only in
-# run_name, wandb_run_name, peft_config.target_modules (regex ancorado em text_model), outputs_dir,
-# checkpoint_dir e checkpoint_every.
+# run_name, wandb_run_name, peft_config.target_modules (regex anchored on text_model), outputs_dir,
+# checkpoint_dir and checkpoint_every.
 run_name: smolvlm2_lora_ft_slake
 model: SMOLVLM
 dataset: SLAKE

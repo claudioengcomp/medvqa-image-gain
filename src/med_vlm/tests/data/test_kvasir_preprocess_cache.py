@@ -51,7 +51,7 @@ def test_different_arrow_mtime_produces_different_path(tmp_path):
     import os
     import time
     time.sleep(0.01)
-    os.utime(arrow, None)  # atualiza mtime pra "agora"
+    os.utime(arrow, None)  # sets mtime to "now"
 
     path_after = _kvasir_preprocess_cache_path(str(arrow), pre)
     assert path_before != path_after

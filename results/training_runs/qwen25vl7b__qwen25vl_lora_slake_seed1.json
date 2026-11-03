@@ -1,0 +1,96 @@
+{
+ "model": "Qwen/Qwen2.5-VL-7B-Instruct",
+ "dataset": "mdwiratathya/SLAKE-vqa-english",
+ "peft": "lora",
+ "clip_encoder": null,
+ "no_image": false,
+ "train": {
+  "lr": 0.0002,
+  "warmup_ratio": 0.05,
+  "epochs": 3,
+  "grad_accum_steps": 8,
+  "max_grad_norm": 1.0,
+  "log_every": 10,
+  "max_steps": null,
+  "eval_every": 5000,
+  "checkpoint_every": 5000,
+  "compile": true,
+  "compile_backend": "eager",
+  "start_step": 0,
+  "seed": 1,
+  "scheduler_total_steps": null
+ },
+ "train_max_length": 2048,
+ "eval": {
+  "split": "test",
+  "num_samples": null,
+  "max_new_tokens": 64
+ },
+ "metrics": {
+  "accuracy": 0.763430725730443,
+  "bleu": 0.5690005439347248,
+  "rouge1": 0.8034762990700781,
+  "rouge2": 0.11603449132840475,
+  "rougeL": 0.8014865723866662,
+  "meteor": 0.45922419561033045,
+  "bert_score_f1": 0.9077153205871582
+ },
+ "efficiency": {
+  "params": {
+   "total_params": 8302259200,
+   "trainable_params": 10092544,
+   "trainable_ratio": 0.0012156382686775186
+  },
+  "flops": {
+   "flops": 6735532529664.0,
+   "macs": 3367599570944.0
+  },
+  "training": {
+   "train_wall_time_s": 8447.704010737943,
+   "train_throughput_sps": 2.620830461372424,
+   "train_peak_memory_gb": 19.87365436553955
+  },
+  "inference": {
+   "infer_total_s": 189.78346820396837,
+   "infer_latency_s": 0.17887226032419262,
+   "infer_throughput_sps": 5.590581782706691,
+   "infer_peak_memory_gb": 15.575121879577637
+  }
+ },
+ "wandb_run_id": "9xb6p4jd",
+ "provenance": {
+  "host": "lasid-gpu1",
+  "gpu": 1,
+  "cuda_visible_devices": "1",
+  "start": "2026-10-23 23:29:55",
+  "end": "2026-10-24 02:00:29",
+  "wall_seconds": 9034.1,
+  "peak_vram_mib_nvidia_smi": 21286,
+  "versions": {
+   "torch": "2.13.0+cu130",
+   "python": "3.13.15",
+   "transformers": "5.15.1",
+   "peft": "0.20.0"
+  },
+  "git": {
+   "commit": "2b7e731",
+   "tracked_diff_sha256": "f4aa09c21607ff596578713bbde2f31f96654c067afc4df731193e7e3933633c"
+  },
+  "env": {
+   "OMP_NUM_THREADS": "4",
+   "MKL_NUM_THREADS": "4",
+   "WANDB_MODE": "offline",
+   "TOKENIZERS_PARALLELISM": "false",
+   "HF_HOME": "huggingface"
+  },
+  "dtype": "bf16 (med_vlm/models/loader.py)",
+  "stamped": "2026-10-24 02:00:29",
+  "cmd": "-m med_vlm.run_experiment --config qwen25vl_lora_slake.yaml --seed 1",
+  "libcuda": {
+   "libcuda": "/usr/lib/x86_64-linux-gnu/libcuda.so.580.178.04",
+   "libcuda_versao": "580.178.04",
+   "modulo_kernel": "580.178.04",
+   "ld_library_path": null
+  }
+ }
+}

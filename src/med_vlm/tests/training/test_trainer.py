@@ -288,7 +288,7 @@ def test_train_vqa_generation_stops_at_max_steps(
         writer=None,
     )
 
-    # epochs=3 * len(train_dl)=10 => 30 passos "naturais", mas max_steps=5
+    # epochs=3 * len(train_dl)=10 => 30 "natural" steps, but max_steps=5
     # must stop training exactly at 5, cutting both loops
-    # (epoch e batch).
+    # (epoch and batch).
     assert mock_train_step.call_count == 5

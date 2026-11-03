@@ -1,0 +1,453 @@
+{
+ "t": "2026-11-01 21:37:32",
+ "melhor_x_ultima_epoca": {
+  "KVASIR": {
+   "sementes": [
+    {
+     "seed": 0,
+     "acc_melhor": 0.6573893682159755,
+     "epoca_escolhida": 4,
+     "acc_ultima_epoca": 0.6571110492624548,
+     "epocas": 10,
+     "val_acc_escolhida": 0.6434291954859848,
+     "arquivo": "BERT2_question_only_KVASIR_seed0.json",
+     "sha256": "79ad56f2c8dba2ec324eea64856a1544621c97746865ec2b0e58a2df38d5e135"
+    },
+    {
+     "seed": 1,
+     "acc_melhor": 0.6573893682159755,
+     "epoca_escolhida": 6,
+     "acc_ultima_epoca": 0.6571110492624548,
+     "epocas": 10,
+     "val_acc_escolhida": 0.6434291954859848,
+     "arquivo": "BERT2_question_only_KVASIR_seed1.json",
+     "sha256": "7923b4925048a70fcee88552f79c7de254f965a788a32d4a315de9e7e29242d6"
+    },
+    {
+     "seed": 2,
+     "acc_melhor": 0.6573893682159755,
+     "epoca_escolhida": 1,
+     "acc_ultima_epoca": 0.6571110492624548,
+     "epocas": 10,
+     "val_acc_escolhida": 0.6434291954859848,
+     "arquivo": "BERT2_question_only_KVASIR_seed2.json",
+     "sha256": "c3186a0d1ebaf1d4b46fa2a4a5a2dc1987c0eaef5222b31a5e12273978964d72"
+    }
+   ],
+   "media_melhor": 0.6573893682159755,
+   "media_ultima": 0.6571110492624548
+  },
+  "SLAKE": {
+   "sementes": [
+    {
+     "seed": 0,
+     "acc_melhor": 0.65625,
+     "epoca_escolhida": 7,
+     "acc_ultima_epoca": 0.6706730769230769,
+     "epocas": 10,
+     "val_acc_escolhida": 0.6540284360189573,
+     "arquivo": "BERT2_question_only_SLAKE_seed0.json",
+     "sha256": "cee78b42d27b3caaa3cdc5175e8591234e7adab93882567183894bb93145e076"
+    },
+    {
+     "seed": 1,
+     "acc_melhor": 0.6682692307692307,
+     "epoca_escolhida": 10,
+     "acc_ultima_epoca": 0.6682692307692307,
+     "epocas": 10,
+     "val_acc_escolhida": 0.6398104265402843,
+     "arquivo": "BERT2_question_only_SLAKE_seed1.json",
+     "sha256": "07c79c03b41fd2e1b281894d812c8fe2486b16db1caa89df76d04bdf153a4420"
+    },
+    {
+     "seed": 2,
+     "acc_melhor": 0.6778846153846154,
+     "epoca_escolhida": 7,
+     "acc_ultima_epoca": 0.6610576923076923,
+     "epocas": 10,
+     "val_acc_escolhida": 0.6421800947867299,
+     "arquivo": "BERT2_question_only_SLAKE_seed2.json",
+     "sha256": "1080375b8181aea98118d44deddd5a20925d834e11425e54d6f3012ac34f094b"
+    }
+   ],
+   "media_melhor": 0.6674679487179488,
+   "media_ultima": 0.6666666666666666
+  },
+  "MIMIC": {
+   "sementes": [
+    {
+     "seed": 0,
+     "acc_melhor": 0.7971981320880587,
+     "epoca_escolhida": 5,
+     "acc_ultima_epoca": 0.7891927951967979,
+     "epocas": 10,
+     "val_acc_escolhida": 0.7905138339920948,
+     "arquivo": "BERT2_question_only_MIMIC_seed0.json",
+     "sha256": "1aed2275ed4bfb4b609e649b4e58b0ca3d4290d837c71aac1b49e16970134df1"
+    },
+    {
+     "seed": 1,
+     "acc_melhor": 0.7751834556370913,
+     "epoca_escolhida": 7,
+     "acc_ultima_epoca": 0.7918612408272181,
+     "epocas": 10,
+     "val_acc_escolhida": 0.7891963109354414,
+     "arquivo": "BERT2_question_only_MIMIC_seed1.json",
+     "sha256": "d3e4c242ba6d4b5e3de6dc02bb62b8dcf502c2d863184ace36c9727cccd3aa23"
+    },
+    {
+     "seed": 2,
+     "acc_melhor": 0.7931954636424283,
+     "epoca_escolhida": 4,
+     "acc_ultima_epoca": 0.789859906604403,
+     "epocas": 10,
+     "val_acc_escolhida": 0.7944664031620553,
+     "arquivo": "BERT2_question_only_MIMIC_seed2.json",
+     "sha256": "d3eacf46dc71d50ad9ed9323376e55a9576e2ad2a1924abad0e567150c10ee5e"
+    }
+   ],
+   "media_melhor": 0.7885256837891927,
+   "media_ultima": 0.7903046475428063
+  },
+  "VQARAD_REDIV": {
+   "sementes": [
+    {
+     "seed": 0,
+     "acc_melhor": 0.6004784688995215,
+     "epoca_escolhida": 5,
+     "acc_ultima_epoca": 0.6626794258373205,
+     "epocas": 10,
+     "val_acc_escolhida": 0.625,
+     "arquivo": "BERT2_question_only_VQARAD_REDIV_seed0.json",
+     "sha256": "266f145fb7ee1a40917c694ce66c653b705cc2e43a16caa56f06f561e55f5f49"
+    },
+    {
+     "seed": 1,
+     "acc_melhor": 0.631578947368421,
+     "epoca_escolhida": 10,
+     "acc_ultima_epoca": 0.631578947368421,
+     "epocas": 10,
+     "val_acc_escolhida": 0.6201923076923077,
+     "arquivo": "BERT2_question_only_VQARAD_REDIV_seed1.json",
+     "sha256": "86a773be59246981de1ae581c9cd78a737740e3da54bb09451c927db977eb35c"
+    },
+    {
+     "seed": 2,
+     "acc_melhor": 0.6435406698564593,
+     "epoca_escolhida": 10,
+     "acc_ultima_epoca": 0.6435406698564593,
+     "epocas": 10,
+     "val_acc_escolhida": 0.6586538461538461,
+     "arquivo": "BERT2_question_only_VQARAD_REDIV_seed2.json",
+     "sha256": "5078ad876f801ca259486fc0ba5ace7f3313ac007284c527356e9a41c17f97d5"
+    }
+   ],
+   "media_melhor": 0.6251993620414673,
+   "media_ultima": 0.645933014354067
+  },
+  "HEAL_TREINO": {
+   "sementes": [
+    {
+     "seed": 0,
+     "acc_melhor": 0.8540802213001383,
+     "epoca_escolhida": 8,
+     "acc_ultima_epoca": 0.8561549100968188,
+     "epocas": 10,
+     "val_acc_escolhida": 0.8603425559947299,
+     "arquivo": "BERT2_question_only_HEAL_TREINO_seed0.json",
+     "sha256": "df9d8a022c9768da1f8cc5c131311941f52703d74a333c025e739410eff006bb"
+    },
+    {
+     "seed": 1,
+     "acc_melhor": 0.8554633471645919,
+     "epoca_escolhida": 7,
+     "acc_ultima_epoca": 0.8533886583679114,
+     "epocas": 10,
+     "val_acc_escolhida": 0.8603425559947299,
+     "arquivo": "BERT2_question_only_HEAL_TREINO_seed1.json",
+     "sha256": "a2eb4a967f921186b7641d5d1332be65fffeb88ec1bd126fc2d95899b3b49d4b"
+    },
+    {
+     "seed": 2,
+     "acc_melhor": 0.843015214384509,
+     "epoca_escolhida": 5,
+     "acc_ultima_epoca": 0.8561549100968188,
+     "epocas": 10,
+     "val_acc_escolhida": 0.8537549407114624,
+     "arquivo": "BERT2_question_only_HEAL_TREINO_seed2.json",
+     "sha256": "7881fed54e602b404b72f0053797801e5ce99bc6b1b3470b118c6aa86d349deb"
+    }
+   ],
+   "media_melhor": 0.8508529276164131,
+   "media_ultima": 0.855232826187183
+  },
+  "VQARAD_QLEVEL": {
+   "sementes": [
+    {
+     "seed": 0,
+     "acc_melhor": 0.7390243902439024,
+     "epoca_escolhida": 10,
+     "acc_ultima_epoca": 0.7390243902439024,
+     "epocas": 10,
+     "val_acc_escolhida": 0.6492890995260664,
+     "arquivo": "results/predictions/VQARAD_QLEVEL/BERT2_question_only_VQARAD_QLEVEL_seed0.json",
+     "sha256": "0438107a6cf2194eb704668da00837c6ff9a2a672678ec4648a39d8cce57c420"
+    },
+    {
+     "seed": 1,
+     "acc_melhor": 0.724390243902439,
+     "epoca_escolhida": 6,
+     "acc_ultima_epoca": 0.7341463414634146,
+     "epocas": 10,
+     "val_acc_escolhida": 0.6540284360189573,
+     "arquivo": "results/predictions/VQARAD_QLEVEL/BERT2_question_only_VQARAD_QLEVEL_seed1.json",
+     "sha256": "2682646e166c44e9d41b8349e372b2e9bfbe29e4501a51270e356cc49afb77c9"
+    },
+    {
+     "seed": 2,
+     "acc_melhor": 0.7097560975609756,
+     "epoca_escolhida": 10,
+     "acc_ultima_epoca": 0.7097560975609756,
+     "epocas": 10,
+     "val_acc_escolhida": 0.6635071090047393,
+     "arquivo": "results/predictions/VQARAD_QLEVEL/BERT2_question_only_VQARAD_QLEVEL_seed2.json",
+     "sha256": "4afa884b86fc1b0b67de249457611eef80202fae148fa538c71171010bdb14c3"
+    }
+   ],
+   "media_melhor": 0.7243902439024389,
+   "media_ultima": 0.7276422764227641
+  }
+ },
+ "heal_so_treino": {
+  "linhas": [
+   {
+    "familia": "QWEN25VL",
+    "seed": 0,
+    "n": 1446,
+    "txt_menos_bert": {
+     "diff": 0.0,
+     "ci": [
+      -0.006896670712262916,
+      0.007544711072698565
+     ],
+     "n": 1446
+    },
+    "txt_menos_tfidf": {
+     "diff": 0.18603042876901799,
+     "ci": [
+      0.16090882595731862,
+      0.21216676416413602
+     ],
+     "n": 1446
+    },
+    "ft_menos_bert": {
+     "diff": 0.06085753803596127,
+     "ci": [
+      0.04470272892513264,
+      0.07628322379982388
+     ],
+     "n": 1446
+    },
+    "ft_menos_tfidf": {
+     "diff": 0.24688796680497926,
+     "ci": [
+      0.22076827301617416,
+      0.2731640356897735
+     ],
+     "n": 1446
+    },
+    "acc_bert": 0.8540802213001383,
+    "acc_tfidf": 0.6680497925311203,
+    "anterior_txt_menos_bert": {
+     "diff": 0.0006915629322268327,
+     "ci": [
+      -0.007633720313825276,
+      0.008996695549655417
+     ],
+     "n": 1446
+    },
+    "anterior_txt_menos_tfidf": {
+     "diff": 0.18672199170124482,
+     "ci": [
+      0.1621798778511132,
+      0.21132764952581742
+     ],
+     "n": 1446
+    }
+   },
+   {
+    "familia": "QWEN25VL",
+    "seed": 1,
+    "n": 1446,
+    "txt_menos_bert": {
+     "diff": -0.0013831258644536654,
+     "ci": [
+      -0.008305219146482122,
+      0.005528775613397681
+     ],
+     "n": 1446
+    },
+    "txt_menos_tfidf": {
+     "diff": 0.18603042876901799,
+     "ci": [
+      0.16073346343114087,
+      0.21202332745648933
+     ],
+     "n": 1446
+    },
+    "ft_menos_bert": {
+     "diff": 0.03665283540802213,
+     "ci": [
+      0.02232767525459417,
+      0.050380441931757086
+     ],
+     "n": 1446
+    },
+    "ft_menos_tfidf": {
+     "diff": 0.22406639004149378,
+     "ci": [
+      0.19682292922969719,
+      0.2511983098486894
+     ],
+     "n": 1446
+    },
+    "acc_bert": 0.8554633471645919,
+    "acc_tfidf": 0.6680497925311203,
+    "anterior_txt_menos_bert": {
+     "diff": 0.005532503457814661,
+     "ci": [
+      -0.004141073309119044,
+      0.014553266859092102
+     ],
+     "n": 1446
+    },
+    "anterior_txt_menos_tfidf": {
+     "diff": 0.18672199170124482,
+     "ci": [
+      0.1620841571922887,
+      0.2114488653638451
+     ],
+     "n": 1446
+    }
+   },
+   {
+    "familia": "QWEN25VL",
+    "seed": 2,
+    "n": 1446,
+    "txt_menos_bert": {
+     "diff": 0.009681881051175657,
+     "ci": [
+      -0.0013746414472749994,
+      0.020878283583937802
+     ],
+     "n": 1446
+    },
+    "txt_menos_tfidf": {
+     "diff": 0.18464730290456433,
+     "ci": [
+      0.1593383667792569,
+      0.21034610726981523
+     ],
+     "n": 1446
+    },
+    "ft_menos_bert": {
+     "diff": 0.058782849239280774,
+     "ci": [
+      0.041892019898308396,
+      0.07507016392228784
+     ],
+     "n": 1446
+    },
+    "ft_menos_tfidf": {
+     "diff": 0.23374827109266944,
+     "ci": [
+      0.2066080153344747,
+      0.260872599290027
+     ],
+     "n": 1446
+    },
+    "acc_bert": 0.843015214384509,
+    "acc_tfidf": 0.6680497925311203,
+    "anterior_txt_menos_bert": {
+     "diff": 0.0027662517289073307,
+     "ci": [
+      -0.004837678661722972,
+      0.010424268186704694
+     ],
+     "n": 1446
+    },
+    "anterior_txt_menos_tfidf": {
+     "diff": 0.18533886583679116,
+     "ci": [
+      0.16060334028415368,
+      0.21034610726981523
+     ],
+     "n": 1446
+    }
+   }
+  ],
+  "por_familia": {
+   "QWEN25VL": {
+    "txt_menos_bert": {
+     "mean": 0.0027662517289073307,
+     "sd": 0.006028905869350862,
+     "ic_media_sementes": [
+      -0.0032476195325627575,
+      0.008978834453375831
+     ],
+     "n_sementes": 3
+    },
+    "txt_menos_tfidf": {
+     "mean": 0.1855693868142001,
+     "sd": 0.0007985480901654547,
+     "ic_media_sementes": [
+      0.16032117700330042,
+      0.21141115565420032
+     ],
+     "n_sementes": 3
+    },
+    "ft_menos_bert": {
+     "mean": 0.052097740894421395,
+     "sd": 0.013415845575796644,
+     "ic_media_sementes": [
+      0.0390536442177448,
+      0.06504643646674356
+     ],
+     "n_sementes": 3
+    },
+    "ft_menos_tfidf": {
+     "mean": 0.23490087597971412,
+     "sd": 0.011454364452563252,
+     "ic_media_sementes": [
+      0.20907635778641906,
+      0.2612504101707073
+     ],
+     "n_sementes": 3
+    },
+    "anterior_txt_menos_bert": {
+     "mean": 0.002996772706316275,
+     "sd": 0.0024286892007498247,
+     "ic_media_sementes": [
+      -0.003985593574721786,
+      0.010067387002329268
+     ],
+     "n_sementes": 3
+    },
+    "anterior_txt_menos_tfidf": {
+     "mean": 0.18626094974642693,
+     "sd": 0.0007985480901654547,
+     "ic_media_sementes": [
+      0.16194945823766463,
+      0.21118034139773267
+     ],
+     "n_sementes": 3
+    },
+    "acc_bert": 0.8508529276164131,
+    "acc_tfidf": 0.6680497925311203
+   }
+  }
+ },
+ "script": "analises_rodada2.py",
+ "script_sha256": "48640300b950d971c53391d31bb71c5207e41c017bfa1dbc4bae79d3bb3db857",
+ "_note": "Qwen2.5-VL-7B only: produced by the unchanged analysis scripts with the Qwen2-VL-2B predictions replaced by the Qwen2.5-VL-7B ones; entries of the other families removed (see results/aggregates/ for them)."
+}

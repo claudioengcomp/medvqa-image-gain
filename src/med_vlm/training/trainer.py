@@ -42,7 +42,7 @@ class TrainConfig:
     # max_steps. Needed on resumption (16/09/2026): max_steps counts micro-batches and stops the
     # loop, but was also used as the scheduler total, recreating the cosine over a total
     # ~grad_accum times larger than the original training's (lr returned to the peak after the resume).
-    # None = comportamento antigo.
+    # None = previous behaviour.
     scheduler_total_steps: int | None = None
 
     def __post_init__(self) -> None:
@@ -325,8 +325,8 @@ def train_vqa_generation(
 
         if cfg.max_steps is not None and global_step >= cfg.max_steps:
             # Stops training and epoch at once: without this, a
-            # break aqui so sairia da malha interna e a malha externa
-            # (epochs) continuaria rodando silenciosamente.
+            # a break here would only leave the inner loop and the outer loop
+            # (epochs) would keep running silently.
             break
 
     if use_cuda:

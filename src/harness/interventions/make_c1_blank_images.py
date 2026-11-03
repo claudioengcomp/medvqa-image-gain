@@ -47,4 +47,4 @@ def _parse_args():
 if __name__ == "__main__":
     args = _parse_args()
     blank_out_images(args.input, args.output, size=args.size)
-    print(f"C1 escrito em {args.output}")
+    print(f"C1 written to {args.output}")

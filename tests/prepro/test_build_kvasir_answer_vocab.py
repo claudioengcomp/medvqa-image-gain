@@ -4,7 +4,7 @@ from harness.prepro.build_kvasir_answer_vocab import apply_vocab, build_vocab
 def test_build_vocab_assigns_stable_indices_by_frequency():
     answers = [["polyp"], ["polyp"], ["polyp"], ["ulcerative colitis"], ["ulcerative colitis"], ["yes"]]
     vocab = build_vocab(answers)
-    assert vocab["polyp"] == 0  # mais frequente primeiro
+    assert vocab["polyp"] == 0  # most frequent first
     assert vocab["ulcerative colitis"] == 1
     assert vocab["yes"] == 2
     assert len(vocab) == 3

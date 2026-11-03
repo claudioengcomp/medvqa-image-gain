@@ -72,7 +72,7 @@ def run_experiment(cfg: Dict[str, Any]) -> Dict[str, Any]:
 
     outputs_dir = Path(cfg.get("outputs_dir", "./outputs"))
     _ensure_dir(outputs_dir)
-    # results_json_dir (v7_txt): onde gravar o JSON de eficiencia (default: outputs_dir).
+    # results_json_dir (v7_txt): where to write the efficiency JSON (default: outputs_dir).
     results_json_dir = Path(cfg.get("results_json_dir", outputs_dir))
     _ensure_dir(results_json_dir)
 
@@ -413,9 +413,9 @@ def main() -> None:
         "--seed",
         type=int,
         default=None,
-        help="Sobrescreve train.seed do config e sufixa _seedN em run_name/"
+        help="Overrides train.seed of the config and appends _seedN to run_name/"
         "wandb_run_name, to run multiple seeds of the same YAML without "
-        "colidir outputs/checkpoints/results.",
+        "clashing outputs/checkpoints/results.",
     )
     args = parser.parse_args()
 

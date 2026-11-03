@@ -62,7 +62,7 @@ def build(b):
         tr, va, te = mimic("train"), mimic("val"), mimic("test"); src = {k: f"{MI}/data/items_{s}.parquet" for k, s in (("train", "train"), ("val", "val"), ("test", "test"))}; tr_only = tr
     assert len(tr) == NTRAIN[b], (b, len(tr), NTRAIN[b])
     tfidf = json.load(open(TFIDF[b])); P = tfidf["predictions"]
-    if isinstance(P, dict):   # MIMIC: qid -> predicao; gold do items_test
+    if isinstance(P, dict):   # MIMIC: qid -> prediction; gold from items_test
         g = {x["qid"]: x for x in te}; P = [{"qid": int(q), "predicted": p, "gold": g[int(q)]["answer"], "correct": None} for q, p in P.items() if int(q) in g]
         ok_ref = {int(q): bool(answer_matches(normalize_text(str(p["predicted"])), [normalize_text(g[int(q)]["answer"])])) for q, p in ((p["qid"], p) for p in P)}
     else: ok_ref = {int(p["qid"]): bool(p["correct"]) for p in P}
@@ -72,7 +72,7 @@ def build(b):
     return {"base": b, "fontes": src, "fontes_sha256": {k: ([sha(x) for x in v] if isinstance(v, list) else (sha(v) if v else None)) for k, v in src.items()}, "tfidf": TFIDF[b], "tfidf_sha256": sha(TFIDF[b]),
             "n": {"train": len(tr), "train_so_treino": len(tr_only), "val": len(va), "test": len(te)}, "regua_confere_tfidf": {"iguais": same, "n": len(P)}, "train": tr, "train_so_treino": tr_only, "val": va, "test": te}
 def majority(D, which):
-    c = collections.Counter(x["answer"] for x in D[which]); top = sorted(c.items(), key=lambda kv: (-kv[1], kv[0]))[0][0]   # empate: ordem alfabetica
+    c = collections.Counter(x["answer"] for x in D[which]); top = sorted(c.items(), key=lambda kv: (-kv[1], kv[0]))[0][0]   # tie: alphabetical order
     preds = [{"qid": x["qid"], "predicted": top, "gold": x["refs"][0] if len(x["refs"]) == 1 else x["refs"], "correct": bool(answer_matches(normalize_text(top), [normalize_text(r) for r in x["refs"]]))} for x in D["test"]]
     return top, c, preds
 if __name__ == "__main__":
@@ -85,4 +85,4 @@ if __name__ == "__main__":
             rec = {"model": "MAJ_question_only", "dataset": b, "condition": "C0", "accuracy": k / n, "n": n, "n_correct": k, "majoritaria": top, "contagem_top5_treino": c.most_common(5), "n_treino": len(D[which]),
                    "provenance": {"script": os.path.abspath(__file__), "script_sha256": sha(__file__), "treino": which, "fontes": D["fontes"], "fontes_sha256": D["fontes_sha256"], "regra": "most frequent answer among the closed-form training questions; tie by alphabetical order; rule answer_matches(normalize_text)", "t": time.strftime("%Y-%m-%d %H:%M:%S")}, "predictions": preds}
             json.dump(rec, open(f"{a.out}/results/MAJ_question_only_{b}{suf}.json", "w"), indent=1)
-            print(b, which, "n", D["n"], "regua x TFIDF", D["regua_confere_tfidf"], "| majoritaria", repr(top), "acc %.4f" % (k / n), "| %.1f s" % (time.time() - t0), flush=True)
+            print(b, which, "n", D["n"], "check vs TFIDF", D["regua_confere_tfidf"], "| majority", repr(top), "acc %.4f" % (k / n), "| %.1f s" % (time.time() - t0), flush=True)

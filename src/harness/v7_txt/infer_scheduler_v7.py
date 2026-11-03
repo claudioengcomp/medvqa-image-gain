@@ -21,7 +21,7 @@ GPUS = [0, 1, 2, 3]; CAP_MIB = int(31.5 * 1024); LOAD_CAP = 180.0; LOAD_DELTA = 
 import re as _re
 _MODV = (_re.search(r"(\d{3}\.\d+\.\d+)", open("/proc/driver/nvidia/version").read()) or [None, None])[1] if os.path.exists("/proc/driver/nvidia/version") else None
 _WA = f"{_MEDVQA_ROOT}/nvidia-580.173.02"; USE_WA = _MODV == "580.173.02"; NVSMI = (_WA + "/nvidia-smi") if USE_WA else "nvidia-smi"
-ENV = {"OMP_NUM_THREADS": "4", "MKL_NUM_THREADS": "4", "WANDB_MODE": "offline", "TOKENIZERS_PARALLELISM": "false", "HF_HOME": f"{_MEDVQA_ROOT}/cache/huggingface"}   # 11/10: HF_HOME no NVMe (${MEDVQA_ROOT}), nunca no ${HOME} (HD SMR; skill lasid-gpu-infra regra 7)
+ENV = {"OMP_NUM_THREADS": "4", "MKL_NUM_THREADS": "4", "WANDB_MODE": "offline", "TOKENIZERS_PARALLELISM": "false", "HF_HOME": f"{_MEDVQA_ROOT}/cache/huggingface"}   # 11/10: HF_HOME on the NVMe disk (${MEDVQA_ROOT}), never in ${HOME} (SMR disk)
 if USE_WA: ENV["LD_LIBRARY_PATH"] = _WA + "-compute"
 HOST = socket.gethostname()   # 11/10 21:5x: own line (the HF_HOME revision comment had commented out this assignment)
 def now(): return time.strftime("%Y-%m-%d %H:%M:%S")
@@ -124,7 +124,7 @@ class Sched:
     def __init__(self, a):
         self.a = a; self.sp = Path(a.state); self.logd = Path(a.log_dir); self.logd.mkdir(parents=True, exist_ok=True); self.halt = None; self.last_disk = self.last_status = self.last_nv = 0; self.disk_alerted = False
         self.vers = {e: versions(e) for e in ("circle", "lapa")}
-        if getattr(a, "dry_run", False):   # ciclo a seco (salvaguarda 11/10): estado so leitura, nada gravado, nada lancado
+        if getattr(a, "dry_run", False):   # dry cycle (safeguard 11/10): state read only, nothing written, nothing launched
             self.save = lambda: None; self.disk_alerted = True
             self.log = lambda e, **kw: print(json.dumps({"t": now(), "event": "dry:" + e, **kw}, default=str), flush=True); self.alert = lambda n, x: print("dry:ALERT", n, x, flush=True)
             self.st = json.loads(self.sp.read_text()) if self.sp.exists() else {"jobs": [dict(j, status="queued", retries=0, oom=0, peak_mib=0) for j in json.loads(Path(a.jobs).read_text())], "t0": now(), "versions": self.vers}
@@ -135,7 +135,7 @@ class Sched:
         if self.sp.exists():
             self.st = json.loads(self.sp.read_text()); self.log("scheduler_restart", pid=os.getpid())
             known = {j["name"] for j in self.st["jobs"]}
-            for j in json.loads(Path(a.jobs).read_text()):   # jobs novos acrescentados na reinicializacao
+            for j in json.loads(Path(a.jobs).read_text()):   # new jobs added at restart
                 if j["name"] not in known: j.update(status="queued", retries=0, oom=0, peak_mib=0); self.st["jobs"].append(j)
             for j in self.st["jobs"]:
                 if j["status"] == "running" and not alive(j.get("pid", -1)): self.finish(j)
@@ -209,7 +209,7 @@ class Sched:
     def can_launch(self, j, g, q):
         if self.halt: return False, "halt"
         ours = self.ours_on(g); img_train = [o for o in ours if o.get("img_train")]
-        deaths = self.train_deaths()   # revision 10/10 20:45 (b), refeita 12/10: so morte por memoria atribuivel a jobs meus bloqueia tudo
+        deaths = self.train_deaths()   # revision 10/10 20:45 (b), redone 12/10: only a memory death attributable to my jobs blocks everything
         mine = [d["name"] for d in deaths if d["cause"] in ("mine", "desconhecida")]; third_cards = {d["gpu"] for d in deaths if d["cause"] == "terceiros" and d["gpu"] is not None}
         if third_cards - set(self.st.get("third_slot_cards", [])):
             self.st["third_slot_cards"] = sorted(set(self.st.get("third_slot_cards", [])) | third_cards); self.log("third_slot_suspended_card", cards=self.st["third_slot_cards"], deaths=[d for d in deaths if d["cause"] == "terceiros"], rule="death by third-party growth: third slot suspended only on this GPU"); self.save()
@@ -220,25 +220,25 @@ class Sched:
         lmax = getattr(self.a, "light_max_mib", 7168); is_light = lambda o: (not o.get("is_train") and (o.get("reserve") or 10 ** 9) <= lmax) if o.get("peer") else (o.get("reserve_mib") or 10 ** 9) <= lmax
         if getattr(self.a, "light_slots", None) and slots == self.a.slots and j["reserve_mib"] <= lmax and all(is_light(o) for o in ours): slots = max(slots, self.a.light_slots)   # 12/10 13:20
         if len(ours) >= slots: return False, "slots"
-        if any(not Path(x).exists() for x in j.get("requires", [])): return False, "requires ausente: %s" % ",".join(x for x in j.get("requires", []) if not Path(x).exists())
+        if any(not Path(x).exists() for x in j.get("requires", [])): return False, "requires missing: %s" % ",".join(x for x in j.get("requires", []) if not Path(x).exists())
         hi = self.higher_intent(g)   # 14/10 (the candidate): only yields when the higher-priority queue will actually launch on this GPU in this cycle
-        if hi: return False, "cede a prioridade maior (%s vai lancar nesta placa)" % hi
+        if hi: return False, "yields to a higher priority (%s will launch on this GPU)" % hi
         if getattr(self.a, "yield_to_train", None) and self.trains_queued():
             ntr = sum(1 for o in ours if o.get("kind") == "train" or (o.get("peer") and o.get("img_train")) or o.get("is_train"))
             if len(ours) + 1 + max(0, 2 - ntr) > slots: return False, "slot reserved for training (trainings in queue; %d training(s) on the GPU)" % ntr
-        if not j.get("exclusive") and not ours and self.exclusive_waiting() and len([x for x in GPUS if not self.ours_on(x)]) <= 1: return False, "ultima placa vazia reservada ao job exclusivo (M3AE) de %s" % self.a.reserve_for_exclusive
-        if any(time.time() - (o.get("start_ts") or 0) < STAGGER_S for o in ours): return False, "stagger"   # 14/10: 5 s (antes 90 s meus / 240 s dos pares)
+        if not j.get("exclusive") and not ours and self.exclusive_waiting() and len([x for x in GPUS if not self.ours_on(x)]) <= 1: return False, "last empty GPU reserved for the exclusive job (M3AE) of %s" % self.a.reserve_for_exclusive
+        if any(time.time() - (o.get("start_ts") or 0) < STAGGER_S for o in ours): return False, "stagger"   # 14/10: 5 s (previously 90 s for mine / 240 s for peers)
         if j.get("exclusive") and ours: return False, "exclusive"
         cap = CAP_IMG_TRAIN_MIB if img_train else CAP_MIB   # revision 10/10 22:10: 30 720 on GPUs with MIMIC training with image, 32 256 on the others
         pend = self.pending_mib(g)   # 14/10: reserve not yet allocated by the GPU's young jobs
-        if q[g]["used"] + pend + j["reserve_mib"] > cap: return False, "vram %d+%d(pendente)+%d > %d" % (q[g]["used"], pend, j["reserve_mib"], cap)
+        if q[g]["used"] + pend + j["reserve_mib"] > cap: return False, "vram %d+%d(pending)+%d > %d" % (q[g]["used"], pend, j["reserve_mib"], cap)
         if img_train:   # revision 10/10 20:45 (a): measured peaks of jobs on the GPU + third parties (current usage) + reserve of the new one < limit
             pm = self.pm_cached(); mine = [o.get("pid") for o in ours if o.get("pid")]
             third = max(0, q[g]["used"] - sum(tree_mem(pm, x) for x in mine)); peaks = sum(max(o.get("peak_mib", 0) or 0, tree_mem(pm, o.get("pid"))) for o in ours)
             if peaks + third + j["reserve_mib"] >= cap: return False, "peaks %d + third parties %d + reserve %d >= %d (GPU with MIMIC training with image)" % (peaks, third, j["reserve_mib"], cap)
         if load1() + LOAD_DELTA > LOAD_CAP: return False, "load %.1f" % load1()
         rmin = getattr(self.a, "min_free_ram_gb", None)   # 22/10 (round 17): does not launch with little free RAM
-        if rmin and mem_available_gb() < rmin: return False, "ram %.0f GB disponiveis < %.0f" % (mem_available_gb(), rmin)
+        if rmin and mem_available_gb() < rmin: return False, "ram %.0f GB available < %.0f" % (mem_available_gb(), rmin)
         dmin = getattr(self.a, "disk_min_gb", None) or DISK_MIN_GB
         if disk_free_gb() < dmin:
             if not self.disk_alerted: self.alert("disk", "less than %d G free: no launch; nothing deleted. %s" % (dmin, df_h())); self.disk_alerted = True
@@ -271,7 +271,7 @@ class Sched:
         self._empty_since = es; waiting = {g for g in GPUS if fw and (g not in es or time.time() - es[g] < fw)}
         settle = getattr(self.a, "launch_settle_s", None)   # 22/10 (round 17): global interval between launches (the previous job's RAM appears before the next one)
         if settle and time.time() - getattr(self, "_last_launch_ts", 0) < settle: return 0
-        q1 = gpu_query(); time.sleep(getattr(self.a, "read_gap", 20)); q = gpu_query(); self._cycle_q = (q1, q)   # 20/10: intervalo da leitura dupla configuravel (--read-gap; padrao 20)
+        q1 = gpu_query(); time.sleep(getattr(self.a, "read_gap", 20)); q = gpu_query(); self._cycle_q = (q1, q)   # 20/10: configurable interval of the double reading (--read-gap; default 20)
         young = {g: any(time.time() - (o.get("start_ts") or 0) < YOUNG_S for o in self.ours_on(g)) for g in GPUS}
         rising = {g for g in GPUS if q[g]["used"] > q1[g]["used"] + 1024 and not young[g]}
         if rising: self.log("memory_rising", cards=sorted(rising), q1={g: q1[g]["used"] for g in rising}, q2={g: q[g]["used"] for g in rising})
@@ -285,14 +285,14 @@ class Sched:
                 ok, why = self.can_launch(j, g, gpu_query())
                 if ok and self.launch(j, g): last[g] = time.time(); n += 1; launched = True; self._last_launch_ts = time.time(); break
                 if not ok and (why.startswith("stagger") or why.startswith("load")): intent.add(g)
-            if not launched and not j.get("skip_order"): break   # ordem da lista
+            if not launched and not j.get("skip_order"): break   # list order
             if launched and getattr(self.a, "launch_settle_s", None): break   # 22/10 (round 17): one launch per cycle when there is a global interval
         self.st["intent"] = {"t": time.time(), "cards": sorted(intent)}
         if n: self.log("cycle_launches", n=n)
         return n
     def finish(self, j):
         j["end"] = now(); j["duration_s"] = round(time.time() - j.get("start_ts", time.time()), 1); out = Path(j["output"])
-        if out.exists() and j.get("kind") == "embed":   # 14/10: Medida embeddings -- .npy output with .meta.json alongside (the timestamp is in the meta); no reading of result JSON
+        if out.exists() and j.get("kind") == "embed":   # 14/10: embeddings of the measurement study -- .npy output with .meta.json alongside (the timestamp is in the meta); no reading of result JSON
             meta = Path(str(out)[:-4] + ".meta.json")
             if meta.exists(): j["status"] = "done"; self.log("done", job=j["name"], gpu=j["gpu"], duration_s=j["duration_s"], peak_mib=j["peak_mib"], meta=str(meta))
             else: j["status"] = "failed"; self.alert("embed_%s" % j["name"], "output %s without %s" % (out, meta))
@@ -301,13 +301,13 @@ class Sched:
                 if j["env"] == "circle": self.stamp(j)
                 d = json.loads(out.read_text()); j["status"] = "done"; j["accuracy"] = d.get("accuracy"); j["n"] = d.get("n")
                 self.log("done", job=j["name"], gpu=j["gpu"], duration_s=j["duration_s"], peak_mib=j["peak_mib"], n=j["n"], accuracy=j["accuracy"])
-            except Exception as e: j["status"] = "failed"; self.alert("stamp_%s" % j["name"], "carimbo falhou: %r" % (e,))
+            except Exception as e: j["status"] = "failed"; self.alert("stamp_%s" % j["name"], "stamp failed: %r" % (e,))
         else:
             txt = open(j["log"], "rb").read()[-200000:].decode("utf-8", "ignore").lower(); oom = any(k in txt for k in ("out of memory", "busy or unavailable", "cudaerrordevicesunavailable", "cudaerrormemoryallocation", "acceleratorerror"))
             j["oom"] += 1 if oom else 0; j["retries"] += 0 if oom else 1
             if j["retries"] <= 1 and j["oom"] <= 5:
                 died = j["log"] + ".died%d" % (j["retries"] + j["oom"]); shutil.copy2(j["log"], died); open(j["log"], "w").close(); j.update(status="queued", pid=None); self.log("died_relaunch", job=j["name"], oom=oom, retries=j["retries"], log_kept=died)
-            else: j["status"] = "failed"; self.alert("died_%s" % j["name"], "job caiu 2x (log %s)" % j["log"])
+            else: j["status"] = "failed"; self.alert("died_%s" % j["name"], "job died twice (log %s)" % j["log"])
         self.save()
     def stamp(self, j):
         out = Path(j["output"]); d = json.loads(out.read_text()); m = j.get("meta", {})
@@ -316,12 +316,12 @@ class Sched:
             ad = Path(m["adapter_dir"]) / "adapter_model.safetensors"; prov["adapter_sha256"] = sha_file(ad); prov["adapter_bytes"] = ad.stat().st_size; prov["adapter_config"] = json.loads((ad.parent / "adapter_config.json").read_text())
         if m.get("input_arrow"):
             prov["input_arrow_sha256"] = sha_file(m["input_arrow"])
-            if m.get("input_arrow_sha256_expected") and prov["input_arrow_sha256"] != m["input_arrow_sha256_expected"]: self.alert("arrow_%s" % j["name"], "sha do arrow inesperado")
+            if m.get("input_arrow_sha256_expected") and prov["input_arrow_sha256"] != m["input_arrow_sha256_expected"]: self.alert("arrow_%s" % j["name"], "unexpected arrow sha")
         d["provenance"] = prov; out.write_text(json.dumps(d, indent=1, default=str))
     def sample(self):
         pm = proc_mem()
         for j in self.jobs(status="running"):
-            if j.get("pid") and tree_mem(pm, j["pid"]): j["peak_mib"] = max(j["peak_mib"], tree_mem(pm, j["pid"]))   # 12/10: inclui descendentes
+            if j.get("pid") and tree_mem(pm, j["pid"]): j["peak_mib"] = max(j["peak_mib"], tree_mem(pm, j["pid"]))   # 12/10: includes child processes
             if not alive(j["pid"]): self.finish(j)
     def nv_sample(self):
         q = gpu_query(); pm = proc_mem()
@@ -344,17 +344,17 @@ class Sched:
             print("estados:", {s: len(self.jobs(status=s)) for s in ("done", "failed", "running", "queued")}, flush=True)
             for j in self.st["jobs"]:
                 if j["status"] in ("running", "failed"): print("estado:", j["status"], j["name"], "gpu", j.get("gpu"), "pid", j.get("pid"), "vivo" if j.get("pid") and os.path.exists("/proc/%d" % j["pid"]) else "", flush=True)
-            for j in self.jobs(status="queued"): print("fila:", j["name"], "reserva", j["reserve_mib"], "| requires ausente" if any(not Path(x).exists() for x in j.get("requires", [])) else "", flush=True)
+            for j in self.jobs(status="queued"): print("queue:", j["name"], "reserve", j["reserve_mib"], "| requires missing" if any(not Path(x).exists() for x in j.get("requires", [])) else "", flush=True)
             print("end of the dry cycle (no nvidia-smi): nothing launched, nothing written", flush=True); return
         print(json.dumps({"dry_run": now(), "pid": os.getpid(), "jobs_file": self.a.jobs, "state": self.a.state, "slots": self.a.slots, "peer_state": self.a.peer_state, "consts": {"CAP_MIB": CAP_MIB, "CAP_IMG_TRAIN_MIB": CAP_IMG_TRAIN_MIB, "LOAD_CAP": LOAD_CAP, "LOAD_DELTA": LOAD_DELTA, "DISK_MIN_GB": DISK_MIN_GB, "UTIL_SAT": UTIL_SAT, "POLL": POLL}, "load1": round(load1(), 1), "df": df_h(), "gpu": gpu_query(), "train_deaths": self.train_deaths(), "third_slot_suspended": self.st.get("third_slot_suspended"), "third_slot_cards": self.st.get("third_slot_cards"), "libcuda_jobs": libcuda_info(ENV), "reserve_for_exclusive": getattr(self.a, "reserve_for_exclusive", None), "exclusive_waiting": self.exclusive_waiting(), "yield_to_train": getattr(self.a, "yield_to_train", None), "trains_queued": self.trains_queued(), "versions": self.vers}, default=str), flush=True)
         q = gpu_query(); done_names = {x["name"] for x in self.jobs(status="done")}
-        for g in GPUS: print("placa", g, "used", q[g]["used"], "util", q[g]["util"], "na placa:", [(o["name"], o.get("pid"), "pico", o.get("peak_mib"), "img_train" if o.get("img_train") else "") for o in self.ours_on(g)], flush=True)
+        for g in GPUS: print("gpu", g, "used", q[g]["used"], "util", q[g]["util"], "on gpu:", [(o["name"], o.get("pid"), "peak", o.get("peak_mib"), "img_train" if o.get("img_train") else "") for o in self.ours_on(g)], flush=True)
         print("estados:", {s: len(self.jobs(status=s)) for s in ("done", "failed", "running", "queued")}, flush=True)
         for j in self.jobs(status="queued"):
-            print("fila:", j["name"], "reserva", j["reserve_mib"], ("| after bloqueado: %s" % j["after"]) if (j.get("after") and j["after"] not in done_names) else "", "| skip_order" if j.get("skip_order") else "", {g: self.can_launch(j, g, q) for g in GPUS}, flush=True)
+            print("queue:", j["name"], "reserve", j["reserve_mib"], ("| after blocked: %s" % j["after"]) if (j.get("after") and j["after"] not in done_names) else "", "| skip_order" if j.get("skip_order") else "", {g: self.can_launch(j, g, q) for g in GPUS}, flush=True)
         bad = [(j["name"], job_condition(j)) for j in self.st["jobs"] if j["status"] in ("queued", "held") and job_condition(j) is not None and job_condition(j) not in schema_conditions()]
         print("schema: %d jobs in queue/held with --condition outside VALID_CONDITIONS%s" % (len(bad), (": " + str(bad[:10])) if bad else " (ok)"), flush=True)
-        print("fim do ciclo a seco: nada lancado, nada gravado", flush=True)
+        print("end of the dry cycle: nothing launched, nothing written", flush=True)
     def run(self):
         while True:
             self.sample()
@@ -366,12 +366,12 @@ class Sched:
             if self.halt and not self.jobs(status="running"): self.status_md(); return
             time.sleep(getattr(self.a, "poll", None) or POLL)   # 20/10 (the candidate): --poll per scheduler; default POLL
 if __name__ == "__main__":
-    ap = argparse.ArgumentParser(); ap.add_argument("--jobs", required=True); ap.add_argument("--state", required=True); ap.add_argument("--log-dir", required=True); ap.add_argument("--slots", type=int, default=2); ap.add_argument("--peer-state", nargs="*", default=None, help="train_state.json de outros escalonadores meus: seus jobs em curso contam nos slots/stagger"); ap.add_argument("--dry-run", action="store_true", help="safeguard: prints constants and the per-GPU decision for each job in the queue; does not write, does not launch"); ap.add_argument("--light-slots", type=int, default=None, help="12/10: up to N of my jobs per GPU if all are light inference"); ap.add_argument("--light-max-mib", type=int, default=7168); ap.add_argument("--yield-to-train", default=None, help="train_state of the training scheduler: with training in the queue, each GPU reserves slots for up to 2 of my trainings"); ap.add_argument("--reserve-for-exclusive", default=None, help="STATE of another scheduler of mine with exclusive jobs (M3AE): do not take the last empty GPU while it has a queue")
-    ap.add_argument("--poll", type=int, default=None, help="20/10: segundos entre ciclos (padrao POLL=30)"); ap.add_argument("--read-gap", type=int, default=20, help="20/10: seconds between the two VRAM readings of the cycle (default 20)")
+    ap = argparse.ArgumentParser(); ap.add_argument("--jobs", required=True); ap.add_argument("--state", required=True); ap.add_argument("--log-dir", required=True); ap.add_argument("--slots", type=int, default=2); ap.add_argument("--peer-state", nargs="*", default=None, help="train_state.json of my other schedulers: their running jobs count towards slots/stagger"); ap.add_argument("--dry-run", action="store_true", help="safeguard: prints constants and the per-GPU decision for each job in the queue; does not write, does not launch"); ap.add_argument("--light-slots", type=int, default=None, help="12/10: up to N of my jobs per GPU if all are light inference"); ap.add_argument("--light-max-mib", type=int, default=7168); ap.add_argument("--yield-to-train", default=None, help="train_state of the training scheduler: with training in the queue, each GPU reserves slots for up to 2 of my trainings"); ap.add_argument("--reserve-for-exclusive", default=None, help="STATE of another scheduler of mine with exclusive jobs (M3AE): do not take the last empty GPU while it has a queue")
+    ap.add_argument("--poll", type=int, default=None, help="20/10: seconds between cycles (default POLL=30)"); ap.add_argument("--read-gap", type=int, default=20, help="20/10: seconds between the two VRAM readings of the cycle (default 20)")
     ap.add_argument("--min-free-ram-gb", type=float, default=None, help="22/10 (paper 1, round 17): does not launch if available RAM (MemAvailable) is below this")
     ap.add_argument("--launch-settle-s", type=float, default=None, help="22/10 (paper 1, round 17): minimum global interval between launches; one per cycle")
     ap.add_argument("--disk-min-gb", type=float, default=None, help="22/10 (paper 1, round 17): free disk limit to launch; default DISK_MIN_GB=40")
-    ap.add_argument("--gpus", type=int, nargs="*", default=None, help="13/10: restringe as placas deste escalonador (ex.: --gpus 2 3)")
+    ap.add_argument("--gpus", type=int, nargs="*", default=None, help="13/10: restricts the GPUs of this scheduler (e.g. --gpus 2 3)")
     ap.add_argument("--free-card-wait-s", type=float, default=None, help="28/10 (paper 1, round 21): only launches on a GPU after N s in a row without a job of mine or a peer's (avoids launching together with the peer on the just-freed GPU)")
     ap.add_argument("--defer-to", nargs="*", default=None, help="13/10: states of higher-priority schedulers; yields the GPU when one of their jobs fits on it")
     a = ap.parse_args()

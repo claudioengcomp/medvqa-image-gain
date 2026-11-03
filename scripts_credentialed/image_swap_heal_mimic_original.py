@@ -35,7 +35,7 @@ perm = derangement(len(R), SEED); donor = {R[i]: R[perm[i]] for i in range(len(R
 img, iid = df["image"].tolist(), df["image_id"].tolist(); new = df.copy(); new["image"] = [img[first[donor[rad(x)]]] for x in iid]; new["image_id"] = [iid[first[donor[rad(x)]]] for x in iid]
 assert all(rad(a) != rad(b) for a, b in zip(iid, new["image_id"]))
 finish("heal", src, new, [{"linha": i, "image_id": iid[i], "radiografia": rad(iid[i]), "radiografia_doadora": donor[rad(iid[i])], "question_ids": [int(q) for q in df["question_id"][i]]} for i in range(len(df))],
-       {"regra": "derangement por radiografia (1 135 radiografias unicas)", "n_radiografias": len(R), "perguntas_mesma_radiografia": sum(len(df["question_id"][i]) for i in range(len(df)) if rad(iid[i]) == rad(new["image_id"][i]))})
+       {"regra": "derangement per radiograph (1 135 unique radiographs)", "n_radiografias": len(R), "perguntas_mesma_radiografia": sum(len(df["question_id"][i]) for i in range(len(df)) if rad(iid[i]) == rad(new["image_id"][i]))})
 # MIMIC
 src = f"{W}/v7_mimic/data/vqa_mimic_test.arrow"; df = read_arrow(src); it = pd.read_parquet(f"{W}/v7_mimic/data/items_test.parquet"); D2 = {r.dicom_id: (r.subject_id, r.study_id) for r in it.itertuples()}
 dic = lambda x: os.path.splitext(x.split("/")[-1])[0]; subj = [D2[dic(x)][0] for x in df["image_id"]]; stud = [D2[dic(x)][1] for x in df["image_id"]]; n = len(df)

@@ -24,5 +24,5 @@ for n in NAMES:
     dst.write_text("# article_runs vqarad_image_split (2026-10-17): copy of %s (sha256 %s); only name, data.arrows (split by image, seed 20260913) and output paths change.\n" % (src, sha(src)[:16]) + yaml.safe_dump(d, sort_keys=False, allow_unicode=True))
     assert yaml.safe_load(dst.read_text()) == d
     rep[name] = {"source": str(src), "source_sha256": sha(src), "yaml_sha256": sha(dst), "changed_keys": sorted(".".join(k) for k in diff), "target_modules": d["peft_config"]["target_modules"], "no_image": d.get("data", {}).get("no_image", False), "epochs": d["train"]["epochs"]}
-    print(name, "<-", src.name, "| alteradas:", rep[name]["changed_keys"])
+    print(name, "<-", src.name, "| changed:", rep[name]["changed_keys"])
 json.dump(rep, open(OUT / "configs_vqarad_rediv.json", "w"), indent=1); print("FIM", len(rep))

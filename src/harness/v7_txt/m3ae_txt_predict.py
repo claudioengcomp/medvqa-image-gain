@@ -1,4 +1,4 @@
-"""P1.3 prediction (lapa): locates the 'best' checkpoint saved by Lightning in v7_txt/m3ae/<run>/<versao>/checkpoints/epoch=*.ckpt
+"""P1.3 prediction (lapa): locates the 'best' checkpoint saved by Lightning in v7_txt/m3ae/<run>/<version>/checkpoints/epoch=*.ckpt
 (save_top_k=1, monitor val/the_metric, as in main.py), and runs m3ae_infer_v7 on the GREY test set (data_root = m3ae_arrows/data_root).
 Usage: m3ae_txt_predict.py <slack|kvasir|heal> <seed> <DATASET> <output.json>"""
 import os as _os
@@ -20,7 +20,7 @@ cands = [p for p in glob.glob("%s/%s/%s-seed%s-from_*/*/checkpoints/epoch=*.ckpt
 NOTA_CK = ""
 if len(cands) > 1 and mode in ("rediv", "redivgray", "redivc2", "qlevel", "qlevelgray", "qlevelc2"):   # 17/10 10:5x: training relaunched after OOM (third parties) leaves one best per version; use the one from the most recent round (the one that finished)
     cands = sorted(cands, key=lambda p: os.path.getmtime(os.path.dirname(os.path.dirname(p)))); NOTA_CK = "; best checkpoints from other versions (reruns after OOM) not used: " + ", ".join(cands[:-1]); cands = cands[-1:]
-if len(cands) != 1: print("esperado exatamente 1 checkpoint best, achei", cands); sys.exit(3)
+if len(cands) != 1: print("expected exactly 1 best checkpoint, found", cands); sys.exit(3)
 ck = cands[0]; name = NAME
 cmd = [sys.executable, "-u", R + "/worktree/harness/v7_txt/m3ae_infer_v7.py", "--name", name, "--checkpoint", ck, "--data-root", DROOT, "--dataset-key", "vqa_" + bench, "--vqa-label-size", str(LS),
        "--dataset", DS, "--condition", COND, "--output", out, "--model-label", LABEL, "--extra", EXTRA + NOTA_CK + "; cost=" + (R + "/article_runs/logs/" + name if mode in ("rediv", "redivgray", "redivc2", "qlevel", "qlevelgray", "qlevelc2") else R + "/logs/" + (name.replace(DS, bench) if mode == "gray" else name)) + "_cost.json"]

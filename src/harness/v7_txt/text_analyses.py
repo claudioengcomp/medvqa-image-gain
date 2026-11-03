@@ -48,7 +48,7 @@ for b in ART:
         ok.append(bool(answer_matches(NT(p), [NT(r) for r in x["refs"]])))
     r133[b] = {"n": len(te), "acc": float(np.mean(ok)), "fonte_da_predicao": dict(fonte), "treino": "train_so_treino from dados_texto (HEAL: train only)", "normalizacao_da_chave": "normalize_text of the question"}
 out["13_3"] = r133
-# ---- 13.4 / 13.7: preditores por base
+# ---- 13.4 / 13.7: predictors per benchmark
 r134, r137 = {}, {}
 rng_seeds = np.random.RandomState(20260913).randint(0, 3, size=(2000, 3))
 for b in ART:
@@ -88,7 +88,7 @@ out["13_4"] = r134; out["13_7"] = {"valores": r137, "codigo": {"occlusion_stats.
                                      "decomposicao.py": ["harness/v7_txt/decomposicao.py", sha(f"{W}/v7_txt/worktree/harness/v7_txt/decomposicao.py"), "boot_vec row 24; replicas per row row 74; CI of the mean across seeds rows ~93-97"],
                                      "ic_contagem.py": ["harness/v7_txt/ic_contagem.py", sha(f"{W}/v7_txt/worktree/harness/v7_txt/ic_contagem.py"), "exclui_zero row 8 (CI per row)"]},
                          "sorteio_de_sementes": "numpy RandomState(20260913).randint(0, 3, (2000, 3)): per replica, 3 seeds with replacement; the same image replica for all three"}
-# ---- 13.5 VQA-RAD redividido por recorte
+# ---- 13.5 VQA-RAD re-split, per subset
 b = "VQARAD_REDIV"; TS = {x["qid"]: x for x in json.load(open(f"{PJ}/data/vqarad_rediv/testset.json"))}; closed = [q for q in TS if str(TS[q]["answer_type"]).strip().upper() == "CLOSED"]
 _OJ = json.load(open(f"{W}/doutorado/data_drive_sync/raw/vqa_rad_osf/VQA_RAD Dataset Public.json")); osf = {(x["image_name"], NT(x["question"])): x for x in _OJ}
 for x in _OJ:   # 'frame' questions linked by question_frame (same image)
@@ -111,7 +111,7 @@ for k in ("question_type", "answer_type_osf", "prefixo_2_palavras"):
             a = [np.mean([src[(m, s)][q] for q in qs]) for s in range(3)]; row[m] = {"media": float(np.mean(a)), "dp": float(np.std(a, ddof=1))}
         row["SmolVLM2_menos_PubMedBERT"] = row["SMOLVLM"]["media"] - row["PubMedBERT"]["media"]; r135[k][val] = row
 out["13_5"] = {"base": "VQA-RAD re-split, 418 closed-form", "recortes": r135, "prefixo": "first two words of the normalized question; groups with n >= 10"}
-# ---- 13.6 custo
+# ---- 13.6 cost
 C = []
 def add(base, mod, s, gpu, dur, pk, fonte):
     C.append({"base": base, "modelo": mod, "seed": s, "placa": gpu, "horas": None if dur is None else dur / 3600, "pico_GB": None if not pk else pk / 1024, "fonte": fonte})

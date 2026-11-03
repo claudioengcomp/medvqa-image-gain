@@ -24,7 +24,7 @@ def poll():
         except Exception: pass
         stop.wait(5)
 th = threading.Thread(target=poll, daemon=True); th.start(); t0 = time.time()
-print("[m3ae_frozen_train] %s %s bench=%s seed=%d task=%s ls=%d tk=%s data_root=%s placa=%s\n%s" % (time.strftime("%F %T"), NAME, b, s, B["task"], B["ls"], TK, DR, dev, " ".join(cmd)), flush=True)
+print("[m3ae_frozen_train] %s %s bench=%s seed=%d task=%s ls=%d tk=%s data_root=%s gpu=%s\n%s" % (time.strftime("%F %T"), NAME, b, s, B["task"], B["ls"], TK, DR, dev, " ".join(cmd)), flush=True)
 rc = subprocess.call(cmd, cwd=WM, env=dict(os.environ, WANDB_MODE="disabled")); stop.set(); th.join(10); t = time.time() - t0
 json.dump({"run_name": NAME, "rc": rc, "task": B["task"], "seed": s, "vqa_label_size": B["ls"], "train_transform_keys": [TK], "data_root": DR, "placa": dev, "train_wall_time_s": round(t),
            "train_peak_memory_gb": round(max(mem) / 1024, 3) if mem else None, "freeze_report": REP, "start_ckpt": C.START_CKPT, "start_ckpt_sha256": C.START_SHA,

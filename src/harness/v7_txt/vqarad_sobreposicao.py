@@ -18,7 +18,7 @@ for nome, fs in SETS.items():
     D = {k: json.load(open(p)) for k, p in fs.items()}; TR = D["train"] + D["val"]; TE = D["test"]
     timg = {x["image_name"] for x in TE}; trimg = {x["image_name"] for x in TR}
     qall = {N(x["question"]) for x in TR}; qimg = {(x["image_name"], N(x["question"])) for x in TR}
-    qraw = {x["question"].strip().lower() for x in TR}; qrawimg = {(x["image_name"], x["question"].strip().lower()) for x in TR}   # variante: texto cru (strip + lower)
+    qraw = {x["question"].strip().lower() for x in TR}; qrawimg = {(x["image_name"], x["question"].strip().lower()) for x in TR}   # variant: raw text (strip + lower)
     frame = collections.defaultdict(list)
     for x in TR:
         if x.get("phrase_type") == "frame": frame[x["image_name"]].append(x)

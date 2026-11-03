@@ -19,13 +19,13 @@ def sha(p):
     with open(p, "rb") as f:
         for b in iter(lambda: f.read(1 << 24), b""): h.update(b)
     return h.hexdigest()
-os.makedirs(OUT, exist_ok=True); assert not os.listdir(OUT), "output folder not empty"; t0 = time.time()   # 17/10: a 1a tentativa criou a pasta e caiu antes de gravar
+os.makedirs(OUT, exist_ok=True); assert not os.listdir(OUT), "output folder not empty"; t0 = time.time()   # 17/10: the first attempt created the folder and died before writing
 df = read_arrow(SRC); rows = []
 for _, r in df.iterrows():
     keep = [i for i, t in enumerate(r["answer_type"]) if int(t) == 0]
     if not keep: continue
     r = r.copy()
-    for c in PERQ: r[c] = [r[c][i] for i in keep]   # listas Python (np.asarray achatava answers de tamanho 1 em 2D)
+    for c in PERQ: r[c] = [r[c][i] for i in keep]   # Python lists (np.asarray flattened answers of length 1 into 2D)
     rows.append(r)
 sub = pd.DataFrame(rows).reset_index(drop=True); s1 = f"{OUT}/vqa_mimic_test_fechadas.arrow"; write_arrow(sub, s1)
 o = f"{OUT}/vqa_mimic_test_fechadas_C1.arrow"; blank_out_images(s1, o)

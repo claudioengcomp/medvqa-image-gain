@@ -37,7 +37,7 @@ _YES = re.compile(r"\byes\b", re.I); _NO = re.compile(r"\bno\b", re.I)
 
 
 def normalize_answer(ans: str, qtype: str) -> str:
-    """Resposta fechada -> 'yes'/'no'. O HF traz frases ('... The answer is Yes'); o tipo confirma."""
+    """Closed-form answer -> 'yes'/'no'. The HF copy has sentences ('... The answer is Yes'); the type confirms it."""
     a = str(ans)
     if qtype == "closed_yes" or (_YES.search(a) and not _NO.search(a.split("answer is")[-1] if "answer is" in a else a)):
         return "yes"

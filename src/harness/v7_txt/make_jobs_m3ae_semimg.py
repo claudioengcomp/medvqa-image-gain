@@ -13,4 +13,4 @@ for b in C.ORDEM:
         o = "%s/%s_TXT.json" % (R, n)
         pr.append({"name": "predict_" + n, "env": "lapa", "reserve_mib": RES_PRED, "output": o, "log": "%s/sched/%s.predict.log" % (L, n), "cwd": cwd, "cmd": [H + "/m3ae_semimg_predict.py", b, str(s), o], "after": "train_" + n, "skip_order": True})
 jobs = tr + pr
-json.dump(jobs, open(L + "/jobs_m3ae_semimg.json", "w"), indent=1); print(len(tr), "treinos +", len(pr), "predicoes")
+json.dump(jobs, open(L + "/jobs_m3ae_semimg.json", "w"), indent=1); print(len(tr), "trainings +", len(pr), "predictions")

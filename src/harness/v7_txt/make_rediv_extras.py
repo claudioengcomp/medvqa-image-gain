@@ -20,7 +20,7 @@ assert sum(x == y for x, y in zip(ha, hb)) == 0 and sorted(ha) == sorted(hb)
 pairs = [{"qid": int(q), "qid_image": a["image_id"][i], "donor_image": b["image_id"][i], "received_sha256": hb[i]} for i in range(len(a)) for q in a["question_id"][i]]
 os.makedirs(f"{C2D}/data_root"); os.symlink(c2, f"{C2D}/data_root/vqa_vqa_rad_test.arrow")
 for s in ("train", "val"): os.symlink(f"{RD}/vqa_vqa_rad_{s}.arrow", f"{C2D}/data_root/vqa_vqa_rad_{s}.arrow")
-man = {"header": {"benchmark": "VQARAD_REDIV", "condition": "C2", "source_arrow": TE, "source_arrow_sha256": sha(TE), "c2_arrow": c2, "c2_arrow_sha256": sha(c2), "seed": SEED, "funcao": "harness.interventions.make_c2_shuffled_pairs.shuffle_image_pairs (mesma dos C2 do p0)",
+man = {"header": {"benchmark": "VQARAD_REDIV", "condition": "C2", "source_arrow": TE, "source_arrow_sha256": sha(TE), "c2_arrow": c2, "c2_arrow_sha256": sha(c2), "seed": SEED, "funcao": "harness.interventions.make_c2_shuffled_pairs.shuffle_image_pairs (same as the C2 of p0)",
                   "images": len(a), "entries": len(pairs), "images_that_kept_their_own": 0, "sha_multiset_matches_c0": True, "load_condition_dataset_n": len(load_condition_dataset(c2)), "m3ae_data_root": f"{C2D}/data_root", "t": time.strftime("%Y-%m-%d %H:%M:%S"), "script": __file__, "script_sha256": sha(__file__)}, "pairs": pairs}
 json.dump(man, open(f"{C2D}/C2_manifest_VQARAD_REDIV.json", "w"), indent=1)
 ZD = f"{RD}/zeroshot_fechadas"; os.makedirs(ZD, exist_ok=False); rows = []

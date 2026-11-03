@@ -12,7 +12,7 @@ for b, B in (("heal", "HEAL"), ("mimic", "MIMIC")):
             n = line % s + "_C2v2"; out = f"{PJ}/results/{n}.json"
             J.append({"name": n, "env": "circle", "reserve_mib": 6144, "env_extra": {"HF_HUB_OFFLINE": "1"}, "output": out, "skip_order": True, "log": f"{PJ}/logs/troca2/{n}.log",
                       "cmd": ["-m", "harness.extract_predictions_circle", "--model", fam, "--peft", peft, "--dataset", B, "--condition", "C2", "--condition-arrow", arrow, "--adapter-dir", ad[fam] % s, "--batch-size", "4", "--progress-checkpoint", f"{PJ}/results/.progress/{n}.jsonl", "--output", out],
-                      "meta": {"line": line % s, "condition": "C2 (troca refeita, image_swap_v2)", "base_model": {"QWEN2VL": "Qwen/Qwen2-VL-2B-Instruct", "SMOLVLM": "HuggingFaceTB/SmolVLM2-2.2B-Instruct"}[fam], "adapter_dir": ad[fam] % s, "input_arrow": arrow, "input_arrow_sha256_expected": sh, "dtype": "bf16 (med_vlm/models/loader.py)"}})
+                      "meta": {"line": line % s, "condition": "C2 (swap redone, image_swap_v2)", "base_model": {"QWEN2VL": "Qwen/Qwen2-VL-2B-Instruct", "SMOLVLM": "HuggingFaceTB/SmolVLM2-2.2B-Instruct"}[fam], "adapter_dir": ad[fam] % s, "input_arrow": arrow, "input_arrow_sha256_expected": sh, "dtype": "bf16 (med_vlm/models/loader.py)"}})
     for s in range(3):
         n = f"M3AE_{B}_seed{s}_C2v2"; out = f"{PJ}/results/{n}.json"
         J.append({"name": n, "env": "lapa", "reserve_mib": 8192, "output": out, "log": f"{PJ}/logs/troca2/{n}.log", "cwd": f"{W}/v7_txt/worktree_m3ae", "skip_order": True,

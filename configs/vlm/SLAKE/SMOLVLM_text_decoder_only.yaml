@@ -1,5 +1,5 @@
 # v7_txt (2026-10-09): text-only arm -- copy of the YAML of the published frozen row
-# (smolvlm2_lora_ft_* (regex FT do LM, v6_tower_heal) sobre med_vlm/configs/smolvlm2_lora_slake.yaml),
+# (smolvlm2_lora_ft_* (LM FT regex, v6_tower_heal) on med_vlm/configs/smolvlm2_lora_slake.yaml),
 # changing only: data.no_image, peft_config.target_modules (LoRA only on the language model), train.max_length (8192/2048 -> 1024,
 # without image tokens), checkpoint_every/checkpoint_dir (intermediate states in tmp/v7) and the output paths.
 run_name: smolvlm2_lora_txt_slake
@@ -35,7 +35,7 @@ logging:
 outputs_dir: ${MEDVQA_ROOT}/v7_txt
 results_json_dir: ${MEDVQA_ROOT}/v7_txt/logs
 
-# Image preprocessing applied once at dataset load (cached). Sem efeito sob no_image (mantido igual ao publicado).
+# Image preprocessing applied once at dataset load (cached). No effect under no_image (kept identical to the published config).
 preprocessing:
   denoise: true
   denoise_method: "gaussian"
@@ -43,7 +43,7 @@ preprocessing:
   clahe_clip_limit: 2.0
   clahe_tile_grid_size: [8, 8]
 
-# Online training-time augmentation (applied per batch, training only). Sem efeito sob no_image.
+# Online training-time augmentation (applied per batch, training only). No effect under no_image.
 augmentation:
   enabled: true
   rotation_degrees: 5

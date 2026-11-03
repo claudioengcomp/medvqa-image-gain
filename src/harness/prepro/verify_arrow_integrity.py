@@ -84,7 +84,7 @@ if __name__ == "__main__":
             if r["error"]:
                 print(f"FAIL {filename}: {r['error']}")
             else:
-                print(f"FAIL {filename}: esperado {r['expected']}, achado {r['actual']}")
+                print(f"FAIL {filename}: expected {r['expected']}, found {r['actual']}")
 
     if any_failed:
         raise SystemExit(

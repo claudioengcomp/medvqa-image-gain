@@ -45,7 +45,7 @@ TXT_ARMS = {"txt", "smol_txt"}
 SFX = "vqarad_rediv"   # suffix of this scheduler's state/log files
 for d in (LOGS, MODELS, RESULTS, PROG): d.mkdir(parents=True, exist_ok=True)
 def now(): return time.strftime("%Y-%m-%d %H:%M:%S")
-DRY = False   # salvaguarda 11/10: --dry-run => log/alert so imprimem, nada gravado
+DRY = False   # safeguard 11/10: --dry-run => log/alert only print, nothing written
 def log(e, **kw):
     r = {"t": now(), "event": ("dry:" if DRY else "") + e, **kw}
     if not DRY: open(LOGS / ("train_schedule_%s.jsonl" % SFX), "a").write(json.dumps(r, default=str) + "\n")
@@ -199,7 +199,7 @@ class Sched:
     def can_launch(self, j, gpu, q):
         if self.halt: return False, "halt: %s" % self.halt
         if not is_txt(j) and gpu not in IMG_GPUS: return False, "job with image only on GPU %s (the candidate, 15/10)" % IMG_GPUS
-        if False and q[gpu]["util"] >= UTIL_SAT: return False, "placa %d saturada por terceiros (util %d %%)" % (gpu, q[gpu]["util"])
+        if False and q[gpu]["util"] >= UTIL_SAT: return False, "GPU %d saturated by third parties (util %d %%)" % (gpu, q[gpu]["util"])
         ours = self.ours_on(gpu)
         if len(ours) >= self.slots: return False, "slots"
         if any(not self.entered(o) for o in ours): return False, "stagger: %s still initialising" % ",".join(o["name"] for o in ours if not self.entered(o))
@@ -222,7 +222,7 @@ class Sched:
         time.sleep(20); q2 = gpu_query(); ok, why = self.can_launch(j, gpu, q2)
         if not ok or q2[gpu]["used"] > q1[gpu]["used"] + 1024: log("launch_refused", job=j["name"], gpu=gpu, why=why if not ok else "memory rising on the card (%d -> %d MiB)" % (q1[gpu]["used"], q2[gpu]["used"])); return False
         sat = q1[gpu]["util"] >= UTIL_SAT and q2[gpu]["util"] >= UTIL_SAT
-        if False and sat: log("launch_refused", job=j["name"], gpu=gpu, why="placa saturada nas duas leituras (util %d/%d %%)" % (q1[gpu]["util"], q2[gpu]["util"])); return False
+        if False and sat: log("launch_refused", job=j["name"], gpu=gpu, why="GPU saturated in both readings (util %d/%d %%)" % (q1[gpu]["util"], q2[gpu]["util"])); return False
         env = {**os.environ, **ENV, "CUDA_VISIBLE_DEVICES": str(gpu)}; logf = open(j["log"], "ab")
         p = subprocess.Popen(["nice", "-n", "19", "ionice", "-c3"] + cmd_of(j), cwd=str(W), env=env, stdout=logf, stderr=subprocess.STDOUT, stdin=subprocess.DEVNULL, start_new_session=True)
         j["libcuda"] = libcuda_info(env)   # 12/10
@@ -232,7 +232,7 @@ class Sched:
     def pick_gpu(self, j, q):
         cands = [g for g in (GPUS if is_txt(j) else IMG_GPUS) if len(self.ours_on(g)) < self.slots]
         # preference: non-saturated GPU (util < 95 %), fewer of our processes, less memory used
-        return sorted(cands, key=lambda g: (g not in IMG_GPUS, q[g]["util"] >= UTIL_SAT, len(self.ours_on(g)), q[g]["used"]))   # a 3 primeiro
+        return sorted(cands, key=lambda g: (g not in IMG_GPUS, q[g]["util"] >= UTIL_SAT, len(self.ours_on(g)), q[g]["used"]))   # GPU 3 first
     def try_launches(self):
         q = gpu_query()
         for j in sorted(self.jobs(status="queued"), key=lambda x: (not (x["kind"] == "train" and (x.get("retries", 0) > 0 or x.get("oom_step0", 0) > 0)), x["kind"] != "predict", x["order"])):   # revision 10/10 20:45 (c): dead training relaunches before any prediction
@@ -261,7 +261,7 @@ class Sched:
             if not oom0: j["retries"] += 1
             if j["retries"] <= 1 and j["oom_step0"] <= 5:
                 died = j["log"] + ".died%d" % (j["retries"] + j["oom_step0"]); shutil.copy2(j["log"], died); open(j["log"], "w").close()
-                j.update(status="queued", pid=None, note="caiu no passo %s (log em %s); reinicio do zero" % (step, died)); log("died_relaunch", job=j["name"], step=step, last_loss=loss, log_kept=died, oom_step0=oom0, oom_step0_count=j["oom_step0"], retries=j["retries"])
+                j.update(status="queued", pid=None, note="died at step %s (log in %s); restart from scratch" % (step, died)); log("died_relaunch", job=j["name"], step=step, last_loss=loss, log_kept=died, oom_step0=oom0, oom_step0_count=j["oom_step0"], retries=j["retries"])
             else:
                 j["status"] = "failed"; alert("died_%s" % j["name"], "row failed for the 2nd time at step %s (log %s); it will not be relaunched." % (step, j["log"]))
         self.save()
@@ -269,7 +269,7 @@ class Sched:
         out = Path(j["output"])
         if out.exists():
             try: self.stamp_predict(j); j["status"] = "done"; log("done", job=j["name"], gpu=j["gpu"], duration_s=j["duration_s"], peak_mib=j["peak_mib"], accuracy=json.loads(out.read_text()).get("accuracy"), n=json.loads(out.read_text()).get("n"))
-            except Exception as e: j["status"] = "failed"; alert("stamp_%s" % j["name"], "carimbo falhou: %r" % (e,))
+            except Exception as e: j["status"] = "failed"; alert("stamp_%s" % j["name"], "stamp failed: %r" % (e,))
         else:
             txt = open(j["log"], "rb").read()[-200000:].decode("utf-8", "ignore"); oom0 = any(k in txt.lower() for k in ("out of memory", "busy or unavailable", "cudaerrordevicesunavailable", "cudaerrormemoryallocation", "acceleratorerror"))
             j["oom_step0"] = j.get("oom_step0", 0) + (1 if oom0 else 0)
@@ -277,7 +277,7 @@ class Sched:
             if j["retries"] <= 1 and j["oom_step0"] <= 5:
                 died = j["log"] + ".died%d" % (j["retries"] + j["oom_step0"]); shutil.copy2(j["log"], died); open(j["log"], "w").close()
                 j.update(status="queued", pid=None); log("died_relaunch", job=j["name"], oom=oom0, retries=j["retries"])
-            else: j["status"] = "failed"; alert("died_%s" % j["name"], "predicao caiu 2x (log %s)" % j["log"])
+            else: j["status"] = "failed"; alert("died_%s" % j["name"], "prediction died twice (log %s)" % j["log"])
         self.save()
     def provenance(self, j, ad):
         return {"line": j["line"], "arm": ARM_DESC[j["arm"]], "peft_label": j.get("peft_label"), "benchmark": "VQA-RAD, original package (M3AE/data/finetune_data/vqa_rad), M3AE split 2 758/306, test 451 (single source, 15/10)",
@@ -296,8 +296,8 @@ class Sched:
                            "retries": j["retries"], "note": j.get("note"), "published_reference": "YAML copied from the published configuration of the same family (v7_txt/article_runs/configs/configs_vqarad_rediv.json), changing only name, data.arrows and output paths"}
         d["provenance"]["tower_frozen_verified"] = (keys["visual"] == 0 and keys["connector"] == 0) if j["arm"] not in ADAPTED_TOWER else None
         oj.write_text(json.dumps(d, indent=1, default=str))
-        if not d["provenance"]["trainable_matches_expected"]: alert("params_%s" % j["name"], "parametros treinaveis %s != esperado %s" % (trainable, EXPECTED_TRAINABLE[j["arm"]]))
-        if j["arm"] not in ADAPTED_TOWER and not d["provenance"]["tower_frozen_verified"]: alert("tower_%s" % j["name"], "chaves do adapter: %s" % keys)
+        if not d["provenance"]["trainable_matches_expected"]: alert("params_%s" % j["name"], "trainable parameters %s != expected %s" % (trainable, EXPECTED_TRAINABLE[j["arm"]]))
+        if j["arm"] not in ADAPTED_TOWER and not d["provenance"]["tower_frozen_verified"]: alert("tower_%s" % j["name"], "adapter keys: %s" % keys)
     def stamp_predict(self, j):
         ad = MODELS / j["train"] / "adapter_model.safetensors"; out = Path(j["output"]); d = json.loads(out.read_text())
         d["provenance"] = {**self.provenance(j, ad), "condition": j["cond"], "input_arrow": TEST_ARROW[j["cond"]], "input_arrow_sha256": sha_file(TEST_ARROW[j["cond"]]), "input_arrow_sha256_expected_prefix": TEST_ARROW_SHA[j["cond"]],
@@ -307,7 +307,7 @@ class Sched:
     def sample(self):
         pm = proc_mem()
         for j in self.jobs(status="running"):
-            if j.get("pid") and tree_mem(pm, j["pid"]): j["peak_mib"] = max(j["peak_mib"], tree_mem(pm, j["pid"]))   # 12/10: inclui descendentes
+            if j.get("pid") and tree_mem(pm, j["pid"]): j["peak_mib"] = max(j["peak_mib"], tree_mem(pm, j["pid"]))   # 12/10: includes child processes
             if j["kind"] == "train" and not j.get("entered_logged") and self.entered(j):
                 j["entered_logged"] = True; log("entered_training", job=j["name"], gpu=j["gpu"], step=last_step_loss(j["log"])[0], seconds=round(time.time() - j["start_ts"]), mem_mib_now=pm.get(j["pid"]))
             if not alive(j["pid"]): self.finish(j)
@@ -320,7 +320,7 @@ class Sched:
                 st, ls = last_step_loss(j["log"]) if j["kind"] == "train" else (None, None)
                 f.write("%s,%s,%s,%s,%s,%s,%s,%.1f,%s,%s\n" % (now(), j["gpu"], j["pid"], tree_mem(pm, j["pid"]), q[j["gpu"]]["used"], q[j["gpu"]]["total"], q[j["gpu"]]["util"], load1(), st, ls))
     def status_md(self):
-        q = gpu_query(); lines = ["# article_runs vqarad_image_split: VQA-RAD redividido (_REDIV) -- %s" % now(), "", "load1 %.1f | %s | halt: %s" % (load1(), df_h(), self.halt), "gpu: %s" % q, ""]
+        q = gpu_query(); lines = ["# article_runs vqarad_image_split: VQA-RAD re-split (_REDIV) -- %s" % now(), "", "load1 %.1f | %s | halt: %s" % (load1(), df_h(), self.halt), "gpu: %s" % q, ""]
         for j in sorted(self.st["jobs"], key=lambda x: x["order"]):
             step, loss = last_step_loss(j["log"]) if j["kind"] == "train" else (None, None)
             el = (time.time() - j["start_ts"]) / 3600 if j.get("start_ts") and j["status"] == "running" else None
@@ -335,15 +335,15 @@ class Sched:
             print("estados:", {s: len(self.jobs(status=s)) for s in ("done", "failed", "running", "queued")}, flush=True)
             for j in self.st["jobs"]:
                 if j["status"] in ("running", "failed"): print("estado:", j["status"], j["name"], "gpu", j.get("gpu"), "pid", j.get("pid"), "vivo" if j.get("pid") and os.path.exists("/proc/%d" % j["pid"]) else "", flush=True)
-            for j in sorted(self.jobs(status="queued"), key=lambda x: (not (x["kind"] == "train" and (x.get("retries", 0) > 0 or x.get("oom_step0", 0) > 0)), x["kind"] != "predict", x["order"])): print("fila:", j["name"], j["kind"], flush=True)
+            for j in sorted(self.jobs(status="queued"), key=lambda x: (not (x["kind"] == "train" and (x.get("retries", 0) > 0 or x.get("oom_step0", 0) > 0)), x["kind"] != "predict", x["order"])): print("queue:", j["name"], j["kind"], flush=True)
             print("end of the dry cycle (no nvidia-smi): nothing launched, nothing written", flush=True); return
         print(json.dumps({"dry_run": now(), "pid": os.getpid(), "only": self.only, "slots": self.slots, "peer_state": self.peer_state, "consts": {"CAP_MIB": CAP_MIB, "CAP_PREDICT_IMG_TRAIN_MIB": 30720, "LOAD_CAP": LOAD_CAP, "LOAD_DELTA": LOAD_DELTA, "DISK_MIN_GB": DISK_MIN_GB, "UTIL_SAT": UTIL_SAT, "ENTERED_STEP": ENTERED_STEP, "POLL": POLL}, "reserve": self.reserve, "m3ae_state": self.m3ae_state, "m3ae_waiting": self.m3ae_waiting(), "expected_trainable": EXPECTED_TRAINABLE, "reserve_src": RESERVE_SRC, "img_gpus": IMG_GPUS, "use_driver_workaround": USE_WA, "nvsmi": NVSMI, "load1": round(load1(), 1), "df": df_h(), "gpu": gpu_query(), "versions": self.vers}, default=str), flush=True)
         q = gpu_query()
-        for g in GPUS: print("placa", g, "used", q[g]["used"], "util", q[g]["util"], "na placa:", [(o["name"], o.get("pid"), "pico", o.get("peak_mib"), "entrou" if self.entered(o) else "iniciando") for o in self.ours_on(g)], flush=True)
+        for g in GPUS: print("gpu", g, "used", q[g]["used"], "util", q[g]["util"], "on gpu:", [(o["name"], o.get("pid"), "peak", o.get("peak_mib"), "entered" if self.entered(o) else "starting") for o in self.ours_on(g)], flush=True)
         print("estados:", {s: len(self.jobs(status=s)) for s in ("done", "failed", "running", "queued")}, flush=True)
         for j in sorted(self.jobs(status="queued"), key=lambda x: (not (x["kind"] == "train" and (x.get("retries", 0) > 0 or x.get("oom_step0", 0) > 0)), x["kind"] != "predict", x["order"])):
-            print("fila:", j["name"], j["kind"], "reserva", self.reserve[j["fam"]], "" if self.active(j) else "| inativo (--only)", ("| training %s not done yet" % j["train"]) if (j["kind"] == "predict" and not any(x["name"] == j["train"] and x["status"] == "done" for x in self.st["jobs"])) else "", {g: self.can_launch(j, g, q) for g in GPUS}, flush=True)
-        print("fim do ciclo a seco: nada lancado, nada gravado", flush=True)
+            print("queue:", j["name"], j["kind"], "reserve", self.reserve[j["fam"]], "" if self.active(j) else "| inactive (--only)", ("| training %s not done yet" % j["train"]) if (j["kind"] == "predict" and not any(x["name"] == j["train"] and x["status"] == "done" for x in self.st["jobs"])) else "", {g: self.can_launch(j, g, q) for g in GPUS}, flush=True)
+        print("end of the dry cycle: nothing launched, nothing written", flush=True)
     def run(self):
         while True:
             self.sample()

@@ -105,7 +105,7 @@ def extract_predictions(
     # short instruction (v7_zeroshot, 10/10/2026): system prompt (templates that accept it) or question prefix (LLaVA-Med)
     if instruction and instruction_mode == "system":
         spec = MODEL_SPECS[model_name](no_image=no_image, system_prompt=instruction)
-    elif instruction and instruction_mode == "system_append":   # MedVLThinker _instr: prompt do VISAPP + instrucao curta
+    elif instruction and instruction_mode == "system_append":   # MedVLThinker _instr: VISAPP prompt + short instruction
         from med_vlm.training.spec_registry import _MEDVLTHINKER_SYSTEM_PROMPT
         spec = MODEL_SPECS[model_name](no_image=no_image, system_prompt=_MEDVLTHINKER_SYSTEM_PROMPT + " " + instruction.strip())
     else:

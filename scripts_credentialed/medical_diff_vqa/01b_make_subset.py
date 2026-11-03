@@ -45,7 +45,7 @@ cmp_re = re.compile(r"\b(?:compar|previous|prior|reference|change|earlier|interv
 rep["step1"]["comparison_mentions_removed"] = int(q.question.str.contains(cmp_re).sum())
 q = q[~q.question.str.contains(cmp_re)]
 
-# 2. tipos e vocabulario
+# 2. types and vocabulary
 vocab = {}
 rep["step2"] = {}
 for t in ("location", "level", "type"):
@@ -98,7 +98,7 @@ rep["step3"]["ViewPosition_counts_before"] = q.ViewPosition.fillna("NA").replace
 q = q[q.ViewPosition.isin(["PA", "AP"])].copy()
 rep["step3"]["kept"] = int(len(q))
 
-# 4. split por subject_id (MIMIC-CXR-JPG)
+# 4. split by subject_id (MIMIC-CXR-JPG)
 subj = sp.groupby("subject_id").split.agg(lambda s: sorted(set(s))).reset_index()
 cross = subj[subj.split.str.len() > 1]
 rep["step4"] = {"split_csv_subjects": int(len(subj)), "split_csv_subjects_in_two_splits": int(len(cross)),
@@ -123,7 +123,7 @@ q = q.drop(columns=["split_mimic"]).reset_index(drop=True)
 pool_cols = ["subject_id", "study_id", "dicom_id", "image_path", "question_type", "template_id", "template", "question", "answer", "answer_type", "split", "ViewPosition", "ref_id"]
 q[pool_cols].to_parquet(DATA / "pool_single_image_all_splits.parquet", index=False)
 
-# 5. amostragem
+# 5. sampling
 rng = np.random.default_rng(SEED)
 
 
@@ -158,7 +158,7 @@ for s, (n_q, n_img, cap) in TARGET.items():
     items[s] = df[["qid"] + pool_cols]
     items[s].to_parquet(DATA / f"items_{s}.parquet", index=False)
 
-# verificacoes
+# checks
 for a in items:
     for b in items:
         if a < b:
@@ -175,24 +175,24 @@ json.dump(rep, open(AN / "subset_report.json", "w"), indent=1, ensure_ascii=Fals
 
 # docs/subset.md
 L = ["# Single-image MIMIC/Diff-VQA subset (v7_mimic)", "",
-     f"Gerado em {rep['provenance']['date']} na {rep['provenance']['host']} by `scripts/01b_make_subset.py`, seed {SEED}. Raw numbers in `analysis/subset_report.json`.",
-     f"Fixed vocabulary of open questions (frequency ≥ {MIN_FREQ} na tabela inteira e ≤ {MAX_WORDS} palavras): "
-     + "; ".join(f"{t}: {rep['step2'][t]['n_vocab']} respostas de {rep['step2'][t]['n_distinct_all']} ({100*rep['step2'][t]['coverage_rows']:.1f} % of rows)" for t in ("location", "level", "type")) + ". Lista em `data/open_answer_vocab_fixed.json`.", "",
-     "## Funil",
-     f"- Linhas: {rep['inputs']['pair_questions_rows']}; `difference` removidas: {rep['step1']['difference_removed']}; mentions of comparison outside difference: {rep['step1']['comparison_mentions_removed']}.",
-     f"- Removidas `abnormality`: {rep['step2']['removed_abnormality']}; `view` aberta (which view): {rep['step2']['removed_view_open']}; open questions outside the vocabulary: {rep['step2']['removed_open_out_of_vocab']}. Mantidas: {rep['step2']['kept']}.",
-     f"- Sem dicom em mimic_all: {rep['step3']['questions_without_dicom']}; ViewPosition antes do filtro: {rep['step3']['ViewPosition_counts_before']}; mantidas PA/AP: {rep['step3']['kept']}.",
-     f"- Split CSV do MIMIC-CXR-JPG: {rep['step4']['split_csv_subjects']} pacientes, {rep['step4']['split_csv_subjects_in_two_splits']} em dois splits" + (f" (moved to the split with more studies: {rep['step4'].get('moved_subjects')})" if len(cross) else "") + f"; questions without split: {rep['step4']['questions_without_split']}; agreement with the `split` of mimic_all: {100*rep['step4']['mimic_all_split_agrees_with_split_csv_frac']:.1f} %.",
-     f"- Eligible pool by split (questions): {rep['step4']['pool_by_split']}; images: {rep['step4']['pool_images_by_split']}; pacientes: {rep['step4']['pool_subjects_by_split']}.",
-     f"- Pool por split × tipo: {rep['step4']['pool_by_split_type']}", "",
-     "## Tamanhos do subconjunto", "| split | questions | images | studies | patients | closed | open | max q/image | PA / AP |", "|---|---:|---:|---:|---:|---:|---:|---:|---|"]
+     f"Generated on {rep['provenance']['date']} on {rep['provenance']['host']} by `scripts/01b_make_subset.py`, seed {SEED}. Raw numbers in `analysis/subset_report.json`.",
+     f"Fixed vocabulary of open questions (frequency ≥ {MIN_FREQ} in the whole table and ≤ {MAX_WORDS} words): "
+     + "; ".join(f"{t}: {rep['step2'][t]['n_vocab']} answers out of {rep['step2'][t]['n_distinct_all']} ({100*rep['step2'][t]['coverage_rows']:.1f} % of rows)" for t in ("location", "level", "type")) + ". List in `data/open_answer_vocab_fixed.json`.", "",
+     "## Funnel",
+     f"- Rows: {rep['inputs']['pair_questions_rows']}; `difference` removed: {rep['step1']['difference_removed']}; mentions of comparison outside difference: {rep['step1']['comparison_mentions_removed']}.",
+     f"- Removed `abnormality`: {rep['step2']['removed_abnormality']}; open `view` (which view): {rep['step2']['removed_view_open']}; open questions outside the vocabulary: {rep['step2']['removed_open_out_of_vocab']}. Kept: {rep['step2']['kept']}.",
+     f"- Without dicom in mimic_all: {rep['step3']['questions_without_dicom']}; ViewPosition before the filter: {rep['step3']['ViewPosition_counts_before']}; kept PA/AP: {rep['step3']['kept']}.",
+     f"- Split CSV of MIMIC-CXR-JPG: {rep['step4']['split_csv_subjects']} patients, {rep['step4']['split_csv_subjects_in_two_splits']} in two splits" + (f" (moved to the split with more studies: {rep['step4'].get('moved_subjects')})" if len(cross) else "") + f"; questions without split: {rep['step4']['questions_without_split']}; agreement with the `split` of mimic_all: {100*rep['step4']['mimic_all_split_agrees_with_split_csv_frac']:.1f} %.",
+     f"- Eligible pool by split (questions): {rep['step4']['pool_by_split']}; images: {rep['step4']['pool_images_by_split']}; patients: {rep['step4']['pool_subjects_by_split']}.",
+     f"- Pool by split × type: {rep['step4']['pool_by_split_type']}", "",
+     "## Subset sizes", "| split | questions | images | studies | patients | closed | open | max q/image | PA / AP |", "|---|---:|---:|---:|---:|---:|---:|---:|---|"]
 for s in ("train", "val", "test"):
     r = rep["step5"][s]
     L.append(f"| {s} | {r['n_questions']} | {r['n_images']} | {r['n_studies']} | {r['n_subjects']} | {r['by_answer_type'].get('closed',0)} | {r['by_answer_type'].get('open',0)} | {r['max_q_per_image']} | {r['ViewPosition'].get('PA',0)} / {r['ViewPosition'].get('AP',0)} |")
-L += ["", "Por tipo: " + "; ".join(f"{s}: {rep['step5'][s]['by_type']}" for s in ("train", "val", "test")),
-      "", f"Imagens distintas a baixar: {rep['step5']['total_images']} (≈ {rep['step5']['est_gb_at_1.5MB']} GB at 1,5 MB/image). List: `data/image_list.txt`.",
+L += ["", "By type: " + "; ".join(f"{s}: {rep['step5'][s]['by_type']}" for s in ("train", "val", "test")),
+      "", f"Distinct images to download: {rep['step5']['total_images']} (≈ {rep['step5']['est_gb_at_1.5MB']} GB at 1,5 MB/image). List: `data/image_list.txt`.",
       "Disjointness: no subject_id and no dicom_id in two splits (assert in the script).", "",
-      "## Templates", "| id | tipo | template | train | val | test |", "|---|---|---|---:|---:|---:|"]
+      "## Templates", "| id | type | template | train | val | test |", "|---|---|---|---:|---:|---:|"]
 allit = pd.concat(items.values())
 tt = allit.groupby(["template_id", "question_type", "template", "split"]).size().unstack("split").fillna(0).astype(int)
 for (tid, ty, tp), r in tt.iterrows():

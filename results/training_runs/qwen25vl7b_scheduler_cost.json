@@ -1,0 +1,600 @@
+{
+ "measure": "wall-clock duration of the training job and peak GPU memory of its process tree, both recorded by the job scheduler (the rule of the paper's cost figures)",
+ "cost": {
+  "HEAL / A_frozen": {
+   "n": 3,
+   "mean_time_h": 6.01,
+   "mean_peak_gb": 20.7,
+   "peak_min_max_gb": [
+    20.69,
+    20.71
+   ],
+   "gpus": [
+    "0",
+    "1"
+   ],
+   "per_seed": [
+    {
+     "seed": 0,
+     "gpu": 0,
+     "duration_s": 19697.9,
+     "peak_mib": 21208
+    },
+    {
+     "seed": 1,
+     "gpu": 0,
+     "duration_s": 20275.4,
+     "peak_mib": 21188
+    },
+    {
+     "seed": 2,
+     "gpu": 1,
+     "duration_s": 24984.7,
+     "peak_mib": 21188
+    }
+   ]
+  },
+  "HEAL / A_ft": {
+   "n": 3,
+   "mean_time_h": 6.16,
+   "mean_peak_gb": 20.78,
+   "peak_min_max_gb": [
+    20.78,
+    20.78
+   ],
+   "gpus": [
+    "0",
+    "1"
+   ],
+   "per_seed": [
+    {
+     "seed": 0,
+     "gpu": 1,
+     "duration_s": 20552.6,
+     "peak_mib": 21282
+    },
+    {
+     "seed": 1,
+     "gpu": 1,
+     "duration_s": 20702.4,
+     "peak_mib": 21282
+    },
+    {
+     "seed": 2,
+     "gpu": 0,
+     "duration_s": 25297.7,
+     "peak_mib": 21282
+    }
+   ]
+  },
+  "HEAL / A_text": {
+   "n": 3,
+   "mean_time_h": 1.59,
+   "mean_peak_gb": 16.64,
+   "peak_min_max_gb": [
+    16.62,
+    16.66
+   ],
+   "gpus": [
+    "0",
+    "1"
+   ],
+   "per_seed": [
+    {
+     "seed": 0,
+     "gpu": 1,
+     "duration_s": 5537.0,
+     "peak_mib": 17018
+    },
+    {
+     "seed": 1,
+     "gpu": 1,
+     "duration_s": 5939.4,
+     "peak_mib": 17038
+    },
+    {
+     "seed": 2,
+     "gpu": 0,
+     "duration_s": 5746.5,
+     "peak_mib": 17058
+    }
+   ]
+  },
+  "KVASIR / A_frozen": {
+   "n": 3,
+   "mean_time_h": 15.8,
+   "mean_peak_gb": 21.12,
+   "peak_min_max_gb": [
+    20.77,
+    21.82
+   ],
+   "gpus": [
+    "0",
+    "1",
+    "2"
+   ],
+   "per_seed": [
+    {
+     "seed": 0,
+     "gpu": 1,
+     "duration_s": 55127.5,
+     "peak_mib": 21268
+    },
+    {
+     "seed": 1,
+     "gpu": 2,
+     "duration_s": 57178.2,
+     "peak_mib": 22348
+    },
+    {
+     "seed": 2,
+     "gpu": 0,
+     "duration_s": 58321.9,
+     "peak_mib": 21268
+    }
+   ]
+  },
+  "KVASIR / A_ft": {
+   "n": 3,
+   "mean_time_h": 16.64,
+   "mean_peak_gb": 20.85,
+   "peak_min_max_gb": [
+    20.84,
+    20.86
+   ],
+   "gpus": [
+    "0",
+    "3"
+   ],
+   "per_seed": [
+    {
+     "seed": 0,
+     "gpu": 3,
+     "duration_s": 60889.7,
+     "peak_mib": 21362
+    },
+    {
+     "seed": 1,
+     "gpu": 0,
+     "duration_s": 57219.4,
+     "peak_mib": 21344
+    },
+    {
+     "seed": 2,
+     "gpu": 3,
+     "duration_s": 61591.0,
+     "peak_mib": 21344
+    }
+   ]
+  },
+  "KVASIR / A_text": {
+   "n": 3,
+   "mean_time_h": 5.28,
+   "mean_peak_gb": 16.72,
+   "peak_min_max_gb": [
+    16.68,
+    16.74
+   ],
+   "gpus": [
+    "1",
+    "2"
+   ],
+   "per_seed": [
+    {
+     "seed": 0,
+     "gpu": 2,
+     "duration_s": 18568.9,
+     "peak_mib": 17078
+    },
+    {
+     "seed": 1,
+     "gpu": 1,
+     "duration_s": 20435.7,
+     "peak_mib": 17138
+    },
+    {
+     "seed": 2,
+     "gpu": 2,
+     "duration_s": 18068.2,
+     "peak_mib": 17138
+    }
+   ]
+  },
+  "MIMIC / A_frozen": {
+   "n": 3,
+   "mean_time_h": 25.1,
+   "mean_peak_gb": 20.59,
+   "peak_min_max_gb": [
+    20.59,
+    20.6
+   ],
+   "gpus": [
+    "0",
+    "1"
+   ],
+   "per_seed": [
+    {
+     "seed": 0,
+     "gpu": 1,
+     "duration_s": 20525.1,
+     "peak_mib": 21088
+    },
+    {
+     "seed": 1,
+     "gpu": 1,
+     "duration_s": 23129.2,
+     "peak_mib": 21088
+    },
+    {
+     "seed": 2,
+     "gpu": 0,
+     "duration_s": 227432.6,
+     "peak_mib": 21090
+    }
+   ]
+  },
+  "MIMIC / A_ft": {
+   "n": 3,
+   "mean_time_h": 6.36,
+   "mean_peak_gb": 20.67,
+   "peak_min_max_gb": [
+    20.67,
+    20.69
+   ],
+   "gpus": [
+    "0",
+    "1"
+   ],
+   "per_seed": [
+    {
+     "seed": 0,
+     "gpu": 0,
+     "duration_s": 20971.9,
+     "peak_mib": 21162
+    },
+    {
+     "seed": 1,
+     "gpu": 0,
+     "duration_s": 22263.1,
+     "peak_mib": 21162
+    },
+    {
+     "seed": 2,
+     "gpu": 1,
+     "duration_s": 25402.1,
+     "peak_mib": 21182
+    }
+   ]
+  },
+  "MIMIC / A_text": {
+   "n": 3,
+   "mean_time_h": 1.68,
+   "mean_peak_gb": 16.51,
+   "peak_min_max_gb": [
+    16.48,
+    16.54
+   ],
+   "gpus": [
+    "0"
+   ],
+   "per_seed": [
+    {
+     "seed": 0,
+     "gpu": 0,
+     "duration_s": 5986.4,
+     "peak_mib": 16918
+    },
+    {
+     "seed": 1,
+     "gpu": 0,
+     "duration_s": 6877.8,
+     "peak_mib": 16938
+    },
+    {
+     "seed": 2,
+     "gpu": 0,
+     "duration_s": 5299.6,
+     "peak_mib": 16878
+    }
+   ]
+  },
+  "SLAKE / A_frozen": {
+   "n": 3,
+   "mean_time_h": 1.95,
+   "mean_peak_gb": 20.7,
+   "peak_min_max_gb": [
+    20.52,
+    20.79
+   ],
+   "gpus": [
+    "0",
+    "1"
+   ],
+   "per_seed": [
+    {
+     "seed": 0,
+     "gpu": 1,
+     "duration_s": 6085.1,
+     "peak_mib": 21012
+    },
+    {
+     "seed": 1,
+     "gpu": 1,
+     "duration_s": 9034.1,
+     "peak_mib": 21286
+    },
+    {
+     "seed": 2,
+     "gpu": 0,
+     "duration_s": 5913.4,
+     "peak_mib": 21286
+    }
+   ]
+  },
+  "SLAKE / A_ft": {
+   "n": 3,
+   "mean_time_h": 2.04,
+   "mean_peak_gb": 21.0,
+   "peak_min_max_gb": [
+    20.45,
+    21.68
+   ],
+   "gpus": [
+    "0",
+    "1"
+   ],
+   "per_seed": [
+    {
+     "seed": 0,
+     "gpu": 0,
+     "duration_s": 6277.4,
+     "peak_mib": 22202
+    },
+    {
+     "seed": 1,
+     "gpu": 0,
+     "duration_s": 9476.1,
+     "peak_mib": 20942
+    },
+    {
+     "seed": 2,
+     "gpu": 1,
+     "duration_s": 6240.5,
+     "peak_mib": 21362
+    }
+   ]
+  },
+  "SLAKE / A_text": {
+   "n": 3,
+   "mean_time_h": 0.5,
+   "mean_peak_gb": 16.89,
+   "peak_min_max_gb": [
+    16.86,
+    16.91
+   ],
+   "gpus": [
+    "0",
+    "1"
+   ],
+   "per_seed": [
+    {
+     "seed": 0,
+     "gpu": 0,
+     "duration_s": 1834.0,
+     "peak_mib": 17318
+    },
+    {
+     "seed": 1,
+     "gpu": 0,
+     "duration_s": 1800.7,
+     "peak_mib": 17260
+    },
+    {
+     "seed": 2,
+     "gpu": 1,
+     "duration_s": 1814.6,
+     "peak_mib": 17320
+    }
+   ]
+  },
+  "VQARAD_QLEVEL / A_frozen": {
+   "n": 3,
+   "mean_time_h": 1.02,
+   "mean_peak_gb": 20.75,
+   "peak_min_max_gb": [
+    20.75,
+    20.75
+   ],
+   "gpus": [
+    "0",
+    "2"
+   ],
+   "per_seed": [
+    {
+     "seed": 0,
+     "gpu": 0,
+     "duration_s": 4580.9,
+     "peak_mib": 21248
+    },
+    {
+     "seed": 1,
+     "gpu": 0,
+     "duration_s": 3246.9,
+     "peak_mib": 21248
+    },
+    {
+     "seed": 2,
+     "gpu": 2,
+     "duration_s": 3140.8,
+     "peak_mib": 21248
+    }
+   ]
+  },
+  "VQARAD_QLEVEL / A_ft": {
+   "n": 3,
+   "mean_time_h": 1.04,
+   "mean_peak_gb": 20.82,
+   "peak_min_max_gb": [
+    20.82,
+    20.82
+   ],
+   "gpus": [
+    "1"
+   ],
+   "per_seed": [
+    {
+     "seed": 0,
+     "gpu": 1,
+     "duration_s": 4302.5,
+     "peak_mib": 21322
+    },
+    {
+     "seed": 1,
+     "gpu": 1,
+     "duration_s": 3642.5,
+     "peak_mib": 21322
+    },
+    {
+     "seed": 2,
+     "gpu": 1,
+     "duration_s": 3250.1,
+     "peak_mib": 21322
+    }
+   ]
+  },
+  "VQARAD_QLEVEL / A_text": {
+   "n": 3,
+   "mean_time_h": 0.3,
+   "mean_peak_gb": 16.66,
+   "peak_min_max_gb": [
+    16.62,
+    16.68
+   ],
+   "gpus": [
+    "1",
+    "3"
+   ],
+   "per_seed": [
+    {
+     "seed": 0,
+     "gpu": 1,
+     "duration_s": 1370.7,
+     "peak_mib": 17018
+    },
+    {
+     "seed": 1,
+     "gpu": 1,
+     "duration_s": 945.3,
+     "peak_mib": 17078
+    },
+    {
+     "seed": 2,
+     "gpu": 3,
+     "duration_s": 903.2,
+     "peak_mib": 17078
+    }
+   ]
+  },
+  "VQARAD_REDIV / A_frozen": {
+   "n": 3,
+   "mean_time_h": 0.96,
+   "mean_peak_gb": 20.73,
+   "peak_min_max_gb": [
+    20.73,
+    20.73
+   ],
+   "gpus": [
+    "0",
+    "1"
+   ],
+   "per_seed": [
+    {
+     "seed": 0,
+     "gpu": 1,
+     "duration_s": 3256.9,
+     "peak_mib": 21228
+    },
+    {
+     "seed": 1,
+     "gpu": 0,
+     "duration_s": 3858.9,
+     "peak_mib": 21228
+    },
+    {
+     "seed": 2,
+     "gpu": 1,
+     "duration_s": 3228.3,
+     "peak_mib": 21228
+    }
+   ]
+  },
+  "VQARAD_REDIV / A_ft": {
+   "n": 3,
+   "mean_time_h": 0.97,
+   "mean_peak_gb": 20.8,
+   "peak_min_max_gb": [
+    20.8,
+    20.8
+   ],
+   "gpus": [
+    "0",
+    "1"
+   ],
+   "per_seed": [
+    {
+     "seed": 0,
+     "gpu": 0,
+     "duration_s": 3341.3,
+     "peak_mib": 21302
+    },
+    {
+     "seed": 1,
+     "gpu": 1,
+     "duration_s": 3786.1,
+     "peak_mib": 21302
+    },
+    {
+     "seed": 2,
+     "gpu": 0,
+     "duration_s": 3330.5,
+     "peak_mib": 21302
+    }
+   ]
+  },
+  "VQARAD_REDIV / A_text": {
+   "n": 3,
+   "mean_time_h": 0.27,
+   "mean_peak_gb": 16.66,
+   "peak_min_max_gb": [
+    16.64,
+    16.68
+   ],
+   "gpus": [
+    "0",
+    "1"
+   ],
+   "per_seed": [
+    {
+     "seed": 0,
+     "gpu": 1,
+     "duration_s": 920.4,
+     "peak_mib": 17078
+    },
+    {
+     "seed": 1,
+     "gpu": 1,
+     "duration_s": 1081.2,
+     "peak_mib": 17038
+    },
+    {
+     "seed": 2,
+     "gpu": 0,
+     "duration_s": 921.0,
+     "peak_mib": 17058
+    }
+   ]
+  }
+ },
+ "cost_source": "v7_txt/article_runs/qwen25vl7b/logs/infer_state_q25.json",
+ "cost_source_sha256": "738aa35cbdde5813fb6cdd2297cfd80aa8b92b9b6abbd714c5e3c8960c950f49"
+}

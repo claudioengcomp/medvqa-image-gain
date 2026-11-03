@@ -32,7 +32,7 @@ def split_train_val(records: list[dict], val_fraction: float = 0.1,
     of the total (rounded) goes to val; the rest to train. The union of the two
     is exactly `records`, with no overlap."""
     if not (0.0 < val_fraction < 1.0):
-        raise ValueError(f"val_fraction={val_fraction} deve estar em (0, 1)")
+        raise ValueError(f"val_fraction={val_fraction} must be in (0, 1)")
     records_sorted = sorted(records, key=lambda r: r["qid"])  # deterministic order before shuffling
     rng = random.Random(seed)
     shuffled = records_sorted.copy()
@@ -45,7 +45,7 @@ def split_train_val(records: list[dict], val_fraction: float = 0.1,
 
 def _parse_args():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--trainset", required=True, help="Caminho do trainset.json bruto (3064 registros)")
+    parser.add_argument("--trainset", required=True, help="Path of the raw trainset.json (3064 records)")
     parser.add_argument("--train-output", required=True)
     parser.add_argument("--val-output", required=True)
     parser.add_argument("--val-fraction", type=float, default=0.1)

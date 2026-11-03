@@ -6,7 +6,7 @@ import numpy as np
 from scipy import stats
 
 def mcnemar_midp(a: np.ndarray, b: np.ndarray) -> dict:
-    """a, b booleanos pareados (afirma sob c, afirma sob C0). b_ = a&~b, c_ = ~a&b. mid-p exato binomial."""
+    """a, b paired booleans (correct under c, correct under C0). b_ = a&~b, c_ = ~a&b. Exact binomial mid-p."""
     a = np.asarray(a, bool); b = np.asarray(b, bool); n10 = int((a & ~b).sum()); n01 = int((~a & b).sum()); n = n10 + n01
     if n == 0: return {"b": n10, "c": n01, "p_midp": 1.0}
     k = min(n10, n01); p = 2 * (stats.binom.cdf(k - 1, n, 0.5) + 0.5 * stats.binom.pmf(k, n, 0.5)) if n10 != n01 else 1.0

@@ -56,7 +56,7 @@ def atomic_answer(answer: str, qtype: str) -> str:
 
 
 def split_images(ann: pd.DataFrame, val_frac: float = VAL_FRAC, seed: int = SPLIT_SEED) -> dict[str, str]:
-    """image_id -> 'train'|'val'; estrato = (anatomia predominante, presenca de achado)."""
+    """image_id -> 'train'|'val'; stratum = (predominant anatomy, presence of a finding)."""
     rng = np.random.default_rng(seed)
     strata: dict[tuple, list[str]] = collections.defaultdict(list)
     for img, g in ann.groupby("image_id", sort=True):

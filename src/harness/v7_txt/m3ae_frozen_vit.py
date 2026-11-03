@@ -21,7 +21,7 @@ OUTJ = os.environ.get("M3AE_FROZEN_VIT_OUT", f"{PJ}/analysis/m3ae_frozen_vit.jso
 BASES = os.environ.get("M3AE_FROZEN_VIT_BASES", "SLAKE,VQARAD_REDIV,HEAL,MIMIC,KVASIR,VQARAD_QLEVEL").split(",")
 sha = lambda p: hashlib.sha256(open(p, "rb").read()).hexdigest(); SEEDS = np.random.RandomState(20260913).randint(0, 3, size=(2000, 3))
 PAT = ["is there", "are there", "have all polyps", "how many", "what type of", "what is the size", "where in the image", "does this image contain any finding", "what color is the anatomical landmark", "what color is the abnormality"]
-def baseline_string(b):   # identico a joint_ci.py
+def baseline_string(b):   # identical to joint_ci.py
     D = json.load(open(f"{PJ}/data/texto/{ {'HEAL': 'HEAL_TREINO', 'VQARAD_RADORIG': 'VQARAD'}.get(b, b) }.json")); tr, te = D["train_so_treino"], D["test"]
     tpl = lambda q: next((p for p in PAT if q.strip().lower().startswith(p)), None); byq = collections.defaultdict(collections.Counter); byt = collections.defaultdict(collections.Counter); g = collections.Counter()
     for x in tr: byq[NT(x["question"])][x["answer"]] += 1; g[x["answer"]] += 1; (byt[tpl(x["question"])].update([x["answer"]]) if b == "KVASIR" else None)

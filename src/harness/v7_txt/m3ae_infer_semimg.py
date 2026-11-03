@@ -18,7 +18,7 @@ def build_config(checkpoint, dataset_key, data_root, vqa_label_size, image_size=
     sys.argv = ["main.py", "with", "data_root=%s" % data_root, "num_gpus=1", "num_nodes=1", "task_finetune_%s" % dataset_key, "per_gpu_batchsize=16", "clip16", "text_roberta",
                 "image_size=%d" % image_size, "test_only=True", "tokenizer=downloaded/roberta-base", "load_path=%s" % checkpoint]
     if vqa_label_size is not None: sys.argv.append("vqa_label_size=%d" % vqa_label_size)
-    sys.argv.append("no_image=True")   # m3ae_no_image (opcao 2, A3/B1/C1/D1)
+    sys.argv.append("no_image=True")   # m3ae_no_image (option 2, A3/B1/C1/D1)
     from m3ae.config import ex
     cap = {}
     @ex.main
@@ -38,7 +38,7 @@ def main():
     ap.add_argument("--model-label", default="M3AE"); ap.add_argument("--extra", default="")
     a = ap.parse_args(); out_path = os.path.abspath(a.output); data_root = os.path.abspath(a.data_root).rstrip("/") + "/"
     test_arrow = os.path.join(data_root, "%s_test.arrow" % a.dataset_key); arrow_sha = sha256_file(test_arrow)
-    if a.arrow_sha256 and arrow_sha != a.arrow_sha256: print("arrow sha inesperado", arrow_sha); sys.exit(5)
+    if a.arrow_sha256 and arrow_sha != a.arrow_sha256: print("unexpected arrow sha", arrow_sha); sys.exit(5)
     sys.path.insert(0, HARNESS); sys.path.insert(0, WM); os.chdir(WM)
     import torch
     from harness.results_schema import validate_results_dict

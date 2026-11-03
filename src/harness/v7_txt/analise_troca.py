@@ -45,15 +45,15 @@ def main():
             for k in ("A_menos_A_swap", "A_swap_menos_A_text"):
                 vs = [r["_boot"][k] for r in B["linhas"] if r["familia"] == f]; m = np.mean(vs, axis=0); B["por_familia"][f][k]["ic_media_sementes"] = [float(np.percentile(m, 2.5)), float(np.percentile(m, 97.5))]
         for r in B["linhas"]: r.pop("_boot", None)
-        out["bases"][b] = B; print(b, len(B["linhas"]), "linhas;", len(B["ausentes"]), "ausentes", flush=True)
+        out["bases"][b] = B; print(b, len(B["linhas"]), "rows;", len(B["ausentes"]), "missing", flush=True)
     SUFX = os.environ.get("TROCA_SUFIXO", ""); os.makedirs(a.out + "/analysis", exist_ok=True); os.makedirs(a.out + "/docs", exist_ok=True); json.dump(out, open(a.out + f"/analysis/analise_troca{SUFX}.json", "w"), indent=1)
     p = lambda x: f"{100 * x:.1f}"; d = lambda x, c: f"{100 * x:+.1f} [{100 * c[0]:+.1f}, {100 * c[1]:+.1f}]"; ms = lambda v, sg=False: "-" if not v else ((f"{100 * v['mean']:+.1f}" if sg else f"{100 * v['mean']:.1f}") + (f" ({100 * v['sd']:.1f})" if v["sd"] is not None else ""))
-    M = ["# Swapped-image control (7-B), closed-form questions, 9 rows of the decomposition", "", f"Gerado {out['t']} (sha256 {out['script_sha256'][:12]}). A = accuracy with the image (cell A_ft; M3AE: full fine-tune); A_swap = with the swapped image (C2); A_text = text-decoder-only of the same family and seed. CI 95 % by bootstrap per image (2 000, seed 20260913). No interpretation.", ""]
+    M = ["# Swapped-image control (7-B), closed-form questions, 9 rows of the decomposition", "", f"Generated {out['t']} (sha256 {out['script_sha256'][:12]}). A = accuracy with the image (cell A_ft; M3AE: full fine-tune); A_swap = with the swapped image (C2); A_text = text-decoder-only of the same family and seed. CI 95 % by bootstrap per image (2 000, seed 20260913). No interpretation.", ""]
     for b, B in out["bases"].items():
-        M += [f"## {b} (fechadas {B['n_fechadas']})", "", "| row | n | A | A_text | A_swap [CI] | A - A_swap [CI] | A_swap - A_text [CI] |", "|---|---|---|---|---|---|---|"]
+        M += [f"## {b} (closed-form {B['n_fechadas']})", "", "| row | n | A | A_text | A_swap [CI] | A - A_swap [CI] | A_swap - A_text [CI] |", "|---|---|---|---|---|---|---|"]
         M += [f"| {r['linha']} | {r['n']} | {p(r['A'])} | {p(r['A_text'])} | {p(r['A_swap'])} [{p(r['A_swap_ic'][0])}, {p(r['A_swap_ic'][1])}] | {d(r['A_menos_A_swap'], r['A_menos_A_swap_ic'])} | {d(r['A_swap_menos_A_text'], r['A_swap_menos_A_text_ic'])} |" for r in B["linhas"]]
-        M += ["", "| familia | A | A_text | A_swap | A - A_swap | A_swap - A_text |", "|---|---|---|---|---|---|"] + [f"| {f} | {ms(v['A'])} | {ms(v['A_text'])} | {ms(v['A_swap'])} | {ms(v['A_menos_A_swap'], True)} | {ms(v['A_swap_menos_A_text'], True)} |" for f, v in B["por_familia"].items()]
-        if B["ausentes"]: M += ["", "Ausentes: " + json.dumps(B["ausentes"])]
+        M += ["", "| family | A | A_text | A_swap | A - A_swap | A_swap - A_text |", "|---|---|---|---|---|---|"] + [f"| {f} | {ms(v['A'])} | {ms(v['A_text'])} | {ms(v['A_swap'])} | {ms(v['A_menos_A_swap'], True)} | {ms(v['A_swap_menos_A_text'], True)} |" for f, v in B["por_familia"].items()]
+        if B["ausentes"]: M += ["", "Missing: " + json.dumps(B["ausentes"])]
         M.append("")
     open(a.out + f"/docs/analise_troca{SUFX}.md", "w").write("\n".join(M) + "\n"); print("FIM")
 if __name__ == "__main__": main()

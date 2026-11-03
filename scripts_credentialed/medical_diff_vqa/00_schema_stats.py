@@ -32,14 +32,14 @@ for t, g in q.groupby("question_type"):
     if t != "difference":
         hit = g.question.str.contains(cmp_re)
         res["pair_questions"]["comparison_words_non_difference"][t] = {"n": int(hit.sum()), "examples": g.loc[hit, "question"].head(5).tolist()}
-# entidades (nomes) do all_diseases.json
+# entities (names) of all_diseases.json
 ent = collections.Counter(); noent = collections.Counter()
 for rec in json.load(open(RAW / "all_diseases.json")):
     for e in rec.get("entity", {}): ent[e] += 1
     for e in rec.get("no_entity", []) or []: noent[e] += 1
 res["all_diseases"] = {"n_records": sum(1 for _ in ent) and None, "n_entities_distinct": len(ent), "entities_top40": dict(ent.most_common(40)), "no_entity_top20": dict(noent.most_common(20))}
 json.dump({"entities": dict(ent.most_common()), "no_entity": dict(noent.most_common())}, open(OUT / "entities.json", "w"), indent=1)
-# juncao questoes x mimic_all por study_id
+# join of questions x mimic_all by study_id
 j = q.merge(m[["study_id", "dicom_id", "view", "split"]].rename(columns={"split": "split_mimic_all"}), on="study_id", how="left")
 res["join"] = {"questions_without_mimic_all_row": int(j.dicom_id.isna().sum()), "split_agree_frac": float((j.split == j.split_mimic_all).mean()),
                "view_by_type": {t: g.view.value_counts().to_dict() for t, g in j.groupby("question_type")}}

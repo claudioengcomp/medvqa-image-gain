@@ -35,19 +35,19 @@ def build_vocab(answers):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--items-dir", required=True); ap.add_argument("--png-root", required=True); ap.add_argument("--out-dir", required=True)
-    ap.add_argument("--splits", nargs="+", default=list(SPLITS), help="splits a escrever agora (vocabulario sempre de train+val+test)")
+    ap.add_argument("--splits", nargs="+", default=list(SPLITS), help="splits to write now (vocabulary always from train+val+test)")
     a = ap.parse_args()
     items = {s: pd.read_parquet(Path(a.items_dir, f"items_{s}.parquet")) for s in SPLITS}
     for s in SPLITS:
         assert items[s].qid.is_unique, s
     allq = pd.concat(items.values())
-    assert allq.qid.is_unique, "qid repetido entre splits"
+    assert allq.qid.is_unique, "qid repeated across splits"
     # disjunction of patients and images between splits
     for x in SPLITS:
         for y in SPLITS:
             if x < y:
-                assert not (set(items[x].subject_id) & set(items[y].subject_id)), f"subject_id em {x} e {y}"
-                assert not (set(items[x].dicom_id) & set(items[y].dicom_id)), f"dicom_id em {x} e {y}"
+                assert not (set(items[x].subject_id) & set(items[y].subject_id)), f"subject_id in {x} and {y}"
+                assert not (set(items[x].dicom_id) & set(items[y].dicom_id)), f"dicom_id in {x} and {y}"
     vocab = build_vocab(list(allq.answer))
     Path(a.out_dir).mkdir(parents=True, exist_ok=True)
     vp = Path(a.out_dir, "answer_vocab.json"); vp.write_text(json.dumps(vocab, indent=1, ensure_ascii=False) + "\n")
@@ -62,7 +62,7 @@ def main():
         for d, g in df.groupby("dicom_id", sort=True):
             p = Path(a.png_root, s, pm[d]["png"]); b = p.read_bytes()
             if hashlib.sha256(b).hexdigest() != pm[d]["sha256"]:
-                raise SystemExit(f"sha256 do PNG difere do manifesto: {p}")
+                raise SystemExit(f"PNG sha256 differs from the manifest: {p}")
             g = g.sort_values("qid")
             rows.append({"image": b, "questions": [str(q) for q in g.question], "answers": [[x] for x in g.answer],
                          "answer_labels": [[vocab[x]] for x in g.answer], "answer_scores": [[1.0]] * len(g),
@@ -79,7 +79,7 @@ def main():
                "answers_top10": {t: dict(collections.Counter(df.loc[df.question_type == t, "answer"]).most_common(10)) for t in sorted(df.question_type.unique())},
                "vocab_size": len(vocab), "vocab_file": str(vp),
                "file": {"path": str(path), "sha256": hashlib.sha256(path.read_bytes()).hexdigest(), "bytes": path.stat().st_size},
-               "provenance": {"script": "v7_mimic/scripts/05_make_arrows.py", "reused": f"{OCCLUSION_STUDY}/harness/interventions/arrow_io.py @2b7e731; regra de vocabulario de make_heal_train_arrows.py",
+               "provenance": {"script": "v7_mimic/scripts/05_make_arrows.py", "reused": f"{OCCLUSION_STUDY}/harness/interventions/arrow_io.py @2b7e731; vocabulary rule of make_heal_train_arrows.py",
                               "date": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), "host": socket.gethostname()}}
         Path(a.out_dir, f"manifest_mimic_{s}.json").write_text(json.dumps(man, indent=1, ensure_ascii=False) + "\n")
         out[s] = {k: man[k] for k in ("n_images", "n_questions", "file")}

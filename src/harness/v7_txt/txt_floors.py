@@ -25,10 +25,10 @@ ARROWS["VQARAD_REDIV"] = f"{_MEDVQA_ROOT}/v7_txt/article_runs/data/vqarad_rediv/
 ARROWS["VQARAD_QLEVEL"] = f"{_MEDVQA_ROOT}/v7_txt/article_runs/data/vqarad_qlevel/vqa_vqa_rad_test.arrow"; RESULTS_DIR["VQARAD_QLEVEL"] = PJR   # 19/10 (vqarad_question_split)
 def extra_baselines(bench):
     """17/10 (article_runs, question_only_sets): majority (one file per benchmark) and PubMedBERT (one per seed); qid -> correct dicts. VQARAD_RADORIG uses those of VQARAD (same training)."""
-    b = {"VQARAD_RADORIG": "VQARAD"}.get(bench, bench); mj = f"{PJR}/MAJ_question_only_{b}.json"; bt = {s: (f"{PJR}/BERT_question_only_{b}_seed{s}.json" if os.path.exists(f"{PJR}/BERT_question_only_{b}_seed{s}.json") else f"{PJR}/BERT2_question_only_{b}_seed{s}.json") for s in range(3)}   # 19/10: VQARAD_QLEVEL so tem a versao v2 (vqarad_question_split)
+    b = {"VQARAD_RADORIG": "VQARAD"}.get(bench, bench); mj = f"{PJR}/MAJ_question_only_{b}.json"; bt = {s: (f"{PJR}/BERT_question_only_{b}_seed{s}.json" if os.path.exists(f"{PJR}/BERT_question_only_{b}_seed{s}.json") else f"{PJR}/BERT2_question_only_{b}_seed{s}.json") for s in range(3)}   # 19/10: VQARAD_QLEVEL only has the v2 version (vqarad_question_split)
     return {"maj": preds(mj) if os.path.exists(mj) else None, "maj_src": mj, "bert": {s: (preds(p) if os.path.exists(p) else None) for s, p in bt.items()}, "bert_src": bt}
 def pub(bench, fam, pe, s):   # name published in p0 (SLAKE seed0 without suffix)
-    return "%s_%s_%s" % (fam, pe, bench) + ("" if (bench in ("SLAKE", "VQARAD") and s == 0) else "_seed%d" % s)   # 14/10: VQA-RAD como o SLAKE
+    return "%s_%s_%s" % (fam, pe, bench) + ("" if (bench in ("SLAKE", "VQARAD") and s == 0) else "_seed%d" % s)   # 14/10: VQA-RAD like SLAKE
 def cells(bench, fam, s):
     c = _cells(bench, fam, s)
     if ARTICLE_RUNS and c:
@@ -37,8 +37,8 @@ def cells(bench, fam, s):
         elif bench == "MIMIC": c["c1"] = f"{PJR}/{c['frozen_line']}_C1.json"   # 17/10 (article_runs, baselines): C1 on the 1 499 closed-form
     return c
 def _cells(bench, fam, s):
-    if bench in ("VQARAD_REDIV", "VQARAD_QLEVEL"):   # 17/10 (article_runs, vqarad_image_split): tudo em v7_txt/article_runs/results; 19/10: VQARAD_QLEVEL (vqarad_question_split)
-        if fam == "M3AE": return {"frozen": f"{PJR}/M3AE_SCRATCH_{bench}_seed{s}_C0.json", "adapted": None, "c1": None, "frozen_line": f"M3AE_SCRATCH_{bench}_seed{s}", "adapted_line": None, "note": "M3AE: fine-tune completo (a unica celula)"}
+    if bench in ("VQARAD_REDIV", "VQARAD_QLEVEL"):   # 17/10 (article_runs, vqarad_image_split): everything in v7_txt/article_runs/results; 19/10: VQARAD_QLEVEL (vqarad_question_split)
+        if fam == "M3AE": return {"frozen": f"{PJR}/M3AE_SCRATCH_{bench}_seed{s}_C0.json", "adapted": None, "c1": None, "frozen_line": f"M3AE_SCRATCH_{bench}_seed{s}", "adapted_line": None, "note": "M3AE: full fine-tuning (the only cell)"}
         if fam == "QWEN2VL": return {"frozen": f"{PJR}/QWEN2VL_LORA_{bench}_seed{s}_C0.json", "adapted": f"{PJR}/QWEN2VL_LORA_VT_{bench}_seed{s}_C0.json", "c1": f"{PJR}/QWEN2VL_LORA_{bench}_seed{s}_C1.json", "frozen_line": f"QWEN2VL_LORA_{bench}_seed{s}", "adapted_line": f"QWEN2VL_LORA_VT_{bench}_seed{s}"}
         return {"frozen": f"{PJR}/SMOLVLM_LORA_FT_{bench}_seed{s}_C0.json", "adapted": f"{PJR}/SMOLVLM_LORA_{bench}_seed{s}_C0.json", "c1": f"{PJR}/SMOLVLM_LORA_FT_{bench}_seed{s}_C1.json", "frozen_line": f"SMOLVLM_LORA_FT_{bench}_seed{s}", "adapted_line": f"SMOLVLM_LORA_{bench}_seed{s}"}
     if bench == "VQARAD_RADORIG":   # 15/10 (the candidate, revision A1 of paper 2): VLM from the original package (_RADORIG, v7_txt/results); M3AE same as VQARAD (already used the original package)
@@ -70,7 +70,7 @@ def mimic_items():
     import pandas as pd
     d = pd.read_parquet(f"{MIMIC}/data/items_test.parquet"); return {int(r.qid): r for r in d.itertuples()}
 def mimic_floors():
-    """TFIDF subset/full e prior-majoritario subset/full por item (dicts qid -> correct), gold do items_test.parquet."""
+    """TFIDF subset/full and prior-majority subset/full per item (dicts qid -> correct), gold from items_test.parquet."""
     from med_vlm.metrics.process_text import answer_matches, normalize_text
     it = mimic_items(); out = {}
     for tag in ("subset", "full"):
@@ -103,7 +103,7 @@ def tfidf_preds(bench):
     if os.path.exists(p): return preds(p), p + " (TFIDF alinhado aos 1446 qids, harness/v7_txt/tfidf_heal_aligned.py)"
     return None, "Per-item TFIDF for HEAL does not exist on disk (tfidf_by_type_heal.json only has aggregates): McNemar TXT vs TFIDF not computed; TFIDF by class read from the aggregates"
 def classes(bench, df):
-    """qid -> dict de classes; e qid -> image_id."""
+    """qid -> dict of classes; and qid -> image_id."""
     img = {}; cls = collections.defaultdict(dict)
     for _, r in df.iterrows():
         for qid, t in zip(r["question_id"], r["answer_type"]): img[int(qid)] = r["image_id"]; cls[int(qid)]["answer_type"] = {0: "closed", 1: "open"}.get(int(t), str(t))
@@ -143,8 +143,8 @@ def main():
             for s in range(3):
                 line = f"{fam}_LORA_TXT_{bench}_seed{s}" if fam != "M3AE" else f"M3AE_TXT_{TXT_BENCH_M3AE.get(bench, bench)}_seed{s}"; tp = f"{RESULTS_DIR.get(bench, V7 + '/results')}/{line}_TXT.json"; c = cells(bench, fam, s)
                 rec = {"line": line, "family": fam, "seed": s, "txt_file": tp, "cells": c}
-                if not os.path.exists(tp): rec["status"] = "TXT ausente"; B["lines"].append(rec); continue
-                if not os.path.exists(c["frozen"]) or (c["adapted"] and not os.path.exists(c["adapted"])): rec["status"] = "C0 congelada/adaptada ausente"; B["lines"].append(rec); continue
+                if not os.path.exists(tp): rec["status"] = "TXT missing"; B["lines"].append(rec); continue
+                if not os.path.exists(c["frozen"]) or (c["adapted"] and not os.path.exists(c["adapted"])): rec["status"] = "C0 frozen/fine-tuned missing"; B["lines"].append(rec); continue
                 T = preds(tp); F = preds(c["frozen"]); A = preds(c["adapted"]) if c["adapted"] else None; C1 = preds(c["c1"]) if c["c1"] and os.path.exists(c["c1"]) else None
                 qids = [q for q in allq if q in T and q in F and (A is None or q in A)]; rec["n_aligned"] = len(qids); rec["sha256"] = {"txt": sha(tp), "frozen": sha(c["frozen"]), "adapted": sha(c["adapted"]), "c1": sha(c["c1"]) if C1 else None}
                 rec["overall"] = {"TXT": acc_block(T, qids, img, bs), "C0_frozen": acc_block(F, qids, img, bs)}
@@ -179,9 +179,9 @@ def main():
             if rs: B["by_family"][fam] = {"n_seeds": len(rs), **{k: {"mean": float(np.mean([r["overall"][k]["acc"] for r in rs])), "sd": float(np.std([r["overall"][k]["acc"] for r in rs], ddof=1)) if len(rs) > 1 else None} for k in rs[0]["overall"] if all(k in r["overall"] for r in rs)}}
         out["benchmarks"][bench] = B
     json.dump(out, open(a.out_json, "w"), indent=1)
-    M = ["# Baselines so-texto (P1.4)", "", NOTA_REPRO, "", f"Gerado {out['t']}. Acc(TXT) = trained text-decoder-only approach (same recipe, no image, LoRA only on the LM); C0 frozen / fine-tuned = rows already trained; C1 = grey image (where it exists); TFIDF = TF-IDF+LR per item (Kvasir, SLAKE) or aggregates (HEAL). 95 % CI by bootstrap over images (2000, seed 20260913, shared replicates); McNemar mid-p; Holm per benchmark over all tests of the table. No interpretation.", ""]
+    M = ["# Text-only baselines (P1.4)", "", NOTA_REPRO, "", f"Generated {out['t']}. Acc(TXT) = trained text-decoder-only approach (same recipe, no image, LoRA only on the LM); C0 frozen / fine-tuned = rows already trained; C1 = grey image (where it exists); TFIDF = TF-IDF+LR per item (Kvasir, SLAKE) or aggregates (HEAL). 95 % CI by bootstrap over images (2000, seed 20260913, shared replicates); McNemar mid-p; Holm per benchmark over all tests of the table. No interpretation.", ""]
     for bench, B in out["benchmarks"].items():
-        M += [f"## {bench} (n questoes {B['n_questions']}, images {B['n_images']})", "", "| row | n | Acc TXT [CI] | Acc frozen C0 | Acc fine-tuned C0 | Acc C1 | TFIDF | TXT-C0f [CI] mid-p (Holm) | TXT-TFIDF [CI] mid-p (Holm) | win/loss/tie TXT vs C0f |", "|---|---|---|---|---|---|---|---|---|---|"]
+        M += [f"## {bench} (n questions {B['n_questions']}, images {B['n_images']})", "", "| row | n | Acc TXT [CI] | Acc frozen C0 | Acc fine-tuned C0 | Acc C1 | TFIDF | TXT-C0f [CI] mid-p (Holm) | TXT-TFIDF [CI] mid-p (Holm) | win/loss/tie TXT vs C0f |", "|---|---|---|---|---|---|---|---|---|---|"]
         for r in B["lines"]:
             if r.get("status") != "ok": M.append(f"| {r['line']} | {r.get('status')} |"); continue
             o = r["overall"]; f = lambda b: f"{b['acc']:.4f} [{b['acc_ci'][0]:.3f}, {b['acc_ci'][1]:.3f}]" if b and b.get("acc") is not None else "-"
@@ -200,11 +200,11 @@ def main():
             for k, b in r["by_class"].items():
                 dm = b.get("TXT_vs_M0")
                 M.append(f"| {r['line']} | {k} | {b['TXT']['n']} | {g(b['TXT'])} | {g(b['C0_frozen'])} | {g(b['C0_adapted'])} | {g(b.get('C1_frozen'))} | {g(b.get('TFIDF'))} | {b['TXT_vs_C0_frozen']['diff']:+.3f} [{b['TXT_vs_C0_frozen']['diff_ci'][0]:+.3f}, {b['TXT_vs_C0_frozen']['diff_ci'][1]:+.3f}] | " + (f"{dm['diff']:+.3f} [{dm['diff_ci'][0]:+.3f}, {dm['diff_ci'][1]:+.3f}]" if dm else "-") + " |")
-        M += ["", "### Acerta/erra/empata por item, TXT vs TFIDF (TXT certo & TFIDF errado / TXT errado & TFIDF certo / ambos certos / ambos errados)", ""]
+        M += ["", "### Right/wrong/tie per item, TXT vs TFIDF (TXT right & TFIDF wrong / TXT wrong & TFIDF right / both right / both wrong)", ""]
         for r in B["lines"]:
             if r.get("status") == "ok" and r.get("TXT_vs_M0"): d = r["TXT_vs_M0"]; M.append(f"- {r['line']}: {d['txt_right_other_wrong']} / {d['txt_wrong_other_right']} / {d['both_right']} / {d['both_wrong']} (n={d['n']})")
-            elif r.get("status") == "ok": M.append(f"- {r['line']}: TFIDF por item indisponivel neste benchmark")
-        M += ["", "### Acerta/erra/empata TXT vs TFIDF por classe (TXT certo & TFIDF errado / TXT errado & TFIDF certo / ambos certos / ambos errados; n)", "", "| row | class | TXT>TFIDF | TFIDF>TXT | both correct | both wrong | n |", "|---|---|---|---|---|---|---|"]
+            elif r.get("status") == "ok": M.append(f"- {r['line']}: per-item TFIDF not available for this benchmark")
+        M += ["", "### Right/wrong/tie TXT vs TFIDF per class (TXT right & TFIDF wrong / TXT wrong & TFIDF right / both right / both wrong; n)", "", "| row | class | TXT>TFIDF | TFIDF>TXT | both correct | both wrong | n |", "|---|---|---|---|---|---|---|"]
         for r in B["lines"]:
             if r.get("status") != "ok": continue
             for k, b in r["by_class"].items():

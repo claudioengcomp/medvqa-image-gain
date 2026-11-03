@@ -39,7 +39,7 @@ def read_arrow(path: str) -> pd.DataFrame:
     df = table.to_pandas()
     missing = [c for c in ARROW_COLUMNS if c not in df.columns]
     if missing:
-        raise ValueError(f"Arquivo {path} does not have the expected columns: {missing}")
+        raise ValueError(f"File {path} does not have the expected columns: {missing}")
     return df
 
 

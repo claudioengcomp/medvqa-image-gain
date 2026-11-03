@@ -119,4 +119,4 @@ if __name__ == "__main__":
         ratios=tuple(args.ratios),
         seed=args.seed,
     )
-    print(f"Split limpo escrito em {args.output_dir}: {manifest['counts']}")
+    print(f"Clean split written to {args.output_dir}: {manifest['counts']}")

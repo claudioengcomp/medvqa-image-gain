@@ -47,12 +47,12 @@ def main():
             lo = model(input_ids=Ex["input_ids"][i:i + 256].to(dev), attention_mask=Ex["attention_mask"][i:i + 256].to(dev)).logits
             out += [labels[j] for j in lo.argmax(-1).tolist()]
         model.train(); return out
-    last = os.path.join(a.save_dir, "ultimo"); os.makedirs(last, exist_ok=True); os.makedirs(os.path.dirname(a.progress_checkpoint), exist_ok=True)   # 17/10 01:2x: faltava criar ultimo/ (1a fila caiu no 1o torch.save)
+    last = os.path.join(a.save_dir, "ultimo"); os.makedirs(last, exist_ok=True); os.makedirs(os.path.dirname(a.progress_checkpoint), exist_ok=True)   # 17/10 01:2x: the ultimo/ folder was not created (the first queue died at the first torch.save)
     hist, start_ep, best = [], 0, {"epoch": None, "val_acc": -1.0}
-    if os.path.exists(os.path.join(last, "estado.pt")) and os.path.exists(a.progress_checkpoint):   # retomada
+    if os.path.exists(os.path.join(last, "estado.pt")) and os.path.exists(a.progress_checkpoint):   # resume
         st = torch.load(os.path.join(last, "estado.pt"), map_location="cpu", weights_only=False)
         model.load_state_dict(st["model"]); opt.load_state_dict(st["opt"]); sch.load_state_dict(st["sch"]); g.set_state(st["gen"]); torch.set_rng_state(st["rng"]); (torch.cuda.set_rng_state(st["cuda_rng"]) if st["cuda_rng"] is not None else None)
-        random.setstate(st["py_rng"]); np.random.set_state(st["np_rng"]); hist = st["hist"]; start_ep = st["epoch"] + 1; best = st["best"]; print("retomado na epoca", start_ep, flush=True)
+        random.setstate(st["py_rng"]); np.random.set_state(st["np_rng"]); hist = st["hist"]; start_ep = st["epoch"] + 1; best = st["best"]; print("resumed at epoch", start_ep, flush=True)
     best_state = torch.load(os.path.join(last, "melhor_estado.pt"), map_location="cpu", weights_only=False) if (start_ep and has_val and os.path.exists(os.path.join(last, "melhor_estado.pt"))) else None
     model.train()
     for ep in range(start_ep, n_ep):
@@ -76,5 +76,5 @@ def main():
            "treino": {"script": os.path.abspath(__file__), "script_sha256": sha(__file__), "modelo": MODEL, "revisao": REV, "hp": HP, "seed": a.seed, "dados": a.data, "dados_sha256": sha(a.data), "fontes": D["fontes"], "fontes_sha256": D["fontes_sha256"],
                       "n_train": len(tr), "n_val": len(va), "n_test": n, "n_rotulos": len(labels), "truncadas_max_len": trunc, "epocas": n_ep, "epoca_escolhida": best["epoch"], "val_acc_escolhida": best["val_acc"], "historico": hist,
                       "modelo_salvo": mdir, "modelo_salvo_sha256": sha(os.path.join(mdir, "model.safetensors")) if os.path.exists(os.path.join(mdir, "model.safetensors")) else None, "segundos": round(time.time() - t0, 1), "pico_cuda_mib": round(torch.cuda.max_memory_allocated() / 2 ** 20) if dev.type == "cuda" else None, "teste_de_caminho": bool(os.environ.get("BERT_TESTE_N")), "ultima_epoca": {"epoca": n_ep, "accuracy": sum(x["correct"] for x in ult) / len(ult), "predictions": ult}}}
-    json.dump(rec, open(a.output, "w"), indent=1); print("FIM", a.base, a.seed, "acc %.4f" % (k / n), "epoca", best["epoch"], flush=True)
+    json.dump(rec, open(a.output, "w"), indent=1); print("END", a.base, a.seed, "acc %.4f" % (k / n), "epoch", best["epoch"], flush=True)
 if __name__ == "__main__": main()

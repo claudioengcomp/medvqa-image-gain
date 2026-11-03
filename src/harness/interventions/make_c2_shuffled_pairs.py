@@ -21,7 +21,7 @@ def derangement(n: int, seed: int) -> np.ndarray:
     """Returns a permutation of range(n) with no fixed points (perm[i] != i for
     every i). Deterministic for fixed (n, seed)."""
     if n < 2:
-        raise ValueError("derangement requer n >= 2")
+        raise ValueError("derangement requires n >= 2")
     rng = np.random.RandomState(seed)
     perm = rng.permutation(n)
     fixed = [i for i in range(n) if perm[i] == i]
@@ -62,4 +62,4 @@ def _parse_args():
 if __name__ == "__main__":
     args = _parse_args()
     shuffle_image_pairs(args.input, args.output, seed=args.seed)
-    print(f"C2 escrito em {args.output}")
+    print(f"C2 written to {args.output}")

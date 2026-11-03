@@ -1,0 +1,923 @@
+{
+ "t": "2026-11-01 21:37:28",
+ "script": "text_analyses.py",
+ "script_sha256": "5c6bf35b8d0affef642750a3e8c7ea9d62ada6bb35f7599e7f1820b45b69d688",
+ "13_1": {
+  "execucoes": [
+   {
+    "base": "KVASIR",
+    "linha": "QWEN25VL_LORA_TXT_KVASIR_seed0",
+    "G_ft": 0.0036181463957695517,
+    "ic": [
+     -0.0005909507595599791,
+     0.007973379473416933
+    ],
+    "exclui_zero": false
+   },
+   {
+    "base": "KVASIR",
+    "linha": "QWEN25VL_LORA_TXT_KVASIR_seed1",
+    "G_ft": 0.005380833101400872,
+    "ic": [
+     0.000798527876132617,
+     0.00980968161967975
+    ],
+    "exclui_zero": true
+   },
+   {
+    "base": "KVASIR",
+    "linha": "QWEN25VL_LORA_TXT_KVASIR_seed2",
+    "G_ft": 0.0032470544577419057,
+    "ic": [
+     -0.0010889055940844258,
+     0.0076528767263163286
+    ],
+    "exclui_zero": false
+   },
+   {
+    "base": "SLAKE",
+    "linha": "QWEN25VL_LORA_TXT_SLAKE_seed0",
+    "G_ft": 0.03125,
+    "ic": [
+     0.007042253521126761,
+     0.05623550047211401
+    ],
+    "exclui_zero": true
+   },
+   {
+    "base": "SLAKE",
+    "linha": "QWEN25VL_LORA_TXT_SLAKE_seed1",
+    "G_ft": 0.021634615384615384,
+    "ic": [
+     -0.004761904761904762,
+     0.05037783375314862
+    ],
+    "exclui_zero": false
+   },
+   {
+    "base": "SLAKE",
+    "linha": "QWEN25VL_LORA_TXT_SLAKE_seed2",
+    "G_ft": 0.004807692307692308,
+    "ic": [
+     -0.025353007207845918,
+     0.03465719831843971
+    ],
+    "exclui_zero": false
+   },
+   {
+    "base": "HEAL",
+    "linha": "QWEN25VL_LORA_TXT_HEAL_seed0",
+    "G_ft": 0.020055325034578148,
+    "ic": [
+     0.008350730688935281,
+     0.03138282801687376
+    ],
+    "exclui_zero": true
+   },
+   {
+    "base": "HEAL",
+    "linha": "QWEN25VL_LORA_TXT_HEAL_seed1",
+    "G_ft": 0.0027662517289073307,
+    "ic": [
+     -0.008953322302658185,
+     0.013889371812702824
+    ],
+    "exclui_zero": false
+   },
+   {
+    "base": "HEAL",
+    "linha": "QWEN25VL_LORA_TXT_HEAL_seed2",
+    "G_ft": 0.007607192254495159,
+    "ic": [
+     -0.004121376811594203,
+     0.018043338923587015
+    ],
+    "exclui_zero": false
+   },
+   {
+    "base": "MIMIC",
+    "linha": "QWEN25VL_LORA_TXT_MIMIC_seed0",
+    "G_ft": 0.004002668445630421,
+    "ic": [
+     -0.009973570146940162,
+     0.0180846968605952
+    ],
+    "exclui_zero": false
+   },
+   {
+    "base": "MIMIC",
+    "linha": "QWEN25VL_LORA_TXT_MIMIC_seed1",
+    "G_ft": -0.016010673782521682,
+    "ic": [
+     -0.03284477220632651,
+     0.0006610153350027952
+    ],
+    "exclui_zero": false
+   },
+   {
+    "base": "MIMIC",
+    "linha": "QWEN25VL_LORA_TXT_MIMIC_seed2",
+    "G_ft": -0.02935290193462308,
+    "ic": [
+     -0.04701986754966887,
+     -0.011423393839680664
+    ],
+    "exclui_zero": true
+   },
+   {
+    "base": "VQARAD_REDIV",
+    "linha": "QWEN25VL_LORA_TXT_VQARAD_REDIV_seed0",
+    "G_ft": 0.019138755980861243,
+    "ic": [
+     -0.0251408961062719,
+     0.057004374416036646
+    ],
+    "exclui_zero": false
+   },
+   {
+    "base": "VQARAD_REDIV",
+    "linha": "QWEN25VL_LORA_TXT_VQARAD_REDIV_seed1",
+    "G_ft": -0.0215311004784689,
+    "ic": [
+     -0.05476517217865667,
+     0.010473974348319884
+    ],
+    "exclui_zero": false
+   },
+   {
+    "base": "VQARAD_REDIV",
+    "linha": "QWEN25VL_LORA_TXT_VQARAD_REDIV_seed2",
+    "G_ft": -0.01674641148325359,
+    "ic": [
+     -0.043903779147681586,
+     0.0129550545120898
+    ],
+    "exclui_zero": false
+   }
+  ],
+  "por_base": {
+   "KVASIR": {
+    "excluem": 4,
+    "max_G_ft_entre_as_que_excluem": 0.01688468318025791
+   },
+   "SLAKE": {
+    "excluem": 1,
+    "max_G_ft_entre_as_que_excluem": 0.03125
+   },
+   "HEAL": {
+    "excluem": 4,
+    "max_G_ft_entre_as_que_excluem": 0.02074688796680498
+   },
+   "MIMIC": {
+    "excluem": 2,
+    "max_G_ft_entre_as_que_excluem": 0.018679119412941963
+   },
+   "VQARAD_REDIV": {
+    "excluem": 1,
+    "max_G_ft_entre_as_que_excluem": 0.03588516746411483
+   }
+  },
+  "total_excluem": 12,
+  "max_global_entre_as_que_excluem": 0.03588516746411483
+ },
+ "13_2": {
+  "KVASIR": 0.1928750347898692,
+  "SLAKE": 0.4206730769230769,
+  "HEAL": 0.508298755186722,
+  "MIMIC": 0.49566377585056703,
+  "VQARAD_REDIV": 0.4904306220095694
+ },
+ "13_3": {
+  "KVASIR": {
+   "n": 10779,
+   "acc": 0.6571110492624548,
+   "fonte_da_predicao": {
+    "texto_exato": 10779
+   },
+   "treino": "train_so_treino from dados_texto (HEAL: train only)",
+   "normalizacao_da_chave": "normalize_text of the question"
+  },
+  "SLAKE": {
+   "n": 416,
+   "acc": 0.6706730769230769,
+   "fonte_da_predicao": {
+    "texto_exato": 388,
+    "global": 28
+   },
+   "treino": "train_so_treino from dados_texto (HEAL: train only)",
+   "normalizacao_da_chave": "normalize_text of the question"
+  },
+  "HEAL": {
+   "n": 1446,
+   "acc": 0.8533886583679114,
+   "fonte_da_predicao": {
+    "texto_exato": 1446
+   },
+   "treino": "train_so_treino from dados_texto (HEAL: train only)",
+   "normalizacao_da_chave": "normalize_text of the question"
+  },
+  "MIMIC": {
+   "n": 1499,
+   "acc": 0.7751834556370913,
+   "fonte_da_predicao": {
+    "texto_exato": 1449,
+    "global": 50
+   },
+   "treino": "train_so_treino from dados_texto (HEAL: train only)",
+   "normalizacao_da_chave": "normalize_text of the question"
+  },
+  "VQARAD_REDIV": {
+   "n": 418,
+   "acc": 0.5502392344497608,
+   "fonte_da_predicao": {
+    "global": 324,
+    "texto_exato": 94
+   },
+   "treino": "train_so_treino from dados_texto (HEAL: train only)",
+   "normalizacao_da_chave": "normalize_text of the question"
+  }
+ },
+ "13_4": {
+  "KVASIR": {
+   "A_ft_menos_baseline_mean_per_family": {
+    "QWEN25VL": {
+     "A_text": 0.22113987073630825,
+     "TF-IDF": 0.22113987073630825,
+     "PubMedBERT": 0.22113987073630825,
+     "majoritaria": 0.6856542041624145,
+     "cinza": 0.3639793425487831
+    }
+   },
+   "order_by_baseline": {
+    "A_text": [
+     "QWEN25VL",
+     "SMOLVLM",
+     "M3AE"
+    ],
+    "TF-IDF": [
+     "QWEN25VL",
+     "SMOLVLM",
+     "M3AE"
+    ],
+    "PubMedBERT": [
+     "QWEN25VL",
+     "SMOLVLM",
+     "M3AE"
+    ],
+    "majoritaria": [
+     "QWEN25VL",
+     "SMOLVLM",
+     "M3AE"
+    ],
+    "cinza": [
+     "SMOLVLM",
+     "QWEN25VL"
+    ]
+   },
+   "ordem_igual_sob_todos_os_baselines_with_3_familias": true,
+   "ordem_VLM_sob_cinza_igual_a_ordem_VLM_sob_A_text": false,
+   "pares_discordantes_TFIDF_x_Atext": []
+  },
+  "SLAKE": {
+   "A_ft_menos_baseline_mean_per_family": {
+    "QWEN25VL": {
+     "A_text": 0.1546474358974359,
+     "TF-IDF": 0.18189102564102558,
+     "PubMedBERT": 0.15625,
+     "majoritaria": 0.4030448717948718,
+     "cinza": 0.28365384615384615
+    }
+   },
+   "order_by_baseline": {
+    "A_text": [
+     "M3AE",
+     "QWEN25VL",
+     "SMOLVLM"
+    ],
+    "TF-IDF": [
+     "M3AE",
+     "QWEN25VL",
+     "SMOLVLM"
+    ],
+    "PubMedBERT": [
+     "M3AE",
+     "QWEN25VL",
+     "SMOLVLM"
+    ],
+    "majoritaria": [
+     "M3AE",
+     "QWEN25VL",
+     "SMOLVLM"
+    ],
+    "cinza": [
+     "SMOLVLM",
+     "QWEN25VL"
+    ]
+   },
+   "ordem_igual_sob_todos_os_baselines_with_3_familias": true,
+   "ordem_VLM_sob_cinza_igual_a_ordem_VLM_sob_A_text": false,
+   "pares_discordantes_TFIDF_x_Atext": [
+    [
+     "M3AE_SCRATCH_SLAKE_seed0",
+     "M3AE_SCRATCH_SLAKE_seed1",
+     "mesma familia"
+    ]
+   ]
+  },
+  "HEAL": {
+   "A_ft_menos_baseline_mean_per_family": {
+    "QWEN25VL": {
+     "A_text": 0.04933148916551411,
+     "TF-IDF": 0.23559243891194104,
+     "PubMedBERT": 0.05232826187183037,
+     "majoritaria": 0.3946519133241126,
+     "cinza": 0.07376671277086215
+    }
+   },
+   "order_by_baseline": {
+    "A_text": [
+     "SMOLVLM",
+     "QWEN25VL",
+     "M3AE"
+    ],
+    "TF-IDF": [
+     "QWEN25VL",
+     "SMOLVLM",
+     "M3AE"
+    ],
+    "PubMedBERT": [
+     "QWEN25VL",
+     "SMOLVLM",
+     "M3AE"
+    ],
+    "majoritaria": [
+     "QWEN25VL",
+     "SMOLVLM",
+     "M3AE"
+    ],
+    "cinza": [
+     "SMOLVLM",
+     "QWEN25VL"
+    ]
+   },
+   "ordem_igual_sob_todos_os_baselines_with_3_familias": false,
+   "ordem_VLM_sob_cinza_igual_a_ordem_VLM_sob_A_text": true,
+   "pares_discordantes_TFIDF_x_Atext": [
+    [
+     "M3AE_HEAL_seed1",
+     "M3AE_HEAL_seed2",
+     "mesma familia"
+    ],
+    [
+     "M3AE_HEAL_seed1",
+     "QWEN25VL_LORA_VT_HEAL_seed2",
+     "familias diferentes"
+    ],
+    [
+     "SMOLVLM_LORA_HEAL_seed1",
+     "QWEN25VL_LORA_VT_HEAL_seed0",
+     "familias diferentes"
+    ]
+   ]
+  },
+  "MIMIC": {
+   "A_ft_menos_baseline_mean_per_family": {
+    "QWEN25VL": {
+     "A_text": 0.024016010673782524,
+     "TF-IDF": 0.031576606626639935,
+     "PubMedBERT": 0.022904158327774076,
+     "majoritaria": 0.31576606626639986,
+     "cinza": 0.13408939292861907
+    }
+   },
+   "order_by_baseline": {
+    "A_text": [
+     "SMOLVLM",
+     "M3AE",
+     "QWEN25VL"
+    ],
+    "TF-IDF": [
+     "SMOLVLM",
+     "M3AE",
+     "QWEN25VL"
+    ],
+    "PubMedBERT": [
+     "SMOLVLM",
+     "M3AE",
+     "QWEN25VL"
+    ],
+    "majoritaria": [
+     "SMOLVLM",
+     "M3AE",
+     "QWEN25VL"
+    ],
+    "cinza": [
+     "SMOLVLM",
+     "QWEN25VL"
+    ]
+   },
+   "ordem_igual_sob_todos_os_baselines_with_3_familias": true,
+   "ordem_VLM_sob_cinza_igual_a_ordem_VLM_sob_A_text": true,
+   "pares_discordantes_TFIDF_x_Atext": [
+    [
+     "SMOLVLM_LORA_MIMIC_seed0",
+     "M3AE_MIMIC_seed1",
+     "familias diferentes"
+    ],
+    [
+     "SMOLVLM_LORA_MIMIC_seed1",
+     "SMOLVLM_LORA_MIMIC_seed2",
+     "mesma familia"
+    ],
+    [
+     "SMOLVLM_LORA_MIMIC_seed1",
+     "M3AE_MIMIC_seed1",
+     "familias diferentes"
+    ],
+    [
+     "SMOLVLM_LORA_MIMIC_seed2",
+     "M3AE_MIMIC_seed1",
+     "familias diferentes"
+    ],
+    [
+     "QWEN25VL_LORA_VT_MIMIC_seed1",
+     "QWEN25VL_LORA_VT_MIMIC_seed2",
+     "mesma familia"
+    ],
+    [
+     "QWEN25VL_LORA_VT_MIMIC_seed1",
+     "M3AE_MIMIC_seed2",
+     "familias diferentes"
+    ],
+    [
+     "QWEN25VL_LORA_VT_MIMIC_seed2",
+     "M3AE_MIMIC_seed2",
+     "familias diferentes"
+    ],
+    [
+     "M3AE_MIMIC_seed0",
+     "M3AE_MIMIC_seed1",
+     "mesma familia"
+    ]
+   ]
+  },
+  "VQARAD_REDIV": {
+   "A_ft_menos_baseline_mean_per_family": {
+    "QWEN25VL": {
+     "A_text": 0.06299840510366828,
+     "TF-IDF": 0.2185007974481659,
+     "PubMedBERT": 0.15550239234449767,
+     "majoritaria": 0.29027113237639557,
+     "cinza": 0.16108452950558216
+    }
+   },
+   "order_by_baseline": {
+    "A_text": [
+     "SMOLVLM",
+     "QWEN25VL",
+     "M3AE"
+    ],
+    "TF-IDF": [
+     "SMOLVLM",
+     "QWEN25VL",
+     "M3AE"
+    ],
+    "PubMedBERT": [
+     "SMOLVLM",
+     "QWEN25VL",
+     "M3AE"
+    ],
+    "majoritaria": [
+     "SMOLVLM",
+     "QWEN25VL",
+     "M3AE"
+    ],
+    "cinza": [
+     "SMOLVLM",
+     "QWEN25VL"
+    ]
+   },
+   "ordem_igual_sob_todos_os_baselines_with_3_familias": true,
+   "ordem_VLM_sob_cinza_igual_a_ordem_VLM_sob_A_text": true,
+   "pares_discordantes_TFIDF_x_Atext": []
+  }
+ },
+ "13_7": {
+  "valores": {
+   "KVASIR": {
+    "QWEN25VL|G_ft": {
+     "media": 0.00408201131830411,
+     "dp_entre_sementes": 0.0011400135195699516,
+     "ic_condicional_media_sementes": [
+      0.0011572722720385245,
+      0.0071263356692411175
+     ],
+     "ic_conjunto_imagens_e_sementes": [
+      0.0005311653022629567,
+      0.007843298675340355
+     ]
+    },
+    "QWEN25VL|G": {
+     "media": 0.22113987073630825,
+     "dp_entre_sementes": 0.002108077677849427,
+     "ic_condicional_media_sementes": [
+      0.21065917333278533,
+      0.23119816921332673
+     ],
+     "ic_conjunto_imagens_e_sementes": [
+      0.21063993508927026,
+      0.23166751155390025
+     ]
+    }
+   },
+   "SLAKE": {
+    "QWEN25VL|G_ft": {
+     "media": 0.019230769230769232,
+     "dp_entre_sementes": 0.01338404894911063,
+     "ic_condicional_media_sementes": [
+      0.0015564844837207983,
+      0.038741389342493
+     ],
+     "ic_conjunto_imagens_e_sementes": [
+      -0.0071297823028849475,
+      0.04460215875700701
+     ]
+    },
+    "QWEN25VL|G": {
+     "media": 0.1546474358974359,
+     "dp_entre_sementes": 0.017389851293438067,
+     "ic_condicional_media_sementes": [
+      0.11602791480919944,
+      0.19641104583952618
+     ],
+     "ic_conjunto_imagens_e_sementes": [
+      0.10941031300775621,
+      0.2004755184628754
+     ]
+    }
+   },
+   "HEAL": {
+    "QWEN25VL|G_ft": {
+     "media": 0.010142923005993546,
+     "dp_entre_sementes": 0.008919106557009268,
+     "ic_condicional_media_sementes": [
+      0.0025338909071369034,
+      0.017531718569780853
+     ],
+     "ic_conjunto_imagens_e_sementes": [
+      -0.0016092231661946805,
+      0.022606689734717415
+     ]
+    },
+    "QWEN25VL|G": {
+     "media": 0.04933148916551406,
+     "dp_entre_sementes": 0.011412534619166956,
+     "ic_condicional_media_sementes": [
+      0.03590411973271448,
+      0.06257226459953677
+     ],
+     "ic_conjunto_imagens_e_sementes": [
+      0.03206338449789276,
+      0.06694563109449313
+     ]
+    }
+   },
+   "MIMIC": {
+    "QWEN25VL|G_ft": {
+     "media": -0.01378696909050478,
+     "dp_entre_sementes": 0.016788602257662332,
+     "ic_condicional_media_sementes": [
+      -0.025540239801728967,
+      -0.0026790798531385043
+     ],
+     "ic_conjunto_imagens_e_sementes": [
+      -0.03471527409147047,
+      0.006649825065422683
+     ]
+    },
+    "QWEN25VL|G": {
+     "media": 0.02401601067378252,
+     "dp_entre_sementes": 0.02926179079314384,
+     "ic_condicional_media_sementes": [
+      0.01285246511095859,
+      0.0348114158772123
+     ],
+     "ic_conjunto_imagens_e_sementes": [
+      -0.0006662670221633585,
+      0.056634395352930814
+     ]
+    }
+   },
+   "VQARAD_REDIV": {
+    "QWEN25VL|G_ft": {
+     "media": -0.006379585326953749,
+     "dp_entre_sementes": 0.022228644122434377,
+     "ic_condicional_media_sementes": [
+      -0.025870808216990348,
+      0.011620194672851214
+     ],
+     "ic_conjunto_imagens_e_sementes": [
+      -0.036448005929782694,
+      0.028576687703193698
+     ]
+    },
+    "QWEN25VL|G": {
+     "media": 0.06299840510366826,
+     "dp_entre_sementes": 0.0073087331657987874,
+     "ic_condicional_media_sementes": [
+      0.01076190231375055,
+      0.11825585570655174
+     ],
+     "ic_conjunto_imagens_e_sementes": [
+      0.005578788200966322,
+      0.12286239827223429
+     ]
+    }
+   }
+  },
+  "codigo": {
+   "occlusion_stats.py": [
+    "harness/v7_occlusion/occlusion_stats.py",
+    "326c7ff0feb0df0248fe2055b9565fbca9e07babf5f4d94ced575df618f898a5",
+    "ImageBootstrap linhas 20-33"
+   ],
+   "decomposicao.py": [
+    "harness/v7_txt/decomposicao.py",
+    "bbc94ee5f73edbad2da391e7de403eca2ed4c80012879f70e7de937cc6706d38",
+    "boot_vec row 24; replicas per row row 74; CI of the mean across seeds rows ~93-97"
+   ],
+   "ic_contagem.py": [
+    "harness/v7_txt/ic_contagem.py",
+    "fbf5e1e66e73a778a5fdbd13b66a9f7ceb571d63a4a94d43a1104b4dba963309",
+    "exclui_zero row 8 (CI per row)"
+   ]
+  },
+  "sorteio_de_sementes": "numpy RandomState(20260913).randint(0, 3, (2000, 3)): per replica, 3 seeds with replacement; the same image replica for all three"
+ },
+ "13_5": {
+  "base": "VQA-RAD re-split, 418 closed-form",
+  "recortes": {
+   "question_type": {
+    "PRES": {
+     "n": 195,
+     "QWEN25VL": {
+      "media": 0.7213675213675214,
+      "dp": 0.00592154122245768
+     },
+     "PubMedBERT": {
+      "media": 0.7196581196581198,
+      "dp": 0.016484873095714458
+     }
+    },
+    "ABN": {
+     "n": 59,
+     "QWEN25VL": {
+      "media": 0.8022598870056498,
+      "dp": 0.019571195565750037
+     },
+     "PubMedBERT": {
+      "media": 0.6836158192090395,
+      "dp": 0.10896780520895996
+     }
+    },
+    "SIZE": {
+     "n": 41,
+     "QWEN25VL": {
+      "media": 0.7886178861788619,
+      "dp": 0.014081713882673812
+     },
+     "PubMedBERT": {
+      "media": 0.6260162601626016,
+      "dp": 0.070408569413369
+     }
+    },
+    "ATTRIB": {
+     "n": 33,
+     "QWEN25VL": {
+      "media": 0.7878787878787877,
+      "dp": 1.3597399555105182e-16
+     },
+     "PubMedBERT": {
+      "media": 0.3333333333333333,
+      "dp": 0.030303030303030304
+     }
+    },
+    "MODALITY": {
+     "n": 20,
+     "QWEN25VL": {
+      "media": 0.5833333333333334,
+      "dp": 0.05773502691896256
+     },
+     "PubMedBERT": {
+      "media": 0.5499999999999999,
+      "dp": 0.04999999999999999
+     }
+    },
+    "POS": {
+     "n": 14,
+     "QWEN25VL": {
+      "media": 0.4047619047619047,
+      "dp": 0.041239304942116105
+     },
+     "PubMedBERT": {
+      "media": 0.5238095238095238,
+      "dp": 0.041239304942116105
+     }
+    },
+    "COLOR": {
+     "n": 13,
+     "QWEN25VL": {
+      "media": 0.5384615384615384,
+      "dp": 0.0
+     },
+     "PubMedBERT": {
+      "media": 0.3333333333333333,
+      "dp": 0.04441155916843275
+     }
+    },
+    "OTHER": {
+     "n": 12,
+     "QWEN25VL": {
+      "media": 0.6666666666666666,
+      "dp": 0.0
+     },
+     "PubMedBERT": {
+      "media": 0.4444444444444445,
+      "dp": 0.0481125224324688
+     }
+    },
+    "PLANE": {
+     "n": 12,
+     "QWEN25VL": {
+      "media": 0.6944444444444443,
+      "dp": 0.048112522432468836
+     },
+     "PubMedBERT": {
+      "media": 0.5,
+      "dp": 0.0
+     }
+    },
+    "PRES, ATTRIB": {
+     "n": 8,
+     "QWEN25VL": {
+      "media": 0.6666666666666666,
+      "dp": 0.07216878364870323
+     },
+     "PubMedBERT": {
+      "media": 0.4583333333333333,
+      "dp": 0.07216878364870323
+     }
+    },
+    "COLOR, PRES": {
+     "n": 4,
+     "QWEN25VL": {
+      "media": 0.75,
+      "dp": 0.0
+     },
+     "PubMedBERT": {
+      "media": 0.0,
+      "dp": 0.0
+     }
+    },
+    "ORGAN": {
+     "n": 4,
+     "QWEN25VL": {
+      "media": 0.6666666666666666,
+      "dp": 0.14433756729740646
+     },
+     "PubMedBERT": {
+      "media": 0.9166666666666666,
+      "dp": 0.14433756729740646
+     }
+    },
+    "PRES, ABN": {
+     "n": 1,
+     "QWEN25VL": {
+      "media": 1.0,
+      "dp": 0.0
+     },
+     "PubMedBERT": {
+      "media": 1.0,
+      "dp": 0.0
+     }
+    },
+    "SIZE, PRES": {
+     "n": 1,
+     "QWEN25VL": {
+      "media": 1.0,
+      "dp": 0.0
+     },
+     "PubMedBERT": {
+      "media": 1.0,
+      "dp": 0.0
+     }
+    },
+    "COUNT": {
+     "n": 1,
+     "QWEN25VL": {
+      "media": 0.0,
+      "dp": 0.0
+     },
+     "PubMedBERT": {
+      "media": 0.6666666666666666,
+      "dp": 0.5773502691896258
+     }
+    }
+   },
+   "answer_type_osf": {
+    "CLOSED": {
+     "n": 418,
+     "QWEN25VL": {
+      "media": 0.7177033492822966,
+      "dp": 0.002392344497607668
+     },
+     "PubMedBERT": {
+      "media": 0.6251993620414673,
+      "dp": 0.022228644122434377
+     }
+    }
+   },
+   "prefixo_2_palavras": {
+    "is the": {
+     "n": 81,
+     "QWEN25VL": {
+      "media": 0.7654320987654321,
+      "dp": 0.021383343303319504
+     },
+     "PubMedBERT": {
+      "media": 0.5925925925925926,
+      "dp": 0.0
+     }
+    },
+    "isare there": {
+     "n": 70,
+     "QWEN25VL": {
+      "media": 0.6238095238095238,
+      "dp": 0.016495721976846456
+     },
+     "PubMedBERT": {
+      "media": 0.6619047619047619,
+      "dp": 0.054084841388574036
+     }
+    },
+    "is there": {
+     "n": 69,
+     "QWEN25VL": {
+      "media": 0.6376811594202898,
+      "dp": 0.0
+     },
+     "PubMedBERT": {
+      "media": 0.7294685990338164,
+      "dp": 0.03016907245603092
+     }
+    },
+    "isare the": {
+     "n": 51,
+     "QWEN25VL": {
+      "media": 0.7124183006535948,
+      "dp": 0.02995147513043033
+     },
+     "PubMedBERT": {
+      "media": 0.6013071895424836,
+      "dp": 0.02264118702704413
+     }
+    },
+    "is this": {
+     "n": 49,
+     "QWEN25VL": {
+      "media": 0.7687074829931974,
+      "dp": 0.031173984319427455
+     },
+     "PubMedBERT": {
+      "media": 0.6462585034013606,
+      "dp": 0.11958092402208807
+     }
+    },
+    "are the": {
+     "n": 30,
+     "QWEN25VL": {
+      "media": 0.8666666666666667,
+      "dp": 0.0
+     },
+     "PubMedBERT": {
+      "media": 0.5555555555555556,
+      "dp": 0.01924500897298752
+     }
+    },
+    "are there": {
+     "n": 11,
+     "QWEN25VL": {
+      "media": 0.8484848484848485,
+      "dp": 0.05248638810814775
+     },
+     "PubMedBERT": {
+      "media": 0.5454545454545454,
+      "dp": 0.0
+     }
+    }
+   }
+  },
+  "prefixo": "first two words of the normalized question; groups with n >= 10"
+ },
+ "_note": "Qwen2.5-VL-7B only: produced by the unchanged analysis scripts with the Qwen2-VL-2B predictions replaced by the Qwen2.5-VL-7B ones; entries of the other families removed (see results/aggregates/ for them)."
+}

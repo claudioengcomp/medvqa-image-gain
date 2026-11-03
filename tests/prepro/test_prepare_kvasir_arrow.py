@@ -123,9 +123,9 @@ def test_build_arrow_dataframe_produces_expected_schema_columns():
 
 
 def test_download_image_bytes_retries_on_transient_error_then_succeeds():
-    # Achado real (Colab, 21/08/2026): ConnectionResetError no meio de
+    # Real finding (Colab, 21/08/2026): ConnectionResetError in the middle of
     # ~4.000 sequential downloads would bring down the entire script without this
-    # retentativa.
+    # retry.
     mock_resp = type("Resp", (), {
         "__enter__": lambda self: self, "__exit__": lambda self, *a: None,
         "read": lambda self: b"FAKEBYTES",
@@ -162,7 +162,7 @@ def test_placeholder_image_bytes_ignores_url_and_returns_valid_jpeg():
 
     b1 = _placeholder_image_bytes("http://example.com/a.jpg")
     b2 = _placeholder_image_bytes("http://example.com/completely-different-url.jpg")
-    assert b1 == b2  # mesmos bytes sempre, independente da url
+    assert b1 == b2  # always the same bytes, regardless of the url
 
     img = Image.open(io.BytesIO(b1))
     assert img.format == "JPEG"

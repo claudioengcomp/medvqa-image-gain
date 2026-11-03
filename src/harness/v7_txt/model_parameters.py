@@ -24,7 +24,7 @@ for fam, L in ABORD.items():
         stem = os.path.basename(ref).rsplit("_slake.yaml", 1)[0]; pref = yaml.safe_load(open(ref))["peft_config"]; difs = []; vistos = []
         for p in sorted(set(glob.glob(f"{P0C}/{stem}_*.yaml") + glob.glob(f"{V7C}/{stem}_*.yaml") + glob.glob(f"{W}/v7_mimic/configs/{stem}_*.yaml") + glob.glob(f"{PJ}/configs/{stem}_*.yaml"))):
             rest = os.path.basename(p)[len(stem) + 1:-5]
-            if "_" in rest and rest not in ("vqa_rad", "heal_treino") and not rest.startswith(("vqarad", "vqa_rad")): continue   # so <stem>_<base>.yaml (exclui variantes como encattn64)
+            if "_" in rest and rest not in ("vqa_rad", "heal_treino") and not rest.startswith(("vqarad", "vqa_rad")): continue   # only <stem>_<base>.yaml (excludes variants such as encattn64)
             pc = (yaml.safe_load(open(p)) or {}).get("peft_config"); vistos.append(os.path.basename(p))
             if pc != pref: difs.append([os.path.basename(p), pc])
         out["peft_config_entre_bases"][f"{fam}|{ab}"] = {"referencia": os.path.basename(ref), "yaml_conferidas": vistos, "diferentes": difs}

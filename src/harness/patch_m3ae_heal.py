@@ -63,7 +63,7 @@ def patch_datamodules_init(m3ae_dir: str) -> None:
     if "VQAHEALDataModule" in content:
         return
     if K._DATAMODULES_MARKER not in content:
-        raise ValueError(f"{path}: marcador '_datamodules = {{' not found; file format changed?")
+        raise ValueError(f"{path}: marker '_datamodules = {{' not found; file format changed?")
     if K._DATAMODULES_ANCHOR_ENTRY not in content:
         raise ValueError(f"{path}: entry 'vqa_vqa_rad' not found in the dictionary; file format changed?")
     content = content.replace(K._DATAMODULES_MARKER, f"\n{_DATAMODULES_IMPORT_LINE}{K._DATAMODULES_MARKER}", 1)
@@ -108,5 +108,5 @@ def _parse_args():
 if __name__ == "__main__":
     args = _parse_args()
     n = apply_patch(args.m3ae_dir, args.vocab_json)
-    print(f"Patch aplicado em {args.m3ae_dir}: VQAHEALDataset/DataModule criados e registrados, "
+    print(f"Patch applied to {args.m3ae_dir}: VQAHEALDataset/DataModule created and registered, "
           f"task_finetune_vqa_heal with vqa_label_size={n}.")

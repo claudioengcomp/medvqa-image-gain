@@ -1,0 +1,3598 @@
+{
+ "checkpoint": {
+  "repo": "Qwen/Qwen2.5-VL-7B-Instruct",
+  "snapshots": [
+   "cc594898137f460bfe9f0759e9844b3ce807cfb5"
+  ],
+  "refs_main": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+  "config_model_type": "qwen2_5_vl",
+  "architectures": [
+   "Qwen2_5_VLForConditionalGeneration"
+  ],
+  "torch_dtype": "bfloat16",
+  "text_hidden_size": 3584,
+  "num_hidden_layers": 28,
+  "files": {
+   "model-00001-of-00005.safetensors": {
+    "bytes": 3900233256,
+    "sha256": "e97b877e47fde53a6c6e77aafb36e58e91ee9d95c4a3eeac6f1b5c0e6a1c986e"
+   },
+   "model-00002-of-00005.safetensors": {
+    "bytes": 3864726320,
+    "sha256": "a9a300a43b4724eee2abe7c18ceb26768d0ab011eb0cad19d9bfd2476a24d024"
+   },
+   "model-00003-of-00005.safetensors": {
+    "bytes": 3864726424,
+    "sha256": "111223d173e00bbee81cba1216fad28668df3476706b7fd26f4d5b50f8b3a507"
+   },
+   "model-00004-of-00005.safetensors": {
+    "bytes": 3864733680,
+    "sha256": "ef47f634fa57d46ee134edcc09f34085a47da1e16c12a2abe0d67118be6d72ed"
+   },
+   "model-00005-of-00005.safetensors": {
+    "bytes": 1089994880,
+    "sha256": "0c859795ad3a627a9b95bcb762e059d5b768a4a36fdd4affeff269d93fdecc67"
+   },
+   "config.json": {
+    "bytes": 1374,
+    "sha256": "77d9ec7321cc572e3579e2c84799c9cadaded63c49ce93b101733349fc330c43"
+   }
+  }
+ },
+ "checkpoint_2b": {
+  "snapshots": [
+   "895c3a49bc3fa70a340399125c650a463535e71c"
+  ]
+ },
+ "runs": [
+  {
+   "yaml_7b": "v7_txt/article_runs/qwen25vl7b/configs/qwen25vl_lora_heal.yaml",
+   "yaml_2b": "doutorado/medvqa-occlusion-study/med_vlm/configs/qwen2vl_lora_heal.yaml",
+   "seed": 0,
+   "log_7b": "v7_txt/article_runs/qwen25vl7b/logs/qwen25vl_lora_heal_seed0.json",
+   "log_2b": "doutorado/medvqa-occlusion-study/outputs/qwen2vl_lora_heal_seed0.json",
+   "yaml_differences": {
+    "logging.wandb_run_name": [
+     "qwen2vl_lora_heal",
+     "qwen25vl_lora_heal"
+    ],
+    "model": [
+     "QWEN2VL",
+     "QWEN25VL"
+    ],
+    "outputs_dir": [
+     "./outputs",
+     "qwen25vl7b"
+    ],
+    "results_json_dir": [
+     null,
+     "logs"
+    ],
+    "run_name": [
+     "qwen2vl_lora_heal",
+     "qwen25vl_lora_heal"
+    ],
+    "train.checkpoint_dir": [
+     null,
+     "ckpt_int"
+    ]
+   },
+   "training_log_differences": {
+    "no_image": [
+     null,
+     false
+    ],
+    "efficiency.params.total_params": [
+     2213343744,
+     8302259200
+    ],
+    "efficiency.params.trainable_params": [
+     4358144,
+     10092544
+    ]
+   },
+   "params_7b": [
+    8302259200,
+    10092544
+   ],
+   "params_2b": [
+    2213343744,
+    4358144
+   ],
+   "peak_gb_torch_7b": 19.7937273979187,
+   "wall_s_7b": 19697.9
+  },
+  {
+   "yaml_7b": "v7_txt/article_runs/qwen25vl7b/configs/qwen25vl_lora_heal.yaml",
+   "yaml_2b": "doutorado/medvqa-occlusion-study/med_vlm/configs/qwen2vl_lora_heal.yaml",
+   "seed": 1,
+   "log_7b": "v7_txt/article_runs/qwen25vl7b/logs/qwen25vl_lora_heal_seed1.json",
+   "log_2b": "doutorado/medvqa-occlusion-study/outputs/qwen2vl_lora_heal_seed1.json",
+   "yaml_differences": {
+    "logging.wandb_run_name": [
+     "qwen2vl_lora_heal",
+     "qwen25vl_lora_heal"
+    ],
+    "model": [
+     "QWEN2VL",
+     "QWEN25VL"
+    ],
+    "outputs_dir": [
+     "./outputs",
+     "qwen25vl7b"
+    ],
+    "results_json_dir": [
+     null,
+     "logs"
+    ],
+    "run_name": [
+     "qwen2vl_lora_heal",
+     "qwen25vl_lora_heal"
+    ],
+    "train.checkpoint_dir": [
+     null,
+     "ckpt_int"
+    ]
+   },
+   "training_log_differences": {
+    "no_image": [
+     null,
+     false
+    ],
+    "efficiency.params.total_params": [
+     2213343744,
+     8302259200
+    ],
+    "efficiency.params.trainable_params": [
+     4358144,
+     10092544
+    ]
+   },
+   "params_7b": [
+    8302259200,
+    10092544
+   ],
+   "params_2b": [
+    2213343744,
+    4358144
+   ],
+   "peak_gb_torch_7b": 19.792274475097656,
+   "wall_s_7b": 20275.4
+  },
+  {
+   "yaml_7b": "v7_txt/article_runs/qwen25vl7b/configs/qwen25vl_lora_heal.yaml",
+   "yaml_2b": "doutorado/medvqa-occlusion-study/med_vlm/configs/qwen2vl_lora_heal.yaml",
+   "seed": 2,
+   "log_7b": "v7_txt/article_runs/qwen25vl7b/logs/qwen25vl_lora_heal_seed2.json",
+   "log_2b": "doutorado/medvqa-occlusion-study/outputs/qwen2vl_lora_heal_seed2.json",
+   "yaml_differences": {
+    "logging.wandb_run_name": [
+     "qwen2vl_lora_heal",
+     "qwen25vl_lora_heal"
+    ],
+    "model": [
+     "QWEN2VL",
+     "QWEN25VL"
+    ],
+    "outputs_dir": [
+     "./outputs",
+     "qwen25vl7b"
+    ],
+    "results_json_dir": [
+     null,
+     "logs"
+    ],
+    "run_name": [
+     "qwen2vl_lora_heal",
+     "qwen25vl_lora_heal"
+    ],
+    "train.checkpoint_dir": [
+     null,
+     "ckpt_int"
+    ]
+   },
+   "training_log_differences": {
+    "no_image": [
+     null,
+     false
+    ],
+    "efficiency.params.total_params": [
+     2213343744,
+     8302259200
+    ],
+    "efficiency.params.trainable_params": [
+     4358144,
+     10092544
+    ]
+   },
+   "params_7b": [
+    8302259200,
+    10092544
+   ],
+   "params_2b": [
+    2213343744,
+    4358144
+   ],
+   "peak_gb_torch_7b": 19.792274475097656,
+   "wall_s_7b": 24984.7
+  },
+  {
+   "yaml_7b": "v7_txt/article_runs/qwen25vl7b/configs/qwen25vl_lora_kvasir.yaml",
+   "yaml_2b": "doutorado/medvqa-main/med_vlm/configs/qwen2vl_lora_kvasir.yaml",
+   "seed": 0,
+   "log_7b": "v7_txt/article_runs/qwen25vl7b/logs/qwen25vl_lora_kvasir_seed0.json",
+   "log_2b": "doutorado/medvqa-main/outputs/qwen2vl_lora_kvasir_seed0.json",
+   "yaml_differences": {
+    "logging.wandb_run_name": [
+     "qwen2vl_lora_kvasir",
+     "qwen25vl_lora_kvasir"
+    ],
+    "model": [
+     "QWEN2VL",
+     "QWEN25VL"
+    ],
+    "outputs_dir": [
+     "./outputs",
+     "qwen25vl7b"
+    ],
+    "results_json_dir": [
+     null,
+     "logs"
+    ],
+    "run_name": [
+     "qwen2vl_lora_kvasir",
+     "qwen25vl_lora_kvasir"
+    ],
+    "train.checkpoint_dir": [
+     null,
+     "ckpt_int"
+    ]
+   },
+   "training_log_differences": {
+    "no_image": [
+     null,
+     false
+    ],
+    "efficiency.params.total_params": [
+     2213343744,
+     8302259200
+    ],
+    "efficiency.params.trainable_params": [
+     4358144,
+     10092544
+    ]
+   },
+   "params_7b": [
+    8302259200,
+    10092544
+   ],
+   "params_2b": [
+    2213343744,
+    4358144
+   ],
+   "peak_gb_torch_7b": 19.85276508331299,
+   "wall_s_7b": 55127.5
+  },
+  {
+   "yaml_7b": "v7_txt/article_runs/qwen25vl7b/configs/qwen25vl_lora_kvasir.yaml",
+   "yaml_2b": "doutorado/medvqa-main/med_vlm/configs/qwen2vl_lora_kvasir.yaml",
+   "seed": 1,
+   "log_7b": "v7_txt/article_runs/qwen25vl7b/logs/qwen25vl_lora_kvasir_seed1.json",
+   "log_2b": "doutorado/medvqa-main/outputs/qwen2vl_lora_kvasir_seed1.json",
+   "yaml_differences": {
+    "logging.wandb_run_name": [
+     "qwen2vl_lora_kvasir",
+     "qwen25vl_lora_kvasir"
+    ],
+    "model": [
+     "QWEN2VL",
+     "QWEN25VL"
+    ],
+    "outputs_dir": [
+     "./outputs",
+     "qwen25vl7b"
+    ],
+    "results_json_dir": [
+     null,
+     "logs"
+    ],
+    "run_name": [
+     "qwen2vl_lora_kvasir",
+     "qwen25vl_lora_kvasir"
+    ],
+    "train.checkpoint_dir": [
+     null,
+     "ckpt_int"
+    ]
+   },
+   "training_log_differences": {
+    "no_image": [
+     null,
+     false
+    ],
+    "efficiency.params.total_params": [
+     2213343744,
+     8302259200
+    ],
+    "efficiency.params.trainable_params": [
+     4358144,
+     10092544
+    ]
+   },
+   "params_7b": [
+    8302259200,
+    10092544
+   ],
+   "params_2b": [
+    2213343744,
+    4358144
+   ],
+   "peak_gb_torch_7b": 20.92759084701538,
+   "wall_s_7b": 57178.2
+  },
+  {
+   "yaml_7b": "v7_txt/article_runs/qwen25vl7b/configs/qwen25vl_lora_kvasir.yaml",
+   "yaml_2b": "doutorado/medvqa-main/med_vlm/configs/qwen2vl_lora_kvasir.yaml",
+   "seed": 2,
+   "log_7b": "v7_txt/article_runs/qwen25vl7b/logs/qwen25vl_lora_kvasir_seed2.json",
+   "log_2b": "doutorado/medvqa-main/outputs/qwen2vl_lora_kvasir_seed2.json",
+   "yaml_differences": {
+    "logging.wandb_run_name": [
+     "qwen2vl_lora_kvasir",
+     "qwen25vl_lora_kvasir"
+    ],
+    "model": [
+     "QWEN2VL",
+     "QWEN25VL"
+    ],
+    "outputs_dir": [
+     "./outputs",
+     "qwen25vl7b"
+    ],
+    "results_json_dir": [
+     null,
+     "logs"
+    ],
+    "run_name": [
+     "qwen2vl_lora_kvasir",
+     "qwen25vl_lora_kvasir"
+    ],
+    "train.checkpoint_dir": [
+     null,
+     "ckpt_int"
+    ]
+   },
+   "training_log_differences": {
+    "no_image": [
+     null,
+     false
+    ],
+    "efficiency.params.total_params": [
+     2213343744,
+     8302259200
+    ],
+    "efficiency.params.trainable_params": [
+     4358144,
+     10092544
+    ]
+   },
+   "params_7b": [
+    8302259200,
+    10092544
+   ],
+   "params_2b": [
+    2213343744,
+    4358144
+   ],
+   "peak_gb_torch_7b": 19.840322017669678,
+   "wall_s_7b": 58321.9
+  },
+  {
+   "yaml_7b": "v7_txt/article_runs/qwen25vl7b/configs/qwen25vl_lora_mimic.yaml",
+   "yaml_2b": "v7_mimic/configs/qwen2vl_lora_mimic.yaml",
+   "seed": 0,
+   "log_7b": "v7_txt/article_runs/qwen25vl7b/logs/qwen25vl_lora_mimic_seed0.json",
+   "log_2b": "v7_mimic/logs/qwen2vl_lora_mimic_seed0.json",
+   "yaml_differences": {
+    "logging.wandb_run_name": [
+     "qwen2vl_lora_mimic",
+     "qwen25vl_lora_mimic"
+    ],
+    "model": [
+     "QWEN2VL",
+     "QWEN25VL"
+    ],
+    "outputs_dir": [
+     "v7_mimic",
+     "qwen25vl7b"
+    ],
+    "results_json_dir": [
+     "logs",
+     "logs"
+    ],
+    "run_name": [
+     "qwen2vl_lora_mimic",
+     "qwen25vl_lora_mimic"
+    ],
+    "train.checkpoint_dir": [
+     "checkpoints_mimic",
+     "ckpt_int"
+    ]
+   },
+   "training_log_differences": {
+    "efficiency.params.total_params": [
+     2213343744,
+     8302259200
+    ],
+    "efficiency.params.trainable_params": [
+     4358144,
+     10092544
+    ]
+   },
+   "params_7b": [
+    8302259200,
+    10092544
+   ],
+   "params_2b": [
+    2213343744,
+    4358144
+   ],
+   "peak_gb_torch_7b": 19.69109296798706,
+   "wall_s_7b": 20525.1
+  },
+  {
+   "yaml_7b": "v7_txt/article_runs/qwen25vl7b/configs/qwen25vl_lora_mimic.yaml",
+   "yaml_2b": "v7_mimic/configs/qwen2vl_lora_mimic.yaml",
+   "seed": 1,
+   "log_7b": "v7_txt/article_runs/qwen25vl7b/logs/qwen25vl_lora_mimic_seed1.json",
+   "log_2b": "v7_mimic/logs/qwen2vl_lora_mimic_seed1.json",
+   "yaml_differences": {
+    "logging.wandb_run_name": [
+     "qwen2vl_lora_mimic",
+     "qwen25vl_lora_mimic"
+    ],
+    "model": [
+     "QWEN2VL",
+     "QWEN25VL"
+    ],
+    "outputs_dir": [
+     "v7_mimic",
+     "qwen25vl7b"
+    ],
+    "results_json_dir": [
+     "logs",
+     "logs"
+    ],
+    "run_name": [
+     "qwen2vl_lora_mimic",
+     "qwen25vl_lora_mimic"
+    ],
+    "train.checkpoint_dir": [
+     "checkpoints_mimic",
+     "ckpt_int"
+    ]
+   },
+   "training_log_differences": {
+    "efficiency.params.total_params": [
+     2213343744,
+     8302259200
+    ],
+    "efficiency.params.trainable_params": [
+     4358144,
+     10092544
+    ]
+   },
+   "params_7b": [
+    8302259200,
+    10092544
+   ],
+   "params_2b": [
+    2213343744,
+    4358144
+   ],
+   "peak_gb_torch_7b": 19.692545890808105,
+   "wall_s_7b": 23129.2
+  },
+  {
+   "yaml_7b": "v7_txt/article_runs/qwen25vl7b/configs/qwen25vl_lora_mimic.yaml",
+   "yaml_2b": "v7_mimic/configs/qwen2vl_lora_mimic.yaml",
+   "seed": 2,
+   "log_7b": "v7_txt/article_runs/qwen25vl7b/logs/qwen25vl_lora_mimic_seed2.json",
+   "log_2b": "v7_mimic/logs/qwen2vl_lora_mimic_seed2.json",
+   "yaml_differences": {
+    "logging.wandb_run_name": [
+     "qwen2vl_lora_mimic",
+     "qwen25vl_lora_mimic"
+    ],
+    "model": [
+     "QWEN2VL",
+     "QWEN25VL"
+    ],
+    "outputs_dir": [
+     "v7_mimic",
+     "qwen25vl7b"
+    ],
+    "results_json_dir": [
+     "logs",
+     "logs"
+    ],
+    "run_name": [
+     "qwen2vl_lora_mimic",
+     "qwen25vl_lora_mimic"
+    ],
+    "train.checkpoint_dir": [
+     "checkpoints_mimic",
+     "ckpt_int"
+    ]
+   },
+   "training_log_differences": {
+    "efficiency.params.total_params": [
+     2213343744,
+     8302259200
+    ],
+    "efficiency.params.trainable_params": [
+     4358144,
+     10092544
+    ]
+   },
+   "params_7b": [
+    8302259200,
+    10092544
+   ],
+   "params_2b": [
+    2213343744,
+    4358144
+   ],
+   "peak_gb_torch_7b": 19.693636417388916,
+   "wall_s_7b": 227432.6
+  },
+  {
+   "yaml_7b": "v7_txt/article_runs/qwen25vl7b/configs/qwen25vl_lora_slake.yaml",
+   "yaml_2b": "doutorado/medvqa-main/med_vlm/configs/qwen2vl_lora_slake.yaml",
+   "seed": 0,
+   "log_7b": "v7_txt/article_runs/qwen25vl7b/logs/qwen25vl_lora_slake_seed0.json",
+   "log_2b": "doutorado/medvqa-main/outputs/qwen2vl_lora_slake.json",
+   "yaml_differences": {
+    "logging.wandb_run_name": [
+     "qwen2vl_lora_slake",
+     "qwen25vl_lora_slake"
+    ],
+    "model": [
+     "QWEN2VL",
+     "QWEN25VL"
+    ],
+    "outputs_dir": [
+     "./outputs",
+     "qwen25vl7b"
+    ],
+    "results_json_dir": [
+     null,
+     "logs"
+    ],
+    "run_name": [
+     "qwen2vl_lora_slake",
+     "qwen25vl_lora_slake"
+    ],
+    "train.checkpoint_dir": [
+     null,
+     "ckpt_int"
+    ]
+   },
+   "training_log_differences": {
+    "train.seed": [
+     null,
+     0
+    ],
+    "no_image": [
+     null,
+     false
+    ],
+    "efficiency.params.total_params": [
+     2213343744,
+     8302259200
+    ],
+    "efficiency.params.trainable_params": [
+     4358144,
+     10092544
+    ]
+   },
+   "params_7b": [
+    8302259200,
+    10092544
+   ],
+   "params_2b": [
+    2213343744,
+    4358144
+   ],
+   "peak_gb_torch_7b": 19.87365436553955,
+   "wall_s_7b": 6085.1
+  },
+  {
+   "yaml_7b": "v7_txt/article_runs/qwen25vl7b/configs/qwen25vl_lora_slake.yaml",
+   "yaml_2b": "doutorado/medvqa-main/med_vlm/configs/qwen2vl_lora_slake.yaml",
+   "seed": 1,
+   "log_7b": "v7_txt/article_runs/qwen25vl7b/logs/qwen25vl_lora_slake_seed1.json",
+   "log_2b": "doutorado/medvqa-main/outputs/qwen2vl_lora_slake_seed1.json",
+   "yaml_differences": {
+    "logging.wandb_run_name": [
+     "qwen2vl_lora_slake",
+     "qwen25vl_lora_slake"
+    ],
+    "model": [
+     "QWEN2VL",
+     "QWEN25VL"
+    ],
+    "outputs_dir": [
+     "./outputs",
+     "qwen25vl7b"
+    ],
+    "results_json_dir": [
+     null,
+     "logs"
+    ],
+    "run_name": [
+     "qwen2vl_lora_slake",
+     "qwen25vl_lora_slake"
+    ],
+    "train.checkpoint_dir": [
+     null,
+     "ckpt_int"
+    ]
+   },
+   "training_log_differences": {
+    "no_image": [
+     null,
+     false
+    ],
+    "efficiency.params.total_params": [
+     2213343744,
+     8302259200
+    ],
+    "efficiency.params.trainable_params": [
+     4358144,
+     10092544
+    ]
+   },
+   "params_7b": [
+    8302259200,
+    10092544
+   ],
+   "params_2b": [
+    2213343744,
+    4358144
+   ],
+   "peak_gb_torch_7b": 19.87365436553955,
+   "wall_s_7b": 9034.1
+  },
+  {
+   "yaml_7b": "v7_txt/article_runs/qwen25vl7b/configs/qwen25vl_lora_slake.yaml",
+   "yaml_2b": "doutorado/medvqa-main/med_vlm/configs/qwen2vl_lora_slake.yaml",
+   "seed": 2,
+   "log_7b": "v7_txt/article_runs/qwen25vl7b/logs/qwen25vl_lora_slake_seed2.json",
+   "log_2b": "doutorado/medvqa-main/outputs/qwen2vl_lora_slake_seed2.json",
+   "yaml_differences": {
+    "logging.wandb_run_name": [
+     "qwen2vl_lora_slake",
+     "qwen25vl_lora_slake"
+    ],
+    "model": [
+     "QWEN2VL",
+     "QWEN25VL"
+    ],
+    "outputs_dir": [
+     "./outputs",
+     "qwen25vl7b"
+    ],
+    "results_json_dir": [
+     null,
+     "logs"
+    ],
+    "run_name": [
+     "qwen2vl_lora_slake",
+     "qwen25vl_lora_slake"
+    ],
+    "train.checkpoint_dir": [
+     null,
+     "ckpt_int"
+    ]
+   },
+   "training_log_differences": {
+    "no_image": [
+     null,
+     false
+    ],
+    "efficiency.params.total_params": [
+     2213343744,
+     8302259200
+    ],
+    "efficiency.params.trainable_params": [
+     4358144,
+     10092544
+    ]
+   },
+   "params_7b": [
+    8302259200,
+    10092544
+   ],
+   "params_2b": [
+    2213343744,
+    4358144
+   ],
+   "peak_gb_torch_7b": 19.87365436553955,
+   "wall_s_7b": 5913.4
+  },
+  {
+   "yaml_7b": "v7_txt/article_runs/qwen25vl7b/configs/qwen25vl_lora_txt_heal.yaml",
+   "yaml_2b": "v7_txt/configs/qwen2vl_lora_txt_heal.yaml",
+   "seed": 0,
+   "log_7b": "v7_txt/article_runs/qwen25vl7b/logs/qwen25vl_lora_txt_heal_seed0.json",
+   "log_2b": "v7_txt/logs/qwen2vl_lora_txt_heal_seed0.json",
+   "yaml_differences": {
+    "logging.wandb_run_name": [
+     "qwen2vl_lora_txt_heal",
+     "qwen25vl_lora_txt_heal"
+    ],
+    "model": [
+     "QWEN2VL",
+     "QWEN25VL"
+    ],
+    "outputs_dir": [
+     "v7_txt",
+     "qwen25vl7b"
+    ],
+    "results_json_dir": [
+     "logs",
+     "logs"
+    ],
+    "run_name": [
+     "qwen2vl_lora_txt_heal",
+     "qwen25vl_lora_txt_heal"
+    ],
+    "train.checkpoint_dir": [
+     "checkpoints",
+     "ckpt_int"
+    ]
+   },
+   "training_log_differences": {
+    "efficiency.params.total_params": [
+     2213343744,
+     8302259200
+    ],
+    "efficiency.params.trainable_params": [
+     4358144,
+     10092544
+    ]
+   },
+   "params_7b": [
+    8302259200,
+    10092544
+   ],
+   "params_2b": [
+    2213343744,
+    4358144
+   ],
+   "peak_gb_torch_7b": 16.105191230773926,
+   "wall_s_7b": 5537.0
+  },
+  {
+   "yaml_7b": "v7_txt/article_runs/qwen25vl7b/configs/qwen25vl_lora_txt_heal.yaml",
+   "yaml_2b": "v7_txt/configs/qwen2vl_lora_txt_heal.yaml",
+   "seed": 1,
+   "log_7b": "v7_txt/article_runs/qwen25vl7b/logs/qwen25vl_lora_txt_heal_seed1.json",
+   "log_2b": "v7_txt/logs/qwen2vl_lora_txt_heal_seed1.json",
+   "yaml_differences": {
+    "logging.wandb_run_name": [
+     "qwen2vl_lora_txt_heal",
+     "qwen25vl_lora_txt_heal"
+    ],
+    "model": [
+     "QWEN2VL",
+     "QWEN25VL"
+    ],
+    "outputs_dir": [
+     "v7_txt",
+     "qwen25vl7b"
+    ],
+    "results_json_dir": [
+     "logs",
+     "logs"
+    ],
+    "run_name": [
+     "qwen2vl_lora_txt_heal",
+     "qwen25vl_lora_txt_heal"
+    ],
+    "train.checkpoint_dir": [
+     "checkpoints",
+     "ckpt_int"
+    ]
+   },
+   "training_log_differences": {
+    "efficiency.params.total_params": [
+     2213343744,
+     8302259200
+    ],
+    "efficiency.params.trainable_params": [
+     4358144,
+     10092544
+    ]
+   },
+   "params_7b": [
+    8302259200,
+    10092544
+   ],
+   "params_2b": [
+    2213343744,
+    4358144
+   ],
+   "peak_gb_torch_7b": 16.105191230773926,
+   "wall_s_7b": 5939.4
+  },
+  {
+   "yaml_7b": "v7_txt/article_runs/qwen25vl7b/configs/qwen25vl_lora_txt_heal.yaml",
+   "yaml_2b": "v7_txt/configs/qwen2vl_lora_txt_heal.yaml",
+   "seed": 2,
+   "log_7b": "v7_txt/article_runs/qwen25vl7b/logs/qwen25vl_lora_txt_heal_seed2.json",
+   "log_2b": "v7_txt/logs/qwen2vl_lora_txt_heal_seed2.json",
+   "yaml_differences": {
+    "logging.wandb_run_name": [
+     "qwen2vl_lora_txt_heal",
+     "qwen25vl_lora_txt_heal"
+    ],
+    "model": [
+     "QWEN2VL",
+     "QWEN25VL"
+    ],
+    "outputs_dir": [
+     "v7_txt",
+     "qwen25vl7b"
+    ],
+    "results_json_dir": [
+     "logs",
+     "logs"
+    ],
+    "run_name": [
+     "qwen2vl_lora_txt_heal",
+     "qwen25vl_lora_txt_heal"
+    ],
+    "train.checkpoint_dir": [
+     "checkpoints",
+     "ckpt_int"
+    ]
+   },
+   "training_log_differences": {
+    "efficiency.params.total_params": [
+     2213343744,
+     8302259200
+    ],
+    "efficiency.params.trainable_params": [
+     4358144,
+     10092544
+    ]
+   },
+   "params_7b": [
+    8302259200,
+    10092544
+   ],
+   "params_2b": [
+    2213343744,
+    4358144
+   ],
+   "peak_gb_torch_7b": 16.105191230773926,
+   "wall_s_7b": 5746.5
+  },
+  {
+   "yaml_7b": "v7_txt/article_runs/qwen25vl7b/configs/qwen25vl_lora_txt_kvasir.yaml",
+   "yaml_2b": "v7_txt/configs/qwen2vl_lora_txt_kvasir.yaml",
+   "seed": 0,
+   "log_7b": "v7_txt/article_runs/qwen25vl7b/logs/qwen25vl_lora_txt_kvasir_seed0.json",
+   "log_2b": "v7_txt/logs/qwen2vl_lora_txt_kvasir_seed0.json",
+   "yaml_differences": {
+    "logging.wandb_run_name": [
+     "qwen2vl_lora_txt_kvasir",
+     "qwen25vl_lora_txt_kvasir"
+    ],
+    "model": [
+     "QWEN2VL",
+     "QWEN25VL"
+    ],
+    "outputs_dir": [
+     "v7_txt",
+     "qwen25vl7b"
+    ],
+    "results_json_dir": [
+     "logs",
+     "logs"
+    ],
+    "run_name": [
+     "qwen2vl_lora_txt_kvasir",
+     "qwen25vl_lora_txt_kvasir"
+    ],
+    "train.checkpoint_dir": [
+     "checkpoints",
+     "ckpt_int"
+    ]
+   },
+   "training_log_differences": {
+    "efficiency.params.total_params": [
+     2213343744,
+     8302259200
+    ],
+    "efficiency.params.trainable_params": [
+     4358144,
+     10092544
+    ]
+   },
+   "params_7b": [
+    8302259200,
+    10092544
+   ],
+   "params_2b": [
+    2213343744,
+    4358144
+   ],
+   "peak_gb_torch_7b": 16.174287796020508,
+   "wall_s_7b": 18568.9
+  },
+  {
+   "yaml_7b": "v7_txt/article_runs/qwen25vl7b/configs/qwen25vl_lora_txt_kvasir.yaml",
+   "yaml_2b": "v7_txt/configs/qwen2vl_lora_txt_kvasir.yaml",
+   "seed": 1,
+   "log_7b": "v7_txt/article_runs/qwen25vl7b/logs/qwen25vl_lora_txt_kvasir_seed1.json",
+   "log_2b": "v7_txt/logs/qwen2vl_lora_txt_kvasir_seed1.json",
+   "yaml_differences": {
+    "logging.wandb_run_name": [
+     "qwen2vl_lora_txt_kvasir",
+     "qwen25vl_lora_txt_kvasir"
+    ],
+    "model": [
+     "QWEN2VL",
+     "QWEN25VL"
+    ],
+    "outputs_dir": [
+     "v7_txt",
+     "qwen25vl7b"
+    ],
+    "results_json_dir": [
+     "logs",
+     "logs"
+    ],
+    "run_name": [
+     "qwen2vl_lora_txt_kvasir",
+     "qwen25vl_lora_txt_kvasir"
+    ],
+    "train.checkpoint_dir": [
+     "checkpoints",
+     "ckpt_int"
+    ]
+   },
+   "training_log_differences": {
+    "efficiency.params.total_params": [
+     2213343744,
+     8302259200
+    ],
+    "efficiency.params.trainable_params": [
+     4358144,
+     10092544
+    ]
+   },
+   "params_7b": [
+    8302259200,
+    10092544
+   ],
+   "params_2b": [
+    2213343744,
+    4358144
+   ],
+   "peak_gb_torch_7b": 16.174287796020508,
+   "wall_s_7b": 20435.7
+  },
+  {
+   "yaml_7b": "v7_txt/article_runs/qwen25vl7b/configs/qwen25vl_lora_txt_kvasir.yaml",
+   "yaml_2b": "v7_txt/configs/qwen2vl_lora_txt_kvasir.yaml",
+   "seed": 2,
+   "log_7b": "v7_txt/article_runs/qwen25vl7b/logs/qwen25vl_lora_txt_kvasir_seed2.json",
+   "log_2b": "v7_txt/logs/qwen2vl_lora_txt_kvasir_seed2.json",
+   "yaml_differences": {
+    "logging.wandb_run_name": [
+     "qwen2vl_lora_txt_kvasir",
+     "qwen25vl_lora_txt_kvasir"
+    ],
+    "model": [
+     "QWEN2VL",
+     "QWEN25VL"
+    ],
+    "outputs_dir": [
+     "v7_txt",
+     "qwen25vl7b"
+    ],
+    "results_json_dir": [
+     "logs",
+     "logs"
+    ],
+    "run_name": [
+     "qwen2vl_lora_txt_kvasir",
+     "qwen25vl_lora_txt_kvasir"
+    ],
+    "train.checkpoint_dir": [
+     "checkpoints",
+     "ckpt_int"
+    ]
+   },
+   "training_log_differences": {
+    "efficiency.params.total_params": [
+     2213343744,
+     8302259200
+    ],
+    "efficiency.params.trainable_params": [
+     4358144,
+     10092544
+    ]
+   },
+   "params_7b": [
+    8302259200,
+    10092544
+   ],
+   "params_2b": [
+    2213343744,
+    4358144
+   ],
+   "peak_gb_torch_7b": 16.174287796020508,
+   "wall_s_7b": 18068.2
+  },
+  {
+   "yaml_7b": "v7_txt/article_runs/qwen25vl7b/configs/qwen25vl_lora_txt_mimic.yaml",
+   "yaml_2b": "v7_mimic/configs/qwen2vl_lora_txt_mimic.yaml",
+   "seed": 0,
+   "log_7b": "v7_txt/article_runs/qwen25vl7b/logs/qwen25vl_lora_txt_mimic_seed0.json",
+   "log_2b": "v7_mimic/logs/qwen2vl_lora_txt_mimic_seed0.json",
+   "yaml_differences": {
+    "logging.wandb_run_name": [
+     "qwen2vl_lora_txt_mimic",
+     "qwen25vl_lora_txt_mimic"
+    ],
+    "model": [
+     "QWEN2VL",
+     "QWEN25VL"
+    ],
+    "outputs_dir": [
+     "v7_mimic",
+     "qwen25vl7b"
+    ],
+    "results_json_dir": [
+     "logs",
+     "logs"
+    ],
+    "run_name": [
+     "qwen2vl_lora_txt_mimic",
+     "qwen25vl_lora_txt_mimic"
+    ],
+    "train.checkpoint_dir": [
+     "checkpoints_mimic",
+     "ckpt_int"
+    ]
+   },
+   "training_log_differences": {
+    "efficiency.params.total_params": [
+     2213343744,
+     8302259200
+    ],
+    "efficiency.params.trainable_params": [
+     4358144,
+     10092544
+    ]
+   },
+   "params_7b": [
+    8302259200,
+    10092544
+   ],
+   "params_2b": [
+    2213343744,
+    4358144
+   ],
+   "peak_gb_torch_7b": 16.00648069381714,
+   "wall_s_7b": 5986.4
+  },
+  {
+   "yaml_7b": "v7_txt/article_runs/qwen25vl7b/configs/qwen25vl_lora_txt_mimic.yaml",
+   "yaml_2b": "v7_mimic/configs/qwen2vl_lora_txt_mimic.yaml",
+   "seed": 1,
+   "log_7b": "v7_txt/article_runs/qwen25vl7b/logs/qwen25vl_lora_txt_mimic_seed1.json",
+   "log_2b": "v7_mimic/logs/qwen2vl_lora_txt_mimic_seed1.json",
+   "yaml_differences": {
+    "logging.wandb_run_name": [
+     "qwen2vl_lora_txt_mimic",
+     "qwen25vl_lora_txt_mimic"
+    ],
+    "model": [
+     "QWEN2VL",
+     "QWEN25VL"
+    ],
+    "outputs_dir": [
+     "v7_mimic",
+     "qwen25vl7b"
+    ],
+    "results_json_dir": [
+     "logs",
+     "logs"
+    ],
+    "run_name": [
+     "qwen2vl_lora_txt_mimic",
+     "qwen25vl_lora_txt_mimic"
+    ],
+    "train.checkpoint_dir": [
+     "checkpoints_mimic",
+     "ckpt_int"
+    ]
+   },
+   "training_log_differences": {
+    "efficiency.params.total_params": [
+     2213343744,
+     8302259200
+    ],
+    "efficiency.params.trainable_params": [
+     4358144,
+     10092544
+    ]
+   },
+   "params_7b": [
+    8302259200,
+    10092544
+   ],
+   "params_2b": [
+    2213343744,
+    4358144
+   ],
+   "peak_gb_torch_7b": 16.00648069381714,
+   "wall_s_7b": 6877.8
+  },
+  {
+   "yaml_7b": "v7_txt/article_runs/qwen25vl7b/configs/qwen25vl_lora_txt_mimic.yaml",
+   "yaml_2b": "v7_mimic/configs/qwen2vl_lora_txt_mimic.yaml",
+   "seed": 2,
+   "log_7b": "v7_txt/article_runs/qwen25vl7b/logs/qwen25vl_lora_txt_mimic_seed2.json",
+   "log_2b": "v7_mimic/logs/qwen2vl_lora_txt_mimic_seed2.json",
+   "yaml_differences": {
+    "logging.wandb_run_name": [
+     "qwen2vl_lora_txt_mimic",
+     "qwen25vl_lora_txt_mimic"
+    ],
+    "model": [
+     "QWEN2VL",
+     "QWEN25VL"
+    ],
+    "outputs_dir": [
+     "v7_mimic",
+     "qwen25vl7b"
+    ],
+    "results_json_dir": [
+     "logs",
+     "logs"
+    ],
+    "run_name": [
+     "qwen2vl_lora_txt_mimic",
+     "qwen25vl_lora_txt_mimic"
+    ],
+    "train.checkpoint_dir": [
+     "checkpoints_mimic",
+     "ckpt_int"
+    ]
+   },
+   "training_log_differences": {
+    "efficiency.params.total_params": [
+     2213343744,
+     8302259200
+    ],
+    "efficiency.params.trainable_params": [
+     4358144,
+     10092544
+    ]
+   },
+   "params_7b": [
+    8302259200,
+    10092544
+   ],
+   "params_2b": [
+    2213343744,
+    4358144
+   ],
+   "peak_gb_torch_7b": 16.00648069381714,
+   "wall_s_7b": 5299.6
+  },
+  {
+   "yaml_7b": "v7_txt/article_runs/qwen25vl7b/configs/qwen25vl_lora_txt_slake.yaml",
+   "yaml_2b": "v7_txt/configs/qwen2vl_lora_txt_slake.yaml",
+   "seed": 0,
+   "log_7b": "v7_txt/article_runs/qwen25vl7b/logs/qwen25vl_lora_txt_slake_seed0.json",
+   "log_2b": "v7_txt/logs/qwen2vl_lora_txt_slake_seed0.json",
+   "yaml_differences": {
+    "logging.wandb_run_name": [
+     "qwen2vl_lora_txt_slake",
+     "qwen25vl_lora_txt_slake"
+    ],
+    "model": [
+     "QWEN2VL",
+     "QWEN25VL"
+    ],
+    "outputs_dir": [
+     "v7_txt",
+     "qwen25vl7b"
+    ],
+    "results_json_dir": [
+     "logs",
+     "logs"
+    ],
+    "run_name": [
+     "qwen2vl_lora_txt_slake",
+     "qwen25vl_lora_txt_slake"
+    ],
+    "train.checkpoint_dir": [
+     "checkpoints",
+     "ckpt_int"
+    ]
+   },
+   "training_log_differences": {
+    "efficiency.params.total_params": [
+     2213343744,
+     8302259200
+    ],
+    "efficiency.params.trainable_params": [
+     4358144,
+     10092544
+    ]
+   },
+   "params_7b": [
+    8302259200,
+    10092544
+   ],
+   "params_2b": [
+    2213343744,
+    4358144
+   ],
+   "peak_gb_torch_7b": 16.322354793548584,
+   "wall_s_7b": 1834.0
+  },
+  {
+   "yaml_7b": "v7_txt/article_runs/qwen25vl7b/configs/qwen25vl_lora_txt_slake.yaml",
+   "yaml_2b": "v7_txt/configs/qwen2vl_lora_txt_slake.yaml",
+   "seed": 1,
+   "log_7b": "v7_txt/article_runs/qwen25vl7b/logs/qwen25vl_lora_txt_slake_seed1.json",
+   "log_2b": "v7_txt/logs/qwen2vl_lora_txt_slake_seed1.json",
+   "yaml_differences": {
+    "logging.wandb_run_name": [
+     "qwen2vl_lora_txt_slake",
+     "qwen25vl_lora_txt_slake"
+    ],
+    "model": [
+     "QWEN2VL",
+     "QWEN25VL"
+    ],
+    "outputs_dir": [
+     "v7_txt",
+     "qwen25vl7b"
+    ],
+    "results_json_dir": [
+     "logs",
+     "logs"
+    ],
+    "run_name": [
+     "qwen2vl_lora_txt_slake",
+     "qwen25vl_lora_txt_slake"
+    ],
+    "train.checkpoint_dir": [
+     "checkpoints",
+     "ckpt_int"
+    ]
+   },
+   "training_log_differences": {
+    "efficiency.params.total_params": [
+     2213343744,
+     8302259200
+    ],
+    "efficiency.params.trainable_params": [
+     4358144,
+     10092544
+    ]
+   },
+   "params_7b": [
+    8302259200,
+    10092544
+   ],
+   "params_2b": [
+    2213343744,
+    4358144
+   ],
+   "peak_gb_torch_7b": 16.322354793548584,
+   "wall_s_7b": 1800.7
+  },
+  {
+   "yaml_7b": "v7_txt/article_runs/qwen25vl7b/configs/qwen25vl_lora_txt_slake.yaml",
+   "yaml_2b": "v7_txt/configs/qwen2vl_lora_txt_slake.yaml",
+   "seed": 2,
+   "log_7b": "v7_txt/article_runs/qwen25vl7b/logs/qwen25vl_lora_txt_slake_seed2.json",
+   "log_2b": "v7_txt/logs/qwen2vl_lora_txt_slake_seed2.json",
+   "yaml_differences": {
+    "logging.wandb_run_name": [
+     "qwen2vl_lora_txt_slake",
+     "qwen25vl_lora_txt_slake"
+    ],
+    "model": [
+     "QWEN2VL",
+     "QWEN25VL"
+    ],
+    "outputs_dir": [
+     "v7_txt",
+     "qwen25vl7b"
+    ],
+    "results_json_dir": [
+     "logs",
+     "logs"
+    ],
+    "run_name": [
+     "qwen2vl_lora_txt_slake",
+     "qwen25vl_lora_txt_slake"
+    ],
+    "train.checkpoint_dir": [
+     "checkpoints",
+     "ckpt_int"
+    ]
+   },
+   "training_log_differences": {
+    "efficiency.params.total_params": [
+     2213343744,
+     8302259200
+    ],
+    "efficiency.params.trainable_params": [
+     4358144,
+     10092544
+    ]
+   },
+   "params_7b": [
+    8302259200,
+    10092544
+   ],
+   "params_2b": [
+    2213343744,
+    4358144
+   ],
+   "peak_gb_torch_7b": 16.322354793548584,
+   "wall_s_7b": 1814.6
+  },
+  {
+   "yaml_7b": "v7_txt/article_runs/qwen25vl7b/configs/qwen25vl_lora_txt_vqarad_qlevel.yaml",
+   "yaml_2b": "v7_txt/article_runs/configs/qwen2vl_lora_txt_vqarad_qlevel.yaml",
+   "seed": 0,
+   "log_7b": "v7_txt/article_runs/qwen25vl7b/logs/qwen25vl_lora_txt_vqarad_qlevel_seed0.json",
+   "log_2b": "v7_txt/article_runs/logs/qwen2vl_lora_txt_vqarad_qlevel_seed0.json",
+   "yaml_differences": {
+    "logging.wandb_run_name": [
+     "qwen2vl_lora_txt_vqarad_qlevel",
+     "qwen25vl_lora_txt_vqarad_qlevel"
+    ],
+    "model": [
+     "QWEN2VL",
+     "QWEN25VL"
+    ],
+    "outputs_dir": [
+     "article_runs",
+     "qwen25vl7b"
+    ],
+    "results_json_dir": [
+     "logs",
+     "logs"
+    ],
+    "run_name": [
+     "qwen2vl_lora_txt_vqarad_qlevel",
+     "qwen25vl_lora_txt_vqarad_qlevel"
+    ],
+    "train.checkpoint_dir": [
+     "checkpoints",
+     "ckpt_int"
+    ]
+   },
+   "training_log_differences": {
+    "efficiency.params.total_params": [
+     2213343744,
+     8302259200
+    ],
+    "efficiency.params.trainable_params": [
+     4358144,
+     10092544
+    ]
+   },
+   "params_7b": [
+    8302259200,
+    10092544
+   ],
+   "params_2b": [
+    2213343744,
+    4358144
+   ],
+   "peak_gb_torch_7b": 16.154545307159424,
+   "wall_s_7b": 1370.7
+  },
+  {
+   "yaml_7b": "v7_txt/article_runs/qwen25vl7b/configs/qwen25vl_lora_txt_vqarad_qlevel.yaml",
+   "yaml_2b": "v7_txt/article_runs/configs/qwen2vl_lora_txt_vqarad_qlevel.yaml",
+   "seed": 1,
+   "log_7b": "v7_txt/article_runs/qwen25vl7b/logs/qwen25vl_lora_txt_vqarad_qlevel_seed1.json",
+   "log_2b": "v7_txt/article_runs/logs/qwen2vl_lora_txt_vqarad_qlevel_seed1.json",
+   "yaml_differences": {
+    "logging.wandb_run_name": [
+     "qwen2vl_lora_txt_vqarad_qlevel",
+     "qwen25vl_lora_txt_vqarad_qlevel"
+    ],
+    "model": [
+     "QWEN2VL",
+     "QWEN25VL"
+    ],
+    "outputs_dir": [
+     "article_runs",
+     "qwen25vl7b"
+    ],
+    "results_json_dir": [
+     "logs",
+     "logs"
+    ],
+    "run_name": [
+     "qwen2vl_lora_txt_vqarad_qlevel",
+     "qwen25vl_lora_txt_vqarad_qlevel"
+    ],
+    "train.checkpoint_dir": [
+     "checkpoints",
+     "ckpt_int"
+    ]
+   },
+   "training_log_differences": {
+    "efficiency.params.total_params": [
+     2213343744,
+     8302259200
+    ],
+    "efficiency.params.trainable_params": [
+     4358144,
+     10092544
+    ]
+   },
+   "params_7b": [
+    8302259200,
+    10092544
+   ],
+   "params_2b": [
+    2213343744,
+    4358144
+   ],
+   "peak_gb_torch_7b": 16.154545307159424,
+   "wall_s_7b": 945.3
+  },
+  {
+   "yaml_7b": "v7_txt/article_runs/qwen25vl7b/configs/qwen25vl_lora_txt_vqarad_qlevel.yaml",
+   "yaml_2b": "v7_txt/article_runs/configs/qwen2vl_lora_txt_vqarad_qlevel.yaml",
+   "seed": 2,
+   "log_7b": "v7_txt/article_runs/qwen25vl7b/logs/qwen25vl_lora_txt_vqarad_qlevel_seed2.json",
+   "log_2b": "v7_txt/article_runs/logs/qwen2vl_lora_txt_vqarad_qlevel_seed2.json",
+   "yaml_differences": {
+    "logging.wandb_run_name": [
+     "qwen2vl_lora_txt_vqarad_qlevel",
+     "qwen25vl_lora_txt_vqarad_qlevel"
+    ],
+    "model": [
+     "QWEN2VL",
+     "QWEN25VL"
+    ],
+    "outputs_dir": [
+     "article_runs",
+     "qwen25vl7b"
+    ],
+    "results_json_dir": [
+     "logs",
+     "logs"
+    ],
+    "run_name": [
+     "qwen2vl_lora_txt_vqarad_qlevel",
+     "qwen25vl_lora_txt_vqarad_qlevel"
+    ],
+    "train.checkpoint_dir": [
+     "checkpoints",
+     "ckpt_int"
+    ]
+   },
+   "training_log_differences": {
+    "efficiency.params.total_params": [
+     2213343744,
+     8302259200
+    ],
+    "efficiency.params.trainable_params": [
+     4358144,
+     10092544
+    ]
+   },
+   "params_7b": [
+    8302259200,
+    10092544
+   ],
+   "params_2b": [
+    2213343744,
+    4358144
+   ],
+   "peak_gb_torch_7b": 16.154545307159424,
+   "wall_s_7b": 903.2
+  },
+  {
+   "yaml_7b": "v7_txt/article_runs/qwen25vl7b/configs/qwen25vl_lora_txt_vqarad_rediv.yaml",
+   "yaml_2b": "v7_txt/article_runs/configs/qwen2vl_lora_txt_vqarad_rediv.yaml",
+   "seed": 0,
+   "log_7b": "v7_txt/article_runs/qwen25vl7b/logs/qwen25vl_lora_txt_vqarad_rediv_seed0.json",
+   "log_2b": "v7_txt/article_runs/logs/qwen2vl_lora_txt_vqarad_rediv_seed0.json",
+   "yaml_differences": {
+    "logging.wandb_run_name": [
+     "qwen2vl_lora_txt_vqarad_rediv",
+     "qwen25vl_lora_txt_vqarad_rediv"
+    ],
+    "model": [
+     "QWEN2VL",
+     "QWEN25VL"
+    ],
+    "outputs_dir": [
+     "article_runs",
+     "qwen25vl7b"
+    ],
+    "results_json_dir": [
+     "logs",
+     "logs"
+    ],
+    "run_name": [
+     "qwen2vl_lora_txt_vqarad_rediv",
+     "qwen25vl_lora_txt_vqarad_rediv"
+    ],
+    "train.checkpoint_dir": [
+     "checkpoints",
+     "ckpt_int"
+    ]
+   },
+   "training_log_differences": {
+    "efficiency.params.total_params": [
+     2213343744,
+     8302259200
+    ],
+    "efficiency.params.trainable_params": [
+     4358144,
+     10092544
+    ]
+   },
+   "params_7b": [
+    8302259200,
+    10092544
+   ],
+   "params_2b": [
+    2213343744,
+    4358144
+   ],
+   "peak_gb_torch_7b": 16.154545307159424,
+   "wall_s_7b": 920.4
+  },
+  {
+   "yaml_7b": "v7_txt/article_runs/qwen25vl7b/configs/qwen25vl_lora_txt_vqarad_rediv.yaml",
+   "yaml_2b": "v7_txt/article_runs/configs/qwen2vl_lora_txt_vqarad_rediv.yaml",
+   "seed": 1,
+   "log_7b": "v7_txt/article_runs/qwen25vl7b/logs/qwen25vl_lora_txt_vqarad_rediv_seed1.json",
+   "log_2b": "v7_txt/article_runs/logs/qwen2vl_lora_txt_vqarad_rediv_seed1.json",
+   "yaml_differences": {
+    "logging.wandb_run_name": [
+     "qwen2vl_lora_txt_vqarad_rediv",
+     "qwen25vl_lora_txt_vqarad_rediv"
+    ],
+    "model": [
+     "QWEN2VL",
+     "QWEN25VL"
+    ],
+    "outputs_dir": [
+     "article_runs",
+     "qwen25vl7b"
+    ],
+    "results_json_dir": [
+     "logs",
+     "logs"
+    ],
+    "run_name": [
+     "qwen2vl_lora_txt_vqarad_rediv",
+     "qwen25vl_lora_txt_vqarad_rediv"
+    ],
+    "train.checkpoint_dir": [
+     "checkpoints",
+     "ckpt_int"
+    ]
+   },
+   "training_log_differences": {
+    "efficiency.params.total_params": [
+     2213343744,
+     8302259200
+    ],
+    "efficiency.params.trainable_params": [
+     4358144,
+     10092544
+    ]
+   },
+   "params_7b": [
+    8302259200,
+    10092544
+   ],
+   "params_2b": [
+    2213343744,
+    4358144
+   ],
+   "peak_gb_torch_7b": 16.154545307159424,
+   "wall_s_7b": 1081.2
+  },
+  {
+   "yaml_7b": "v7_txt/article_runs/qwen25vl7b/configs/qwen25vl_lora_txt_vqarad_rediv.yaml",
+   "yaml_2b": "v7_txt/article_runs/configs/qwen2vl_lora_txt_vqarad_rediv.yaml",
+   "seed": 2,
+   "log_7b": "v7_txt/article_runs/qwen25vl7b/logs/qwen25vl_lora_txt_vqarad_rediv_seed2.json",
+   "log_2b": "v7_txt/article_runs/logs/qwen2vl_lora_txt_vqarad_rediv_seed2.json",
+   "yaml_differences": {
+    "logging.wandb_run_name": [
+     "qwen2vl_lora_txt_vqarad_rediv",
+     "qwen25vl_lora_txt_vqarad_rediv"
+    ],
+    "model": [
+     "QWEN2VL",
+     "QWEN25VL"
+    ],
+    "outputs_dir": [
+     "article_runs",
+     "qwen25vl7b"
+    ],
+    "results_json_dir": [
+     "logs",
+     "logs"
+    ],
+    "run_name": [
+     "qwen2vl_lora_txt_vqarad_rediv",
+     "qwen25vl_lora_txt_vqarad_rediv"
+    ],
+    "train.checkpoint_dir": [
+     "checkpoints",
+     "ckpt_int"
+    ]
+   },
+   "training_log_differences": {
+    "efficiency.params.total_params": [
+     2213343744,
+     8302259200
+    ],
+    "efficiency.params.trainable_params": [
+     4358144,
+     10092544
+    ]
+   },
+   "params_7b": [
+    8302259200,
+    10092544
+   ],
+   "params_2b": [
+    2213343744,
+    4358144
+   ],
+   "peak_gb_torch_7b": 16.154545307159424,
+   "wall_s_7b": 921.0
+  },
+  {
+   "yaml_7b": "v7_txt/article_runs/qwen25vl7b/configs/qwen25vl_lora_vqarad_qlevel.yaml",
+   "yaml_2b": "v7_txt/article_runs/configs/qwen2vl_lora_vqarad_qlevel.yaml",
+   "seed": 0,
+   "log_7b": "v7_txt/article_runs/qwen25vl7b/logs/qwen25vl_lora_vqarad_qlevel_seed0.json",
+   "log_2b": "v7_txt/article_runs/logs/qwen2vl_lora_vqarad_qlevel_seed0.json",
+   "yaml_differences": {
+    "logging.wandb_run_name": [
+     "qwen2vl_lora_vqarad_qlevel",
+     "qwen25vl_lora_vqarad_qlevel"
+    ],
+    "model": [
+     "QWEN2VL",
+     "QWEN25VL"
+    ],
+    "outputs_dir": [
+     "article_runs",
+     "qwen25vl7b"
+    ],
+    "results_json_dir": [
+     "logs",
+     "logs"
+    ],
+    "run_name": [
+     "qwen2vl_lora_vqarad_qlevel",
+     "qwen25vl_lora_vqarad_qlevel"
+    ],
+    "train.checkpoint_dir": [
+     "checkpoints",
+     "ckpt_int"
+    ]
+   },
+   "training_log_differences": {
+    "efficiency.params.total_params": [
+     2213343744,
+     8302259200
+    ],
+    "efficiency.params.trainable_params": [
+     4358144,
+     10092544
+    ]
+   },
+   "params_7b": [
+    8302259200,
+    10092544
+   ],
+   "params_2b": [
+    2213343744,
+    4358144
+   ],
+   "peak_gb_torch_7b": 19.83187484741211,
+   "wall_s_7b": 4580.9
+  },
+  {
+   "yaml_7b": "v7_txt/article_runs/qwen25vl7b/configs/qwen25vl_lora_vqarad_qlevel.yaml",
+   "yaml_2b": "v7_txt/article_runs/configs/qwen2vl_lora_vqarad_qlevel.yaml",
+   "seed": 1,
+   "log_7b": "v7_txt/article_runs/qwen25vl7b/logs/qwen25vl_lora_vqarad_qlevel_seed1.json",
+   "log_2b": "v7_txt/article_runs/logs/qwen2vl_lora_vqarad_qlevel_seed1.json",
+   "yaml_differences": {
+    "logging.wandb_run_name": [
+     "qwen2vl_lora_vqarad_qlevel",
+     "qwen25vl_lora_vqarad_qlevel"
+    ],
+    "model": [
+     "QWEN2VL",
+     "QWEN25VL"
+    ],
+    "outputs_dir": [
+     "article_runs",
+     "qwen25vl7b"
+    ],
+    "results_json_dir": [
+     "logs",
+     "logs"
+    ],
+    "run_name": [
+     "qwen2vl_lora_vqarad_qlevel",
+     "qwen25vl_lora_vqarad_qlevel"
+    ],
+    "train.checkpoint_dir": [
+     "checkpoints",
+     "ckpt_int"
+    ]
+   },
+   "training_log_differences": {
+    "efficiency.params.total_params": [
+     2213343744,
+     8302259200
+    ],
+    "efficiency.params.trainable_params": [
+     4358144,
+     10092544
+    ]
+   },
+   "params_7b": [
+    8302259200,
+    10092544
+   ],
+   "params_2b": [
+    2213343744,
+    4358144
+   ],
+   "peak_gb_torch_7b": 19.83223867416382,
+   "wall_s_7b": 3246.9
+  },
+  {
+   "yaml_7b": "v7_txt/article_runs/qwen25vl7b/configs/qwen25vl_lora_vqarad_qlevel.yaml",
+   "yaml_2b": "v7_txt/article_runs/configs/qwen2vl_lora_vqarad_qlevel.yaml",
+   "seed": 2,
+   "log_7b": "v7_txt/article_runs/qwen25vl7b/logs/qwen25vl_lora_vqarad_qlevel_seed2.json",
+   "log_2b": "v7_txt/article_runs/logs/qwen2vl_lora_vqarad_qlevel_seed2.json",
+   "yaml_differences": {
+    "logging.wandb_run_name": [
+     "qwen2vl_lora_vqarad_qlevel",
+     "qwen25vl_lora_vqarad_qlevel"
+    ],
+    "model": [
+     "QWEN2VL",
+     "QWEN25VL"
+    ],
+    "outputs_dir": [
+     "article_runs",
+     "qwen25vl7b"
+    ],
+    "results_json_dir": [
+     "logs",
+     "logs"
+    ],
+    "run_name": [
+     "qwen2vl_lora_vqarad_qlevel",
+     "qwen25vl_lora_vqarad_qlevel"
+    ],
+    "train.checkpoint_dir": [
+     "checkpoints",
+     "ckpt_int"
+    ]
+   },
+   "training_log_differences": {
+    "efficiency.params.total_params": [
+     2213343744,
+     8302259200
+    ],
+    "efficiency.params.trainable_params": [
+     4358144,
+     10092544
+    ]
+   },
+   "params_7b": [
+    8302259200,
+    10092544
+   ],
+   "params_2b": [
+    2213343744,
+    4358144
+   ],
+   "peak_gb_torch_7b": 19.830059051513672,
+   "wall_s_7b": 3140.8
+  },
+  {
+   "yaml_7b": "v7_txt/article_runs/qwen25vl7b/configs/qwen25vl_lora_vqarad_rediv.yaml",
+   "yaml_2b": "v7_txt/article_runs/configs/qwen2vl_lora_vqarad_rediv.yaml",
+   "seed": 0,
+   "log_7b": "v7_txt/article_runs/qwen25vl7b/logs/qwen25vl_lora_vqarad_rediv_seed0.json",
+   "log_2b": "v7_txt/article_runs/logs/qwen2vl_lora_vqarad_rediv_seed0.json",
+   "yaml_differences": {
+    "logging.wandb_run_name": [
+     "qwen2vl_lora_vqarad_rediv",
+     "qwen25vl_lora_vqarad_rediv"
+    ],
+    "model": [
+     "QWEN2VL",
+     "QWEN25VL"
+    ],
+    "outputs_dir": [
+     "article_runs",
+     "qwen25vl7b"
+    ],
+    "results_json_dir": [
+     "logs",
+     "logs"
+    ],
+    "run_name": [
+     "qwen2vl_lora_vqarad_rediv",
+     "qwen25vl_lora_vqarad_rediv"
+    ],
+    "train.checkpoint_dir": [
+     "checkpoints",
+     "ckpt_int"
+    ]
+   },
+   "training_log_differences": {
+    "efficiency.params.total_params": [
+     2213343744,
+     8302259200
+    ],
+    "efficiency.params.trainable_params": [
+     4358144,
+     10092544
+    ]
+   },
+   "params_7b": [
+    8302259200,
+    10092544
+   ],
+   "params_2b": [
+    2213343744,
+    4358144
+   ],
+   "peak_gb_torch_7b": 19.810621738433838,
+   "wall_s_7b": 3256.9
+  },
+  {
+   "yaml_7b": "v7_txt/article_runs/qwen25vl7b/configs/qwen25vl_lora_vqarad_rediv.yaml",
+   "yaml_2b": "v7_txt/article_runs/configs/qwen2vl_lora_vqarad_rediv.yaml",
+   "seed": 1,
+   "log_7b": "v7_txt/article_runs/qwen25vl7b/logs/qwen25vl_lora_vqarad_rediv_seed1.json",
+   "log_2b": "v7_txt/article_runs/logs/qwen2vl_lora_vqarad_rediv_seed1.json",
+   "yaml_differences": {
+    "logging.wandb_run_name": [
+     "qwen2vl_lora_vqarad_rediv",
+     "qwen25vl_lora_vqarad_rediv"
+    ],
+    "model": [
+     "QWEN2VL",
+     "QWEN25VL"
+    ],
+    "outputs_dir": [
+     "article_runs",
+     "qwen25vl7b"
+    ],
+    "results_json_dir": [
+     "logs",
+     "logs"
+    ],
+    "run_name": [
+     "qwen2vl_lora_vqarad_rediv",
+     "qwen25vl_lora_vqarad_rediv"
+    ],
+    "train.checkpoint_dir": [
+     "checkpoints",
+     "ckpt_int"
+    ]
+   },
+   "training_log_differences": {
+    "efficiency.params.total_params": [
+     2213343744,
+     8302259200
+    ],
+    "efficiency.params.trainable_params": [
+     4358144,
+     10092544
+    ]
+   },
+   "params_7b": [
+    8302259200,
+    10092544
+   ],
+   "params_2b": [
+    2213343744,
+    4358144
+   ],
+   "peak_gb_torch_7b": 19.812438488006592,
+   "wall_s_7b": 3858.9
+  },
+  {
+   "yaml_7b": "v7_txt/article_runs/qwen25vl7b/configs/qwen25vl_lora_vqarad_rediv.yaml",
+   "yaml_2b": "v7_txt/article_runs/configs/qwen2vl_lora_vqarad_rediv.yaml",
+   "seed": 2,
+   "log_7b": "v7_txt/article_runs/qwen25vl7b/logs/qwen25vl_lora_vqarad_rediv_seed2.json",
+   "log_2b": "v7_txt/article_runs/logs/qwen2vl_lora_vqarad_rediv_seed2.json",
+   "yaml_differences": {
+    "logging.wandb_run_name": [
+     "qwen2vl_lora_vqarad_rediv",
+     "qwen25vl_lora_vqarad_rediv"
+    ],
+    "model": [
+     "QWEN2VL",
+     "QWEN25VL"
+    ],
+    "outputs_dir": [
+     "article_runs",
+     "qwen25vl7b"
+    ],
+    "results_json_dir": [
+     "logs",
+     "logs"
+    ],
+    "run_name": [
+     "qwen2vl_lora_vqarad_rediv",
+     "qwen25vl_lora_vqarad_rediv"
+    ],
+    "train.checkpoint_dir": [
+     "checkpoints",
+     "ckpt_int"
+    ]
+   },
+   "training_log_differences": {
+    "efficiency.params.total_params": [
+     2213343744,
+     8302259200
+    ],
+    "efficiency.params.trainable_params": [
+     4358144,
+     10092544
+    ]
+   },
+   "params_7b": [
+    8302259200,
+    10092544
+   ],
+   "params_2b": [
+    2213343744,
+    4358144
+   ],
+   "peak_gb_torch_7b": 19.813164710998535,
+   "wall_s_7b": 3228.3
+  },
+  {
+   "yaml_7b": "v7_txt/article_runs/qwen25vl7b/configs/qwen25vl_lora_vt_heal.yaml",
+   "yaml_2b": "v6_tower_heal/worktree/med_vlm/configs/qwen2vl_lora_vt_heal.yaml",
+   "seed": 0,
+   "log_7b": "v7_txt/article_runs/qwen25vl7b/logs/qwen25vl_lora_vt_heal_seed0.json",
+   "log_2b": "v6_tower_heal/qwen2vl_lora_vt_heal_seed0.json",
+   "yaml_differences": {
+    "logging.wandb_run_name": [
+     "qwen2vl_lora_heal",
+     "qwen25vl_lora_vt_heal"
+    ],
+    "model": [
+     "QWEN2VL",
+     "QWEN25VL"
+    ],
+    "outputs_dir": [
+     "v6_tower_heal",
+     "qwen25vl7b"
+    ],
+    "results_json_dir": [
+     null,
+     "logs"
+    ],
+    "run_name": [
+     "qwen2vl_lora_vt_heal",
+     "qwen25vl_lora_vt_heal"
+    ],
+    "train.checkpoint_dir": [
+     "checkpoints",
+     "ckpt_int"
+    ]
+   },
+   "training_log_differences": {
+    "no_image": [
+     null,
+     false
+    ],
+    "efficiency.params.total_params": [
+     2217275904,
+     8306191360
+    ],
+    "efficiency.params.trainable_params": [
+     8290304,
+     14024704
+    ]
+   },
+   "params_7b": [
+    8306191360,
+    14024704
+   ],
+   "params_2b": [
+    2217275904,
+    8290304
+   ],
+   "peak_gb_torch_7b": 19.851232051849365,
+   "wall_s_7b": 20552.6
+  },
+  {
+   "yaml_7b": "v7_txt/article_runs/qwen25vl7b/configs/qwen25vl_lora_vt_heal.yaml",
+   "yaml_2b": "v6_tower_heal/worktree/med_vlm/configs/qwen2vl_lora_vt_heal.yaml",
+   "seed": 1,
+   "log_7b": "v7_txt/article_runs/qwen25vl7b/logs/qwen25vl_lora_vt_heal_seed1.json",
+   "log_2b": "v6_tower_heal/qwen2vl_lora_vt_heal_seed1.json",
+   "yaml_differences": {
+    "logging.wandb_run_name": [
+     "qwen2vl_lora_heal",
+     "qwen25vl_lora_vt_heal"
+    ],
+    "model": [
+     "QWEN2VL",
+     "QWEN25VL"
+    ],
+    "outputs_dir": [
+     "v6_tower_heal",
+     "qwen25vl7b"
+    ],
+    "results_json_dir": [
+     null,
+     "logs"
+    ],
+    "run_name": [
+     "qwen2vl_lora_vt_heal",
+     "qwen25vl_lora_vt_heal"
+    ],
+    "train.checkpoint_dir": [
+     "checkpoints",
+     "ckpt_int"
+    ]
+   },
+   "training_log_differences": {
+    "no_image": [
+     null,
+     false
+    ],
+    "efficiency.params.total_params": [
+     2217275904,
+     8306191360
+    ],
+    "efficiency.params.trainable_params": [
+     8290304,
+     14024704
+    ]
+   },
+   "params_7b": [
+    8306191360,
+    14024704
+   ],
+   "params_2b": [
+    2217275904,
+    8290304
+   ],
+   "peak_gb_torch_7b": 19.851232051849365,
+   "wall_s_7b": 20702.4
+  },
+  {
+   "yaml_7b": "v7_txt/article_runs/qwen25vl7b/configs/qwen25vl_lora_vt_heal.yaml",
+   "yaml_2b": "v6_tower_heal/worktree/med_vlm/configs/qwen2vl_lora_vt_heal.yaml",
+   "seed": 2,
+   "log_7b": "v7_txt/article_runs/qwen25vl7b/logs/qwen25vl_lora_vt_heal_seed2.json",
+   "log_2b": "v6_tower_heal/qwen2vl_lora_vt_heal_seed2.json",
+   "yaml_differences": {
+    "logging.wandb_run_name": [
+     "qwen2vl_lora_heal",
+     "qwen25vl_lora_vt_heal"
+    ],
+    "model": [
+     "QWEN2VL",
+     "QWEN25VL"
+    ],
+    "outputs_dir": [
+     "v6_tower_heal",
+     "qwen25vl7b"
+    ],
+    "results_json_dir": [
+     null,
+     "logs"
+    ],
+    "run_name": [
+     "qwen2vl_lora_vt_heal",
+     "qwen25vl_lora_vt_heal"
+    ],
+    "train.checkpoint_dir": [
+     "checkpoints",
+     "ckpt_int"
+    ]
+   },
+   "training_log_differences": {
+    "no_image": [
+     null,
+     false
+    ],
+    "efficiency.params.total_params": [
+     2217275904,
+     8306191360
+    ],
+    "efficiency.params.trainable_params": [
+     8290304,
+     14024704
+    ]
+   },
+   "params_7b": [
+    8306191360,
+    14024704
+   ],
+   "params_2b": [
+    2217275904,
+    8290304
+   ],
+   "peak_gb_torch_7b": 19.85195827484131,
+   "wall_s_7b": 25297.7
+  },
+  {
+   "yaml_7b": "v7_txt/article_runs/qwen25vl7b/configs/qwen25vl_lora_vt_kvasir.yaml",
+   "yaml_2b": "doutorado/medvqa-main/med_vlm/configs/qwen2vl_lora_vt_kvasir.yaml",
+   "seed": 0,
+   "log_7b": "v7_txt/article_runs/qwen25vl7b/logs/qwen25vl_lora_vt_kvasir_seed0.json",
+   "log_2b": "v5_qwen_vt/qwen2vl_lora_vt_kvasir_seed0.json",
+   "yaml_differences": {
+    "logging.wandb_run_name": [
+     "qwen2vl_lora_vt_kvasir",
+     "qwen25vl_lora_vt_kvasir"
+    ],
+    "model": [
+     "QWEN2VL",
+     "QWEN25VL"
+    ],
+    "outputs_dir": [
+     "v5_qwen_vt",
+     "qwen25vl7b"
+    ],
+    "results_json_dir": [
+     null,
+     "logs"
+    ],
+    "run_name": [
+     "qwen2vl_lora_vt_kvasir",
+     "qwen25vl_lora_vt_kvasir"
+    ],
+    "train.checkpoint_dir": [
+     "checkpoints",
+     "ckpt_int"
+    ]
+   },
+   "training_log_differences": {
+    "no_image": [
+     null,
+     false
+    ],
+    "efficiency.params.total_params": [
+     2217275904,
+     8306191360
+    ],
+    "efficiency.params.trainable_params": [
+     8290304,
+     14024704
+    ]
+   },
+   "params_7b": [
+    8306191360,
+    14024704
+   ],
+   "params_2b": [
+    2217275904,
+    8290304
+   ],
+   "peak_gb_torch_7b": 19.903003692626953,
+   "wall_s_7b": 60889.7
+  },
+  {
+   "yaml_7b": "v7_txt/article_runs/qwen25vl7b/configs/qwen25vl_lora_vt_kvasir.yaml",
+   "yaml_2b": "doutorado/medvqa-main/med_vlm/configs/qwen2vl_lora_vt_kvasir.yaml",
+   "seed": 1,
+   "log_7b": "v7_txt/article_runs/qwen25vl7b/logs/qwen25vl_lora_vt_kvasir_seed1.json",
+   "log_2b": "v5_qwen_vt/qwen2vl_lora_vt_kvasir_seed1.json",
+   "yaml_differences": {
+    "logging.wandb_run_name": [
+     "qwen2vl_lora_vt_kvasir",
+     "qwen25vl_lora_vt_kvasir"
+    ],
+    "model": [
+     "QWEN2VL",
+     "QWEN25VL"
+    ],
+    "outputs_dir": [
+     "v5_qwen_vt",
+     "qwen25vl7b"
+    ],
+    "results_json_dir": [
+     null,
+     "logs"
+    ],
+    "run_name": [
+     "qwen2vl_lora_vt_kvasir",
+     "qwen25vl_lora_vt_kvasir"
+    ],
+    "train.checkpoint_dir": [
+     "checkpoints",
+     "ckpt_int"
+    ]
+   },
+   "training_log_differences": {
+    "no_image": [
+     null,
+     false
+    ],
+    "efficiency.params.total_params": [
+     2217275904,
+     8306191360
+    ],
+    "efficiency.params.trainable_params": [
+     8290304,
+     14024704
+    ]
+   },
+   "params_7b": [
+    8306191360,
+    14024704
+   ],
+   "params_2b": [
+    2217275904,
+    8290304
+   ],
+   "peak_gb_torch_7b": 19.9091796875,
+   "wall_s_7b": 57219.4
+  },
+  {
+   "yaml_7b": "v7_txt/article_runs/qwen25vl7b/configs/qwen25vl_lora_vt_kvasir.yaml",
+   "yaml_2b": "doutorado/medvqa-main/med_vlm/configs/qwen2vl_lora_vt_kvasir.yaml",
+   "seed": 2,
+   "log_7b": "v7_txt/article_runs/qwen25vl7b/logs/qwen25vl_lora_vt_kvasir_seed2.json",
+   "log_2b": "v5_qwen_vt/qwen2vl_lora_vt_kvasir_seed2.json",
+   "yaml_differences": {
+    "logging.wandb_run_name": [
+     "qwen2vl_lora_vt_kvasir",
+     "qwen25vl_lora_vt_kvasir"
+    ],
+    "model": [
+     "QWEN2VL",
+     "QWEN25VL"
+    ],
+    "outputs_dir": [
+     "v5_qwen_vt",
+     "qwen25vl7b"
+    ],
+    "results_json_dir": [
+     null,
+     "logs"
+    ],
+    "run_name": [
+     "qwen2vl_lora_vt_kvasir",
+     "qwen25vl_lora_vt_kvasir"
+    ],
+    "train.checkpoint_dir": [
+     "checkpoints",
+     "ckpt_int"
+    ]
+   },
+   "training_log_differences": {
+    "no_image": [
+     null,
+     false
+    ],
+    "efficiency.params.total_params": [
+     2217275904,
+     8306191360
+    ],
+    "efficiency.params.trainable_params": [
+     8290304,
+     14024704
+    ]
+   },
+   "params_7b": [
+    8306191360,
+    14024704
+   ],
+   "params_2b": [
+    2217275904,
+    8290304
+   ],
+   "peak_gb_torch_7b": 19.9091796875,
+   "wall_s_7b": 61591.0
+  },
+  {
+   "yaml_7b": "v7_txt/article_runs/qwen25vl7b/configs/qwen25vl_lora_vt_mimic.yaml",
+   "yaml_2b": "v7_mimic/configs/qwen2vl_lora_vt_mimic.yaml",
+   "seed": 0,
+   "log_7b": "v7_txt/article_runs/qwen25vl7b/logs/qwen25vl_lora_vt_mimic_seed0.json",
+   "log_2b": "v7_mimic/logs/qwen2vl_lora_vt_mimic_seed0.json",
+   "yaml_differences": {
+    "logging.wandb_run_name": [
+     "qwen2vl_lora_vt_mimic",
+     "qwen25vl_lora_vt_mimic"
+    ],
+    "model": [
+     "QWEN2VL",
+     "QWEN25VL"
+    ],
+    "outputs_dir": [
+     "v7_mimic",
+     "qwen25vl7b"
+    ],
+    "results_json_dir": [
+     "logs",
+     "logs"
+    ],
+    "run_name": [
+     "qwen2vl_lora_vt_mimic",
+     "qwen25vl_lora_vt_mimic"
+    ],
+    "train.checkpoint_dir": [
+     "checkpoints_mimic",
+     "ckpt_int"
+    ]
+   },
+   "training_log_differences": {
+    "efficiency.params.total_params": [
+     2217275904,
+     8306191360
+    ],
+    "efficiency.params.trainable_params": [
+     8290304,
+     14024704
+    ]
+   },
+   "params_7b": [
+    8306191360,
+    14024704
+   ],
+   "params_2b": [
+    2217275904,
+    8290304
+   ],
+   "peak_gb_torch_7b": 19.75077724456787,
+   "wall_s_7b": 20971.9
+  },
+  {
+   "yaml_7b": "v7_txt/article_runs/qwen25vl7b/configs/qwen25vl_lora_vt_mimic.yaml",
+   "yaml_2b": "v7_mimic/configs/qwen2vl_lora_vt_mimic.yaml",
+   "seed": 1,
+   "log_7b": "v7_txt/article_runs/qwen25vl7b/logs/qwen25vl_lora_vt_mimic_seed1.json",
+   "log_2b": "v7_mimic/logs/qwen2vl_lora_vt_mimic_seed1.json",
+   "yaml_differences": {
+    "logging.wandb_run_name": [
+     "qwen2vl_lora_vt_mimic",
+     "qwen25vl_lora_vt_mimic"
+    ],
+    "model": [
+     "QWEN2VL",
+     "QWEN25VL"
+    ],
+    "outputs_dir": [
+     "v7_mimic",
+     "qwen25vl7b"
+    ],
+    "results_json_dir": [
+     "logs",
+     "logs"
+    ],
+    "run_name": [
+     "qwen2vl_lora_vt_mimic",
+     "qwen25vl_lora_vt_mimic"
+    ],
+    "train.checkpoint_dir": [
+     "checkpoints_mimic",
+     "ckpt_int"
+    ]
+   },
+   "training_log_differences": {
+    "efficiency.params.total_params": [
+     2217275904,
+     8306191360
+    ],
+    "efficiency.params.trainable_params": [
+     8290304,
+     14024704
+    ]
+   },
+   "params_7b": [
+    8306191360,
+    14024704
+   ],
+   "params_2b": [
+    2217275904,
+    8290304
+   ],
+   "peak_gb_torch_7b": 19.75077724456787,
+   "wall_s_7b": 22263.1
+  },
+  {
+   "yaml_7b": "v7_txt/article_runs/qwen25vl7b/configs/qwen25vl_lora_vt_mimic.yaml",
+   "yaml_2b": "v7_mimic/configs/qwen2vl_lora_vt_mimic.yaml",
+   "seed": 2,
+   "log_7b": "v7_txt/article_runs/qwen25vl7b/logs/qwen25vl_lora_vt_mimic_seed2.json",
+   "log_2b": "v7_mimic/logs/qwen2vl_lora_vt_mimic_seed2.json",
+   "yaml_differences": {
+    "logging.wandb_run_name": [
+     "qwen2vl_lora_vt_mimic",
+     "qwen25vl_lora_vt_mimic"
+    ],
+    "model": [
+     "QWEN2VL",
+     "QWEN25VL"
+    ],
+    "outputs_dir": [
+     "v7_mimic",
+     "qwen25vl7b"
+    ],
+    "results_json_dir": [
+     "logs",
+     "logs"
+    ],
+    "run_name": [
+     "qwen2vl_lora_vt_mimic",
+     "qwen25vl_lora_vt_mimic"
+    ],
+    "train.checkpoint_dir": [
+     "checkpoints_mimic",
+     "ckpt_int"
+    ]
+   },
+   "training_log_differences": {
+    "efficiency.params.total_params": [
+     2217275904,
+     8306191360
+    ],
+    "efficiency.params.trainable_params": [
+     8290304,
+     14024704
+    ]
+   },
+   "params_7b": [
+    8306191360,
+    14024704
+   ],
+   "params_2b": [
+    2217275904,
+    8290304
+   ],
+   "peak_gb_torch_7b": 19.75077724456787,
+   "wall_s_7b": 25402.1
+  },
+  {
+   "yaml_7b": "v7_txt/article_runs/qwen25vl7b/configs/qwen25vl_lora_vt_slake.yaml",
+   "yaml_2b": "doutorado/medvqa-main/med_vlm/configs/qwen2vl_lora_vt_slake.yaml",
+   "seed": 0,
+   "log_7b": "v7_txt/article_runs/qwen25vl7b/logs/qwen25vl_lora_vt_slake_seed0.json",
+   "log_2b": "v5_qwen_vt/qwen2vl_lora_vt_slake_seed0.json",
+   "yaml_differences": {
+    "logging.wandb_run_name": [
+     "qwen2vl_lora_vt_slake",
+     "qwen25vl_lora_vt_slake"
+    ],
+    "model": [
+     "QWEN2VL",
+     "QWEN25VL"
+    ],
+    "outputs_dir": [
+     "v5_qwen_vt",
+     "qwen25vl7b"
+    ],
+    "results_json_dir": [
+     null,
+     "logs"
+    ],
+    "run_name": [
+     "qwen2vl_lora_vt_slake",
+     "qwen25vl_lora_vt_slake"
+    ],
+    "train.checkpoint_dir": [
+     "checkpoints",
+     "ckpt_int"
+    ]
+   },
+   "training_log_differences": {
+    "no_image": [
+     null,
+     false
+    ],
+    "efficiency.params.total_params": [
+     2217275904,
+     8306191360
+    ],
+    "efficiency.params.trainable_params": [
+     8290304,
+     14024704
+    ]
+   },
+   "params_7b": [
+    8306191360,
+    14024704
+   ],
+   "params_2b": [
+    2217275904,
+    8290304
+   ],
+   "peak_gb_torch_7b": 20.69868564605713,
+   "wall_s_7b": 6277.4
+  },
+  {
+   "yaml_7b": "v7_txt/article_runs/qwen25vl7b/configs/qwen25vl_lora_vt_slake.yaml",
+   "yaml_2b": "doutorado/medvqa-main/med_vlm/configs/qwen2vl_lora_vt_slake.yaml",
+   "seed": 1,
+   "log_7b": "v7_txt/article_runs/qwen25vl7b/logs/qwen25vl_lora_vt_slake_seed1.json",
+   "log_2b": "v5_qwen_vt/qwen2vl_lora_vt_slake_seed1.json",
+   "yaml_differences": {
+    "logging.wandb_run_name": [
+     "qwen2vl_lora_vt_slake",
+     "qwen25vl_lora_vt_slake"
+    ],
+    "model": [
+     "QWEN2VL",
+     "QWEN25VL"
+    ],
+    "outputs_dir": [
+     "v5_qwen_vt",
+     "qwen25vl7b"
+    ],
+    "results_json_dir": [
+     null,
+     "logs"
+    ],
+    "run_name": [
+     "qwen2vl_lora_vt_slake",
+     "qwen25vl_lora_vt_slake"
+    ],
+    "train.checkpoint_dir": [
+     "checkpoints",
+     "ckpt_int"
+    ]
+   },
+   "training_log_differences": {
+    "no_image": [
+     null,
+     false
+    ],
+    "efficiency.params.total_params": [
+     2217275904,
+     8306191360
+    ],
+    "efficiency.params.trainable_params": [
+     8290304,
+     14024704
+    ]
+   },
+   "params_7b": [
+    8306191360,
+    14024704
+   ],
+   "params_2b": [
+    2217275904,
+    8290304
+   ],
+   "peak_gb_torch_7b": 19.93224811553955,
+   "wall_s_7b": 9476.1
+  },
+  {
+   "yaml_7b": "v7_txt/article_runs/qwen25vl7b/configs/qwen25vl_lora_vt_slake.yaml",
+   "yaml_2b": "doutorado/medvqa-main/med_vlm/configs/qwen2vl_lora_vt_slake.yaml",
+   "seed": 2,
+   "log_7b": "v7_txt/article_runs/qwen25vl7b/logs/qwen25vl_lora_vt_slake_seed2.json",
+   "log_2b": "v5_qwen_vt/qwen2vl_lora_vt_slake_seed2.json",
+   "yaml_differences": {
+    "logging.wandb_run_name": [
+     "qwen2vl_lora_vt_slake",
+     "qwen25vl_lora_vt_slake"
+    ],
+    "model": [
+     "QWEN2VL",
+     "QWEN25VL"
+    ],
+    "outputs_dir": [
+     "v5_qwen_vt",
+     "qwen25vl7b"
+    ],
+    "results_json_dir": [
+     null,
+     "logs"
+    ],
+    "run_name": [
+     "qwen2vl_lora_vt_slake",
+     "qwen25vl_lora_vt_slake"
+    ],
+    "train.checkpoint_dir": [
+     "checkpoints",
+     "ckpt_int"
+    ]
+   },
+   "training_log_differences": {
+    "no_image": [
+     null,
+     false
+    ],
+    "efficiency.params.total_params": [
+     2217275904,
+     8306191360
+    ],
+    "efficiency.params.trainable_params": [
+     8290304,
+     14024704
+    ]
+   },
+   "params_7b": [
+    8306191360,
+    14024704
+   ],
+   "params_2b": [
+    2217275904,
+    8290304
+   ],
+   "peak_gb_torch_7b": 19.922348022460938,
+   "wall_s_7b": 6240.5
+  },
+  {
+   "yaml_7b": "v7_txt/article_runs/qwen25vl7b/configs/qwen25vl_lora_vt_vqarad_qlevel.yaml",
+   "yaml_2b": "v7_txt/article_runs/configs/qwen2vl_lora_vt_vqarad_qlevel.yaml",
+   "seed": 0,
+   "log_7b": "v7_txt/article_runs/qwen25vl7b/logs/qwen25vl_lora_vt_vqarad_qlevel_seed0.json",
+   "log_2b": "v7_txt/article_runs/logs/qwen2vl_lora_vt_vqarad_qlevel_seed0.json",
+   "yaml_differences": {
+    "logging.wandb_run_name": [
+     "qwen2vl_lora_vt_vqarad_qlevel",
+     "qwen25vl_lora_vt_vqarad_qlevel"
+    ],
+    "model": [
+     "QWEN2VL",
+     "QWEN25VL"
+    ],
+    "outputs_dir": [
+     "article_runs",
+     "qwen25vl7b"
+    ],
+    "results_json_dir": [
+     "logs",
+     "logs"
+    ],
+    "run_name": [
+     "qwen2vl_lora_vt_vqarad_qlevel",
+     "qwen25vl_lora_vt_vqarad_qlevel"
+    ],
+    "train.checkpoint_dir": [
+     "checkpoints",
+     "ckpt_int"
+    ]
+   },
+   "training_log_differences": {
+    "efficiency.params.total_params": [
+     2217275904,
+     8306191360
+    ],
+    "efficiency.params.trainable_params": [
+     8290304,
+     14024704
+    ]
+   },
+   "params_7b": [
+    8306191360,
+    14024704
+   ],
+   "params_2b": [
+    2217275904,
+    8290304
+   ],
+   "peak_gb_torch_7b": 19.888288974761963,
+   "wall_s_7b": 4302.5
+  },
+  {
+   "yaml_7b": "v7_txt/article_runs/qwen25vl7b/configs/qwen25vl_lora_vt_vqarad_qlevel.yaml",
+   "yaml_2b": "v7_txt/article_runs/configs/qwen2vl_lora_vt_vqarad_qlevel.yaml",
+   "seed": 1,
+   "log_7b": "v7_txt/article_runs/qwen25vl7b/logs/qwen25vl_lora_vt_vqarad_qlevel_seed1.json",
+   "log_2b": "v7_txt/article_runs/logs/qwen2vl_lora_vt_vqarad_qlevel_seed1.json",
+   "yaml_differences": {
+    "logging.wandb_run_name": [
+     "qwen2vl_lora_vt_vqarad_qlevel",
+     "qwen25vl_lora_vt_vqarad_qlevel"
+    ],
+    "model": [
+     "QWEN2VL",
+     "QWEN25VL"
+    ],
+    "outputs_dir": [
+     "article_runs",
+     "qwen25vl7b"
+    ],
+    "results_json_dir": [
+     "logs",
+     "logs"
+    ],
+    "run_name": [
+     "qwen2vl_lora_vt_vqarad_qlevel",
+     "qwen25vl_lora_vt_vqarad_qlevel"
+    ],
+    "train.checkpoint_dir": [
+     "checkpoints",
+     "ckpt_int"
+    ]
+   },
+   "training_log_differences": {
+    "efficiency.params.total_params": [
+     2217275904,
+     8306191360
+    ],
+    "efficiency.params.trainable_params": [
+     8290304,
+     14024704
+    ]
+   },
+   "params_7b": [
+    8306191360,
+    14024704
+   ],
+   "params_2b": [
+    2217275904,
+    8290304
+   ],
+   "peak_gb_torch_7b": 19.89046859741211,
+   "wall_s_7b": 3642.5
+  },
+  {
+   "yaml_7b": "v7_txt/article_runs/qwen25vl7b/configs/qwen25vl_lora_vt_vqarad_qlevel.yaml",
+   "yaml_2b": "v7_txt/article_runs/configs/qwen2vl_lora_vt_vqarad_qlevel.yaml",
+   "seed": 2,
+   "log_7b": "v7_txt/article_runs/qwen25vl7b/logs/qwen25vl_lora_vt_vqarad_qlevel_seed2.json",
+   "log_2b": "v7_txt/article_runs/logs/qwen2vl_lora_vt_vqarad_qlevel_seed2.json",
+   "yaml_differences": {
+    "logging.wandb_run_name": [
+     "qwen2vl_lora_vt_vqarad_qlevel",
+     "qwen25vl_lora_vt_vqarad_qlevel"
+    ],
+    "model": [
+     "QWEN2VL",
+     "QWEN25VL"
+    ],
+    "outputs_dir": [
+     "article_runs",
+     "qwen25vl7b"
+    ],
+    "results_json_dir": [
+     "logs",
+     "logs"
+    ],
+    "run_name": [
+     "qwen2vl_lora_vt_vqarad_qlevel",
+     "qwen25vl_lora_vt_vqarad_qlevel"
+    ],
+    "train.checkpoint_dir": [
+     "checkpoints",
+     "ckpt_int"
+    ]
+   },
+   "training_log_differences": {
+    "efficiency.params.total_params": [
+     2217275904,
+     8306191360
+    ],
+    "efficiency.params.trainable_params": [
+     8290304,
+     14024704
+    ]
+   },
+   "params_7b": [
+    8306191360,
+    14024704
+   ],
+   "params_2b": [
+    2217275904,
+    8290304
+   ],
+   "peak_gb_torch_7b": 19.89046859741211,
+   "wall_s_7b": 3250.1
+  },
+  {
+   "yaml_7b": "v7_txt/article_runs/qwen25vl7b/configs/qwen25vl_lora_vt_vqarad_rediv.yaml",
+   "yaml_2b": "v7_txt/article_runs/configs/qwen2vl_lora_vt_vqarad_rediv.yaml",
+   "seed": 0,
+   "log_7b": "v7_txt/article_runs/qwen25vl7b/logs/qwen25vl_lora_vt_vqarad_rediv_seed0.json",
+   "log_2b": "v7_txt/article_runs/logs/qwen2vl_lora_vt_vqarad_rediv_seed0.json",
+   "yaml_differences": {
+    "logging.wandb_run_name": [
+     "qwen2vl_lora_vt_vqarad_rediv",
+     "qwen25vl_lora_vt_vqarad_rediv"
+    ],
+    "model": [
+     "QWEN2VL",
+     "QWEN25VL"
+    ],
+    "outputs_dir": [
+     "article_runs",
+     "qwen25vl7b"
+    ],
+    "results_json_dir": [
+     "logs",
+     "logs"
+    ],
+    "run_name": [
+     "qwen2vl_lora_vt_vqarad_rediv",
+     "qwen25vl_lora_vt_vqarad_rediv"
+    ],
+    "train.checkpoint_dir": [
+     "checkpoints",
+     "ckpt_int"
+    ]
+   },
+   "training_log_differences": {
+    "efficiency.params.total_params": [
+     2217275904,
+     8306191360
+    ],
+    "efficiency.params.trainable_params": [
+     8290304,
+     14024704
+    ]
+   },
+   "params_7b": [
+    8306191360,
+    14024704
+   ],
+   "params_2b": [
+    2217275904,
+    8290304
+   ],
+   "peak_gb_torch_7b": 19.868126392364502,
+   "wall_s_7b": 3341.3
+  },
+  {
+   "yaml_7b": "v7_txt/article_runs/qwen25vl7b/configs/qwen25vl_lora_vt_vqarad_rediv.yaml",
+   "yaml_2b": "v7_txt/article_runs/configs/qwen2vl_lora_vt_vqarad_rediv.yaml",
+   "seed": 1,
+   "log_7b": "v7_txt/article_runs/qwen25vl7b/logs/qwen25vl_lora_vt_vqarad_rediv_seed1.json",
+   "log_2b": "v7_txt/article_runs/logs/qwen2vl_lora_vt_vqarad_rediv_seed1.json",
+   "yaml_differences": {
+    "logging.wandb_run_name": [
+     "qwen2vl_lora_vt_vqarad_rediv",
+     "qwen25vl_lora_vt_vqarad_rediv"
+    ],
+    "model": [
+     "QWEN2VL",
+     "QWEN25VL"
+    ],
+    "outputs_dir": [
+     "article_runs",
+     "qwen25vl7b"
+    ],
+    "results_json_dir": [
+     "logs",
+     "logs"
+    ],
+    "run_name": [
+     "qwen2vl_lora_vt_vqarad_rediv",
+     "qwen25vl_lora_vt_vqarad_rediv"
+    ],
+    "train.checkpoint_dir": [
+     "checkpoints",
+     "ckpt_int"
+    ]
+   },
+   "training_log_differences": {
+    "efficiency.params.total_params": [
+     2217275904,
+     8306191360
+    ],
+    "efficiency.params.trainable_params": [
+     8290304,
+     14024704
+    ]
+   },
+   "params_7b": [
+    8306191360,
+    14024704
+   ],
+   "params_2b": [
+    2217275904,
+    8290304
+   ],
+   "peak_gb_torch_7b": 19.872485160827637,
+   "wall_s_7b": 3786.1
+  },
+  {
+   "yaml_7b": "v7_txt/article_runs/qwen25vl7b/configs/qwen25vl_lora_vt_vqarad_rediv.yaml",
+   "yaml_2b": "v7_txt/article_runs/configs/qwen2vl_lora_vt_vqarad_rediv.yaml",
+   "seed": 2,
+   "log_7b": "v7_txt/article_runs/qwen25vl7b/logs/qwen25vl_lora_vt_vqarad_rediv_seed2.json",
+   "log_2b": "v7_txt/article_runs/logs/qwen2vl_lora_vt_vqarad_rediv_seed2.json",
+   "yaml_differences": {
+    "logging.wandb_run_name": [
+     "qwen2vl_lora_vt_vqarad_rediv",
+     "qwen25vl_lora_vt_vqarad_rediv"
+    ],
+    "model": [
+     "QWEN2VL",
+     "QWEN25VL"
+    ],
+    "outputs_dir": [
+     "article_runs",
+     "qwen25vl7b"
+    ],
+    "results_json_dir": [
+     "logs",
+     "logs"
+    ],
+    "run_name": [
+     "qwen2vl_lora_vt_vqarad_rediv",
+     "qwen25vl_lora_vt_vqarad_rediv"
+    ],
+    "train.checkpoint_dir": [
+     "checkpoints",
+     "ckpt_int"
+    ]
+   },
+   "training_log_differences": {
+    "efficiency.params.total_params": [
+     2217275904,
+     8306191360
+    ],
+    "efficiency.params.trainable_params": [
+     8290304,
+     14024704
+    ]
+   },
+   "params_7b": [
+    8306191360,
+    14024704
+   ],
+   "params_2b": [
+    2217275904,
+    8290304
+   ],
+   "peak_gb_torch_7b": 19.87030553817749,
+   "wall_s_7b": 3330.5
+  }
+ ],
+ "yaml_differences_summary": {
+  "logging.wandb_run_name": 18,
+  "model": 18,
+  "outputs_dir": 18,
+  "results_json_dir": 18,
+  "run_name": 18,
+  "train.checkpoint_dir": 18
+ },
+ "training_log_differences_summary": {
+  "no_image": 18,
+  "efficiency.params.total_params": 54,
+  "efficiency.params.trainable_params": 54,
+  "train.seed": 1
+ },
+ "cost": {
+  "HEAL / A_frozen": {
+   "n": 3,
+   "mean_time_h": 6.01,
+   "mean_peak_gb": 20.7,
+   "peak_min_max_gb": [
+    20.69,
+    20.71
+   ],
+   "gpus": [
+    "0",
+    "1"
+   ],
+   "per_seed": [
+    {
+     "seed": 0,
+     "gpu": 0,
+     "duration_s": 19697.9,
+     "peak_mib": 21208
+    },
+    {
+     "seed": 1,
+     "gpu": 0,
+     "duration_s": 20275.4,
+     "peak_mib": 21188
+    },
+    {
+     "seed": 2,
+     "gpu": 1,
+     "duration_s": 24984.7,
+     "peak_mib": 21188
+    }
+   ]
+  },
+  "HEAL / A_ft": {
+   "n": 3,
+   "mean_time_h": 6.16,
+   "mean_peak_gb": 20.78,
+   "peak_min_max_gb": [
+    20.78,
+    20.78
+   ],
+   "gpus": [
+    "0",
+    "1"
+   ],
+   "per_seed": [
+    {
+     "seed": 0,
+     "gpu": 1,
+     "duration_s": 20552.6,
+     "peak_mib": 21282
+    },
+    {
+     "seed": 1,
+     "gpu": 1,
+     "duration_s": 20702.4,
+     "peak_mib": 21282
+    },
+    {
+     "seed": 2,
+     "gpu": 0,
+     "duration_s": 25297.7,
+     "peak_mib": 21282
+    }
+   ]
+  },
+  "HEAL / A_text": {
+   "n": 3,
+   "mean_time_h": 1.59,
+   "mean_peak_gb": 16.64,
+   "peak_min_max_gb": [
+    16.62,
+    16.66
+   ],
+   "gpus": [
+    "0",
+    "1"
+   ],
+   "per_seed": [
+    {
+     "seed": 0,
+     "gpu": 1,
+     "duration_s": 5537.0,
+     "peak_mib": 17018
+    },
+    {
+     "seed": 1,
+     "gpu": 1,
+     "duration_s": 5939.4,
+     "peak_mib": 17038
+    },
+    {
+     "seed": 2,
+     "gpu": 0,
+     "duration_s": 5746.5,
+     "peak_mib": 17058
+    }
+   ]
+  },
+  "KVASIR / A_frozen": {
+   "n": 3,
+   "mean_time_h": 15.8,
+   "mean_peak_gb": 21.12,
+   "peak_min_max_gb": [
+    20.77,
+    21.82
+   ],
+   "gpus": [
+    "0",
+    "1",
+    "2"
+   ],
+   "per_seed": [
+    {
+     "seed": 0,
+     "gpu": 1,
+     "duration_s": 55127.5,
+     "peak_mib": 21268
+    },
+    {
+     "seed": 1,
+     "gpu": 2,
+     "duration_s": 57178.2,
+     "peak_mib": 22348
+    },
+    {
+     "seed": 2,
+     "gpu": 0,
+     "duration_s": 58321.9,
+     "peak_mib": 21268
+    }
+   ]
+  },
+  "KVASIR / A_ft": {
+   "n": 3,
+   "mean_time_h": 16.64,
+   "mean_peak_gb": 20.85,
+   "peak_min_max_gb": [
+    20.84,
+    20.86
+   ],
+   "gpus": [
+    "0",
+    "3"
+   ],
+   "per_seed": [
+    {
+     "seed": 0,
+     "gpu": 3,
+     "duration_s": 60889.7,
+     "peak_mib": 21362
+    },
+    {
+     "seed": 1,
+     "gpu": 0,
+     "duration_s": 57219.4,
+     "peak_mib": 21344
+    },
+    {
+     "seed": 2,
+     "gpu": 3,
+     "duration_s": 61591.0,
+     "peak_mib": 21344
+    }
+   ]
+  },
+  "KVASIR / A_text": {
+   "n": 3,
+   "mean_time_h": 5.28,
+   "mean_peak_gb": 16.72,
+   "peak_min_max_gb": [
+    16.68,
+    16.74
+   ],
+   "gpus": [
+    "1",
+    "2"
+   ],
+   "per_seed": [
+    {
+     "seed": 0,
+     "gpu": 2,
+     "duration_s": 18568.9,
+     "peak_mib": 17078
+    },
+    {
+     "seed": 1,
+     "gpu": 1,
+     "duration_s": 20435.7,
+     "peak_mib": 17138
+    },
+    {
+     "seed": 2,
+     "gpu": 2,
+     "duration_s": 18068.2,
+     "peak_mib": 17138
+    }
+   ]
+  },
+  "MIMIC / A_frozen": {
+   "n": 3,
+   "mean_time_h": 25.1,
+   "mean_peak_gb": 20.59,
+   "peak_min_max_gb": [
+    20.59,
+    20.6
+   ],
+   "gpus": [
+    "0",
+    "1"
+   ],
+   "per_seed": [
+    {
+     "seed": 0,
+     "gpu": 1,
+     "duration_s": 20525.1,
+     "peak_mib": 21088
+    },
+    {
+     "seed": 1,
+     "gpu": 1,
+     "duration_s": 23129.2,
+     "peak_mib": 21088
+    },
+    {
+     "seed": 2,
+     "gpu": 0,
+     "duration_s": 227432.6,
+     "peak_mib": 21090
+    }
+   ]
+  },
+  "MIMIC / A_ft": {
+   "n": 3,
+   "mean_time_h": 6.36,
+   "mean_peak_gb": 20.67,
+   "peak_min_max_gb": [
+    20.67,
+    20.69
+   ],
+   "gpus": [
+    "0",
+    "1"
+   ],
+   "per_seed": [
+    {
+     "seed": 0,
+     "gpu": 0,
+     "duration_s": 20971.9,
+     "peak_mib": 21162
+    },
+    {
+     "seed": 1,
+     "gpu": 0,
+     "duration_s": 22263.1,
+     "peak_mib": 21162
+    },
+    {
+     "seed": 2,
+     "gpu": 1,
+     "duration_s": 25402.1,
+     "peak_mib": 21182
+    }
+   ]
+  },
+  "MIMIC / A_text": {
+   "n": 3,
+   "mean_time_h": 1.68,
+   "mean_peak_gb": 16.51,
+   "peak_min_max_gb": [
+    16.48,
+    16.54
+   ],
+   "gpus": [
+    "0"
+   ],
+   "per_seed": [
+    {
+     "seed": 0,
+     "gpu": 0,
+     "duration_s": 5986.4,
+     "peak_mib": 16918
+    },
+    {
+     "seed": 1,
+     "gpu": 0,
+     "duration_s": 6877.8,
+     "peak_mib": 16938
+    },
+    {
+     "seed": 2,
+     "gpu": 0,
+     "duration_s": 5299.6,
+     "peak_mib": 16878
+    }
+   ]
+  },
+  "SLAKE / A_frozen": {
+   "n": 3,
+   "mean_time_h": 1.95,
+   "mean_peak_gb": 20.7,
+   "peak_min_max_gb": [
+    20.52,
+    20.79
+   ],
+   "gpus": [
+    "0",
+    "1"
+   ],
+   "per_seed": [
+    {
+     "seed": 0,
+     "gpu": 1,
+     "duration_s": 6085.1,
+     "peak_mib": 21012
+    },
+    {
+     "seed": 1,
+     "gpu": 1,
+     "duration_s": 9034.1,
+     "peak_mib": 21286
+    },
+    {
+     "seed": 2,
+     "gpu": 0,
+     "duration_s": 5913.4,
+     "peak_mib": 21286
+    }
+   ]
+  },
+  "SLAKE / A_ft": {
+   "n": 3,
+   "mean_time_h": 2.04,
+   "mean_peak_gb": 21.0,
+   "peak_min_max_gb": [
+    20.45,
+    21.68
+   ],
+   "gpus": [
+    "0",
+    "1"
+   ],
+   "per_seed": [
+    {
+     "seed": 0,
+     "gpu": 0,
+     "duration_s": 6277.4,
+     "peak_mib": 22202
+    },
+    {
+     "seed": 1,
+     "gpu": 0,
+     "duration_s": 9476.1,
+     "peak_mib": 20942
+    },
+    {
+     "seed": 2,
+     "gpu": 1,
+     "duration_s": 6240.5,
+     "peak_mib": 21362
+    }
+   ]
+  },
+  "SLAKE / A_text": {
+   "n": 3,
+   "mean_time_h": 0.5,
+   "mean_peak_gb": 16.89,
+   "peak_min_max_gb": [
+    16.86,
+    16.91
+   ],
+   "gpus": [
+    "0",
+    "1"
+   ],
+   "per_seed": [
+    {
+     "seed": 0,
+     "gpu": 0,
+     "duration_s": 1834.0,
+     "peak_mib": 17318
+    },
+    {
+     "seed": 1,
+     "gpu": 0,
+     "duration_s": 1800.7,
+     "peak_mib": 17260
+    },
+    {
+     "seed": 2,
+     "gpu": 1,
+     "duration_s": 1814.6,
+     "peak_mib": 17320
+    }
+   ]
+  },
+  "VQARAD_QLEVEL / A_frozen": {
+   "n": 3,
+   "mean_time_h": 1.02,
+   "mean_peak_gb": 20.75,
+   "peak_min_max_gb": [
+    20.75,
+    20.75
+   ],
+   "gpus": [
+    "0",
+    "2"
+   ],
+   "per_seed": [
+    {
+     "seed": 0,
+     "gpu": 0,
+     "duration_s": 4580.9,
+     "peak_mib": 21248
+    },
+    {
+     "seed": 1,
+     "gpu": 0,
+     "duration_s": 3246.9,
+     "peak_mib": 21248
+    },
+    {
+     "seed": 2,
+     "gpu": 2,
+     "duration_s": 3140.8,
+     "peak_mib": 21248
+    }
+   ]
+  },
+  "VQARAD_QLEVEL / A_ft": {
+   "n": 3,
+   "mean_time_h": 1.04,
+   "mean_peak_gb": 20.82,
+   "peak_min_max_gb": [
+    20.82,
+    20.82
+   ],
+   "gpus": [
+    "1"
+   ],
+   "per_seed": [
+    {
+     "seed": 0,
+     "gpu": 1,
+     "duration_s": 4302.5,
+     "peak_mib": 21322
+    },
+    {
+     "seed": 1,
+     "gpu": 1,
+     "duration_s": 3642.5,
+     "peak_mib": 21322
+    },
+    {
+     "seed": 2,
+     "gpu": 1,
+     "duration_s": 3250.1,
+     "peak_mib": 21322
+    }
+   ]
+  },
+  "VQARAD_QLEVEL / A_text": {
+   "n": 3,
+   "mean_time_h": 0.3,
+   "mean_peak_gb": 16.66,
+   "peak_min_max_gb": [
+    16.62,
+    16.68
+   ],
+   "gpus": [
+    "1",
+    "3"
+   ],
+   "per_seed": [
+    {
+     "seed": 0,
+     "gpu": 1,
+     "duration_s": 1370.7,
+     "peak_mib": 17018
+    },
+    {
+     "seed": 1,
+     "gpu": 1,
+     "duration_s": 945.3,
+     "peak_mib": 17078
+    },
+    {
+     "seed": 2,
+     "gpu": 3,
+     "duration_s": 903.2,
+     "peak_mib": 17078
+    }
+   ]
+  },
+  "VQARAD_REDIV / A_frozen": {
+   "n": 3,
+   "mean_time_h": 0.96,
+   "mean_peak_gb": 20.73,
+   "peak_min_max_gb": [
+    20.73,
+    20.73
+   ],
+   "gpus": [
+    "0",
+    "1"
+   ],
+   "per_seed": [
+    {
+     "seed": 0,
+     "gpu": 1,
+     "duration_s": 3256.9,
+     "peak_mib": 21228
+    },
+    {
+     "seed": 1,
+     "gpu": 0,
+     "duration_s": 3858.9,
+     "peak_mib": 21228
+    },
+    {
+     "seed": 2,
+     "gpu": 1,
+     "duration_s": 3228.3,
+     "peak_mib": 21228
+    }
+   ]
+  },
+  "VQARAD_REDIV / A_ft": {
+   "n": 3,
+   "mean_time_h": 0.97,
+   "mean_peak_gb": 20.8,
+   "peak_min_max_gb": [
+    20.8,
+    20.8
+   ],
+   "gpus": [
+    "0",
+    "1"
+   ],
+   "per_seed": [
+    {
+     "seed": 0,
+     "gpu": 0,
+     "duration_s": 3341.3,
+     "peak_mib": 21302
+    },
+    {
+     "seed": 1,
+     "gpu": 1,
+     "duration_s": 3786.1,
+     "peak_mib": 21302
+    },
+    {
+     "seed": 2,
+     "gpu": 0,
+     "duration_s": 3330.5,
+     "peak_mib": 21302
+    }
+   ]
+  },
+  "VQARAD_REDIV / A_text": {
+   "n": 3,
+   "mean_time_h": 0.27,
+   "mean_peak_gb": 16.66,
+   "peak_min_max_gb": [
+    16.64,
+    16.68
+   ],
+   "gpus": [
+    "0",
+    "1"
+   ],
+   "per_seed": [
+    {
+     "seed": 0,
+     "gpu": 1,
+     "duration_s": 920.4,
+     "peak_mib": 17078
+    },
+    {
+     "seed": 1,
+     "gpu": 1,
+     "duration_s": 1081.2,
+     "peak_mib": 17038
+    },
+    {
+     "seed": 2,
+     "gpu": 0,
+     "duration_s": 921.0,
+     "peak_mib": 17058
+    }
+   ]
+  }
+ },
+ "cost_source": "v7_txt/article_runs/qwen25vl7b/logs/infer_state_q25.json",
+ "cost_source_sha256": "738aa35cbdde5813fb6cdd2297cfd80aa8b92b9b6abbd714c5e3c8960c950f49"
+}

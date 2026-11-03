@@ -44,7 +44,7 @@ def split_train_val_df(df: pd.DataFrame, val_fraction: float = 0.1,
     to val; the rest to train. The union of the two is exactly `df`, with no
     overlap. Rewrites the `split` column ('train'/'val') in each part."""
     if not (0.0 < val_fraction < 1.0):
-        raise ValueError(f"val_fraction={val_fraction} deve estar em (0, 1)")
+        raise ValueError(f"val_fraction={val_fraction} must be in (0, 1)")
 
     order = sorted(range(len(df)), key=lambda i: df.iloc[i]["image_id"])  # deterministic order before shuffling
     rng = random.Random(seed)
@@ -80,5 +80,5 @@ if __name__ == "__main__":
     write_arrow(val_df, args.val_output)
     n_train_q = int(sum(len(qs) for qs in train_df["questions"]))
     n_val_q = int(sum(len(qs) for qs in val_df["questions"]))
-    print(f"train: {len(train_df)} imagens, {n_train_q} perguntas -> {args.train_output}")
-    print(f"val:   {len(val_df)} imagens, {n_val_q} perguntas -> {args.val_output}")
+    print(f"train: {len(train_df)} images, {n_train_q} questions -> {args.train_output}")
+    print(f"val:   {len(val_df)} images, {n_val_q} questions -> {args.val_output}")

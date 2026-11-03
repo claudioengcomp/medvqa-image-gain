@@ -31,10 +31,10 @@ def test_no_image(_config):
         b = batch0(cfg)[0]; m = build(cfg); lg, cls = logits(m, b)
         torch.save({"qid": b["qid"], "logits": lg, "cls": cls}, sys.argv[5]); print("logits", tuple(lg.shape), "qids", b["qid"][:4])
         return
-    # ---- modo novo (codigo da branch, flag ligada) ----
+    # ---- 'novo' mode (branch code, flag on) ----
     ckpt = sys.argv[2]; out = {}
     b = batch0(cfg)[0]; m = build(cfg)
-    # 1. A3 manual numa camada (camada 0 do lado texto)
+    # 1. manual A3 on one layer (layer 0 of the text side)
     with torch.no_grad():
         x = m.language_encoder.embeddings(input_ids=b["text_ids"]); ext = m.language_encoder.get_extended_attention_mask(b["text_masks"], b["text_masks"].size(), "cpu")
         for layer in m.language_encoder.encoder.layer: x = layer(x, ext)[0]
@@ -66,7 +66,7 @@ def test_no_image(_config):
     out["treinaveis_sem_grad"] = [n for n, p in train if p.grad is None]
     out["grad_nan_ou_inf"] = sum(1 for n, p in train if p.grad is not None and not torch.isfinite(p.grad).all())
     out["treinaveis_grad_todo_zero"] = [n for n, p in train if p.grad is not None and float(p.grad.abs().sum()) == 0][:10]
-    # 4. contagem de parametros
+    # 4. parameter count
     tot = sum(p.numel() for p in m.parameters()); tr = sum(p.numel() for _, p in train)
     grp = {}
     for n, p in train: grp[n.split(".")[0]] = grp.get(n.split(".")[0], 0) + p.numel()

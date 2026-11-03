@@ -6,6 +6,9 @@ authors:
   - family-names: Leite
     given-names: Claudio
     affiliation: "Department of Computing, Federal University of São Carlos (UFSCar), Sorocaba, Brazil"
+  - family-names: dos Santos
+    given-names: Samuel Felipe
+    affiliation: "Department of Computing, Federal University of São Carlos (UFSCar), Sorocaba, Brazil"
   - family-names: Almeida
     given-names: Jurandy
     affiliation: "Department of Computing, Federal University of São Carlos (UFSCar), Sorocaba, Brazil"
@@ -17,6 +20,8 @@ preferred-citation:
   authors:
     - family-names: Leite
       given-names: Claudio
+    - family-names: dos Santos
+      given-names: Samuel Felipe
     - family-names: Almeida
       given-names: Jurandy
   year: 2026

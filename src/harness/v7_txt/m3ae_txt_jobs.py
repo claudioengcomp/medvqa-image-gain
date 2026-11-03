@@ -29,8 +29,8 @@ for bench, DS in (() if True else (("slack", "SLAKE"), ("vqa_rad", "VQARAD"))):
         jobs.append({"name": "predict_" + name, "env": "lapa", "reserve_mib": 8 * 1024, "output": "%s/results/%s_C0.json" % (R, name), "log": "%s/logs/predict_%s.log" % (R, name), "cwd": R + "/worktree_m3ae", "cmd": [H + "/m3ae_txt_predict.py", bench, str(s), DS, "%s/results/%s_C0.json" % (R, name), "img"], "after": "train_" + name, "skip_order": True})
 # 14/10 (the candidate): reproduction of the VQA-RAD C0, seeds 1 and 2, with the Colab weights (commit 6cc9eac; Drive copy checked by md5),
 # on the original test set (own data_root with links to the original arrows, read-only). Item-by-item comparison with
-# doutorado/medvqa-main/results/M3AE_SCRATCH_VQARAD_seed<s>_C0.json (banda entre ambientes 2,7-5,9 %).
-VR = R + "/m3ae_roots/vqarad_C0/"; ORIG_SHA = "e1e464f0e99dc21ce00c37117e36288c"   # md5 do vqa_vqa_rad_test.arrow == .orig_backup (14/10)
+# doutorado/medvqa-main/results/M3AE_SCRATCH_VQARAD_seed<s>_C0.json (band between environments 2.7-5.9 %).
+VR = R + "/m3ae_roots/vqarad_C0/"; ORIG_SHA = "e1e464f0e99dc21ce00c37117e36288c"   # md5 of vqa_vqa_rad_test.arrow == .orig_backup (14/10)
 # 14/10 (the candidate): priority 1 -- both jobs moved to make_jobs_c0repro.py (target c0repro); block disabled here, for the record.
 for s in (() if True else (1, 2)):
     name = "M3AE_SCRATCH_VQARAD_seed%d_C0_colabrepro" % s; ck = f"{_MEDVQA_ROOT}/doutorado/M3AE/checkpoints_colab/M3AE_SCRATCH_VQARAD_seed%d.ckpt" % s

@@ -9,14 +9,14 @@ import numpy as np
 
 
 def decode_rle(rle, h: int, w: int) -> np.ndarray:
-    """(inicio, comprimento)* em ordem coluna-maior -> mascara booleana (h, w)."""
+    """(start, length)* in column-major order -> boolean mask (h, w)."""
     rle = np.asarray(rle, dtype=np.int64)
     if rle.size % 2:
         raise ValueError("RLE with an odd number of elements")
     flat = np.zeros(h * w, dtype=bool)
     for s, l in zip(rle[0::2], rle[1::2]):
         if s < 0 or s + l > h * w:
-            raise ValueError(f"RLE outside the image: start {s}, comprimento {l}, h*w {h * w}")
+            raise ValueError(f"RLE outside the image: start {s}, length {l}, h*w {h * w}")
         flat[s:s + l] = True
     return flat.reshape((w, h)).T
 

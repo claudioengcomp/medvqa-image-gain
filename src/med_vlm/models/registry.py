@@ -75,7 +75,7 @@ MODEL_REGISTRY: dict[med_vlm.enums.ModelName, ModelConfig] = {
     med_vlm.enums.ModelName.LINGSHU: ModelConfig(model_cls=Qwen2_5_VLForConditionalGeneration, processor_cls=AutoProcessor),
     med_vlm.enums.ModelName.HUATUO_QWEN25: ModelConfig(model_cls=Qwen2_5_VLForConditionalGeneration, processor_cls=AutoProcessor),
     med_vlm.enums.ModelName.INTERNVL3: ModelConfig(model_cls=AutoModelForImageTextToText, processor_cls=AutoProcessor),
-    med_vlm.enums.ModelName.GEMMA3: ModelConfig(model_cls=AutoModelForImageTextToText, processor_cls=AutoProcessor),   # como o MedGemma (familia Gemma 3)
+    med_vlm.enums.ModelName.GEMMA3: ModelConfig(model_cls=AutoModelForImageTextToText, processor_cls=AutoProcessor),   # like MedGemma (Gemma 3 family)
     med_vlm.enums.ModelName.LLAVA_MED: ModelConfig(
         model_cls=AutoModelForImageTextToText,
         processor_cls=AutoProcessor,

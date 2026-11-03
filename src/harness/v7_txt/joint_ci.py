@@ -11,7 +11,7 @@ from harness.v7_txt.analise_troca import swap_file
 from harness.stats.bootstrap import ImageBootstrap
 from harness.interventions.arrow_io import read_arrow
 from med_vlm.metrics.process_text import answer_matches, normalize_text as NT
-PJ = f"{_MEDVQA_ROOT}/v7_txt/article_runs"; PJR = f"{PJ}/results"; FAM = ["QWEN2VL", "SMOLVLM", "M3AE"]; ART = ["KVASIR", "SLAKE", "HEAL", "MIMIC", "VQARAD_REDIV", "VQARAD_QLEVEL", "VQARAD_RADORIG"]   # 19/10: tres divisoes do VQA-RAD
+PJ = f"{_MEDVQA_ROOT}/v7_txt/article_runs"; PJR = f"{PJ}/results"; FAM = ["QWEN2VL", "SMOLVLM", "M3AE"]; ART = ["KVASIR", "SLAKE", "HEAL", "MIMIC", "VQARAD_REDIV", "VQARAD_QLEVEL", "VQARAD_RADORIG"]   # 19/10: three VQA-RAD splits
 sha = lambda p: hashlib.sha256(open(p, "rb").read()).hexdigest(); SEEDS = np.random.RandomState(20260913).randint(0, 3, size=(2000, 3))
 PAT = ["is there", "are there", "have all polyps", "how many", "what type of", "what is the size", "where in the image", "does this image contain any finding", "what color is the anatomical landmark", "what color is the abnormality"]
 def baseline_string(b):

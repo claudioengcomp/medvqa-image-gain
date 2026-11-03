@@ -15,7 +15,7 @@ def sint(J):
     D = J["decomposicao_fechadas"]["benchmarks"]; I15 = J["joint_ci"]["bases"]; I17 = J["m3ae_frozen_vit"]["bases"]; S2 = J["analise_troca_v2"]["bases"]; IC = J["ic_contagem"]; I13 = J["text_analyses"]; I10 = J["heal_classifiers_train_only"]["heal_so_treino"]["por_familia"]
     bf = lambda b, f: D[b]["by_family"][f]
     o = {}
-    # 2.1 Tabela 2, M3AE
+    # 2.1 Table 2, M3AE
     o["tab2_m3ae"] = {b: {"A_text": [bf(b, "M3AE")["own_text_only_baseline"]["mean"], bf(b, "M3AE")["own_text_only_baseline"]["sd"]], "G_enc": [I17[b]["diferencas"]["G_enc"]["media"]] + I17[b]["diferencas"]["G_enc"]["ic_conjunto"],
                          "G_ft": [I17[b]["diferencas"]["G_ft"]["media"]] + I17[b]["diferencas"]["G_ft"]["ic_conjunto"], "G": [bf(b, "M3AE")["soma"]["mean"]] + I15[b]["M3AE"]["G"]["ic_conjunto"]} for b in ART}
     # 2.2 counts (45 runs = 30 VLM + 15 frozen M3AE; G: 45 = 5 x 9 fine-tuned rows, M3AE = full fine-tune)
@@ -27,7 +27,7 @@ def sint(J):
                          "G_enc_IC_inclui_zero_onde": [[b, "M3AE_FROZEN seed" + s] for b in ART for s, x in E[b]["G_enc"].items() if inc(x)] + [[x["base"], x["linha"]] for x in IC["linhas"] if x["familia"] != "M3AE" and x["Genc_inclui_zero"]],
                          "G_IC_exclui_zero": C["G_exclui_zero"], "G_n": C["n_afinadas"], "G_excecoes": ex_G,
                          "G_ft_IC_inclui_zero": C["Gft_inclui_zero"] + sum(inc(x) for b, s, x in gft_m3), "G_ft_exclui_max_4grandes": max(g for b, g in exc_vlm + exc_m3 if b in G4), "G_ft_exclui_max_VQARAD": max(g for b, g in exc_vlm + exc_m3 if b == "VQARAD_REDIV")}
-    # 2.3 decomposicao
+    # 2.3 decomposition
     cel = {}
     for b in ART:
         for f in FAM:
@@ -59,7 +59,7 @@ def sint(J):
     o["A_swap_menos_A_text_4grandes"] = {"min": min(sw.values()), "max": max(sw.values()), "todas_negativas": all(v < 0 for v in sw.values()), "por_celula": {f"{b}|{f}": v for (b, f), v in sw.items()}}
     dr = {(b, f): S2[b]["por_familia"][f]["A_menos_A_swap"]["mean"] for b in ART for f in FAM}
     o["A_menos_A_swap"] = {"VQARAD_REDIV": [min(v for (b, f), v in dr.items() if b == "VQARAD_REDIV"), max(v for (b, f), v in dr.items() if b == "VQARAD_REDIV")], "4grandes": [min(v for (b, f), v in dr.items() if b in G4), max(v for (b, f), v in dr.items() if b in G4)]}
-    # 2.7 VQA-RAD, duas divisoes
+    # 2.7 VQA-RAD, two splits
     v = {}
     for b in ("VQARAD_QLEVEL", "VQARAD_REDIV"):
         v[b] = {"A_text": {f: bf(b, f)["own_text_only_baseline"]["mean"] for f in FAM}, "PubMedBERT": bf(b, "QWEN2VL")["bert"]["mean"], "G": {f: [bf(b, f)["soma"]["mean"]] + I15[b][f]["G"]["ic_conjunto"] for f in FAM}}
@@ -72,7 +72,7 @@ def sint(J):
 out = {}
 for tag, raiz in (("antes", A), ("depois", ESP + "/v7_txt/article_runs/analysis")):
     J, F = carrega(raiz); out[tag] = sint(J); out[tag + "_fontes"] = F
-# 2.9 custo e parametros
+# 2.9 cost and parameters
 C13 = json.load(open(A + "/text_analyses.json"))["13_6"]; ST = {j["name"]: j for j in json.load(open(PJ + "/m3ae_semimg/logs/infer_state_semimg21b.json"))["jobs"]}
 def media(xs): return float(np.mean(xs)) if xs else None
 BMAP = {"VQARAD_REDIV": "VQARAD_REDIV"}

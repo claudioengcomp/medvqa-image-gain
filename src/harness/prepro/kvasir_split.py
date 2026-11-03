@@ -30,7 +30,7 @@ def split_records_by_image(
     """
     total = sum(ratios)
     if abs(total - 1.0) > 1e-9:
-        raise ValueError(f"ratios devem somar 1.0, somaram {total}")
+        raise ValueError(f"ratios must sum to 1.0, got {total}")
 
     rng = random.Random(seed)
 

@@ -6,7 +6,7 @@ _MEDVQA_ROOT = _os.environ.get("MEDVQA_ROOT", "/path/to/original/run/tree")   # 
 import glob, os, subprocess, sys
 seed, cond, arrow, sha, out = sys.argv[1:6]; R = f"{_MEDVQA_ROOT}/v7_mimic"
 cands = glob.glob("%s/m3ae/task_finetune_vqa_mimic-seed%s-from_*/*/checkpoints/epoch=*.ckpt" % (R, seed))
-if len(cands) != 1: print("esperado exatamente 1 checkpoint best, achei", cands); sys.exit(3)
+if len(cands) != 1: print("expected exactly 1 best checkpoint, found", cands); sys.exit(3)
 dr = "%s/m3ae_arrows/cond/%s" % (R, cond); os.makedirs(dr, exist_ok=True)
 for name, tgt in (("vqa_mimic_test.arrow", arrow), ("vqa_mimic_train.arrow", R + "/data/vqa_mimic_train.arrow"), ("vqa_mimic_val.arrow", R + "/data/vqa_mimic_val.arrow")):
     l = os.path.join(dr, name)

@@ -115,12 +115,12 @@ MODEL_SPECS: dict[ModelName, Callable[..., ModelSpec]] = {
     ModelName.MEDVLM: lambda max_length=2048, augment_fn=None, no_image=False, system_prompt=None: (
         build_chat_template_spec(max_length=max_length, augment_fn=augment_fn, system_prompt=system_prompt, default_max_new_tokens=512, no_image=no_image)
     ),
-    ModelName.LINGSHU: build_chat_template_spec,         # v7 (2026-10-13): zero-shot, template de chat do Qwen2.5-VL
-    ModelName.HUATUO_QWEN25: build_chat_template_spec,   # v7 (2026-10-13): zero-shot, template de chat do Qwen2.5-VL
+    ModelName.LINGSHU: build_chat_template_spec,         # v7 (2026-10-13): zero-shot, Qwen2.5-VL chat template
+    ModelName.HUATUO_QWEN25: build_chat_template_spec,   # v7 (2026-10-13): zero-shot, Qwen2.5-VL chat template
     ModelName.INTERNVL3: build_chat_template_spec,
     ModelName.GEMMA3: build_chat_template_spec,          # v7 (2026-10-13): zero-shot, Gemma 3 chat template (like MedGemma)       # v7 (2026-10-13): zero-shot, InternVL3-hf chat template
-    # MedVLThinker-7B-RL_PMC: Fase 1 = zero-shot only (replicar Zafar et al.
-    # with our protocol). Phase 2 (LoRA/DoRA) evaluated later, see spec.
+    # MedVLThinker-7B-RL_PMC: phase 1 = zero-shot only (replicating Zafar et al.
+    # with our protocol). Phase 2 (LoRA/DoRA) evaluated later.
     # Needs the structured reasoning system prompt (see
     # _MEDVLTHINKER_SYSTEM_PROMPT above) and more tokens than the default of 64
     # -- the model does explicit CoT before <answer>.
@@ -128,7 +128,7 @@ MODEL_SPECS: dict[ModelName, Callable[..., ModelSpec]] = {
         build_chat_template_spec(
             max_length=max_length,
             augment_fn=augment_fn,
-            system_prompt=system_prompt or _MEDVLTHINKER_SYSTEM_PROMPT,   # v7: variante _instr acrescenta a instrucao curta ao prompt do VISAPP
+            system_prompt=system_prompt or _MEDVLTHINKER_SYSTEM_PROMPT,   # v7: the _instr variant appends the short instruction to the VISAPP prompt
             default_max_new_tokens=512,
             no_image=no_image,
         )

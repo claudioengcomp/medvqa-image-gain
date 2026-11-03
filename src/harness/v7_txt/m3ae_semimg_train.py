@@ -8,7 +8,7 @@ TK = tkd.get(s, "clip")
 cmd = [sys.executable, "-u", "main.py", "with", "data_root=" + DR, "num_gpus=1", "num_nodes=1", task, "per_gpu_batchsize=16", "clip16", "text_roberta", "image_size=384",
        "tokenizer=downloaded/roberta-base", "load_path=downloaded/pretrained/m3ae.ckpt", "seed=%d" % s, "vqa_label_size=%d" % ls, 'train_transform_keys=["%s"]' % TK,
        "default_root_dir=" + CK, "log_dir=" + CK + "/result", "no_image=True"]
-print("[m3ae_semimg_train] %s %s base=%s seed=%d task=%s ls=%d tk=%s data_root=%s placa=%s\n%s" % (time.strftime("%F %T"), NAME, b, s, task, ls, TK, DR, os.environ.get("CUDA_VISIBLE_DEVICES"), " ".join(cmd)), flush=True)
+print("[m3ae_semimg_train] %s %s base=%s seed=%d task=%s ls=%d tk=%s data_root=%s gpu=%s\n%s" % (time.strftime("%F %T"), NAME, b, s, task, ls, TK, DR, os.environ.get("CUDA_VISIBLE_DEVICES"), " ".join(cmd)), flush=True)
 t0 = time.time(); rc = subprocess.call(cmd, cwd=C.WM, env=dict(os.environ, WANDB_MODE="disabled")); t = time.time() - t0
 json.dump({"run_name": NAME, "rc": rc, "task": task, "seed": s, "vqa_label_size": ls, "train_transform_keys": [TK], "data_root": DR, "placa": os.environ.get("CUDA_VISIBLE_DEVICES"), "train_wall_time_s": round(t),
            "codigo": C.WM, "no_image": True, "start_ckpt": C.START_CKPT, "start_ckpt_sha256": C.START_SHA, "cmd": cmd}, open("%s/%s_cost.json" % (LOG, NAME) if rc == 0 else "%s/%s_cost_FALHOU.json" % (LOG, NAME), "w"), indent=2)

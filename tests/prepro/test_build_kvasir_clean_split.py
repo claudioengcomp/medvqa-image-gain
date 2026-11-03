@@ -65,7 +65,7 @@ def test_build_clean_arrows_writes_three_files_with_zero_overlap(tmp_path):
     assert set(csv_map) == all_img_ids
     assert set(csv_map.values()) <= {"train", "val", "test"}
 
-    # Confere valores ESPECÍFICOS de img_id->split, comparando contra o
+    # Checks SPECIFIC img_id->split values, comparing against the
     # direct computation from the same pure functions (build_image_records +
     # split_records_by_image, same seed) -- not just the aggregate count.
     records = build_image_records(train_rows + test_rows)
