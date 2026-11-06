@@ -2,7 +2,7 @@
  "repository": "medvqa-image-gain",
  "generated": "2026-11-03",
  "n_files": 724,
- "total_bytes": 89830570,
+ "total_bytes": 89832920,
  "note": "origin = path of the source file in the original run tree (prefix ${MEDVQA_ROOT}), with the same directory/file renaming applied as in this repository; sha256_original = sha256 of that file there; modified_from_original = the file was edited mechanically (paths -> ${MEDVQA_ROOT}, internal identifiers -> descriptive English names, provenance paths reduced, template text -> template id), with comments, docstrings, messages and free-text notes translated from Portuguese to English, internal document references removed and dashes replaced by ordinary punctuation; the Qwen2.5-VL-7B per-question prediction files are gzip-compressed (*.json.gz) copies of the cleaned JSON, and sha256_original refers to the uncompressed original.",
  "files": {
   ".gitignore": {
@@ -24,8 +24,8 @@
    "modified_from_original": true
   },
   "README.md": {
-   "sha256": "6e8a5387c5072caa73dc55b0c70d57137ddea7ae6c02ea35c23f7f4e5cb3b7e2",
-   "bytes": 22815,
+   "sha256": "909b817b3675770173d6c3913910c00b65420be8ee9c2c06d08f28e0cbd5b64c",
+   "bytes": 24857,
    "modified_from_original": true
   },
   "configs/jobs/image_swap_predictions_heal_mimic_jobs.json": {
@@ -953,12 +953,12 @@
    "modified_from_original": true
   },
   "paper/numbers.csv": {
-   "sha256": "38664899c00ac91aa9f8187e326619bb5a664168e18732acd0e4651ad4192fc0",
-   "bytes": 215044,
+   "sha256": "4e160f5c1c5ff2857be039649b89e9592e10d7906e7a5f25b78f7588a26bdea9",
+   "bytes": 222797,
    "modified_from_original": true
   },
   "paper/tables/table_results_4p.tex": {
-   "sha256": "ad8a01d76ccf3b376abfa830844d893b59c1f3573d4b675a833ad9023b3a7938",
+   "sha256": "e8e294b219fd9b91ec2d16dbd738346fe0be4361c74cd894ccaa9e51c6b1ae52",
    "bytes": 4804,
    "origin": "${MEDVQA_ROOT}/tmp/v7/public_repository/mac16b/table_results_4p.tex",
    "sha256_original": "63fd5588cccdf5506f16833a73944cc3b0be97961753c044abb80c6d302ddead",
@@ -1105,8 +1105,8 @@
    "origin": "${MEDVQA_ROOT}/v7_txt/article_runs/analysis_23b/espelho_q25/v7_txt/article_runs/analysis/analise_troca.json",
    "sha256_original": "d6f1d23c46ba708e9fc11a7770752a1da23c264480fd302fdb4b4b5b21b0ed42",
    "modified_from_original": true,
-   "sha256": "a32ca99817424d0e18a539bdb1b5f4751b45c2fec73723f5a67f9b96846c9ace",
-   "bytes": 19827
+   "sha256": "9d8ba5b2b3fc16acf5dd4cf3f6473d415bab64bc26f950d971dbadc7bf4991c4",
+   "bytes": 12382
   },
   "results/aggregates/qwen25vl_7b/analise_troca_v2.json": {
    "origin": "${MEDVQA_ROOT}/v7_txt/article_runs/analysis_23b/espelho_q25/v7_txt/article_runs/analysis/analise_troca_v2.json",
